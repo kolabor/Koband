@@ -21,8 +21,12 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
  * Implement the core functions
  */
 require trailingslashit( get_template_directory() ) . 'inc/core.php'; 
-require 'custom/ko_band_slides.php';
+
+
+
 require 'custom/ko_band_tour_custom_post_type.php';
 require 'custom/ko_band_album_custom_post_type.php';
 require 'custom/ko_band_music_custom_post_type.php';
 require 'custom/ko_band_song_custom_post_type.php';
+require 'custom/ko_band_the_band_custom_post_type.php';
+require 'custom/ko_band_media_custom_post_type.php';
