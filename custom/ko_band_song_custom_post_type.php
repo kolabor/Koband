@@ -69,7 +69,7 @@ add_action('add_meta_boxes', 'ko_band_song_meta_box_init');
 
     global $post;
     // Nonce field to validate form request came from current site
-    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+    wp_nonce_field( plugin_basename( __FILE__ ), 'event_fields' );
     // Get the location data if it's already been entered
         
 
@@ -109,7 +109,7 @@ function ko_band_song_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_song_title'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+    if ( ! isset( $_POST['ko_band_song_title'] ) || ! wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
 
         return $post_id;
 

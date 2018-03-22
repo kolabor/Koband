@@ -113,8 +113,7 @@ function ko_band_slides_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_slides_check'] ) || !  wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) 
-) {
+    if ( ! isset( $_POST['ko_band_slides_check'] ) || !  wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
 
         return $post_id;
 
