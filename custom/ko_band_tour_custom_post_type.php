@@ -2,9 +2,8 @@
 
 
 $args = array(
-  'labels'  =>  array(
-
-            'menu_name' => 'Tour',
+    'labels'  =>  array(
+    'menu_name' => 'Tour',
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -29,9 +28,10 @@ function ko_band_tour_custom_post_type() {
     'search_item' => 'Search Tour',
     'not_found' => 'Mo Tour Found',
     'not-found_in_trash' => 'No Tour Found in Trash',
-    'parent_item_colon' => 'Parent Tour'
+    'parent_item_colon' => 'Parent Tour',
       );
   $args = array(
+    'menu_icon' => 'dashicons-calendar-alt',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -40,23 +40,22 @@ function ko_band_tour_custom_post_type() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor',  'thumbnail', 'excerpt', 'trackbacks', 'comments', 'revisions', 'post-formats' ),
-    
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
   
-  );
+    );
 
-    register_post_type( 'Tour',$args);
- }
+register_post_type( 'Tour',$args);
+}
 
- add_action( 'init', 'ko_band_tour_custom_post_type' );
+add_action( 'init', 'ko_band_tour_custom_post_type' );
   
 
 add_action('add_meta_boxes', 'ko_band_tour_meta_box_init');
 
- function ko_band_tour_meta_box_init(){
-         add_meta_box(
+function ko_band_tour_meta_box_init(){
+        add_meta_box(
         'ko_band_tour_meta_box',
         'Tour Details',
         'ko_band_tour_meta_box',
@@ -65,12 +64,15 @@ add_action('add_meta_boxes', 'ko_band_tour_meta_box_init');
         'default'
     );
 
- }
- function ko_band_tour_meta_box($post, $box){
+}
+function ko_band_tour_meta_box($post, $box){
 
     global $post;
+
     // Nonce field to validate form request came from current site
-    wp_nonce_field( plugin_basename( __FILE__ ), 'event_fields' );
+
+    wp_nonce_field( plugin_basename( __FILE__ ), 'tour_fields' );
+    
     // Get the location data if it's already been entered
         
 
@@ -85,31 +87,31 @@ add_action('add_meta_boxes', 'ko_band_tour_meta_box_init');
 
 
     // Output the field
-        echo "<p>Tour date:</p>";
+    echo "<p>Tour date:</p>";
     echo '<input type="date" name="ko_band_tour_date" value="' . esc_textarea( $tour_date )  . '" class="widefat" placeholder="Date">';
     
-        echo "<p>Tour Country:</p>";
+    echo "<p>Tour Country:</p>";
     echo '<input type="text" name="ko_band_tour_country" value="' . esc_textarea( $tour_country )  . '" class="widefat" placeholder="Country">';  
 
-        echo "<p>Tour City:</p>";
+    echo "<p>Tour City:</p>";
     echo '<input type="text" name="ko_band_tour_city" value="' . esc_textarea( $tour_city )  . '" class="widefat" placeholder="City">';
     
-         echo "<p>Tour Address:</p>";
+    echo "<p>Tour Address:</p>";
     echo '<input type="text" name="ko_band_tour_address" value="' . esc_textarea( $tour_address )  . '" class="widefat" placeholder="Address">';
 
-          echo "<p>Tour ZipCode:</p>";
+    echo "<p>Tour ZipCode:</p>";
     echo '<input type="text" name="ko_band_tour_zipCode" value="' . esc_textarea( $tour_zipCode )  . '" class="widefat" placeholder="ZipCode">';
 
-          echo "<p>Tour Venue Name:</p>";
+    echo "<p>Tour Venue Name:</p>";
     echo '<input type="text" name="ko_band_tour_venue_name" value="' . esc_textarea( $tour_venue_name )  . '" class="widefat" placeholder="Venue Name">';
 
-        echo "<p>Tour Ticket:</p>";
-        echo "<p> On Sale</p>";
+    echo "<p>Tour Ticket:</p>";
+    echo "<p> On Sale</p>";
     echo '<input type="radio" name="ko_band_tour_ticket" value1="' . esc_textarea( $tour_ticket )  . '" class="widefat" >';
-      echo "<p> Sale Out</p>";
-     echo '<input type="radio" name="ko_band_tour_ticket" value2="' . esc_textarea( $tour_ticket )  . '" class="widefat" >';
+    echo "<p> Sale Out</p>";
+    echo '<input type="radio" name="ko_band_tour_ticket" value2="' . esc_textarea( $tour_ticket )  . '" class="widefat" >';
 
-     echo "<p> Ticet Link</p>";
+    echo "<p> Ticet Link</p>";
     echo '<input type="text" name="ko_band_tour_ticket_link" value="'. esc_textarea($tour_ticket_link )  . '" class="widefat" placeholder="Ticket Link">';
 }
 
@@ -119,11 +121,7 @@ add_action( 'save_post', 'ko_band_tour_save_meta_box' , 1, 2);
 function ko_band_tour_save_meta_box( $post_id, $post ) {
 
 
- if ( ! current_user_can( 'edit_post', $post_id ) ) {
-
-        return $post_id;
-
-    }
+    wp_verify_nonce(plugin_basename(__FILE__), 'tour_fields' );
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
@@ -134,7 +132,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
 
     }
 
-   // Now that we're authenticated, time to save the data.
+    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $tour_meta['ko_band_tour_date'] = esc_textarea( $_POST['ko_band_tour_date'] );
     $tour_meta['ko_band_tour_country'] = esc_textarea( $_POST['ko_band_tour_country'] );
@@ -145,7 +143,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
     $tour_meta['ko_band_tour_ticket'] = esc_textarea( $_POST['ko_band_tour_ticket'] );
     $tour_meta['ko_band_tour_ticket_link'] = esc_textarea( $_POST['ko_band_tour_ticket_link'] );
 
-      // Cycle through the $events_meta array.
+    // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
     foreach ( $tour_meta as $key => $value ) :
 

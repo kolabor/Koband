@@ -2,9 +2,8 @@
 
 
 $args = array(
-  'labels'  =>  array(
-
-            'menu_name' => 'Song',
+    'labels'  =>  array(
+    'menu_name' => 'Song',
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -14,7 +13,9 @@ $args = array(
     'menu_position' => 5,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_song_custom_post_type() {
 
   $label = array(
@@ -32,6 +33,7 @@ function ko_band_song_custom_post_type() {
     'parent_item_colon' => 'Parent Song'
       );
   $args = array(
+    'menu_icon' => 'dashicons-playlist-audio',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -39,23 +41,23 @@ function ko_band_song_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),
-    
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),    
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
   
   );
 
-    register_post_type( 'Song',$args);
- }
+register_post_type( 'Song',$args);
 
- add_action( 'init', 'ko_band_song_custom_post_type' );
+}
+
+add_action( 'init', 'ko_band_song_custom_post_type' );
   
 add_action('add_meta_boxes', 'ko_band_song_meta_box_init');
 
- function ko_band_song_meta_box_init(){
-         add_meta_box(
+function ko_band_song_meta_box_init(){
+        add_meta_box(
         'ko_band_song_meta_box',
         'Song Details',
         'ko_band_song_meta_box',
@@ -64,30 +66,34 @@ add_action('add_meta_boxes', 'ko_band_song_meta_box_init');
         'default'
     );
 
- }
- function ko_band_song_meta_box($post, $box){
+}
+
+function ko_band_song_meta_box($post, $box){
 
     global $post;
+
     // Nonce field to validate form request came from current site
-    wp_nonce_field( plugin_basename( __FILE__ ), 'event_fields' );
+
+    wp_nonce_field( plugin_basename( __FILE__ ), 'song_fields' );
+
     // Get the location data if it's already been entered
         
 
-      $song_title = get_post_meta( $post->ID, 'ko_band_song_title', true );
-      $song_lyric = get_post_meta( $post->ID, 'ko_band_song_lyric', true );
-
-      $song_plarform = get_post_meta( $post->ID, 'ko_band_song_platform', true );
+    $song_title = get_post_meta( $post->ID, 'ko_band_song_title', true );
+    $song_lyric = get_post_meta( $post->ID, 'ko_band_song_lyric', true );
+    $song_plarform = get_post_meta( $post->ID, 'ko_band_song_platform', true );
    
 
 
     // Output the field
-     echo "<p>  Song Title: </p>";
+    echo "<p>  Song Title: </p>";
     echo '<input type="text" name="ko_band_song_title" value="' . esc_textarea( $song_title )  . '" class="widefat" placeholder="Song Title">';  
-       echo "<p>  Song Cover: </p>";
+    
+    echo "<p>  Song Cover: </p>";
     echo '<input type="text" name="ko_band_song_lyric" value="' . esc_textarea( $song_lyric )  . '" class="widefat" placeholder="Song Cover">';    
-  echo "<p>  Song Button: </p>";
+    
+    echo "<p>  Song Button: </p>";
     echo '<input type="submit" class="button-primary" value="Save Changes" " class="widefat">';    
-
 
     echo "<p>  Song Platform: </p>";
     echo '<input type="text" name="ko_band_song_platform" value="' . esc_textarea( $song_plarform )  . '" class="widefat" placeholder="Song Platform">';  
@@ -109,20 +115,16 @@ function ko_band_song_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_song_title'] ) || ! wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
+    wp_verify_nonce(plugin_basename(__FILE__), 'song_fields' );
 
-        return $post_id;
-
-    }
-
-   // Now that we're authenticated, time to save the data.
+    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $song_meta['ko_band_song_title'] = esc_textarea( $_POST['ko_band_song_title'] );
     $song_meta['ko_band_song_lyric'] = esc_textarea( $_POST['ko_band_song_lyric'] );
     $song_meta['ko_band_song_platform'] = esc_textarea( $_POST['ko_band_song_platform'] );
   
 
-      // Cycle through the $events_meta array.
+    // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
     foreach ( $album_meta as $key => $value ) :
 

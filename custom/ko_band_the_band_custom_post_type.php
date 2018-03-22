@@ -2,9 +2,8 @@
 
 
 $args = array(
-  'labels'  =>  array(
-
-            'menu_name' => 'The Band',
+    'labels'  =>  array(
+    'menu_name' => 'The Band',
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -32,6 +31,7 @@ function ko_band_the_band_custom_post_type() {
     'parent_item_colon' => 'Parent The Band'
       );
   $args = array(
+    'menu_icon' => 'dashicons-groups',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -40,22 +40,22 @@ function ko_band_the_band_custom_post_type() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),
-    
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
-  
-  );
+    
+    );
 
-    register_post_type( 'The Band',$args);
- }
+register_post_type( 'The Band',$args);
 
- add_action( 'init', 'ko_band_the_band_custom_post_type' );
+}
+
+add_action( 'init', 'ko_band_the_band_custom_post_type' );
   
 add_action('add_meta_boxes', 'ko_band_the_band_meta_box_init');
 
- function ko_band_the_band_meta_box_init(){
-         add_meta_box(
+function ko_band_the_band_meta_box_init(){
+        add_meta_box(
         'ko_band_the_band_meta_box',
         'The Band Details',
         'ko_band_the_band_meta_box',
@@ -64,36 +64,41 @@ add_action('add_meta_boxes', 'ko_band_the_band_meta_box_init');
         'default'
     );
 
- }
- function ko_band_the_band_meta_box($post, $box){
+}
+function ko_band_the_band_meta_box($post, $box){
 
     global $post;
+
     // Nonce field to validate form request came from current site
-    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+
+    wp_nonce_field( plugin_basename( __FILE__ ), 'band_fields' );
+
     // Get the location data if it's already been entered
         
 
-      $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );
-      $the_band_success = get_post_meta( $post->ID, 'ko_band_the_band_success', true );
-
-      $the_band_award = get_post_meta( $post->ID, 'ko_band_the_band_award', true );
-    
-      $the_band_photo = get_post_meta( $post->ID, 'ko_band_the_band_photo', true );  // Get image ID.
-        $url = wp_get_attachment_url( $the_band_photo ); // Get the URL only.
+    $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );
+    $the_band_success = get_post_meta( $post->ID, 'ko_band_the_band_success', true );
+    $the_band_award = get_post_meta( $post->ID, 'ko_band_the_band_award', true );
+    $the_band_photo = get_post_meta( $post->ID, 'ko_band_the_band_photo', true );  // Get image ID.
+    $url = wp_get_attachment_url( $the_band_photo ); // Get the URL only.
         wp_get_attachment_image( $the_band_photo );  // Get a full image tag.
    
 
 
     // Output the field
-        echo "<p>  The Band Biography: </p>";
-    echo '<input type="text" name="ko_band_the_band_bio" value="' . esc_textarea( $the_band_bio )  . '" class="widefat" placeholder="The Band Biography">';  
-       echo "<p>  The Band Success: </p>";
-    echo '<input type="text" name="ko_band_the_band_success" value="' . esc_textarea( $the_band_success )  . '" class="widefat" placeholder="The Band Success">';    
-        echo "<p>  The Band Award: </p>";
-     echo '<input type="text" name="ko_band_the_band_award" value="' . esc_textarea( $the_band_award )  . '" class="widefat" placeholder="The Band Award">';    
-        echo "<p>  The Band Photo: </p>";
-    echo '<input type="image"  id="upload_image" name="ko_band_the_band_photo" size="36" value="' . esc_textarea( $the_band_photo )  . '" class="widefat" placeholder="The Band Photo">';  
-        echo "<p>  The Band Button: </p>";
+    echo "<p>  The Band Biography: </p>";
+    echo '<input type="text" name="ko_band_the_band_bio" value="' . esc_textarea( $the_band_bio )  . '" class="widefat" placeholder="The Band Biography">';
+
+    echo "<p>  The Band Success: </p>";
+    echo '<input type="text" name="ko_band_the_band_success" value="' . esc_textarea( $the_band_success )  . '" class="widefat" placeholder="The Band Success">'; 
+
+    echo "<p>  The Band Award: </p>";
+    echo '<input type="text" name="ko_band_the_band_award" value="' . esc_textarea( $the_band_award )  . '" class="widefat" placeholder="The Band Award">'; 
+
+    echo "<p>  The Band Photo: </p>";
+    echo '<input type="image"  id="upload_image" name="ko_band_the_band_photo" size="36" value="' . esc_textarea( $the_band_photo )  . '" class="widefat" placeholder="The Band Photo">';
+
+    echo "<p>  The Band Button: </p>";
     echo '<input type="button" id="upload_image_button" name="ko_band_the_band_photo" class="button-primary" value="Upload Image" " class="widefat">';  
   
 
@@ -114,13 +119,9 @@ function ko_band_the_band_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_the_band_bio'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+    wp_verify_nonce(plugin_basename(__FILE__), 'band_fields' );
 
-        return $post_id;
-
-    }
-
-   // Now that we're authenticated, time to save the data.
+    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $the_band_bio['ko_band_the_band_bio'] = esc_textarea( $_POST['ko_band_the_band_bio'] );
     $the_band_success['ko_band_the_band_success'] = esc_textarea( $_POST['ko_band_the_band_success'] );
@@ -128,7 +129,7 @@ function ko_band_the_band_save_meta_box( $post_id, $post ) {
     $the_band_photo['ko_band_the_band_photo'] = esc_textarea( $_POST['ko_band_the_band_photo'] );
   
 
-      // Cycle through the $events_meta array.
+    // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
     foreach ( $the_band_meta as $key => $value ) :
 
