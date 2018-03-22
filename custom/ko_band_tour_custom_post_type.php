@@ -70,7 +70,7 @@ add_action('add_meta_boxes', 'ko_band_tour_meta_box_init');
 
     global $post;
     // Nonce field to validate form request came from current site
-    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+    wp_nonce_field( plugin_basename( __FILE__ ), 'event_fields' );
     // Get the location data if it's already been entered
         
 
@@ -79,9 +79,9 @@ add_action('add_meta_boxes', 'ko_band_tour_meta_box_init');
     $tour_city = get_post_meta( $post->ID, 'ko_band_tour_city', true );
     $tour_address = get_post_meta( $post->ID, 'ko_band_tour_address', true );
     $tour_zipCode = get_post_meta( $post->ID, 'ko_band_tour_zipCode', true );
-     $tour_venue_name = get_post_meta( $post->ID, 'ko_band_tour_venue_name', true );
-     $tour_ticket = get_post_meta( $post->ID, 'ko_band_tour_ticket', true );
-      $tour_ticket_link = get_post_meta( $post->ID, 'ko_band_tour_ticket_link', true );
+    $tour_venue_name = get_post_meta( $post->ID, 'ko_band_tour_venue_name', true );
+    $tour_ticket = get_post_meta( $post->ID, 'ko_band_tour_ticket', true );
+    $tour_ticket_link = get_post_meta( $post->ID, 'ko_band_tour_ticket_link', true );
 
 
     // Output the field
@@ -128,7 +128,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_tour_date'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+    if ( ! isset( $_POST['ko_band_tour_date'] ) || ! wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
 
         return $post_id;
 
