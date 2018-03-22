@@ -2,9 +2,8 @@
 
 
 $args = array(
-  'labels'  =>  array(
-
-            'menu_name' => 'Media',
+    'labels'  =>  array(
+    'menu_name' => 'Media',
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -14,7 +13,9 @@ $args = array(
     'menu_position' => 6,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_media_custom_post_type() {
 
   $label = array(
@@ -31,7 +32,9 @@ function ko_band_media_custom_post_type() {
     'not-found_in_trash' => 'No Media Found in Trash',
     'parent_item_colon' => 'Parent Media'
       );
+
   $args = array(
+    'menu_icon' => 'dashicons-format-gallery',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -45,17 +48,18 @@ function ko_band_media_custom_post_type() {
     'exclude_from_search' =>false,
 
   
-  );
+);
 
-    register_post_type( 'Media',$args);
- }
+register_post_type( 'Media',$args);
 
- add_action( 'init', 'ko_band_media_custom_post_type' );
+}
+
+add_action( 'init', 'ko_band_media_custom_post_type' );
   
 add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
 
- function ko_band_media_meta_box_init(){
-         add_meta_box(
+function ko_band_media_meta_box_init(){
+        add_meta_box(
         'ko_band_media_meta_box',
         'Media Details',
         'ko_band_media_meta_box',
@@ -64,38 +68,46 @@ add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
         'default'
     );
 
- }
- function ko_band_media_meta_box($post, $box){
+}
+function ko_band_media_meta_box($post, $box){
 
     global $post;
+
     // Nonce field to validate form request came from current site
+<<<<<<< HEAD
     wp_nonce_field( plugin_basename( __FILE__ ), 'event_fields' );
+=======
+
+    wp_nonce_field( basename( __FILE__ ), 'media_fields' );
+
+>>>>>>> c2274cf88184522ae4a131c1763fefc0ce5b0bde
     // Get the location data if it's already been entered
         
 
       
     
-      $media_photo = get_post_meta( $post->ID, 'ko_band_media_photo', true );  // Get image ID.
-        $url = wp_get_attachment_url( $media_photo ); // Get the URL only.
+    $media_photo = get_post_meta( $post->ID, 'ko_band_media_photo', true );  // Get image ID.
+    $url = wp_get_attachment_url( $media_photo ); // Get the URL only.
         wp_get_attachment_image( $media_photo );  // Get a full image tag.
       
-      $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );  // Get image ID.
-        $url = wp_get_attachment_url( $media_video ); // Get the URL only.
+    $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );  // Get image ID.
+    $url = wp_get_attachment_url( $media_video ); // Get the URL only.
         wp_get_attachment_image( $media_video );  // Get a full image tag.
    
 
 
     // Output the field
        
-        echo "<p>  Media Photo: </p>";
+    echo "<p>  Media Photo: </p>";
     echo '<input type="image"  id="upload_image" name="ko_band_media_photo" size="36" value="' . esc_html( $media_photo)  . '" class="widefat" placeholder="Media Photo">';  
-        echo "<p> Photo Button: </p>";
+    
+    echo "<p> Photo Button: </p>";
     echo '<input type="button" id="upload_image_button" name="ko_band_media_photo" class="button-primary" value="Upload Image" " class="widefat">'; 
 
-
-     echo "<p>  Media Video: </p>";
+    echo "<p>  Media Video: </p>";
     echo '<input type="video"  id="upload_image" name="ko_band_media_video" size="36" value="' . esc_html( $media_video)  . '" class="widefat" placeholder="Media Video">';  
-        echo "<p> Video Button: </p>";
+    
+    echo "<p> Video Button: </p>";
     echo '<input type="button" id="upload_image_button" name="ko_band_media_video" class="button-primary" value="Upload Video" " class="widefat">';  
   
 
@@ -107,7 +119,7 @@ add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
 function ko_band_media_save_meta_box( $post_id, $post ) {
 
 
- if ( ! current_user_can( 'edit_post', $post_id ) ) {
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
         return $post_id;
 
@@ -116,21 +128,22 @@ function ko_band_media_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
+<<<<<<< HEAD
     if ( ! isset( $_POST['ko_band_media_photo'] ) || ! wp_verify_nonce( $_POST['event_fields'], plugin_basename(__FILE__) ) ) {
+=======
+    wp_verify_nonce(plugin_basename(__FILE__), 'media_fields' );
+>>>>>>> c2274cf88184522ae4a131c1763fefc0ce5b0bde
 
-        return $post_id;
-
-    }
-
-   // Now that we're authenticated, time to save the data.
+    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-   // $media_photo['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
+    // $media_photo['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
     $media_video['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
    
   
 
-      // Cycle through the $events_meta array.
+    // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
+    
     foreach ( $media_meta as $key => $value ) :
 
         // Don't store custom data twice

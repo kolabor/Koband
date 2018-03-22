@@ -2,10 +2,9 @@
 
 
 $args = array(
-  'labels'  =>  array(
-
-            'menu_name' => 'Slides',
-          ),  
+    'labels'  =>  array(
+    'menu_name' => 'Slides',
+    ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
             'create_posts' => 'do_not_allow',
@@ -27,11 +26,12 @@ function ko_band_register_slides() {
     'new_item' => 'New Slides',
     'view_item' => 'View Slides',
     'search_item' => 'Search Slides',
-    'not_found' => 'Mo Slides Found',
+    'not_found' => 'No Slides Found',
     'not-found_in_trash' => 'No Slides Found in Trash',
     'parent_item_colon' => 'Parent Slides'
       );
   $args = array(
+    'menu_icon' => 'dashicons-images-alt',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -40,21 +40,22 @@ function ko_band_register_slides() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
-    
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
   
   );
 
-    register_post_type( 'Slides',$args);
- }
- add_action('init', 'ko_band_register_slides');
+register_post_type( 'Slides',$args);
 
- add_action('add_meta_boxes', 'ko_band_slides_meta_box_init');
+}
 
- function ko_band_slides_meta_box_init(){
-         add_meta_box(
+add_action('init', 'ko_band_register_slides');
+
+add_action('add_meta_boxes', 'ko_band_slides_meta_box_init');
+
+function ko_band_slides_meta_box_init(){
+        add_meta_box(
         'ko_band_slides_meta_box',
         'Slides',
         'ko_band_slides_meta_box',
@@ -63,13 +64,14 @@ function ko_band_register_slides() {
         'default'
     );
 
- }
- function ko_band_slides_meta_box($post, $box){
+}
+
+function ko_band_slides_meta_box($post, $box){
 
     global $post;
     // Nonce field to validate form request came from current site
 
-     wp_nonce_field( plugin_basename( __FILE__), 'event_fields' );
+    wp_nonce_field( plugin_basename( __FILE__), 'slides_fields' );
 
     // Get the location data if it's already been entered
 
@@ -83,14 +85,19 @@ function ko_band_register_slides() {
     // Output the field
     echo "<p>If you want video slider please check here</p>";
     echo '<input type="checkbox" name="ko_band_slides_check" value="' . esc_textarea( $slides_check )  . '" class="widefat">';
+    
     echo "<p>Video holder</p>";
     echo '<input type="text" name="ko_band_slides_video" value="' . esc_textarea( $slides_video )  . '" class="widefat" placeholder="Please paste here embed video">';
+    
     echo"<p>Title</p>";
     echo '<input type="text" name="ko_band_slides_title" value="' . esc_textarea( $slides_title )  . '" class="widefat" placeholder="Text title on slide">';
+    
     echo"<p>Subtitle</p>";
     echo '<input type="text" name="ko_band_slides_subtitle" value="' . esc_textarea( $slides_subtitle )  . '" class="widefat" placeholder="Text subtitle on slide">';
+    
     echo"<p>Button Title</p>";
     echo '<input type="text" name="ko_band_slides_button_title" value="' . esc_textarea( $slides_button_title )  . '" class="widefat" placeholder="Button Title">';
+    
     echo "<p>Button Link</p>";
     echo '<input type="text" name="ko_band_slides_button_link" value="' . esc_textarea( $slides_button_link )  . '" class="widefat" placeholder="Please paste here button link">';
 
@@ -104,20 +111,15 @@ add_action( 'save_post', 'ko_band_slides_save_meta_box' , 1, 2);
 function ko_band_slides_save_meta_box( $post_id, $post ) {
 
 
- if ( ! current_user_can( 'edit_post', $post_id ) ) {
-
+ if( ! current_user_can( 'edit_post', $post_id ) ) {
+     
         return $post_id;
-
     }
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_slides_check'] ) || !  wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
-
-        return $post_id;
-
-    }
+    wp_verify_nonce(plugin_basename(__FILE__), 'slides_fields' );
 
    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
@@ -128,7 +130,7 @@ function ko_band_slides_save_meta_box( $post_id, $post ) {
     $slides_meta['ko_band_slides_button_title'] = esc_textarea( $_POST['ko_band_slides_button_title'] );
     $slides_meta['ko_band_slides_button_link'] = esc_textarea( $_POST['ko_band_slides_button_link'] );
    
-      // Cycle through the $events_meta array.
+    // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
     foreach ( $slides_meta as $key => $value ) :
 
