@@ -8,6 +8,23 @@
 */
 wp_head(); ?>
 
+<<<<<<< HEAD
+<header id="masthead" class="site-header" role="banner">
+	<div class="header-main">
+		<h1 class="site-title">
+			<a href="<?php echo esc_url ( home_url ( '/' ) ); ?>"
+			rel="home"><?php bloginfo( 'name' ); ?>
+			</a>
+		</h1>
+		<?php if (is_category('Band')) { ?>
+			<!-- overlay a pretty guitar on the logo for the band category -->
+			<img id="rainbow"
+				src="<?php bloginfo('template_directory');?>/images/kolabor.png"
+				alt="I Love Rock! " />
+		<?php } ?>
+	</div> <!-- Here ends header-main div -->
+</header>
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,3 +98,4 @@ wp_head(); ?>
 								  <div id="arrow-right" class="arrow"></div>
 								</div>-->
 	</header>
+>>>>>>> 8b017221379a0ded48bf9bf31dc4dccdb8808a72

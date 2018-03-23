@@ -42,7 +42,7 @@ function ko_band_media_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -68,13 +68,16 @@ function ko_band_media_meta_box_init(){
     );
 
 }
+
 function ko_band_media_meta_box($post, $box){
 
     global $post;
 
     // Nonce field to validate form request came from current site
 
+
    wp_nonce_field( basename( __FILE__ ), 'ko_band_media_save_meta_box' );
+
 
     // Get the location data if it's already been entered
         
@@ -84,7 +87,7 @@ function ko_band_media_meta_box($post, $box){
     $media_photo = get_post_meta( $post->ID, 'ko_band_media_photo', true );  // Get image ID.
     $url = wp_get_attachment_url( $media_photo ); // Get the URL only.
         wp_get_attachment_image( $media_photo );  // Get a full image tag.
-      
+
     $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );  // Get image ID.
     $url = wp_get_attachment_url( $media_video ); // Get the URL only.
         wp_get_attachment_image( $media_video );  // Get a full image tag.
@@ -104,6 +107,7 @@ function ko_band_media_meta_box($post, $box){
     
     echo "<p> Video Button: </p>";
     echo '<input type="button" name="ko_band_media_video" class="button-primary" value="Upload Video" " class="widefat">';  
+
   
 
 }
@@ -138,7 +142,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
     } 
 
-if (isset($_POST['ko_band_media_photo'])) {
+    if (isset($_POST['ko_band_media_photo'])) {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
@@ -147,9 +151,10 @@ if (isset($_POST['ko_band_media_photo'])) {
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
+
     $media_meta['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
     $media_meta['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
-   
+
   
 
     // Cycle through the $events_meta array.

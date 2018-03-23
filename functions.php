@@ -14,9 +14,9 @@
 // Define theme version
 
 if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
-	$theme_data = wp_get_theme();
+ $theme_data = wp_get_theme();
 
-	define ( 'KOLABOR_BAND_THEME_VERSION', $theme_data->get( 'Version' ) );
+ define ( 'KOLABOR_BAND_THEME_VERSION', $theme_data->get( 'Version' ) );
 } 
 
 /**

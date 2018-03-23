@@ -42,7 +42,7 @@ function ko_band_tour_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor',  'thumbnail', 'excerpt', 'trackbacks', 'comments', 'revisions', 'post-formats' ),
+  'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -50,6 +50,7 @@ function ko_band_tour_custom_post_type() {
     );
 
 register_post_type( 'Tour',$args);
+
 }
 
 add_action( 'init', 'ko_band_tour_custom_post_type' );
@@ -148,21 +149,13 @@ if (isset($_POST['ko_band_tour_date'])) {
 
         update_post_meta( $post_id, '_ko_band_tour_venue_name',
             sanitizes_text_field ($POST['ko_band_tour_venue_name']));
-
-        update_post_meta( $post_id, '_ko_band_tour_ticketon',
-            sanitizes_text_field ($POST['ko_band_tour_ticketon']));
-
-        update_post_meta( $post_id, '_ko_band_tour_ticket',
-            sanitizes_text_field ($POST['ko_band_tour_ticket']));
-        
-        update_post_meta( $post_id, '_ko_band_tour_ticket_link',
-            sanitizes_text_field ($POST['ko_band_tour_ticket_link']));
     }
 }
 
 */
 
 if ( ! current_user_can( 'edit_post', $post_id ) ) {
+
 
         return $post_id;
 
