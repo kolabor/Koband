@@ -32,6 +32,7 @@ function ko_band_album_custom_post_type() {
     'parent_item_colon' => 'Parent Album'
       );
   $args = array(
+    'menu_icon' => 'dashicons-portfolio',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -39,7 +40,7 @@ function ko_band_album_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
@@ -85,7 +86,7 @@ function ko_band_album_meta_box($post_id, $post ) {
 
 global $post;
    // Nonce field to validate form request came from current site
-   wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+   wp_nonce_field(plugin_basename( __FILE__ ), 'album_fields' );
     // Get the location data if it's already been entered
    
       
@@ -213,7 +214,8 @@ function ko_band_album_save_meta_box( $post_id, $post )
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
- if ( ! isset( $_POST['ko_band_album_date_release'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+ if (isset($_POST['ko_band_album_title'])) {
+     wp_verify_nonce(plugin_basename(__FILE__), 'ko_band_album_save_meta_box' );
 
         return $post_id;
 
@@ -256,7 +258,7 @@ function ko_band_album_save_meta_box( $post_id, $post )
         }
 
     endforeach;
-}
+
 
 
     $old = get_post_meta($post_id, 'ko_band_album_meta_box', true);
@@ -293,11 +295,8 @@ function ko_band_album_save_meta_box( $post_id, $post )
                 $new[$i]['url'] = stripslashes( $urls[$i] ); // and however you want to sanitize
             }
         }
-
         
-            
-
-        
+                 
     if ( !empty( $new ) && $new != $old )
     {
         update_post_meta( $post_id, 'ko_band_album_meta_box', $new );
@@ -310,7 +309,7 @@ function ko_band_album_save_meta_box( $post_id, $post )
 }
 }
 
-
+}
 }
 
 ?>

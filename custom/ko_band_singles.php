@@ -31,7 +31,8 @@ function ko_band_register_singles() {
     'not_found' => 'No Singles Found',
     'not-found_in_trash' => 'No Singles Found in Trash',
     'parent_item_colon' => 'Parent Singles'
-      );
+    );
+  
   $args = array(
     'menu_icon' => 'dashicons-media-audio',
     'labels' => $label,
@@ -41,7 +42,7 @@ function ko_band_register_singles() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
+  'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 

@@ -13,7 +13,9 @@ $args = array(
     'menu_position' => 4,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_tour_custom_post_type() {
 
   $label = array(
@@ -29,7 +31,8 @@ function ko_band_tour_custom_post_type() {
     'not_found' => 'Mo Tour Found',
     'not-found_in_trash' => 'No Tour Found in Trash',
     'parent_item_colon' => 'Parent Tour',
-      );
+    );
+
   $args = array(
     'menu_icon' => 'dashicons-calendar-alt',
     'labels' => $label,
@@ -39,7 +42,7 @@ function ko_band_tour_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor',  'thumbnail', 'excerpt', 'trackbacks', 'comments', 'revisions', 'post-formats' ),
+  'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -126,7 +129,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    if ( ! isset( $_POST['ko_band_tour_date'] ) || ! wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
+    if ( ! isset( $_POST['ko_band_tour_meta_box'] ) || ! wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
 
         return $post_id;
 
