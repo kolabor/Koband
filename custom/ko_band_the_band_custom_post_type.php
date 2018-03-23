@@ -13,7 +13,9 @@ $args = array(
     'menu_position' => 5,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_the_band_custom_post_type() {
 
   $label = array(
@@ -29,7 +31,8 @@ function ko_band_the_band_custom_post_type() {
     'not_found' => 'Mo The Band Found',
     'not-found_in_trash' => 'No The Band Found in Trash',
     'parent_item_colon' => 'Parent The Band'
-      );
+    );
+
   $args = array(
     'menu_icon' => 'dashicons-groups',
     'labels' => $label,
@@ -39,7 +42,7 @@ function ko_band_the_band_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),
+   'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -70,13 +73,9 @@ function ko_band_the_band_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
-<<<<<<< HEAD
-    wp_nonce_field( plugin_basename( __FILE__ ), 'event_fields' );
-=======
 
     wp_nonce_field( plugin_basename( __FILE__ ), 'band_fields' );
 
->>>>>>> c2274cf88184522ae4a131c1763fefc0ce5b0bde
     // Get the location data if it's already been entered
         
 
@@ -123,15 +122,7 @@ function ko_band_the_band_save_meta_box( $post_id, $post ) {
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-<<<<<<< HEAD
-    if ( ! isset( $_POST['ko_band_the_band_bio'] ) || ! wp_verify_nonce( $_POST['event_fields'], plugin_basename(__FILE__) ) ) {
-
-        return $post_id;
-
-    }
-=======
     wp_verify_nonce(plugin_basename(__FILE__), 'band_fields' );
->>>>>>> c2274cf88184522ae4a131c1763fefc0ce5b0bde
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.

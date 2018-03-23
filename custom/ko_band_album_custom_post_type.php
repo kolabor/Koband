@@ -32,6 +32,7 @@ function ko_band_album_custom_post_type() {
     'parent_item_colon' => 'Parent Album'
       );
   $args = array(
+    'menu_icon' => 'dashicons-portfolio',
     'labels' => $label,
     'public' => true,
     'has_archive' => true,
@@ -39,7 +40,7 @@ function ko_band_album_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
@@ -81,22 +82,25 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
     );
 
 
+function ko_band_album_meta_box($post_id, $post ) {
+
+global $post;
    // Nonce field to validate form request came from current site
-    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
+   wp_nonce_field(plugin_basename( __FILE__ ), 'album_fields' );
     // Get the location data if it's already been entered
    
-     
+      
 
       $album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
       $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
-     $album_buy = get_post_meta( $post->ID, 'ko_band_album_buy', true );
-        $album_store_name = get_post_meta( $post->ID, 'ko_band_album_store_name', true );
+      $album_buy = get_post_meta( $post->ID, 'ko_band_album_buy', true );
+     $album_store_name = get_post_meta( $post->ID, 'ko_band_album_store_name', true );
  
  
     // Output the field
  
      echo "<p>  Date Release: </p>";
-    echo '<input type="date" name="ko_band_album_date_release" value="' . esc_datetime( $album_date_release )  . '" class="widefat" >';  
+    echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="widefat" >';  
      
        echo "<p>  Album Length: </p>";
     echo '<input type="range" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="widefat" >';    
@@ -109,9 +113,6 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
 
   
 
-
-  
-  global $post;
     $repeatable_fields = get_post_meta($post->ID, 'ko_band_album_meta_box', true);
     $options = ko_band_get_song_options();
     ?>
@@ -139,9 +140,9 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
             <th width="30%">Song Name</th>
             <th width="30%">Song Length</th>
             <th width="12%">Link</th>
-            <th width="4%"></th>
+            
             <th width="20%">Song Detail</th>
-            <th width="4%"></th>
+            <th width="8%"></th>
         </tr>
     </thead>
     <tbody>
@@ -157,8 +158,7 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
         <td><input type="text" class="widefat" name="length[]" value="<?php if($field['length'] != '') echo esc_attr( $field['length'] ); ?>" /></td>
         <td><input type="file" class="widefat" id="fileupload" name="files[]" value="<?php if($field['files'] != '') echo esc_attr( $field['files'] ); ?>" /></td>
          
-         <td><a href="#0" class="btn btn-info btn-sm remove">
-      <span class="glyphicon glyphicon-upload"></span> Upload File </a></td>
+      
     
         <td><input type="text" class="widefat" name="detail[]" value="<?php if($field['detail'] != '') echo esc_attr( $field['detail'] ); ?>" /></td>
     
@@ -173,9 +173,7 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
         <td><input type="text" class="widefat" name="name[]" /></td>
         <td><input type="text" class="widefat" name="length[]" /></td>
         <td><input type="file" class="widefat" name="files[]" /></td>
-         <td><a href="#0" class="btn btn-info btn-sm remove">
-      <span class="glyphicon glyphicon-upload"></span> Upload File </a></td>
-
+        
         <td><input type="text" class="widefat" name="detail[]" /></td>
     
         <td><a class="button remove-row" href="#">Remove</a></td>
@@ -187,9 +185,7 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
         <td><input type="text" class="widefat" name="name[]" /></td>
         <td><input type="text" class="widefat" name="length[]" /></td>
         <td><input type="file" class="widefat" name="files[]" /></td>
-         <td><a href="#0" class="btn btn-info btn-sm remove">
-      <span class="glyphicon glyphicon-upload"></span> Upload File </a></td>
-
+      
         <td><input type="text" class="widefat" name="detail[]" /></td>
     
         <td><a class="button remove-row" href="#">Remove</a></td>
@@ -200,11 +196,14 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
     <p><a id="add-row" class="button" href="#">Add another</a></p>
  
 <?php 
-
+}
 
 add_action( 'save_post', 'ko_band_album_save_meta_box' , 1, 2);
 
-function ko_band_album_save_meta_box( $post_id, $post ) {
+function ko_band_album_save_meta_box( $post_id, $post ) 
+
+{
+
 
 
  if ( ! current_user_can( 'edit_post', $post_id ) ) {
@@ -215,10 +214,11 @@ function ko_band_album_save_meta_box( $post_id, $post ) {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
-
-    if ( ! isset( $_POST['ko_band_album_date_release'] ) || ! wp_verify_nonce( $_POST['event_fields'], basename(__FILE__) ) ) {
+ if (isset($_POST['ko_band_album_title'])) {
+     wp_verify_nonce(plugin_basename(__FILE__), 'ko_band_album_save_meta_box' );
 
         return $post_id;
+
 
 
    // Now that we're authenticated, time to save the data.
@@ -258,7 +258,7 @@ function ko_band_album_save_meta_box( $post_id, $post ) {
         }
 
     endforeach;
-}
+
 
 
     $old = get_post_meta($post_id, 'ko_band_album_meta_box', true);
@@ -273,28 +273,44 @@ function ko_band_album_save_meta_box( $post_id, $post ) {
     $count = count( $names );
   
     
-    for ( $i = 0; $i < $count; $i++ ) {
-        if ( $names[$i] != '' ) :
+    for ( $i = 0; $i < $count; $i++ )
+     {
+        if ( $names[$i] != '' ) 
+        {
             $new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
-        if ( $length[$i] != '' ) :
+        }
+        if ( $length[$i] != '' ) {
             $new[$i]['length'] = stripslashes( strip_tags( $length[$i] ) );
-        if ( $file[$i] != '' ) :
+        }
+        if ( $file[$i] != '' ) {
+
             $new[$i]['file'] = stripslashes( strip_tags( $file[$i] ) );    
         
             if ( $urls[$i] == 'http://' )
+                {
                 $new[$i]['url'] = '';
+                }
             else
+            {
                 $new[$i]['url'] = stripslashes( $urls[$i] ); // and however you want to sanitize
-        endif;
+            }
+        }
         
+                 
     if ( !empty( $new ) && $new != $old )
+    {
         update_post_meta( $post_id, 'ko_band_album_meta_box', $new );
+    }
     elseif ( empty($new) && $old )
+    {
         delete_post_meta( $post_id, 'ko_band_album_meta_box', $old );
-endif;
+    }
+
 }
 }
 
+}
+}
 
 ?>
 

@@ -13,7 +13,9 @@ $args = array(
     'menu_position' => 4,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_register_slides() {
 
   $label = array(
@@ -29,7 +31,8 @@ function ko_band_register_slides() {
     'not_found' => 'No Slides Found',
     'not-found_in_trash' => 'No Slides Found in Trash',
     'parent_item_colon' => 'Parent Slides'
-      );
+    );
+  
   $args = array(
     'menu_icon' => 'dashicons-images-alt',
     'labels' => $label,
@@ -39,7 +42,7 @@ function ko_band_register_slides() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -123,7 +126,7 @@ function ko_band_slides_save_meta_box( $post_id, $post ) {
 
    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $slides_meta['ko_band_slides_check'] = esc_textarea( $_POST['ko_band_slides_check'] );
+   /* $slides_meta['ko_band_slides_check'] = esc_textarea( $_POST['ko_band_slides_check'] ); */
     $slides_meta['ko_band_slides_video'] = esc_textarea( $_POST['ko_band_slides_video'] );
     $slides_meta['ko_band_slides_title'] = esc_textarea( $_POST['ko_band_slides_title'] );
     $slides_meta['ko_band_slides_subtitle'] = esc_textarea( $_POST['ko_band_slides_subtitle'] );
