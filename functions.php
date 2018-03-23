@@ -20,16 +20,12 @@
 /**
  * Implement the core functions
  */
-<<<<<<< HEAD:function.php
+
 require trailingslashit( get_template_directory() ) . 'inc/core.php'; 
 
 
 
-require 'custom/ko_band_tour_custom_post_type.php';
-require 'custom/ko_band_album_custom_post_type.php';
-require 'custom/ko_band_music_custom_post_type.php';
-require 'custom/ko_band_song_custom_post_type.php';
-=======
+
 
 require 'custom/ko_band_slides.php';
 require 'custom/ko_band_singles.php';
@@ -37,6 +33,6 @@ require 'custom/ko_band_tour_custom_post_type.php';
 require 'custom/ko_band_album_custom_post_type.php';
 require 'custom/ko_band_music_custom_post_type.php';
 require 'custom/ko_band_song_custom_post_type.php'; 
->>>>>>> c2274cf88184522ae4a131c1763fefc0ce5b0bde:functions.php
+
 require 'custom/ko_band_the_band_custom_post_type.php';
 require 'custom/ko_band_media_custom_post_type.php';
