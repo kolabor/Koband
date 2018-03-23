@@ -31,7 +31,8 @@ function ko_band_register_singles() {
     'not_found' => 'No Singles Found',
     'not-found_in_trash' => 'No Singles Found in Trash',
     'parent_item_colon' => 'Parent Singles'
-      );
+    );
+  
   $args = array(
     'menu_icon' => 'dashicons-media-audio',
     'labels' => $label,
@@ -74,7 +75,7 @@ function ko_band_singles_meta_box($post, $box){
 
     // Nonce field to validate form request came from current site
 
-    wp_nonce_field( plugin_basename( __FILE__ ), 'singles_fields' );
+    wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_singles_save_meta_box' );
 
     // Get the location data if it's already been entered
         
@@ -101,17 +102,35 @@ add_action( 'save_post', 'ko_band_singles_save_meta_box' , 1, 2);
 
 function ko_band_singles_save_meta_box( $post_id, $post ) {
 
+/*    if (isset($_POST['ko_band_singles_title'])) {
 
-    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_singles_save_meta_box');
+
+        update_post_meta( $post_id, '_ko_band_singles_title',
+            sanitizes_text_field ($POST['ko_band_singles_title']));
+        update_post_meta( $post_id, '_ko_band_singles_text',
+            sanitizes_text_field ($POST['ko_band_singles_text']));
+        update_post_meta( $post_id, '_ko_band_singles_date',
+            sanitizes_text_field ($POST['ko_band_singles_date']));
+;
+    }
+} 
+
+?>  */
+
+
+if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
         return $post_id;
 
     }
 
+    if (isset($_POST['ko_band_singles_title'])) {
+
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    wp_verify_nonce(plugin_basename(__FILE__), 'singles_fields' );
+    wp_verify_nonce(plugin_basename( __FILE__ ), 'ko_band_singles_save_meta_box' );
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
@@ -152,6 +171,7 @@ function ko_band_singles_save_meta_box( $post_id, $post ) {
         }
 
     endforeach;
+    }
 }
 
-?>
+?>  

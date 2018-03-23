@@ -31,7 +31,7 @@ function ko_band_media_custom_post_type() {
     'not_found' => 'Mo Media Found',
     'not-found_in_trash' => 'No Media Found in Trash',
     'parent_item_colon' => 'Parent Media'
-      );
+    );
 
   $args = array(
     'menu_icon' => 'dashicons-format-gallery',
@@ -43,7 +43,6 @@ function ko_band_media_custom_post_type() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),
-    
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -75,7 +74,7 @@ function ko_band_media_meta_box($post, $box){
 
     // Nonce field to validate form request came from current site
 
-    wp_nonce_field( basename( __FILE__ ), 'media_fields' );
+   wp_nonce_field( basename( __FILE__ ), 'ko_band_media_save_meta_box' );
 
     // Get the location data if it's already been entered
         
@@ -95,16 +94,16 @@ function ko_band_media_meta_box($post, $box){
     // Output the field
        
     echo "<p>  Media Photo: </p>";
-    echo '<input type="image"  id="upload_image" name="ko_band_media_photo" size="36" value="' . esc_html( $media_photo)  . '" class="widefat" placeholder="Media Photo">';  
+    echo '<input type="text"  name="ko_band_media_photo" size="36" value="' . esc_html( $media_photo)  . '" class="widefat" placeholder="Media Photo">';  
     
     echo "<p> Photo Button: </p>";
-    echo '<input type="button" id="upload_image_button" name="ko_band_media_photo" class="button-primary" value="Upload Image" " class="widefat">'; 
+    echo '<input type="button" name="ko_band_media_photo" class="button-primary" value="Upload Image" " class="widefat">'; 
 
     echo "<p>  Media Video: </p>";
-    echo '<input type="video"  id="upload_image" name="ko_band_media_video" size="36" value="' . esc_html( $media_video)  . '" class="widefat" placeholder="Media Video">';  
+    echo '<input type="text"  name="ko_band_media_video" size="36" value="' . esc_html( $media_video)  . '" class="widefat" placeholder="Media Video">';  
     
     echo "<p> Video Button: </p>";
-    echo '<input type="button" id="upload_image_button" name="ko_band_media_video" class="button-primary" value="Upload Video" " class="widefat">';  
+    echo '<input type="button" name="ko_band_media_video" class="button-primary" value="Upload Video" " class="widefat">';  
   
 
 }
@@ -114,22 +113,42 @@ add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
 
 function ko_band_media_save_meta_box( $post_id, $post ) {
 
+  /*
+    if (isset($_POST['ko_band_media_photo'])) {
+        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+            return;
+        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_media_save_meta_box');
 
-    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        update_post_meta( $post_id, '_ko_band_media_photo',
+            sanitizes_text_field ($POST['ko_band_media_photo']));
+        update_post_meta( $post_id, '_ko_band_media_photo',
+            sanitizes_text_field ($POST['ko_band_media_photo']));
+        update_post_meta( $post_id, '_ko_band_media_video',
+            sanitizes_text_field ($POST['ko_band_media_video']));
+        update_post_meta( $post_id, '_ko_band_media_video',
+            sanitizes_text_field ($POST['ko_band_media_video']));
+    }
+}
+
+*/
+
+if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
         return $post_id;
 
-    }
+    } 
+
+if (isset($_POST['ko_band_media_photo'])) {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    wp_verify_nonce(plugin_basename(__FILE__), 'media_fields' );
+    wp_verify_nonce(plugin_basename(__FILE__), 'ko_band_media_save_meta_box' );
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    // $media_photo['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
-    $media_video['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
+    $media_meta['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
+    $media_meta['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
    
   
 
@@ -165,6 +184,7 @@ function ko_band_media_save_meta_box( $post_id, $post ) {
         }
 
     endforeach;
+    } 
 }
 
-?>
+?> 

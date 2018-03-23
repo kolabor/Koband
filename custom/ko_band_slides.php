@@ -13,7 +13,9 @@ $args = array(
     'menu_position' => 4,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_register_slides() {
 
   $label = array(
@@ -29,7 +31,8 @@ function ko_band_register_slides() {
     'not_found' => 'No Slides Found',
     'not-found_in_trash' => 'No Slides Found in Trash',
     'parent_item_colon' => 'Parent Slides'
-      );
+    );
+  
   $args = array(
     'menu_icon' => 'dashicons-images-alt',
     'labels' => $label,
@@ -71,7 +74,7 @@ function ko_band_slides_meta_box($post, $box){
     global $post;
     // Nonce field to validate form request came from current site
 
-    wp_nonce_field( plugin_basename( __FILE__), 'slides_fields' );
+    wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_slides_save_meta_box' );
 
     // Get the location data if it's already been entered
 
@@ -110,25 +113,49 @@ add_action( 'save_post', 'ko_band_slides_save_meta_box' , 1, 2);
 
 function ko_band_slides_save_meta_box( $post_id, $post ) {
 
+/*    if (isset($_POST['ko_band_slides_check'])) {
+        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+            return;
+        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_slides_save_meta_box');
 
- if( ! current_user_can( 'edit_post', $post_id ) ) {
+        update_post_meta( $post_id, '_ko_band_slides_check',
+            sanitizes_text_field ($POST['ko_band_slides_check']));
+        update_post_meta( $post_id, '_ko_band_slides_video',
+            sanitizes_text_field ($POST['ko_band_slides_video']));
+        update_post_meta( $post_id, '_ko_band_slides_title',
+            sanitizes_text_field ($POST['ko_band_slides_title']));
+        update_post_meta( $post_id, '_ko_band_slides_subtitle',
+            sanitizes_text_field ($POST['ko_band_slides_subtitle']));
+        update_post_meta( $post_id, '_ko_band_slides_button_title',
+            sanitizes_text_field ($POST['ko_band_slides_button_title']));
+        update_post_meta( $post_id, '_ko_band_slides_button_link',
+            sanitizes_text_field ($POST['ko_band_slides_button_link']));
+    }
+}
+
+*/
+
+
+if( !current_user_can( 'edit_post', $post_id ) ) {
      
         return $post_id;
     }
 
+    if (isset($_POST['ko_band_slides_check'])) {
+
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    wp_verify_nonce(plugin_basename(__FILE__), 'slides_fields' );
+    wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_slides_save_meta_box' );
 
-   // Now that we're authenticated, time to save the data.
+    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $slides_meta['ko_band_slides_check'] = esc_textarea( $_POST['ko_band_slides_check'] );
     $slides_meta['ko_band_slides_video'] = esc_textarea( $_POST['ko_band_slides_video'] );
     $slides_meta['ko_band_slides_title'] = esc_textarea( $_POST['ko_band_slides_title'] );
     $slides_meta['ko_band_slides_subtitle'] = esc_textarea( $_POST['ko_band_slides_subtitle'] );
     $slides_meta['ko_band_slides_button_title'] = esc_textarea( $_POST['ko_band_slides_button_title'] );
-    $slides_meta['ko_band_slides_button_link'] = esc_textarea( $_POST['ko_band_slides_button_link'] );
+    $slides_meta['ko_band_slides_button_link'] = esc_textarea( $_POST['ko_band_slides_button_link'] ); 
    
     // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
@@ -161,6 +188,8 @@ function ko_band_slides_save_meta_box( $post_id, $post ) {
         }
 
     endforeach;
+    
+    } 
 }
 
-?>
+?> 

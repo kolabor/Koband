@@ -31,7 +31,8 @@ function ko_band_album_custom_post_type() {
     'not_found' => 'Mo Album Found',
     'not-found_in_trash' => 'No Album Found in Trash',
     'parent_item_colon' => 'Parent Album'
-      );
+    );
+  
   $args = array(
     'menu_icon' => 'dashicons-portfolio',
     'labels' => $label,
@@ -42,7 +43,6 @@ function ko_band_album_custom_post_type() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks',  'comments', 'revisions', 'post-formats' ),
-    
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -75,7 +75,7 @@ function ko_band_album_meta_box($post, $box){
 
     // Nonce field to validate form request came from current site
 
-    wp_nonce_field( plugin_basename( __FILE__ ), 'album_fields' );
+    wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box' );
 
     // Get the location data if it's already been entered
         
@@ -104,16 +104,35 @@ add_action( 'save_post', 'ko_band_album_save_meta_box' , 1, 2);
 function ko_band_album_save_meta_box( $post_id, $post ) {
 
 
+/*
+    if (isset($_POST['ko_band_album_title'])) {
+        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+            return;
+        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box');
+
+        update_post_meta( $post_id, '_ko_band_album_title',
+            sanitizes_text_field ($POST['ko_band_album_title']));
+        update_post_meta( $post_id, '_ko_band_album_cover',
+            sanitizes_text_field ($POST['ko_band_album_cover']));
+        update_post_meta( $post_id, '_ko_band_album_name',
+            sanitizes_text_field ($POST['ko_band_album_name']));
+
+    }
+}
+
+*/
 if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
         return $post_id;
 
     }
+ 
+    if (isset($_POST['ko_band_album_title'])) {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
 
-    wp_verify_nonce(plugin_basename(__FILE__), 'album_fields' );
+    wp_verify_nonce(plugin_basename(__FILE__), 'ko_band_album_save_meta_box' );
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
@@ -153,6 +172,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
         }
 
     endforeach;
+    }
 }
 
 ?>

@@ -13,7 +13,9 @@ $args = array(
     'menu_position' => 4,
     'public'    =>  true
 );
+
 //Custom post type function
+
 function ko_band_tour_custom_post_type() {
 
   $label = array(
@@ -29,7 +31,8 @@ function ko_band_tour_custom_post_type() {
     'not_found' => 'Mo Tour Found',
     'not-found_in_trash' => 'No Tour Found in Trash',
     'parent_item_colon' => 'Parent Tour',
-      );
+    );
+
   $args = array(
     'menu_icon' => 'dashicons-calendar-alt',
     'labels' => $label,
@@ -71,7 +74,7 @@ function ko_band_tour_meta_box($post, $box){
 
     // Nonce field to validate form request came from current site
 
-    wp_nonce_field( plugin_basename( __FILE__ ), 'tour_fields' );
+    wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_tour_save_meta_box' );
     
     // Get the location data if it's already been entered
         
@@ -82,6 +85,7 @@ function ko_band_tour_meta_box($post, $box){
     $tour_address = get_post_meta( $post->ID, 'ko_band_tour_address', true );
     $tour_zipCode = get_post_meta( $post->ID, 'ko_band_tour_zipCode', true );
     $tour_venue_name = get_post_meta( $post->ID, 'ko_band_tour_venue_name', true );
+    $tour_ticket = get_post_meta( $post->ID, 'ko_band_tour_ticket', true );
     $tour_ticket = get_post_meta( $post->ID, 'ko_band_tour_ticket', true );
     $tour_ticket_link = get_post_meta( $post->ID, 'ko_band_tour_ticket_link', true );
 
@@ -121,16 +125,56 @@ add_action( 'save_post', 'ko_band_tour_save_meta_box' , 1, 2);
 function ko_band_tour_save_meta_box( $post_id, $post ) {
 
 
-    wp_verify_nonce(plugin_basename(__FILE__), 'tour_fields' );
+/*
+if (isset($_POST['ko_band_tour_date'])) {
+        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE )
+            return;
+        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_tour_save_meta_box');
 
-    // Verify this came from the our screen and with proper authorization,
-    // because save_post can be triggered at other times.
+        update_post_meta( $post_id, '_ko_band_tour_date',
+            sanitizes_text_field ($POST['ko_band_tour_date']));
 
-    if ( ! isset( $_POST['ko_band_tour_date'] ) || ! wp_verify_nonce(plugin_basename(__FILE__),  $_POST['event_fields'] ) ) {
+        update_post_meta( $post_id, '_ko_band_tour_country',
+            sanitizes_text_field ($POST['ko_band_tour_country']));
+
+        update_post_meta( $post_id, '_ko_band_tour_city',
+            sanitizes_text_field ($POST['ko_band_tour_city']));
+
+        update_post_meta( $post_id, '_ko_band_tour_address',
+            sanitizes_text_field ($POST['ko_band_tour_address']));
+
+        update_post_meta( $post_id, '_ko_band_tour_zipCode',
+            sanitizes_text_field ($POST['ko_band_tour_zipCode']));
+
+        update_post_meta( $post_id, '_ko_band_tour_venue_name',
+            sanitizes_text_field ($POST['ko_band_tour_venue_name']));
+
+        update_post_meta( $post_id, '_ko_band_tour_ticketon',
+            sanitizes_text_field ($POST['ko_band_tour_ticketon']));
+
+        update_post_meta( $post_id, '_ko_band_tour_ticket',
+            sanitizes_text_field ($POST['ko_band_tour_ticket']));
+        
+        update_post_meta( $post_id, '_ko_band_tour_ticket_link',
+            sanitizes_text_field ($POST['ko_band_tour_ticket_link']));
+    }
+}
+
+*/
+
+if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
         return $post_id;
 
     }
+
+    if (isset($_POST['ko_band_tour_date'])) {
+
+
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
+
+    wp_verify_nonce(plugin_basename(__FILE__), 'ko_band_tour_save_meta_box' );
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
@@ -174,6 +218,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
         }
 
     endforeach;
+    }
 }
 
-?>
+?>  
