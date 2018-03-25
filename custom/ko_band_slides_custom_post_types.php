@@ -1,5 +1,12 @@
-<?php 
-
+<?php
+/**
+ * Koband Slides custom post type and metabox creation file!
+ *
+ *
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
+ */
 
 $args = array(
     'labels'  =>  array(
