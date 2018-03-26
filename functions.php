@@ -29,12 +29,12 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
 /**
  * Register all neccessary custom post files and their metaboxes
  */
-require 'custom/ko_band_albums_custom_post_type.php';
-require 'custom/ko_band_media_custom_post_type.php';
-require 'custom/ko_band_singles_custom_post_types.php';
-require 'custom/ko_band_slides_custom_post_types.php';
-require 'custom/ko_band_the_band_custom_post_type.php';
-require 'custom/ko_band_tour_custom_post_type.php';
+require 'custom/cpt/ko_band_albums_custom_post_type.php';
+require 'custom/cpt/ko_band_media_custom_post_type.php';
+require 'custom/cpt/ko_band_singles_custom_post_types.php';
+require 'custom/cpt/ko_band_slides_custom_post_types.php';
+require 'custom/cpt/ko_band_the_band_custom_post_type.php';
+require 'custom/cpt/ko_band_tour_custom_post_type.php';
 
 // Load custom css script for admin dashboard
 
@@ -69,6 +69,7 @@ function koband_theme_support () {
 
 
 add_action('after_setup_theme', 'koband_theme_support');
+
 
 
 ?>
