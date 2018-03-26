@@ -12,16 +12,16 @@
 /* Declare Album cpt arguments */
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'Album',
-          ),  
+    'menu_name' => 'Album'
+    ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
-            'create_posts' => 'do_not_allow',
+            'create_posts' => 'do_not_allow'
     ),    
     'map_meta_cap' => true, 
     'menu_position' => 3,
     'public'    =>  true
-);
+    );
 
 /* Register Album custom post type function */
 function ko_band_album_custom_post_type() {
@@ -53,90 +53,60 @@ function ko_band_album_custom_post_type() {
     'supports' => array('title', 'editor', 'thumbnail'),
     'exclude_from_search' =>false,
 
-  
   );
 
 register_post_type( 'Album',$args);
-
-}
-
-add_action( 'init', 'ko_band_album_custom_post_type' );
-
-
-function ko_band_get_song_options() {
-        $options = array (
-        'Youtube' => 'www.youtybe.com',
-        'Vevo' => 'www.vevo.com',
-        'Option 3' => 'option3',
-        'Option 4' => 'option4',
-    );
-    
-    return $options;
-}
-
-
+}  add_action( 'init', 'ko_band_album_custom_post_type' );
   
 add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
 function ko_band_album_meta_box_init(){
          add_meta_box(
-        'ko_band_album_meta_box',
-        'Album Details',
-        'ko_band_album_display_meta_box',
-        'album',
-        'normal',
-        'default'
-    );
-}
+                    'ko_band_album_meta_box', 
+                    'Album Details',
+                     'ko_band_album_display_meta_box', 
+                     'album',
+                     'normal',
+                     'default'
+                     );}
 
 function ko_band_album_display_meta_box() {
-
-
-global $post;
+    global $post;
    // Nonce field to validate form request came from current site
 
-$song_details = get_post_meta($post->ID, 'ko_band_repetable_song_details', true);
-wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
+        $song_details = get_post_meta($post->ID, 'ko_band_repetable_song_details', true);
+        $song_stores = get_post_meta($post->ID, 'ko_band_repetable_song_stores', true);
+        wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
 
     // Get the location data if it's already been entered
+         $album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
+         $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
    
-    
-    /*$album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
-    $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
-    $album_buy = get_post_meta( $post->ID, 'ko_band_album_buy', true );
-    $album_store_name = get_post_meta( $post->ID, 'ko_band_album_store_name', true );
- 
- 
-    // Output the field
- 
-    echo "<p>  Date Release: </p>";
+     // Output the field
+          echo "<p>  Date Release: </p>";
     echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="widefat" >';  
-     
-    echo "<p>  Album Length: </p>";
-    echo '<input type="range" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="widefat" >';    
-
-    echo "<p>  Buy Album: </p>";
-    echo '<input type="text_url" name="ko_band_album_name" value="' . esc_textarea( $album_buy )  . '" class="widefat" >';  
-     
-    echo "<p>  Store Name: </p>";
-    echo '<input type="text" name="ko_band_album_store_name" value="' . esc_textarea( $album_store_name )  . '" class="widefat" placeholder="Store Name">'; */
-
-  
-
-   
-    /*$options = ko_band_get_song_options();*/
-    ?>
-
-   
-    <script type="text/javascript">
-    jQuery(document).ready(function( $ ){
-        $( '#add-row' ).on('click', function() {
-            var row = $( '.empty-row.screen-reader-text' ).clone(true);
-            row.removeClass( 'empty-row screen-reader-text' );
-            row.insertBefore( '#ko_band_album_meta_box_one tbody>tr:last' );
+       echo "<p>  Album Length: </p>";
+    echo '<input type="number" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="widefat" >';    
+?>
+<script type="text/javascript">
+    jQuery(document).ready(function( $ ){ 
+        $( '#add-row-details' ).on('click', function() {
+            var row_details = $( '#ko_band_album_meta_box_one .empty-row-details.screen-reader-text' ).clone(true);
+            row_details.removeClass( '#ko_band_album_meta_box_one .empty-row-details screen-reader-text' );
+            row_details.insertBefore( '#ko_band_album_meta_box_one tbody>tr:last' );
             return false;
         });
-    
-        $( '.remove-row' ).on('click', function() {
+            $( '.remove-row-details' ).on('click', function() {
+            $(this).parents('tr').remove();
+            return false; 
+       });
+
+        $( '#add-row-stores' ).on('click', function() {
+            var row_stores = $( '#ko_band_album_meta_box_store .empty-row-stores.screen-reader-text' ).clone(true);
+            row_stores.removeClass( '#ko_band_album_meta_box_store .empty-row-stores screen-reader-text' );
+            row_stores.insertBefore( '#ko_band_album_meta_box_store tbody>tr:last' );
+            return false;
+        });
+            $( '.remove-row-stores' ).on('click', function() {
             $(this).parents('tr').remove();
             return false;
         });
@@ -148,163 +118,142 @@ wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_bo
         <tr>
             <th width="30%">Song Name</th>
             <th width="30%">Song Length</th>
-
             <th width="20%">Song Detail</th>
             <th width="8%"></th>
         </tr>
     </thead>
     <tbody>
-    <?php
-    
+<?php
     if ( $song_details ) :
-    
-    foreach ( $song_details as $field ) {
-    ?>
+        foreach ( $song_details as $field_details ) {   ?>
     <tr>
-        <td><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></td>
-
-        <td><input type="text" class="widefat" name="length[]" value="<?php if($field['length'] != '') echo esc_attr( $field['length'] ); ?>" /></td>
-       <!--<td><input type="file" class="widefat" id="fileupload" name="files[]" value="<?php if($field['files'] != '') echo esc_attr( $field['files'] ); ?>" /></td>  -->
-        <td><input type="text" class="widefat" name="detail[]" value="<?php if($field['detail'] != '') echo esc_attr( $field['detail'] ); ?>" /></td>
-
-        <td><a class="button remove-row" href="#">Remove</a></td>
+        <td><input type="text" class="widefat" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></td>
+        <td><input type="text" class="widefat" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></td>
+        <td><input type="text" class="widefat" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></td>
+        <td><a class="button remove-row-details" href="#">Remove</a></td>
     </tr>
-    <?php
-    }
-    else :
-    // show a blank one
-    ?>
-    <tr>
-        <td><input type="text" class="widefat" name="name[]" /></td>
-
+    <?php   }
+    else :  // show a blank one ?>
+     <tr>
+        <td><input type="text" class="widefat" name="name-details[]" /></td>
         <td><input type="text" class="widefat" name="length[]" /></td>
         <td><input type="text" class="widefat" name="detail[]" /></td>
-
-    
-        <td><a class="button remove-row" href="#">Remove</a></td>
+        <td><a class="button remove-row-details" href="#">Remove</a></td>
     </tr>
-    <?php endif; ?>
-    
-    <!-- empty hidden one for jQuery -->
-    <tr class="empty-row screen-reader-text">
-        <td><input type="text" class="widefat" name="name[]" /></td>
-
+    <?php endif; ?>    <!-- empty hidden one for jQuery -->
+    <tr class="empty-row-details screen-reader-text">
+        <td><input type="text" class="widefat" name="name-details[]" /></td>
         <td><input type="text" class="widefat" name="length[]" /></td>
         <td><input type="text" class="widefat" name="detail[]" /></td>
-
-    
-        <td><a class="button remove-row" href="#">Remove</a></td>
+        <td><a class="button remove-row-details" href="#">Remove</a></td>
     </tr>
     </tbody>
     </table>
-    
-    <p><a id="add-row" class="button" href="#">Add another</a></p>
- 
-<?php 
+    <p><a id="add-row-details" class="button" href="#">Add another</a></p>
+<!--Song_store-->
+    <table id="ko_band_album_meta_box_store" width="100%">
+    <thead>
+        <tr>
+            <th width="40%">Store Name</th>
+            <th width="40%">Store Link</th>
+            <th width="8%"></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    if ( $song_stores ):
+        foreach ($song_stores as $field_stores ) {    ?>
+    <tr>
+        <td><input type="text" class="widefat" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></td>
+        <td><input type="url" class="widefat" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></td>
+        <td><a class="button remove-row-stores" href="#">Remove</a></td>
+    </tr>
+    <?php      }
+    else :     // show a blank one    ?>
+    <tr>
+        <td><input type="text" class="widefat" name="name-store[]" /></td>
+        <td><input type="url" class="widefat" name="link[]" /></td>
+        <td><a class="button remove-row-stores" href="#">Remove</a></td>
+    </tr>
+    <?php endif; ?>
+        <!-- empty hidden one for jQuery -->
+    <tr class="empty-row-stores screen-reader-text">
+        <td><input type="text" class="widefat" name="name-store[]" /></td>
+        <td><input type="url" class="widefat" name="link[]" /></td>
+        <td><a class="button remove-row-stores" href="#">Remove</a></td>
+    </tr>
+    </tbody>
+    </table>
+    <p><a id="add-row-stores" class="button" href="#">Add another</a></p>
+ <?php 
 }
 
 add_action( 'save_post', 'ko_band_album_save_meta_box' , 1, 2);
-
 function ko_band_album_save_meta_box( $post_id, $post ) 
-
 {
-
-
    if ( ! isset( $_POST['ko_band_album_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_album_save_meta_box_nonce'], 'ko_band_album_save_meta_box_nonce' ) )
             return;
-
     if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
-
-
-
    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-   /* $album_meta['ko_band_album_date_release'] = esc_datetime( $_POST['ko_band_album_date_release'] );
+    $album_meta['ko_band_album_date_release'] = esc_textarea( $_POST['ko_band_album_date_release'] );
     $album_meta['ko_band_album_length'] = esc_html( $_POST['ko_band_album_length'] );
-    $album_meta['ko_band_album_name'] = esc_textarea( $_POST['ko_band_album_name'] );
-    $album_meta['ko_band_album_store_name'] = esc_textarea( $_POST['ko_band_album_store_name'] );
   
-
         foreach ( $album_meta as $key => $value ) :
-
         // Don't store custom data twice
-
         if ( 'revision' === $post->post_type ) {
-
-            return;
-        }
-
+            return;    }
         if ( get_post_meta( $post_id, $key, false ) ) {
-
             // If the custom field already has a value, update it.
             update_post_meta( $post_id, $key, $value );
-
-        } else {
-
+        } else { 
             // If the custom field doesn't have a value, add it.
-            add_post_meta( $post_id, $key, $value);
+            add_post_meta( $post_id, $key, $value);     }
+        if ( ! $value ) { delete_post_meta( $post_id, $key ); }
+    endforeach;
 
-        }
-
-        if ( ! $value ) {
-
-            // Delete the meta key if there's no value
-            delete_post_meta( $post_id, $key );
-
-        }
-
-    endforeach;*/
-
-
-
-
-    $old = get_post_meta($post_id, 'ko_band_repetable_song_details', true);
-    $new = array();
-   // $options = ko_band_get_song_options();
-    if (isset($_POST["name"]))
-    {
-         $names =$_POST['name'];
+    $old_details = get_post_meta($post_id, 'ko_band_repetable_song_details', true);
+    $new_details = array();
+       if (isset($_POST["name-details"])) {   
+         $names_details =$_POST['name-details'];
          $length = $_POST['length'];
          $detail = $_POST['detail'];
-         $count = count( $names );
+         $count = count( $names_details );
+
+         for ( $i = 0; $i < $count; $i++ )    {
+        if ( $names_details[$i] != '' )     {
+            $new_details[$i]['name-details'] = stripslashes( strip_tags( $names_details[$i] ) );
+            $new_details[$i]['length'] = stripslashes( strip_tags( $length[$i] ) );
+            $new_details[$i]['detail'] = stripslashes( strip_tags( $detail[$i] ) );  } 
+       }
+     if ( !empty( $new_details ) && $new_details != $old_details ) { update_post_meta( $post_id, 'ko_band_repetable_song_details', $new_details );}
+     elseif ( empty($new_details) && $old_details ) { delete_post_meta( $post_id, 'ko_band_repetable_song_details', $old_details ); }
     }
    
-     // $file = $_POST['file'];
-    
-   
-  
-    
-    for ( $i = 0; $i < $count; $i++ )
-     {
-        if ( $names[$i] != '' ) 
-        {
-            $new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
-            $new[$i]['length'] = stripslashes( strip_tags( $length[$i] ) );
-            $new[$i]['detail'] = stripslashes( strip_tags( $detail[$i] ) );
-        }
-     }
-       /* if ( $file[$i] != '' ) {
 
-            $new[$i]['file'] = stripslashes( strip_tags( $file[$i] ) );    
-        
-            if ( $urls[$i] == 'http://' )
-                {
-                $new[$i]['url'] = '';
-                }
-            else
-            {
-                $new[$i]['url'] = stripslashes( $urls[$i] ); // and however you want to sanitize
-            }
-        }*/
-        
-                 
-    if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_song_details', $new );}
-    elseif ( empty($new) && $old ) { delete_post_meta( $post_id, 'ko_band_repetable_song_details', $old ); }
+    $old_stores = get_post_meta($post_id, 'ko_band_repetable_song_stores', true);
+    $new_stores = array();
+       if (isset($_POST["name-store"])) {
+         $names_store =$_POST['name-store'];
+         $url = $_POST['link'];
+         $count_stores = count( $names_store ); }
+   
+
+    for ( $i = 0; $i < $count_stores; $i++ ) {
+        if ( $names_store[$i] != '' ) {
+            $new_stores[$i]['name-store'] = stripslashes( strip_tags( $names_store[$i] ) );
+            $new_stores[$i]['link'] = stripslashes( strip_tags( $url[$i] ) );  }
+     }            
+    if ( !empty( $new_stores ) && $new_stores != $old_stores ) { update_post_meta( $post_id, 'ko_band_repetable_song_stores', $new_stores );}
+    elseif ( empty($new_stores) && $old_stores ) { delete_post_meta( $post_id, 'ko_band_repetable_song_stores', $old_stores ); }
 
 }
 
+
 ?>
+
+
 
 
  

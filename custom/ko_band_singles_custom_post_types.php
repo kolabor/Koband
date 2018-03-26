@@ -28,7 +28,7 @@ function ko_band_register_singles() {
   $label = array(
     'name' => 'Singles',
     'singular_name' => 'Singles',
-    'add_new' => 'Add Single',
+    'add_new' => 'Add Singles',
     'all_items' => 'All Singles',
     'add_new_item' => 'Add Singles',
     'edit_item' => 'Edit Singles',
@@ -49,7 +49,7 @@ function ko_band_register_singles() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail', 'excerpt',  'comments', 'revisions', 'post-formats' ),
+    'supports' => array('title', 'editor', 'thumbnail'),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -68,117 +68,178 @@ function ko_band_singles_meta_box_init(){
         add_meta_box(
         'ko_band_singles_meta_box',
         'Singles',
-        'ko_band_singles_meta_box',
+        'ko_band_singles_display_meta_box',
         'singles',
         'normal',
         'default'
     );
 
 }
-
-function ko_band_singles_meta_box($post, $box){
-
+function ko_band_singles_display_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
+$singles_details = get_post_meta($post->ID, 'ko_band_repetable_singles_details', true);
+$singles_stores = get_post_meta($post->ID, 'ko_band_repetable_singles_stores', true);
+wp_nonce_field( 'ko_band_singles_save_meta_box_nonce', 'ko_band_singles_save_meta_box_nonce' );
+   
 
-    wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_singles_save_meta_box' );
+   // Get the loation data if it's already been entered  
+?>
+   <script type="text/javascript">
+    jQuery(document).ready(function( $ ){
+        $( '#add-row-details' ).on('click', function() {
+            var row_details = $( '#ko_band_singles_meta_box_one .empty-row-details.screen-reader-text' ).clone(true);
+            row_details.removeClass( '#ko_band_singles_meta_box_one .empty-row-details screen-reader-text' );
+            row_details.insertBefore( '#ko_band_singles_meta_box_one tbody>tr:last' );
+            return false;
+        });
+            $( '.remove-row-details' ).on('click', function() {
+            $(this).parents('tr').remove();
+            return false; 
+       });
+       $( '#add-row-stores' ).on('click', function() {
+            var row_stores = $( '#ko_band_singles_meta_box_store .empty-row-stores.screen-reader-text' ).clone(true);
+            row_stores.removeClass( '#ko_band_singles_meta_box_store .empty-row-stores screen-reader-text' );
+            row_stores.insertBefore( '#ko_band_singles_meta_box_store tbody>tr:last' );
+            return false;
+        });
+            $( '.remove-row-stores' ).on('click', function() {
+            $(this).parents('tr').remove();
+            return false;
+        });
+    });
+    </script>
+  
+    <table id="ko_band_singles_meta_box_one" width="100%">
+    <thead>
+        <tr>
+            <th width="30%">Single Name</th>
+            <th width="30%">Single Length</th>
+            <th width="20%">Date Release</th>
+            <th width="8%"></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php    
+    if ( $singles_details ) :    
+    foreach ( $singles_details as $field_details ) {     ?>
+    <tr>
+        <td><input type="text" class="widefat" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></td>
+        <td><input type="text" class="widefat" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></td>
+        <td><input type="date" class="widefat" name="daterelease[]" value="<?php if($field_details['daterelease'] != '') echo esc_attr( $field_details['daterelease'] ); ?>" /></td>
 
-    // Get the location data if it's already been entered
-        
+        <td><a class="button remove-row-details" href="#">Remove</a></td>
+    </tr>
+    <?php     }     else :     // show a blank one     ?>
+    <tr>
+        <td><input type="text" class="widefat" name="name-details[]" /></td>
+        <td><input type="text" class="widefat" name="length[]" /></td>
+        <td><input type="date" class="widefat" name="daterelease[]" /></td>
+        <td><a class="button remove-row-details" href="#">Remove</a></td>
+    </tr>
+    <?php endif; ?>
+    <!-- empty hidden one for jQuery -->
+    <tr class="empty-row-details screen-reader-text">
+        <td><input type="text" class="widefat" name="name-details[]" /></td>
 
-    $singles_title = get_post_meta( $post->ID, 'ko_band_singles_title', true );
-    $singles_text = get_post_meta( $post->ID, 'ko_band_singles_text', true );
-    $singles_date = get_post_meta($post->ID, 'ko_band_singles_date', true);
-
-
-    // Output the field
-    echo "<p>Single Title</p>";
-    echo '<input type="text" name="ko_band_singles_title" value="' . esc_textarea( $singles_title )  . '" class="widefat" placeholder="The title of the song">';
-
-    echo "<p>Lyrics</p>";
-    echo '<input type="text" name="ko_band_singles_text" value="' . esc_textarea( $singles_text )  . '" class="widefat" placeholder="Lyrics of the song">';  
-
-    echo "<p>Date</p>";
-    echo '<input type="date" name="ko_band_singles_date" value="' . esc_textarea( $singles_date )  . '" class="widefat" placeholder="Date when the song relased for the first time">';    
-
+        <td><input type="text" class="widefat" name="length[]" /></td>
+        <td><input type="date" class="widefat" name="daterelease[]" /></td>
+        <td><a class="button remove-row-details" href="#">Remove</a></td>
+    </tr>
+    </tbody>
+    </table>
+        <p><a id="add-row-details" class="button" href="#">Add another</a></p>
+   <table id="ko_band_singles_meta_box_stores" width="100%">
+    <thead>
+        <tr>
+            <th width="30%">Store Name</th>
+            <th width="30%">Store Link</th>
+          
+            <th width="8%"></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    
+    if ( $singles_stores ) :    
+    foreach ( $singles_stores as $field_stores ) {
+    ?>
+    <tr>
+        <td><input type="text" class="widefatt" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></td>
+        <td><input type="url" class="widefatt" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></td>
+        <td><a class="button remove-row-stores" href="#">Remove</a></td>
+    </tr>
+    <?php
+    }
+    else :
+    // show a blank one
+    ?>
+    <tr>
+        <td><input type="text" class="widefatt" name="name-store[]" /></td>
+        <td><input type="url" class="widefatt" name="link[]" /></td>
+        <td><a class="button remove-row-stores" href="#">Remove</a></td>
+    </tr>
+    <?php endif; ?>
+        <!-- empty hidden one for jQuery -->
+    <tr class="empty-row-stores screen-reader-text">
+        <td><input type="text" class="widefatt" name="name-store[]" /></td>
+        <td><input type="url" class="widefatt" name="link[]" /></td>
+        <td><a class="button remove-row-stores" href="#">Remove</a></td>
+    </tr>
+    </tbody>
+    </table>
+        <p><a id="add-row-stores" class="button" href="#">Add another</a></p>
+ 
+<?php 
 }
-
 
 add_action( 'save_post', 'ko_band_singles_save_meta_box' , 1, 2);
 
+
 function ko_band_singles_save_meta_box( $post_id, $post ) {
 
-/*    if (isset($_POST['ko_band_singles_title'])) {
-
-        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_singles_save_meta_box');
-
-        update_post_meta( $post_id, '_ko_band_singles_title',
-            sanitizes_text_field ($POST['ko_band_singles_title']));
-        update_post_meta( $post_id, '_ko_band_singles_text',
-            sanitizes_text_field ($POST['ko_band_singles_text']));
-        update_post_meta( $post_id, '_ko_band_singles_date',
-            sanitizes_text_field ($POST['ko_band_singles_date']));
-;
-    }
-} 
-
-?>  */
-
-
-if ( ! current_user_can( 'edit_post', $post_id ) ) {
-
-        return $post_id;
-
-    }
-
-    if (isset($_POST['ko_band_singles_title'])) {
-
-    // Verify this came from the our screen and with proper authorization,
-    // because save_post can be triggered at other times.
-
-    wp_verify_nonce(plugin_basename( __FILE__ ), 'ko_band_singles_save_meta_box' );
-
-    // Now that we're authenticated, time to save the data.
-    // This sanitizes the data from the field and saves it into an array $events_meta.
-    $singles_meta['ko_band_singles_title'] = esc_textarea( $_POST['ko_band_singles_title'] );
-    $singles_meta['ko_band_singles_text'] = esc_textarea( $_POST['ko_band_singles_text'] );
-    $singles_meta['ko_band_singles_date'] = esc_textarea( $_POST['ko_band_singles_date'] );
-
-  
-
-    // Cycle through the $events_meta array.
-    // Note, in this example we just have one item, but this is helpful if you have multiple.
-    foreach ( $singles_meta as $key => $value ) :
-
-        // Don't store custom data twice
-
-        if ( 'revision' === $post->post_type ) {
+        if ( ! isset( $_POST['ko_band_singles_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_singles_save_meta_box_nonce'], 'ko_band_singles_save_meta_box_nonce' ) )
 
             return;
-        }
 
-        if ( get_post_meta( $post_id, $key, false ) ) {
+          if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
+ 
+    $old_details = get_post_meta($post_id, 'ko_band_repetable_singles_details', true);
+    $new_details = array();
+       if (isset($_POST["name-details"]))    {
+         $names_details =$_POST['name-details'];
+         $length = $_POST['length'];
+         $daterelease = $_POST['daterelease'];
+         $count_details = count( $names_details );
+    }       
+    for ( $i = 0; $i < $count_details; $i++ )     {
+        if ( $names_details[$i] != '' )         {
+            $new_details[$i]['name-details'] = stripslashes( strip_tags( $names_details[$i] ) );
+            $new_details[$i]['length'] = stripslashes( strip_tags( $length[$i] ) );
+            $new_details[$i]['daterelease'] = stripslashes( strip_tags( $daterelease[$i] ) );        }
+     }
+    if ( !empty( $new_details ) && $new_details != $old_details ) { update_post_meta( $post_id, 'ko_band_repetable_singles_details', $new_details );}
+    elseif ( empty($new_details) && $old_details ) { delete_post_meta( $post_id, 'ko_band_repetable_singles_details', $old_details ); }
+ 
+  $old_stores = get_post_meta($post_id, 'ko_band_repetable_singles_stores', true);
+    $new_stores = array();
+       if (isset($_POST["name-store"]))    {
+         $names_stores =$_POST['name-store'];
+         $url = $_POST['link'];
+        $count_stores = count( $names_stores );  
+          }
+    for ( $i = 0; $i < $count_stores; $i++ )  {
+        if ( $names_stores[$i] != '' )    {
+            $new_stores[$i]['name-store'] = stripslashes( strip_tags( $names_stores[$i] ) );
+            $new_stores[$i]['link'] = stripslashes( strip_tags( $url[$i] ) );       }
+     }
+    if ( !empty( $new_stores ) && $new_stores != $old_stores ) { update_post_meta( $post_id, 'ko_band_repetable_singles_stores', $new_stores );}
+    elseif ( empty($new_stores) && $old_stores ) { delete_post_meta( $post_id, 'ko_band_repetable_singles_stores', $old_stores ); }
 
-            // If the custom field already has a value, update it.
-            update_post_meta( $post_id, $key, $value );
-
-        } else {
-
-            // If the custom field doesn't have a value, add it.
-            add_post_meta( $post_id, $key, $value);
-
-        }
-
-        if ( ! $value ) {
-
-            // Delete the meta key if there's no value
-            delete_post_meta( $post_id, $key );
-
-        }
-
-    endforeach;
-    }
 }
 
 ?>  
+
+
+
