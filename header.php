@@ -8,7 +8,7 @@
 */
 wp_head(); ?>
 
-<<<<<<< HEAD
+
 <header id="masthead" class="site-header" role="banner">
 	<div class="header-main">
 		<h1 class="site-title">
@@ -24,7 +24,7 @@ wp_head(); ?>
 		<?php } ?>
 	</div> <!-- Here ends header-main div -->
 </header>
-=======
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,4 +98,4 @@ wp_head(); ?>
 								  <div id="arrow-right" class="arrow"></div>
 								</div>-->
 	</header>
->>>>>>> 8b017221379a0ded48bf9bf31dc4dccdb8808a72
+

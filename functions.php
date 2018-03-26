@@ -38,4 +38,12 @@ wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . '/admin/ko_b
 	
 } */
 
+function theme_setup(){
+	add_theme_support('post_thumbnail');
+	set_post_thumbnail_size(900, 600);
+	add_theme_support('post_formats', array('gallery'));
+
+}
+add_action('after_setup_theme', 'theme_setup');
+
 

@@ -98,11 +98,10 @@ function ko_band_the_band_meta_box($post, $box){
     echo "<p>  The Band Award: </p>";
     echo '<input type="text" name="ko_band_the_band_award" value="' . esc_textarea( $the_band_award )  . '" class="widefat" placeholder="The Band Award">'; 
 
-   /* echo "<p>  The Band Photo: </p>";
-    echo '<input type="image"  id="upload_image" name="ko_band_the_band_photo" size="36" value="' . esc_textarea( $the_band_photo )  . '" class="widefat" placeholder="The Band Photo">';
+    echo "<p>  The Band Photo: </p>";
+    echo '<input type="file"  id="upload_image" name="ko_band_the_band_photo" size="36" value="' . esc_html( $the_band_photo )  . '" class="widefat" placeholder="The Band Photo">';
 
-    echo "<p>  The Band Button: </p>";
-    echo '<input type="button" id="upload_image_button" class="button-primary" value="Upload Image" " class="widefat">';   */
+   
   
 
 }
@@ -152,7 +151,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     $the_band_meta['ko_band_the_band_bio'] = esc_textarea( $_POST['ko_band_the_band_bio'] );
     $the_band_meta['ko_band_the_band_success'] = esc_textarea( $_POST['ko_band_the_band_success'] );
     $the_band_meta['ko_band_the_band_award'] = esc_textarea( $_POST['ko_band_the_band_award'] );
-    /*$the_band_photo['ko_band_the_band_photo'] = esc_textarea( $_POST['ko_band_the_band_photo'] ); */
+    $the_band_photo['ko_band_the_band_photo'] = esc_html( $_POST['ko_band_the_band_photo'] ); 
   
 
     // Cycle through the $events_meta array.

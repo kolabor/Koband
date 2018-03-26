@@ -115,7 +115,7 @@ wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box' );
     echo '<input type="range" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="widefat" >';    
 
     echo "<p>  Buy Album: </p>";
-    echo '<input type="url" name="ko_band_album_name" value="' . esc_url( $album_buy )  . '" class="widefat" >';  
+    echo '<input type="text_url" name="ko_band_album_name" value="' . esc_textarea( $album_buy )  . '" class="widefat" >';  
      
     echo "<p>  Store Name: </p>";
     echo '<input type="text" name="ko_band_album_store_name" value="' . esc_textarea( $album_store_name )  . '" class="widefat" placeholder="Store Name">'; 
@@ -148,7 +148,7 @@ wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box' );
         <tr>
             <th width="30%">Song Name</th>
             <th width="30%">Song Length</th>
-            <th width="12%">Link</th>
+            <th width="12%">Image Upload</th>
             
             <th width="20%">Song Detail</th>
             <th width="8%"></th>
@@ -164,10 +164,10 @@ wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box' );
     <tr>
         <td><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></td>
 
-        <td><input type="text" class="widefat" name="length[]" value="<?php if($field['length'] != '') echo esc_attr( $field['length'] ); ?>" /></td>
+        <td><input type="range" class="widefat" name="length[]" value="<?php if($field['length'] != '') echo esc_attr( $field['length'] ); ?>" /></td>
         <td><input type="file" class="widefat" id="fileupload" name="files[]" value="<?php if($field['files'] != '') echo esc_attr( $field['files'] ); ?>" /></td>
          
-        <td><input type="text" class="widefat" name="detail[]" value="<?php if($field['detail'] != '') echo esc_attr( $field['detail'] ); ?>" /></td>
+        <td><input type="text_url" class="widefat" name="detail[]" value="<?php if($field['detail'] != '') echo esc_attr( $field['detail'] ); ?>" /></td>
     
         <td><a class="button remove-row" href="#">Remove</a></td>
     </tr>
@@ -178,10 +178,10 @@ wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box' );
     ?>
     <tr>
         <td><input type="text" class="widefat" name="name[]" /></td>
-        <td><input type="text" class="widefat" name="length[]" /></td>
+        <td><input type="range" class="widefat" name="length[]" /></td>
         <td><input type="file" class="widefat" name="files[]" /></td>
         
-        <td><input type="text" class="widefat" name="detail[]" /></td>
+        <td><input type="text_url" class="widefat" name="detail[]" /></td>
     
         <td><a class="button remove-row" href="#">Remove</a></td>
     </tr>
@@ -190,10 +190,10 @@ wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_album_save_meta_box' );
     <!-- empty hidden one for jQuery -->
     <tr class="empty-row screen-reader-text">
         <td><input type="text" class="widefat" name="name[]" /></td>
-        <td><input type="text" class="widefat" name="length[]" /></td>
+        <td><input type="range" class="widefat" name="length[]" /></td>
         <td><input type="file" class="widefat" name="files[]" /></td>
       
-        <td><input type="text" class="widefat" name="detail[]" /></td>
+        <td><input type="text_url" class="widefat" name="detail[]" /></td>
     
         <td><a class="button remove-row" href="#">Remove</a></td>
     </tr>
@@ -234,7 +234,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $album_meta['ko_band_album_date_release'] = esc_datetime( $_POST['ko_band_album_date_release'] );
     $album_meta['ko_band_album_length'] = esc_html( $_POST['ko_band_album_length'] );
-    $album_meta['ko_band_album_name'] = esc_url( $_POST['ko_band_album_name'] );
+    $album_meta['ko_band_album_name'] = esc_textarea( $_POST['ko_band_album_name'] );
     $album_meta['ko_band_album_store_name'] = esc_textarea( $_POST['ko_band_album_store_name'] );
   
 

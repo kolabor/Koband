@@ -117,7 +117,7 @@ function ko_band_tour_meta_box($post, $box){
     echo '<input type="radio" name="ko_band_tour_ticket" value2="' . esc_textarea( $tour_ticket )  . '" class="widefat" >';
 
     echo "<p> Ticet Link</p>";
-    echo '<input type="text" name="ko_band_tour_ticket_link" value="'. esc_textarea($tour_ticket_link )  . '" class="widefat" placeholder="Ticket Link">';
+    echo '<input type="text_url" name="ko_band_tour_ticket_link" value="'. esc_textarea($tour_ticket_link )  . '" class="widefat" placeholder="Ticket Link">';
 }
 
 

@@ -85,29 +85,22 @@ function ko_band_media_meta_box($post, $box){
       
     
     $media_photo = get_post_meta( $post->ID, 'ko_band_media_photo', true );  // Get image ID.
-    $url = wp_get_attachment_url( $media_photo ); // Get the URL only.
-        wp_get_attachment_image( $media_photo );  // Get a full image tag.
-
-    $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );  // Get image ID.
-    $url = wp_get_attachment_url( $media_video ); // Get the URL only.
-        wp_get_attachment_image( $media_video );  // Get a full image tag.
    
+    $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );  // Get image ID.
+ 
 
 
     // Output the field
        
     echo "<p>  Media Photo: </p>";
-    echo '<input type="text"  name="ko_band_media_photo" size="36" value="' . esc_html( $media_photo)  . '" class="widefat" placeholder="Media Photo">';  
+    echo '<input type="file"  name="ko_band_media_photo" size="36" value="' . esc_html( $media_photo)  . '" class="widefat" placeholder="Media Photo">';  
     
-    echo "<p> Photo Button: </p>";
-    echo '<input type="button" name="ko_band_media_photo" class="button-primary" value="Upload Image" " class="widefat">'; 
+   
 
     echo "<p>  Media Video: </p>";
-    echo '<input type="text"  name="ko_band_media_video" size="36" value="' . esc_html( $media_video)  . '" class="widefat" placeholder="Media Video">';  
+    echo '<input type="oembed"  name="ko_band_media_video" size="36" value="' . esc_url( $media_video)  . '" class="widefat" placeholder="Media Video">';  
     
-    echo "<p> Video Button: </p>";
-    echo '<input type="button" name="ko_band_media_video" class="button-primary" value="Upload Video" " class="widefat">';  
-
+    
   
 
 }
@@ -153,7 +146,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     // This sanitizes the data from the field and saves it into an array $events_meta.
 
     $media_meta['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
-    $media_meta['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
+    $media_meta['ko_band_media_video'] = esc_url( $_POST['ko_band_media_video'] );
 
   
 
