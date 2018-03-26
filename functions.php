@@ -1,16 +1,23 @@
 <?php
 /**
- * Functions and definitions
+ * KOBAND Functions and definitions
  *
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
  *
- * @package Catch Themes
- * @subpackage Kolabor Band
- * @since Kolabo Band 0.3
+ * When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
+ *
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
  *
  *
  *
  */
-
 // Define theme version
 
 if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
@@ -19,17 +26,15 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
  define ( 'KOLABOR_BAND_THEME_VERSION', $theme_data->get( 'Version' ) );
 } 
 
-
 /**
- * Implement the custom post types functions
+ * Register all neccessary custom post files and their metaboxes
  */
-
-require 'custom/ko_band_slides.php';
-require 'custom/ko_band_singles.php';
-require 'custom/ko_band_tour_custom_post_type.php';
-require 'custom/ko_band_album_custom_post_type.php';
-require 'custom/ko_band_the_band_custom_post_type.php';
+require 'custom/ko_band_albums_custom_post_type.php';
 require 'custom/ko_band_media_custom_post_type.php';
+require 'custom/ko_band_singles_custom_post_types.php';
+require 'custom/ko_band_slides_custom_post_types.php';
+require 'custom/ko_band_the_band_custom_post_type.php';
+require 'custom/ko_band_tour_custom_post_type.php';
 
 // Load custom css script for admin dashboard
 
