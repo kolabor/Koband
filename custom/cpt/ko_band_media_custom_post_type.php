@@ -61,7 +61,10 @@ register_post_type( 'Media',$args);
 }
 
 add_action( 'init', 'ko_band_media_custom_post_type' );
-  
+
+
+
+
 add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
 
 function ko_band_media_meta_box_init(){
@@ -87,8 +90,55 @@ function ko_band_media_meta_box($post, $box){
 
 
     // Get the location data if it's already been entered
-        
 
+
+    $media_check_image = get_post_meta( $post->ID, 'ko_band_media_check_image', true );
+    $media_check_video = get_post_meta( $post->ID, 'ko_band_media_check_video', true );
+    $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );
+
+
+    echo "<p>Please select Image or Video</p>";
+    
+    echo "<p>Image</p>";
+    echo '<input type="checkbox" name="ko_band_media_check_image" value="' . esc_textarea( $media_check_image )  . '" class="widefat">';
+
+    echo "<p>Video</p>";
+    echo '<input type="checkbox" name="ko_band_media_check_video" value="' . esc_textarea( $media_check_video) . '"class="widefat">';
+
+?>
+        <input id="upload_image" type="text" size="36" name="upload_image" value="" />
+        <input id="upload_image_button" type="button" value="Upload Image" />
+
+<?php
+
+
+    
+    
+function my_admin_scripts() {    
+    wp_enqueue_script('media-upload');
+    wp_enqueue_script('thickbox');
+    wp_register_script('my-upload', WP_PLUGIN_URL.'admin/ko_band_admin.js', array('jquery','media-upload','thickbox'));
+    wp_enqueue_script('my-upload');
+}
+
+function my_admin_styles() {
+
+    wp_enqueue_style('thickbox');
+}
+
+// better use get_current_screen(); or the global $current_screen
+if (isset($_GET['page']) && $_GET['page'] == 'my_plugin_page') {
+
+    add_action('admin_enqueue_scripts', 'my_admin_scripts');
+    add_action('admin_enqueue_styles', 'my_admin_styles');
+}
+    echo "<p>Select Video provider</p>"; 
+
+
+    echo"<p>Video Link</p>";
+    echo '<input type="text" name="ko_band_media_video" value="' . esc_textarea( $media_video )  . '" class="widefat" placeholder="Paste here video url">';
+        
+/*
       
     
     $media_photo = get_post_meta( $post->ID, 'ko_band_media_photo', true );  // Get image ID.
@@ -118,30 +168,22 @@ function ko_band_media_meta_box($post, $box){
   
 
 }
+*/
 
 
 add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
 
 function ko_band_media_save_meta_box( $post_id, $post ) {
 
-  /*
-    if (isset($_POST['ko_band_media_photo'])) {
+  
+    if (isset($_POST['ko_band_media_check_image'])) {
         if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
             return;
         wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_media_save_meta_box');
 
-        update_post_meta( $post_id, '_ko_band_media_photo',
-            sanitizes_text_field ($POST['ko_band_media_photo']));
-        update_post_meta( $post_id, '_ko_band_media_photo',
-            sanitizes_text_field ($POST['ko_band_media_photo']));
-        update_post_meta( $post_id, '_ko_band_media_video',
-            sanitizes_text_field ($POST['ko_band_media_video']));
-        update_post_meta( $post_id, '_ko_band_media_video',
-            sanitizes_text_field ($POST['ko_band_media_video']));
-    }
 }
 
-*/
+
 
 if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
@@ -149,7 +191,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
     } 
 
-    if (isset($_POST['ko_band_media_photo'])) {
+    if (isset($_POST['ko_band_media_check_image'])) {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
@@ -159,7 +201,8 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
 
-    $media_meta['ko_band_media_photo'] = esc_html( $_POST['ko_band_media_photo'] );
+    $media_meta['ko_band_media_check_image'] = esc_html( $_POST['ko_band_media_check_image'] );
+    $media_meta['ko_band_media_check_video'] = esc_html( $_POST['ko_band_media_check_video'] );
     $media_meta['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
 
   
@@ -196,7 +239,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
         }
 
     endforeach;
-    } 
+        } 
+    }
 }
-
 ?> 
