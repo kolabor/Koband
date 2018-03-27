@@ -4,3 +4,18 @@
 	margin-bottom: 50px;
 	margin-top: 25px;
 }
+#gallery-metabox-list li {
+  float: left;
+  width: 150px;
+  text-align: center;
+  margin: 10px 10px 10px 0;
+  cursor: move;
+}
+
+.post-type-album .inside p {
+	width: 30%;
+}
+
+.ko_band_album_date_release {
+	width: 30%;
+}

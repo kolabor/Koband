@@ -52,7 +52,7 @@ function load_custom_wp_admin_script() {
         wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
         wp_enqueue_script( 'custom_wp_admin_js' );
 }
-add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_script' );
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_script' ); 
 
 // Theme Support
 
@@ -68,8 +68,7 @@ function koband_theme_support () {
 }
 
 
-add_action('after_setup_theme', 'koband_theme_support');
-
+add_action('after_setup_theme', 'koband_theme_support'); 
 
 
 ?>

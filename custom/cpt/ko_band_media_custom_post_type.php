@@ -62,179 +62,230 @@ register_post_type( 'Media',$args);
 
 add_action( 'init', 'ko_band_media_custom_post_type' );
 
+function ko_band_enqueue_admin_scripts($hook) {
 
+    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
 
+          wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
+          wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
+
+function add_gallery_metabox($post_type) {
+
+    $types = array('custom-post-type');
+    {
+      add_meta_box(
+        'gallery-metabox',
+        'Gallery',
+        'gallery_meta_callback',
+        $post_type,
+        'normal',
+        'high'
+        );
+    }
+}
+
+add_action('add_meta_boxes', 'add_gallery_metabox');
+
+function gallery_meta_callback($post) {
+
+    wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
+    $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
+    ?>
+
+    <table class="form-table">
+      <tr><td>
+        <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)">Add image(s)</a>
+
+        <ul id="gallery-metabox-list">
+        <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
+
+        <li>
+                <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
+                <img class="image-preview" src="<?php echo $image[0]; ?>">
+                <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br>
+                <small><a class="remove-image" href="#">Remove image</a></small>
+        </li>
+
+        <?php endforeach; endif; ?>
+
+        </ul>
+
+      </td></tr>
+    </table>
+  <?php }
+
+function gallery_meta_save($post_id) {
+
+        if (!isset($_POST['gallery_meta_nonce']) || !wp_verify_nonce($_POST['gallery_meta_nonce'], basename(__FILE__))) return;
+        if (!current_user_can('edit_post', $post_id)) return;
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+        if(isset($_POST['vdw_gallery_id'])) {
+          update_post_meta($post_id, 'vdw_gallery_id', $_POST['vdw_gallery_id']);
+    } 
+
+    else {
+
+        delete_post_meta($post_id, 'vdw_gallery_id');
+    }
+}
+
+add_action('save_post', 'gallery_meta_save');
+
+//------------------------------------------------Gallery Image Metabox Ends Here---------------------------------------------
+
+//-----------------------------------------------Gallery Video Metabox Starts Here----------------------------------------
+
+function ko_band_get_video_options() {
+    $options = array (
+        'Youtube'       => 'option1',
+        'Vimeo'         => 'option2',
+        'DailyMotion'   => 'option3',
+        'Others'        => 'option4',
+    );
+    
+    return $options;
+}
 
 add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
 
 function ko_band_media_meta_box_init(){
         add_meta_box(
         'ko_band_media_meta_box',
-        'Media Details',
-        'ko_band_media_meta_box',
+        'Video',
+        'ko_band_media_display_meta_box',
         'media',
         'normal',
         'default'
     );
 
 }
-
-function ko_band_media_meta_box($post, $box){
-
+function ko_band_media_display_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
-
-
-   wp_nonce_field( basename( __FILE__ ), 'ko_band_media_save_meta_box' );
-
-
-    // Get the location data if it's already been entered
-
-
-    $media_check_image = get_post_meta( $post->ID, 'ko_band_media_check_image', true );
-    $media_check_video = get_post_meta( $post->ID, 'ko_band_media_check_video', true );
-    $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );
-
-
-    echo "<p>Please select Image or Video</p>";
-    
-    echo "<p>Image</p>";
-    echo '<input type="checkbox" name="ko_band_media_check_image" value="' . esc_textarea( $media_check_image )  . '" class="widefat">';
-
-    echo "<p>Video</p>";
-    echo '<input type="checkbox" name="ko_band_media_check_video" value="' . esc_textarea( $media_check_video) . '"class="widefat">';
-
+//$singles_details = get_post_meta($post->ID, 'ko_band_repetable_singles_details', true);
+$video_field = get_post_meta($post->ID, 'ko_band_repetable_video_field', true);
+$options = ko_band_get_video_options();
+wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_box_nonce' );
+   
 ?>
-        <input id="upload_image" type="text" size="36" name="upload_image" value="" />
-        <input id="upload_image_button" type="button" value="Upload Image" />
-
-<?php
-
-
+ <script type="text/javascript">
+    jQuery(document).ready(function( $ ){
+        $( '#add-row' ).on('click', function() {
+            var row = $( '.empty-row.screen-reader-text' ).clone(true);
+            row.removeClass( 'empty-row screen-reader-text' );
+            row.insertBefore( '#ko_band_repetable_video_field_one tbody>tr:last' );
+            return false;
+        });
     
-    
-function my_admin_scripts() {    
-    wp_enqueue_script('media-upload');
-    wp_enqueue_script('thickbox');
-    wp_register_script('my-upload', WP_PLUGIN_URL.'admin/ko_band_admin.js', array('jquery','media-upload','thickbox'));
-    wp_enqueue_script('my-upload');
-}
-
-function my_admin_styles() {
-
-    wp_enqueue_style('thickbox');
-}
-
-// better use get_current_screen(); or the global $current_screen
-if (isset($_GET['page']) && $_GET['page'] == 'my_plugin_page') {
-
-    add_action('admin_enqueue_scripts', 'my_admin_scripts');
-    add_action('admin_enqueue_styles', 'my_admin_styles');
-}
-    echo "<p>Select Video provider</p>"; 
-
-
-    echo"<p>Video Link</p>";
-    echo '<input type="text" name="ko_band_media_video" value="' . esc_textarea( $media_video )  . '" class="widefat" placeholder="Paste here video url">';
-        
-/*
-      
-    
-    $media_photo = get_post_meta( $post->ID, 'ko_band_media_photo', true );  // Get image ID.
-   
-    $media_video = get_post_meta( $post->ID, 'ko_band_media_video', true );  // Get image ID.
- 
-
-
-    // Output the field
-       
-    echo "<p>  Media Photo: </p>";
-    echo '<input type="file"  name="ko_band_media_photo" size="36" value="' . esc_html( $media_photo)  . '" class="widefat" placeholder="Media Photo">';  
-    
-   
-
-    echo "<p>  Media Video: </p>";
-    echo '<input type="oembed"  name="ko_band_media_video" size="36" value="' . esc_url( $media_video)  . '" class="widefat" placeholder="Media Video">';  
-    
-    
+        $( '.remove-row' ).on('click', function() {
+            $(this).parents('tr').remove();
+            return false;
+        });
+    });
+    </script>
   
+      <table id="ko_band_repetable_video_field_one" width="100%">
+    <thead>
+       <tr>
+            <th width="40%">Video Link</th>
+            <th width="12%">Select</th>
+            <th width="8%"></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    
+    if ( $video_field ) :    
+    foreach ( $video_field as $field) {
+    ?>
+    <tr>
+            <td><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></td>
+            <td>
+                    <select name="select[]">
+                    <?php foreach ( $options as $label => $value ) : ?>
+                    <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
+                    <?php endforeach; ?>
+                    </select>
+            </td>
+        <td><a class="button remove-row" href="#">Remove</a></td>
+    </tr>
+    <?php
+    }
+    else :
+    // show a blank one
+    ?>
+        <tr>
 
+            <td><input type="url" class="widefat" name="link[]" /></td>
+            <td>
+                    <select name="select[]">
+                    <?php foreach ( $options as $label => $value ) : ?>
+                    <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+                    <?php endforeach; ?>
+                    </select>
+            </td>
+            <td><a class="button remove-row" href="#">Remove</a></td>
+        </tr>
+    <?php endif; ?>
+        <!-- empty hidden one for jQuery -->
+        <tr class="empty-row screen-reader-text">
+
+            <td><input type="url" class="widefat" name="link[]" /></td>
+            <td>
+                    <select name="select[]">
+                    <?php foreach ( $options as $label => $value ) : ?>
+                    <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+                    <?php endforeach; ?>
+                    </select>
+            </td>
+            <td><a class="button remove-row" href="#">Remove</a></td>
+        </tr>
+    </tbody>
+    </table>
+        <p><a id="add-row" class="button" href="#">Add another</a></p>
+ 
+<?php 
 }
-*/
-
 
 add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
 
+
 function ko_band_media_save_meta_box( $post_id, $post ) {
 
-  
-    if (isset($_POST['ko_band_media_check_image'])) {
-        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-            return;
-        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_media_save_meta_box');
-
-}
-
-
-
-if ( ! current_user_can( 'edit_post', $post_id ) ) {
-
-        return $post_id;
-
-    } 
-
-    if (isset($_POST['ko_band_media_check_image'])) {
-
-    // Verify this came from the our screen and with proper authorization,
-    // because save_post can be triggered at other times.
-
-    wp_verify_nonce(plugin_basename(__FILE__), 'ko_band_media_save_meta_box' );
-
-    // Now that we're authenticated, time to save the data.
-    // This sanitizes the data from the field and saves it into an array $events_meta.
-
-
-    $media_meta['ko_band_media_check_image'] = esc_html( $_POST['ko_band_media_check_image'] );
-    $media_meta['ko_band_media_check_video'] = esc_html( $_POST['ko_band_media_check_video'] );
-    $media_meta['ko_band_media_video'] = esc_html( $_POST['ko_band_media_video'] );
-
-
-  
-
-    // Cycle through the $events_meta array.
-    // Note, in this example we just have one item, but this is helpful if you have multiple.
-    
-    foreach ( $media_meta as $key => $value ) :
-
-        // Don't store custom data twice
-
-        if ( 'revision' === $post->post_type ) {
+        if ( ! isset( $_POST['ko_band_media_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_media_save_meta_box_nonce'], 'ko_band_media_save_meta_box_nonce' ) )
 
             return;
-        }
 
-        if ( get_post_meta( $post_id, $key, false ) ) {
+        if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
+ 
 
-            // If the custom field already has a value, update it.
-            update_post_meta( $post_id, $key, $value );
 
-        } else {
+ 
+    $old = get_post_meta($post_id, 'ko_band_repetable_video_field', true);
+    $new= array();
+       if (isset($_POST["link"]))    {
 
-            // If the custom field doesn't have a value, add it.
-            add_post_meta( $post_id, $key, $value);
+            $url = $_POST['link'];
+            $selects = $_POST['select'];
+            $count = count( $url );  
+            }
+    for ( $i = 0; $i < $count; $i++ )  {
+        if ( $url[$i] != '' )    {
 
-        }
-
-        if ( ! $value ) {
-
-            // Delete the meta key if there's no value
-            delete_post_meta( $post_id, $key );
-
-        }
-
-    endforeach;
-        } 
+            $new[$i]['link'] = stripslashes( strip_tags( $url[$i] ) );   
+            if ( in_array( $selects[$i], $options ) )
+                $new[$i]['select'] = $selects[$i];
+            else
+                $new[$i]['select'] = '';    }
     }
+    if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_video_field', $new );}
+    elseif ( empty($new) && $old ) { delete_post_meta( $post_id, 'ko_band_repetable_video_field', $old ); }
+
 }
-?> 
+
+?>
