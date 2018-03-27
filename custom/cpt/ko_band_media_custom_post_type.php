@@ -62,18 +62,9 @@ register_post_type( 'Media',$args);
 
 add_action( 'init', 'ko_band_media_custom_post_type' );
 
-function ko_band_enqueue_admin_scripts($hook) {
+// Gallery Images function
 
-    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
-
-          wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
-          wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
-    }
-}
-
-add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
-
-function add_gallery_metabox($post_type) {
+function ko_band_gallery_metabox($post_type) {
 
     $types = array('custom-post-type');
     {
@@ -87,8 +78,19 @@ function add_gallery_metabox($post_type) {
         );
     }
 }
+add_action('add_meta_boxes', 'ko_band_gallery_metabox');
 
-add_action('add_meta_boxes', 'add_gallery_metabox');
+function ko_band_enqueue_admin_scripts($hook) {
+
+    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+
+          wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
+          wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
+
 
 function gallery_meta_callback($post) {
 

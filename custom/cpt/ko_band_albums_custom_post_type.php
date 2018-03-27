@@ -56,18 +56,23 @@ function ko_band_album_custom_post_type() {
   );
 
 register_post_type( 'Album',$args);
-}  add_action( 'init', 'ko_band_album_custom_post_type' );
+}  
+
+add_action( 'init', 'ko_band_album_custom_post_type' );
   
-add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
+
 function ko_band_album_meta_box_init(){
-         add_meta_box(
-                    'ko_band_album_meta_box', 
-                    'Album Details',
-                     'ko_band_album_display_meta_box', 
-                     'album',
-                     'normal',
-                     'default'
-                     );}
+        add_meta_box(
+            'ko_band_album_meta_box', 
+            'Album Details',
+            'ko_band_album_display_meta_box', 
+            'album',
+            'normal',
+            'default'
+            );
+}
+
+add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
 
 function ko_band_album_display_meta_box() {
     global $post;
@@ -77,15 +82,15 @@ function ko_band_album_display_meta_box() {
         $song_stores = get_post_meta($post->ID, 'ko_band_repetable_song_stores', true);
         wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
 
-    // Get the location data if it's already been entered
+// Get the location data if it's already been entered
          $album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
          $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
-   
-     // Output the field
-          echo "<p>  Date Release: </p>";
-    echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="widefat" >';  
-       echo "<p>  Album Length: </p>";
-    echo '<input type="number" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="widefat" >';    
+
+// Output the field
+        echo "<p>  Date Release: </p>";
+        echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="albumrelease" >';   
+        echo "<p>Album Length</p>";
+        echo '<input type="number" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="albumlength" >';    
 ?>
 <script type="text/javascript">
     jQuery(document).ready(function( $ ){ 
@@ -111,15 +116,15 @@ function ko_band_album_display_meta_box() {
             return false;
         });
     });
-    </script>
+</script>
   
-    <table id="ko_band_album_meta_box_one" width="100%">
+    <table id="ko_band_album_meta_box_one">
     <thead>
         <tr>
-            <th width="30%">Song Name</th>
-            <th width="30%">Song Length</th>
-            <th width="20%">Song Detail</th>
-            <th width="8%"></th>
+            <th>Song Name</th>
+            <th>Song Length</th>
+            <th>Song Detail</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -127,36 +132,36 @@ function ko_band_album_display_meta_box() {
     if ( $song_details ) :
         foreach ( $song_details as $field_details ) {   ?>
     <tr>
-        <td><input type="text" class="widefat" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></td>
-        <td><input type="text" class="widefat" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></td>
-        <td><input type="text" class="widefat" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></td>
+        <td><input type="text" class="songname" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></td>
+        <td><input type="text" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></td>
+        <td><input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></td>
         <td><a class="button remove-row-details" href="#">Remove</a></td>
     </tr>
     <?php   }
     else :  // show a blank one ?>
      <tr>
-        <td><input type="text" class="widefat" name="name-details[]" /></td>
-        <td><input type="text" class="widefat" name="length[]" /></td>
-        <td><input type="text" class="widefat" name="detail[]" /></td>
+        <td><input type="text" class="songname" name="name-details[]" /></td>
+        <td><input type="text" class="songlength" name="length[]" /></td>
+        <td><input type="text" class="songdetails" name="detail[]" /></td>
         <td><a class="button remove-row-details" href="#">Remove</a></td>
     </tr>
     <?php endif; ?>    <!-- empty hidden one for jQuery -->
     <tr class="empty-row-details screen-reader-text">
-        <td><input type="text" class="widefat" name="name-details[]" /></td>
-        <td><input type="text" class="widefat" name="length[]" /></td>
-        <td><input type="text" class="widefat" name="detail[]" /></td>
+        <td><input type="text" class="songname" name="name-details[]" /></td>
+        <td><input type="text" class="songlength" name="length[]" /></td>
+        <td><input type="text" class="songdetails" name="detail[]" /></td>
         <td><a class="button remove-row-details" href="#">Remove</a></td>
     </tr>
     </tbody>
     </table>
     <p><a id="add-row-details" class="button" href="#">Add another</a></p>
 <!--Song_store-->
-    <table id="ko_band_album_meta_box_store" width="100%">
+    <table id="ko_band_album_meta_box_store">
     <thead>
         <tr>
-            <th width="40%">Store Name</th>
-            <th width="40%">Store Link</th>
-            <th width="8%"></th>
+            <th>Store Name</th>
+            <th>Store Link</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -164,22 +169,22 @@ function ko_band_album_display_meta_box() {
     if ( $song_stores ):
         foreach ($song_stores as $field_stores ) {    ?>
     <tr>
-        <td><input type="text" class="widefat" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></td>
-        <td><input type="url" class="widefat" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></td>
+        <td><input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></td>
+        <td><input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></td>
         <td><a class="button remove-row-stores" href="#">Remove</a></td>
     </tr>
     <?php      }
     else :     // show a blank one    ?>
     <tr>
-        <td><input type="text" class="widefat" name="name-store[]" /></td>
-        <td><input type="url" class="widefat" name="link[]" /></td>
+        <td><input type="text" class="storename" name="name-store[]" /></td>
+        <td><input type="url" class="storelink" name="link[]" /></td>
         <td><a class="button remove-row-stores" href="#">Remove</a></td>
     </tr>
     <?php endif; ?>
         <!-- empty hidden one for jQuery -->
     <tr class="empty-row-stores screen-reader-text">
-        <td><input type="text" class="widefat" name="name-store[]" /></td>
-        <td><input type="url" class="widefat" name="link[]" /></td>
+        <td><input type="text" class="storename" name="name-store[]" /></td>
+        <td><input type="url" class="storelink" name="link[]" /></td>
         <td><a class="button remove-row-stores" href="#">Remove</a></td>
     </tr>
     </tbody>

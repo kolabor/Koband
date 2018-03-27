@@ -1,19 +1,21 @@
-.inside p {
+$kolabor1: #00a8a8;
+$kolabor2: #6d5e82;
+$cpfwidth: 30%;
+.inside p{
   font-weight: bold;
-  display: inline;
+  display:inline;
   margin-bottom: 15px;
   padding: 10px;
-  width: 30%; }
-
+  width: $cpfwidth;
+}
 .albumrelease, .albumlength {
-  margin-top: 10px; }
-
+  margin-top: 10px;
+}
 #ko_band_album_meta_box.postbox .inside {
-  background: #f9f9f9;
-  border: 2px #6d5e82; }
-
+  background: #f9f9f9  ;
+  border: 2px $kolabor2;
+}
 #ko_band_album_meta_box_one, #ko_band_album_meta_box_store {
   padding: 15px;
-  padding-left: 0px; }
-
-/*# sourceMappingURL=ko_band_admin.css.map */
+  padding-left: 0px;
+}
