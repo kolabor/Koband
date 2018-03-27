@@ -161,6 +161,7 @@ function ko_band_album_display_meta_box() {
         <tr>
             <th>Store Name</th>
             <th>Store Link</th>
+            <th width="30%"></th>
             <th></th>
         </tr>
     </thead>
@@ -176,15 +177,15 @@ function ko_band_album_display_meta_box() {
     <?php      }
     else :     // show a blank one    ?>
     <tr>
-        <td><input type="text" class="storename" name="name-store[]" /></td>
-        <td><input type="url" class="storelink" name="link[]" /></td>
+        <td><input type="text" class="storename" name="name-store[]" style="width:237px; " /></td>
+        <td><input type="url" class="storelink" name="link[]" style="width:237px; " /></td>
         <td><a class="button remove-row-stores" href="#">Remove</a></td>
     </tr>
     <?php endif; ?>
         <!-- empty hidden one for jQuery -->
     <tr class="empty-row-stores screen-reader-text">
-        <td><input type="text" class="storename" name="name-store[]" /></td>
-        <td><input type="url" class="storelink" name="link[]" /></td>
+        <td><input type="text" class="storename" name="name-store[]" style="width:237px; " /></td>
+        <td><input type="url" class="storelink" name="link[]" style="width:237px; "  /></td>
         <td><a class="button remove-row-stores" href="#">Remove</a></td>
     </tr>
     </tbody>

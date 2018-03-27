@@ -80,11 +80,11 @@ function ko_band_singles_display_meta_box($post, $box){
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
      // Output the field
         echo "<p> Singles Name: </p>";
-    echo '<input type="text" name="ko_band_singles_name" value="' . esc_textarea( $singles_name )  . '" class="widefat" >';   
+    echo '<input type="text" name="ko_band_singles_name" value="' . esc_textarea( $singles_name )  . '" class="singlename" >';   
        echo "<p> Singles Length: </p>";
-    echo '<input type="number" name="ko_band_singles_length" value="' . esc_attr( $singles_length )  . '" class="widefat" >';    
+    echo '<input type="number" name="ko_band_singles_length" value="' . esc_attr( $singles_length )  . '" class="singlelength" >';    
         echo "<p> Date Release: </p>";
-    echo '<input type="date" name="ko_band_singles_date_release" value="' . esc_attr( $singles_date_release )  . '" class="widefat" >';  
+    echo '<input type="date" name="ko_band_singles_date_release" value="' . esc_attr( $singles_date_release )  . '" class="singledate" >';  
    // Get the loation data if it's already been entered  
 ?>
  <script type="text/javascript">
@@ -101,7 +101,7 @@ function ko_band_singles_display_meta_box($post, $box){
         });
     });
     </script>
-        <table id="ko_band_repetable_singles_stores_one" width="100%">
+        <table id="ko_band_repetable_singles_stores_one" width="98%">
     <thead>
        <tr>
             <th width="40%">Store Name</th>

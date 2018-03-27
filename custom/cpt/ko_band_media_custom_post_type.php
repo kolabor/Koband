@@ -72,7 +72,7 @@ function ko_band_gallery_metabox($post_type) {
         'gallery-metabox',
         'Gallery',
         'gallery_meta_callback',
-        $post_type,
+        'media',
         'normal',
         'high'
         );
@@ -92,8 +92,8 @@ function ko_band_enqueue_admin_scripts($hook) {
 add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
 
 
-function gallery_meta_callback($post) {
-
+function gallery_meta_callback() {
+global $post;
     wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
     ?>
@@ -191,7 +191,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     });
     </script>
   
-      <table id="ko_band_repetable_video_field_one" width="100%">
+      <table id="ko_band_repetable_video_field_one" width="70%">
     <thead>
        <tr>
             <th width="40%">Video Link</th>
@@ -208,7 +208,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <tr>
             <td><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></td>
             <td>
-                    <select name="select[]">
+                    <select name="select[]"   style="width: 100%;">
                     <?php foreach ( $options as $label => $value ) : ?>
                     <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
                     <?php endforeach; ?>
@@ -225,7 +225,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 
             <td><input type="url" class="widefat" name="link[]" /></td>
             <td>
-                    <select name="select[]">
+                    <select name="select[]"  style="width: 100%;">
                     <?php foreach ( $options as $label => $value ) : ?>
                     <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                     <?php endforeach; ?>
@@ -238,8 +238,8 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         <tr class="empty-row screen-reader-text">
 
             <td><input type="url" class="widefat" name="link[]" /></td>
-            <td>
-                    <select name="select[]">
+            <td >
+                    <select name="select[]"  style="width: 100%;">
                     <?php foreach ( $options as $label => $value ) : ?>
                     <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                     <?php endforeach; ?>

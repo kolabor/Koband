@@ -93,23 +93,23 @@ function ko_band_slides_meta_box($post, $box){
     $slides_button_link = get_post_meta( $post->ID, 'ko_band_slides_button_link', true );
 
     // Output the field
-    echo "<p>If you want video slider please check here</p>";
-    echo '<input type="checkbox" name="ko_band_slides_check" value="' . esc_textarea( $slides_check )  . '" class="widefat">';
+    echo "<p>If you want video slider please check here:</br></p>";
+    echo '<input type="checkbox" name="ko_band_slides_check" value="' . esc_textarea( $slides_check )  . '" class="slidecheck" ></br>';
     
-    echo "<p>Video holder</p>";
-    echo '<input type="text" name="ko_band_slides_video" value="' . esc_textarea( $slides_video )  . '" class="widefat" placeholder="Please paste here embed video">';
+    echo "<p>Video holder:</p>";
+    echo '<input type="text" name="ko_band_slides_video" value="' . esc_textarea( $slides_video )  . '" class="slidevideo" style"width:35%;"placeholder="Please paste here embed video"></br>';
     
-    echo"<p>Title</p>";
-    echo '<input type="text" name="ko_band_slides_title" value="' . esc_textarea( $slides_title )  . '" class="widefat" placeholder="Text title on slide">';
+    echo"<p>Title:</p>";
+    echo '<input type="text" name="ko_band_slides_title" value="' . esc_textarea( $slides_title )  . '" class="slidetitle" placeholder="Text title on slide">';
     
-    echo"<p>Subtitle</p>";
-    echo '<input type="text" name="ko_band_slides_subtitle" value="' . esc_textarea( $slides_subtitle )  . '" class="widefat" placeholder="Text subtitle on slide">';
+    echo"<p>Subtitle:</p>";
+    echo '<input type="text" name="ko_band_slides_subtitle" value="' . esc_textarea( $slides_subtitle )  . '" class="slidesub" placeholder="Text subtitle on slide"></br>';
     
-    echo"<p>Button Title</p>";
-    echo '<input type="text" name="ko_band_slides_button_title" value="' . esc_textarea( $slides_button_title )  . '" class="widefat" placeholder="Button Title">';
+    echo"<p>Title:</p>";
+    echo '<input type="text" name="ko_band_slides_button_title" value="' . esc_textarea( $slides_button_title )  . '" class="slidebutton" placeholder="Button Title">';
     
-    echo "<p>Button Link</p>";
-    echo '<input type="text" name="ko_band_slides_button_link" value="' . esc_textarea( $slides_button_link )  . '" class="widefat" placeholder="Please paste here button link">';
+    echo"<p>Link:</p>";
+    echo '<input type="text" name="ko_band_slides_button_link" value="' . esc_textarea( $slides_button_link )  . '" class="slidebuttonlink" placeholder="Please paste here button link">';
 
 
 
