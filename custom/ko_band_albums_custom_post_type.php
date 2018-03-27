@@ -1,6 +1,6 @@
 <?php
 /**
- * Koband Albums custom post type and metabox creation file!
+ * Koband Albums custom post type and metabox file!
  *
  *
  * @package Wordpress 
@@ -61,18 +61,6 @@ register_post_type( 'Album',$args);
 }
 
 add_action( 'init', 'ko_band_album_custom_post_type' );
-
-
-function ko_band_get_song_options() {
-        $options = array (
-        'Youtube' => 'www.youtybe.com',
-        'Vevo' => 'www.vevo.com',
-        'Option 3' => 'option3',
-        'Option 4' => 'option4',
-    );
-    
-    return $options;
-}
 
 
   
@@ -186,7 +174,7 @@ wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_bo
         <td><input type="text" class="widefat" name="name[]" /></td>
         <td><input type="text" class="widefat" name="length[]" /></td>
         <td><input type="text" class="widefat" name="detail[]" /></td>
-    
+    0
         <td><a class="button remove-row" href="#">Remove</a></td>
     </tr>
     </tbody>
@@ -263,8 +251,6 @@ function ko_band_album_save_meta_box( $post_id, $post )
          $detail = $_POST['detail'];
          $count = count( $names );
     }
-   
-     // $file = $_POST['file'];
     
    
   
@@ -278,19 +264,6 @@ function ko_band_album_save_meta_box( $post_id, $post )
             $new[$i]['detail'] = stripslashes( strip_tags( $detail[$i] ) );
         }
      }
-       /* if ( $file[$i] != '' ) {
-
-            $new[$i]['file'] = stripslashes( strip_tags( $file[$i] ) );    
-        
-            if ( $urls[$i] == 'http://' )
-                {
-                $new[$i]['url'] = '';
-                }
-            else
-            {
-                $new[$i]['url'] = stripslashes( $urls[$i] ); // and however you want to sanitize
-            }
-        }*/
         
                  
     if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_song_details', $new );}
