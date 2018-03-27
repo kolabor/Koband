@@ -36,8 +36,6 @@ require 'custom/cpt/ko_band_singles_custom_post_types.php';
 require 'custom/cpt/ko_band_slides_custom_post_types.php';
 require 'custom/cpt/ko_band_the_band_custom_post_type.php';
 require 'custom/cpt/ko_band_tour_custom_post_type.php';
-
-
-
+require 'custom/options/ko_band_options.php';
 
 ?>

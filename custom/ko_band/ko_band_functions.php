@@ -45,11 +45,63 @@ function ko_band_theme_support () {
 
 	add_theme_support('post-thumbnails');
 
+	//Menu
+
+	register_nav_menus(array(
+		'primary' => __('Primary Menu'),
+		'footer' => __('Footer Menu')
+	));
+
 	// Add theme support Post Format Support
 
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
 }
 add_action('after_setup_theme', 'ko_band_theme_support'); 
+
+//Widget Locations
+function init_widgets($id){
+	register_sidebar(array(
+		'name' => 'Sidebar',
+		'id' => 'sidebar',
+		'before_widget' => '<duv  class="side-widgets">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+	register_sidebar(array(
+		'name' => 'Widgets 1',
+		'id' => 'widgets_1',
+		'before_widget' => '<duv  class="side-widgets_1">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+	register_sidebar(array(
+		'name' => 'Widgets 2',
+		'id' => 'widgets_2',
+		'before_widget' => '<duv  class="side-widgets_2">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+	register_sidebar(array(
+		'name' => 'Widgets 3',
+		'id' => 'widgets_3',
+		'before_widget' => '<duv  class="side-widgets_3">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+	register_sidebar(array(
+		'name' => 'Widgets 4',
+		'id' => 'widgets_4',
+		'before_widget' => '<duv  class="side-widgets_4">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+}
+add_action('widgets_init', 'init_widgets');
 
 
 

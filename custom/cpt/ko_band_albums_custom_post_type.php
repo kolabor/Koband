@@ -51,6 +51,7 @@ function ko_band_album_custom_post_type() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor', 'thumbnail'),
+    'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
   );
