@@ -72,7 +72,7 @@ function ko_band_gallery_metabox($post_type) {
         'gallery-metabox',
         'Gallery',
         'gallery_meta_callback',
-        $post_type,
+        'media',
         'normal',
         'high'
         );

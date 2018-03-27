@@ -48,7 +48,8 @@ function ko_band_theme_support () {
 	//Menu
 
 	register_nav_menus(array(
-		'primary' => __('Primary Menu')
+		'primary' => __('Primary Menu'),
+		'footer' => __('Footer Menu')
 	));
 
 	// Add theme support Post Format Support
