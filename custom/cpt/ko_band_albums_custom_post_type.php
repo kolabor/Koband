@@ -235,14 +235,14 @@ function ko_band_album_save_meta_box( $post_id, $post )
     $old_stores = get_post_meta($post_id, 'ko_band_repetable_song_stores', true);
     $new_stores = array();
        if (isset($_POST["name-store"])) {
-         $names_store =$_POST['name-store'];
+         $names_stores =$_POST['name-store'];
          $url = $_POST['link'];
-         $count_stores = count( $names_store ); }
+         $count_stores = count( $names_stores ); }
    
 
     for ( $i = 0; $i < $count_stores; $i++ ) {
-        if ( $names_store[$i] != '' ) {
-            $new_stores[$i]['name-store'] = stripslashes( strip_tags( $names_store[$i] ) );
+        if ( $names_stores[$i] != '' ) {
+            $new_stores[$i]['name-store'] = stripslashes( strip_tags( $names_stores[$i] ) );
             $new_stores[$i]['link'] = stripslashes( strip_tags( $url[$i] ) );  }
      }            
     if ( !empty( $new_stores ) && $new_stores != $old_stores ) { update_post_meta( $post_id, 'ko_band_repetable_song_stores', $new_stores );}
