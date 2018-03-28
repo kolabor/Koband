@@ -98,6 +98,14 @@ global $post;
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
     ?>
 
+    <div class="container">
+        <div class="row">
+            <div class="">
+        </div>
+    </div>
+
+
+
 
     <table class="form-table">
       <tr><td>
