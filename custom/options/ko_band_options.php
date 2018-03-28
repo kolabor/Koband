@@ -12,18 +12,18 @@
 function ko_band_customize_register( $wp_customize )
 {
    //All our sections, settings, and controls will be added here
-  	$wp_customize->add_section('ko_band_colors', array(
+  	$wp_customize->add_section('ko_band_footer', array(
 
-        'title' => __('Colors', 'koband'),
-        'description' => 'Modify the theme colors'
+        'title' => __('Footer', 'koband'),
+        'description' => 'Modify the theme footer'
     ));
-    $wp_customize->add_setting('background_color', array(
-        'default' => '#fff',
+    $wp_customize->add_setting('footer-nav', array(
+        'default' => '',
     ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'background_color', array(
-        'label' => __('Edit Background Color', 'koband'),
-        'section' => 'ko_band_colors',
-        'settings' => 'background_color'
+    $wp_customize->add_control(new WP_Customize_Footer_Control($wp_customize,'footer-nav', array(
+        'label' => __('Footer Edit', 'koband'),
+        'section' => 'ko_band_footer',
+        'settings' => 'footer-nav'
     )));
 }
 add_action( 'customize_register', 'ko_band_customize_register' );

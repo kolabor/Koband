@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'Slides',
+    'menu_name' => __('Slides', 'koband')
     ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -26,18 +26,18 @@ $args = array(
 function ko_band_register_slides() {
 
   $label = array(
-    'name' => 'Slides',
-    'singular_name' => 'Slides',
-    'add_new' => 'Add Slide',
-    'all_items' => 'All Slides',
-    'add_new_item' => 'Add Slides',
-    'edit_item' => 'Edit Slides',
-    'new_item' => 'New Slides',
-    'view_item' => 'View Slides',
-    'search_item' => 'Search Slides',
-    'not_found' => 'No Slides Found',
-    'not-found_in_trash' => 'No Slides Found in Trash',
-    'parent_item_colon' => 'Parent Slides'
+    'name' => __('Slides', 'koband'),
+    'singular_name' => __('Slides', 'koband'),
+    'add_new' => __('Add Slide', 'koband'),
+    'all_items' => __('All Slides', 'koband'),
+    'add_new_item' => __('Add Slides','koband'),
+    'edit_item' => __('Edit Slides', 'koband'),
+    'new_item' => __('New Slides', 'koband'),
+    'view_item' => __('View Slides','koband'),
+    'search_item' => __('Search Slides', 'koband'),
+    'not_found' => __('No Slides Found', 'koband'),
+    'not-found_in_trash' => __('No Slides Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent Slides', 'koband')
     );
   
   $args = array(
@@ -56,7 +56,7 @@ function ko_band_register_slides() {
   
   );
 
-register_post_type( 'Slides',$args);
+register_post_type( __('Slides', 'koband'),$args);
 
 }
 
@@ -67,7 +67,7 @@ add_action('add_meta_boxes', 'ko_band_slides_meta_box_init');
 function ko_band_slides_meta_box_init(){
         add_meta_box(
         'ko_band_slides_meta_box',
-        'Slides',
+        __('Slides','koband'),
         'ko_band_slides_meta_box',
         'slides',
         'normal',
@@ -96,43 +96,31 @@ function ko_band_slides_meta_box($post, $box){
 
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-                If you want video slider please check here:
-            </div>
-            <div class="col-sm">
-                Video Holder:
-            </div>
-            <div class="col-sm">
-                Title:
-            </div>
-            <div class="col-sm">
-                Subtitle:
-            </div>
-            <div class="col-sm">
-                Button Title:
-            </div>
-            <div class="col-sm">
-                Button Link:
-            </div>
+            <div class="col-sm"><?php _e('If you want video slider please check here:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Video Holder:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Title:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Subtitle:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Button Title:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Button Link:', 'koband');?></div>
         </div>
         <div class="row">
             <div class="col-sm">
                 <input type="checkbox" name="ko_band_slides_check" value="<?php esc_textarea( $slides_check )?>" class="slidecheck">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_video" value="<?php esc_textarea( $slides_video )?>" placeholder="Please paste here embed video" class="slidevideo">
+                <input type="text" name="ko_band_slides_video" value="<?php esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_title" value="<?php esc_textarea( $slides_title )?>" placeholder="Text title on slide" class="slidetitle">
+                <input type="text" name="ko_band_slides_title" value="<?php esc_textarea( $slides_title )?>" placeholder= "<?php _e('Text title on slide', 'koband');?>" class="slidetitle">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_subtitle" value="<?php esc_textarea( $slides_subtitle )?>" placeholder="Text subtitle on slide" class="slidesub">
+                <input type="text" name="ko_band_slides_subtitle" value="<?php esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_button_title" value="<?php esc_textarea( $slides_button_title )?>" placeholder="Button Title" class="slidebutton">
+                <input type="text" name="ko_band_slides_button_title" value="<?php esc_textarea( $slides_button_title )?>" placeholder= "<?php _e('Button Title', 'koband');?>" class="slidebutton">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_button_link" value="<?php esc_textarea( $slides_button_link )?>" placeholder="Please paste here button link" class="slidebuttonlink">
+                <input type="text" name="ko_band_slides_button_link" value="<?php esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Please paste here button link', 'koband');?>" class="slidebuttonlink">
             </div>
         </div>
     </div>

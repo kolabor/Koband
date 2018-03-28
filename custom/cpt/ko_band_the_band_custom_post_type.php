@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'The Band',
+    'menu_name' => __('The Band', 'koband')
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -26,18 +26,18 @@ $args = array(
 function ko_band_the_band_custom_post_type() {
 
   $label = array(
-    'name' => 'The Band',
-    'singular_name' => 'The Band',
-    'add_new' => 'Add The Band',
-    'all_items' => 'All The Bands',
-    'add_new_item' => 'Add The Band',
-    'edit_item' => 'Edit The Band',
-    'new_item' => 'New The Band',
-    'view_item' => 'View The Band',
-    'search_item' => 'Search The Band',
-    'not_found' => 'Mo The Band Found',
-    'not-found_in_trash' => 'No The Band Found in Trash',
-    'parent_item_colon' => 'Parent The Band'
+    'name' => __('The Band', 'koband'),
+    'singular_name' => __('The Band', 'koband'),
+    'add_new' => __('Add The Band', 'koband'),
+    'all_items' => __('All The Bands', 'koband'),
+    'add_new_item' => __('Add The Band', 'koband'),
+    'edit_item' => __('Edit The Band', 'koband'),
+    'new_item' => __('New The Band', 'koband'),
+    'view_item' => __('View The Band', 'koband'),
+    'search_item' => __('Search The Band', 'koband'),
+    'not_found' => __('Mo The Band Found', 'koband'),
+    'not-found_in_trash' => __('No The Band Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent The Band', 'koband')
     );
 
   $args = array(
@@ -56,7 +56,7 @@ function ko_band_the_band_custom_post_type() {
     
     );
 
-register_post_type( 'The Band',$args);
+register_post_type( __('The Band', 'koband'), $args);
 
 }
 
@@ -67,7 +67,7 @@ add_action('add_meta_boxes', 'ko_band_the_band_meta_box_init');
 function ko_band_the_band_meta_box_init(){
         add_meta_box(
         'ko_band_the_band_meta_box',
-        'The Band Details',
+        __('The Band Details', 'koband'),
         'ko_band_the_band_meta_box',
         'the band',
         'normal',
@@ -98,44 +98,29 @@ function ko_band_the_band_meta_box($post, $box){
     // Output the field ?>
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-                The Band Biography:
-            </div>
-            <div class="col-sm">
-                The Band Success:
-            </div>
-            <div class="col-sm">
-                The Band Awards:
-            </div>
-            <div class="col-sm">
-                The Band Photo:
-            </div>
+            <div class="col-sm"><?php _e('The Band Biography:', 'koband');?></div>
+            <div class="col-sm"><?php _e('The Band Success:','koband');?></div>
+            <div class="col-sm"><?php _e('The Band Awards:', 'koband');?></div>
+            <div class="col-sm"><?php _e('The Band Photo:', 'koband');?></div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_bio" value="<?php esc_textarea( $the_band_bio )?>" class="widefat" placeholder="The Band Biography">
+                <input type="text" name="ko_band_the_band_bio" value="<?php esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_success" value="<?php esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="The Band Success">
+                <input type="text" name="ko_band_the_band_success" value="<?php esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="<?php _e('The Band Success', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder="The Band Award">
+                <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder=<?php _e('The Band Award', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php esc_html( $the_band_photo )?>" class="widefat" placeholder="The Band Photo">
+                <input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php esc_html( $the_band_photo )?>" class="widefat" placeholder="<?php _e('The Band Photo', 'koband');?>">
             </div>
         </div>
     </div>
 
-
-
-
-
      <?php
-
 }
-
-
 add_action( 'save_post', 'ko_band_the_band_save_meta_box' , 1, 2);
 
 function ko_band_the_band_save_meta_box( $post_id, $post ) {
