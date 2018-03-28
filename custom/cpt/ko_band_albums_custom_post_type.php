@@ -12,7 +12,7 @@
 /* Declare Album cpt arguments */
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'Album'
+    'menu_name' => __ ('Album', 'koband')
     ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,18 +27,18 @@ $args = array(
 function ko_band_album_custom_post_type() {
 
   $label = array(
-    'name' => 'Album',
-    'singular_name' => 'Album',
-    'add_new' => 'Add Album',
-    'all_items' => 'All Albums',
-    'add_new_item' => 'Add Album',
-    'edit_item' => 'Edit Album',
-    'new_item' => 'New Album',
-    'view_item' => 'View Album',
-    'search_item' => 'Search Album',
-    'not_found' => 'Mo Album Found',
-    'not-found_in_trash' => 'No Album Found in Trash',
-    'parent_item_colon' => 'Parent Album'
+    'name' => __ ('Album', 'koband'),
+    'singular_name' => __ ('Album', 'koband'),
+    'add_new' => __('Add Album', 'koband'),
+    'all_items' => __ ('All Albums', 'koband'),
+    'add_new_item' =>__ ( 'Add Album', 'koband'),
+    'edit_item' => __ ('Edit Album', 'koband'),
+    'new_item' => __ ('New Album', 'koband'),
+    'view_item' => __ ('View Album', 'koband'),
+    'search_item' => __ ('Search Album', 'koband'),
+    'not_found' => __ ('Mo Album Found', 'koband'),
+    'not-found_in_trash' => __ ('No Album Found in Trash', 'koband'),
+    'parent_item_colon' => __ ('Parent Album', 'koband')
     );
   
   $args = array(
@@ -56,7 +56,7 @@ function ko_band_album_custom_post_type() {
 
   );
 
-register_post_type( 'Album',$args);
+register_post_type( __('Album','koband') ,$args);
 }  
 
 add_action( 'init', 'ko_band_album_custom_post_type' );
@@ -65,7 +65,7 @@ add_action( 'init', 'ko_band_album_custom_post_type' );
 function ko_band_album_meta_box_init(){
         add_meta_box(
             'ko_band_album_meta_box', 
-            'Album Details',
+            __('Album Details', 'koband'),
             'ko_band_album_display_meta_box', 
             'album',
             'normal',
@@ -88,113 +88,131 @@ function ko_band_album_display_meta_box() {
          $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
 
 // Output the field
-        echo "<p>  Date Release: </p>";
+        echo "<p>  __('Date Release', 'koband') </p>";
         echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="albumrelease" >';   
-        echo "<p>Album Length</p>";
+        echo "<p>__('Album Length', 'koband')</p>";
         echo '<input type="number" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="albumlength" >';    
 ?>
 <script type="text/javascript">
     jQuery(document).ready(function( $ ){ 
         $( '#add-row-details' ).on('click', function() {
-            var row_details = $( '#ko_band_album_meta_box_one .empty-row-details.screen-reader-text' ).clone(true);
-            row_details.removeClass( '#ko_band_album_meta_box_one .empty-row-details screen-reader-text' );
-            row_details.insertBefore( '#ko_band_album_meta_box_one tbody>tr:last' );
+            var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
+            row_details.removeClass( 'empty-row-details screen-reader-text' );
+            row_details.insertBefore( '#ko_band_album_meta_box_one .row:last' );
             return false;
         });
             $( '.remove-row-details' ).on('click', function() {
-            $(this).parents('tr').remove();
+            $(this).parents('.row').remove();
             return false; 
        });
 
         $( '#add-row-stores' ).on('click', function() {
-            var row_stores = $( '#ko_band_album_meta_box_store .empty-row-stores.screen-reader-text' ).clone(true);
-            row_stores.removeClass( '#ko_band_album_meta_box_store .empty-row-stores screen-reader-text' );
-            row_stores.insertBefore( '#ko_band_album_meta_box_store tbody>tr:last' );
+            var row_stores = $( '.empty-row-stores.screen-reader-text' ).clone(true);
+            row_stores.removeClass( 'empty-row-stores screen-reader-text' );
+            row_stores.insertBefore( '#ko_band_album_meta_box_store .row:last' );
             return false;
         });
             $( '.remove-row-stores' ).on('click', function() {
-            $(this).parents('tr').remove();
+            $(this).parents('.row').remove();
             return false;
         });
     });
 </script>
-  
-    <table id="ko_band_album_meta_box_one">
-    <thead>
-        <tr>
-            <th>Song Name</th>
-            <th>Song Length</th>
-            <th>Song Detail</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+
+    <div class="container" id="ko_band_album_meta_box_one" >
+    <div class="row">
+        <div class="col-sm">__('Song Name', 'koband')</div>
+        <div class="col-sm">__('Song Length', 'koband')</div>
+        <div class="col-sm">S__('Song Detail', 'koband')</div>
+    </div>
+
 <?php
     if ( $song_details ) :
         foreach ( $song_details as $field_details ) {   ?>
-    <tr>
-        <td><input type="text" class="songname" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></td>
-        <td><input type="text" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></td>
-        <td><input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></td>
-        <td><a class="button remove-row-details" href="#">Remove</a></td>
-    </tr>
-    <?php   }
-    else :  // show a blank one ?>
-     <tr>
-        <td><input type="text" class="songname" name="name-details[]" /></td>
-        <td><input type="text" class="songlength" name="length[]" /></td>
-        <td><input type="text" class="songdetails" name="detail[]" /></td>
-        <td><a class="button remove-row-details" href="#">Remove</a></td>
-    </tr>
-    <?php endif; ?>    <!-- empty hidden one for jQuery -->
-    <tr class="empty-row-details screen-reader-text">
-        <td><input type="text" class="songname" name="name-details[]" /></td>
-        <td><input type="text" class="songlength" name="length[]" /></td>
-        <td><input type="text" class="songdetails" name="detail[]" /></td>
-        <td><a class="button remove-row-details" href="#">Remove</a></td>
-    </tr>
-    </tbody>
-    </table>
-    <p><a id="add-row-details" class="button" href="#">Add another</a></p>
+
+    <div class="row">
+        <div class="col-sm">
+            <input type="text" class="songname" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></div>
+        <div class="col-sm">
+            <input type="text" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></div>
+        <div class="col-sm">
+            <input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></div>
+        <div class="col-sm">
+            <a class="button remove-row-details" href="#">__('Remove', 'koband')</a>
+    </div>
+<?php } else :  // show a blank one ?>
+    <div class="row">
+        <div class="col-sm">
+            <input type="text" class="songname" name="name-details[]" /></div>
+        <div class="col-sm">
+            <input type="text" class="songlength" name="length[]" /></div>
+        <div class="col-sm">
+            <input type="text" class="songdetails" name="detail[]" /></div>
+        <div class="col-sm">
+            <a class="button remove-row-details" href="#">__('Remove', 'koband')</a></div>
+    </div>
+<?php endif; ?>
+     <!-- empty hidden one for jQuery -->
+    <div class="row empty-row-detail screen-reader-text" >
+        <div class="col-sm">
+            <input type="text" class="songname" name="name-details[]" /></div>
+        <div class="col-sm">
+            <input type="text" class="songlength" name="length[]" /></div>
+        <div class="col-sm">
+            <input type="text" class="songdetails" name="detail[]" /></div>
+        <div class="col-sm">
+            <a class="button remove-row-details" href="#">__('Remove', 'koband')</a></div>
+    </div>
+</div>
+    <div class="">
+        <p><a id="add-row-details" class="button" href="#">__('Add another', 'koband')</a></p></div>  
+
+  
 <!--Song_store-->
-    <table id="ko_band_album_meta_box_store">
-    <thead>
-        <tr>
-            <th>Store Name</th>
-            <th>Store Link</th>
-            <th width="30%"></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-    if ( $song_stores ):
+<div class="container" id="ko_band_album_meta_box_store">
+    <div class="row">
+        <div class="col-sm">__('Store Name', 'koband')</div>
+        <div class="col-sm">__('Store Link', 'koband')</div>
+        
+    </div>
+<?php if ( $song_stores ):
         foreach ($song_stores as $field_stores ) {    ?>
-    <tr>
-        <td><input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></td>
-        <td><input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></td>
-        <td><a class="button remove-row-stores" href="#">Remove</a></td>
-    </tr>
-    <?php      }
-    else :     // show a blank one    ?>
-    <tr>
-        <td><input type="text" class="storename" name="name-store[]" style="width:237px; " /></td>
-        <td><input type="url" class="storelink" name="link[]" style="width:237px; " /></td>
-        <td><a class="button remove-row-stores" href="#">Remove</a></td>
-    </tr>
-    <?php endif; ?>
-        <!-- empty hidden one for jQuery -->
-    <tr class="empty-row-stores screen-reader-text">
-        <td><input type="text" class="storename" name="name-store[]" style="width:237px; " /></td>
-        <td><input type="url" class="storelink" name="link[]" style="width:237px; "  /></td>
-        <td><a class="button remove-row-stores" href="#">Remove</a></td>
-    </tr>
-    </tbody>
-    </table>
-    <p><a id="add-row-stores" class="button" href="#">Add another</a></p>
+   
+    <div class="row">
+        <div class="col-sm">
+            <input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></div>
+        <div class="col-sm">
+            <input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></div>
+        <div class="col-sm">
+            <a class="button remove-row-stores" href="#">__('Remove', 'koband')</a></div>
+            </div>
+<?php } else :  ?>
+         <!-- show a blank one--> 
+    <div class="row">
+        <div class="col-sm">
+            <input type="text" class="storename" name="name-store[]"  /></div>
+        <div class="col-sm">
+            <input type="url" class="storelink" name="link[]"  /></div>
+        <div class="col-sm">
+            <a class="button remove-row-stores" href="#">__('Remove', 'koband')</a></div>
+    </div>
+<?php endif; ?>   
+         <!-- empty hidden one for jQuery -->
+    <div class="row empty-row-stores screen-reader-text" >
+        <div class="col-sm">
+            <input type="text" class="storename" name="name-store[]"  /></div>
+        <div class="col-sm">
+            <input type="url" class="storelink" name="link[]"   /></div>
+        <div class="col-sm">
+            <a class="button remove-row-stores" href="#">__('Remove', 'koband')</a></div>
+    </div>
+</div>
+    <div class="">
+            <p><a id="add-row-stores" class="button" href="#">__('Add another', 'koband')</a></p></div>
+
+
  <?php 
 }
-
 add_action( 'save_post', 'ko_band_album_save_meta_box' , 1, 2);
 function ko_band_album_save_meta_box( $post_id, $post ) 
 {

@@ -86,7 +86,7 @@ function ko_band_singles_display_meta_box($post, $box){
         echo "<p> Date Release: </p>";
     echo '<input type="date" name="ko_band_singles_date_release" value="' . esc_attr( $singles_date_release )  . '" class="singledate" >';  
    // Get the loation data if it's already been entered  
-?>
+?><!--
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -155,7 +155,7 @@ function ko_band_singles_display_meta_box($post, $box){
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+-->
 
 
 
@@ -174,34 +174,6 @@ function ko_band_singles_display_meta_box($post, $box){
     });
     </script>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      Store Name
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-  <?php 
- if ( $singles_stores ) :    
-         foreach ( $singles_stores as $field) {     ?>
-
-  <div class="row">
-
-
-</div>
-
-
-<?
-
-}
-endif
-}
-</div>
 
 
 
