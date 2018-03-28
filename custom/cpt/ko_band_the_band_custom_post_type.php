@@ -95,21 +95,43 @@ function ko_band_the_band_meta_box($post, $box){
    
 
 
-    // Output the field
-    echo "<p>  The Band Biography: </p>";
-    echo '<input type="text" name="ko_band_the_band_bio" value="' . esc_textarea( $the_band_bio )  . '" class="widefat" placeholder="The Band Biography">';
+    // Output the field ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                The Band Biography:
+            </div>
+            <div class="col-sm">
+                The Band Success:
+            </div>
+            <div class="col-sm">
+                The Band Awards:
+            </div>
+            <div class="col-sm">
+                The Band Photo:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" name="ko_band_the_band_bio" value="<?php esc_textarea( $the_band_bio )?>" class="widefat" placeholder="The Band Biography">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_the_band_success" value="<?php esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="The Band Success">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder="The Band Award">
+            </div>
+            <div class="col-sm">
+                <input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php esc_html( $the_band_photo )?>" class="widefat" placeholder="The Band Photo">
+            </div>
+        </div>
+    </div>
 
-    echo "<p>  The Band Success: </p>";
-    echo '<input type="text" name="ko_band_the_band_success" value="' . esc_textarea( $the_band_success )  . '" class="widefat" placeholder="The Band Success">'; 
 
-    echo "<p>  The Band Award: </p>";
-    echo '<input type="text" name="ko_band_the_band_award" value="' . esc_textarea( $the_band_award )  . '" class="widefat" placeholder="The Band Award">'; 
 
-    echo "<p>  The Band Photo: </p>";
-    echo '<input type="file"  id="upload_image" name="ko_band_the_band_photo" size="36" value="' . esc_html( $the_band_photo )  . '" class="widefat" placeholder="The Band Photo">';
 
-   
-  
+
+     <?php
 
 }
 

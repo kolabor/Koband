@@ -101,33 +101,85 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
     $tour_ticket_link = get_post_meta( $post->ID, 'ko_band_tour_ticket_link', true );
 
 
-    // Output the field
-    echo "<p>Tour date:</p>";
-    echo '<input type="date" name="ko_band_tour_date" value="' . esc_textarea( $tour_date )  . '" class="widefat" placeholder="Date">';
-    
-    echo "<p>Tour Country:</p>";
-    echo '<input type="text" name="ko_band_tour_country" value="' . esc_textarea( $tour_country )  . '" class="widefat" placeholder="Country">';  
+    // Output the field?>
 
-    echo "<p>Tour City:</p>";
-    echo '<input type="text" name="ko_band_tour_city" value="' . esc_textarea( $tour_city )  . '" class="widefat" placeholder="City">';
-    
-    echo "<p>Tour Address:</p>";
-    echo '<input type="text" name="ko_band_tour_address" value="' . esc_textarea( $tour_address )  . '" class="widefat" placeholder="Address">';
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                Tour Date:
+            </div>
+            <div class="col-sm">
+                Tour Country:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="date" name="ko_band_tour_date" value="'<?php esc_textarea( $tour_date )?>" class="widefat" placeholder="Date">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_tour_country" value="<?php esc_textarea( $tour_country )?>" class="widefat" placeholder="Country">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                Tour City:
+            </div>
+            <div class="col-sm">
+                Tour Address:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" name="ko_band_tour_city" value="<?php esc_textarea( $tour_city )?>" class="widefat" placeholder="City">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_tour_address" value="<?php esc_textarea( $tour_address )?>" class="widefat" placeholder="Address">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                Tour ZipCode:
+            </div>
+            <div class="col-sm">
+                Tour Venue Name:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="number" name="ko_band_tour_zipCode" value="<?php esc_attr( $tour_zipCode )?>" class="widefat" placeholder="ZipCode">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_tour_venue_name" value="<?php esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="Venue Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                Tour Ticket
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                On Sale 
+                Sold Out
+            </div>
+            <div class="col-sm">
+                Ticet Link
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="radio" name="ko_band_tour_ticket" value1="<?php esc_attr( $tour_ticket )?>" class="widefat" >
+                <input type="radio" name="ko_band_tour_ticket" value2="<?php esc_attr( $tour_ticket )?>" class="widefat" >
+            </div>
+            <div class="col-sm">
+                <input type="url" name="ko_band_tour_ticket_link" value="<?php esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com">
+            </div>
+        </div>
+    </div>
 
-    echo "<p>Tour ZipCode:</p>";
-    echo '<input type="number" name="ko_band_tour_zipCode" value="' . esc_attr( $tour_zipCode )  . '" class="widefat" placeholder="ZipCode">';
 
-    echo "<p>Tour Venue Name:</p>";
-    echo '<input type="text" name="ko_band_tour_venue_name" value="' . esc_textarea( $tour_venue_name )  . '" class="widefat" placeholder="Venue Name">';
+     <?php
 
-    echo "<p>Tour Ticket:</p>";
-    echo "<p> On Sale</p>";
-    echo '<input type="radio" name="ko_band_tour_ticket" value1="' . esc_attr( $tour_ticket )  . '" class="widefat" >';
-    echo "<p> Sale Out</p>";
-    echo '<input type="radio" name="ko_band_tour_ticket" value2="' . esc_attr( $tour_ticket )  . '" class="widefat" >';
-
-    echo "<p> Ticet Link</p>";
-    echo '<input type="url" name="ko_band_tour_ticket_link" value="'. esc_attr($tour_ticket_link )  . '" class="widefat" placeholder="http://www.google.com">';
 }
 
 
