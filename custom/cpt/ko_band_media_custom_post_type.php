@@ -98,35 +98,24 @@ global $post;
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
     ?>
 
-    <div class="container">
+    <div class="container form-table">
         <div class="row">
-            <div class="">
+            <div class="col-sm">
+                <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)">Add image(s)</a>
+            </div>    
         </div>
-    </div>
-
-
-
-
-    <table class="form-table">
-      <tr><td>
-        <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)">Add image(s)</a>
-
-        <ul id="gallery-metabox-list">
-        <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
-
-        <li>
+        <div id="gallery-metabox-list" class="row">
+            <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
+            <div class="col-sm">
                 <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                 <img class="image-preview" src="<?php echo $image[0]; ?>">
                 <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br>
                 <small><a class="remove-image" href="#">Remove image</a></small>
-        </li>
-
+            </div>
         <?php endforeach; endif; ?>
+        </div>
+    </div>
 
-        </ul>
-
-      </td></tr>
-    </table>
   <?php }
 
 function gallery_meta_save($post_id) {
@@ -166,7 +155,7 @@ add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
 function ko_band_media_meta_box_init(){
         add_meta_box(
         'ko_band_media_meta_box',
-        'Video',
+        'Video Gallery',
         'ko_band_media_display_meta_box',
         'media',
         'normal',
@@ -184,84 +173,87 @@ $options = ko_band_get_video_options();
 wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_box_nonce' );
    
 ?>
- <script type="text/javascript">
+<script type="text/javascript">
     jQuery(document).ready(function( $ ){
         $( '#add-row' ).on('click', function() {
             var row = $( '.empty-row.screen-reader-text' ).clone(true);
             row.removeClass( 'empty-row screen-reader-text' );
-            row.insertBefore( '#ko_band_repetable_video_field_one tbody>tr:last' );
+            row.insertBefore( '#ko_band_repetable_video_field_one .row:last' );
             return false;
         });
     
         $( '.remove-row' ).on('click', function() {
-            $(this).parents('tr').remove();
+            $(this).parents('.row').remove();
             return false;
         });
     });
-    </script>
-  
-      <table id="ko_band_repetable_video_field_one" width="70%">
-    <thead>
-       <tr>
-            <th width="40%">Video Link</th>
-            <th width="12%">Select</th>
-            <th width="8%"></th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-    
-    if ( $video_field ) :    
-    foreach ( $video_field as $field) {
-    ?>
-    <tr>
-            <td><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></td>
-            <td>
-                    <select name="select[]"   style="width: 100%;">
+</script>
+
+<div class="container" id="ko_band_repetable_video_field_one">
+    <div class="row">
+        <div class="col-sm">
+            Video Link
+        </div>
+        <div class="col-sm">
+            Select
+        </div>
+    </div>
+    <?php if ( $video_field ) :    
+    foreach ( $video_field as $field) { ?>
+    <div class="row">
+        <div class="col-sm">
+            <input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" />
+        </div>
+        <div class="col-sm">
+            <select name="select[]">
                     <?php foreach ( $options as $label => $value ) : ?>
                     <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
                     <?php endforeach; ?>
-                    </select>
-            </td>
-        <td><a class="button remove-row" href="#">Remove</a></td>
-    </tr>
-    <?php
-    }
-    else :
-    // show a blank one
-    ?>
-        <tr>
-
-            <td><input type="url" class="widefat" name="link[]" /></td>
-            <td>
-                    <select name="select[]"  style="width: 100%;">
+            </select>
+        </div>
+        <div class="col-sm">
+            <a class="button remove-row" href="#">Remove</a>
+        </div>
+    </div>
+    <?php } else: ?>
+    <div class="row">
+        <div class="col-sm">
+            <input type="url" class="widefat" name="link[]" />
+        </div>
+        <div class="col-sm">
+            <select name="select[]">
                     <?php foreach ( $options as $label => $value ) : ?>
                     <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                     <?php endforeach; ?>
-                    </select>
-            </td>
-            <td><a class="button remove-row" href="#">Remove</a></td>
-        </tr>
+            </select>
+        </div>
+        <div class="col-sm">
+            <a class="button remove-row" href="#">Remove</a>
+        </div>
+    </div>
     <?php endif; ?>
         <!-- empty hidden one for jQuery -->
-        <tr class="empty-row screen-reader-text">
-
-            <td><input type="url" class="widefat" name="link[]" /></td>
-            <td >
-                    <select name="select[]"  style="width: 100%;">
+    <div class="row empty-row screen-reader-text">
+        <div class="col-sm">
+            <input type="url" class="widefat" name="link[]" />
+        </div>
+        <div class="col-sm">
+            <select name="select[]" >
                     <?php foreach ( $options as $label => $value ) : ?>
                     <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                     <?php endforeach; ?>
-                    </select>
-            </td>
-            <td><a class="button remove-row" href="#">Remove</a></td>
-        </tr>
-    </tbody>
-    </table>
-        <p><a id="add-row" class="button" href="#">Add another</a></p>
+            </select>
+        </div>
+        <div class="col-sm">
+            <a class="button remove-row" href="#">Remove</a>
+        </div>
+    </div>
+</div>
+<p><a id="add-row" class="button" href="#">Add another</a></p>
  
 <?php 
 }
+
 
 add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
 
@@ -278,6 +270,7 @@ function ko_band_media_save_meta_box( $post_id, $post ) {
 
  
     $old = get_post_meta($post_id, 'ko_band_repetable_video_field', true);
+    $options = ko_band_get_video_options();
     $new= array();
        if (isset($_POST["link"]))    {
 
