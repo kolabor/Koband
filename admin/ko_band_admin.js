@@ -104,8 +104,6 @@ jQuery(function($) {
             return false;
         });
         /*Repeatable fields for Media CPT (Adding videos) ends*/
-
-
     });/* On document ready ends here */
 
 });
