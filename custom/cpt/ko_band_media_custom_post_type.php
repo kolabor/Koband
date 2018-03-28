@@ -10,8 +10,8 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'Media',
-          ),  
+    'menu_name' => __ ('Media','koband')
+          ),   
     'capabilities'  =>  array(
             'capability_type' => 'posts',
             'create_posts' => 'do_not_allow',
@@ -27,17 +27,17 @@ function ko_band_media_custom_post_type() {
 
   $label = array(
     'name' => __('Media', 'koband'),
-    'singular_name' => 'Media',
-    'add_new' => 'Add Media',
-    'all_items' => 'All Medias',
-    'add_new_item' => 'Add Media',
-    'edit_item' => 'Edit Media',
-    'new_item' => 'New Media',
-    'view_item' => 'View Media',
-    'search_item' => 'Search Media',
-    'not_found' => 'Mo Media Found',
-    'not-found_in_trash' => 'No Media Found in Trash',
-    'parent_item_colon' => 'Parent Media'
+    'singular_name' =>  __ ('Media', 'koband'),
+    'add_new' => __ ('Add Media','koband'),
+    'all_items' => __ ('All Medias', 'koband'),
+    'add_new_item' => __ ('Add Media','koband'),
+    'edit_item' => __ ('Edit Media','koband'),
+    'new_item' => __ ('New Media','koband'),
+    'view_item' => __ ('View Media','koband'),
+    'search_item' => __ ('Search Media', 'koband'),
+    'not_found' => __ ('Mo Media Found', 'koband'),
+    'not-found_in_trash' => __ ('No Media Found in Trash','koband'),
+    'parent_item_colon' => __ ('Parent Media','koband'),
     );
 
   $args = array(
@@ -56,7 +56,7 @@ function ko_band_media_custom_post_type() {
   
 );
 
-register_post_type( 'Media',$args);
+register_post_type(  __('Media', 'koband'),$args);
 
 }
 
