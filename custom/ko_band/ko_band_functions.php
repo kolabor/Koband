@@ -61,10 +61,10 @@ function ko_band_theme_support () {
 	//Menu
 
 	register_nav_menus(array(
-		'primary' => __('Primary Menu'),
-		'footer' => __('Footer Menu')
+		'primary' => __('Primary Menu', 'koband'),
+		'footer' => __('Footer Menu', 'koband')
 	));
-
+	
 	// Add theme support Post Format Support
 
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));

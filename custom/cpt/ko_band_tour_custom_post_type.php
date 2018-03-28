@@ -11,7 +11,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'Tour Event',
+    'menu_name' => __('Tour Event', 'koband')
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,18 +27,18 @@ $args = array(
 function ko_band_tour_custom_post_type() {
 
   $label = array(
-    'name' => 'Tour Event',
-    'singular_name' => 'Tour',
-    'add_new' => 'Add Tour',
-    'all_items' => 'All Tours',
-    'add_new_item' => 'Add Tour',
-    'edit_item' => 'Edit Tour',
-    'new_item' => 'New Tour',
-    'view_item' => 'View Tour',
-    'search_item' => 'Search Tour',
-    'not_found' => 'Mo Tour Found',
-    'not-found_in_trash' => 'No Tour Found in Trash',
-    'parent_item_colon' => 'Parent Tour',
+    'name' => __('Tour Event', 'koband'),
+    'singular_name' => __('Tour Event', 'koband'),
+    'add_new' => __('Add Tour', 'koband'),
+    'all_items' => __('All Tours', 'koband'),
+    'add_new_item' => __('Add Tour', 'koband'),
+    'edit_item' => __('Edit Tour', 'koband'),
+    'new_item' => __('New Tour', 'koband'),
+    'view_item' => __('View Tour', 'koband'),
+    'search_item' => __('Search Tour', 'koband'),
+    'not_found' => __('Mo Tour Found', 'koband'),
+    'not-found_in_trash' => __('No Tour Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent Tour', 'koband')
     );
 
   $args = array(
@@ -57,7 +57,7 @@ function ko_band_tour_custom_post_type() {
   
     );
 
-register_post_type( 'Tour',$args);
+register_post_type( __('Tour', 'koband'), $args);
 
 }
 
@@ -69,7 +69,7 @@ add_action('add_meta_boxes', 'ko_band_tour_meta_box_init');
 function ko_band_tour_meta_box_init(){
         add_meta_box(
         'ko_band_tour_meta_box',
-        'Tour Details',
+        __('Tour Details', 'koband'),
         'ko_band_tour_display_meta_box',
         'tour',
         'normal',
@@ -105,65 +105,50 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
 
     <div class="container">
         <div class="row">
+            <div class="col-sm"><?php _e('Tour Date:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Tour Country:', 'koband');?></div>
+        </div>
+        <div class="row">
             <div class="col-sm">
-                Tour Date:
+                <input type="date" name="ko_band_tour_date" value="'<?php esc_textarea( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>">
             </div>
             <div class="col-sm">
-                Tour Country:
+                <input type="text" name="ko_band_tour_country" value="<?php esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm"><?php _e('Tour City:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Tour Address:', 'koband');?></div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" name="ko_band_tour_city" value="<?php esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php _e('City', 'koband');?>">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_tour_address" value="<?php esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php _e('Address', 'koband');?>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm"><?php _e('Tour ZipCode:', 'koband');?>
+            </div>
+            <div class="col-sm"><?php _e('Tour Venue Name:', 'koband');?>
+                
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="date" name="ko_band_tour_date" value="'<?php esc_textarea( $tour_date )?>" class="widefat" placeholder="Date">
+                <input type="number" name="ko_band_tour_zipCode" value="<?php esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_tour_country" value="<?php esc_textarea( $tour_country )?>" class="widefat" placeholder="Country">
+                <input type="text" name="ko_band_tour_venue_name" value="<?php esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue Name', 'koband');?>">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm">
-                Tour City:
-            </div>
-            <div class="col-sm">
-                Tour Address:
-            </div>
+            <div class="col-sm"><?php _e('Tour Ticket', 'koband');?></div>
         </div>
         <div class="row">
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_city" value="<?php esc_textarea( $tour_city )?>" class="widefat" placeholder="City">
-            </div>
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_address" value="<?php esc_textarea( $tour_address )?>" class="widefat" placeholder="Address">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                Tour ZipCode:
-            </div>
-            <div class="col-sm">
-                Tour Venue Name:
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <input type="number" name="ko_band_tour_zipCode" value="<?php esc_attr( $tour_zipCode )?>" class="widefat" placeholder="ZipCode">
-            </div>
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_venue_name" value="<?php esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="Venue Name">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                Tour Ticket
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                On Sale or Sold Out
-            </div>
-            <div class="col-sm">
-                Ticet Link
-            </div>
+            <div class="col-sm"><?php _e('On Sale', 'koband');  _e('  Sold Out', 'koband');?></div>
+            <div class="col-sm"><?php _e('Ticet Link', 'koband');?></div>
         </div>
         <div class="row">
             <div class="col-sm">
