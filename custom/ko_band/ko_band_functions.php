@@ -43,7 +43,7 @@ function ko_band_custom_wp_admin_style() {
 
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
-
+// Ndrimi i Set Image ne text si duam 
 function km_change_featured_image_metabox_title() {
 	remove_meta_box( 'postimagediv', 'tour', 'side' );
 	add_meta_box( 'postimagediv', __( 'NEW TITLE TEXT', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
