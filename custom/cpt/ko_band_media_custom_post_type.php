@@ -69,9 +69,9 @@ function ko_band_gallery_metabox($post_type) {
     $types = array('custom-post-type');
     {
       add_meta_box(
-        'gallery-metabox',
-        'Gallery',
-        'gallery_meta_callback',
+        'ko_band_gallery-metabox',
+        __ ('Gallery', 'koband'),
+        'ko_band_gallery_meta_callback',
         'media',
         'normal',
         'high'
@@ -101,7 +101,7 @@ global $post;
     <div class="container form-table">
         <div class="row">
             <div class="col-sm">
-                <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)">Add image(s)</a>
+                <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)">__ ('Add image','koband')(s)</a>
             </div>    
         </div>
         <div id="gallery-metabox-list" class="row">

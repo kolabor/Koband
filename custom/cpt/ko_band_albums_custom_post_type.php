@@ -88,7 +88,7 @@ function ko_band_album_display_meta_box() {
          $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
 
 // Output the field
-        echo "<p>  __('Date Release', 'koband') </p>";
+        echo "<p><?php _e('Date Release', 'koband'); ?></p>";
         echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="albumrelease" >';   
         echo "<p>__('Album Length', 'koband')</p>";
         echo '<input type="number" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="albumlength" >';    
@@ -121,9 +121,9 @@ function ko_band_album_display_meta_box() {
 
     <div class="container" id="ko_band_album_meta_box_one" >
     <div class="row">
-        <div class="col-sm">__('Song Name', 'koband')</div>
-        <div class="col-sm">__('Song Length', 'koband')</div>
-        <div class="col-sm">S__('Song Detail', 'koband')</div>
+        <div class="col-sm"><?php _e('Song Name', 'koband');?></div>
+        <div class="col-sm"><?php _e('Song Length', 'koband');?></div>
+        <div class="col-sm"><?php _e('Song Detail', 'koband');?></div>
     </div>
 
 <?php
@@ -138,7 +138,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm">
             <input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></div>
         <div class="col-sm">
-            <a class="button remove-row-details" href="#">__('Remove', 'koband')</a>
+            <a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a>
     </div>
 <?php } else :  // show a blank one ?>
     <div class="row">
@@ -149,7 +149,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm">
             <input type="text" class="songdetails" name="detail[]" /></div>
         <div class="col-sm">
-            <a class="button remove-row-details" href="#">__('Remove', 'koband')</a></div>
+            <a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 <?php endif; ?>
      <!-- empty hidden one for jQuery -->
@@ -161,18 +161,18 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm">
             <input type="text" class="songdetails" name="detail[]" /></div>
         <div class="col-sm">
-            <a class="button remove-row-details" href="#">__('Remove', 'koband')</a></div>
+            <a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 </div>
     <div class="">
-        <p><a id="add-row-details" class="button" href="#">__('Add another', 'koband')</a></p></div>  
+        <p><a id="add-row-details" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>  
 
   
 <!--Song_store-->
 <div class="container" id="ko_band_album_meta_box_store">
     <div class="row">
-        <div class="col-sm">__('Store Name', 'koband')</div>
-        <div class="col-sm">__('Store Link', 'koband')</div>
+        <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
+        <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
         
     </div>
 <?php if ( $song_stores ):
@@ -184,7 +184,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm">
             <input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></div>
         <div class="col-sm">
-            <a class="button remove-row-stores" href="#">__('Remove', 'koband')</a></div>
+            <a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
             </div>
 <?php } else :  ?>
          <!-- show a blank one--> 
@@ -194,7 +194,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm">
             <input type="url" class="storelink" name="link[]"  /></div>
         <div class="col-sm">
-            <a class="button remove-row-stores" href="#">__('Remove', 'koband')</a></div>
+            <a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 <?php endif; ?>   
          <!-- empty hidden one for jQuery -->
@@ -204,11 +204,11 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm">
             <input type="url" class="storelink" name="link[]"   /></div>
         <div class="col-sm">
-            <a class="button remove-row-stores" href="#">__('Remove', 'koband')</a></div>
+            <a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 </div>
     <div class="">
-            <p><a id="add-row-stores" class="button" href="#">__('Add another', 'koband')</a></p></div>
+            <p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
 
 
  <?php 
