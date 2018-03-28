@@ -102,18 +102,6 @@ function ko_band_slides_meta_box($post, $box){
             <div class="col-sm">
                 Video Holder:
             </div>
-            <div class="col-sm">
-                Title:
-            </div>
-            <div class="col-sm">
-                Subtitle:
-            </div>
-            <div class="col-sm">
-                Button Title:
-            </div>
-            <div class="col-sm">
-                Button Link:
-            </div>
         </div>
         <div class="row">
             <div class="col-sm">
@@ -122,12 +110,32 @@ function ko_band_slides_meta_box($post, $box){
             <div class="col-sm">
                 <input type="text" name="ko_band_slides_video" value="<?php esc_textarea( $slides_video )?>" placeholder="Please paste here embed video" class="slidevideo">
             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                Title:
+            </div>
+            <div class="col-sm">
+                Subtitle:
+            </div>
+        </div>
+        <div class="row">
             <div class="col-sm">
                 <input type="text" name="ko_band_slides_title" value="<?php esc_textarea( $slides_title )?>" placeholder="Text title on slide" class="slidetitle">
             </div>
             <div class="col-sm">
                 <input type="text" name="ko_band_slides_subtitle" value="<?php esc_textarea( $slides_subtitle )?>" placeholder="Text subtitle on slide" class="slidesub">
             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                Button Title:
+            </div>
+            <div class="col-sm">
+                Button Link:
+            </div>
+        </div>
+        <div class="row">        
             <div class="col-sm">
                 <input type="text" name="ko_band_slides_button_title" value="<?php esc_textarea( $slides_button_title )?>" placeholder="Button Title" class="slidebutton">
             </div>
