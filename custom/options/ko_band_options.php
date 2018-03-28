@@ -13,7 +13,8 @@ function ko_band_customize_register( $wp_customize )
 {
    //All our sections, settings, and controls will be added here
   	$wp_customize->add_section('ko_band_colors', array(
-        'title' => __ ('Colors', 'koband'),
+
+        'title' => __('Colors', 'koband'),
         'description' => 'Modify the theme colors'
     ));
     $wp_customize->add_setting('background_color', array(

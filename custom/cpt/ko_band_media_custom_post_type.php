@@ -26,7 +26,7 @@ $args = array(
 function ko_band_media_custom_post_type() {
 
   $label = array(
-    'name' => 'Media',
+    'name' => __('Media', 'koband'),
     'singular_name' => 'Media',
     'add_new' => 'Add Media',
     'all_items' => 'All Medias',
@@ -97,6 +97,7 @@ global $post;
     wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
     ?>
+
 
     <table class="form-table">
       <tr><td>

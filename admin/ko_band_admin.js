@@ -87,4 +87,25 @@ jQuery(function($) {
 
   makeSortable();
 
+
+
+   jQuery(document).ready(function( $ ){
+
+        /*Repeatable fields for Media CPT (Adding videos) */
+        $( '#add-row' ).on('click', function() {
+            var row = $( '.empty-row.screen-reader-text' ).clone(true);
+            row.removeClass( 'empty-row screen-reader-text' );
+            row.insertBefore( '#ko_band_repetable_video_field_one tbody>tr:last' );
+            return false;
+        });
+    
+        $( '.remove-row' ).on('click', function() {
+            $(this).parents('tr').remove();
+            return false;
+        });
+        /*Repeatable fields for Media CPT (Adding videos) ends*/
+
+
+    });/* On document ready ends here */
+
 });
