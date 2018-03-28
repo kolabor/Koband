@@ -56,7 +56,7 @@ function ko_band_media_custom_post_type() {
   
 );
 
-register_post_type(  __('Media', 'koband'),$args);
+register_post_type(  __('Media', 'koband'), $args);
 
 }
 
@@ -69,9 +69,9 @@ function ko_band_gallery_metabox($post_type) {
     $types = array('custom-post-type');
     {
       add_meta_box(
-        'ko_band_gallery-metabox',
+        'gallery-metabox',
         __ ('Gallery', 'koband'),
-        'ko_band_gallery_meta_callback',
+        'gallery_meta_callback',
         'media',
         'normal',
         'high'
@@ -101,7 +101,7 @@ global $post;
     <div class="container form-table">
         <div class="row">
             <div class="col-sm">
-                <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)">__ ('Add image','koband')(s)</a>
+                <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)"><?php _e('Add image','koband');?></a>
             </div>    
         </div>
         <div id="gallery-metabox-list" class="row">
@@ -109,8 +109,8 @@ global $post;
             <div class="col-sm">
                 <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                 <img class="image-preview" src="<?php echo $image[0]; ?>">
-                <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br>
-                <small><a class="remove-image" href="#">Remove image</a></small>
+                <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><?php _e('Change image', 'koband');?></a><br>
+                <small><a class="remove-image" href="#"><?php _e('Remove image', 'koband');?></a></small>
             </div>
         <?php endforeach; endif; ?>
         </div>
@@ -144,7 +144,7 @@ function ko_band_get_video_options() {
         'Youtube'       => 'option1',
         'Vimeo'         => 'option2',
         'DailyMotion'   => 'option3',
-        'Others'        => 'option4',
+     __('Others', 'koband') => 'option4',
     );
     
     return $options;
@@ -155,7 +155,7 @@ add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
 function ko_band_media_meta_box_init(){
         add_meta_box(
         'ko_band_media_meta_box',
-        'Video Gallery',
+        __('Video Gallery', 'koband'),
         'ko_band_media_display_meta_box',
         'media',
         'normal',
@@ -191,14 +191,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 
 <div class="container" id="ko_band_repetable_video_field_one">
     <div class="row">
-        <div class="col-sm">
-            Video Link
-        </div>
-        <div class="col-sm">
-            Select
-        </div>
+        <div class="col-sm"><?php _e('Video Link', 'koband');?></div>
+        <div class="col-sm"><?php _e('Select', 'koband');?></div>
     </div>
-    <?php if ( $video_field ) :    
+<?php if ( $video_field ) :    
     foreach ( $video_field as $field) { ?>
     <div class="row">
         <div class="col-sm">
@@ -212,7 +208,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
             </select>
         </div>
         <div class="col-sm">
-            <a class="button remove-row" href="#">Remove</a>
+            <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
         </div>
     </div>
     <?php } else: ?>
@@ -228,7 +224,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
             </select>
         </div>
         <div class="col-sm">
-            <a class="button remove-row" href="#">Remove</a>
+            <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
         </div>
     </div>
     <?php endif; ?>
@@ -245,11 +241,11 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
             </select>
         </div>
         <div class="col-sm">
-            <a class="button remove-row" href="#">Remove</a>
+            <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
         </div>
     </div>
 </div>
-<p><a id="add-row" class="button" href="#">Add another</a></p>
+<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p>
  
 <?php 
 }

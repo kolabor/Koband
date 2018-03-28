@@ -87,12 +87,28 @@ function ko_band_album_display_meta_box() {
          $album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
          $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
 
-// Output the field
-        echo "<p><?php _e('Date Release', 'koband'); ?></p>";
-        echo '<input type="date" name="ko_band_album_date_release" value="' . esc_html( $album_date_release )  . '" class="albumrelease" >';   
-        echo "<p>__('Album Length', 'koband')</p>";
-        echo '<input type="number" name="ko_band_album_length" value="' . esc_html( $album_length )  . '" class="albumlength" >';    
+
 ?>
+<!-- Output the field -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <?php _e('Date Release', 'koband'); ?>
+        </div>
+        <div class="col-sm">
+            <?php _e('Album Length', 'koband'); ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <input type="date" name="ko_band_album_date_release" value="<?php esc_html( $album_date_release ) ?>" class="albumrelease" >
+        </div>
+        <div class="col-sm">
+            <input type="number" name="ko_band_album_length" value="<?php esc_html( $album_length ) ?>" class="albumlength">
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     jQuery(document).ready(function( $ ){ 
         $( '#add-row-details' ).on('click', function() {
@@ -125,7 +141,6 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><?php _e('Song Length', 'koband');?></div>
         <div class="col-sm"><?php _e('Song Detail', 'koband');?></div>
     </div>
-
 <?php
     if ( $song_details ) :
         foreach ( $song_details as $field_details ) {   ?>

@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => 'Singles',
+    'menu_name' => __('Singles', 'koband')
     ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -25,18 +25,18 @@ $args = array(
 function ko_band_register_singles() {
 
   $label = array(
-    'name' => 'Singles',
-    'singular_name' => 'Singles',
-    'add_new' => 'Add Singles',
-    'all_items' => 'All Singles',
-    'add_new_item' => 'Add Singles',
-    'edit_item' => 'Edit Singles',
-    'new_item' => 'New Singles',
-    'view_item' => 'View Singles',
-    'search_item' => 'Search Singles',
-    'not_found' => 'No Singles Found',
-    'not-found_in_trash' => 'No Singles Found in Trash',
-    'parent_item_colon' => 'Parent Singles'
+    'name' => __('Singles', 'koband'),
+    'singular_name' => __('Singles', 'koband'),
+    'add_new' => __('Add Singles', 'koband'),
+    'all_items' => __('All Singles','koband'),
+    'add_new_item' => __('Add Singles', 'koband'),
+    'edit_item' => __('Edit Singles', 'koband'),
+    'new_item' => __('New Singles', 'koband'),
+    'view_item' => __('View Singles', 'koband'),
+    'search_item' => __('Search Singles', 'koband'),
+    'not_found' => __('No Singles Found', 'koband'),
+    'not-found_in_trash' => __('No Singles Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent Singles', 'koband')
     );
   
   $args = array(
@@ -53,7 +53,7 @@ function ko_band_register_singles() {
     'exclude_from_search' =>false,
   );
 
-register_post_type( 'Singles',$args);
+register_post_type( __('Singles','koband'), $args);
 }
 add_action('init', 'ko_band_register_singles' );
   
@@ -61,7 +61,7 @@ add_action('add_meta_boxes', 'ko_band_singles_meta_box_init');
 function ko_band_singles_meta_box_init(){
         add_meta_box(
         'ko_band_singles_meta_box',
-        'Song Details',
+        __('Song Details', 'koband'),
         'ko_band_singles_display_meta_box',
         'singles',
         'normal',
@@ -84,12 +84,8 @@ function ko_band_singles_display_meta_box($post, $box){
 
 <div class="container"> <!-- Container div for Single Length and Date -->
     <div class="row">
-              <div class="col-sm">
-                    Single Length:
-              </div>
-              <div class="col-sm">
-                    Date Release:
-              </div>
+              <div class="col-sm"><?php _e('Single Length', 'koband');?></div>
+              <div class="col-sm"><?php _e('Date Release', 'koband');?></div>
 
     </div>
     <div class="row">
@@ -120,12 +116,8 @@ function ko_band_singles_display_meta_box($post, $box){
 
 <div class="container" id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
     <div class="row form_heading">
-                <div class="col-sm">
-                        Store Name
-                </div>
-                <div class="col-sm">
-                        Store Link
-                </div>
+                <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
+                <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
     </div>
     <?php if ( $singles_stores ) :    
          foreach ( $singles_stores as $field) { ?>
@@ -137,7 +129,7 @@ function ko_band_singles_display_meta_box($post, $box){
                           <input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" />
                 </div>
                 <div class="col-sm">
-                          <a class="button remove-row" href="#">Remove</a>
+                          <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
                 </div>
       </div>
       <?php  } else :  // show a blank one    ?>
@@ -149,7 +141,7 @@ function ko_band_singles_display_meta_box($post, $box){
                           <input type="url" class="widefat" name="link[]" />
                 </div>
                 <div class="col-sm">
-                          <a class="button remove-row" href="#">Remove</a>
+                          <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
                 </div>
       </div>
       <?php endif; ?>
@@ -162,13 +154,13 @@ function ko_band_singles_display_meta_box($post, $box){
                           <input type="url" class="widefat" name="link[]" />
                 </div>
                 <div class="col-sm">
-                          <a class="button remove-row" href="#">Remove</a>
+                          <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
                 </div>
       </div>
 </div>
 
 
-<p><a id="add-row" class="button" href="#">Add another</a></p>
+<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p>
 
 <?php } 
 

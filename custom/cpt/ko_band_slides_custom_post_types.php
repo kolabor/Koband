@@ -92,25 +92,56 @@ function ko_band_slides_meta_box($post, $box){
     $slides_button_title = get_post_meta( $post->ID, 'ko_band_slides_button_title', true );
     $slides_button_link = get_post_meta( $post->ID, 'ko_band_slides_button_link', true );
 
-    // Output the field
-    echo "<p>If you want video slider please check here:</br></p>";
-    echo '<input type="checkbox" name="ko_band_slides_check" value="' . esc_textarea( $slides_check )  . '" class="slidecheck" ></br>';
-    
-    echo "<p>Video holder:</p>";
-    echo '<input type="text" name="ko_band_slides_video" value="' . esc_textarea( $slides_video )  . '" class="slidevideo" style"width:35%;"placeholder="Please paste here embed video"></br>';
-    
-    echo"<p>Title:</p>";
-    echo '<input type="text" name="ko_band_slides_title" value="' . esc_textarea( $slides_title )  . '" class="slidetitle" placeholder="Text title on slide">';
-    
-    echo"<p>Subtitle:</p>";
-    echo '<input type="text" name="ko_band_slides_subtitle" value="' . esc_textarea( $slides_subtitle )  . '" class="slidesub" placeholder="Text subtitle on slide"></br>';
-    
-    echo"<p>Title:</p>";
-    echo '<input type="text" name="ko_band_slides_button_title" value="' . esc_textarea( $slides_button_title )  . '" class="slidebutton" placeholder="Button Title">';
-    
-    echo"<p>Link:</p>";
-    echo '<input type="text" name="ko_band_slides_button_link" value="' . esc_textarea( $slides_button_link )  . '" class="slidebuttonlink" placeholder="Please paste here button link">';
+    // Output the field ?>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                If you want video slider please check here:
+            </div>
+            <div class="col-sm">
+                Video Holder:
+            </div>
+            <div class="col-sm">
+                Title:
+            </div>
+            <div class="col-sm">
+                Subtitle:
+            </div>
+            <div class="col-sm">
+                Button Title:
+            </div>
+            <div class="col-sm">
+                Button Link:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="checkbox" name="ko_band_slides_check" value="<?php esc_textarea( $slides_check )?>" class="slidecheck">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_slides_video" value="<?php esc_textarea( $slides_video )?>" placeholder="Please paste here embed video" class="slidevideo">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_slides_title" value="<?php esc_textarea( $slides_title )?>" placeholder="Text title on slide" class="slidetitle">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_slides_subtitle" value="<?php esc_textarea( $slides_subtitle )?>" placeholder="Text subtitle on slide" class="slidesub">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_slides_button_title" value="<?php esc_textarea( $slides_button_title )?>" placeholder="Button Title" class="slidebutton">
+            </div>
+            <div class="col-sm">
+                <input type="text" name="ko_band_slides_button_link" value="<?php esc_textarea( $slides_button_link )?>" placeholder="Please paste here button link" class="slidebuttonlink">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+     <?php
 
 
  }
