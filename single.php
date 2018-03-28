@@ -8,6 +8,12 @@
  */
 
 get_header(); ?>
+<?php
+$images = get_post_meta($post->ID, 'vdw_gallery_id', true);
+foreach ($images as $image) {
+    $image_obj = get_post($image);
+    echo $image_obj->post_excerpt;
+} ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 

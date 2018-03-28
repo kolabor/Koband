@@ -1,0 +1,51 @@
+$kolabor1: #00a8a8;
+$kolabor2: #6d5e82;
+$cpfwidth: 30%;
+th {
+  font-weight: 600;
+}
+#gallery-metabox-list li {
+  float: left;
+  width: 150px;
+  text-align: center;
+  margin: 10px 10px 10px 0;
+  cursor: move;
+}
+.inside p{
+  font-weight: 600;
+  display:inline;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: $cpfwidth;
+}
+.albumrelease, .albumlength, .singlename,
+.singlelength, .singledate, .slidevideo,
+.slidetitle, .slidesub, .slidebutton, .slidebuttonlink{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.slidecheck {margin-top: 10px; margin-left: 10px;}
+#ko_band_album_meta_box.postbox .inside, #ko_band_media_meta_box.postbox .inside,
+#gallery-metabox.postbox .inside, #ko_band_singles_meta_box.postbox .inside {
+  background: #f9f9f9  ;
+  border: 2px $kolabor2;
+}
+#ko_band_album_meta_box_one, #ko_band_album_meta_box_store, #ko_band_repetable_singles_stores_one{
+  border-top: 1px solid #c8d7e1;
+  padding: 15px;
+  padding-top: 35px;
+  padding-left: 0px;
+}
+.inside input {
+  height: 32px ;
+}
+#add-row-details{
+  margin-bottom: 10px;
+}
+#add-row {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+#ko_band_album_meta_box_store {
+  width: 71%;
+}
