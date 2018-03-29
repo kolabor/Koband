@@ -49,7 +49,7 @@ wp_head(); ?>
 <!--<div class="wrap">-->
    <nav>
      <div class="row clearfix menu">
-                    <img src="resources/img/logo-font.gif" alt="Këpurdhat-logo" class="logo">
+                    <img src="resources/img/logo-font.gif" alt="Koband-logo" class="logo">
       <ul class="main-nav ">
                         <li><a href="#"><?php _e('HOME', 'koband');?></a></li>
                         <li><a href="#"><?php _e('NEWS', 'koband');?></a></li>
