@@ -2,9 +2,11 @@
 /**
  * The Template for displaying all single posts
  *
- * @package Catch Themes
- * @subpackage Kolabor Band
- * @since Kolabor Band 0.3
+ *
+ *
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
  */
 
 get_header(); ?>
@@ -25,7 +27,7 @@ foreach ($images as $image) {
 			 *
 			 * @hooked kolabor_band_post_navigation - 10
 			 */
-			do_action( 'kolabor_band_after_post' );
+			do_action_e( 'ko_band_after_post', 'koband');
 
 		?>
 	<?php endwhile; // end of the loop. ?>

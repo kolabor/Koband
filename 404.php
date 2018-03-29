@@ -2,9 +2,9 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @package Catch Themes
- * @subpackage Kolabor Band
- * @since Kolabor Band 0.2
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
  */
 
 get_header();
@@ -15,11 +15,11 @@ get_header();
 			<article id="page-404" class="error-404 not-found type-page hentry">
 				<div class="entry-container">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'kolabor-band' ); ?></h1>
+						<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'koband' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<div class="entry-content">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'kolabor-band' ); ?></p>
+						<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'koband' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
 				</div><!-- .entry-container -->

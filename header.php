@@ -1,11 +1,13 @@
 <?php
 /**
-* The default template for displaying header
-*
-* @package Catch Themes
-* @subpackage Kolabor Band
-* @since Kolabor Band 0.3
-*/
+ * Koband Theme Options file!
+ *
+ *
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
+ */
+
 wp_head(); ?>
 
 
@@ -16,11 +18,11 @@ wp_head(); ?>
    rel="home"><?php bloginfo( 'name' ); ?>
    </a>
   </h1>
-  <?php if (is_category('Band')) { ?>
+  <?php if (is_category(__('Band','koband'))) { ?>
    <!-- overlay a pretty guitar on the logo for the band category -->
-   <img id="rainbow"
+   <img id="koband"
     src="<?php bloginfo('template_directory');?>/images/kolabor.png"
-    alt="I Love Rock! " />
+    alt="<?php _e('I Love Rock!', 'koband');?> " />
   <?php } ?>
  </div> <!-- Here ends header-main div -->
 </header>
@@ -38,7 +40,7 @@ wp_head(); ?>
          <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
          <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
          <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,900,300italic' rel='stylesheet' type='text/css'>
- <title>Këpurdhat</title>
+ <title><?php _e('Këpurdhat', 'koband');?></title>
 </head>
 <body>
  <header>
@@ -49,24 +51,24 @@ wp_head(); ?>
      <div class="row clearfix menu">
                     <img src="resources/img/logo-font.gif" alt="Këpurdhat-logo" class="logo">
       <ul class="main-nav ">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">NEWS</a></li>
+                        <li><a href="#"><?php _e('HOME', 'koband');?></a></li>
+                        <li><a href="#"><?php _e('NEWS', 'koband');?></a></li>
                         
                          <li>
-                          <a href="#">MUSIC ￬</a>
+                          <a href="#"><?php _e('MUSIC ￬', 'koband');?></a>
          <ul class="dropdown-content">
-             <li> <a href="#">ALBUMS</a></li>
-             <li><a href="#">SINGLES</a></li>
+             <li> <a href="#"><?php _e('ALBUMS', 'koband');?></a></li>
+             <li><a href="#"><?php _e('SINGLES', 'koband');?></a></li>
          </ul>
        </li>
        
-                        <li><a href="#">TOUR</a></li>
-                        <li><a href="#">THE BAND</a></li>
+                        <li><a href="#"><?php _e('TOUR', 'koband');?></a></li>
+                        <li><a href="#"><?php _e('THE BAND', 'koband');?></a></li>
                          <li>
-                          <a href="#">MEDIA ￬</a>
+                          <a href="#"><?php _e('MEDIA ￬', 'koband');?></a>
          <ul class="dropdown-content">
-              <li> <a href="#">PHOTOS</a></li>
-              <li> <a href="#">VIDEOS</a></li>
+              <li> <a href="#"><?php _e('PHOTOS', 'koband');?></a></li>
+              <li> <a href="#"><?php _e('VIDEOS', 'koband');?></a></li>
           </ul>
        </li>   
 

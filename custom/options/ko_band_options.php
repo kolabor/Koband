@@ -15,14 +15,14 @@ function ko_band_customize_register( $wp_customize )
   	$wp_customize->add_section('ko_band_footer', array(
 
         'title' => __('Footer', 'koband'),
-        'description' => 'Modify the theme footer'
+        'description' =>  __('Modify the theme footer', 'koband')
     ));
     $wp_customize->add_setting('footer-nav', array(
-        'default' => '',
+        'default' => '#fff',
     ));
-    $wp_customize->add_control(new WP_Customize_Footer_Control($wp_customize,'footer-nav', array(
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'footer-nav', array(
         'label' => __('Footer Edit', 'koband'),
-        'section' => 'ko_band_footer',
+        'section' => __('ko_band_footer', 'koband'),
         'settings' => 'footer-nav'
     )));
 }

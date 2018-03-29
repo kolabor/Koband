@@ -67,15 +67,15 @@ add_action('after_setup_theme', 'ko_band_theme_support');
 //Widget Locations
 function init_widgets($id){
 	register_sidebar(array(
-		'name' => 'Sidebar',
+		'name' => __('Sidebar','koband'),
 		'id' => 'sidebar',
-		'before_widget' => '<duv  class="side-widgets">',
-		'after_widget' => '</div>',
+		'before_sidebar' => '<duv  class="side-sidebar">',
+		'after_sidebar' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => 'Widgets 1',
+		'name' => __('Widgets 1', 'koband'),
 		'id' => 'widgets_1',
 		'before_widget' => '<duv  class="side-widgets_1">',
 		'after_widget' => '</div>',
@@ -83,7 +83,7 @@ function init_widgets($id){
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => 'Widgets 2',
+		'name' => __('Widgets 2', 'koband'),
 		'id' => 'widgets_2',
 		'before_widget' => '<duv  class="side-widgets_2">',
 		'after_widget' => '</div>',
@@ -91,7 +91,7 @@ function init_widgets($id){
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => 'Widgets 3',
+		'name' => __('Widgets 3', 'koband'),
 		'id' => 'widgets_3',
 		'before_widget' => '<duv  class="side-widgets_3">',
 		'after_widget' => '</div>',
@@ -99,7 +99,7 @@ function init_widgets($id){
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => 'Widgets 4',
+		'name' => __('Widgets 4', 'koband'),
 		'id' => 'widgets_4',
 		'before_widget' => '<duv  class="side-widgets_4">',
 		'after_widget' => '</div>',
@@ -108,10 +108,5 @@ function init_widgets($id){
 	));
 }
 add_action('widgets_init', 'init_widgets');
-
-
-
-
-
 
 ?>
