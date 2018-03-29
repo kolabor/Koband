@@ -2,7 +2,7 @@ jQuery(function($) {
 
   var file_frame;
 
-  $(document).on('click', '#gallery-metabox a.gallery-add', function(e) {
+  $(document).on('click', '#ko_band_gallery-metabox a.gallery-add', function(e) {
 
     e.preventDefault();
 
@@ -34,7 +34,7 @@ jQuery(function($) {
 
   });
 
-  $(document).on('click', '#gallery-metabox a.change-image', function(e) {
+  $(document).on('click', '#ko_band_gallery-metabox a.change-image', function(e) {
 
     e.preventDefault();
 
@@ -76,7 +76,7 @@ jQuery(function($) {
     });
   }
 
-  $(document).on('click', '#gallery-metabox a.remove-image', function(e) {
+  $(document).on('click', '#ko_band_gallery-metabox a.remove-image', function(e) {
     e.preventDefault();
 
     $(this).parents('li').animate({ opacity: 0 }, 200, function() {

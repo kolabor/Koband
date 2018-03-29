@@ -97,12 +97,12 @@ function ko_band_the_band_meta_box($post, $box){
 
     // Output the field ?>
     <div class="container">
+
         <div class="row">
             <div class="col-sm"><?php _e('The Band Biography:', 'koband');?></div>
             <div class="col-sm"><?php _e('The Band Success:','koband');?></div>
-            <div class="col-sm"><?php _e('The Band Awards:', 'koband');?></div>
-            <div class="col-sm"><?php _e('The Band Photo:', 'koband');?></div>
         </div>
+
         <div class="row">
             <div class="col-sm">
                 <input type="text" name="ko_band_the_band_bio" value="<?php esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>">
@@ -111,9 +111,15 @@ function ko_band_the_band_meta_box($post, $box){
                 <input type="text" name="ko_band_the_band_success" value="<?php esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="<?php _e('The Band Success', 'koband');?>">
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm"><?php _e('The Band Awards:', 'koband');?></div>
+            <div class="col-sm"><?php _e('The Band Photo:', 'koband');?></div>
+        </div>
+
         <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder=<?php _e('The Band Award', 'koband');?>">
+                <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder="<?php _e('The Band Award', 'koband');?>">
             </div>
             <div class="col-sm">
                 <input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php esc_html( $the_band_photo )?>" class="widefat" placeholder="<?php _e('The Band Photo', 'koband');?>">
@@ -126,27 +132,6 @@ function ko_band_the_band_meta_box($post, $box){
 add_action( 'save_post', 'ko_band_the_band_save_meta_box' , 1, 2);
 
 function ko_band_the_band_save_meta_box( $post_id, $post ) {
-
-/*
-    if (isset($_POST['ko_band_the_band_bio'])) {
-        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-            return;
-        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_the_band_save_meta_box');
-
-        update_post_meta( $post_id, '_ko_band_the_band_bio',
-            sanitizes_text_field ($POST['ko_band_the_band_bio']));
-        update_post_meta( $post_id, '_ko_band_the_band_success',
-            sanitizes_text_field ($POST['ko_band_the_band_success']));
-        update_post_meta( $post_id, '_ko_band_the_band_award',
-            sanitizes_text_field ($POST['ko_band_the_band_award']));
-        update_post_meta( $post_id, '_ko_band_the_band_photo',
-            sanitizes_text_field ($POST['ko_band_the_band_photo']));
-        update_post_meta( $post_id, '_ko_band_the_band_photo',
-            sanitizes_text_field ($POST['ko_band_the_band_photo']));
-    }
-}
-
-*/
 
 
 if ( ! current_user_can( 'edit_post', $post_id ) ) {

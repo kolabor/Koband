@@ -69,9 +69,9 @@ function ko_band_gallery_metabox($post_type) {
     $types = array('custom-post-type');
     {
       add_meta_box(
-        'gallery-metabox',
+        'ko_band_gallery-metabox',
         __ ('Gallery', 'koband'),
-        'gallery_meta_callback',
+        'ko_band_gallery_meta_callback',
         'media',
         'normal',
         'high'
@@ -80,19 +80,8 @@ function ko_band_gallery_metabox($post_type) {
 }
 add_action('add_meta_boxes', 'ko_band_gallery_metabox');
 
-function ko_band_enqueue_admin_scripts($hook) {
 
-    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
-
-          wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
-          wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
-    }
-}
-
-add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
-
-
-function gallery_meta_callback() {
+function ko_band_gallery_meta_callback() {
 global $post;
     wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
@@ -118,7 +107,7 @@ global $post;
 
   <?php }
 
-function gallery_meta_save($post_id) {
+function ko_band_gallery_meta_save($post_id) {
 
         if (!isset($_POST['gallery_meta_nonce']) || !wp_verify_nonce($_POST['gallery_meta_nonce'], basename(__FILE__))) return;
         if (!current_user_can('edit_post', $post_id)) return;
@@ -133,7 +122,7 @@ function gallery_meta_save($post_id) {
     }
 }
 
-add_action('save_post', 'gallery_meta_save');
+add_action('save_post', 'ko_band_gallery_meta_save');
 
 //------------------------------------------------Gallery Image Metabox Ends Here---------------------------------------------
 
