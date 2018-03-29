@@ -113,6 +113,33 @@ function ko_band_album_display_meta_box() {
     </div>
 </div>
 
+<!--
+<script type="text/javascript">
+    jQuery(document).ready(function( $ ){ 
+        $( '#add-row-details' ).on('click', function() {
+            var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
+            row_details.removeClass( 'empty-row-details screen-reader-text' );
+            row_details.insertBefore( '#ko_band_album_meta_box_one .row:last' );
+            return false;
+        });
+            $( '.remove-row-details' ).on('click', function() {
+            $(this).parents('.row').remove();
+            return false; 
+       });
+
+        $( '#add-row-stores' ).on('click', function() {
+            var row_stores = $( '.empty-row-stores.screen-reader-text' ).clone(true);
+            row_stores.removeClass( 'empty-row-stores screen-reader-text' );
+            row_stores.insertBefore( '#ko_band_album_meta_box_store .row:last' );
+            return false;
+        });
+            $( '.remove-row-stores' ).on('click', function() {
+            $(this).parents('.row').remove();
+            return false;
+        });
+    });
+</script> -->
+
 
 <div class="container" id="ko_band_album_meta_box_one" >
     <div class="row">

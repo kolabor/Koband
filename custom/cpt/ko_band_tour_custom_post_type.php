@@ -110,7 +110,7 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="date" name="ko_band_tour_date" value="'<?php echo esc_textarea( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>">
+                <input type="date" name="ko_band_tour_date" value="'<?php echo esc_html( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>">
             </div>
             <div class="col-sm">
                 <input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>">

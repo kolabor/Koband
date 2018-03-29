@@ -79,9 +79,24 @@ function ko_band_singles_display_meta_box($post, $box){
     $singles_length = get_post_meta( $post->ID, 'ko_band_singles_length', true );
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
      
-
-
     // Output the field?>
+
+<!--
+    <script type="text/javascript">
+    jQuery(document).ready(function( $ ){
+        $( '#add-row' ).on('click', function() {
+            var row = $( '.empty-row.screen-reader-text' ).clone(true);
+            row.removeClass( 'empty-row screen-reader-text' );
+            row.insertAfter( '#ko_band_repetable_singles_stores_one .row:last' );
+            return false;
+        });
+            $( '.remove-row' ).on('click', function() {
+            $(this).parents('.row').remove();
+            return false;
+        });
+    });
+
+</script> -->
 
 
 <div class="container"> <!-- Container div for Single Length and Date -->
@@ -94,10 +109,10 @@ function ko_band_singles_display_meta_box($post, $box){
     </div>
     <div class="row">
               <div class="col-sm">
-                    <input type="number" name="ko_band_singles_length" value="<?php echo esc_attr( $singles_length ) ?>" class="singlelength" placeholder="Min.Sec">
+                    <input type="number" name="ko_band_singles_length" value="<?php echo esc_html( $singles_length ) ?>" class="singlelength" placeholder="Min.Sec">
               </div>
               <div class="col-sm">
-                    <input type="date" name="ko_band_singles_date_release" value="<?php echo esc_attr( $singles_date_release ) ?>" class="singledate">
+                    <input type="date" name="ko_band_singles_date_release" value="<?php echo esc_html( $singles_date_release ) ?>" class="singledate">
               </div>
 
               <div class="col-sm"></div>
@@ -123,7 +138,7 @@ function ko_band_singles_display_meta_box($post, $box){
                 </div>
       </div>
       <?php  } else :  // show a blank one    ?>
-      <div class="row form_elements">
+      <div class="row">
                 <div class="col-sm">
                           <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes..." />
                 </div>
@@ -136,7 +151,7 @@ function ko_band_singles_display_meta_box($post, $box){
       </div>
       <?php endif; ?>
         <!-- empty hidden one for jQuery -->
-      <div class="row empty-row-singles screen-reader-text form_elements">
+      <div class="row empty-row-singles screen-reader-text">
                 <div class="col-sm">
                           <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes..."/>
                 </div>
@@ -149,7 +164,7 @@ function ko_band_singles_display_meta_box($post, $box){
       </div>
 </div>
 <div class="button-add-row-single">
-<p><a id="add-row-singles" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
 
 <?php } 
 
@@ -161,8 +176,8 @@ function ko_band_singles_save_meta_box( $post_id, $post ) {
             return;
           if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
-        $singles_meta['ko_band_singles_length'] = esc_attr( $_POST['ko_band_singles_length'] );
-        $singles_meta['ko_band_singles_date_release'] = esc_attr( $_POST['ko_band_singles_date_release'] );
+        $singles_meta['ko_band_singles_length'] = esc_html( $_POST['ko_band_singles_length'] );
+        $singles_meta['ko_band_singles_date_release'] = esc_html( $_POST['ko_band_singles_date_release'] );
   
         foreach ( $singles_meta as $key => $value ) :
         // Don't store custom data twice
