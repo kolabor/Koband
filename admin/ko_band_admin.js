@@ -104,7 +104,7 @@ jQuery(function($) {
 
 jQuery(document).ready(function( $ ){ 
         
-        $( '#add-row-details' ).on('click', function() {
+        $( '#add-row-details' ).unbind('click').bind('click', function() {
             var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
             row_details.removeClass( 'empty-row-details screen-reader-text' );
             row_details.insertBefore( '#ko_band_album_meta_box_one .row:last' );
@@ -115,7 +115,7 @@ jQuery(document).ready(function( $ ){
             return false; 
        }); 
 
-        $( '#add-row-stores' ).on('click', function() {
+        $( '#add-row-stores' ).unbind('click').bind('click', function() {
             var row_stores = $( '.empty-row-stores.screen-reader-text' ).clone(true);
             row_stores.removeClass( 'empty-row-stores screen-reader-text' );
             row_stores.insertBefore( '#ko_band_album_meta_box_store .row:last' );
@@ -126,7 +126,7 @@ jQuery(document).ready(function( $ ){
             return false;
         });
             // Album Repetable fields ends here //
-        $( '#add-row-media' ).on('click', function() {
+        $( '#add-row-media' ).unbind('click').bind('click', function() {
             var row_media = $( '.empty-row-media.screen-reader-text' ).clone(true);
             row_media.removeClass( 'empty-row-media screen-reader-text' );
             row_media.insertBefore( '#ko_band_repetable_video_field_one .row:last' );
@@ -138,7 +138,7 @@ jQuery(document).ready(function( $ ){
             return false;
         });
             // Media Repetable fields ends here //
-        $( '#add-row' ).on('click', function() {
+        $( '#add-row-single' ).unbind('click').bind('click', function() {
             var row_single = $( '.empty-row-singles.screen-reader-text' ).clone(true);
             row_single.removeClass( 'empty-row-singles screen-reader-text' );
             row_single.insertBefore( '#ko_band_repetable_singles_stores_one .row:last' );
