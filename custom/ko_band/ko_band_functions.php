@@ -29,26 +29,56 @@ add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' );
 
 function ko_band_custom_wp_admin_style() {
 
-        wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
-        wp_enqueue_style( 'custom_wp_admin_css' );
+    wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
+    wp_enqueue_style( 'custom_wp_admin_css' );
 
-        wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
-        wp_enqueue_script( 'custom_wp_admin_js' );
+    wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
+    wp_enqueue_script( 'custom_wp_admin_js' );
 
-        wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
-        wp_enqueue_style( 'bootstrap_grid' );
+    wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
+    wp_enqueue_style( 'bootstrap_grid' );
 
-        wp_register_style( 'bootstrap', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
-        wp_enqueue_style( 'bootstrap' );
+    wp_register_style( 'bootstrap', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
+    wp_enqueue_style( 'bootstrap' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
-// Ndrimi i Set Image ne text si duam 
-function km_change_featured_image_metabox_title() {
-	remove_meta_box( 'postimagediv', 'tour', 'side' );
-	add_meta_box( 'postimagediv', __( 'NEW TITLE TEXT', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
+
+// Function for Media CPT to add gallery images
+
+function ko_band_enqueue_admin_scripts($hook) {
+
+    if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+
+          wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
+          wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
+    }
 }
-add_action('do_meta_boxes', 'km_change_featured_image_metabox_title' );
+
+add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
+
+// Changing the set image text
+
+function ko_band_featured_image_metabox_title() {
+	remove_meta_box( 'postimagediv', 'tour', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
+
+	remove_meta_box( 'postimagediv', 'media', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'media', 'side' );
+
+	remove_meta_box( 'postimagediv', 'singles', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'singles', 'side' );
+
+	remove_meta_box( 'postimagediv', 'slides', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'slides', 'side' );
+
+	remove_meta_box( 'postimagediv', 'the band', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'the band', 'side' );
+
+	remove_meta_box( 'postimagediv', 'tour', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
+}
+add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
 
 // Theme Support
 

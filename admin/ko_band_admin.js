@@ -3,7 +3,7 @@ jQuery(function($) {
 
   var file_frame;
 
-  $(document).on('click', '#gallery-metabox a.gallery-add', function(e) {
+  $(document).on('click', '#ko_band_gallery-metabox a.gallery-add', function(e) {
 
     e.preventDefault();
 
@@ -35,7 +35,7 @@ jQuery(function($) {
 
   });
 
-  $(document).on('click', '#gallery-metabox a.change-image', function(e) {
+  $(document).on('click', '#ko_band_gallery-metabox a.change-image', function(e) {
 
     e.preventDefault();
 
@@ -77,7 +77,7 @@ jQuery(function($) {
     });
   }
 
-  $(document).on('click', '#gallery-metabox a.remove-image', function(e) {
+  $(document).on('click', '#ko_band_gallery-metabox a.remove-image', function(e) {
     e.preventDefault();
 
     $(this).parents('li').animate({ opacity: 0 }, 200, function() {
@@ -94,17 +94,56 @@ jQuery(function($) {
 
         /*Repeatable fields for Media CPT (Adding videos) */
         $( '#add-row' ).on('click', function() {
-            var row = $( '.empty-row.screen-reader-text' ).clone(true);
+            var row = $( '#ko_band_repetable_video_field_one .empty-row.screen-reader-text' ).clone();
             row.removeClass( 'empty-row screen-reader-text' );
-            row.insertBefore( '#ko_band_repetable_video_field_one tbody>tr:last' );
+            row.insertBefore( '#ko_band_repetable_video_field_one .row:last' );
             return false;
         });
     
-        $( '.remove-row' ).on('click', function() {
-            $(this).parents('tr').remove();
+            $( '.remove-row' ).on('click', function() {
+            $(this).parents('.row').remove();
             return false;
         });
         /*Repeatable fields for Media CPT (Adding videos) ends*/
+        
+        /*Repeatable fields for Media CPT (Adding "Singles CPF") */
+        $( '#add-row-singles' ).on('click', function() {
+            var row = $( '#ko_band_repetable_singles_stores_one .empty-row-singles.screen-reader-text' ).clone();
+            row.removeClass( 'empty-row-singles screen-reader-text' );
+            row.insertAfter( '#ko_band_repetable_singles_stores_one .row:last' );
+            return false;
+        });
+            $( '.remove-row' ).on('click', function() {
+            $(this).parents('.row').remove();
+            return false;
+        });
+
+        /*Repeatable fields for Media CPT (Adding "Singles CPF") ends */ 
+
+        /*Repeatable fields for Media CPT (Adding "Albums CPF") */   
+        $( '#add-row-details' ).on('click', function() {
+            var row_details = $( '#ko_band_album_meta_box_one .empty-row-detail.screen-reader-text' ).clone();
+            row_details.removeClass( 'empty-row-details screen-reader-text' );
+            row_details.insertBefore( '#ko_band_album_meta_box_one .row:last' );
+            return false;
+        });
+            $( '.remove-row-details' ).on('click', function() {
+            $(this).parents('.row').remove();
+            return false; 
+       });
+
+        $( '#add-row-stores' ).on('click', function() {
+            var row_stores = $( '#ko_band_album_meta_box_store .empty-row-stores.screen-reader-text' ).clone();
+            row_stores.removeClass( 'empty-row-stores screen-reader-text' );
+            row_stores.insertBefore( '#ko_band_album_meta_box_store .row:last' );
+            return false;
+        });
+            $( '.remove-row-stores' ).on('click', function() {
+            $(this).parents('.row').remove();
+            return false;
+        });
+
+        /*Repeatable fields for Media CPT (Adding "Albums CPF") ends */
     });/* On document ready ends here */
 
 });

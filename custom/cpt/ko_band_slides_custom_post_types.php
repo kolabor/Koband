@@ -79,6 +79,7 @@ function ko_band_slides_meta_box_init(){
 function ko_band_slides_meta_box($post, $box){
 
     global $post;
+    
     // Nonce field to validate form request came from current site
 
     wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_slides_save_meta_box' );
@@ -96,37 +97,39 @@ function ko_band_slides_meta_box($post, $box){
 
     <div class="container">
         <div class="row">
-            <div class="col-sm"><?php _e('If you want video slider please check here:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Video Holder:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Title:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Subtitle:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Button Title:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Button Link:', 'koband');?></div>
-
+                    <div class="col-sm"><?php _e('If you want video slider please check here:', 'koband');?></div>
+                    <div class="col-sm"><?php _e('Video Holder:', 'koband');?></div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_title" value="<?php esc_textarea( $slides_title )?>" placeholder="Text title on slide" class="slidetitle">
+                    <input type="checkbox" name="ko_band_slides_check" value="<?php echo esc_textarea( $slides_check )?>" class="slidecheck">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_subtitle" value="<?php esc_textarea( $slides_subtitle )?>" placeholder="Text subtitle on slide" class="slidesub">
-                <input type="text" name="ko_band_slides_video" value="<?php esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo">
+                    <input type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo">
             </div>
         </div>
         <div class="row">
+                    <div class="col-sm"><?php _e('Title:', 'koband');?></div>
+                    <div class="col-sm"><?php _e('Subtitle:', 'koband');?></div>
+        </div>
+        <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_title" value="<?php esc_textarea( $slides_title )?>" placeholder= "<?php _e('Text title on slide', 'koband');?>" class="slidetitle">
+                    <input type="text" name="ko_band_slides_title" value="<?php echo esc_textarea( $slides_title )?>" placeholder= "<?php _e('Text title on slide', 'koband');?>" class="slidetitle">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_subtitle" value="<?php esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub">
+                    <input type="text" name="ko_band_slides_subtitle" value="<?php echo esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub">
             </div>
+        </div>
+        <div class="row">
+                    <div class="col-sm"><?php _e('Button Title:', 'koband');?></div>
+                    <div class="col-sm"><?php _e('Button Link:', 'koband');?></div>
         </div>
         <div class="row">        
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_button_title" value="<?php esc_textarea( $slides_button_title )?>" placeholder= "<?php _e('Button Title', 'koband');?>" class="slidebutton">
+                    <input type="text" name="ko_band_slides_button_title" value="<?php echo esc_textarea( $slides_button_title )?>" placeholder= "<?php _e('Button Title', 'koband');?>" class="slidebutton">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_slides_button_link" value="<?php esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Please paste here button link', 'koband');?>" class="slidebuttonlink">
+                    <input type="text" name="ko_band_slides_button_link" value="<?php echo esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Please paste here button link', 'koband');?>" class="slidebuttonlink">
             </div>
         </div>
     </div>
@@ -144,28 +147,6 @@ function ko_band_slides_meta_box($post, $box){
 add_action( 'save_post', 'ko_band_slides_save_meta_box' , 1, 2);
 
 function ko_band_slides_save_meta_box( $post_id, $post ) {
-
-/*    if (isset($_POST['ko_band_slides_check'])) {
-        if( defiend('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-            return;
-        wp_verify_nonce( plugin_basename( __FILE__ ), 'ko_band_slides_save_meta_box');
-
-        update_post_meta( $post_id, '_ko_band_slides_check',
-            sanitizes_text_field ($POST['ko_band_slides_check']));
-        update_post_meta( $post_id, '_ko_band_slides_video',
-            sanitizes_text_field ($POST['ko_band_slides_video']));
-        update_post_meta( $post_id, '_ko_band_slides_title',
-            sanitizes_text_field ($POST['ko_band_slides_title']));
-        update_post_meta( $post_id, '_ko_band_slides_subtitle',
-            sanitizes_text_field ($POST['ko_band_slides_subtitle']));
-        update_post_meta( $post_id, '_ko_band_slides_button_title',
-            sanitizes_text_field ($POST['ko_band_slides_button_title']));
-        update_post_meta( $post_id, '_ko_band_slides_button_link',
-            sanitizes_text_field ($POST['ko_band_slides_button_link']));
-    }
-}
-
-*/
 
 
 if( !current_user_can( 'edit_post', $post_id ) ) {
