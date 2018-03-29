@@ -18,30 +18,37 @@
  *
  *
  */
+// Change Set Featured image text
 
-// Load custom css script for admin dashboard
-			
+function ko_band_featured_image_text( $content ) {
+    return $content = str_replace( __( 'Set featured image' ), __( 'Set Cover Image' ), $content);
+}
+add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' );
+
+// Load custom css script and custom javascript for admin dashboard
+
 function ko_band_custom_wp_admin_style() {
 
         wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
         wp_enqueue_style( 'custom_wp_admin_css' );
 
+        wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
+        wp_enqueue_script( 'custom_wp_admin_js' );
+
         wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
         wp_enqueue_style( 'bootstrap_grid' );
+
         wp_register_style( 'bootstrap', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
         wp_enqueue_style( 'bootstrap' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
-
-// Load custom javascript file for admin dashboard
-
-function ko_band_custom_wp_admin_script() {
-
-        wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
-        wp_enqueue_script( 'custom_wp_admin_js' );
+// Ndrimi i Set Image ne text si duam 
+function km_change_featured_image_metabox_title() {
+	remove_meta_box( 'postimagediv', 'tour', 'side' );
+	add_meta_box( 'postimagediv', __( 'NEW TITLE TEXT', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
 }
-add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_script' ); 
+add_action('do_meta_boxes', 'km_change_featured_image_metabox_title' );
 
 // Theme Support
 

@@ -110,6 +110,8 @@ function ko_band_the_band_meta_box($post, $box){
             <div class="col-sm">
                 <input type="text" name="ko_band_the_band_success" value="<?php esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="<?php _e('The Band Success', 'koband');?>">
             </div>
+        </div>
+        <div class="row">
             <div class="col-sm">
                 <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder=<?php _e('The Band Award', 'koband');?>">
             </div>

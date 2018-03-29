@@ -193,6 +193,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <div class="row">
         <div class="col-sm"><?php _e('Video Link', 'koband');?></div>
         <div class="col-sm"><?php _e('Select', 'koband');?></div>
+        <div class="col-sm"></div>
     </div>
 <?php if ( $video_field ) :    
     foreach ( $video_field as $field) { ?>
@@ -214,7 +215,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <?php } else: ?>
     <div class="row">
         <div class="col-sm">
-            <input type="url" class="widefat" name="link[]" />
+            <input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" />
         </div>
         <div class="col-sm">
             <select name="select[]">
@@ -231,7 +232,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         <!-- empty hidden one for jQuery -->
     <div class="row empty-row screen-reader-text">
         <div class="col-sm">
-            <input type="url" class="widefat" name="link[]" />
+            <input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" />
         </div>
         <div class="col-sm">
             <select name="select[]" >
@@ -245,7 +246,8 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         </div>
     </div>
 </div>
-<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p>
+<div class="button-add-row">
+<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
  
 <?php 
 }

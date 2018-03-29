@@ -152,8 +152,8 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="radio" name="ko_band_tour_ticket" value1="<?php esc_attr( $tour_ticket )?>" class="widefat" >
-                <input type="radio" name="ko_band_tour_ticket" value2="<?php esc_attr( $tour_ticket )?>" class="widefat" >
+                <input type="radio" name="ko_band_tour_ticket" value1="<?php esc_attr( $tour_ticket )?>" class="radio1" >
+                <input type="radio" name="ko_band_tour_ticket" value2="<?php esc_attr( $tour_ticket )?>" class="radio2" >
             </div>
             <div class="col-sm">
                 <input type="url" name="ko_band_tour_ticket_link" value="<?php esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com">
