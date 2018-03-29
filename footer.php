@@ -1,12 +1,25 @@
-<?php wp_footer() ?>
+<?php
+
+/**
+ * Koband Theme Options file!
+ *
+ *
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
+ */
+
+
+ wp_footer();
+?>
 
 <footer>
         <div class="row">
                 <div class="col span-1-of-2">
                     <ul class="footer-nav">
-                        <li><a href="#">PRIVACY POLICY</a></li>
-                        <li><a href="#">TERMS OF USE</a></li>
-                        <li><a href="#">HELP</a></li>
+                        <li><a href="#"><?php _e('PRIVACY POLICY', 'koband');?></a></li>
+                        <li><a href="#"><?php _e('TERMS OF USE', 'koband');?></a></li>
+                        <li><a href="#"><?php _e('HELP', 'koband');?></a></li>
                     </ul>
                 </div>
                 <div class="col span-1-of-2">
@@ -20,7 +33,7 @@
             </div>
             <div class="row">
                 <p>
-                    Copyright &copy; 2018 by Kolabor. All rights reserved.
+                    <?php _e('Copyright &copy; 2018 by Kolabor. All rights reserved.', 'koband');?>
                 </p>
         </div>
 </footer>
