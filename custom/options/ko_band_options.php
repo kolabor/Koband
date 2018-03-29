@@ -140,6 +140,30 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
     ) 
 );
 
+    // Show Retina favicon
+
+    $wp_customize->add_setting( 'ko_band_retina_favicon' );
+    $wp_customize->add_control( new WP_Customize_Site_Icon_Control ( $wp_customize, 'ko_band_retina_favicon', array(
+      'label'    => __( 'Retina Site Icon', 'koband' ),
+      'section'  => 'title_tagline',
+      'settings' => 'ko_band_retina_favicon',
+  ) ) );
+/*******************************************************************
+$wp_customize->add_section( 'ko_band_general_section' , array(
+    'title'       => __( 'General Setting', 'koband' ),
+    'priority'    => 26,
+    'description' => '<hr>',
+) );
+
+
+$wp_customize->add_setting( 'ko_band_general_setting' );
+$wp_customize->add_control(new WP_Customize_Control( 'ko_band_general_setting', array(
+    'label' => __( 'General Setting:', 'koband' ),
+    'settings' => 'ko_band_general_setting',
+    'section' => 'ko_band_general_section',
+)) );
+*************************************************************************/
+
 /*** Footer section starts here  ***/
 $wp_customize->add_section( 'ko_band_footer_section' , array(
     'title'       => __( 'Footer', 'koband' ),
@@ -154,6 +178,7 @@ $wp_customize->add_control( 'ko_band_footer_copyright_text', array(
     'settings' => 'ko_band_footer_copyright_text',
     'section' => 'ko_band_footer_section',
 ) );
+
 
 
 /***  Social media section starts here  ***/
@@ -239,9 +264,26 @@ $wp_customize->add_control( 'ko_band_github_social_media', array(
     'section' => 'ko_band_social_media_section',
 ) );
 
-
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
+
+/*function ko_band_theme_customizer_favicon( $wp_customize ) {
+    // Fun code will go here
+
+    $wp_customize->add_section( 'ko_band_favicon_section' , array(
+      'title'       => __( 'Favicon', 'koband' ),
+      'priority'    => 30,
+      'description' => 'Upload a favicon to your Wordpress',
+  ) );
+    $wp_customize->add_setting( 'ko_band_favicon' );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_favicon', array(
+      'label'    => __( 'Favicon', 'koband' ),
+      'section'  => 'title_tagline',
+      'settings' => 'ko_band_favicon',
+  ) ) );
+}
+add_action('customize_register', 'ko_band_theme_customizer_favicon');*/
 
 
 ?>

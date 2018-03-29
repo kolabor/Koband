@@ -1,5 +1,3 @@
-
-
 jQuery(function($) {
 
   var file_frame;
