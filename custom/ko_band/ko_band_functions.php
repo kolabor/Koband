@@ -63,6 +63,9 @@ function ko_band_featured_image_metabox_title() {
 	remove_meta_box( 'postimagediv', 'tour', 'side' );
 	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
 
+	remove_meta_box( 'postimagediv', 'album', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'album', 'side' );
+
 	remove_meta_box( 'postimagediv', 'media', 'side' );
 	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'media', 'side' );
 

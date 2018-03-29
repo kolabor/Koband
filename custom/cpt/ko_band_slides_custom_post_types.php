@@ -102,7 +102,7 @@ function ko_band_slides_meta_box($post, $box){
         </div>
         <div class="row">
             <div class="col-sm">
-                    <input type="checkbox" name="ko_band_slides_check" value="<?php echo esc_textarea( $slides_check )?>" class="slidecheck">
+                    <input type="checkbox" name="ko_band_slides_check" value="<?php echo esc_html( $slides_check )?>" class="slidecheck">
             </div>
             <div class="col-sm">
                     <input type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo">
@@ -163,7 +163,7 @@ if( !current_user_can( 'edit_post', $post_id ) ) {
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $slides_meta['ko_band_slides_check'] = esc_textarea( $_POST['ko_band_slides_check'] ); 
+    $slides_meta['ko_band_slides_check'] = esc_html( $_POST['ko_band_slides_check'] ); 
     $slides_meta['ko_band_slides_video'] = esc_textarea( $_POST['ko_band_slides_video'] );
     $slides_meta['ko_band_slides_title'] = esc_textarea( $_POST['ko_band_slides_title'] );
     $slides_meta['ko_band_slides_subtitle'] = esc_textarea( $_POST['ko_band_slides_subtitle'] );
