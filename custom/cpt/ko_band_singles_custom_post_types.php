@@ -57,7 +57,6 @@ register_post_type( __('Singles','koband'), $args);
 }
 add_action('init', 'ko_band_register_singles' );
   
-add_action('add_meta_boxes', 'ko_band_singles_meta_box_init');
 function ko_band_singles_meta_box_init(){
         add_meta_box(
         'ko_band_singles_meta_box',
@@ -68,6 +67,8 @@ function ko_band_singles_meta_box_init(){
         'default'
     );
 }
+add_action('add_meta_boxes', 'ko_band_singles_meta_box_init');
+
 function ko_band_singles_display_meta_box($post, $box){
     global $post;
 
@@ -77,10 +78,11 @@ function ko_band_singles_display_meta_box($post, $box){
    
     $singles_length = get_post_meta( $post->ID, 'ko_band_singles_length', true );
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
-     // Output the field
+     
 
 
-?>
+    // Output the field?>
+
 
 <div class="container"> <!-- Container div for Single Length and Date -->
     <div class="row">
@@ -92,37 +94,20 @@ function ko_band_singles_display_meta_box($post, $box){
     </div>
     <div class="row">
               <div class="col-sm">
-                    <input type="number" name="ko_band_singles_length" value="<?php esc_attr( $singles_length ) ?>" class="singlelength" placeholder="Min.Sec">
+                    <input type="number" name="ko_band_singles_length" value="<?php echo esc_attr( $singles_length ) ?>" class="singlelength" placeholder="Min.Sec">
               </div>
               <div class="col-sm">
-                    <input type="date" name="ko_band_singles_date_release" value="<?php esc_attr( $singles_date_release ) ?>" class="singledate">
+                    <input type="date" name="ko_band_singles_date_release" value="<?php echo esc_attr( $singles_date_release ) ?>" class="singledate">
               </div>
 
               <div class="col-sm"></div>
     </div>
 
- 
-<script type="text/javascript">
-    jQuery(document).ready(function( $ ){
-        $( '#add-row' ).on('click', function() {
-            var row = $( '.empty-row.screen-reader-text' ).clone(true);
-            row.removeClass( 'empty-row screen-reader-text' );
-            row.insertAfter( '#ko_band_repetable_singles_stores_one .row:last' );
-            return false;
-        });
-            $( '.remove-row' ).on('click', function() {
-            $(this).parents('.row').remove();
-            return false;
-        });
-    });
-
-</script>
-
 <div  id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
     <div class="row form_heading">
                 <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
                 <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
-              <div class="col-sm"></div>
+                <div class="col-sm"></div>
     </div>
     <?php if ( $singles_stores ) :    
          foreach ( $singles_stores as $field) { ?>
@@ -151,7 +136,7 @@ function ko_band_singles_display_meta_box($post, $box){
       </div>
       <?php endif; ?>
         <!-- empty hidden one for jQuery -->
-      <div class="row empty-row screen-reader-text form_elements">
+      <div class="row empty-row-singles screen-reader-text form_elements">
                 <div class="col-sm">
                           <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes..."/>
                 </div>
@@ -164,7 +149,7 @@ function ko_band_singles_display_meta_box($post, $box){
       </div>
 </div>
 <div class="button-add-row-single">
-<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<p><a id="add-row-singles" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
 
 <?php } 
 

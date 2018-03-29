@@ -50,7 +50,7 @@ function ko_band_tour_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-  'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array('title', 'editor', 'thumbnail'),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -84,7 +84,7 @@ function ko_band_tour_display_meta_box($post, $box){
     // Nonce field to validate form request came from current site
 
     $song_details = get_post_meta($post->ID, 'ko_band_tour_details', true);
-wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_nonce' );
+    wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_nonce' );
 
    
     // Get the location data if it's already been entered
@@ -110,10 +110,10 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="date" name="ko_band_tour_date" value="'<?php esc_textarea( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>">
+                <input type="date" name="ko_band_tour_date" value="'<?php echo esc_textarea( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_tour_country" value="<?php esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>">
+                <input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>">
             </div>
         </div>
         <div class="row">
@@ -122,10 +122,10 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_tour_city" value="<?php esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php _e('City', 'koband');?>">
+                <input type="text" name="ko_band_tour_city" value="<?php echo esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php _e('City', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_tour_address" value="<?php esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php _e('Address', 'koband');?>">
+                <input type="text" name="ko_band_tour_address" value="<?php echo esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php _e('Address', 'koband');?>">
             </div>
         </div>
         <div class="row">
@@ -137,10 +137,10 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="number" name="ko_band_tour_zipCode" value="<?php esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>">
+                <input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_tour_venue_name" value="<?php esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue Name', 'koband');?>">
+                <input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue Name', 'koband');?>">
             </div>
         </div>
         <div class="row">
@@ -152,11 +152,11 @@ wp_nonce_field( 'ko_band_tour_save_meta_box_nonce', 'ko_band_tour_save_meta_box_
         </div>
         <div class="row">
             <div class="col-sm">
-                <input type="radio" name="ko_band_tour_ticket" value1="<?php esc_attr( $tour_ticket )?>" class="radio1" >
-                <input type="radio" name="ko_band_tour_ticket" value2="<?php esc_attr( $tour_ticket )?>" class="radio2" >
+                <input type="radio" name="ko_band_tour_ticket" value1="<?php echo esc_attr( $tour_ticket )?>" class="radio1" >
+                <input type="radio" name="ko_band_tour_ticket" value2="<?php echo esc_attr( $tour_ticket )?>" class="radio2" >
             </div>
             <div class="col-sm">
-                <input type="url" name="ko_band_tour_ticket_link" value="<?php esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com">
+                <input type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com">
             </div>
         </div>
     </div>
@@ -171,19 +171,15 @@ add_action( 'save_post', 'ko_band_tour_save_meta_box' , 1, 2);
 
 function ko_band_tour_save_meta_box( $post_id, $post ) {
 
+    // Verify this came from the our screen and with proper authorization,
+    // because save_post can be triggered at other times.
 
  if ( ! isset( $_POST['ko_band_tour_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_tour_save_meta_box_nonce'], 'ko_band_tour_save_meta_box_nonce' ) )
             return;
 
     if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
-   
-
-
-    // Verify this came from the our screen and with proper authorization,
-    // because save_post can be triggered at other times.
-
-   
+      
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $tour_meta['ko_band_tour_date'] = esc_textarea( $_POST['ko_band_tour_date'] );
@@ -195,7 +191,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
     $tour_meta['ko_band_tour_ticket'] = esc_attr( $_POST['ko_band_tour_ticket'] );
     $tour_meta['ko_band_tour_ticket_link'] = esc_attr( $_POST['ko_band_tour_ticket_link'] );
 
-    // Cycle through the $events_meta array.
+    // Cycle through the $tour_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
     foreach ( $tour_meta as $key => $value ) :
 

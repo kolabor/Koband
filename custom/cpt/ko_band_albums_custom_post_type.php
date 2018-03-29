@@ -103,43 +103,18 @@ function ko_band_album_display_meta_box() {
     </div>
     <div class="row">
         <div class="col-sm">
-            <input type="date" name="ko_band_album_date_release" value="<?php esc_html( $album_date_release ) ?>" class="albumrelease" >
+            <input type="date" name="ko_band_album_date_release" value="<?php echo esc_html( $album_date_release ) ?>" class="albumrelease" >
         </div>
         <div class="col-sm">
-            <input type="number" name="ko_band_album_length" value="<?php esc_html( $album_length ) ?>" class="albumlength" placeholder="Hour.Min.Sec">
+            <input type="number" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="Hour.Min.Sec">
         </div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
 </div>
 
-<script type="text/javascript">
-    jQuery(document).ready(function( $ ){ 
-        $( '#add-row-details' ).on('click', function() {
-            var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
-            row_details.removeClass( 'empty-row-details screen-reader-text' );
-            row_details.insertBefore( '#ko_band_album_meta_box_one .row:last' );
-            return false;
-        });
-            $( '.remove-row-details' ).on('click', function() {
-            $(this).parents('.row').remove();
-            return false; 
-       });
 
-        $( '#add-row-stores' ).on('click', function() {
-            var row_stores = $( '.empty-row-stores.screen-reader-text' ).clone(true);
-            row_stores.removeClass( 'empty-row-stores screen-reader-text' );
-            row_stores.insertBefore( '#ko_band_album_meta_box_store .row:last' );
-            return false;
-        });
-            $( '.remove-row-stores' ).on('click', function() {
-            $(this).parents('.row').remove();
-            return false;
-        });
-    });
-</script>
-
-    <div class="container" id="ko_band_album_meta_box_one" >
+<div class="container" id="ko_band_album_meta_box_one" >
     <div class="row">
         <div class="col-sm"><?php _e('Song Name', 'koband');?></div>
         <div class="col-sm"><?php _e('Song Length', 'koband');?></div>

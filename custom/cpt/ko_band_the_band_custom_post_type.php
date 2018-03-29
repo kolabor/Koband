@@ -105,10 +105,10 @@ function ko_band_the_band_meta_box($post, $box){
 
         <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_bio" value="<?php esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>">
+                <input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_success" value="<?php esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="<?php _e('The Band Success', 'koband');?>">
+                <input type="text" name="ko_band_the_band_success" value="<?php echo esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="<?php _e('The Band Success', 'koband');?>">
             </div>
         </div>
 
@@ -119,10 +119,10 @@ function ko_band_the_band_meta_box($post, $box){
 
         <div class="row">
             <div class="col-sm">
-                <input type="text" name="ko_band_the_band_award" value="<?php esc_textarea( $the_band_award )?>" class="widefat" placeholder="<?php _e('The Band Award', 'koband');?>">
+                <input type="text" name="ko_band_the_band_award" value="<?php echo esc_textarea( $the_band_award )?>" class="widefat" placeholder="<?php _e('The Band Award', 'koband');?>">
             </div>
             <div class="col-sm">
-                <input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php esc_html( $the_band_photo )?>" class="widefat" placeholder="<?php _e('The Band Photo', 'koband');?>">
+                <input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php echo esc_html( $the_band_photo )?>" class="widefat" placeholder="<?php _e('The Band Photo', 'koband');?>">
             </div>
         </div>
     </div>
