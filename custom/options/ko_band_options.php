@@ -148,7 +148,8 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
       'section'  => 'title_tagline',
       'settings' => 'ko_band_retina_favicon',
   ) ) );
-/*******************************************************************
+
+/*
 $wp_customize->add_section( 'ko_band_general_section' , array(
     'title'       => __( 'General Setting', 'koband' ),
     'priority'    => 26,
@@ -157,12 +158,13 @@ $wp_customize->add_section( 'ko_band_general_section' , array(
 
 
 $wp_customize->add_setting( 'ko_band_general_setting' );
-$wp_customize->add_control(new WP_Customize_Control( 'ko_band_general_setting', array(
+$wp_customize->add_panel(new WP_Customize_Control( 'ko_band_general_setting', array(
     'label' => __( 'General Setting:', 'koband' ),
     'settings' => 'ko_band_general_setting',
     'section' => 'ko_band_general_section',
 )) );
-*************************************************************************/
+*/
+
 
 /*** Footer section starts here  ***/
 $wp_customize->add_section( 'ko_band_footer_section' , array(
@@ -286,4 +288,17 @@ add_action( 'customize_register', 'ko_band_theme_customize_register' );
 add_action('customize_register', 'ko_band_theme_customizer_favicon');*/
 
 
+
+add_action( 'wp_head', 'ko_band_customizer_css');
+function ko_band_customizer_css()
+{
+    
+
+
+    ?>
+         <style type="text/css">
+             body { background: #<?php echo get_theme_mod('ko_band_main_color', '#43C6E4'); ?>; }
+         </style>
+    <?php
+}
 ?>
