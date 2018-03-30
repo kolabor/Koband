@@ -88,7 +88,7 @@ global $post;
     ?>
 
     <div class="container form-table">
-        <div class="row">
+        <div class="row-top">
             <div class="col-sm">
                 <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)"><?php _e('Add image','koband');?></a>
             </div>    
@@ -180,67 +180,57 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 </script> -->
 
 <div class="container" id="ko_band_repetable_video_field_one">
-    <div class="row">
+    <div class="row-blank">
+        <div class="col-sm"><?php _e('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
+    </div>
+    
+    <div class="row-top">
         <div class="col-sm"><?php _e('Video Link', 'koband');?></div>
         <div class="col-sm"><?php _e('Select', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
-<?php if ( $video_field ) :    
+
+    <?php if ( $video_field ) :    
+
     foreach ( $video_field as $field) { ?>
     <div class="row">
-        <div class="col-sm">
-            <input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" />
-        </div>
-        <div class="col-sm">
-            <select name="select[]">
-                    <?php foreach ( $options as $label => $value ) : ?>
-                    <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
-                    <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="col-sm">
-            <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
-        </div>
+        <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
+        <div class="col-sm"><select name="select[]">
+                            <?php foreach ( $options as $label => $value ) : ?>
+                            <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
+                            <?php endforeach; ?>
+                            </select></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
-    <?php } else: ?>
+
+    <?php } else: // show a blank one  ?>
+
     <div class="row">
-        <div class="col-sm">
-            <input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" />
-        </div>
-        <div class="col-sm">
-            <select name="select[]">
-                    <?php foreach ( $options as $label => $value ) : ?>
-                    <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
-                    <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="col-sm">
-            <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
-        </div>
+        <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
+        <div class="col-sm"><select name="select[]">
+                            <?php foreach ( $options as $label => $value ) : ?>
+                            <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+                            <?php endforeach; ?>
+                            </select></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
+
     <?php endif; ?>
         <!-- empty hidden one for jQuery -->
     <div class="row empty-row-media screen-reader-text">
-        <div class="col-sm">
-            <input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" />
-        </div>
-        <div class="col-sm">
-            <select name="select[]" >
-                    <?php foreach ( $options as $label => $value ) : ?>
-                    <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
-                    <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="col-sm">
-            <a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a>
-        </div>
+        <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
+        <div class="col-sm"><select name="select[]" >
+                            <?php foreach ( $options as $label => $value ) : ?>
+                            <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+                            <?php endforeach; ?>
+                            </select></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
+
 </div>
-<div class="button-add-row">
-<p><a id="add-row-media" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
  
-<?php 
-}
+<?php }
 
 
 add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
