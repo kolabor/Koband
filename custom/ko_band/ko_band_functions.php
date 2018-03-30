@@ -19,11 +19,11 @@
  *
  */
 // Change Set Featured image text
-
+/*
 function ko_band_featured_image_text( $content ) {
     return $content = str_replace( __( 'Set featured image' ), __( 'Set Cover Image' ), $content);
 }
-add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' );
+add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' ); */
 
 // Load custom css script and custom javascript for admin dashboard
 

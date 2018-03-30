@@ -91,132 +91,111 @@ function ko_band_album_display_meta_box() {
 ?>
 <!-- Output the field -->
 <div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <?php _e('Date Release', 'koband'); ?>
-        </div>
-        <div class="col-sm">
-            <?php _e('Album Length', 'koband'); ?>
-        </div>
+    <div class="row-top">
+        <div class="col-sm"><?php _e('Date Release', 'koband'); ?></div>
+        <div class="col-sm"><?php _e('Album Length', 'koband'); ?></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
+
     <div class="row">
-        <div class="col-sm">
-            <input type="date" name="ko_band_album_date_release" value="<?php echo esc_html( $album_date_release ) ?>" class="albumrelease" >
-        </div>
-        <div class="col-sm">
-            <input type="number" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="Hour.Min.Sec">
-        </div>
+        <div class="col-sm"><input type="date" name="ko_band_album_date_release" value="<?php echo esc_html( $album_date_release ) ?>" class="albumrelease" ></div>
+        <div class="col-sm"><input type="number" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="Hour.Min.Sec"></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
 </div>
 
+
 <div class="container" id="ko_band_album_meta_box_one" >
-    <div class="row">
+    <div class="row blank">
+        <div class="col-sm"><?php _e('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
+    </div>
+
+    <div class="row-top">
         <div class="col-sm"><?php _e('Song Name', 'koband');?></div>
         <div class="col-sm"><?php _e('Song Length', 'koband');?></div>
         <div class="col-sm"><?php _e('Song Detail', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
-<?php
-    if ( $song_details ) :
-        foreach ( $song_details as $field_details ) {   ?>
+
+    <?php if ( $song_details ) :
+          foreach ( $song_details as $field_details ) {   ?>
 
     <div class="row">
-        <div class="col-sm">
-            <input type="text" 
-                class="songname" 
-                name="name-details[]" 
-        value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" />
+        <div class="col-sm"><input type="text" class="songname" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></div>
+        <div class="col-sm"><input type="text" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></div>
+        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></div>
+        <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a>
         </div>
-        <div class="col-sm">
-            <input type="text" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></div>
-        <div class="col-sm">
-            <input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></div>
-        <div class="col-sm">
-            <a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a>
     </div>
-<?php } else :  // show a blank one ?>
+
+    <?php } else :  // show a blank one ?>
+    
     <div class="row">
-        <div class="col-sm">
-            <input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
-        <div class="col-sm">
-            <input type="text" class="songlength" name="length[]" placeholder="Length of the music" /></div>
-        <div class="col-sm">
-            <input type="text" class="songdetails" name="detail[]" placeholder="Short description" /></div>
-        <div class="col-sm">
-            <a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
+        <div class="col-sm"><input type="text" class="songlength" name="length[]" placeholder="Length of the music" /></div>
+        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="Short description" /></div>
+        <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
-<?php endif; ?>
+
+    <?php endif; ?>
      <!-- empty hidden one for jQuery -->
     <div class="row empty-row-detail screen-reader-text" >
-        <div class="col-sm">
-            <input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
-        <div class="col-sm">
-            <input type="text" class="songlength" name="length[]" placeholder="Length of the music"  /></div>
-        <div class="col-sm">
-            <input type="text" class="songdetails" name="detail[]" placeholder="Short description"  /></div>
-        <div class="col-sm">
-            <a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
+        <div class="col-sm"><input type="text" class="songlength" name="length[]" placeholder="Length of the music"  /></div>
+        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="Short description"  /></div>
+        <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 </div>
-    <div class="button-add-row">
-        <p><a id="add-row-details" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>  
+    <div class="button-add-row"><p><a id="add-row-details" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>  
 
-  
+
 <!--Song_store-->
 <div class="container" id="ko_band_album_meta_box_store">
-    <div class="row">
+    <div class="row-top">
         <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
         <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
         <div class="col-sm"></div>
-        <div class="col-sm"></div>
-        
+        <div class="col-sm"></div>    
     </div>
-<?php if ( $song_stores ):
+
+    <?php if ( $song_stores ):
         foreach ($song_stores as $field_stores ) {    ?>
    
     <div class="row">
-        <div class="col-sm">
-            <input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></div>
-        <div class="col-sm">
-            <input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></div>
+        <div class="col-sm"><input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></div>
+        <div class="col-sm"><input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></div>
         <div class="col-sm"></div>
-        <div class="col-sm">
-            <a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
-            </div>
+        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
+    </div>
+
 <?php } else :  ?>
          <!-- show a blank one--> 
     <div class="row">
-        <div class="col-sm">
-            <input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
-        <div class="col-sm">
-            <input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
+        <div class="col-sm"><input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
+        <div class="col-sm"><input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
         <div class="col-sm"></div>
-        <div class="col-sm">
-            <a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
+    
 <?php endif; ?>   
          <!-- empty hidden one for jQuery -->
     <div class="row empty-row-stores screen-reader-text" >
-        <div class="col-sm">
-            <input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
-        <div class="col-sm">
-            <input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
+        <div class="col-sm"><input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
+        <div class="col-sm"><input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
         <div class="col-sm"></div>        
-        <div class="col-sm">
-            <a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 </div>
-    <div class="button-add-row">
-            <p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+    <div class="button-add-row"><p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
 
 
- <?php 
-}
+ <?php }
+
+
 add_action( 'save_post', 'ko_band_album_save_meta_box' , 1, 2);
+
 function ko_band_album_save_meta_box( $post_id, $post ) 
 {
    if ( ! isset( $_POST['ko_band_album_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_album_save_meta_box_nonce'], 'ko_band_album_save_meta_box_nonce' ) )

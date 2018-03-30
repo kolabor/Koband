@@ -96,52 +96,38 @@ function ko_band_slides_meta_box($post, $box){
     // Output the field ?>
 
     <div class="container">
-        <div class="row">
+        <div class="row-top">
                     <div class="col-sm"><?php _e('If you want video slider please check here:', 'koband');?></div>
                     <div class="col-sm"><?php _e('Video Holder:', 'koband');?></div>
         </div>
         <div class="row">
-            <div class="col-sm">
-                    <input type="checkbox" name="ko_band_slides_check" value="<?php echo esc_html( $slides_check )?>" class="slidecheck">
-            </div>
-            <div class="col-sm">
-                    <input type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo">
-            </div>
+            <div class="col-sm"><input type="checkbox" name="ko_band_slides_check" value="<?php echo esc_html( $slides_check )?>" class="slidecheck"></div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo"></div>
         </div>
+
         <div class="row">
                     <div class="col-sm"><?php _e('Title:', 'koband');?></div>
                     <div class="col-sm"><?php _e('Subtitle:', 'koband');?></div>
         </div>
+
         <div class="row">
-            <div class="col-sm">
-                    <input type="text" name="ko_band_slides_title" value="<?php echo esc_textarea( $slides_title )?>" placeholder= "<?php _e('Text title on slide', 'koband');?>" class="slidetitle">
-            </div>
-            <div class="col-sm">
-                    <input type="text" name="ko_band_slides_subtitle" value="<?php echo esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub">
-            </div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_title" value="<?php echo esc_textarea( $slides_title )?>" placeholder= "<?php _e('Text title on slide', 'koband');?>" class="slidetitle"></div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_subtitle" value="<?php echo esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub"></div>
         </div>
+
         <div class="row">
                     <div class="col-sm"><?php _e('Button Title:', 'koband');?></div>
                     <div class="col-sm"><?php _e('Button Link:', 'koband');?></div>
         </div>
+
         <div class="row">        
-            <div class="col-sm">
-                    <input type="text" name="ko_band_slides_button_title" value="<?php echo esc_textarea( $slides_button_title )?>" placeholder= "<?php _e('Button Title', 'koband');?>" class="slidebutton">
-            </div>
-            <div class="col-sm">
-                    <input type="text" name="ko_band_slides_button_link" value="<?php echo esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Please paste here button link', 'koband');?>" class="slidebuttonlink">
-            </div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_button_title" value="<?php echo esc_textarea( $slides_button_title )?>" placeholder= "<?php _e('Button Title', 'koband');?>" class="slidebutton"></div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_button_link" value="<?php echo esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Please paste here button link', 'koband');?>" class="slidebuttonlink"></div>
         </div>
+
     </div>
 
-
-
-
-
-     <?php
-
-
- }
+  <?php }
 
 
 add_action( 'save_post', 'ko_band_slides_save_meta_box' , 1, 2);

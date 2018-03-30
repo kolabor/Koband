@@ -104,67 +104,57 @@ function ko_band_tour_display_meta_box($post, $box){
     // Output the field?>
 
     <div class="container">
-        <div class="row">
+        <div class="row-top">
             <div class="col-sm"><?php _e('Tour Date:', 'koband');?></div>
             <div class="col-sm"><?php _e('Tour Country:', 'koband');?></div>
         </div>
+
         <div class="row">
-            <div class="col-sm">
-                <input type="date" name="ko_band_tour_date" value="'<?php echo esc_html( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>">
-            </div>
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>">
-            </div>
+            <div class="col-sm"><input type="date" name="ko_band_tour_date" value="'<?php echo esc_html( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>"></div>
         </div>
+
         <div class="row">
             <div class="col-sm"><?php _e('Tour City:', 'koband');?></div>
             <div class="col-sm"><?php _e('Tour Address:', 'koband');?></div>
         </div>
+
         <div class="row">
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_city" value="<?php echo esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php _e('City', 'koband');?>">
-            </div>
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_address" value="<?php echo esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php _e('Address', 'koband');?>">
-            </div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_city" value="<?php echo esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php _e('City', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_address" value="<?php echo esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php _e('Address', 'koband');?>"></div>
         </div>
+
         <div class="row">
-            <div class="col-sm"><?php _e('Tour ZipCode:', 'koband');?>
-            </div>
-            <div class="col-sm"><?php _e('Tour Venue Name:', 'koband');?>
-                
-            </div>
+            <div class="col-sm"><?php _e('Tour ZipCode:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Tour Venue Name:', 'koband');?></div>
         </div>
+
         <div class="row">
-            <div class="col-sm">
-                <input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>">
-            </div>
-            <div class="col-sm">
-                <input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue Name', 'koband');?>">
-            </div>
+            <div class="col-sm"><input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue Name', 'koband');?>"></div>
         </div>
-        <div class="row">
-            <div class="col-sm"><?php _e('Tour Ticket', 'koband');?></div>
+
+        <div class="row blank">
+            <div class="col-sm"><?php _e('Please using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
         </div>
-        <div class="row">
-            <div class="col-sm"><?php _e('On Sale', 'koband');  _e('  Sold Out', 'koband');?></div>
+
+        <div class="row-top">
+            <div class="col-sm"><?php _e('On Sale', 'koband');?> / <?php _e('Sold Out', 'koband');?></div>
             <div class="col-sm"><?php _e('Ticet Link', 'koband');?></div>
         </div>
+
         <div class="row">
             <div class="col-sm">
-                <input type="radio" name="ko_band_tour_ticket" value1="<?php echo esc_attr( $tour_ticket )?>" class="radio1" >
-                <input type="radio" name="ko_band_tour_ticket" value2="<?php echo esc_attr( $tour_ticket )?>" class="radio2" >
+                    <input type="radio" name="ko_band_tour_ticket" value1="<?php echo esc_attr( $tour_ticket )?>" class="radio1" >
+                    <input type="radio" name="ko_band_tour_ticket" value2="<?php echo esc_attr( $tour_ticket )?>" class="radio2" >
             </div>
-            <div class="col-sm">
-                <input type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com">
-            </div>
+            <div class="col-sm"><input type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com"></div>
         </div>
+    
     </div>
 
 
-     <?php
-
-}
+     <?php }
 
 
 add_action( 'save_post', 'ko_band_tour_save_meta_box' , 1, 2);
