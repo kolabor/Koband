@@ -79,24 +79,7 @@ function ko_band_singles_display_meta_box($post, $box){
     $singles_length = get_post_meta( $post->ID, 'ko_band_singles_length', true );
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
      
-    // Output the field?>
-
-<!--
-    <script type="text/javascript">
-    jQuery(document).ready(function( $ ){
-        $( '#add-row' ).on('click', function() {
-            var row = $( '.empty-row.screen-reader-text' ).clone(true);
-            row.removeClass( 'empty-row screen-reader-text' );
-            row.insertAfter( '#ko_band_repetable_singles_stores_one .row:last' );
-            return false;
-        });
-            $( '.remove-row' ).on('click', function() {
-            $(this).parents('.row').remove();
-            return false;
-        });
-    });
-
-</script> -->
+  ?>
 
 
 <div class="container"> <!-- Container div for Single Length and Date -->
@@ -164,7 +147,8 @@ function ko_band_singles_display_meta_box($post, $box){
       </div>
 </div>
 <div class="button-add-row-single">
-<p><a id="add-row" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<p><a id="add-row-single" class="button" href="#"><?php _e('Add another', 'koband');?></a></p>
+</div>
 
 <?php } 
 
