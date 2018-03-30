@@ -269,36 +269,4 @@ $wp_customize->add_control( 'ko_band_github_social_media', array(
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
-/*function ko_band_theme_customizer_favicon( $wp_customize ) {
-    // Fun code will go here
-
-    $wp_customize->add_section( 'ko_band_favicon_section' , array(
-      'title'       => __( 'Favicon', 'koband' ),
-      'priority'    => 30,
-      'description' => 'Upload a favicon to your Wordpress',
-  ) );
-    $wp_customize->add_setting( 'ko_band_favicon' );
-
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_favicon', array(
-      'label'    => __( 'Favicon', 'koband' ),
-      'section'  => 'title_tagline',
-      'settings' => 'ko_band_favicon',
-  ) ) );
-}
-add_action('customize_register', 'ko_band_theme_customizer_favicon');*/
-
-
-
-add_action( 'wp_head', 'ko_band_customizer_css');
-function ko_band_customizer_css()
-{
-    
-
-
-    ?>
-         <style type="text/css">
-             body { background: #<?php echo get_theme_mod('ko_band_main_color', '#43C6E4'); ?>; }
-         </style>
-    <?php
-}
 ?>

@@ -21,7 +21,7 @@
 // Change Set Featured image text
 
 function ko_band_featured_image_text( $content ) {
-    return $content = str_replace( __( 'Set featured image' ), __( 'Set Cover Image' ), $content);
+    return $content = str_replace( __( 'Set featured image', 'koband' ), __( 'Set Cover Image', 'koband' ), $content);
 }
 add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' );
 
@@ -41,6 +41,12 @@ function ko_band_custom_wp_admin_style() {
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
     wp_enqueue_style( 'bootstrap' );
 
+     wp_register_style('theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php', false, '1.0.0' );
+    wp_enqueue_style( 'theme_colors' );
+
+
+    
+
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
 
@@ -52,6 +58,7 @@ function ko_band_enqueue_admin_scripts($hook) {
 
           wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
           wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
+         //wp_enqueue_style( 'theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php');
     }
 }
 
@@ -61,25 +68,25 @@ add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
 
 function ko_band_featured_image_metabox_title() {
 	remove_meta_box( 'postimagediv', 'tour', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'tour', 'side' );
 
 	remove_meta_box( 'postimagediv', 'album', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'album', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'album', 'side' );
 
 	remove_meta_box( 'postimagediv', 'media', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'media', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'media', 'side' );
 
 	remove_meta_box( 'postimagediv', 'singles', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'singles', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
 
 	remove_meta_box( 'postimagediv', 'slides', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'slides', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
 
 	remove_meta_box( 'postimagediv', 'the band', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'the band', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
 
 	remove_meta_box( 'postimagediv', 'tour', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'km' ), 'post_thumbnail_meta_box', 'tour', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'tour', 'side' );
 }
 add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
 
@@ -148,5 +155,51 @@ function init_widgets($id){
 	));
 }
 add_action('widgets_init', 'init_widgets');
+
+
+
+
+/*Function to generate Theme Colors dynamicly*/
+wp_enqueue_style('theme_colors',
+                 admin_url('admin-ajax.php').'?action=theme_colors'
+                 );
+function theme_colors() {
+  require(get_template_directory().'/style/ko_band_dynamic.css.php');
+  exit;
+}
+add_action('wp_ajax_theme_colors', 'theme_colors');
+add_action('wp_ajax_nopriv_theme_colors', 'theme_colors');
+
+/*function theme_enqueue_styles() {
+  wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
+  $custom_css = theme_get_customizer_css();
+  wp_add_inline_style( 'theme-styles', $custom_css );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+*/
+
+
+/*function ko_band_dynamic_css() {
+	?>
+	<style>
+	<?php header('Content-type: text/css');?>
+
+	<?php
+	$main_theme_first_color = get_theme_mod( 'ko_band_main_color' );
+$main_theme_second_color = get_theme_mod( 'ko_band_second_color' );
+$main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
+?>
+	
+	body {
+		
+		background-color: <?php echo $main_theme_first_color; ?> !important;
+		 border: 8px solid <?php echo $main_theme_second_color; ?> !important;
+	}
+	</style>
+	<?php
+}
+add_action( 'wp_head' , 'ko_band_dynamic_css' );*/
 
 ?>
