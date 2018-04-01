@@ -130,9 +130,12 @@ function ko_band_singles_display_meta_box($post, $box){
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://storelink.com" /></div>
                 <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
+    <div class="row row_no_border">
+<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+    </div>
   </div>
 </div>
-<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+
 
 <?php } 
 

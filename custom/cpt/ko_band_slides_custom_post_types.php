@@ -124,7 +124,6 @@ function ko_band_slides_meta_box($post, $box){
             <div class="col-sm"><input type="text" name="ko_band_slides_button_title" value="<?php echo esc_textarea( $slides_button_title )?>" placeholder= "<?php _e('Button Title', 'koband');?>" class="slidebutton"></div>
             <div class="col-sm"><input type="text" name="ko_band_slides_button_link" value="<?php echo esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Please paste here button link', 'koband');?>" class="slidebuttonlink"></div>
         </div>
-
     </div>
 
   <?php }

@@ -147,8 +147,12 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="Short description"  /></div>
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
+    <div class="row row_no_border">
+       <div class="button-add-row"><p><a id="add-row-details" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+    </div>
 </div>
-    <div class="button-add-row"><p><a id="add-row-details" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>  
+
+      
 
 
 <!--Song_store-->
@@ -187,8 +191,11 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"></div>        
         <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
-</div>
+    <div class="row row_no_border">
     <div class="button-add-row"><p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+    </div>
+</div>
+   
 
 
  <?php }

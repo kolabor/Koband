@@ -27,18 +27,26 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
 } 
 
 /**
- * Register all neccessary custom post files and their metaboxes
+ * Register all neccessary theme files from their proper directory
  */
-require 'custom/ko_band/ko_band_functions.php';
+require 'custom/koband/ko_band_functions.php';
+require 'custom/koband/ko_band_options.php';
 require 'custom/cpt/ko_band_albums_custom_post_type.php';
 require 'custom/cpt/ko_band_media_custom_post_type.php';
 require 'custom/cpt/ko_band_singles_custom_post_types.php';
 require 'custom/cpt/ko_band_slides_custom_post_types.php';
 require 'custom/cpt/ko_band_the_band_custom_post_type.php';
 require 'custom/cpt/ko_band_tour_custom_post_type.php';
-require 'custom/options/ko_band_options.php';
 
 
+add_action('init','ko_band_enqueue_dynamic_css');
+function ko_band_enqueue_dynamic_css() {
+  if (! is_admin()){
+    $version = get_theme_mod('koband-dynamic-css',"1.00");
+    $koband_dir = get_stylesheet_directory_uri();
+    wp_enqueue_style('dynamic-css',  "{$koband_dir}/style/ko_band_dynamic.css.php",array(),$version);
+  }
+}
 
 
 

@@ -1,11 +1,9 @@
 $kolabor1: #00a8a8;
 $kolabor2: #6d5e82;
 $cpfwidth: 30%;
-input[type="text"], input[type="search"],
-input[type="radio"], input[type="tel"],
+input[type="text"], input[type="search"], input[type="tel"],
 input[type="time"], input[type="url"],
-input[type="week"], input[type="password"],
-input[type="checkbox"], input[type="color"],
+input[type="week"], input[type="password"], input[type="color"],
 input[type="date"], input[type="datetime"],
 input[type="datetime-local"], input[type="email"],
 input[type="month"], input[type="number"],
@@ -83,14 +81,14 @@ select:focus, textarea:focus{
   font-weight: 500;
   background: rgba(249, 249, 249, 0.4);
   padding: 2px;
-  border: 1px solid rgba(0, 168, 168, 0.6);
+  border: 1px solid rgba(0, 168, 168, 0.3) !important;
 }
 .row {
   font-size: 14px;
   font-weight: 500;
   background: rgba(249, 249, 249, 0.2);
   padding: 2px;
-  border: 1px solid rgba(0, 168, 168, 0.6);
+  border: 1px solid rgba(0, 168, 168, 0.3);
   border-top: 0;
 }
 input.radio1, input.radio2 {
@@ -119,4 +117,23 @@ input.radio1, input.radio2 {
   background: rgba(109, 94, 130, 0.5);
   border-bottom: 1px solid $kolabor2 !important;
 }
+.radio_btns_row .col-sm
+{
+  line-height: 35px;
+}
+.inside
+{
+  position: relative;
+  display: block;
+  height: auto;
+  overflow: auto;
+}
 
+#ko_band_tour_meta_box .container, #ko_band_the_band_meta_box .container, #ko_band_slides_meta_box .container, #ko_band_singles_meta_box .container, #ko_band_gallery-metabox .container, #ko_band_album_meta_box .container, #ko_band_media_meta_box .container
+{
+  float: left !important;
+}
+.row_no_border
+{
+  border: 0px !important;
+}

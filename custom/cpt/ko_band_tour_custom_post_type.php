@@ -104,7 +104,7 @@ function ko_band_tour_display_meta_box($post, $box){
     // Output the field?>
 
     <div class="container">
-        <div class="row-top">
+        <div class="row-top row">
             <div class="col-sm"><?php _e('Tour Date:', 'koband');?></div>
             <div class="col-sm"><?php _e('Tour Country:', 'koband');?></div>
         </div>
@@ -143,12 +143,16 @@ function ko_band_tour_display_meta_box($post, $box){
             <div class="col-sm"><?php _e('Ticet Link', 'koband');?></div>
         </div>
 
-        <div class="row">
+        <div class="row radio_btns_row">
             <div class="col-sm">
-                    <input type="radio" name="ko_band_tour_ticket" value1="<?php echo esc_attr( $tour_ticket )?>" class="radio1" >
-                    <input type="radio" name="ko_band_tour_ticket" value2="<?php echo esc_attr( $tour_ticket )?>" class="radio2" >
+                    <input type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
+                    <input type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
+                    <!--<input type="text" name="ko_band_tour_ticket" value="<?php echo esc_attr($tour_ticket)?>" class="widefat" placeholder="http://www.amazon.com">-->
+                    <!--<input type="radio" name="ko_band_tour_ticket" value1="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
+                    <input type="radio" name="ko_band_tour_ticket" value2="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />-->
+
             </div>
-            <div class="col-sm"><input type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.google.com"></div>
+            <div class="col-sm"><input type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>
         </div>
     
     </div>
@@ -161,8 +165,7 @@ add_action( 'save_post', 'ko_band_tour_save_meta_box' , 1, 2);
 
 function ko_band_tour_save_meta_box( $post_id, $post ) {
 
-    // Verify this came from the our screen and with proper authorization,
-    // because save_post can be triggered at other times.
+    // Verify this came from the screen and with proper authorization,
 
  if ( ! isset( $_POST['ko_band_tour_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_tour_save_meta_box_nonce'], 'ko_band_tour_save_meta_box_nonce' ) )
             return;
@@ -178,7 +181,7 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
     $tour_meta['ko_band_tour_address'] = esc_attr( $_POST['ko_band_tour_address'] );
     $tour_meta['ko_band_tour_zipCode'] = esc_textarea( $_POST['ko_band_tour_zipCode'] );
     $tour_meta['ko_band_tour_venue_name'] = esc_textarea( $_POST['ko_band_tour_venue_name'] );
-    $tour_meta['ko_band_tour_ticket'] = esc_attr( $_POST['ko_band_tour_ticket'] );
+    $tour_meta['ko_band_tour_ticket'] = esc_attr($_POST['ko_band_tour_ticket']);
     $tour_meta['ko_band_tour_ticket_link'] = esc_attr( $_POST['ko_band_tour_ticket_link'] );
 
     // Cycle through the $tour_meta array.

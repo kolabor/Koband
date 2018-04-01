@@ -43,10 +43,6 @@ function ko_band_custom_wp_admin_style() {
 
      wp_register_style('theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php', false, '1.0.0' );
     wp_enqueue_style( 'theme_colors' );
-
-
-    
-
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
 
@@ -104,9 +100,7 @@ function ko_band_theme_support () {
 		'primary' => __('Primary Menu', 'koband'),
 		'footer' => __('Footer Menu', 'koband')
 	));
-	
 	// Add theme support Post Format Support
-
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
 }
 add_action('after_setup_theme', 'ko_band_theme_support'); 
@@ -160,7 +154,7 @@ add_action('widgets_init', 'init_widgets');
 
 
 /*Function to generate Theme Colors dynamicly*/
-wp_enqueue_style('theme_colors',
+/*wp_enqueue_style('theme_colors',
                  admin_url('admin-ajax.php').'?action=theme_colors'
                  );
 function theme_colors() {
@@ -168,7 +162,7 @@ function theme_colors() {
   exit;
 }
 add_action('wp_ajax_theme_colors', 'theme_colors');
-add_action('wp_ajax_nopriv_theme_colors', 'theme_colors');
+add_action('wp_ajax_nopriv_theme_colors', 'theme_colors');*/
 
 /*function theme_enqueue_styles() {
   wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet

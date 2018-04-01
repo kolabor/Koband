@@ -226,9 +226,11 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             </select></div>
         <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
-
-</div>
+<div class="row row_no_border">
 <div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+</div>
+</div>
+
  
 <?php }
 
