@@ -104,9 +104,11 @@ function ko_band_tour_display_meta_box($post, $box){
     // Output the field?>
 
     <div class="container">
+        <div class="row blank">
+         <div class="col-sm"><?php _e('Fill the tour informations', 'koband');?></div></div>
         <div class="row-top row">
-            <div class="col-sm"><?php _e('Tour Date:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Tour Country:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Date:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Country:', 'koband');?></div>
         </div>
 
         <div class="row">
@@ -115,8 +117,8 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
 
         <div class="row">
-            <div class="col-sm"><?php _e('Tour City:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Tour Address:', 'koband');?></div>
+            <div class="col-sm"><?php _e('City:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Address:', 'koband');?></div>
         </div>
 
         <div class="row">
@@ -125,27 +127,27 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
 
         <div class="row">
-            <div class="col-sm"><?php _e('Tour ZipCode:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Tour Venue Name:', 'koband');?></div>
+            <div class="col-sm"><?php _e('ZipCode:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Venue:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
-            <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue Name', 'koband');?>"></div>
+            <div class="col-sm"><input type="integer" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue', 'koband');?>"></div>
         </div>
 
         <div class="row blank">
-            <div class="col-sm"><?php _e('Please using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
+            <div class="col-sm"><?php _e('Please, using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
         </div>
 
         <div class="row-top">
-            <div class="col-sm"><?php _e('On Sale', 'koband');?> / <?php _e('Sold Out', 'koband');?></div>
-            <div id="tickets-title" class="col-sm"><?php _e('Ticet Link', 'koband');?></div>
+            <div class="col-sm"><?php _e('Tickets Availability', 'koband');?></div>
+            <div id="tickets-title" class="col-sm"><?php _e('Ticket Link', 'koband');?></div>
         </div>
         <div class="row radio_btns_row">
             <div class="col-sm">
-                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
-                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
+                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> /><?php _e('Available', 'koband');?><br>
+                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> /><?php _e('Sold Out', 'koband');?>
             </div>
 
             <div class="col-sm"><input id="tickets-link" type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>

@@ -6,7 +6,7 @@ input[type="time"], input[type="url"],
 input[type="week"], input[type="password"], input[type="color"],
 input[type="date"], input[type="datetime"],
 input[type="datetime-local"], input[type="email"],
-input[type="month"], input[type="number"],
+input[type="month"], input[type="number"], input[type="integer"],
 select, textarea{
   height: 35px;
 }
@@ -17,10 +17,16 @@ input[type="week"]:focus, input[type="password"]:focus,
 input[type="checkbox"]:focus, input[type="color"]:focus,
 input[type="date"]:focus, input[type="datetime"]:focus,
 input[type="datetime-local"]:focus, input[type="email"]:focus,
-input[type="month"]:focus, input[type="number"]:focus,
+input[type="month"]:focus, input[type="number"]:focus, input[type="integer"]:focus,
 select:focus, textarea:focus{
   border: 1px solid $kolabor1;
   box-shadow: 0 0 2px rgba(0, 168, 168, 0.5);
+}
+input::placeholder {
+  color:#d3d3d3 ;
+}
+textarea::placeholder {
+  color:#d3d3d3;
 }
 .change-image.button.button-small {
   font-size: 14px;
@@ -150,6 +156,9 @@ input.radio1, input.radio2 {
 {
   border: 0 !important;
 }
-input::placeholder {
-  color:#d3d3d3 ;
+#tickets-link {
+  margin-top: 18px;
+}
+.slidetitle, .slidebutton, .slidebuttonlink, .slidevideo, .slidesub {
+  width:350px ;
 }
