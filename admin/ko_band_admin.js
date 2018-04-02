@@ -104,7 +104,7 @@ jQuery(function($) {
 
 jQuery(document).ready(function( $ ){ 
         
-
+        // Saving the selected radio button for Slides //
         var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
         if (slide == "image") 
           {
@@ -116,6 +116,7 @@ jQuery(document).ready(function( $ ){
             $("#slide-title").show();
           };
 
+        // Saving the selected radio button for Tour //
         var sale = $("input[type=radio][name='ko_band_tour_ticket']:checked").val()
         if (sale == "soldout") 
           {
@@ -127,7 +128,7 @@ jQuery(document).ready(function( $ ){
             $("#tickets-title").show();
           };
 
-
+        // Repetable fields functions starts here //
         $( '#add-row-details' ).unbind('click').bind('click', function() {
             var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
             row_details.removeClass( 'empty-row-details screen-reader-text' );
@@ -173,6 +174,7 @@ jQuery(document).ready(function( $ ){
             return false;
         }); // Single Repetable fields ends here //
 
+            // Show hide fields for Tickets on Tour CPT //
             $('#id_radio1').click(function () {
             $('#tickets-link').show('fast');
             $('#tickets-title').show('fast');
@@ -181,6 +183,7 @@ jQuery(document).ready(function( $ ){
             $('#tickets-link').hide('fast');
             $('#tickets-title').hide('fast');
        });
+            // Show hide fields for Slides CPT //
             $('#radio2').click(function () {
             $('#slider-video').show('fast');
             $('#slide-title').show('fast');
@@ -195,11 +198,3 @@ jQuery(document).ready(function( $ ){
             
         
 });     // Ready function ends here //
-            
-            /*function yesnoCheck() {
-            if (document.getElementById('yesCheck').checked) {
-            document.getElementById('ifYes').style.visibility = 'visible';
-            }
-            else document.getElementById('ifYes').style.visibility = 'hidden';
-
-} */
