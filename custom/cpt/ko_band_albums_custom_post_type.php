@@ -133,9 +133,9 @@ function ko_band_album_display_meta_box() {
     <?php } else :  // show a blank one ?>
     
     <div class="row">
-        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
-        <div class="col-sm"><input type="text" class="songlength" name="length[]" placeholder="Length of the music" /></div>
-        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="Short description" /></div>
+        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
+        <div class="col-sm"><input type="integer" class="songlength" name="length[]" placeholder="00:00" /></div>
+        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="ex.: composed,arranged,lyrics..." /></div>
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 
