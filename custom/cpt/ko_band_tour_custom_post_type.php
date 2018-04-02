@@ -141,13 +141,13 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
 
         <div class="row-top">
-            <div class="col-sm"><?php _e('On Sale', 'koband');?> / <?php _e('Sold Out', 'koband');?></div>
+            <div class="col-sm"><?php _e('Tickets Availiblity', 'koband');?></div>
             <div id="tickets-title" class="col-sm"><?php _e('Ticket Link', 'koband');?></div>
         </div>
         <div class="row radio_btns_row">
             <div class="col-sm">
-                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
-                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
+                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> /><?php _e('Available', 'koband');?><br>
+                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> /><?php _e('Sold Out', 'koband');?>
             </div>
 
             <div class="col-sm"><input id="tickets-link" type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>
