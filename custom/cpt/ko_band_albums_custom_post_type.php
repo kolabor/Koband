@@ -100,7 +100,7 @@ function ko_band_album_display_meta_box() {
 
     <div class="row">
         <div class="col-sm"><input type="date" name="ko_band_album_date_release" value="<?php echo esc_html( $album_date_release ) ?>" class="albumrelease" ></div>
-        <div class="col-sm"><input type="number" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="Hour.Min.Sec"></div>
+        <div class="col-sm"><input type="integer" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="00:00"></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
@@ -109,7 +109,7 @@ function ko_band_album_display_meta_box() {
 
 <div class="container" id="ko_band_album_meta_box_one" >
     <div class="row blank">
-        <div class="col-sm"><?php _e('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
+        <div class="col-sm"><?php _e('On the following fields you can add or remove songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
 
     <div class="row-top">
