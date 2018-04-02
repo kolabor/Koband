@@ -2,7 +2,7 @@
 /**
  *
  *
- * Template Name: KoBand Tour
+ * Template Name: KoBand Tour/Events
  *
  *
  * Koband Albums custom post type and metabox creation file!
