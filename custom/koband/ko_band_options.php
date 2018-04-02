@@ -88,23 +88,23 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
     ) ) 
 );
 
-$wp_customize->add_setting( 'ko_band_font_size' );
-$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_font_size',
+$wp_customize->add_setting( 'ko_band_main_font_size' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_main_font_size',
     array(
-        'label' => esc_html( 'Font Size (in px.)', 'koband' ),
+        'label' => esc_html( 'Main Font Size (in px.)', 'koband' ),
         'section' => 'ko_band_fonts_and_color_section',
-        'settings'   => 'ko_band_font_size',
+        'settings'   => 'ko_band_main_font_size',
         'type' => 'number',
 
     )
    )
 );
-$wp_customize->add_setting( 'ko_band_line_height' );
-$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_line_height',
+$wp_customize->add_setting( 'ko_band_main_line_height' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_main_line_height',
     array(
-        'label' => esc_html( 'Line Height (in px.)', 'koband' ),
+        'label' => esc_html( 'Main Line Height (in px.)', 'koband' ),
         'section' => 'ko_band_fonts_and_color_section',
-        'settings'   => 'ko_band_line_height',
+        'settings'   => 'ko_band_main_line_height',
         'type' => 'number',
         
        

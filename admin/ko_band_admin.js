@@ -26,7 +26,7 @@ jQuery(function($) {
         attachment = attachment.toJSON(),
         index      = listIndex + (i + 1);
 
-      $('#gallery-metabox-list').append('<li><input type="hidden" name="vdw_gallery_id[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br><small><a class="remove-image" href="#">Remove image</a></small></li>');
+      $('#gallery-metabox-list').append('<li><input type="hidden" name="vdw_gallery_id[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br><a class="remove-image" href="#">Remove image</a></li>');
       
       });
 
@@ -104,6 +104,19 @@ jQuery(function($) {
 
 jQuery(document).ready(function( $ ){ 
         
+
+        var test = $("input[type=radio][name='ko_band_slides_check']:checked").val()
+        if (test == "image") 
+          {
+            $("#slider-video").hide();
+            $("#slide-title").hide()
+          };
+         if (test == "video") {
+            $("#slider-video").show();
+            $("#slide-title").show();
+          };
+
+
         $( '#add-row-details' ).unbind('click').bind('click', function() {
             var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
             row_details.removeClass( 'empty-row-details screen-reader-text' );
@@ -147,7 +160,35 @@ jQuery(document).ready(function( $ ){
             $( '.remove-row' ).on('click', function() {
             $(this).parents('.row').remove();
             return false;
-        });
-            // Single Repetable fields ends here //
+        }); // Single Repetable fields ends here //
 
-    });     // Ready function ends here //
+            $('#id_radio1').click(function () {
+            $('#tickets-link').show('fast');
+            $('#tickets-title').show('fast');
+        });
+            $('#id_radio2').click(function () {
+            $('#tickets-link').hide('fast');
+            $('#tickets-title').hide('fast');
+       });
+            $('#radio2').click(function () {
+            $('#slider-video').show('fast');
+            $('#slide-title').show('fast');
+
+        });
+            $('#radio1').click(function () {
+            $('#slider-video').hide('fast');
+            $('#slide-title').hide('fast');
+
+       });
+    
+            
+        
+});     // Ready function ends here //
+            
+            /*function yesnoCheck() {
+            if (document.getElementById('yesCheck').checked) {
+            document.getElementById('ifYes').style.visibility = 'visible';
+            }
+            else document.getElementById('ifYes').style.visibility = 'hidden';
+
+} */

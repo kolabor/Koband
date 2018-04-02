@@ -22,8 +22,8 @@ $heading_font_color = get_theme_mod( 'ko_band_heading_font_color' );
 
 
 
-$main_font_size = get_theme_mod( 'ko_band_font_size' );
-$main_line_height = get_theme_mod( 'ko_band_line_height' );
+$main_font_size = get_theme_mod( 'ko_band_main_font_size' );
+$main_line_height = get_theme_mod( 'ko_band_main_line_height' );
 $main_font_style = get_theme_mod( 'ko_band_font_style' );
 $main_font_weight = get_theme_mod( 'ko_band_font_weight' );
 ?>
