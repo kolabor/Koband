@@ -49,7 +49,7 @@ function ko_band_register_slides() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail' ),
+    'supports' => array('title', 'thumbnail' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -102,7 +102,7 @@ function ko_band_slides_meta_box($post, $box){
         </div>
         <div class="row">
             <div class="col-sm"><input type="checkbox" name="ko_band_slides_check" value="<?php echo esc_html( $slides_check )?>" class="slidecheck"></div>
-            <div class="col-sm"><input type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo"></div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Add Video Link', 'koband');?>" class="slidevideo"></div>
         </div>
 
         <div class="row">

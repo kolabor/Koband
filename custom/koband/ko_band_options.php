@@ -272,6 +272,31 @@ $wp_customize->add_control( 'ko_band_soundcloud_social_media', array(
     'settings' => 'ko_band_soundcloud_social_media',
     'section' => 'ko_band_social_media_section',
 ) );
+
+/*** The band section starts here  ***/
+$wp_customize->add_section( 'ko_band_the_band_section' , array(
+    'title'       => __( 'The Band', 'koband' ),
+    'priority'    => 30,
+    'description' => '<hr>',
+) );
+
+/**The band Biography**/
+$wp_customize->add_setting( 'ko_band_the_band_biography' );
+$wp_customize->add_control( 'ko_band_the_band_biography', array(
+    'label' => __( 'Biography:', 'koband' ),
+    'settings' => 'ko_band_the_band_biography',
+    'section' => 'ko_band_the_band_section',
+    'type'     => 'textarea',
+) );
+
+/**The band Images**/
+$wp_customize->add_setting( 'ko_band_the_band_images' );
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_the_band_images', array(
+    'label' => __( 'The Band Image:', 'koband' ),
+    'settings' => 'ko_band_the_band_images',
+    'section' => 'ko_band_the_band_section',
+)) );
+
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
