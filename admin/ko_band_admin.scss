@@ -32,12 +32,6 @@ select:focus, textarea:focus{
   height: 30px;
   padding-top: 3px;
 }
-.remove-image {
-  color: #dc3545;
-}
-.remove-image:hover {
-  color: #000000;
-}
 #add-row-details, #add-row-stores,
 .gallery-add.button, .button.remove-row-stores,
 #add-row, #add-row-single,
@@ -45,6 +39,7 @@ select:focus, textarea:focus{
 .button.remove-row-details {
   font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
   color: #efefef;
   background: $kolabor2;
   text-shadow: 1px 1px #000000;
@@ -56,12 +51,27 @@ select:focus, textarea:focus{
 }
 #add-row-details:hover, #add-row-stores:hover, .button.remove-row-stores:hover,
 #add-row:hover, #add-row-single:hover, .change-image.button.button-small:hover,
-.button.remove-row:hover, .gallery-add.button:hover,
+.button.remove-row:hover, .gallery-add.button:hover, .remove-image:hover,
 .button.remove-row-details:hover, #add-row-media:hover{
   background: $kolabor1;
   color: #efefef;
   text-shadow: 1px 1px #000000;
+  text-decoration: none;
 }
+.remove-image {
+  background-color: $kolabor2 ;
+  color: #efefef ;
+  text-shadow: 1px 1px #000000;
+  font-size:14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 8px 4px 8px;
+  border-radius: 2px;
+}
+.change-image.button.button-small {
+  margin-bottom: 10px;
+}
+
 #wp-content-editor-tools {
   background-color: #fff;
 }
@@ -82,6 +92,9 @@ select:focus, textarea:focus{
   background: rgba(249, 249, 249, 0.4);
   padding: 2px;
   border: 1px solid rgba(0, 168, 168, 0.3) !important;
+}
+.row-top.media {
+  border-bottom: none !important;
 }
 .row {
   font-size: 14px;
@@ -135,5 +148,8 @@ input.radio1, input.radio2 {
 }
 .row_no_border
 {
-  border: 0px !important;
+  border: 0 !important;
+}
+input::placeholder {
+  color:#d3d3d3 ;
 }

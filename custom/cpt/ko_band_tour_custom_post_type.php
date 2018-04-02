@@ -140,20 +140,33 @@ function ko_band_tour_display_meta_box($post, $box){
 
         <div class="row-top">
             <div class="col-sm"><?php _e('On Sale', 'koband');?> / <?php _e('Sold Out', 'koband');?></div>
-            <div class="col-sm"><?php _e('Ticet Link', 'koband');?></div>
+            <div id="tickets-title" class="col-sm"><?php _e('Ticet Link', 'koband');?></div>
         </div>
-
         <div class="row radio_btns_row">
             <div class="col-sm">
-                    <input type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
-                    <input type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
-                    <!--<input type="text" name="ko_band_tour_ticket" value="<?php echo esc_attr($tour_ticket)?>" class="widefat" placeholder="http://www.amazon.com">-->
-                    <!--<input type="radio" name="ko_band_tour_ticket" value1="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
-                    <input type="radio" name="ko_band_tour_ticket" value2="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />-->
-
+                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
+                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
             </div>
-            <div class="col-sm"><input type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>
+
+            <div class="col-sm"><input id="tickets-link" type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>
         </div>
+
+
+
+
+
+
+
+
+<!--
+        <div class="row radio_btns_row">
+            <div class="col-sm">
+                    <input type="radio" id="yesCheck" onclick="javascript:yesnoCheck();" name="ko_band_tour_ticket" value="avaliable" class="radio1"  <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
+                    <input type="radio" id="noCheck" onclick="javascript:yesnoCheck();" name="ko_band_tour_ticket" value="soldout" class="radio2"  <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
+            </div>
+            <div id="ifYes" style="visibility:hidden;" 
+             class="col-sm"><input type="url" id='yes' name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="ticketlink" placeholder="http://www.amazon.com"></div>
+        </div> -->
     
     </div>
 
