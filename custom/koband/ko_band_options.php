@@ -208,6 +208,7 @@ $wp_customize->add_setting( 'ko_band_linkedin_social_media' );
 $wp_customize->add_setting( 'ko_band_youtube_social_media' );
 $wp_customize->add_setting( 'ko_band_pinterest_social_media' );
 $wp_customize->add_setting( 'ko_band_github_social_media' );
+$wp_customize->add_setting( 'ko_band_soundcloud_social_media' );
 
 
 /*Facebook*/
@@ -266,6 +267,11 @@ $wp_customize->add_control( 'ko_band_github_social_media', array(
     'section' => 'ko_band_social_media_section',
 ) );
 
+$wp_customize->add_control( 'ko_band_soundcloud_social_media', array(
+    'label' => __( 'SoundCloud:', 'koband' ),
+    'settings' => 'ko_band_soundcloud_social_media',
+    'section' => 'ko_band_social_media_section',
+) );
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
