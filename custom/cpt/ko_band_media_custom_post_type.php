@@ -90,19 +90,18 @@ global $post;
         <div class="row-blank">
         <div class="col-sm"><?php _e('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
         </div>
-        <div class="row-top">
-
+        <div class="row-top media">
             <div class="col-sm">
                 <a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)"><?php _e('Add image','koband');?></a>
             </div>    
         </div>
         <div id="gallery-metabox-list" class="row">
             <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
-            <div class="col-sm">
+            <div class="col-sm"> 
                 <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                 <img class="image-preview" src="<?php echo $image[0]; ?>">
                 <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><?php _e('Change image', 'koband');?></a><br>
-                <small><a class="remove-image" href="#"><?php _e('Remove image', 'koband');?></a></small>
+                <a class="remove-image" href="#"><?php _e('Remove image', 'koband');?></a>
             </div>
         <?php endforeach; endif; ?>
         </div>
