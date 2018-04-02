@@ -22,6 +22,12 @@ select:focus, textarea:focus{
   border: 1px solid $kolabor1;
   box-shadow: 0 0 2px rgba(0, 168, 168, 0.5);
 }
+input::placeholder {
+  color:#d3d3d3 ;
+}
+textarea::placeholder {
+  color:#d3d3d3;
+}
 .change-image.button.button-small {
   font-size: 14px;
   font-weight: 600;
@@ -150,6 +156,9 @@ input.radio1, input.radio2 {
 {
   border: 0 !important;
 }
-input::placeholder {
-  color:#d3d3d3 ;
+#tickets-link {
+  margin-top: 18px;
+}
+.slidetitle, .slidebutton, .slidebuttonlink, .slidevideo, .slidesub {
+  width:350px ;
 }

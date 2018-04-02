@@ -105,15 +105,26 @@ jQuery(function($) {
 jQuery(document).ready(function( $ ){ 
         
 
-        var test = $("input[type=radio][name='ko_band_slides_check']:checked").val()
-        if (test == "image") 
+        var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
+        if (slide == "image") 
           {
             $("#slider-video").hide();
             $("#slide-title").hide()
           };
-         if (test == "video") {
+         if (slide == "video") {
             $("#slider-video").show();
             $("#slide-title").show();
+          };
+
+        var sale = $("input[type=radio][name='ko_band_tour_ticket']:checked").val()
+        if (sale == "soldout") 
+          {
+            $("#tickets-link").hide();
+            $("#tickets-title").hide()
+          };
+         if (sale == "available") {
+            $("#tickets-link").show();
+            $("#tickets-title").show();
           };
 
 

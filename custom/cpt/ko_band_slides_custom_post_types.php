@@ -98,16 +98,14 @@ function ko_band_slides_meta_box($post, $box){
     <div class="container">
         <div class="row-blank"><?php _e('Here you can select "Image Slider" or "Video Slider"', 'koband'); ?></div>
         <div class="row-top">
-                    <div id="image-slider" class="col-sm"><?php _e('Image', 'koband');?></div>
-                    <div id="video-slider" class="col-sm"><?php _e('Video', 'koband');?></div>
+                    <div id="image-slider" class="col-sm"><?php _e('Slide type', 'koband');?></div>
                     <div id="slide-title" class="col-sm"><?php _e('Video Holder:', 'koband');?></div>
-                    <div class="col-sm"></div>
         </div>
         <div class="row">
-            <div class="col-sm slide-radio"><input id="radio1" type="radio" name="ko_band_slides_check" value="image" class="slidecheck"<?php  if($slides_check == 'image') {echo "checked";} ?>></div>
-            <div class="col-sm"><input id="radio2" type="radio" name="ko_band_slides_check" value="video" class="slidecheck"<?php  if($slides_check == 'video') {echo "checked";} ?>></div>
+            <div class="col-sm slide-radio"><input id="radio1" type="radio" name="ko_band_slides_check" value="image" class="slidecheck"<?php  if($slides_check == 'image') {echo "checked";} ?>><?php _e('Image', 'koband');?><br>
+            <input id="radio2" type="radio" name="ko_band_slides_check" value="video" class="slidecheck"<?php  if($slides_check == 'video') {echo "checked";} ?>><?php _e('Video', 'koband');?></div>
             <div class="col-sm"><input id="slider-video" type="text" name="ko_band_slides_video" value="<?php echo esc_textarea( $slides_video )?>" placeholder= "<?php _e('Please paste here embed video', 'koband');?>" class="slidevideo"></div>
-            <div class="col-sm"></div>
+           
         </div>
 
         <div class="row">
@@ -117,7 +115,7 @@ function ko_band_slides_meta_box($post, $box){
 
         <div class="row">
             <div class="col-sm"><input type="text" name="ko_band_slides_title" value="<?php echo esc_textarea( $slides_title )?>" placeholder= "<?php _e('Text title on slide', 'koband');?>" class="slidetitle"></div>
-            <div class="col-sm"><input type="text" name="ko_band_slides_subtitle" value="<?php echo esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub"></div>
+            <div class="col-sm"><textarea name="ko_band_slides_subtitle" value="<?php echo esc_textarea( $slides_subtitle )?>" placeholder= "<?php _e('Text subtitle on slide', 'koband');?>" class="slidesub"></textarea></div>
         </div>
 
         <div class="row">
