@@ -11,7 +11,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __('Tour Event', 'koband')
+    'menu_name' => __('Tour/Events', 'koband')
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,18 +27,18 @@ $args = array(
 function ko_band_tour_custom_post_type() {
 
   $label = array(
-    'name' => __('Tour Event', 'koband'),
-    'singular_name' => __('Tour Event', 'koband'),
-    'add_new' => __('Add Tour', 'koband'),
-    'all_items' => __('All Tours', 'koband'),
-    'add_new_item' => __('Add Tour', 'koband'),
-    'edit_item' => __('Edit Tour', 'koband'),
-    'new_item' => __('New Tour', 'koband'),
-    'view_item' => __('View Tour', 'koband'),
-    'search_item' => __('Search Tour', 'koband'),
-    'not_found' => __('Mo Tour Found', 'koband'),
-    'not-found_in_trash' => __('No Tour Found in Trash', 'koband'),
-    'parent_item_colon' => __('Parent Tour', 'koband')
+    'name' => __('Tour/Events', 'koband'),
+    'singular_name' => __('Tour/Events', 'koband'),
+    'add_new' => __('Add Tour/Events', 'koband'),
+    'all_items' => __('All Tour/Events', 'koband'),
+    'add_new_item' => __('Add Tour/Events', 'koband'),
+    'edit_item' => __('Edit Tour/Events', 'koband'),
+    'new_item' => __('New Tour/Events', 'koband'),
+    'view_item' => __('View Tour/Events', 'koband'),
+    'search_item' => __('Search Tour/Events', 'koband'),
+    'not_found' => __('Mo Tour/Events Found', 'koband'),
+    'not-found_in_trash' => __('No Tour/Events Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent Tour/Events', 'koband')
     );
 
   $args = array(

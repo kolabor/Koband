@@ -47,33 +47,104 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 ) ) );
 
 
+$wp_customize->add_section( 'ko_band_fonts_and_color_section' , array(
+    'title'       => __( 'Fonts & Colors', 'koband' ),
+    'priority'    => 27,
+    'description' => '<hr>',
+) );
+
 /*** Main theme color ***/
-$wp_customize->add_setting( 'ko_band_main_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_colorr', array(
-        'label'      => __( 'Main color', 'koband' ),
-        'section'    => 'title_tagline',
-        'settings'   => 'ko_band_main_color',
+$wp_customize->add_setting( 'ko_band_main_theme_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_theme_color', array(
+        'label'      => __( 'Main theme Color', 'koband' ),
+        'section'    => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_main_theme_color',
     ) ) 
 );
 
 
 /*** Second theme color ***/
-$wp_customize->add_setting( 'ko_band_second_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_second_color', array(
-        'label'      => __( 'Second color', 'koband' ),
-        'section'    => 'title_tagline',
-        'settings'   => 'ko_band_second_color',
+$wp_customize->add_setting( 'ko_band_second_them_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_second_them_color', array(
+        'label'      => __( 'Second Theme Color', 'koband' ),
+        'section'    => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_second_them_color',
     ) ) 
 );
 
 /*** Third theme color ***/
-$wp_customize->add_setting( 'ko_band_third_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_third_color', array(
-        'label'      => __( 'Third color', 'koband' ),
-        'section'    => 'title_tagline',
-        'settings'   => 'ko_band_third_color',
+$wp_customize->add_setting( 'ko_band_main_font_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_font_color', array(
+        'label'      => __( ' Main Font Color', 'koband' ),
+        'section'    => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_main_font_color',
     ) ) 
 );
+$wp_customize->add_setting( 'ko_band_heading_font_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_heading_font_color', array(
+        'label'      => __( 'Heading Font color', 'koband' ),
+        'section'    => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_heading_font_color',
+    ) ) 
+);
+
+$wp_customize->add_setting( 'ko_band_main_font_size' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_main_font_size',
+    array(
+        'label' => esc_html( 'Main Font Size (in px.)', 'koband' ),
+        'section' => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_main_font_size',
+        'type' => 'number',
+
+    )
+   )
+);
+$wp_customize->add_setting( 'ko_band_main_line_height' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_main_line_height',
+    array(
+        'label' => esc_html( 'Main Line Height (in px.)', 'koband' ),
+        'section' => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_main_line_height',
+        'type' => 'number',
+        
+       
+    ))
+);
+$wp_customize->add_setting( 'ko_band_font_style' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_font_style',
+    array(
+        'label' => esc_html( 'Font Style', 'koband' ),
+        'section' => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_font_style',
+        'type' => 'select',
+        'choices' => array(
+            'normal'  => esc_html__( 'Normal', 'koband' ),
+            'italic'  => esc_html__( 'Italic', 'koband' ),
+            'oblique' => esc_html__( 'Oblique', 'koband' ),
+        )
+    )
+)
+);
+
+$wp_customize->add_setting( 'ko_band_font_weight' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_font_weight',
+    array(
+        'label' => esc_html( 'Font Weight', 'koband' ),
+        'section' => 'ko_band_fonts_and_color_section',
+        'settings'   => 'ko_band_font_weight',
+        'type' => 'select',
+        'choices' => array(
+            '100' => esc_html__( 'Thin',       'koband' ),
+            '300' => esc_html__( 'Light',      'koband' ),
+            '400' => esc_html__( 'Normal',     'koband' ),
+            '500' => esc_html__( 'Medium',     'koband' ),
+            '700' => esc_html__( 'Bold',       'koband' ),
+            '900' => esc_html__( 'Ultra Bold', 'koband' ),
+        )
+       
+    ))
+);
+
 
 
 /*** Main Font Selector ***/
@@ -82,7 +153,7 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
 
         'type'      => 'select',
         'label'      => __( 'Select main website font:', 'koband' ),
-        'section'    => 'title_tagline',
+        'section'    => 'ko_band_fonts_and_color_section',
         'settings'   => 'ko_band_general_font_selector',
         'choices' => array(
             'Open+Sans' => 'Open Sans',
@@ -114,7 +185,7 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
 
         'type'      => 'select',
         'label'      => __( 'Select Heading (h1, h2, h3) font:', 'koband' ),
-        'section'    => 'title_tagline',
+        'section'    => 'ko_band_fonts_and_color_section',
         'settings'   => 'ko_band_heading_font_selector',
         'choices' => array(
             'Open+Sans' => 'Open Sans',
@@ -138,7 +209,7 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Roboto+Condensed' => 'Roboto Condensed',
      ),
     ) 
-);
+); 
 
     // Show Retina favicon
 
@@ -148,22 +219,6 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
       'section'  => 'title_tagline',
       'settings' => 'ko_band_retina_favicon',
   ) ) );
-
-/*
-$wp_customize->add_section( 'ko_band_general_section' , array(
-    'title'       => __( 'General Setting', 'koband' ),
-    'priority'    => 26,
-    'description' => '<hr>',
-) );
-
-
-$wp_customize->add_setting( 'ko_band_general_setting' );
-$wp_customize->add_panel(new WP_Customize_Control( 'ko_band_general_setting', array(
-    'label' => __( 'General Setting:', 'koband' ),
-    'settings' => 'ko_band_general_setting',
-    'section' => 'ko_band_general_section',
-)) );
-*/
 
 
 /*** Footer section starts here  ***/
@@ -272,6 +327,31 @@ $wp_customize->add_control( 'ko_band_soundcloud_social_media', array(
     'settings' => 'ko_band_soundcloud_social_media',
     'section' => 'ko_band_social_media_section',
 ) );
+
+/*** The band section starts here  ***/
+$wp_customize->add_section( 'ko_band_the_band_section' , array(
+    'title'       => __( 'The Band', 'koband' ),
+    'priority'    => 30,
+    'description' => '<hr>',
+) );
+
+/**The band Biography**/
+$wp_customize->add_setting( 'ko_band_the_band_biography' );
+$wp_customize->add_control( 'ko_band_the_band_biography', array(
+    'label' => __( 'Biography:', 'koband' ),
+    'settings' => 'ko_band_the_band_biography',
+    'section' => 'ko_band_the_band_section',
+    'type'     => 'textarea',
+) );
+
+/**The band Images**/
+$wp_customize->add_setting( 'ko_band_the_band_images' );
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_the_band_images', array(
+    'label' => __( 'The Band Image:', 'koband' ),
+    'settings' => 'ko_band_the_band_images',
+    'section' => 'ko_band_the_band_section',
+)) );
+
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
