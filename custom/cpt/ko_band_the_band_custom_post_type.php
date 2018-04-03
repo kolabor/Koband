@@ -94,11 +94,11 @@ function ko_band_the_band_meta_box($post, $box){
     <div class="container">
 
         <div class="row-top">
-            <div class="col-sm"><?php _e('The Band Biography:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Band Member Role:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><textarea name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>"></textarea></div>
+            <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('ex.Drummer, Bass ...', 'koband');?>"></div>
         </div>
     </div>
 
@@ -125,9 +125,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $the_band_meta['ko_band_the_band_bio'] = esc_textarea( $_POST['ko_band_the_band_bio'] );
-    $the_band_meta['ko_band_the_band_success'] = esc_textarea( $_POST['ko_band_the_band_success'] );
-    $the_band_meta['ko_band_the_band_award'] = esc_textarea( $_POST['ko_band_the_band_award'] );
-    $the_band_photo['ko_band_the_band_photo'] = esc_html( $_POST['ko_band_the_band_photo'] ); 
+
   
 
     // Cycle through the $events_meta array.
