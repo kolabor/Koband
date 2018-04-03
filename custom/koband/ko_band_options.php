@@ -56,7 +56,7 @@ $wp_customize->add_section( 'ko_band_fonts_and_color_section' , array(
 /*** Main theme color ***/
 $wp_customize->add_setting( 'ko_band_main_theme_color' );
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_theme_color', array(
-        'label'      => __( 'Main theme Color', 'koband' ),
+        'label'      => __( 'Main Theme Color', 'koband' ),
         'section'    => 'ko_band_fonts_and_color_section',
         'settings'   => 'ko_band_main_theme_color',
     ) ) 
