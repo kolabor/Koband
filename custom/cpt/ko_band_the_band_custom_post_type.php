@@ -94,11 +94,11 @@ function ko_band_the_band_meta_box($post, $box){
     <div class="container">
 
         <div class="row-top">
-            <div class="col-sm"><?php _e('The Band Biography:', 'koband');?></div>
+            <div class="col-sm"><?php _e('Band Member Role:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><textarea name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>"></textarea></div>
+            <div class="col-sm"><textarea name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('Ex. Drummers', 'koband');?>"></textarea></div>
         </div>
     </div>
 
