@@ -87,6 +87,13 @@ jQuery(function($) {
 
   }
 
+  $(document).on("click", "#ko_band_gallery-metabox a.remove-image", function(e) {
+    e.preventDefault();
+
+       $(this).parent().remove(); 
+});
+
+/*
   $(document).on('click', '#ko_band_gallery-metabox a.remove-image', function(e) {
     e.preventDefault();
 
@@ -98,7 +105,7 @@ jQuery(function($) {
   
   });
 
-  makeSortable();
+  makeSortable(); */
 
 });
 
@@ -182,7 +189,7 @@ jQuery(document).ready(function( $ ){
             $('#id_radio2').click(function () {
             $('#tickets-link').hide('fast');
             $('#tickets-title').hide('fast');
-       });
+        });
             // Show hide fields for Slides CPT //
             $('#radio2').click(function () {
             $('#slider-video').show('fast');
@@ -193,7 +200,11 @@ jQuery(document).ready(function( $ ){
             $('#slider-video').hide('fast');
             $('#slide-title').hide('fast');
 
-       });
+        });
+            var maxLength = 250;
+            $('textarea').keyup(function() {
+            var textlen = maxLength - $(this).val().length;
+        });
     
             
         

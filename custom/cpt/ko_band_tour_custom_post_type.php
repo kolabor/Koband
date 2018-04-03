@@ -132,7 +132,7 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="integer" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
+            <div class="col-sm"><input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
             <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue', 'koband');?>"></div>
         </div>
 
@@ -146,8 +146,8 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
         <div class="row radio_btns_row">
             <div class="col-sm">
-                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> /><?php _e('Available', 'koband');?><br>
-                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2" <?php if($tour_ticket == 'soldout') {echo "checked";} ?> /><?php _e('Sold Out', 'koband');?>
+                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" checked="checked" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> /> <?php _e('Available', 'koband');?><br>
+                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2"<?php if($tour_ticket == 'soldout') {echo "checked";} ?> /> <?php _e('Sold Out', 'koband');?>
             </div>
 
             <div class="col-sm"><input id="tickets-link" type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>

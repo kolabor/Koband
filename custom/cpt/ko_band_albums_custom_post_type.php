@@ -100,7 +100,7 @@ function ko_band_album_display_meta_box() {
 
     <div class="row">
         <div class="col-sm"><input type="date" name="ko_band_album_date_release" value="<?php echo esc_html( $album_date_release ) ?>" class="albumrelease" ></div>
-        <div class="col-sm"><input type="integer" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="00:00"></div>
+        <div class="col-sm"><input type="time" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="00:00"></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
@@ -134,8 +134,8 @@ function ko_band_album_display_meta_box() {
     
     <div class="row">
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
-        <div class="col-sm"><input type="integer" class="songlength" name="length[]" placeholder="00:00" /></div>
-        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="ex.: composed,arranged,lyrics..." /></div>
+        <div class="col-sm"><input type="time" class="songlength" name="length[]" placeholder="00:00" /></div>
+        <div class="col-sm"><textarea class="songdetails" name="detail[]" maxlength="250" placeholder="ex.:composed,arranged..."/></textarea></div>
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 
@@ -143,8 +143,10 @@ function ko_band_album_display_meta_box() {
      <!-- empty hidden one for jQuery -->
     <div class="row empty-row-detail screen-reader-text" >
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
+
         <div class="col-sm"><input type="integer" class="songlength" name="length[]" placeholder="00:00"  /></div>
         <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="ex.: composed,arranged,lyrics..."  /></div>
+
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">
