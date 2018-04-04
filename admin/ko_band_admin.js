@@ -87,6 +87,13 @@ jQuery(function($) {
 
   }
 
+  $(document).on("click", "#ko_band_gallery-metabox a.remove-image", function(e) {
+    e.preventDefault();
+
+       $(this).parent().remove(); 
+});
+
+/*
   $(document).on('click', '#ko_band_gallery-metabox a.remove-image', function(e) {
     e.preventDefault();
 
@@ -98,13 +105,13 @@ jQuery(function($) {
   
   });
 
-  makeSortable();
+  makeSortable(); */
 
 });
 
 jQuery(document).ready(function( $ ){ 
         
-
+        // Saving the selected radio button for Slides //
         var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
         if (slide == "image") 
           {
@@ -116,6 +123,7 @@ jQuery(document).ready(function( $ ){
             $("#slide-title").show();
           };
 
+        // Saving the selected radio button for Tour //
         var sale = $("input[type=radio][name='ko_band_tour_ticket']:checked").val()
         if (sale == "soldout") 
           {
@@ -127,7 +135,7 @@ jQuery(document).ready(function( $ ){
             $("#tickets-title").show();
           };
 
-
+        // Repetable fields functions starts here //
         $( '#add-row-details' ).unbind('click').bind('click', function() {
             var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
             row_details.removeClass( 'empty-row-details screen-reader-text' );
@@ -173,6 +181,7 @@ jQuery(document).ready(function( $ ){
             return false;
         }); // Single Repetable fields ends here //
 
+            // Show hide fields for Tickets on Tour CPT //
             $('#id_radio1').click(function () {
             $('#tickets-link').show('fast');
             $('#tickets-title').show('fast');
@@ -180,7 +189,8 @@ jQuery(document).ready(function( $ ){
             $('#id_radio2').click(function () {
             $('#tickets-link').hide('fast');
             $('#tickets-title').hide('fast');
-       });
+        });
+            // Show hide fields for Slides CPT //
             $('#radio2').click(function () {
             $('#slider-video').show('fast');
             $('#slide-title').show('fast');
@@ -190,16 +200,12 @@ jQuery(document).ready(function( $ ){
             $('#slider-video').hide('fast');
             $('#slide-title').hide('fast');
 
-       });
+        });
+            var maxLength = 250;
+            $('textarea').keyup(function() {
+            var textlen = maxLength - $(this).val().length;
+        });
     
             
         
 });     // Ready function ends here //
-            
-            /*function yesnoCheck() {
-            if (document.getElementById('yesCheck').checked) {
-            document.getElementById('ifYes').style.visibility = 'visible';
-            }
-            else document.getElementById('ifYes').style.visibility = 'hidden';
-
-} */

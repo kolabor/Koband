@@ -27,7 +27,7 @@ function ko_band_register_singles() {
   $label = array(
     'name' => __('Singles', 'koband'),
     'singular_name' => __('Singles', 'koband'),
-    'add_new' => __('Add Singles', 'koband'),
+    'add_new' => __('Add Single', 'koband'),
     'all_items' => __('All Singles','koband'),
     'add_new_item' => __('Add Singles', 'koband'),
     'edit_item' => __('Edit Singles', 'koband'),
@@ -90,7 +90,7 @@ function ko_band_singles_display_meta_box($post, $box){
     </div>
     
     <div class="row">
-              <div class="col-sm"><input type="number" name="ko_band_singles_length" value="<?php echo esc_html( $singles_length ) ?>" class="singlelength" placeholder="00:00"></div>
+              <div class="col-sm"><input type="time" name="ko_band_singles_length" value="<?php echo esc_html( $singles_length ) ?>" class="singlelength" placeholder="00:00"></div>
               <div class="col-sm"><input type="date" name="ko_band_singles_date_release" value="<?php echo esc_html( $singles_date_release ) ?>" class="singledate"></div>
               <div class="col-sm"></div>
     </div>

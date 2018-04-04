@@ -6,7 +6,7 @@ input[type="time"], input[type="url"],
 input[type="week"], input[type="password"], input[type="color"],
 input[type="date"], input[type="datetime"],
 input[type="datetime-local"], input[type="email"],
-input[type="month"], input[type="number"],
+input[type="month"], input[type="number"], input[type="integer"],
 select, textarea{
   height: 35px;
 }
@@ -17,7 +17,7 @@ input[type="week"]:focus, input[type="password"]:focus,
 input[type="checkbox"]:focus, input[type="color"]:focus,
 input[type="date"]:focus, input[type="datetime"]:focus,
 input[type="datetime-local"]:focus, input[type="email"]:focus,
-input[type="month"]:focus, input[type="number"]:focus,
+input[type="month"]:focus, input[type="number"]:focus, input[type="integer"]:focus,
 select:focus, textarea:focus{
   border: 1px solid $kolabor1;
   box-shadow: 0 0 2px rgba(0, 168, 168, 0.5);
@@ -28,12 +28,14 @@ input::placeholder {
 textarea::placeholder {
   color:#d3d3d3;
 }
+li {
+  list-style-type: none;
+}
 .change-image.button.button-small {
   font-size: 14px;
   font-weight: 600;
   color: #efefef;
   background: $kolabor2;
-  text-shadow: 1px 1px #000000;
   border: none;
   height: 30px;
   padding-top: 3px;
@@ -48,7 +50,6 @@ textarea::placeholder {
   text-decoration: none;
   color: #efefef;
   background: $kolabor2;
-  text-shadow: 1px 1px #000000;
   border: none;
   height: 35px;
   padding-top: 4px;
@@ -61,13 +62,18 @@ textarea::placeholder {
 .button.remove-row-details:hover, #add-row-media:hover{
   background: $kolabor1;
   color: #efefef;
-  text-shadow: 1px 1px #000000;
   text-decoration: none;
+}
+.gallery-add.button:focus {
+  background: $kolabor1;
+  color: #efefef;
+}
+.button-add-row-single, .button-add-row {
+  margin-top: 10px;
 }
 .remove-image {
   background-color: $kolabor2 ;
   color: #efefef ;
-  text-shadow: 1px 1px #000000;
   font-size:14px;
   font-weight: 600;
   text-decoration: none;
@@ -87,10 +93,6 @@ textarea::placeholder {
   font-size: 12px;
   border: none;
   background: #fff;
-}
-.gallery-add.button:focus {
-  background: $kolabor1;
-  color: #efefef;
 }
 .row-top {
   font-size: 14px;
@@ -117,20 +119,24 @@ input.radio1, input.radio2 {
   margin-top: 7px;
   margin-bottom: 7px;
 }
-.button-add-row-single, .button-add-row {
-  margin-top: 10px;
+
+#gallery-metabox-list li img {
+  width: 120px;
+  height: 120px;
+}
+.image-preview {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
 }
 #gallery-metabox-list li {
-  float: left;
   width: 150px;
+  height: auto;
   text-align: center;
   margin: 10px 10px 15px 17px;
   cursor: move;
 }
 
-.image-preview {
-  padding: 10px 10px 15px;
-}
 #menu-posts-album, #menu-posts-media, #menu-posts-singles,
 #menu-posts-slides, #menu-posts-theband, #menu-posts-tour {
   background: rgba(109, 94, 130, 0.5);
@@ -148,7 +154,13 @@ input.radio1, input.radio2 {
   overflow: auto;
 }
 
-#ko_band_tour_meta_box .container, #ko_band_the_band_meta_box .container, #ko_band_slides_meta_box .container, #ko_band_singles_meta_box .container, #ko_band_gallery-metabox .container, #ko_band_album_meta_box .container, #ko_band_media_meta_box .container
+#ko_band_tour_meta_box .container,
+#ko_band_the_band_meta_box .container,
+#ko_band_slides_meta_box .container,
+#ko_band_singles_meta_box .container,
+#ko_band_gallery-metabox .container,
+#ko_band_album_meta_box .container,
+#ko_band_media_meta_box .container
 {
   float: left !important;
 }
