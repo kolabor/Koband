@@ -62,7 +62,7 @@ echo "<p>**********************************************************</p>";
 //Second Section if statemend starts here
 /***********************************************************************************/
 echo "<p>****************************Section 2**********************</p>";
-	if($second_section == "Discography" && ($count_discography = true)) {
+	if($second_section == "Discography" && $count_discography == true) {
 		get_template_part( 'custom/templates/discography', 'template' );
 	}
 
