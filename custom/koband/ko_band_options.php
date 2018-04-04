@@ -352,6 +352,73 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
     'section' => 'ko_band_the_band_section',
 )) );
 
+$wp_customize->add_setting( 'ko_band_first_render_moduls' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_first_render_moduls',
+    array(
+
+        'label' => esc_html( 'First Module on Home Page', 'koband' ),
+        'section' => 'static_front_page',
+        'settings'   => 'ko_band_first_render_moduls',
+        'type' => 'select',
+        'choices' => array(
+            'Discography' => esc_html__( 'Discography',       'koband' ),
+            'Media' => esc_html__( 'Media',      'koband' ),
+            'The Band' => esc_html__( 'The Band',       'koband' ),
+            'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
+        )
+
+    ))
+);
+$wp_customize->add_setting( 'ko_band_second_render_moduls' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_second_render_moduls',
+    array(
+        'label' => esc_html( 'Second Module on Home Page', 'koband' ),
+        'section' => 'static_front_page',
+        'settings'   => 'ko_band_second_render_moduls',
+        'type' => 'select',
+         'choices' => array(
+            'Discography' => esc_html__( 'Discography',       'koband' ),
+            'Media' => esc_html__( 'Media',      'koband' ),
+            'The Band' => esc_html__( 'The Band',       'koband' ),
+            'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
+        )
+       
+    ))
+);
+$wp_customize->add_setting( 'ko_band_third_render_moduls' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_third_render_moduls',
+    array(
+        'label' => esc_html( 'Third Module on Home Page', 'koband' ),
+        'section' => 'static_front_page',
+        'settings'   => 'ko_band_third_render_moduls',
+        'type' => 'select',
+       'choices' => array(
+            'Discography' => esc_html__( 'Discography',       'koband' ),
+            'Media' => esc_html__( 'Media',      'koband' ),
+            'The Band' => esc_html__( 'The Band',       'koband' ),
+            'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
+        )
+       
+    ))
+);
+$wp_customize->add_setting( 'ko_band_fourth_render_moduls' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_fourth_render_moduls',
+    array(
+        'label' => esc_html( 'Fourth Module on Home Page', 'koband' ),
+        'section' => 'static_front_page',
+        'settings'   => 'ko_band_fourth_render_moduls',
+        'type' => 'select',
+        'choices' => array(
+            'Discography' => esc_html__( 'Discography',       'koband' ),
+            'Media' => esc_html__( 'Media',      'koband' ),
+            'The Band' => esc_html__( 'The Band',       'koband' ),
+            'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
+        )
+       
+    ))
+);
+
+
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
