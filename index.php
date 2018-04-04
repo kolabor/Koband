@@ -26,6 +26,20 @@ get_header();
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
 						get_template_part( 'content', get_post_format() );
+
+
+						$First_Section = get_theme_mod('ko_band_first_render_moduls');
+						$count_media =  wp_count_posts( 'media' )->publish;
+
+						if(){}
+
+						$Second_Section = get_theme_mod('ko_band_second_render_moduls');
+
+						$Third_Section = get_theme_mod('ko_band_third_render_moduls');
+
+						$Fourth_Section = get_theme_mod('ko_band_fourth_render_moduls');
+
+
 					?>
 
 				<?php endwhile; ?>
