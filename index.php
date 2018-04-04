@@ -64,12 +64,9 @@ echo "<p>**********************************************************</p>";
 //Second Section if statemend starts here
 /***********************************************************************************/
 echo "<p>****************************Section 2**********************</p>";
-<<<<<<< HEAD
-	if($second_section == "Discography" && $count_discography == true) {
-=======
+
 	if($second_section == "Discography" && $count_discography == true) 
 	{
->>>>>>> 5f807acf78ad7975e2a786be802aee35970634c8
 		get_template_part( 'custom/templates/discography', 'template' );
 	}
 

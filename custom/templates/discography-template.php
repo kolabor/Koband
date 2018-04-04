@@ -18,9 +18,10 @@
 
 wp_head(); ?> <h1>Discography Temp</h1>
 
-<?php 
-
 
 
 
 ?>
+
+
+
