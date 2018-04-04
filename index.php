@@ -42,15 +42,17 @@ echo "<p>****************************Section 1**********************</p>";
      	get_template_part( 'custom/templates/discography', 'template' ); 
 	}
 
-	elseif ($first_section == "Media" && ($count_media > 0)) {
+	elseif ($first_section == "Media" && $count_media > 0) 
+	{
 		get_template_part( 'custom/templates/media', 'template' );
 	}
 
-	elseif ($first_section == "The Band" && ($count_theband > 0)) {
+	elseif ($first_section == "The Band" && $count_theband > 0) 
+	{
 		get_template_part( 'custom/templates/theband', 'template' );
 	}
 
-	elseif ($first_section == "Tour/Events" && ($count_tour > 0)) {
+	elseif ($first_section == "Tour/Events" && $count_tour > 0) {
 		get_template_part( 'custom/templates/tour', 'template' );
 	};
 
@@ -62,19 +64,27 @@ echo "<p>**********************************************************</p>";
 //Second Section if statemend starts here
 /***********************************************************************************/
 echo "<p>****************************Section 2**********************</p>";
+<<<<<<< HEAD
 	if($second_section == "Discography" && $count_discography == true) {
+=======
+	if($second_section == "Discography" && $count_discography == true) 
+	{
+>>>>>>> 5f807acf78ad7975e2a786be802aee35970634c8
 		get_template_part( 'custom/templates/discography', 'template' );
 	}
 
-	elseif ($second_section == "Media" && ($count_media > 0)) {
+	elseif ($second_section == "Media" && $count_media > 0) 
+	{
 		get_template_part( 'custom/templates/media', 'template' );
 	}
 
-	elseif ($second_section == "The Band" && ($count_theband > 0)) {
+	elseif ($second_section == "The Band" && $count_theband > 0) 
+	{
 		get_template_part( 'custom/templates/theband', 'template' );
 	}
 
-	elseif ($second_section == "Tour/Events" && ($count_tour > 0)) {
+	elseif ($second_section == "Tour/Events" && $count_tour > 0) 
+	{
 		get_template_part( 'custom/templates/tour', 'template' );
 	};
 echo "<p>**********************************************************</p>";
@@ -85,19 +95,23 @@ echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 
 echo "<p>****************************Section 3**********************</p>";
-   	if($third_section =="Discography" && $count_discography = true){
+   	if($third_section =="Discography" && $count_discography == true)
+   	{
    		get_template_part( 'custom/templates/discography', 'template' );
   	}
  
-  	elseif ($third_section =="Media" && $count_media > 0){
+  	elseif ($third_section =="Media" && $count_media > 0)
+  	{
 		get_template_part( 'custom/templates/media', 'template' );
   	}
 
-  	elseif ($third_section =="The Band" && $count_theband > 0){
+  	elseif ($third_section =="The Band" && $count_theband > 0)
+  	{
    		get_template_part( 'custom/templates/theband', 'template' );
   	}
 
-  	elseif ($third_section =="Tour/Events" && ($count_tour > 0)){
+  	elseif ($third_section =="Tour/Events" && $count_tour > 0)
+  	{
    		get_template_part( 'custom/templates/tour', 'template' );
   	};
 echo "<p>**********************************************************</p>";
@@ -107,19 +121,23 @@ echo "<p>**********************************************************</p>";
 //Fourth Sections if statemend starts here
 /***********************************************************************************/
 echo "<p>****************************Section 4**********************</p>";
-  	if($fourth_section =="Discography" && $count_discography = true){
+  	if($fourth_section =="Discography" && $count_discography == true)
+  	{
        	get_template_part( 'custom/templates/discography', 'template' );
     }
 
-    elseif ($fourth_section =="Media" && $count_media > 0){
+    elseif ($fourth_section =="Media" && $count_media > 0)
+    {
        	get_template_part( 'custom/templates/media', 'template' );
     }
     
-    elseif ($fourth_section =="The Band" && $count_theband > 0){
+    elseif ($fourth_section =="The Band" && $count_theband > 0)
+    {
        	get_template_part( 'custom/templates/theband', 'template' );
     }
 
-    elseif ($fourth_section =="Tour/Events" && ($count_tour > 0)){
+    elseif ($fourth_section =="Tour/Events" && $count_tour > 0)
+    {
        	get_template_part( 'custom/templates/tour', 'template' );
     };
 echo "<p>**********************************************************</p>";
