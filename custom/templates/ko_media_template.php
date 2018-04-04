@@ -13,3 +13,11 @@
  */
 
 wp_head(); ?> <h1>Media Temp</h1>
+
+<?php
+
+  
+
+
+
+ ?>
