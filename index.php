@@ -36,6 +36,7 @@ $count_tour = wp_count_posts('tour')->publish;
 
 //First Section if statement starts here
 /********************************************************************************/
+echo "<p>****************************Section 1**********************</p>";
 	if($first_section == "Discography" && $count_discography == true) 
 	{ 
      	get_template_part( 'custom/templates/discography', 'template' ); 
@@ -53,12 +54,14 @@ $count_tour = wp_count_posts('tour')->publish;
 		get_template_part( 'custom/templates/tour', 'template' );
 	};
 
+echo "<p>**********************************************************</p>";
+
 /***********************************************************************************/
 //First Section if statement ends here
 
 //Second Section if statemend starts here
 /***********************************************************************************/
-
+echo "<p>****************************Section 2**********************</p>";
 	if($second_section == "Discography" && ($count_discography = true)) {
 		get_template_part( 'custom/templates/discography', 'template' );
 	}
@@ -74,14 +77,14 @@ $count_tour = wp_count_posts('tour')->publish;
 	elseif ($second_section == "Tour/Events" && ($count_tour > 0)) {
 		get_template_part( 'custom/templates/tour', 'template' );
 	};
-
+echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Second Section if statemend ends here
 
 //Third Sections if statemend starts here
 /***********************************************************************************/
 
-
+echo "<p>****************************Section 3**********************</p>";
    	if($third_section =="Discography" && $count_discography = true){
    		get_template_part( 'custom/templates/discography', 'template' );
   	}
@@ -97,13 +100,13 @@ $count_tour = wp_count_posts('tour')->publish;
   	elseif ($third_section =="Tour/Events" && ($count_tour > 0)){
    		get_template_part( 'custom/templates/tour', 'template' );
   	};
-
+echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Third Sections if statemend ends here
 
 //Fourth Sections if statemend starts here
 /***********************************************************************************/
-
+echo "<p>****************************Section 4**********************</p>";
   	if($fourth_section =="Discography" && $count_discography = true){
        	get_template_part( 'custom/templates/discography', 'template' );
     }
@@ -119,7 +122,7 @@ $count_tour = wp_count_posts('tour')->publish;
     elseif ($fourth_section =="Tour/Events" && ($count_tour > 0)){
        	get_template_part( 'custom/templates/tour', 'template' );
     };
-
+echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Fourth Sections if statemend ends here
 
