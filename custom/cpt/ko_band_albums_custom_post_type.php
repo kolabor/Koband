@@ -124,7 +124,7 @@ function ko_band_album_display_meta_box() {
 
     <div class="row">
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></div>
-        <div class="col-sm"><input type="integer" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></div>
+        <div class="col-sm"><input type="time" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></div>
         <div class="col-sm"><input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></div>
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a>
         </div>
@@ -144,7 +144,7 @@ function ko_band_album_display_meta_box() {
     <div class="row empty-row-detail screen-reader-text" >
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
 
-        <div class="col-sm"><input type="integer" class="songlength" name="length[]" placeholder="00:00"  /></div>
+        <div class="col-sm"><input type="time" class="songlength" name="length[]" placeholder="00:00"  /></div>
         <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="ex.: composed,arranged,lyrics..."  /></div>
 
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
