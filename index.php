@@ -7,10 +7,11 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @package Catch Themes
- * @subpackage Kolabor Band
- * @since Kolabor Band 0.3
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
  */
+
 
 get_header();
 ?>
@@ -33,16 +34,16 @@ get_header();
 
       //Declaration of template variables
 
-      $count_album = wp_count_posts('Album')->publish;
-      $count_singles = wp_count_posts('Singles')->publish;
-        if (($count_album >0) || ($count_singles >0)) 
+      $count_album = wp_count_posts('album')->publish;
+      $count_singles = wp_count_posts('singles')->publish;
+        if (($count_album>0) || ($count_singles>0)) 
         {
         
             $count_discography = true;
         };
-      $count_media = wp_count_posts('Media')->publish;
-      $count_theband = wp_count_posts('The Band')->publish;
-      $count_tour = wp_count_posts('Tour')->publish;
+      $count_media = wp_count_posts('media')->publish;
+      $count_theband = wp_count_posts('theband')->publish;
+      $count_tour = wp_count_posts('tour')->publish;
 
       // Declartaion of Vraiables ends here
 
@@ -50,22 +51,22 @@ get_header();
 
       if($first_section == "Discography" && ($count_discography = true)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_discography_template.php';
+         get_template_part('/custom/templates/ko_discography_template.php', 'template');
       }
 
       elseif ($first_section == "Media" && ($count_media > 0)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_media_template.php';
+         get_template_directory_url() . '/custom/templates/ko_media_template.php';
       }
 
       elseif ($first_section == "The Band" && ($count_theband > 0)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_theband_template.php';
+         get_template_directory_url() . '/custom/templates/ko_theband_template.php';
       }
 
       elseif ($first_section == "Tour" && ($count_tour > 0)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_tour_template.php';
+         get_template_directory_url() . '/custom/templates/ko_tour_template.php';
       };
 
       //First Section if statemend ends here
@@ -74,22 +75,22 @@ get_header();
 
       if($second_section == "Discography" && ($count_discography = true)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_discography_template.php';
+         get_template_directory_url() . '/custom/templates/ko_discography_template.php';
       }
 
       elseif ($second_section == "Media" && ($count_media > 0)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_media_template.php';
+         get_template_directory_url() . '/custom/templates/ko_media_template.php';
       }
 
       elseif ($second_section == "The Band" && ($count_theband > 0)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_theband_template.php';
+         get_template_directory_url() . '/custom/templates/ko_theband_template.php';
       }
 
       elseif ($second_section == "Tour" && ($count_tour > 0)) 
       {
-         get_template_directory_uri() . '/custom/templates/ko_tour_template.php';
+         get_template_directory_url() . '/custom/templates/ko_tour_template.php';
       };
 
       //Second Section if statemend ends here
@@ -99,19 +100,19 @@ get_header();
 
       if($third_section =="Discography" && $count_discography = true)
       {
-         get_template_directory_uri() .'/custom/templates/ko_discography_template.php';
+         get_template_directory_url() .'/custom/templates/ko_discography_template.php';
       }
       elseif ($third_section =="Media" && $count_media >0)
       {
-         get_template_directory_uri() .'/custom/templates/ko_media_template.php';
+         get_template_directory_url() .'/custom/templates/ko_media_template.php';
       }
       elseif ($third_section =="The Band" && $count_theband >0)
       {
-         get_template_directory_uri() .'/custom/templates/ko_theband_template.php';
+         get_template_directory_url() .'/custom/templates/ko_theband_template.php';
       }
       elseif ($third_section =="Tour" && $count_tour >0)
       {
-         get_template_directory_uri() .'/custom/templates/ko_tour_template.php';
+         get_template_directory_url() .'/custom/templates/ko_tour_template.php';
       };
 
        //Third Sections if statemend ends here
@@ -120,19 +121,19 @@ get_header();
 
       if($fourth_section =="Discography" && $count_discography = true)
       {
-         get_template_directory_uri() .'/custom/templates/ko_discography_template.php';
+         get_template_directory_url() .'/custom/templates/ko_discography_template.php';
       }
       elseif ($fourth_section =="Media" && $count_media >0)
       {
-         get_template_directory_uri() .'/custom/templates/ko_media_template.php';
+         get_template_directory_url() .'/custom/templates/ko_media_template.php';
       }
       elseif ($fourth_section =="The Band" && $count_theband >0)
       {
-         get_template_directory_uri() .'/custom/templates/ko_theband_template.php';
+         get_template_directory_url() .'/custom/templates/ko_theband_template.php';
       }
       elseif ($fourth_section =="Tour" && $count_tour >0)
       {
-         get_template_directory_uri() .'/custom/templates/ko_tour_template.php';
+         get_template_directory_url() .'/custom/templates/ko_tour_template.php';
       };
 
       //Fourth Sections if statemend ends here
