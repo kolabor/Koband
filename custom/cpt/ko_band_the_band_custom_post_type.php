@@ -99,6 +99,7 @@ function ko_band_the_band_meta_box($post, $box){
 
         <div class="row">
             <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('ex.Drummer, Bass ...', 'koband');?>"></div>
+
         </div>
     </div>
 

@@ -2,6 +2,9 @@
 /**
  * 
  *
+ * Template Name: The Band
+ *
+ *
  *
  *
  * @package Wordpress 
@@ -9,11 +12,9 @@
  * @since Koband 1.0
  */
 
- 
-get_header(); 
- 
+wp_head(); ?> <h1>The Band Temp</h1>
 
- 
+<?php 
 
-get_footer();
-?> 
+
+?>

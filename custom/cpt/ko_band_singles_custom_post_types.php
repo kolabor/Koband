@@ -118,16 +118,16 @@ function ko_band_singles_display_meta_box($post, $box){
     <?php  } else :  // show a blank one    ?>
     
     <div class="row">
-                <div class="col-sm"> <input type="text" class="widefat" name="name[]" placeholder="Ex add a..." /></div>
-                <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://storelink.com" /></div>
+                <div class="col-sm"> <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.." /></div>
+                <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
                 <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
         <!-- empty hidden one for jQuery -->
     <div class="row empty-row-singles screen-reader-text">
-                <div class="col-sm"><input type="text" class="widefat" name="name[]" placeholder="Ex add a..."/></div>
-                <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://storelink.com" /></div>
+                <div class="col-sm"><input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.."/></div>
+                <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
                 <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">

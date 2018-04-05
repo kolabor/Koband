@@ -7,38 +7,142 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @package Catch Themes
- * @subpackage Kolabor Band
- * @since Kolabor Band 0.3
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
  */
 
-get_header();
+get_header(); 
+
+$first_section = get_theme_mod('ko_band_first_render_moduls');
+$second_section = get_theme_mod('ko_band_second_render_moduls');
+$third_section = get_theme_mod('ko_band_third_render_moduls');
+$fourth_section = get_theme_mod('ko_band_fourth_render_moduls');
+
+//Declaration of template variables
+
+$count_album = wp_count_posts('album')->publish; 
+$count_singles = wp_count_posts('singles')->publish;
+$count_discography = "";
+if ($count_album > 0 || $count_singles > 0) {
+	
+	$count_discography = true;
+};
+
+$count_media = wp_count_posts('media')->publish;
+$count_theband = wp_count_posts('theband')->publish;
+$count_tour = wp_count_posts('tour')->publish;
+// Declartaion of Vraiables ends here
+
+//First Section if statement starts here
+/********************************************************************************/
+echo "<p>****************************Section 1**********************</p>";
+	if($first_section == "Discography" && $count_discography == true) 
+	{ 
+     	get_template_part( 'custom/templates/discography', 'template' ); 
+	}
+
+	elseif ($first_section == "Media" && $count_media > 0) 
+	{
+		get_template_part( 'custom/templates/media', 'template' );
+	}
+
+	elseif ($first_section == "The Band" && $count_theband > 0) 
+	{
+		get_template_part( 'custom/templates/theband', 'template' );
+	}
+
+	elseif ($first_section == "Tour/Events" && $count_tour > 0) {
+		get_template_part( 'custom/templates/tour', 'template' );
+	};
+
+echo "<p>**********************************************************</p>";
+
+/***********************************************************************************/
+//First Section if statement ends here
+
+//Second Section if statemend starts here
+/***********************************************************************************/
+echo "<p>****************************Section 2**********************</p>";
+
+	if($second_section == "Discography" && $count_discography == true) 
+	{
+		get_template_part( 'custom/templates/discography', 'template' );
+	}
+
+	elseif ($second_section == "Media" && $count_media > 0) 
+	{
+		get_template_part( 'custom/templates/media', 'template' );
+	}
+
+	elseif ($second_section == "The Band" && $count_theband > 0) 
+	{
+		get_template_part( 'custom/templates/theband', 'template' );
+	}
+
+	elseif ($second_section == "Tour/Events" && $count_tour > 0) 
+	{
+		get_template_part( 'custom/templates/tour', 'template' );
+	};
+echo "<p>**********************************************************</p>";
+/***********************************************************************************/
+//Second Section if statemend ends here
+
+//Third Sections if statemend starts here
+/***********************************************************************************/
+
+echo "<p>****************************Section 3**********************</p>";
+   	if($third_section =="Discography" && $count_discography == true)
+   	{
+   		get_template_part( 'custom/templates/discography', 'template' );
+  	}
+ 
+  	elseif ($third_section =="Media" && $count_media > 0)
+  	{
+		get_template_part( 'custom/templates/media', 'template' );
+  	}
+
+  	elseif ($third_section =="The Band" && $count_theband > 0)
+  	{
+   		get_template_part( 'custom/templates/theband', 'template' );
+  	}
+
+  	elseif ($third_section =="Tour/Events" && $count_tour > 0)
+  	{
+   		get_template_part( 'custom/templates/tour', 'template' );
+  	};
+echo "<p>**********************************************************</p>";
+/***********************************************************************************/
+//Third Sections if statemend ends here
+
+//Fourth Sections if statemend starts here
+/***********************************************************************************/
+echo "<p>****************************Section 4**********************</p>";
+  	if($fourth_section =="Discography" && $count_discography == true)
+  	{
+       	get_template_part( 'custom/templates/discography', 'template' );
+    }
+
+    elseif ($fourth_section =="Media" && $count_media > 0)
+    {
+       	get_template_part( 'custom/templates/media', 'template' );
+    }
+    
+    elseif ($fourth_section =="The Band" && $count_theband > 0)
+    {
+       	get_template_part( 'custom/templates/theband', 'template' );
+    }
+
+    elseif ($fourth_section =="Tour/Events" && $count_tour > 0)
+    {
+       	get_template_part( 'custom/templates/tour', 'template' );
+    };
+echo "<p>**********************************************************</p>";
+/***********************************************************************************/
+//Fourth Sections if statemend ends here
+
+
+get_footer(); 
+
 ?>
 
-		<?php if ( have_posts() ) : ?>
-
-			<div id="archive-blog-wrapper" class="archive-blog-wrapper three-columns">
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-					?>
-
-				<?php endwhile; ?>
-			</div><!-- archive-blog-wrapper -->
-
-			<?php kolabor_band_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'index' ); ?>
-
-		<?php endif; ?>
-
-<?php
-get_sidebar();
-get_footer(); ?>

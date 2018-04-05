@@ -2,6 +2,9 @@
 /**
  * 
  *
+ * Template Name: Discography
+ *
+ *
  *
  *
  * @package Wordpress 
@@ -9,11 +12,16 @@
  * @since Koband 1.0
  */
 
- 
-get_header(); 
- 
 
- 
 
-get_footer();
-?> 
+
+
+wp_head(); ?> <h1>Discography Temp</h1>
+
+
+
+
+?>
+
+
+
