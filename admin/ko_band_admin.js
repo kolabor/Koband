@@ -201,11 +201,102 @@ jQuery(document).ready(function( $ ){
             $('#slide-title').hide('fast');
 
         });
+            //Limiting the number of characters for textarea to 250 chars//
             var maxLength = 250;
             $('textarea').keyup(function() {
             var textlen = maxLength - $(this).val().length;
-        });
-    
+        });           
+
+            //Disable Selected Option at other select-box if is selected at another one
+          $(document).on('change','#_customize-input-ko_band_first_render_moduls',function(){
+                
+                var firstSelect = $('#_customize-input-ko_band_first_render_moduls').val();
+
+                var secondSelect = $('#_customize-input-ko_band_second_render_moduls');
+                var thirdSelect = $('#_customize-input-ko_band_third_render_moduls');
+                var fourthSelect = $('#_customize-input-ko_band_fourth_render_moduls');
+
+                
+                $('select').on('change', function(event) {
+                     //restore previously selected value
+                     var prevValue = $(this).data('previous');
+                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                     //hide option selected                
+                     var value = $(this).val();
+                     //update previously selected data
+                     $(this).data('previous',value);
+                     $('select').not(this).find('option[value="'+value+'"]').hide();
+                 });
+
+          });
+
+          $(document).on('change','#_customize-input-ko_band_second_render_moduls',function(){
+                
+                var firstSelect = $('#_customize-input-ko_band_second_render_moduls').val();
+
+                var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
+                var thirdSelect = $('#_customize-input-ko_band_third_render_moduls');
+                var fourthSelect = $('#_customize-input-ko_band_fourth_render_moduls');
+
+
+                $('select').on('change', function(event) {
+                     //restore previously selected value
+                     var prevValue = $(this).data('previous');
+                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                     //hide option selected                
+                     var value = $(this).val();
+                     //update previously selected data
+                     $(this).data('previous',value);
+                     $('select').not(this).find('option[value="'+value+'"]').hide();
+                 });
             
+
+          });
+
+          $(document).on('change','#_customize-input-ko_band_third_render_moduls',function(){
+                
+                var firstSelect = $('#_customize-input-ko_band_third_render_moduls').val();
+
+                var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
+                var thirdSelect = $('#_customize-input-ko_band_second_render_moduls');
+                var fourthSelect = $('#_customize-input-ko_band_fourth_render_moduls');
+
+
+                $('select').on('change', function(event) {
+                     //restore previously selected value
+                     var prevValue = $(this).data('previous');
+                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                     //hide option selected                
+                     var value = $(this).val();
+                     //update previously selected data
+                     $(this).data('previous',value);
+                     $('select').not(this).find('option[value="'+value+'"]').hide();
+                 });
+            
+
+          });
+
+          $(document).on('change','#_customize-input-ko_band_fourth_render_moduls',function(){
+                
+                var firstSelect = $('#_customize-input-ko_band_fourth_render_moduls').val();
+
+                var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
+                var thirdSelect = $('#_customize-input-ko_band_second_render_moduls');
+                var fourthSelect = $('#_customize-input-ko_band_third_render_moduls');
+
+
+                $('select').on('change', function(event) {
+                     //restore previously selected value
+                     var prevValue = $(this).data('previous');
+                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                     //hide option selected                
+                     var value = $(this).val();
+                     //update previously selected data
+                     $(this).data('previous',value);
+                     $('select').not(this).find('option[value="'+value+'"]').hide();
+                 });
+            
+          }); 
+
         
 });     // Ready function ends here //
