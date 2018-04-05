@@ -31,9 +31,24 @@ get_header(); ?> <h1>The Band Temp</h1>
  	//start loop
 	 while ( $theband_posts->have_posts() ) : $theband_posts->the_post(); 
 
+
+		$post_id = get_the_ID();
+/*$all  = get_post_meta($post_id);
+		echo "<pre>";
+		print_r($all);
+	echo "</pre>";*/
+
 		//$post_id = get_the_ID() ?>
 			<a href="<?php the_permalink();?>"><?php the_title();?></a>
 		<?php
+		 the_post_thumbnail(array(200,200));
+
+		 $theband_bio = get_post_meta( $post_id, 'ko_band_the_band_bio', false );
+		 foreach ($theband_bio as $key => $value_bio) {
+
+		 	print_r( $value_bio);
+		 	# code...
+		 }
 	 endwhile; // end of the loop. 
 endif;
 
