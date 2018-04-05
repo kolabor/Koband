@@ -111,7 +111,7 @@ jQuery(function($) {
 
 jQuery(document).ready(function( $ ){ 
         
-        // Saving the selected radio button for Slides //
+// Saving the selected radio button for Slides //
         var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
         if (slide == "image") 
           {
@@ -123,7 +123,7 @@ jQuery(document).ready(function( $ ){
             $("#slide-title").show();
           };
 
-        // Saving the selected radio button for Tour //
+// Saving the selected radio button for Tour //
         var sale = $("input[type=radio][name='ko_band_tour_ticket']:checked").val()
         if (sale == "soldout") 
           {
@@ -135,7 +135,7 @@ jQuery(document).ready(function( $ ){
             $("#tickets-title").show();
           };
 
-        // Repetable fields functions starts here //
+// Repetable fields functions starts here //
         $( '#add-row-details' ).unbind('click').bind('click', function() {
             var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
             row_details.removeClass( 'empty-row-details screen-reader-text' );
@@ -157,7 +157,7 @@ jQuery(document).ready(function( $ ){
             $(this).parents('.row').remove();
             return false;
         });
-            // Album Repetable fields ends here //
+// Album Repetable fields ends here //
         $( '#add-row-media' ).unbind('click').bind('click', function() {
             var row_media = $( '.empty-row-media.screen-reader-text' ).clone(true);
             row_media.removeClass( 'empty-row-media screen-reader-text' );
@@ -169,7 +169,7 @@ jQuery(document).ready(function( $ ){
             $(this).parents('.row').remove();
             return false;
         });
-            // Media Repetable fields ends here //
+// Media Repetable fields ends here //
         $( '#add-row-single' ).unbind('click').bind('click', function() {
             var row_single = $( '.empty-row-singles.screen-reader-text' ).clone(true);
             row_single.removeClass( 'empty-row-singles screen-reader-text' );
@@ -179,9 +179,10 @@ jQuery(document).ready(function( $ ){
             $( '.remove-row' ).on('click', function() {
             $(this).parents('.row').remove();
             return false;
-        }); // Single Repetable fields ends here //
+        }); 
+// Single Repetable fields ends here //
 
-            // Show hide fields for Tickets on Tour CPT //
+// Show hide fields for Tickets on Tour CPT //
             $('#id_radio1').click(function () {
             $('#tickets-link').show('fast');
             $('#tickets-title').show('fast');
@@ -190,7 +191,7 @@ jQuery(document).ready(function( $ ){
             $('#tickets-link').hide('fast');
             $('#tickets-title').hide('fast');
         });
-            // Show hide fields for Slides CPT //
+// Show hide fields for Slides CPT //
             $('#radio2').click(function () {
             $('#slider-video').show('fast');
             $('#slide-title').show('fast');
@@ -201,16 +202,16 @@ jQuery(document).ready(function( $ ){
             $('#slide-title').hide('fast');
 
         });
-            //Limiting the number of characters for textarea to 250 chars//
+//Limiting the number of characters for textarea to 250 chars//
             var maxLength = 250;
             $('textarea').keyup(function() {
             var textlen = maxLength - $(this).val().length;
         });           
 
-            //Disable Selected Option at other select-box if is selected at another one
-          $(document).on('change','#_customize-input-ko_band_first_render_moduls',function(){
+//Disable Selected Option at other select-box if is selected at another one
+            $(document).on('change','#_customize-input-ko_band_first_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_first_render_moduls').val();
+                var firstSelect = $('#_customize-input-ko_band_first_render_moduls');
 
                 var secondSelect = $('#_customize-input-ko_band_second_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_third_render_moduls');
@@ -218,21 +219,21 @@ jQuery(document).ready(function( $ ){
 
                 
                 $('select').on('change', function(event) {
-                     //restore previously selected value
-                     var prevValue = $(this).data('previous');
-                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
-                     //hide option selected                
-                     var value = $(this).val();
-                     //update previously selected data
-                     $(this).data('previous',value);
-                     $('select').not(this).find('option[value="'+value+'"]').hide();
-                 });
+                //restore previously selected value
+                var prevValue = $(this).data('previous');
+                $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                //hide option selected                
+                var value = $(this).val();
+                //update previously selected data
+                $(this).data('previous',value);
+                $('select').not(this).find('option[value="'+value+'"]').hide();
+                });
 
           });
 
-          $(document).on('change','#_customize-input-ko_band_second_render_moduls',function(){
+            $(document).on('change','#_customize-input-ko_band_second_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_second_render_moduls').val();
+                var firstSelect = $('#_customize-input-ko_band_second_render_moduls');
 
                 var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_third_render_moduls');
@@ -240,22 +241,22 @@ jQuery(document).ready(function( $ ){
 
 
                 $('select').on('change', function(event) {
-                     //restore previously selected value
-                     var prevValue = $(this).data('previous');
-                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
-                     //hide option selected                
-                     var value = $(this).val();
-                     //update previously selected data
-                     $(this).data('previous',value);
-                     $('select').not(this).find('option[value="'+value+'"]').hide();
-                 });
+                //restore previously selected value
+                var prevValue = $(this).data('previous');
+                $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                //hide option selected                
+                var value = $(this).val();
+                //update previously selected data
+                $(this).data('previous',value);
+                $('select').not(this).find('option[value="'+value+'"]').hide();
+                });
             
 
           });
 
-          $(document).on('change','#_customize-input-ko_band_third_render_moduls',function(){
+            $(document).on('change','#_customize-input-ko_band_third_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_third_render_moduls').val();
+                var firstSelect = $('#_customize-input-ko_band_third_render_moduls');
 
                 var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_second_render_moduls');
@@ -263,22 +264,22 @@ jQuery(document).ready(function( $ ){
 
 
                 $('select').on('change', function(event) {
-                     //restore previously selected value
-                     var prevValue = $(this).data('previous');
-                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
-                     //hide option selected                
-                     var value = $(this).val();
-                     //update previously selected data
-                     $(this).data('previous',value);
-                     $('select').not(this).find('option[value="'+value+'"]').hide();
-                 });
+                //restore previously selected value
+                var prevValue = $(this).data('previous');
+                $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                //hide option selected                
+                var value = $(this).val();
+                //update previously selected data
+                $(this).data('previous',value);
+                $('select').not(this).find('option[value="'+value+'"]').hide();
+                });
             
 
           });
 
-          $(document).on('change','#_customize-input-ko_band_fourth_render_moduls',function(){
+            $(document).on('change','#_customize-input-ko_band_fourth_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_fourth_render_moduls').val();
+                var firstSelect = $('#_customize-input-ko_band_fourth_render_moduls');
 
                 var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_second_render_moduls');
@@ -286,15 +287,15 @@ jQuery(document).ready(function( $ ){
 
 
                 $('select').on('change', function(event) {
-                     //restore previously selected value
-                     var prevValue = $(this).data('previous');
-                     $('select').not(this).find('option[value="'+prevValue+'"]').show();
-                     //hide option selected                
-                     var value = $(this).val();
-                     //update previously selected data
-                     $(this).data('previous',value);
-                     $('select').not(this).find('option[value="'+value+'"]').hide();
-                 });
+                //restore previously selected value
+                var prevValue = $(this).data('previous');
+                $('select').not(this).find('option[value="'+prevValue+'"]').show();
+                //hide option selected                
+                var value = $(this).val();
+                //update previously selected data
+                $(this).data('previous',value);
+                $('select').not(this).find('option[value="'+value+'"]').hide();
+                });
             
           }); 
 
