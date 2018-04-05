@@ -7,9 +7,9 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @package Catch Themes
- * @subpackage Kolabor Band
- * @since Kolabor Band 0.3
+ * @package Wordpress 
+ * @subpackage Koband
+ * @since Koband 1.0
  */
 
 get_header(); 
@@ -64,6 +64,7 @@ echo "<p>**********************************************************</p>";
 //Second Section if statemend starts here
 /***********************************************************************************/
 echo "<p>****************************Section 2**********************</p>";
+
 	if($second_section == "Discography" && $count_discography == true) 
 	{
 		get_template_part( 'custom/templates/discography', 'template' );
@@ -144,3 +145,4 @@ echo "<p>**********************************************************</p>";
 get_footer(); 
 
 ?>
+
