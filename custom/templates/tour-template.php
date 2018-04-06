@@ -13,12 +13,22 @@
  */
 
 get_header(); ?> <h1>Tour Temp</h1>
-<?php 
+<?php
 
 
-if ( have_posts() ) : 
+
+    $args_tour = array
+    (		
+	 	 'post_type' => 'tour',   
+		 'post_staus'=> 'publish',
+		 'posts_per_page' => -1
+	);
+
+ $tour_posts = new WP_Query( $args_tour );
+ $total = $tour_posts->found_posts; 
+
+ if ( $tour_posts->have_posts() ) : 
  	//start loop
-
 	 while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
 
 		$post_id = get_the_ID();
@@ -92,7 +102,6 @@ if ( have_posts() ) :
 	
 	 endwhile; // end of the loop. 
 endif;
-
 
  
  ?>
