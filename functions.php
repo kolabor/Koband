@@ -39,6 +39,7 @@ require 'custom/cpt/ko_band_the_band_custom_post_type.php';
 require 'custom/cpt/ko_band_tour_custom_post_type.php';
 
 
+
 add_action('init','ko_band_enqueue_dynamic_css');
 function ko_band_enqueue_dynamic_css() {
   if (! is_admin()){
@@ -47,7 +48,5 @@ function ko_band_enqueue_dynamic_css() {
     wp_enqueue_style('dynamic-css',  "{$koband_dir}/style/ko_band_dynamic.css.php",array(),$version);
   }
 }
-
-
 
 ?>

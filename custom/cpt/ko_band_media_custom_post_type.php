@@ -49,7 +49,7 @@ function ko_band_media_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'custom-fields' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
@@ -165,22 +165,6 @@ $options = ko_band_get_video_options();
 wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_box_nonce' );
    
 ?>
-<!--
-<script type="text/javascript">
-    jQuery(document).ready(function( $ ){
-        $( '#add-row' ).on('click', function() {
-            var row = $( '.empty-row.screen-reader-text' ).clone(true);
-            row.removeClass( 'empty-row screen-reader-text' );
-            row.insertBefore( '#ko_band_repetable_video_field_one .row:last' );
-            return false;
-        });
-    
-        $( '.remove-row' ).on('click', function() {
-            $(this).parents('.row').remove();
-            return false;
-        });
-    });
-</script> -->
 
 <div class="container" id="ko_band_repetable_video_field_one">
     <div class="row-blank">
