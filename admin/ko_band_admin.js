@@ -182,7 +182,7 @@ jQuery(document).ready(function( $ ){
         }); 
 // Single Repetable fields ends here //
 
-// Show hide fields for Tickets on Tour CPT //
+// Show hide fields for Tickets on Tour CPT radio buttons//
             $('#id_radio1').click(function () {
             $('#tickets-link').show('fast');
             $('#tickets-title').show('fast');
@@ -191,7 +191,7 @@ jQuery(document).ready(function( $ ){
             $('#tickets-link').hide('fast');
             $('#tickets-title').hide('fast');
         });
-// Show hide fields for Slides CPT //
+// Show hide fields for Slides CPT radio buttons//
             $('#radio2').click(function () {
             $('#slider-video').show('fast');
             $('#slide-title').show('fast');
@@ -211,7 +211,7 @@ jQuery(document).ready(function( $ ){
 //Disable Selected Option at other select-box if is selected at another one
             $(document).on('change','#_customize-input-ko_band_first_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_first_render_moduls');
+                var firstSelect = $('#_customize-input-ko_band_first_render_moduls').val();
 
                 var secondSelect = $('#_customize-input-ko_band_second_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_third_render_moduls');
@@ -233,7 +233,7 @@ jQuery(document).ready(function( $ ){
 
             $(document).on('change','#_customize-input-ko_band_second_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_second_render_moduls');
+                var firstSelect = $('#_customize-input-ko_band_second_render_moduls').val();
 
                 var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_third_render_moduls');
@@ -256,7 +256,7 @@ jQuery(document).ready(function( $ ){
 
             $(document).on('change','#_customize-input-ko_band_third_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_third_render_moduls');
+                var firstSelect = $('#_customize-input-ko_band_third_render_moduls').val();
 
                 var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_second_render_moduls');
@@ -279,7 +279,7 @@ jQuery(document).ready(function( $ ){
 
             $(document).on('change','#_customize-input-ko_band_fourth_render_moduls',function(){
                 
-                var firstSelect = $('#_customize-input-ko_band_fourth_render_moduls');
+                var firstSelect = $('#_customize-input-ko_band_fourth_render_moduls').val();
 
                 var secondSelect = $('#_customize-input-ko_band_first_render_moduls');
                 var thirdSelect = $('#_customize-input-ko_band_second_render_moduls');

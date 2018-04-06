@@ -20,144 +20,36 @@ get_header();?>
     $args_media = array(		
 	 	 'post_type' => 'media',   
 		 'post_staus'=> 'publish',
-		 'posts_per_page' => -1
+		 'posts_per_page' => -1,
 		 
 	);
 
-$media_posts = new WP_Query( $args_media );
-$total = $media_posts->found_posts; 
 
-if($total>0):
- if ( $media_posts->have_posts() ) : 
- 	//start loop
-	 while ( $media_posts->have_posts() ) : $media_posts->the_post(); the_content();
-
-		$post_id = get_the_ID();
-		/*$all  = get_post_meta($post_id);
-		echo "<pre>";
-		print_r($all);
-		echo "</pre>";
-*/
-
-
-
-
-		// Get post meta
-//$images = get_post_meta($post_id, 'vdw_gallery_id', false);
-
-if ( get_post_gallery($post_id, 'vdw_gallery_id', false) ) {
-
-    $gallery        = get_post_gallery( $post_id, 'vdw_gallery_id', false );
-    $galleryIDS     = $gallery['ids'];
-    $pieces         = explode(",", $galleryIDS);
-
-    foreach ($pieces as $key => $value ) { 
-
-        $image_medium   = wp_get_attachment_image_src( $value, 'medium'); 
-        $image_full     = wp_get_attachment_image_src( $value, 'full'); 
-    ?>
-
-
-    <div class="col-sm">
-            <a href="<?php echo $image_medium[0] ?>" >
-                <img src="<?php echo $image_full[0] ?>"/>
-            </a>
-    </div>
-    <?php 
-    }
-}
-//echo '<ul class="$images">';
-// Loop all post meta
-/*foreach ( $images as $field_image) 
-{	
-   		echo'<li>'.$field_image .'</li>';
-   		?><div class="image">
-                <h3 class="image-title"></h3>
-
-                
-                             
-                
-            </div>
-   <?php
-}*/
-
-//echo '</ul>';
-
-// Get post meta
-$videos = get_post_meta($post_id,'ko_band_repetable_video_field', false);
-//echo '<ul class="$videos">';
-	// Loop all post meta
-foreach ( $videos as $field_video) 
-{	
-   		echo'<li>'. $field_video .'</li>';?>
-
-   		<div class="video">
-                <h3 class="video-title"></h3>
-
-                <iframe width="560" height="315" src="<?php echo $field_video['link']?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                             
-                
-            </div>
-   <?php
-}
-   		    
-
-
-
- 		
-
-endwhile; // end of the loop. 
-endif;
-endif;
-
-
+    $media_posts = new WP_Query($args_media);
+    $total = $media_posts->found_posts;
+    if ($media_posts->have_posts() ) : 
  
-/*
-
-$videos = get_post_meta($post->ID,'ko_band_media_video', true);
-
- foreach ( $images as $metakey ){
-        echo $metakey;
-	};*/
-	
-
- 	
-		/*echo "<pre>";
-
-		print_r($all);
-		echo "</pre>";*/
-
-       /* echo "<pre>";
-		print_r($images['vdw_gallery_id'][0]);
-		echo "</pre>";
-
-		 echo "<pre>";
-		print_r($videos['ko_band_repetable_video_field'][0]);
-		echo "</pre>";*/
+	while ( $media_posts->have_posts() ) : $media_posts->the_post();
+		$post_id = get_the_ID(); ?>
 
 
-		/*foreach($all as $key=>$val)
-       {
-             echo $key . ' : ' . $val[0] . '<br/>';
-       }*/
-
-      
-  
-
-			/*<!--<a href="<?php the_permalink();?>"><?php the_title();?></a>
+		<a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a>
+<?php
 		
-			<li>	<?php get_post_meta( "vdw_gallery_id", $post_id );
-	 				//echo $fieldd_bank;?>
-	 				
-	 		</li>
-	 	
-	 		<li>	<?php get_post_meta( "link[]", $post_id );
-	 			//	echo $fieldd_kategory;?>
-	 				 
 
-	 		</li>
-	 		<li>	<?php get_post_meta( "select[]", $post_id );?> -->
-*/
+		$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
+		foreach ($media_gallery as $key => $value_gallery) {
+			
+			var_dump($value_gallery) ;
+		} 
+
+		$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false);
+		foreach ($media_video_gallery as $key => $value_video_gallery) {
+			
+			var_dump($value_video_gallery);
+		} 
 
 
+    endwhile;
+    endif;
 ?>

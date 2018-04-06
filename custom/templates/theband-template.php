@@ -39,10 +39,11 @@ get_header(); ?> <div class="theband"><h1>The Band Temp</h1>
 	echo "</pre>";*/
 
 		//$post_id = get_the_ID() ?>
-			<h1>Band Member name: <a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
-		<div class="test"><?php
-		 the_post_thumbnail(array(200,200));
 
+<h1> Band Member name: <a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a></h1>
+
+
+<?php
 		 $theband_bio = get_post_meta( $post_id, 'ko_band_the_band_bio', false );
 		 foreach ($theband_bio as $key => $value_bio) {
 		 	?>
