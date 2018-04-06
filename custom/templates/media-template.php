@@ -38,21 +38,21 @@ if($total>0):
 
         $all  = get_post_meta($post_id);
 
-		//$images = get_post_meta("vdw_gallery_id", $post_id);
-//		$videos = get_post_meta("ko_band_repetable_video_field", $post_id);
+		$images = get_post_meta("vdw_gallery_id", $post_id);
+		$videos = get_post_meta("ko_band_repetable_video_field", $post_id);
 	
 
 
 
-/*
- 		foreach($images as $key=>$val)
+
+ 		foreach($images as $image)
        {
-             echo $key . ' show: ' . $val . '<br/>';
+             echo $image . ' show: ' . $val . '<br/>';
        };
-		 foreach($videos as $key=>$val)
+		 foreach($videos as $image=>$val)
        {
-             echo $key . ' show: ' . $val . '<br/>';
-       };*/
+             echo $image . ' show: ' . $val . '<br/>';
+       };
 		echo "<pre>";
 		print_r($all);
 		echo "</pre>";

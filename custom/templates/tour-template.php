@@ -13,29 +13,41 @@
  */
 
 get_header(); ?> <h1>Tour Temp</h1>
-<?php
+<?php 
 
 
-
-    $args_tour = array
-    (		
-	 	 'post_type' => 'tour',   
-		 'post_staus'=> 'publish',
-		 'posts_per_page' => -1
-	);
-
- $tour_posts = new WP_Query( $args_tour );
- $total = $tour_posts->found_posts; 
-
- if ( $tour_posts->have_posts() ) : 
+if ( have_posts() ) : 
  	//start loop
-	 while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
+	while ( have_posts() ) : the_post(); 
+	
+endwhile;
+endif; wp_reset_postdata();
+	 
+	$mytour = new WP_Query(array(
+		'post_type' => 'mytour',
+		'post_staus'=> 'publish',
+		'posts_per_page' => -1
+	));
 
-		//$post_id = get_the_ID() ?>
-			<a href="<?php the_permalink();?>"><?php the_title();?></a>
-		<?php
-	 endwhile; // end of the loop. 
-endif;
+	while($mytour->have_posts()) : $mytour->the_post();
+
+		the_post_thumbnail('thumbnail');
+		the_title();
+
+		$tourdate = DateTime::createFormFormat('Ymd', get_field('ko_band_tour_date'));
+		echo $tourdate->format('Y'); 
+
+		echo '<p> "Country":', the_field('ko_band_tour_country');
+		the_field('ko_band_tour_city');
+		the_field('ko_band_tour_address');
+		the_field('ko_band_tour_zipCode');
+		the_field('ko_band_tour_venue_name');
+
+		echo "<pre>";
+		print_r($mytour);
+		echo "</pre>";
+
+endwhile;
 
  
  ?>
