@@ -32,9 +32,6 @@ function ko_band_custom_wp_admin_style() {
     wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
     wp_enqueue_style( 'custom_wp_admin_css' );
 
-    wp_register_style( 'main_css', get_template_directory_uri() . '/style.css', false, '1.0.0' );
-    wp_enqueue_style( 'main_css' );
-
     wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
     wp_enqueue_script( 'custom_wp_admin_js' );
 
@@ -60,7 +57,7 @@ function ko_band_enqueue_admin_scripts($hook) {
           wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
           wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
          //wp_enqueue_style( 'theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php');
-          
+
     }
 }
 
