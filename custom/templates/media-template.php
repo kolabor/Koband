@@ -24,12 +24,14 @@ get_header();?>
 		 
 	);
 
+
     $media_posts = new WP_Query($args_media);
     $total = $media_posts->found_posts;
     if ($media_posts->have_posts() ) : 
  
 	while ( $media_posts->have_posts() ) : $media_posts->the_post();
 		$post_id = get_the_ID(); ?>
+
 
 		<a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a>
 <?php

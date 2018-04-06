@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 
-get_header(); ?> <h1>The Band Temp</h1>
+get_header(); ?> <div class="theband"><h1>The Band Temp</h1>
 
 <?php
 
@@ -39,17 +39,24 @@ get_header(); ?> <h1>The Band Temp</h1>
 	echo "</pre>";*/
 
 		//$post_id = get_the_ID() ?>
-<a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a>
+
+<h1> Band Member name: <a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a></h1>
+
 
 <?php
 		 $theband_bio = get_post_meta( $post_id, 'ko_band_the_band_bio', false );
 		 foreach ($theband_bio as $key => $value_bio) {
-
+		 	?>
+		 	<div class="ado">Role: 
+		 	<?php
 		 	print_r( $value_bio);
 		 	# code...
+		 	?> </div> <?php 
 		 }
+
 	 endwhile; // end of the loop. 
 endif;
 
  
- ?>
+ ?></div>
+ </div>
