@@ -62,7 +62,7 @@ wp_head(); ?>
          </ul>
        </li>
        
-                        <li><a href="#"><?php _e('TOUR', 'koband');?></a></li>
+                        <li><a href="#"><?php _e('TOUR/EVENTS', 'koband');?></a></li>
                         <li><a href="#"><?php _e('THE BAND', 'koband');?></a></li>
                          <li>
                           <a href="#"><?php _e('MEDIA ￬', 'koband');?></a>

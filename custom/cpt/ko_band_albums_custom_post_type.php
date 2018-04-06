@@ -100,7 +100,7 @@ function ko_band_album_display_meta_box() {
 
     <div class="row">
         <div class="col-sm"><input type="date" name="ko_band_album_date_release" value="<?php echo esc_html( $album_date_release ) ?>" class="albumrelease" ></div>
-        <div class="col-sm"><input type="number" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="Hour.Min.Sec"></div>
+        <div class="col-sm"><input type="time" name="ko_band_album_length" value="<?php echo esc_html( $album_length ) ?>" class="albumlength" placeholder="00:00"></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
@@ -109,7 +109,7 @@ function ko_band_album_display_meta_box() {
 
 <div class="container" id="ko_band_album_meta_box_one" >
     <div class="row blank">
-        <div class="col-sm"><?php _e('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
+        <div class="col-sm"><?php _e('On the following fields you can add or remove songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
 
     <div class="row-top">
@@ -133,18 +133,18 @@ function ko_band_album_display_meta_box() {
     <?php } else :  // show a blank one ?>
     
     <div class="row">
-        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
-        <div class="col-sm"><input type="text" class="songlength" name="length[]" placeholder="Length of the music" /></div>
-        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="Short description" /></div>
+        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
+        <div class="col-sm"><input type="time" class="songlength" name="length[]" placeholder="00:00" /></div>
+        <div class="col-sm"><textarea class="songdetails" name="detail[]" maxlength="250" placeholder="ex.:composed,arranged..."/></textarea></div>
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
      <!-- empty hidden one for jQuery -->
     <div class="row empty-row-detail screen-reader-text" >
-        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Write the song name" /></div>
-        <div class="col-sm"><input type="text" class="songlength" name="length[]" placeholder="Length of the music"  /></div>
-        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="Short description"  /></div>
+        <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
+        <div class="col-sm"><input type="time" class="songlength" name="length[]" placeholder="00:00"  /></div>
+        <div class="col-sm"><textarea class="songdetails" name="detail[]" maxlength="250" placeholder="ex.:composed,arranged..."/></textarea></div>
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">

@@ -28,7 +28,7 @@ function ko_band_the_band_custom_post_type() {
   $label = array(
     'name' => __('The Band', 'koband'),
     'singular_name' => __('The Band', 'koband'),
-    'add_new' => __('Add The Band', 'koband'),
+    'add_new' => __('Add band member', 'koband'),
     'all_items' => __('All The Bands', 'koband'),
     'add_new_item' => __('Add The Band', 'koband'),
     'edit_item' => __('Edit The Band', 'koband'),
@@ -87,11 +87,6 @@ function ko_band_the_band_meta_box($post, $box){
         
 
     $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );
-    $the_band_success = get_post_meta( $post->ID, 'ko_band_the_band_success', true );
-    $the_band_award = get_post_meta( $post->ID, 'ko_band_the_band_award', true );
-    $the_band_photo = get_post_meta( $post->ID, 'ko_band_the_band_photo', true );  // Get image ID.
-    $url = wp_get_attachment_url( $the_band_photo ); // Get the URL only.
-        wp_get_attachment_image( $the_band_photo );  // Get a full image tag.
    
 
 
@@ -99,25 +94,12 @@ function ko_band_the_band_meta_box($post, $box){
     <div class="container">
 
         <div class="row-top">
-            <div class="col-sm"><?php _e('The Band Biography:', 'koband');?></div>
-            <div class="col-sm"><?php _e('The Band Success:','koband');?></div>
+            <div class="col-sm"><?php _e('Band Member Role:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('The Band Biography', 'koband');?>"></div>
-            <div class="col-sm"><input type="text" name="ko_band_the_band_success" value="<?php echo esc_textarea( $the_band_success ) ?>" class="widefat" placeholder="<?php _e('The Band Success', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php _e('ex.Drummer, Bass ...', 'koband');?>"></div>
         </div>
-
-        <div class="row">
-            <div class="col-sm"><?php _e('The Band Awards:', 'koband');?></div>
-            <div class="col-sm"><?php _e('The Band Photo:', 'koband');?></div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm"><input type="text" name="ko_band_the_band_award" value="<?php echo esc_textarea( $the_band_award )?>" class="widefat" placeholder="<?php _e('The Band Award', 'koband');?>"></div>
-            <div class="col-sm"><input type="file"  id="upload_image" name="ko_band_the_band_photo" value="<?php echo esc_html( $the_band_photo )?>" class="widefat" placeholder="<?php _e('The Band Photo', 'koband');?>"></div>
-        </div>
-
     </div>
 
      <?php }
@@ -143,9 +125,7 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $the_band_meta['ko_band_the_band_bio'] = esc_textarea( $_POST['ko_band_the_band_bio'] );
-    $the_band_meta['ko_band_the_band_success'] = esc_textarea( $_POST['ko_band_the_band_success'] );
-    $the_band_meta['ko_band_the_band_award'] = esc_textarea( $_POST['ko_band_the_band_award'] );
-    $the_band_photo['ko_band_the_band_photo'] = esc_html( $_POST['ko_band_the_band_photo'] ); 
+
   
 
     // Cycle through the $events_meta array.
