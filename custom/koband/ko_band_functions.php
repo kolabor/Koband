@@ -27,7 +27,7 @@ add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' ); */
 
 // Load custom css script and custom javascript for admin dashboard
 
-function ko_band_custom_wp_admin_style() {
+function ko_band_custom_wp_admin_resources() {
 
     wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
     wp_enqueue_style( 'custom_wp_admin_css' );
@@ -44,7 +44,7 @@ function ko_band_custom_wp_admin_style() {
     wp_register_style('theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php', false, '1.0.0' );
     wp_enqueue_style( 'theme_colors' );
 }
-add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
+add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
 
 
@@ -196,5 +196,15 @@ $main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
 	<?php
 }
 add_action( 'wp_head' , 'ko_band_dynamic_css' );*/
+
+
+/* Register frontend resources */
+
+function ko_band_custom_wp_front_resources() {
+
+	if( !is_admin() ) { wp_enqueue_style( 'style', get_stylesheet_uri() );} 
+}
+add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
+/* Register frontend resources ends here */
 
 ?>
