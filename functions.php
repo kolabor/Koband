@@ -49,6 +49,4 @@ function ko_band_enqueue_dynamic_css() {
   }
 }
 
-
-
 ?>

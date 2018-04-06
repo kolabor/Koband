@@ -12,3 +12,12 @@ Text Domain: koband
 */
 /* =Reset
 -------------------------------------------------------------- */
+.theband {
+	width: 1200px;
+}
+.ado {
+	background-color: #000000;
+}
+.test {
+	background-color: #999;
+}
