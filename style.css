@@ -15,14 +15,14 @@ Text Domain: koband
 
 .theband {
 	background-color: #999;
-	    width: 100%;
+	width: 100%;
     height: auto;
     display: inline-block;
 }
 .theband h1 {
 	text-align: center;
 	color: #F2F3F4; 
-	    background-color: #893d3d;
+	background-color: #893d3d;
     margin: 0;
     padding: 20px;
 }
@@ -36,7 +36,7 @@ Text Domain: koband
     float: right;
         background-color: #fff;
     text-align: center;
-
+}
 
 .tour_holder {
 	width: 100% !important;
