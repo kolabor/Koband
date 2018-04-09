@@ -37,20 +37,18 @@ get_header(); ?> <h1>Tour Temp</h1>
 
 	 while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
 
-		$post_id = get_the_ID();  ?>
-			
+		$post_id = get_the_ID();  
 
-		<?php 
-			 //the_post_thumbnail(array(200,200));
-         $tour_date = get_post_meta( $post_id, 'ko_band_tour_date', false );
-		 $tour_country = get_post_meta($post_id, "ko_band_tour_country", false );
-		 $tour_city = get_post_meta($post_id, "ko_band_tour_city", false );
-		 $tour_address = get_post_meta($post_id, "ko_band_tour_address", false );
-		 $tour_zipcode = get_post_meta($post_id,  "ko_band_tour_zipCode", false );
-		 $tour_venuename = get_post_meta($post_id,  "ko_band_tour_venue_name", false );
-		 $tour_ticket = get_post_meta($post_id,  "ko_band_tour_ticket", false );
-		 $tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
-         ?>
+		the_post_thumbnail(array(200,200));
+        $tour_date = get_post_meta( $post_id, 'ko_band_tour_date', false );
+		$tour_country = get_post_meta($post_id, "ko_band_tour_country", false );
+		$tour_city = get_post_meta($post_id, "ko_band_tour_city", false );
+		$tour_address = get_post_meta($post_id, "ko_band_tour_address", false );
+		$tour_zipcode = get_post_meta($post_id,  "ko_band_tour_zipCode", false );
+		$tour_venuename = get_post_meta($post_id,  "ko_band_tour_venue_name", false );
+		$tour_ticket = get_post_meta($post_id,  "ko_band_tour_ticket", false );
+		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
+        ?>
             <div class="tour_row">
             	<a href="<?php the_permalink();?>"><?php the_title();?></a><br>
 
