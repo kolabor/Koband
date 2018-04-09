@@ -10,7 +10,7 @@
  * @package Wordpress 
  * @subpackage Koband
  * @since Koband 1.0
- */?><h1>Slider</h1>
+ */?>
  
  <?php 
 

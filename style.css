@@ -61,24 +61,26 @@ header {
 	position: relative;
 	width: 100%;
 	height: auto;
+	
 }
 
 
 nav {
-    width: 100%;
-   
-    background: rgba(255,255,255,0.7);
-    position: fixed;
-    z-index: 9999999999;
+   width: 100%;
+   position: fixed;
+   z-index: 9999999999;
+   background: rgba(255,255,255,0.7);
 }
+
 /* ----------------------------------------------- */
 /* Logo */
 /* ----------------------------------------------- */
 
 .main-logo{
-	position: fixed;
-	width: 20%;
+	position: relative;
+	width: 21%;
 	float: left;
+
 }
 
 .logo {
@@ -97,7 +99,7 @@ nav {
 /*Strip the ul of padding and list styling*/
 .main-nav {
 	position: relative;
-}
+	}
 .menu {
 
     position: absolute;
@@ -105,6 +107,7 @@ nav {
    	right: 0;
     width: 80%;
    text-align: right;
+   
 }
 /*Create a horizontal list with spacing*/
  .menu li {
@@ -121,7 +124,7 @@ li a {
     line-height: 50px; 
     color: #333;
 	font-weight: 700;
-    font-size: 120%;
+    font-size: 100%;
 	transition: border-bottom 0.1s;
     text-decoration: none !important;
 }
@@ -132,7 +135,7 @@ li a:hover {
 }
 /*Style for dropdown links*/
 li:hover ul a {
-    background: rgba(255,255,255,0.7) !important;
+    
 	color: #333 !important;
     height: 40px!important;
     line-height: 40px!important;
@@ -140,29 +143,34 @@ li:hover ul a {
 /*Hover state for dropdown links*/
 li:hover ul a:hover {
     
-    font-size: 100%;
+    font-size: 80%;
 }
 /*Hide dropdown links until they are needed*/
 li ul {
+   
     display: none;
     position: absolute;
-    padding-left: 0!important;
+    background: rgba(255,255,255,0.7);
+    min-width: 100px;
+    z-index: 1;
+    padding-left: 0;
 }
 /*Make dropdown links vertical*/
 li ul li {
     display: block!important;
      
 }
-/*Prevent text wrapping*/
+/*Prevent text wrapping*
 li ul li a {
-    width: 101%!important;
-    min-width: 100px!important;
+    width: 100%!important;
+    min-width: 80px!important;
     
-}
+}/
 /*Display the dropdown on hover*/
 ul li a:hover + .sub-menu, .sub-menu:hover {
     display: block!important;
 }
+
 
 .load_more{ 
     display: block; 
@@ -193,4 +201,52 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
     color: #999; 
 
+}
+
+@media only screen and (max-width: 768px) {
+    header {height: 40vh;}
+    .mobile-nav-icon { display: inline-block; margin-top:17px;  }
+    .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
+    .main-nav { float: left; width: 60%; text-align: center; line-height: 30px; position: static; width: 100%; display:none; }
+    .main-nav li {display: block; width: 100%;}
+    .main-nav li a{ width: 100%; display: block; font-size: 150%;}
+     li ul { position: relative; }
+    .logo {width: 70%; margin-top: 17px; margin-left: 55px;}
+    .media-list li {width: 50%;}
+    .media {padding-bottom: 20px;}
+    .footer-nav , .social-links {font-size: 70%;}
+    li .dropdown-content li {float: none!important;}
+    h1, h2, .box p { text-align: center;}
+    li:hover ul a {background: none; color: #333; height: 40px; line-height: 40px;}
+    .divTableCell {font-size: 100%}
+    .divTableHeading {font-size: 120%}
+
+}
+
+/* Small phones: from 0 to 375px */
+@media only screen and (max-width: 375px) {
+          
+         
+        header {height: 32vh;}
+        .logo {margin-top: 10px; margin-right: 20px; }
+        .main-nav {  width: 100%; display:none; }
+        .main-nav li a {display: block; font-size: 100%;}
+        .mobile-nav-icon { display: inline-block; margin-top: 12px; }
+        .logo { width: 70%; margin-left: 26px;}
+        .mobile-nav-icon i {top:0; font-size: 150%; margin-left: 0;}
+        h1, h2, .box p { text-align: center; padding: 10px; }
+        h2 {margin-bottom: 0; }
+        .media {padding-bottom: 20px;}
+        .media-list li {width: 100%;}
+        .footer-nav , .social-links {float:none; text-align: center;}
+        td, th { font-size: 70%;  font-weight: 400;}
+        li ul { position: relative; }
+        .divTableCell {font-size: 60%}
+        .divTableHeading {font-size: 100%}
+
+
     }
+@media only screen and (max-width: 360px) {
+  .logo {margin-right: 10px;}
+}
+
