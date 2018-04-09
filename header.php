@@ -17,7 +17,9 @@ wp_head(); ?>
      <title><?php bloginfo( 'name' ); ?></title>
 </head>
 <body>
-                <header class="clearfix">
+                <header>
+                  <nav>
+                  <div class="container">                    
                     <div class="main-logo clearfix">
                     <?php $logo = get_theme_mod( 'ko_band_main_logo' ); ?>
                     <img src="<?php echo $logo; ?>" class="logo">
@@ -28,8 +30,8 @@ wp_head(); ?>
                     <img src="<?php echo $logo_retina; ?>">
                     </div>                 
 
-                  <nav class="clearfix">
-                    <div class="main-nav" >
+                  
+                    <div class="main-nav">
                       <?php
                         $args = array(
                           'theme_location' => 'primary'
@@ -39,4 +41,6 @@ wp_head(); ?>
                       <?php wp_nav_menu($args); ?>
                     </div>
                   </nav>
+                  </div>
+
                 </header>
