@@ -14,6 +14,7 @@
 
 get_header(); 
 
+get_template_part( 'custom/templates/slides', 'template' );
 $first_section = get_theme_mod('ko_band_first_render_moduls');
 $second_section = get_theme_mod('ko_band_second_render_moduls');
 $third_section = get_theme_mod('ko_band_third_render_moduls');
