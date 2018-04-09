@@ -56,3 +56,108 @@ Text Domain: koband
 	padding: 10px;
 	margin-top: 15px;
 }
+
+header {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+
+nav {
+    width: 100%;
+   
+    background: rgba(255,255,255,0.7);
+    position: fixed;
+    z-index: 9999999999;
+}
+/* ----------------------------------------------- */
+/* Logo */
+/* ----------------------------------------------- */
+
+.main-logo{
+	position: relative;
+	width: 20%;
+	float: left;
+}
+
+.logo {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding-bottom: 7px;
+}
+
+
+/* ----------------------------------------------- */
+/* Main menu */
+/* -----------------------------------------------  */
+
+/*Strip the ul of padding and list styling*/
+.main-nav {
+	position: relative;
+}
+.menu {
+
+    position: absolute;
+    list-style-type: none;
+   	right: 0;
+    width: 80%;
+   text-align: right;
+}
+/*Create a horizontal list with spacing*/
+ .menu li {
+    display:inline-block;
+    float: none;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; 
+    color: #333;
+	font-weight: 700;
+    font-size: 120%;
+	transition: border-bottom 0.1s;
+    text-decoration: none;
+}
+/*Hover state for top level links*/
+li a:hover {
+   border-bottom: 3px solid #4D0000;
+}
+/*Style for dropdown links*/
+li:hover ul a {
+    background: rgba(255,255,255,0.7);
+	color: #333;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    
+    font-size: 100%;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+    position: absolute;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
+      right: 0;
+}
+/*Prevent text wrapping*/
+li ul li a {
+    width: 101%;
+    min-width: 100px;
+    
+}
+/*Display the dropdown on hover*/
+ul li a:hover + .dropdown-content, .dropdown-content:hover {
+    display: block;
+}

@@ -4,3 +4,5 @@ function ko_band_RetinaDisplay() {
             return (mq && mq.matches || (window.devicePixelRatio > 1)); 
         }
 }
+
+$('.dropdown-toggle').dropdown()
