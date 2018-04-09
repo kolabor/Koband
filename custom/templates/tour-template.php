@@ -53,14 +53,16 @@ get_header(); ?> <h1>Tour Temp</h1>
          ?>
             <div class="tour_row">
             	<a href="<?php the_permalink();?>"><?php the_title();?></a><br>
-                <?php echo  $tour_date[0]; ?><br>
-                <?php echo  $tour_country[0]; ?><br>
-                <?php echo  $tour_city[0]; ?><br>
-                <?php echo  $tour_address[0]; ?><br>
-                <?php echo  $tour_zipcode[0]; ?><br>
-                <?php echo  $tour_venuename[0]; ?><br>
-                <?php echo  $tour_ticket[0]; ?><br>
-                <?php echo  $tour_ticketlink[0]; ?><br>
+
+            	<?php if(isset($tour_date[0])) 		 { echo  $tour_date[0]; } ?><br>
+            	<?php if(isset($tour_country[0])) 	 { echo  $tour_country[0]; } ?><br>
+            	<?php if(isset($tour_city[0])) 		 { echo  $tour_city[0]; } ?><br>
+            	<?php if(isset($tour_address[0])) 	 { echo  $tour_address[0]; } ?><br>
+            	<?php if(isset($tour_zipcode[0])) 	 { echo  $tour_zipcode[0]; } ?><br>
+            	<?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?><br>
+            	<?php if(isset($tour_ticket[0])) 	 { echo  $tour_ticket[0]; } ?><br>
+            	<?php if(isset($tour_ticketlink[0])) { echo  $tour_ticketlink[0]; } ?><br>
+
             </div>
          <?php 
 	 endwhile; // end of the loop. 

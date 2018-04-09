@@ -207,4 +207,12 @@ function ko_band_custom_wp_front_resources() {
 add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
 /* Register frontend resources ends here */
 
+add_action('wp_enqueue_script', 'ko_band_bootstrap_front_resources');
+function ko_band_bootstrap_front_resources() {
+	wp_register_style( 'bootstrap_wp_front_css', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
+    wp_enqueue_style( 'bootstrap_wp_front_css' );
+
+	wp_register_script( 'script_wp_front_js', get_template_directory_uri() . '/admin/ko_band_front.js', false, '1.0.0' );
+    wp_enqueue_script( 'script_wp_front_js' );
+}
 ?>
