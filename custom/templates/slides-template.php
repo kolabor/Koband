@@ -28,7 +28,7 @@
 	while( $slider_posts->have_posts() ) : $slider_posts->the_post();
 		
 	$post_id = get_the_ID();
-	the_post_thumbnail(array(200,200));
+	the_post_thumbnail('full');
         $slider_video = get_post_meta( $post_id, 'ko_band_slides_video', false );
 		$slider_title = get_post_meta($post_id, "ko_band_slides_title", false );
 		$slider_subtitle = get_post_meta($post_id, "ko_band_slides_subtitle", false );

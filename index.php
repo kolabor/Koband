@@ -14,14 +14,25 @@
 
 get_header(); 
 
+$count_slides = wp_count_posts('slides')->publish;
+
+if("Slides" && $count_slides > 0)
+{
 get_template_part( 'custom/templates/slides', 'template' );
+}
+else 
+{
+	echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this section there must be slider</p>";
+};
+
+
+
 $first_section = get_theme_mod('ko_band_first_render_moduls');
 $second_section = get_theme_mod('ko_band_second_render_moduls');
 $third_section = get_theme_mod('ko_band_third_render_moduls');
 $fourth_section = get_theme_mod('ko_band_fourth_render_moduls');
 
 //Declaration of template variables
-
 $count_album = wp_count_posts('album')->publish; 
 $count_singles = wp_count_posts('singles')->publish;
 $count_discography = "";
