@@ -2,7 +2,7 @@
   header('Content-type: text/css');
   include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
 
-<<<<<<< HEAD
+
   $main_font = get_theme_mod( 'ko_band_general_font_selector' );
 ?>
 
@@ -21,7 +21,7 @@ $main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
 body
 {
   font-family: <?php echo $main_font ?>;
-=======
+
 $general_font = get_theme_mod( 'ko_band_general_font_selector' );
 $headding_font = get_theme_mod( 'ko_band_heading_font_selector' ); 
 ?>
@@ -68,7 +68,7 @@ h1, h2, h3
 	font-family: <?php echo $headding_font; ?> !important;
 	color: <?php echo $heading_font_color; ?> !important;
 
->>>>>>> a255e1ca69f75451c3d0a0553f282af16f37e821
+
 }
 
 

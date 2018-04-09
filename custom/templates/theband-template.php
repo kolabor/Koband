@@ -39,9 +39,10 @@ get_header(); ?> <div class="theband"><h1>The Band Temp</h1>
 	echo "</pre>";*/
 
 		//$post_id = get_the_ID() ?>
+<div class="test">
+<h2> Band Member name: <a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 
-<h1> Band Member name: <a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a></h1>
-
+<?php the_content();?>
 
 <?php
 		 $theband_bio = get_post_meta( $post_id, 'ko_band_the_band_bio', false );
@@ -59,4 +60,7 @@ endif;
 
  
  ?></div>
+ <div class="img">
+ <?php the_post_thumbnail(array(200,200));?> 
+ </div>
  </div>
