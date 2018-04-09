@@ -79,7 +79,7 @@ function ko_band_featured_image_metabox_title() {
 	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
 
 	remove_meta_box( 'postimagediv', 'slides', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
 
 	remove_meta_box( 'postimagediv', 'the band', 'side' );
 	add_meta_box( 'postimagediv', __( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
