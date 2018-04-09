@@ -21,3 +21,22 @@ Text Domain: koband
 .test {
 	background-color: #999;
 }
+.tour_holder
+{
+	width: 100% !important;
+	height: auto !important;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	background: #cccccc !important;
+	padding: 15px;
+}
+.tour_holder .tour_row
+{
+	width: 80% !important;
+	text-align: left;
+	background: #ffffff;
+	height: auto;
+	padding: 10px;
+	margin-top: 15px;
+}
