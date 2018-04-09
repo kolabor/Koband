@@ -16,16 +16,17 @@ get_header();
 
 $count_slides = wp_count_posts('slides')->publish;
 
-if("Slides" && $count_slides > 0)
-{
-get_template_part( 'custom/templates/slides', 'template' );
+if("Slides" && $count_slides > 0) {
+get_template_part( 'custom/templates/slides', 'template' );}
+else { echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this section there must be slider</p>"; };
+
+$count_news = wp_count_posts('post')->publish;
+
+if("posts" && $count_news > 0) {
+	get_template_part('custom/templates/news', 'template');}
+else {
+	get_template_part('custom/templates/media', 'template');
 }
-else 
-{
-	echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this section there must be slider</p>";
-};
-
-
 
 $first_section = get_theme_mod('ko_band_first_render_moduls');
 $second_section = get_theme_mod('ko_band_second_render_moduls');
