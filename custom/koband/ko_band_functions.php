@@ -54,8 +54,8 @@ function ko_band_enqueue_admin_scripts($hook) {
 
     if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
 
-          wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
-          wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
+    wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
+    wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
          //wp_enqueue_style( 'theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php');
 
     }

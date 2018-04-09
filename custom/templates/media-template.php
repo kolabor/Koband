@@ -26,12 +26,14 @@ get_header();?>
 
 
     $media_posts = new WP_Query($args_media);
-    $total = $media_posts->found_posts;
     if ($media_posts->have_posts() ) : 
  
 	while ( $media_posts->have_posts() ) : $media_posts->the_post();
-		$post_id = get_the_ID(); ?>
-
+		$post_id = get_the_ID(); 
+		$all  = get_post_meta($post_id);
+		echo "<pre>";
+		print_r($all);
+		echo "</pre>";?>
 
 		<!--<a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a>-->
 <?php
@@ -43,10 +45,12 @@ get_header();?>
 
 		foreach ($media_video_gallery[0] as  $value_video_gallery) {
 			
+
 			//var_dump($value_video_gallery);
 			echo "<br>";
 			echo $value_video_gallery['link'];
 			echo "<br>";
+
 		} 
 
        foreach ($media_gallery[0] as  $value_image) {
