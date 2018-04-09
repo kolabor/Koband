@@ -46,6 +46,13 @@ function ko_band_custom_wp_admin_resources() {
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
+// Excerpt Length
+
+function ko_band_set_excerpt_length(){
+	return 35;
+}
+
+add_filter('excerpt_length', 'ko_band_set_excerpt_length');
 
 
 // Function for Media CPT to add gallery images

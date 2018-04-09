@@ -10,9 +10,7 @@
  * @package Wordpress 
  * @subpackage Koband
  * @since Koband 1.0
- */?> <h1>News</h1>
- <?php 
-
+ */
      $args_news = array
     (		
 	 	 'post_type' => 'post',   
@@ -23,17 +21,18 @@
  $news_posts = new WP_Query( $args_news );
 
  if ( $news_posts->have_posts() ) : 
- 	//start loop
-?>
-<div class='tour_holder'>
-<?php
+ 	//start loop ?>
 
-	 while ( $news_posts->have_posts() ) : $news_posts->the_post(); 
+<div class='tour_holder'>
+
+<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); 
 
 		$post_id = get_the_ID(); ?>
 
-<a href="<?php the_permalink();?>"><?php the_title();?><br><?php the_post_thumbnail(array(200,200)); ?><br><?php the_content();?></a><br>
-</div> <?php
-endwhile;
-endif
- ?>
+		<div id="title"><?php the_title();?></div>
+		<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
+		<div id="excerpt"><?php the_excerpt(); ?></div>
+		<button class="load_more"><?php _e('Load More', 'koband'); ?></button>
+</div> 
+<?php endwhile; 
+endif; ?>
