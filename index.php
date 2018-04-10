@@ -49,6 +49,7 @@ $count_news = wp_count_posts('post')->publish;
 $count_media = wp_count_posts('media')->publish;
 $count_theband = wp_count_posts('theband')->publish;
 $count_tour = wp_count_posts('tour')->publish;
+
 // Declartaion of Vraiables ends here
 
 //First Section if statement starts here
@@ -77,8 +78,8 @@ echo "<p>****************************Section 1**********************</p>";
 		get_template_part( 'custom/templates/news', 'template');
 	}
 
-	elseif ($first_section == "Contact" && $count_contact > 0) {
-		get_template_part( 'custom/template/contact', 'template');
+	elseif ($first_section == "Contact") {
+		get_template_part('custom/templates/contact', 'template');
 	};
 
 echo "<p>**********************************************************</p>";
@@ -114,8 +115,8 @@ echo "<p>****************************Section 2**********************</p>";
 		get_template_part( 'custom/templates/news', 'template');
 	}
 
-	elseif ($second_section == "Contact" && $count_contact > 0) {
-		get_template_part( 'custom/template/contact', 'template');
+	elseif ($second_section == "Contact") {
+	get_template_part('custom/templates/contact', 'template');
 	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
@@ -149,8 +150,8 @@ echo "<p>****************************Section 3**********************</p>";
 		get_template_part( 'custom/templates/news', 'template');
 	}
 
-	elseif ($third_section == "Contact" && $count_contact > 0) {
-		get_template_part( 'custom/template/contact', 'template');
+	elseif ($third_section == "Contact") {
+get_template_part('custom/templates/contact', 'template');
 	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
@@ -183,8 +184,8 @@ echo "<p>****************************Section 4**********************</p>";
 		get_template_part( 'custom/templates/news', 'template');
 	}
 
-	elseif ($fourth_section == "Contact" && $count_contact > 0) {
-		get_template_part( 'custom/template/contact', 'template');
+	elseif ($fourth_section == "Contact" ) {
+		get_template_part('custom/templates/contact', 'template');
 	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
@@ -217,8 +218,8 @@ echo "<p>****************************Section 5**********************</p>";
 		get_template_part( 'custom/templates/news', 'template');
 	}
 
-	elseif ($fifth_section == "Contact" && $count_contact > 0) {
-		get_template_part( 'custom/template/contact', 'template');
+	elseif ($fifth_section == "Contact") {
+		get_template_part('custom/templates/contact', 'template');
 	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
@@ -251,8 +252,8 @@ echo "<p>****************************Section 6**********************</p>";
 		get_template_part( 'custom/templates/news', 'template');
 	}
 
-	elseif ($sixth_section == "Contact" && $count_contact > 0) {
-		get_template_part( 'custom/template/contact', 'template');
+	elseif ($sixth_section == "Contact" ) {
+		get_template_part('custom/templates/contact', 'template');
 	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/

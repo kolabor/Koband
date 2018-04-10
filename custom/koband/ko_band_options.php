@@ -468,6 +468,58 @@ $wp_customize->add_control( 'ko_band_sixth_render_moduls',
     )
 );
 
+/*** Contact section starts here  ***/
+$wp_customize->add_section( 'ko_band_contact_section' , array(
+    'title'       => esc_html__( 'Contact', 'koband' ),
+    'priority'    => 31,
+    'description' => '<hr>',
+) );
+
+$wp_customize->add_setting( 'ko_band_googlemap' );
+$wp_customize->add_control( 'ko_band_googlemap', array(
+    'label' => __( 'Google map:', 'koband' ),
+    'settings' => 'ko_band_googlemap',
+    'section' => 'ko_band_contact_section',
+    'type'     => 'textarea',
+) );
+$wp_customize->add_setting( 'ko_band_country' );
+$wp_customize->add_control( 'ko_band_country', array(
+    'label' => __( 'Country:', 'koband' ),
+    'settings' => 'ko_band_country',
+    'section' => 'ko_band_contact_section',
+    'type'     => 'text',
+) );
+
+$wp_customize->add_setting( 'ko_band_city' );
+$wp_customize->add_control( 'ko_band_city', array(
+    'label' => __( 'City:', 'koband' ),
+    'settings' => 'ko_band_city',
+    'section' => 'ko_band_contact_section',
+    'type'     => 'text',
+) );
+$wp_customize->add_setting( 'ko_band_address' );
+$wp_customize->add_control( 'ko_band_address', array(
+    'label' => __( 'Address:', 'koband' ),
+    'settings' => 'ko_band_address',
+    'section' => 'ko_band_contact_section',
+    'type'     => 'text',
+) );
+$wp_customize->add_setting( 'ko_band_email' );
+$wp_customize->add_control( 'ko_band_email', array(
+    'label' => __( 'E-mail:', 'koband' ),
+    'settings' => 'ko_band_email',
+    'section' => 'ko_band_contact_section',
+    'type'     => 'text',
+) );
+
+$wp_customize->add_setting( 'ko_band_phone' );
+$wp_customize->add_control( 'ko_band_phone', array(
+    'label' => __( 'Phone:', 'koband' ),
+    'settings' => 'ko_band_phone',
+    'section' => 'ko_band_contact_section',
+    'type'     => 'text',
+) );
+
 
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
