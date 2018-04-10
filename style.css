@@ -12,12 +12,241 @@ Text Domain: koband
 */
 /* =Reset
 -------------------------------------------------------------- */
+
 .theband {
-	width: 1200px;
+	background-color: #999;
+	width: 100%;
+    height: auto;
+    display: inline-block;
 }
-.ado {
-	background-color: #000000;
+.theband h1 {
+	text-align: center;
+	color: #F2F3F4; 
+	background-color: #893d3d;
+    margin: 0;
+    padding: 20px;
 }
 .test {
-	background-color: #999;
+	    width: 70%;
+    display: block;
+    float: left;
 }
+.img {
+	    width: 30%;
+    float: right;
+        background-color: #fff;
+    text-align: center;
+}
+
+.tour_holder {
+	width: 100% !important;
+	height: auto !important;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	background: #cccccc !important;
+	padding: 15px;
+}
+.tour_holder .tour_row
+{
+	width: 80% !important;
+	text-align: left;
+	background: #ffffff;
+	height: auto;
+	padding: 10px;
+	margin-top: 15px;
+}
+
+header {
+	position: relative;
+	width: 100%;
+	height: auto;
+	
+}
+
+
+nav {
+   width: 100%;
+   position: fixed;
+   z-index: 9999999999;
+   background: rgba(255,255,255,0.7);
+}
+
+/* ----------------------------------------------- */
+/* Logo */
+/* ----------------------------------------------- */
+
+.main-logo{
+	position: relative;
+	width: 21%;
+	float: left;
+
+}
+
+.logo {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding-bottom: 7px;
+}
+
+
+/* ----------------------------------------------- */
+/* Main menu */
+/* -----------------------------------------------  */
+
+/*Strip the ul of padding and list styling*/
+.main-nav {
+	position: relative;
+	}
+.menu {
+
+    position: absolute;
+    list-style-type: none;
+   	right: 0;
+    width: 80%;
+   text-align: right;
+   
+}
+/*Create a horizontal list with spacing*/
+ .menu li {
+    display:inline-block;
+    float: none;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; 
+    color: #333;
+	font-weight: 700;
+    font-size: 100%;
+	transition: border-bottom 0.1s;
+    text-decoration: none !important;
+}
+/*Hover state for top level links*/
+li a:hover {
+	color: #333; 
+   border-bottom: 3px solid #4D0000 !important;
+}
+/*Style for dropdown links*/
+li:hover ul a {
+    
+	color: #333 !important;
+    height: 40px!important;
+    line-height: 40px!important;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    
+    font-size: 80%;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+   
+    display: none;
+    position: absolute;
+    background: rgba(255,255,255,0.7);
+    min-width: 100px;
+    z-index: 1;
+    padding-left: 0;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block!important;
+     
+}
+/*Prevent text wrapping*
+li ul li a {
+    width: 100%!important;
+    min-width: 80px!important;
+    
+}/
+/*Display the dropdown on hover*/
+ul li a:hover + .sub-menu, .sub-menu:hover {
+    display: block!important;
+}
+
+
+.load_more{ 
+    display: block; 
+    clear: both; 
+    position: relative;
+}
+.load_more a, .load_more .loader{ 
+    display: block; 
+    height: 90px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    background: #000;
+    overflow: hidden; 
+    position: relative; 
+
+}
+
+.load_more{ 
+    display: block; 
+    clear: both; 
+    position: relative; 
+}
+
+.load_more a:hover{ 
+
+    color: #999; 
+
+}
+
+@media only screen and (max-width: 768px) {
+    header {height: 40vh;}
+    .mobile-nav-icon { display: inline-block; margin-top:17px;  }
+    .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
+    .main-nav { float: left; width: 60%; text-align: center; line-height: 30px; position: static; width: 100%; display:none; }
+    .main-nav li {display: block; width: 100%;}
+    .main-nav li a{ width: 100%; display: block; font-size: 150%;}
+     li ul { position: relative; }
+    .logo {width: 70%; margin-top: 17px; margin-left: 55px;}
+    .media-list li {width: 50%;}
+    .media {padding-bottom: 20px;}
+    .footer-nav , .social-links {font-size: 70%;}
+    li .dropdown-content li {float: none!important;}
+    h1, h2, .box p { text-align: center;}
+    li:hover ul a {background: none; color: #333; height: 40px; line-height: 40px;}
+    .divTableCell {font-size: 100%}
+    .divTableHeading {font-size: 120%}
+
+}
+
+/* Small phones: from 0 to 375px */
+@media only screen and (max-width: 375px) {
+          
+         
+        header {height: 32vh;}
+        .logo {margin-top: 10px; margin-right: 20px; }
+        .main-nav {  width: 100%; display:none; }
+        .main-nav li a {display: block; font-size: 100%;}
+        .mobile-nav-icon { display: inline-block; margin-top: 12px; }
+        .logo { width: 70%; margin-left: 26px;}
+        .mobile-nav-icon i {top:0; font-size: 150%; margin-left: 0;}
+        h1, h2, .box p { text-align: center; padding: 10px; }
+        h2 {margin-bottom: 0; }
+        .media {padding-bottom: 20px;}
+        .media-list li {width: 100%;}
+        .footer-nav , .social-links {float:none; text-align: center;}
+        td, th { font-size: 70%;  font-weight: 400;}
+        li ul { position: relative; }
+        .divTableCell {font-size: 60%}
+        .divTableHeading {font-size: 100%}
+
+
+    }
+@media only screen and (max-width: 360px) {
+  .logo {margin-right: 10px;}
+}
+

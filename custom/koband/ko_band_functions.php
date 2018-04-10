@@ -27,13 +27,10 @@ add_filter( 'admin_post_thumbnail_html', 'ko_band_featured_image_text' ); */
 
 // Load custom css script and custom javascript for admin dashboard
 
-function ko_band_custom_wp_admin_style() {
+function ko_band_custom_wp_admin_resources() {
 
     wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
     wp_enqueue_style( 'custom_wp_admin_css' );
-
-    wp_register_style( 'main_css', get_template_directory_uri() . '/style.css', false, '1.0.0' );
-    wp_enqueue_style( 'main_css' );
 
     wp_register_script( 'custom_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
     wp_enqueue_script( 'custom_wp_admin_js' );
@@ -47,8 +44,15 @@ function ko_band_custom_wp_admin_style() {
     wp_register_style('theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php', false, '1.0.0' );
     wp_enqueue_style( 'theme_colors' );
 }
-add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_style' );
+add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
+// Excerpt Length
+
+function ko_band_set_excerpt_length(){
+	return 35;
+}
+
+add_filter('excerpt_length', 'ko_band_set_excerpt_length');
 
 
 // Function for Media CPT to add gallery images
@@ -57,10 +61,10 @@ function ko_band_enqueue_admin_scripts($hook) {
 
     if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
 
-          wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
-          wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
+    wp_enqueue_script('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.js', array('jquery', 'jquery-ui-sortable'));
+    wp_enqueue_style('ko_band_gallery-metabox', get_template_directory_uri() . '/admin/ko_band_admin.css');
          //wp_enqueue_style( 'theme_colors', get_template_directory_uri() .'/style/ko_band_dynamic.css.php');
-          
+
     }
 }
 
@@ -82,7 +86,7 @@ function ko_band_featured_image_metabox_title() {
 	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
 
 	remove_meta_box( 'postimagediv', 'slides', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
 
 	remove_meta_box( 'postimagediv', 'the band', 'side' );
 	add_meta_box( 'postimagediv', __( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
@@ -200,4 +204,22 @@ $main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
 }
 add_action( 'wp_head' , 'ko_band_dynamic_css' );*/
 
+
+/* Register frontend resources */
+
+function ko_band_custom_wp_front_resources() {
+
+	if( !is_admin() ) { wp_enqueue_style( 'style', get_stylesheet_uri() );} 
+}
+add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
+/* Register frontend resources ends here */
+
+function ko_band_bootstrap_front_resources() {
+	wp_register_style( 'bootstrap_wp_front_css', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
+    wp_enqueue_style( 'bootstrap_wp_front_css' );
+
+	wp_register_script( 'script_wp_front_css', get_template_directory_uri() . '/admin/ko_band_front.js', false, '1.0.0' );
+    wp_enqueue_script( 'script_wp_front_css' );
+}
+add_action('wp_enqueue_scripts', 'ko_band_bootstrap_front_resources');
 ?>

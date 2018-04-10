@@ -16,194 +16,93 @@ get_header();?> <h1>Discography Temp</h1>
 
 <?php
 
-
-
-    $args_album = array(
-
-	 	 
+$args_album = array (
 		  	'post_type' => 'album',
 		  	'post_staus'=> 'publish',
 		 	'posts_per_page' => -1
-		  
-		  
-  
-	);
-
- $album_posts = new WP_Query( $args_album );
- $total_album = $album_posts->found_posts; 
-if (!empty('album')):
- if ( $album_posts->have_posts() ) : 
- 	//start loop
-	 while ( $album_posts->have_posts() ) : $album_posts->the_post(); 
-
-		$post_id = get_the_ID();
-$all  = get_post_meta($post_id);
-		echo "<pre>";
-		print_r($all);
-	echo "</pre>";
-		 ?>
-			<a href="<?php the_permalink();?>"><?php the_title();?></a>
-			<?php 
-			 the_post_thumbnail(array(200,200));
-
-	$album_daterelease = get_post_meta( $post_id, 'ko_band_album_date_release', false );
-		    foreach ($album_daterelease as $key => $value_daterelease) {
-
-		 	print_r( $value_daterelease);
-		 	# code...
-		 }
-
-	$album_length = get_post_meta($post_id, "ko_band_album_length", false );
-		    foreach ($album_length as $key => $value_length) {
-
-		 	print_r( $value_length);
-		 	# code...
-		 }
-	$album_repetable_song = get_post_meta($post_id, "ko_band_repetable_song_details", false);
-
-			foreach ($album_repetable_song as $key => $value_album_repetable_song) 
-				  {
-				  	
-				 	print_r( $value_album_repetable_song);
-				 	# code...
-				 }	
-	
-	$album_song_name = get_required_files($post_id,'[name-details]');
-				 
-			foreach ($album_song_name as $key => $value_song_name) 
-				  {
-				  	
-				 	print_r( $value_song_name);
-				 	# code...
-				 }	
-
-	$album_song_length = get_required_files($post_id,'length[]'); 
-
-			foreach ($album_song_length as $key => $value_song_length) 
-				  {
-				  	
-				 	print_r( $value_song_length);
-				 	# code...
-				 }	
-
-			$album_song_detail = get_required_files($post_id,'detail[]'); 
-
-		    foreach ($album_song_detail as $key => $value_song_detail) 
-				  {
-				  	
-				 	print_r( $value_song_detail);
-				 	# code...
-				 }	
-		
-/*
- foreach ($album_repetable_song as $key => $someVar) {
- print_r ($key." holds the value ".$someVar."<br />");
-}
-
-$album_song_name = get_post_meta($post_id,"name-details[]", false);
-				 
-				 foreach ($album_song_name as $key => $value_song_name) 
-				  {
-				  	print_r($key." holds the value ".$value_song_name."<br />");
-				 	//print_r( $value_song_name);
-				 	# code...
-				 }	
 
 
-
-		/*if( have_posts('ko_band_repetable_song_details', $post_id) )
-			{
-			    echo '<ul>';
-
-			    while( the_repeater_field('ko_band_repetable_song_details', $post_id) )
-			    {
-			        echo '<li>name-details = ' . get_sub_field('name-details') . ', length = ' . get_sub_field('length') .', detail = ' . get_sub_field('detail') .',etc</li>';
-			    }
-
-			    echo '</ul>';
-			}
-*/
-
-  
-
-
-		/*
-
-					*/
-
-		 $album_repetable_stores = get_post_meta($post_id, "ko_band_repetable_song_stores", false );
-		 foreach ($album_repetable_stores as $key => $value_repetable_song_stores) {
-
-		 	print_r( $value_repetable_song_stores);
-		 	# code...
-		 }
-	 endwhile; // end of the loop. 
-endif;
-endif;
-
-/**************************************************************************************************/
-
- $args_singles = array(
-
-	 	 
+			);
+$args_singles = array(
 		  	'post_type' => 'singles',
 		  	'post_staus'=> 'publish',
 		 	'posts_per_page' => -1		  
   
-	);
+			);
 
- $singles_posts = new WP_Query( $args_singles );
- $total_singles = $singles_posts->found_posts; 
-if(!empty('singles')):
- if ( $singles_posts->have_posts() ) : 
- 	//start loop
-	 while ( $singles_posts->have_posts() ) : $singles_posts->the_post(); 
+$album_posts = new WP_Query($args_album);
 
-		$post_id = get_the_ID();
-/*$all  = get_post_meta($post_id);
-		echo "<pre>";
-		print_r($all);
-	echo "</pre>";*/
-		 ?>
-			<a href="<?php the_permalink();?>"><?php the_title();?></a>
-			<?php 
-			 the_post_thumbnail(array(200,200));
-
-		 $singles_length = get_post_meta( $post_id, 'ko_band_singles_length', false );
-		 foreach ($singles_length as $key => $value_singlelength) {
-
-		 	print_r( $value_singlelength);
-		 	# code...
-		 }
-
-		  $singles_daterelease = get_post_meta($post_id, "ko_band_singles_date_release", false );
-		   foreach ($singles_daterelease as $key => $value_singledaterelease) {
-
-		 	print_r( $value_singledaterelease);
-		 	# code...
-		 }
-
-		  $singles_repetable_stores = get_post_meta($post_id, "ko_band_repetable_singles_stores", true );
-		
-			if ($singles_repetable_stores) {
-			  for ($i=0; $i<$singles_repetable_stores; $i++) {
-			    $meta_key_name = 'ko_band_repetable_singles_stores'.$i.'name';
-			    $sub_field_value_name = get_post_meta($post_id, $meta_key_name, true);
-			  }
-			}
-			if ($singles_repetable_stores) {
-			  for ($i=0; $i<$singles_repetable_stores; $i++) {
-			    $meta_key_link = 'ko_band_repetable_singles_stores'.$i.'link';
-			    $sub_field_value_link = get_post_meta($post_id, $meta_key_link, true);
-			  }
-			}
-
-		 
-	 endwhile; // end of the loop. 
-endif;
-endif;
+    if ($album_posts->have_posts() ) : 
  
+	while( $album_posts->have_posts() ) : $album_posts->the_post();
+		
+	$post_id = get_the_ID();?>
+
+		<a href="<?php the_permalink();?>"><?php the_title();?><br><?php the_post_thumbnail(array(200,200));?><br><?php the_content();?></a>
+
+        <?php $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
+		
+		$album_length = get_post_meta($post_id, "ko_band_album_length", false ); 
+		$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
+		$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
+
+		
+		<?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?> <br>
+        <?php if(isset($album_length[0])) 	{ echo  $album_length[0]; } ?> <br>
+
+		<?php foreach ($album_song_details[0] as  $value_song_details) { 
+			
+			echo "<br>";
+			echo $value_song_details['name-details']; 
+			echo "<br>"; 
+		    echo $value_song_details['length'];
+		    echo "<br>";
+			echo $value_song_details['detail'];
+			echo "<br>"; 
+			} 
+
+		foreach ($album_song_store[0] as  $value_song_store) { 
+			
+			echo "<br>"; 
+			echo $value_song_store['name-store']; 
+			echo "<br>"; 
+			echo $value_song_store['link']; 
+			echo "<br>"; 
+	 } 
+
+	endwhile; // end of the loop. 
+endif;
+
+$single_posts = new WP_Query($args_singles);
+
+	if ($single_posts->have_posts() ) :
+
+	while ($single_posts->have_posts() ) : $single_posts->the_post();
+
+	$post_id = get_the_ID(); ?>
+
+	<a href="<?php the_permalink();?>"><?php the_title();?><?php the_post_thumbnail(array(200,200));?><?php the_content();?></a>
+
+        <?php $single_date = get_post_meta( $post_id, 'ko_band_singles_date_release', false );
+		$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
+		$single_store = get_post_meta($post_id, "ko_band_repetable_singles_stores", false); ?>
+
+
+			<a href="<?php the_permalink();?>"><?php the_title();?></a>
+
+		<?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?> <br>
+        <?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?> <br>
+
+        <?php foreach ($single_store[0] as  $value_single_store) { 
+			
+			echo "<br>"; 
+			echo $value_single_store['name']; 
+			echo "<br>"; 
+			echo $value_single_store['link']; 
+			echo "<br>"; 
+
+
+		} 
+ 	endwhile; 
+endif; 
 ?>
-
-
-

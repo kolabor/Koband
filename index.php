@@ -14,13 +14,28 @@
 
 get_header(); 
 
+$count_slides = wp_count_posts('slides')->publish;
+//The if function to determine if 
+if("Slides" && $count_slides > 0) {
+get_template_part( 'custom/templates/slides', 'template' );}
+else { echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this section there must be slider</p>"; };
+
+
+/*
+if("posts" && $count_news > 0) {
+	get_template_part('custom/templates/news', 'template');}
+else {
+	get_template_part('custom/templates/media', 'template');
+}*/
+
 $first_section = get_theme_mod('ko_band_first_render_moduls');
 $second_section = get_theme_mod('ko_band_second_render_moduls');
 $third_section = get_theme_mod('ko_band_third_render_moduls');
 $fourth_section = get_theme_mod('ko_band_fourth_render_moduls');
+$fifth_section = get_theme_mod('ko_band_fifth_render_moduls');
+$sixth_section = get_theme_mod('ko_band_sixth_render_moduls');
 
 //Declaration of template variables
-
 $count_album = wp_count_posts('album')->publish; 
 $count_singles = wp_count_posts('singles')->publish;
 $count_discography = "";
@@ -29,6 +44,8 @@ if ($count_album > 0 || $count_singles > 0) {
 	$count_discography = true;
 };
 
+//$count_contact = wp_count_posts('')->publish;
+$count_news = wp_count_posts('post')->publish;
 $count_media = wp_count_posts('media')->publish;
 $count_theband = wp_count_posts('theband')->publish;
 $count_tour = wp_count_posts('tour')->publish;
@@ -54,6 +71,14 @@ echo "<p>****************************Section 1**********************</p>";
 
 	elseif ($first_section == "Tour/Events" && $count_tour > 0) {
 		get_template_part( 'custom/templates/tour', 'template' );
+	}
+
+	elseif ($first_section == "News" && $count_news > 0) {
+		get_template_part( 'custom/templates/news', 'template');
+	}
+
+	elseif ($first_section == "Contact" && $count_contact > 0) {
+		get_template_part( 'custom/template/contact', 'template');
 	};
 
 echo "<p>**********************************************************</p>";
@@ -83,6 +108,14 @@ echo "<p>****************************Section 2**********************</p>";
 	elseif ($second_section == "Tour/Events" && $count_tour > 0) 
 	{
 		get_template_part( 'custom/templates/tour', 'template' );
+	}
+
+	elseif ($second_section == "News" && $count_news > 0) {
+		get_template_part( 'custom/templates/news', 'template');
+	}
+
+	elseif ($second_section == "Contact" && $count_contact > 0) {
+		get_template_part( 'custom/template/contact', 'template');
 	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
@@ -110,7 +143,15 @@ echo "<p>****************************Section 3**********************</p>";
   	elseif ($third_section =="Tour/Events" && $count_tour > 0)
   	{
    		get_template_part( 'custom/templates/tour', 'template' );
-  	};
+  	}
+
+  	elseif ($third_section == "News" && $count_news > 0) {
+		get_template_part( 'custom/templates/news', 'template');
+	}
+
+	elseif ($third_section == "Contact" && $count_contact > 0) {
+		get_template_part( 'custom/template/contact', 'template');
+	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Third Sections if statemend ends here
@@ -136,10 +177,86 @@ echo "<p>****************************Section 4**********************</p>";
     elseif ($fourth_section =="Tour/Events" && $count_tour > 0)
     {
        	get_template_part( 'custom/templates/tour', 'template' );
-    };
+    }
+
+    elseif ($fourth_section == "News" && $count_news > 0) {
+		get_template_part( 'custom/templates/news', 'template');
+	}
+
+	elseif ($fourth_section == "Contact" && $count_contact > 0) {
+		get_template_part( 'custom/template/contact', 'template');
+	};
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Fourth Sections if statemend ends here
+
+//Fifth Sections if statemend starts here
+/***********************************************************************************/
+echo "<p>****************************Section 5**********************</p>";
+  	if($fifth_section =="Discography" && $count_discography == true)
+  	{
+       	get_template_part( 'custom/templates/discography', 'template' );
+    }
+
+    elseif ($fifth_section =="Media" && $count_media > 0)
+    {
+       	get_template_part( 'custom/templates/media', 'template' );
+    }
+    
+    elseif ($fifth_section =="The Band" && $count_theband > 0)
+    {
+       	get_template_part( 'custom/templates/theband', 'template' );
+    }
+
+    elseif ($fifth_section =="Tour/Events" && $count_tour > 0)
+    {
+       	get_template_part( 'custom/templates/tour', 'template' );
+    }
+
+    elseif ($fifth_section == "News" && $count_news > 0) {
+		get_template_part( 'custom/templates/news', 'template');
+	}
+
+	elseif ($fifth_section == "Contact" && $count_contact > 0) {
+		get_template_part( 'custom/template/contact', 'template');
+	};
+echo "<p>**********************************************************</p>";
+/***********************************************************************************/
+//Fifth Sections if statemend ends here
+
+//Sixth Sections if statemend starts here
+/***********************************************************************************/
+echo "<p>****************************Section 6**********************</p>";
+  	if($sixth_section =="Discography" && $count_discography == true)
+  	{
+       	get_template_part( 'custom/templates/discography', 'template' );
+    }
+
+    elseif ($sixth_section =="Media" && $count_media > 0)
+    {
+       	get_template_part( 'custom/templates/media', 'template' );
+    }
+    
+    elseif ($sixth_section =="The Band" && $count_theband > 0)
+    {
+       	get_template_part( 'custom/templates/theband', 'template' );
+    }
+
+    elseif ($sixth_section =="Tour/Events" && $count_tour > 0)
+    {
+       	get_template_part( 'custom/templates/tour', 'template' );
+    }
+
+    elseif ($sixth_section == "News" && $count_news > 0) {
+		get_template_part( 'custom/templates/news', 'template');
+	}
+
+	elseif ($sixth_section == "Contact" && $count_contact > 0) {
+		get_template_part( 'custom/template/contact', 'template');
+	};
+echo "<p>**********************************************************</p>";
+/***********************************************************************************/
+//Sixth Sections if statemend ends here
 
 
 get_footer(); 

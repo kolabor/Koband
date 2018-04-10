@@ -362,6 +362,8 @@ $wp_customize->add_control( 'ko_band_first_render_moduls',
         'type' => 'select',
         'choices' => array(
             'Blank' => esc_html__( 'blank',       'koband' ),
+            'News' => esc_html__( 'News',       'koband' ),
+            'Contact' => esc_html__( 'Contact',       'koband' ),
             'Discography' => esc_html__( 'Discography',       'koband' ),
             'Media' => esc_html__( 'Media',      'koband' ),
             'The Band' => esc_html__( 'The Band',       'koband' ),
@@ -379,6 +381,8 @@ $wp_customize->add_control( 'ko_band_second_render_moduls',
         'type' => 'select',
          'choices' => array(
             'Blank' => esc_html__( 'blank',       'koband' ),
+            'News' => esc_html__( 'News',       'koband' ),
+            'Contact' => esc_html__( 'Contact',       'koband' ),
             'Discography' => esc_html__( 'Discography',       'koband' ),
             'Media' => esc_html__( 'Media',      'koband' ),
             'The Band' => esc_html__( 'The Band',       'koband' ),
@@ -396,6 +400,8 @@ $wp_customize->add_control( 'ko_band_third_render_moduls',
         'type' => 'select',
        'choices' => array(
             'Blank' => esc_html__( 'blank',       'koband' ),
+            'News' => esc_html__( 'News',       'koband' ),
+            'Contact' => esc_html__( 'Contact',       'koband' ),
             'Discography' => esc_html__( 'Discography',       'koband' ),
             'Media' => esc_html__( 'Media',      'koband' ),
             'The Band' => esc_html__( 'The Band',       'koband' ),
@@ -413,6 +419,46 @@ $wp_customize->add_control( 'ko_band_fourth_render_moduls',
         'type' => 'select',
         'choices' => array(
             'Blank' => esc_html__( 'blank',       'koband' ),
+            'News' => esc_html__( 'News',       'koband' ),
+            'Contact' => esc_html__( 'Contact',       'koband' ),
+            'Discography' => esc_html__( 'Discography',       'koband' ),
+            'Media' => esc_html__( 'Media',      'koband' ),
+            'The Band' => esc_html__( 'The Band',       'koband' ),
+            'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
+        )
+       
+    )
+);
+$wp_customize->add_setting( 'ko_band_fifth_render_moduls' );
+$wp_customize->add_control( 'ko_band_fifth_render_moduls',
+    array(
+        'label' => esc_html__( 'Fifth Module on Home Page', 'koband' ),
+        'section' => 'static_front_page',
+        'settings'   => 'ko_band_fifth_render_moduls',
+        'type' => 'select',
+        'choices' => array(
+            'Blank' => esc_html__( 'blank',       'koband' ),
+            'News' => esc_html__( 'News',       'koband' ),
+            'Contact' => esc_html__( 'Contact',       'koband' ),
+            'Discography' => esc_html__( 'Discography',       'koband' ),
+            'Media' => esc_html__( 'Media',      'koband' ),
+            'The Band' => esc_html__( 'The Band',       'koband' ),
+            'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
+        )
+       
+    )
+);
+$wp_customize->add_setting( 'ko_band_sixth_render_moduls' );
+$wp_customize->add_control( 'ko_band_sixth_render_moduls',
+    array(
+        'label' => esc_html__( 'Sixth Module on Home Page', 'koband' ),
+        'section' => 'static_front_page',
+        'settings'   => 'ko_band_sixth_render_moduls',
+        'type' => 'select',
+        'choices' => array(
+            'Blank' => esc_html__( 'blank',       'koband' ),
+            'News' => esc_html__( 'News',       'koband' ),
+            'Contact' => esc_html__( 'Contact',       'koband' ),
             'Discography' => esc_html__( 'Discography',       'koband' ),
             'Media' => esc_html__( 'Media',      'koband' ),
             'The Band' => esc_html__( 'The Band',       'koband' ),

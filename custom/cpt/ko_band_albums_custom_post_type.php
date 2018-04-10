@@ -109,7 +109,7 @@ function ko_band_album_display_meta_box() {
 
 <div class="container" id="ko_band_album_meta_box_one" >
     <div class="row blank">
-        <div class="col-sm"><?php _e('On the following fields you can add or remove songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php _e('On the following fields you can add or remove your Album songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
 
     <div class="row-top">
@@ -159,7 +159,11 @@ function ko_band_album_display_meta_box() {
 
 <!--Song_store-->
 <div class="container" id="ko_band_album_meta_box_store">
+    <div class="row blank">
+    <div class="col-sm"><?php _e('On the following fields you can add or remove your Store links for your Albums by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+    </div>
     <div class="row-top">
+
         <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
         <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
         <div class="col-sm"></div>
@@ -170,6 +174,7 @@ function ko_band_album_display_meta_box() {
         foreach ($song_stores as $field_stores ) {    ?>
    
     <div class="row">
+
         <div class="col-sm"><input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></div>
         <div class="col-sm"><input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></div>
         <div class="col-sm"></div>
@@ -179,6 +184,7 @@ function ko_band_album_display_meta_box() {
 <?php } else :  ?>
          <!-- show a blank one--> 
     <div class="row">
+
         <div class="col-sm"><input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
         <div class="col-sm"><input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
         <div class="col-sm"></div>
