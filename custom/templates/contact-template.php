@@ -53,7 +53,7 @@ $contact_phone = get_theme_mod('ko_band_phone', false );
         <div class="col-google"><?php _e('Google Map', 'koband'); ?> </div>
         <?php echo $google_map; ?>
 
-			<iframe class="col-sm" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21817368.134000897!2d4.124021438720625!3d48.12464519333026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ed8886cfadda85%3A0x72ef99e6b3fcf079!2sEurope!5e0!3m2!1sen!2smk!4v1523369113798" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			
 		                  
    </div>
 </div>
