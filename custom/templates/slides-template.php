@@ -22,7 +22,7 @@
 			);
 
  $slider_posts = new WP_Query($args_slider);
-
+ 	
     if ($slider_posts->have_posts() ) : 
  
 	while( $slider_posts->have_posts() ) : $slider_posts->the_post();
