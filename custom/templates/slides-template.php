@@ -26,17 +26,22 @@
     if ($slider_posts->have_posts() ) : 
  
 	while( $slider_posts->have_posts() ) : $slider_posts->the_post();
-		
+	
 	$post_id = get_the_ID();
-	the_post_thumbnail('full');
+	
+		$slider_type = get_post_meta( $post_id, 'ko_band_slides_check', true);
         $slider_video = get_post_meta( $post_id, 'ko_band_slides_video', false );
 		$slider_title = get_post_meta($post_id, "ko_band_slides_title", false );
 		$slider_subtitle = get_post_meta($post_id, "ko_band_slides_subtitle", false );
 		$slider_button_title = get_post_meta($post_id, "ko_band_slides_button_title", false );
 		$slider_button_link = get_post_meta($post_id,  "ko_band_slides_button_link", false );
 	?>
-	<div class="tour_row">
-            	<?php if(isset($slider_video[0])) 		 	{ echo  $slider_video[0]; } ?><br>
+				<?php if($slider_type == 'video'){
+					echo  $slider_video[0];
+				}
+				elseif ($slider_type == 'image') {
+					echo the_post_thumbnail('full');
+				} ?>
             	<?php if(isset($slider_title[0])) 	 		{ echo  $slider_title[0]; } ?><br>
             	<?php if(isset($slider_subtitle[0])) 		{ echo  $slider_subtitle[0]; } ?><br>
             	<?php if(isset($slider_button_title[0])) 	{ echo  $slider_button_title[0]; } ?><br>
