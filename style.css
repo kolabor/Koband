@@ -171,38 +171,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     display: block!important;
 }
 
-
-.load_more{ 
-    display: block; 
-    clear: both; 
-    position: relative;
-}
-.load_more a, .load_more .loader{ 
-    display: block; 
-    height: 90px; 
-    font-size: 16px; 
-    font-weight: bold; 
-    color: #fff;
-    text-align: center;
-    line-height: 90px;
-    background: #000;
-    overflow: hidden; 
-    position: relative; 
-
-}
-
-.load_more{ 
-    display: block; 
-    clear: both; 
-    position: relative; 
-}
-
-.load_more a:hover{ 
-
-    color: #999; 
-
-}
-
 @media only screen and (max-width: 768px) {
     header {height: 40vh;}
     .mobile-nav-icon { display: inline-block; margin-top:17px;  }
@@ -249,4 +217,22 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 @media only screen and (max-width: 360px) {
   .logo {margin-right: 10px;}
 }
-
+.loadmore{
+    width: 150px
+    background-color: #dddddd;
+    border-radius: 2px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing:1px;
+    cursor:pointer;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;  
+}
+.loadmore:hover{
+    background-color: #767676;
+    color: #fff;
+}

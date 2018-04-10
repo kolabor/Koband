@@ -10,28 +10,22 @@
  */
 
 get_header(); ?>
-<?php
-$images = get_post_meta($post->ID, 'vdw_gallery_id', true);
-foreach ($images as $image) {
-    $image_obj = get_post($image);
-    echo $image_obj->post_excerpt;
-} ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+<?php 
+ if (have_posts() ) : 
+ 	//start loop ?>
 
-		<?php get_template_part( 'content', 'single' ); ?>
+<div class='tour_holder'>
 
-		<?php
-			/**
-			 * kolabor_band_after_post hook
-			 *
-			 * @hooked kolabor_band_post_navigation - 10
-			 */
-			do_action_e( 'ko_band_after_post', 'koband');
+<?php while (have_posts() ) : the_post(); 
 
-		?>
-	<?php endwhile; // end of the loop. ?>
+		$post_id = get_the_ID(); ?>
 
-<?php
-get_sidebar();
+		<div id="title"><?php the_title();?></div>
+		<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
+		<div id="excerpt"><?php the_content(); ?></div>
+		
+</div> 
+<?php endwhile; 
+endif;
 get_footer(); ?>
