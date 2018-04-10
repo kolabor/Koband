@@ -35,7 +35,7 @@
 		$slider_button_title = get_post_meta($post_id, "ko_band_slides_button_title", false );
 		$slider_button_link = get_post_meta($post_id,  "ko_band_slides_button_link", false );
 	?>
-	<div class="tour_row">
+	
             	<?php if(isset($slider_video[0])) 		 	{ echo  $slider_video[0]; } ?><br>
             	<?php if(isset($slider_title[0])) 	 		{ echo  $slider_title[0]; } ?><br>
             	<?php if(isset($slider_subtitle[0])) 		{ echo  $slider_subtitle[0]; } ?><br>
