@@ -209,7 +209,11 @@ add_action( 'wp_head' , 'ko_band_dynamic_css' );*/
 
 function ko_band_custom_wp_front_resources() {
 
-	if( !is_admin() ) { wp_enqueue_style( 'style', get_stylesheet_uri() );} 
+	if( !is_admin() ) 
+		{ 
+			wp_enqueue_style( 'style', get_stylesheet_uri() );
+            wp_enqueue_script("jquery");
+		 } 
 }
 add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
 /* Register frontend resources ends here */

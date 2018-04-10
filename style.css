@@ -202,6 +202,10 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     color: #999; 
 
 }
-
+.carousel-item img
+{
+    width: 100% !important;
+    height: auto;
+}
 
 
