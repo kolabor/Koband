@@ -32,9 +32,9 @@ Text Domain: koband
     float: left;
 }
 .img {
-	    width: 30%;
+	width: 30%;
     float: right;
-        background-color: #fff;
+    background-color: #fff;
     text-align: center;
 }
 
@@ -267,12 +267,11 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 }
 
 .sl-content {
-    height: 30%;
+    height: auto;
     width: 40%;
     left: 15%!important;
     top: 30%!important;
     position: absolute;
-    bottom: 20px;
     z-index: 10;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -308,5 +307,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
 .carousel-indicators {
     top: 90%!important;
-    bottom: none!important;
+   bottom: 100px!important;
 }
+

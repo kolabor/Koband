@@ -56,7 +56,7 @@ $count_tour = wp_count_posts('tour')->publish;
 
 //First Section if statement starts here
 /********************************************************************************/
-echo "<p>****************************Section 1**********************</p>";
+//echo "<p>****************************Section 1**********************</p>";
 	if($first_section == "Discography" && $count_discography == true) 
 	{ 
      	get_template_part( 'custom/templates/discography', 'template' ); 
