@@ -76,7 +76,7 @@
                         
 
                         ?>
-                        <iframe align="center" width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe> <!--
+<!--                        <iframe align="center" width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe> 
                         <iframe align="center" width="100%" height="100%" src="https://youtu.be/kpiR041g_K0" frameborder="yes" scrolling="yes" name="myIframe" id="myIframe"> </iframe> -->
                         <?php
 		            

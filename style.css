@@ -220,36 +220,23 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 }
 
 
-.load_more{ 
-    display: block; 
-    clear: both; 
-    position: relative;
-}
-.load_more a, .load_more .loader{ 
-    width: 150px;
-    display: block; 
-    height: 90px; 
-    font-size: 16px; 
-    font-weight: bold; 
-    color: #fff;
+.sunset-icon{
+    background-color: #ddd;
+    border-radius: 2px;
+    display: block;
     text-align: center;
-    line-height: 90px;
-    background: #000;
-    overflow: hidden; 
-    position: relative; 
-
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing:1px;
+    cursor:pointer;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;  
 }
-
-.load_more{ 
-    display: block; 
-    clear: both; 
-    position: relative; 
-}
-
-.load_more a:hover{ 
-
-    color: #999; 
-
+.sunset-icon:hover{
+    background-color: #767676;
+    color: #fff;
 }
 .carousel-item img
 {

@@ -11,35 +11,32 @@
  * @subpackage Koband
  * @since Koband 1.0
  */?>
-
-<div class="entry-content">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		<div class="container sunset-posts-container">
  
- <?php
-	$args_news = array
-	(		
-		 'post_type' => 'post',   
-		 'post_staus'=> 'publish',
-		 'posts_per_page' => '3',
-		 'paged' => 1,
-	);
+			 <?php
+				
+				if ( have_posts() ) : 
+				//start loop ?>
+						<?php while ( have_posts() ) : the_post(); 
 
-	$news_posts = new WP_Query( $args_news );
+							?>
 
-	if ( $news_posts->have_posts() ) : 
-	 	//start loop ?>
-	 	<div class="my-posts">
-			<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); 
+							<div id="title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
+							<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
+							<div id="excerpt"><?php the_excerpt(); ?></div>
+							<a class="read_more" href="<?php the_permalink();?>"><?php _e('Read more', 'koband'); ?></a>
+						<?php endwhile; ?>
+				<?php endif; ?>
+			<!--<button class="loadmore">Load More...</button>-->
+			<!--
+			<div class="loadmore">Load More...</div> -->
 
-				$post_id = get_the_ID(); ?>
+			</div><!-- container -->
 
-				<div id="title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
-				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
-				<div id="excerpt"><?php the_excerpt(); ?></div>
-				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Read more', 'koband'); ?></a>
-			<?php endwhile; ?>
-		</div> 
-	<?php endif; ?>
-
-<div class="loadmore">More posts</div>
-
-</div><!-- entry content -->
+			<div class="container text-center">
+				<a class="btn btn-lg btn-default sunset-load-more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>"><span class="sunset-icon sunset-loading">Load more</span></a>
+			</div>
+		</main>
+	</div><!--#primary -->

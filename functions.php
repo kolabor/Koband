@@ -30,6 +30,7 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
  * Register all neccessary theme files from their proper directory
  */
 require 'custom/koband/ko_band_functions.php';
+require 'custom/koband/ajax.php';
 require 'custom/koband/ko_band_options.php';
 require 'custom/cpt/ko_band_albums_custom_post_type.php';
 require 'custom/cpt/ko_band_media_custom_post_type.php';
@@ -48,5 +49,7 @@ function ko_band_enqueue_dynamic_css() {
     wp_enqueue_style('dynamic-css',  "{$koband_dir}/style/ko_band_dynamic.css.php",array(),$version);
   }
 }
+
+
 
 ?>
