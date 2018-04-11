@@ -40,7 +40,7 @@ get_header();?>
 		
 		$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false);
 
-		foreach ($media_video_gallery[0] as  $value_video_gallery) {
+		foreach ($media_video_gallery as  $value_video_gallery) {
 			
 
 			//var_dump($value_video_gallery);
@@ -50,7 +50,7 @@ get_header();?>
 
 		} 
 
-       foreach ($media_gallery[0] as  $value_image) {
+       foreach ($media_gallery as  $value_image) {
 			
 			//var_dump($value_video_gallery);
 			echo "<br>";
@@ -58,14 +58,7 @@ get_header();?>
 			echo "<br>";
 		} 
 
-       
-
-
-    endwhile;
+     endwhile;
     endif;
-    //echo wp_get_attachment_image( 143, 'full' );
-
-    /*echo "<pre>";
-    print_r($media_gallery);
-    echo "</pre>";*/
+   
 ?>

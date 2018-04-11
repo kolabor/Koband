@@ -62,31 +62,33 @@
 		$slider_button_link = get_post_meta($post_id,  "ko_band_slides_button_link", false );
 	?>
 
-
-
 			  <?php if ( $i == 1 ): ?>
 		        <div class="carousel-item active">
 		      <?php else: ?>
 		        <div class="carousel-item">
 		      <?php endif; ?>
 
+		      			<?php
+							$slide_video = get_theme_mod('ko_band_slides_video');
+							$slide_image = get_theme_mod('ko_band_slides_image');
+
+						?>
 
 		             <?php if ($slider_type == "video") 
 		             {
-                        
-
                         ?>
                         <iframe align="center" width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe> <!--
                         <iframe align="center" width="100%" height="100%" src="https://youtu.be/kpiR041g_K0" frameborder="yes" scrolling="yes" name="myIframe" id="myIframe"> </iframe> -->
                         <?php
-		            
-		             }
+                        if(isset($slide_video[0])) {echo $slide_video[0];}
+		         	 }
 		             else if($slider_type == "image") 
-		             	{
+		             {
 		             		$url = wp_get_attachment_url( get_post_thumbnail_id() );
 		             		?><img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
-
-		             <?php } ?>
+		             <?php } 
+		           		  if(isset($slide_image[0])) {echo $slide_image[0];}
+		             ?>
 		            
             	
             	<?php //if(isset($slider_button_title[0])) 	{ echo  $slider_button_title[0]; } ?><br>

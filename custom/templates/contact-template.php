@@ -107,40 +107,41 @@ $soundcloud= get_theme_mod( 'ko_band_soundcloud_social_media' , false);
     <div class="row-socialmedia"> 
     
         <div class="col-sm"><?php _e('Facebook', 'koband'); ?></div>
-            <?php if(isset($facebook[0])) { echo  $facebook; } ?><br>
+            <?php if(isset($facebook[0])) { echo $facebook;} ?><br>
+
    
         <div class="col-sm"><?php _e('Twitter', 'koband'); ?></div>
-            <?php if(isset($twitter[0])) { echo  $twitter[0]; } ?><br>
+            <?php if(isset($twitter[0])) { echo  $twitter; } ?><br>
 
         <div class="col-sm"><?php _e('Istagram', 'koband'); ?></div>
-            <?php if(isset($instagram[0])) { echo  $instagram[0]; } ?><br>
+            <?php if(isset($instagram[0])) { echo  $instagram; } ?><br>
 
         <div class="col-sm"><?php _e('Googleplus', 'koband'); ?></div>
-            <?php if(isset($googleplus[0])) { echo  $googleplus[0]; } ?><br>
+            <?php if(isset($googleplus[0])) { echo  $googleplus; } ?><br>
 
         <div class="col-sm"><?php _e('Linkedin', 'koband'); ?></div>
-            <?php if(isset($linkedin[0])) { echo  $linkedin[0]; } ?><br>
+            <?php if(isset($linkedin[0])) { echo  $linkedin; } ?><br>
 
         <div class="col-sm"><?php _e('Youtube', 'koband'); ?></div>
-            <?php if(isset($youtube[0])) { echo  $youtube[0]; } ?><br>
+            <?php if(isset($youtube[0])) { echo  $youtube; } ?><br>
 
         <div class="col-sm"><?php _e('Pinterest', 'koband'); ?></div>
-            <?php if(isset($pinterest[0])) { echo  $pinterest[0]; } ?><br>
+            <?php if(isset($pinterest[0])) { echo  $pinterest; } ?><br>
 
         <div class="col-sm"><?php _e('Spotify', 'koband'); ?></div>
-            <?php if(isset($spotify[0])) { echo  $spotify[0]; } ?><br>
+            <?php if(isset($spotify[0])) { echo  $spotify; } ?><br>
 
         <div class="col-sm"><?php _e('Soundcloud', 'koband'); ?></div>
-            <?php if(isset($soundcloud[0])) { echo  $soundcloud[0]; } ?><br>
+            <?php if(isset($soundcloud[0])) { echo  $soundcloud; } ?><br>
 
         <div class="col-sm"><?php _e('Bandcamp', 'koband'); ?></div>
-            <?php if(isset($bandcamp[0])) { echo  $bandcamp[0]; } ?><br>
+            <?php if(isset($bandcamp[0])) { echo  $bandcamp; } ?><br>
 
         <div class="col-sm"><?php _e('Deezer', 'koband'); ?></div>
-            <?php if(isset($deezer[0])) { echo  $deezer[0]; } ?><br>
+            <?php if(isset($deezer[0])) { echo  $deezer; } ?><br>
 
         <div class="col-sm"><?php _e('Apple', 'koband'); ?></div>
-            <?php if(isset($apple[0])) { echo  $apple[0]; } ?><br>
+            <?php if(isset($apple[0])) { echo  $apple; } ?><br>
 </div> 
 </div>                                     
   <?php                     
