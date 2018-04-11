@@ -21,6 +21,7 @@ $args_album = array (
 		  	'post_staus'=> 'publish',
 		 	'posts_per_page' => -1
 
+
 			);
 $args_singles = array(
 		  	'post_type' => 'singles',
@@ -44,6 +45,7 @@ $album_posts = new WP_Query($args_album);
 		$album_length = get_post_meta($post_id, "ko_band_album_length", false ); 
 		$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 		$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
+
 		
 		<?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?> <br>
         <?php if(isset($album_length[0])) 	{ echo  $album_length[0]; } ?> <br>
@@ -85,6 +87,9 @@ $single_posts = new WP_Query($args_singles);
 		$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
 		$single_store = get_post_meta($post_id, "ko_band_repetable_singles_stores", false); ?>
 
+
+			<a href="<?php the_permalink();?>"><?php the_title();?></a>
+
 		<?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?> <br>
         <?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?> <br>
 
@@ -95,6 +100,7 @@ $single_posts = new WP_Query($args_singles);
 			echo "<br>"; 
 			echo $value_single_store['link']; 
 			echo "<br>"; 
+
 
 		} 
  	endwhile; 

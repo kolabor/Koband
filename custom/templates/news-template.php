@@ -14,11 +14,15 @@
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<div class="container sunset-posts-container">
- 
+ 			 <div class="news">
+<div class="row">
+	 <h1>NEWS</h1>
 			 <?php
 				
 				if ( have_posts() ) : 
 				//start loop ?>
+				<section id="news" class="row" >
+
 						<?php while ( have_posts() ) : the_post(); 
 
 							?>
@@ -29,6 +33,7 @@
 							<a class="read_more" href="<?php the_permalink();?>"><?php _e('Read more', 'koband'); ?></a>
 						<?php endwhile; ?>
 				<?php endif; ?>
+				</section>
 			<!--<button class="loadmore">Load More...</button>-->
 			<!--
 			<div class="loadmore">Load More...</div> -->
@@ -40,3 +45,4 @@
 			</div>
 		</main>
 	</div><!--#primary -->
+

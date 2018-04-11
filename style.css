@@ -32,9 +32,9 @@ Text Domain: koband
     float: left;
 }
 .img {
-	    width: 30%;
+	width: 30%;
     float: right;
-        background-color: #fff;
+    background-color: #fff;
     text-align: center;
 }
 
@@ -171,8 +171,10 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     display: block!important;
 }
 
-<<<<<<< HEAD
-@media only screen and (max-width: 768px) {
+
+
+/*@media only screen and (max-width: 768px) {
+>>>>>>> 5c0e0f1526338396ad769e1bed980655eac19622
     header {height: 40vh;}
     .mobile-nav-icon { display: inline-block; margin-top:17px;  }
     .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
@@ -192,7 +194,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
 }
 
-/* Small phones: from 0 to 375px */
+/* Small phones: from 0 to 375px 
 @media only screen and (max-width: 375px) {
           
          
@@ -217,7 +219,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     }
 @media only screen and (max-width: 360px) {
   .logo {margin-right: 10px;}
-}
+}*/
 
 
 .sunset-icon{
@@ -238,10 +240,62 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     background-color: #767676;
     color: #fff;
 }
+
+
+
+
+
+/* ----------------------------------------------- */
+/* Slider */
+/* -----------------------------------------------  */
+
 .carousel-item img
 {
     width: 100% !important;
-    height: auto;
+    height: 100vh;
 }
 
+.sl-content {
+    height: auto;
+    width: 40%;
+    left: 15%!important;
+    top: 30%!important;
+    position: absolute;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #fff;
+    text-align: left;
+    background:rgba(0,0,0,0.5);
+}
+
+.sl-content h5 {
+    font-size: 70px!important;
+    color: #ed4c4c;
+}
+
+.sl-content p {
+    font-size: 20px!important;
+    width:60%!important;
+}
+
+.btn-primary {
+        color: #d7d4d4!important;
+    background-color:#ca3333!important;
+    border-color: #8c8e95!important;
+}
+.btn-primary:hover {
+    background-color: #7e1c1c!important;
+    color: #fffbfb!important;
+}
+.btn-group-lg>.btn, .btn-lg {
+    font-size: 1.65rem!important;
+}
+
+.carousel-indicators {
+    top: 90%!important;
+   bottom: 100px!important;
+}
 
