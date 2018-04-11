@@ -35,9 +35,10 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        	<?php if ($slider_posts->have_posts() ) : while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
+
+        <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $slider_posts->current_post; ?>" class="active"></li>
+        <?php endwhile; endif; ?>
     </ol>
     <div class="carousel-inner">
     <?php 
@@ -67,6 +68,14 @@
 		      <?php else: ?>
 		        <div class="carousel-item">
 		      <?php endif; ?>
+		      	<?php	$url = wp_get_attachment_url( get_post_thumbnail_id() );
+		             		?><img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
+		             		
+		             		<div class="sl-content">
+								    <h5><?php if(isset($slider_title[0])) 	{ echo  $slider_title[0]; } ?></h5>
+								    <p><?php if(isset($slider_subtitle[0])) 	{ echo  $slider_subtitle[0]; } ?></p>
+								    <a class="btn btn-primary btn-lg" href="<?php if(isset($slider_button_link[0])) 	{ echo  $slider_button_link[0]; } ?>"><?php if(isset($slider_button_title[0])) 	{ echo  $slider_button_title[0]; } ?></a>
+						  </div>
 
 		      			<?php
 							$slide_video = get_theme_mod('ko_band_slides_video');
@@ -74,11 +83,11 @@
 
 						?>
 
-		             <?php if ($slider_type == "video") 
+		            <!-- <?php if ($slider_type == "video") 
 		             {
                         ?>
-                        <iframe align="center" width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe> <!--
-                        <iframe align="center" width="100%" height="100%" src="https://youtu.be/kpiR041g_K0" frameborder="yes" scrolling="yes" name="myIframe" id="myIframe"> </iframe> -->
+                        <iframe align="center" width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe> 
+                        
                         <?php
                         if(isset($slide_video[0])) {echo $slide_video[0];}
 		         	 }
@@ -86,13 +95,24 @@
 		             {
 		             		$url = wp_get_attachment_url( get_post_thumbnail_id() );
 		             		?><img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
+
 		             <?php } 
 		           		  if(isset($slide_image[0])) {echo $slide_image[0];}
 		             ?>
+
+		             		<div class="carousel-caption d-none d-md-block">
+								    <h5>...</h5>
+								    <p>...</p>
+						  </div>
+
+		             <?php } ?>-->
+
 		            
             	
-            	<?php //if(isset($slider_button_title[0])) 	{ echo  $slider_button_title[0]; } ?><br>
-            	<?php //if(isset($slider_button_link[0])) 	{ echo  $slider_button_link[0]; } ?><br>
+            	<br>
+            	<br>
+            	<br>
+            	<br>
 
                   </div>
 <?php
