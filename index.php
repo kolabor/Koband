@@ -21,6 +21,8 @@ get_template_part( 'custom/templates/slides', 'template' );}
 else { echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this section there must be slider</p>"; };
 
 
+
+
 /*
 if("posts" && $count_news > 0) {
 	get_template_part('custom/templates/news', 'template');}
@@ -258,6 +260,9 @@ echo "<p>****************************Section 6**********************</p>";
 echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Sixth Sections if statemend ends here
+
+
+
 
 
 get_footer(); 
