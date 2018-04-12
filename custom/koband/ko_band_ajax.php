@@ -22,6 +22,7 @@ function koband_load_more(){
 	$paged = $_POST["page"]+1;
 	$query = new WP_Query( array(
 		'post_type' => 'post',
+		'post_status' => 'publish',
 		'paged' => $paged,
 
 	));
@@ -32,7 +33,7 @@ function koband_load_more(){
 			<div id="title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
 			<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
 			<div id="excerpt"><?php the_excerpt(); ?></div>
-			<a class="read_more" href="<?php the_permalink();?>"><?php _e('Read more', 'koband'); ?></a>
+			<a class="read_more" href="<?php the_permalink();?>"><?php _e('Continue reading -->', 'koband'); ?></a>
 		<?php endwhile; ?>
 	<?php endif; 
 

@@ -17,12 +17,16 @@ function ko_band_RetinaDisplay() {
 ============================================
  */
 
-$(document).on('click', '.koband_load_more', function(){
+$('a').addClass('loading-load').find('.koband-loading').hide(320);
+$(document).on('click', '.koband_load_more:not(.loading)', function(){
 
 	var that = $(this);
 	var page = $(this).data('page');
 	var newPage = page+1;
 	var ajaxurl = $(this).data('url');
+
+	that.addClass('loading').find('.text').slideUp(320);
+	that.addClass('loading-load').find('.koband-loading').slideDown(320);
 
 	$.ajax({
 
@@ -40,7 +44,9 @@ $(document).on('click', '.koband_load_more', function(){
             
             console.log("-----success----");
             that.data('page', newPage);
-			$('.koband_post_container').append( response );
+			$('#news').append( response );
+			that.removeClass('loading').find('.text').slideDown(320);
+			that.addClass('loading-load').find('.koband-loading').hide(320);
 
 		}
 	});
