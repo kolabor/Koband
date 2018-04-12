@@ -22,7 +22,6 @@ else { echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this s
 
 
 
-
 /*
 if("posts" && $count_news > 0) {
 	get_template_part('custom/templates/news', 'template');}
@@ -262,10 +261,10 @@ echo "<p>**********************************************************</p>";
 //Sixth Sections if statemend ends here
 
 
-
-
-
 get_footer(); 
 
+
 ?>
+
+
 

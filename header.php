@@ -1,6 +1,6 @@
 <?php
 /**
- * Koband Theme Options file!
+ * Koband Theme Options header file!
  *
  *
  * @package Wordpress 
@@ -46,8 +46,11 @@ wp_head(); ?>
 
                       <?php wp_nav_menu($args); ?>
                     </div>
+
                   </nav>
                   </div>
+          
+         
 
                 </header>
 

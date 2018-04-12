@@ -20,7 +20,7 @@ if (have_posts() ) :
 	
  	//start loop ?>
 
-<div class='media_holder'>
+<div class='tour_holder'>
 
 <?php  while ( $loop->have_posts() ) : $loop->the_post(); 
 		

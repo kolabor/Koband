@@ -264,6 +264,7 @@ $wp_customize->add_setting( 'ko_band_apple_social_media' );
 
 /*Facebook*/
 $wp_customize->add_control( 'ko_band_facebook_social_media', array(
+    'genericon_class'   => 'facebook-alt',
     'label' => esc_html__( 'Facebook:', 'koband' ),
     'settings' => 'ko_band_facebook_social_media',
     'section' => 'ko_band_social_media_section',
@@ -271,6 +272,7 @@ $wp_customize->add_control( 'ko_band_facebook_social_media', array(
 
 /*Twitter*/
 $wp_customize->add_control( 'ko_band_twitter_social_media', array(
+    'genericon_class'   => 'twitter',
     'label' => esc_html__( 'Twitter:', 'koband' ),
     'settings' => 'ko_band_twitter_social_media',
     'section' => 'ko_band_social_media_section',
@@ -278,6 +280,7 @@ $wp_customize->add_control( 'ko_band_twitter_social_media', array(
 
 /*Instagram*/
 $wp_customize->add_control( 'ko_band_insagram_social_media', array(
+    'genericon_class'   => 'instagram',
     'label' => esc_html__( 'Instagram:', 'koband' ),
     'settings' => 'ko_band_insagram_social_media',
     'section' => 'ko_band_social_media_section',
@@ -285,6 +288,7 @@ $wp_customize->add_control( 'ko_band_insagram_social_media', array(
 
 /*Google +*/
 $wp_customize->add_control( 'ko_band_googleplus_social_media', array(
+    'genericon_class'   => 'googleplus',
     'label' => esc_html__( 'Google +:', 'koband' ),
     'settings' => 'ko_band_googleplus_social_media',
     'section' => 'ko_band_social_media_section',
@@ -292,6 +296,7 @@ $wp_customize->add_control( 'ko_band_googleplus_social_media', array(
 
 /*Linkedin*/
 $wp_customize->add_control( 'ko_band_linkedin_social_media', array(
+    'genericon_class'   => 'linkedin',
     'label' => esc_html__( 'Linkedin:', 'koband' ),
     'settings' => 'ko_band_linkedin_social_media',
     'section' => 'ko_band_social_media_section',
@@ -299,6 +304,7 @@ $wp_customize->add_control( 'ko_band_linkedin_social_media', array(
 
 /*Youtube*/
 $wp_customize->add_control( 'ko_band_youtube_social_media', array(
+    'genericon_class'   => 'youtube',
     'label' => esc_html__( 'Youtube:', 'koband' ),
     'settings' => 'ko_band_youtube_social_media',
     'section' => 'ko_band_social_media_section',
@@ -306,13 +312,15 @@ $wp_customize->add_control( 'ko_band_youtube_social_media', array(
 
 /*Pinterest*/
 $wp_customize->add_control( 'ko_band_pinterest_social_media', array(
+    'genericon_class'   => 'pinterest',
     'label' => esc_html__( 'Pinterest:', 'koband' ),
     'settings' => 'ko_band_pinterest_social_media',
     'section' => 'ko_band_social_media_section',
 ) );
 
-/*Github*/
+/*Spotify*/
 $wp_customize->add_control( 'ko_band_spotify_social_media', array(
+    'genericon_class'   => 'spotify',
     'label' => esc_html__( 'Spotify:', 'koband' ),
     'settings' => 'ko_band_spotify_social_media',
     'section' => 'ko_band_social_media_section',
