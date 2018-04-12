@@ -13,7 +13,7 @@
  */?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div class="container sunset-posts-container">
+		<div class="container koband_post_container">
  			 <div class="news">
 <div class="row">
 	 <h1>NEWS</h1>
@@ -41,7 +41,7 @@
 			</div><!-- container -->
 
 			<div class="container text-center">
-				<a class="btn btn-lg btn-default sunset-load-more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>"><span class="sunset-icon sunset-loading">Load more</span></a>
+				<a class="btn btn-lg btn-default koband_load_more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>"><span class="sunset-icon sunset-loading">Load more</span></a>
 			</div>
 		</main>
 	</div><!--#primary -->

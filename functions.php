@@ -30,7 +30,7 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
  * Register all neccessary theme files from their proper directory
  */
 require 'custom/koband/ko_band_functions.php';
-require 'custom/koband/ajax.php';
+require 'custom/koband/ko_band_ajax.php';
 require 'custom/koband/ko_band_options.php';
 require 'custom/cpt/ko_band_albums_custom_post_type.php';
 require 'custom/cpt/ko_band_media_custom_post_type.php';

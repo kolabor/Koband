@@ -1,17 +1,19 @@
 <?php 
 /*
 
-=====================
-	AJAX FUNCTIONS
-=====================
+============================
+	KOBAND AJAX FUNCTIONS
+============================
 
 
 */
 
-add_action( 'wp_ajax_nopriv_sunset_load_more', 'sunset_load_more' );
-add_action( 'wp_ajax_sunset_load_more', 'sunset_load_more' );
 
-function sunset_load_more(){
+
+add_action( 'wp_ajax_nopriv_koband_load_more', 'koband_load_more' );
+add_action( 'wp_ajax_koband_load_more', 'koband_load_more' );
+
+function koband_load_more(){
 	
 	$paged = $_POST["page"];
 	$query = new WP_Query( array(

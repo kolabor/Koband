@@ -12,7 +12,7 @@ function ko_band_RetinaDisplay() {
 };
 
 //$('.dropdown-toggle').dropdown();
-$(document).on('click', '.sunset-load-more', function(){
+$(document).on('click', '.koband_load_more', function(){
 
 	var that = $(this);
 	var page = $(this).data('page');
@@ -22,11 +22,10 @@ $(document).on('click', '.sunset-load-more', function(){
 	$.ajax({
 
 		url : ajaxurl,
-		type : 'post',
-		dataType: "json",
+		type : 'POST',
 		data : {
 			page : page,
-			action: 'sunset_load_more'
+			action: 'koband_load_more'
 		},
 		error : function( response ){
 			console.log("-----error----");
@@ -36,7 +35,7 @@ $(document).on('click', '.sunset-load-more', function(){
             
             console.log("-----success----");
             that.data('page', newPage);
-			$('.sunset-posts-container').append( response );
+			$('.koband_post_container').append( response );
 
 		}
 	});
