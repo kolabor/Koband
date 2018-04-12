@@ -15,6 +15,7 @@ if (have_posts() ) :
 	
  	//start loop ?>
 
+
 	<div class='media_holder'>
 
 		<?php  while ( have_posts() ) : the_post(); 
@@ -26,6 +27,7 @@ if (have_posts() ) :
 		 
 				<?php $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 				$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false);
+
 
 				foreach ($media_video_gallery[0] as  $value_video_gallery) {
 					//var_dump($value_video_gallery);
