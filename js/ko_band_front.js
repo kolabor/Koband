@@ -17,7 +17,7 @@ function ko_band_RetinaDisplay() {
 ============================================
  */
 
-$('a').addClass('loading-load').find('.koband-loading').hide(320);
+$('.koband_load_more').addClass('loading-load').find('.koband-loading').hide(320);
 $(document).on('click', '.koband_load_more:not(.loading)', function(){
 
 	var that = $(this);
@@ -43,10 +43,56 @@ $(document).on('click', '.koband_load_more:not(.loading)', function(){
 		success : function( response ){
             
             console.log("-----success----");
+            console.log(response);
             that.data('page', newPage);
-			$('#news').append( response );
+			$('.koband_post_news').append( response );
 			that.removeClass('loading').find('.text').slideDown(320);
 			that.addClass('loading-load').find('.koband-loading').hide(320);
+                    
+
+		}
+	});
+});
+
+
+/*
+============================================
+  Load more Media with Load-More button
+============================================
+ */
+
+$('.koband_load_media').addClass('loading-load').find('.koband-loading').hide(320);
+$(document).on('click', '.koband_load_media:not(.loading)', function(){
+
+	var that = $(this);
+	var page = $(this).data('page');
+	var newPage = page+1;
+	var ajaxurl = $(this).data('url');
+
+	that.addClass('loading').find('.text').slideUp(320);
+	that.addClass('loading-load').find('.koband-loading').slideDown(320);
+
+	$.ajax({
+
+		url : ajaxurl,
+		type : 'POST',
+		data : {
+			page : page,
+			action: 'koband_load_media'
+		},
+		error : function( response ){
+			console.log("-----error----");
+			console.log(response);
+		},
+		success : function( response ){
+            
+            console.log("-----success----");
+            console.log(response);
+            that.data('page', newPage);
+			$('.koband_post_media').append( response );
+			that.removeClass('loading').find('.text').slideDown(320);
+			that.addClass('loading-load').find('.koband-loading').hide(320);
+                    
 
 		}
 	});

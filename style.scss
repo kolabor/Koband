@@ -298,6 +298,30 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   top: 90%!important;
   bottom: 100px!important;
 }
+.koband_post_container {
+  border: 1px solid darkred;
+  background-color: #f7f7f7;
+  margin-bottom: 15px;
+}
+
+.col-sm-4, .col-sm-3 {
+  padding-bottom: 15px;
+}
+#news-title, #media-title {
+  padding-bottom: 12px;
+  padding-top: 7px;
+}
+#news-title a, #media-title a{
+  font-size: 20px;
+  color: darkred;
+  text-decoration: none;
+}
+#news-excerpt {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+}
+
 /*
     Ajax Loading
 -------------------------------------------

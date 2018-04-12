@@ -10,28 +10,38 @@
  */
 
 get_header(); 
-
-    $loop = new WP_Query( 
-    	array( 
-        'post_type' => 'media',   
-        'posts_per_page' => 15 ) );
 	
 if (have_posts() ) : 
 	
  	//start loop ?>
 
-<div class='media_holder'>
+	<div class='media_holder'>
 
-<?php  while ( $loop->have_posts() ) : $loop->the_post(); 
-		
-		$post_id = get_the_ID(); ?>
+		<?php  while ( have_posts() ) : the_post(); 
+				$post_id = get_the_ID(); ?>
 
-		<div id="title"><?php the_title();?></div>
-		    <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
-		<div id="excerpt"><?php the_content(); ?></div>
+				<div id="single-media-title"><?php the_title();?></div>
+				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
+				<div id="single-media-content"><?php the_content(); ?></div>
+		 
+				<?php $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
+				$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false);
 
-		<?php get_template_part( 'content', 'media' );?>
-</div> 
-<?php endwhile; 
+				foreach ($media_video_gallery[0] as  $value_video_gallery) {
+					//var_dump($value_video_gallery);
+					echo "<br>";
+					echo $value_video_gallery['link'];
+					echo "<br>";
+				} 
+
+		       foreach ($media_gallery[0] as  $value_image) {	
+					//var_dump($value_video_gallery);
+					echo "<br>";
+					echo wp_get_attachment_image( $value_image, 'thumbnail' );
+					echo "<br>";
+				} ?>
+	</div>
+
+		<?php endwhile; 
 endif;
 get_footer(); ?>
