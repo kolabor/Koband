@@ -92,8 +92,6 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 			$('.koband_post_media').append( response );
 			that.removeClass('loading').find('.text').slideDown(320);
 			that.addClass('loading-load').find('.koband-loading').hide(320);
-                    
-
 		}
 	});
 });

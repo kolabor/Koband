@@ -67,7 +67,7 @@ function koband_load_media(){
 		<?php while ( $gallery->have_posts() ) : $gallery->the_post();?>
 			<div class="col-sm-3"> 
 				<div id="media-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
-				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a><br>
+				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
 				
 				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a>
 			</div>
