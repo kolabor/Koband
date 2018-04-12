@@ -12,7 +12,9 @@
  * @since Koband 1.0
  */?>
 <div class="row">
-	<h1>NEWS</h1>
+	<div class="row">
+	<h1>News</h1>
+	</div>
 	<div class="container koband_post_container">
 			<?php if ( have_posts() ) : ?>
 					<!-- start loop --> 							

@@ -13,7 +13,9 @@
  */
 get_header();?>
 <div class="row">
+	<div class="row">
 	<h1>Gallery</h1>
+	</div>
 	<div class="container koband_post_container">
 <?php
 	    $args_media = array(		
