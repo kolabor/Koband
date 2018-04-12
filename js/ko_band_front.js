@@ -11,7 +11,12 @@ function ko_band_RetinaDisplay() {
 }*/
 };
 
-//$('.dropdown-toggle').dropdown();
+/*
+============================================
+  Load more +2 News with Load-More button
+============================================
+ */
+
 $(document).on('click', '.koband_load_more', function(){
 
 	var that = $(this);
@@ -40,45 +45,6 @@ $(document).on('click', '.koband_load_more', function(){
 		}
 	});
 });
-
-
-
-/*$('.loadmore').click(function(){
-
-var page =$(this).data('page');
-
-        $.ajax({
-        	url : ajaxurl,
-            type : 'post',
-            data: {
-              page : page, 
-              action: "load_posts_by_ajax", 
-            },
-            error : function( response ){
-            	console.log(response);
-            },
-            success: function(response){
-             $('.my-posts').append(response);
-            }
-        }); 
-    });
-
-
-var page = 2; 
-	    $('.loadmore').on('click', function() {
-
-        var data = {
-	            'action': 'load_posts_by_ajax',
-	            'page': page
-	        };
- 
-	        $.post(ajaxurl, data, function(response) {
-	            $('.my-posts').append(response);
-	            console.log(response);
-	            page++;
-	        });
-	    });*/
-
 
 
 });     // Ready function ends here //

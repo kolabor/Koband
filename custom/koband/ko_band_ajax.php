@@ -8,14 +8,18 @@
 
 */
 
-
+/* 
+===============================================
+ Load more +2 News with Load-More button
+===============================================
+*/
 
 add_action( 'wp_ajax_nopriv_koband_load_more', 'koband_load_more' );
 add_action( 'wp_ajax_koband_load_more', 'koband_load_more' );
 
 function koband_load_more(){
 	
-	$paged = $_POST["page"];
+	$paged = $_POST["page"]+1;
 	$query = new WP_Query( array(
 		'post_type' => 'post',
 		'paged' => $paged,
