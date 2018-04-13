@@ -24,6 +24,7 @@ function koband_load_more(){
 		'post_type' => 'post',
 		'post_status' => 'publish',
 		'paged' => $paged,
+		'posts_per_page' => 3,
 
 	));
 
@@ -65,6 +66,7 @@ function koband_load_media(){
 		'post_type' => 'media',
 		'post_status' => 'publish',
 		'paged' => $paged,
+		'posts_per_page' => 4,
 
 	));
 

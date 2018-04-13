@@ -21,14 +21,13 @@ get_header();?>
 	    $args_media = array(		
 		 	 'post_type' => 'media',   
 			 'post_staus'=> 'publish',
-			 'posts_per_page' => '4',
+			 'posts_per_page' => 4,
 			 
 		);
 
 	    $media_posts = new WP_Query($args_media);
 	    if ($media_posts->have_posts() ) : ?>
-	 	<!--loop starts here -->
-
+	 	<!-- start loop --> 
 		 	<div class="row koband_post_media">
 				<?php while ( $media_posts->have_posts() ) : $media_posts->the_post();
 					$post_id = get_the_ID(); ?>
@@ -39,7 +38,8 @@ get_header();?>
 						<a class="see_more" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a>
 					</div>
   				<?php endwhile;?>
-			</div>	
+			</div>
+			<!-- loop ends here -->	
    		<?php endif; ?>
 	</div>		
 </div>

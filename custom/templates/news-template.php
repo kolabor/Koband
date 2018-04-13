@@ -16,10 +16,18 @@
 	<h1 class="display-1">News</h1>
 	</div>
 	<div class="container koband_post_container">
-			<?php if ( have_posts() ) : ?>
-					<!-- start loop --> 							
+		<?php
+	    $args_news = array(		
+		 	 'post_type' => 'post',   
+			 'post_staus'=> 'publish',
+			 'posts_per_page' => 3,
+			 
+		);
+		$news_posts = new WP_Query($args_news);
+			 if ( $news_posts->have_posts() ) : ?>
+			<!-- start loop --> 							
 				<div class="row koband_post_news">
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
 						<div class="col-sm-4">
 								<div id="news-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
 								<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
