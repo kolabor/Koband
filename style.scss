@@ -334,9 +334,21 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 .news-title h2  {
   padding-left: 10px!important;
 }
-
-
-
+/*
+    News single
+------------------------------------------
+ */
+#news-content {
+  padding: 15px 30px;
+}
+#news-photo img, #media-photo img {
+  width: 100%;
+  height: auto;
+}
+#news-title, #single-media-title {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
 
 
 
