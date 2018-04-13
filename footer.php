@@ -46,6 +46,7 @@
  		</div>
 	</div>
 </div>
+<?php wp_footer(); ?>
 <!-- footer row ends here -->
 </body>
 </html>
