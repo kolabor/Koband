@@ -11,21 +11,18 @@
 
 get_header(); ?>
 
-<?php 
- if (have_posts() ) : 
- 	//start loop ?>
-
-<div class='tour_holder'>
-
-<?php while (have_posts() ) : the_post(); 
-
-		$post_id = get_the_ID(); ?>
-
-		<div id="title"><?php the_title();?></div>
-		<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
-		<div id="excerpt"><?php the_content(); ?></div>
-		
-</div> 
-<?php endwhile; 
-endif;
-get_footer(); ?>
+	<?php if (have_posts() ) : ?>
+		<!--start loop --> 
+		<?php while (have_posts() ) : the_post(); ?>
+			<div id="news-photo"><a href="<?php the_permalink();?>"><?php the_post_thumbnail("full"); ?></a></div>
+			<div class="container">
+			<h1><div id="news-title"><?php the_title();?></div></h1>
+				<div class="row">
+					<div class="col-sm">
+						<div id="news-content"><?php the_content(); ?></div>
+					</div>
+				</div>
+			</div>
+		<?php endwhile; 
+	endif; ?>
+<?php get_footer(); ?>
