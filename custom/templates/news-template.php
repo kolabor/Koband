@@ -11,8 +11,10 @@
  * @subpackage Koband
  * @since Koband 1.0
  */?>
-<div class="row">
-	<h1>NEWS</h1>
+
+	<div class="row">
+	<h1 class="display-1">News</h1>
+	</div>
 	<div class="container koband_post_container">
 			<?php if ( have_posts() ) : ?>
 					<!-- start loop --> 							
@@ -33,8 +35,11 @@
 	</div><!-- container -->
 </div>
 <div class="container text-center">
-	<a class="btn-koband-load koband_load_more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>"><span class="koband-loading">Loading...</span>
+	<a class="btn-koband-load koband_load_more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+	<span class="koband-loading">Loading...</span>
 	<span class="text">Load more</span></a>
+	<a class="no-news"><span class="news-posts">There are no more news</span></a>
 </div>
+
 
 

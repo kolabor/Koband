@@ -131,7 +131,7 @@
 endif; wp_reset_query();
 ?>
 
-<div class="container">
+
 <!-- Controls -->
             
 

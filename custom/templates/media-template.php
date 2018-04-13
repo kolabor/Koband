@@ -13,7 +13,9 @@
  */
 get_header();?>
 <div class="row">
+	<div class="row">
 	<h1>Gallery</h1>
+	</div>
 	<div class="container koband_post_container">
 <?php
 	    $args_media = array(		
@@ -42,7 +44,9 @@ get_header();?>
 	</div>		
 </div>
 <div class="container text-center">
-	<a class="btn-koband-load koband_load_media" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>"><span class="koband-loading">Loading...</span>
+	<a class="btn-koband-load koband_load_media" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+	<span class="koband-loading">Loading...</span>
 	<span class="text">Load media</span></a>
+	<a class="no-media"><span class="media-posts">There are no more media</span></a>
 </div>
    
