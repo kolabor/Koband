@@ -24,17 +24,26 @@ function koband_load_more(){
 		'post_type' => 'post',
 		'post_status' => 'publish',
 		'paged' => $paged,
+		'posts_per_page' => 3,
 
 	));
 
 	if ( $query->have_posts() ) {?>
 		<?php while ( $query->have_posts() ) : $query->the_post();?>
-			<div class="col-sm-4">
-				<div id="news-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
-				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
-				<div id="news-excerpt"><?php the_excerpt(); ?></div>
-				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Continue reading -->', 'koband'); ?></a>
-			</div>
+			<div class="col-md-4">
+									<div class="card mb-4 box-shadow">
+										<div class="news-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
+										<div class="card-body">
+											<div id="card-text"><?php the_excerpt(); ?></div>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="btn-group">
+														<button type="button" class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE', 'koband'); ?></a></button>
+													</div>
+												</div>
+										</div>
+									</div>
+								</div>	
 		<?php endwhile; ?>
 	<?php }
 
@@ -65,16 +74,23 @@ function koband_load_media(){
 		'post_type' => 'media',
 		'post_status' => 'publish',
 		'paged' => $paged,
+		'posts_per_page' => 4,
 
 	));
 
 	if ( $gallery->have_posts() ) { ?>
 		<?php while ( $gallery->have_posts() ) : $gallery->the_post();?>
-			<div class="col-sm-3"> 
-				<div id="media-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
-				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-				
-				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a>
+			<div class="col-md-3">
+					<div class="card mb-4 box-shadow media-card">
+						<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+						<a class="gaellry-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
+						
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></button>
+							</div>
+					</div>
+				</div>
 			</div>
 		<?php endwhile; ?>
 	<?php } 

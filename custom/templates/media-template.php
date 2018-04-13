@@ -12,41 +12,58 @@
  * @since Koband 1.0
  */
 get_header();?>
-<div class="row">
+<div class="album py5 bg-media" id="Media">
+	<div class="container">
 	<div class="row">
-	<h1>Gallery</h1>
-	</div>
-	<div class="container koband_post_container">
-<?php
-	    $args_media = array(		
-		 	 'post_type' => 'media',   
-			 'post_staus'=> 'publish',
-			 'posts_per_page' => '4',
-			 
-		);
-
-	    $media_posts = new WP_Query($args_media);
-	    if ($media_posts->have_posts() ) : ?>
-	 	<!--loop starts here -->
-
-		 	<div class="row koband_post_media">
-				<?php while ( $media_posts->have_posts() ) : $media_posts->the_post();
-					$post_id = get_the_ID(); ?>
-					<div class="col-sm-3"> 
-						<div id="media-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
-						<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-						
-						<a class="see_more" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a>
+				<div class="container">
+					<div class="row">
+						<h1>Gallery</h1>
 					</div>
-  				<?php endwhile;?>
-			</div>	
-   		<?php endif; ?>
-	</div>		
+				</div>				
+					<div class="container">
+						<div class="row koband_post_media">
+								<?php
+							    $args_media = array(		
+								 	 'post_type' => 'media',   
+									 'post_staus'=> 'publish',
+									 'posts_per_page' => 4,
+									 
+								);
+
+							    $media_posts = new WP_Query($args_media);
+							    if ($media_posts->have_posts() ) : ?>
+							 	<!-- start loop --> 
+								 	
+										<?php while ( $media_posts->have_posts() ) : $media_posts->the_post();
+
+											$post_id = get_the_ID(); ?>
+											<div class="col-md-3">
+													<div class="card mb-4 box-shadow media-card">
+														<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+														<a class="gaellry-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
+														
+														<div class="d-flex justify-content-between align-items-center">
+															<div class="btn-group">
+																<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></button>
+															</div>
+													</div>
+												</div>
+											</div>
+						  				<?php endwhile;?>
+									
+									<!-- loop ends here -->	
+						   		<?php endif; ?>
+						</div>	
+					</div>	
+
+				<div class="container text-center">
+					<div class="row">
+					<a class="btn-koband-load koband_load_media" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+					<span class="koband-loading">Loading...</span>
+					<span class="text">Load media</span></a>
+					<a class="no-media"><span class="media-posts">There are no more media</span></a>
+					</div>
+				</div>
 </div>
-<div class="container text-center">
-	<a class="btn-koband-load koband_load_media" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-	<span class="koband-loading">Loading...</span>
-	<span class="text">Load media</span></a>
-	<a class="no-media"><span class="media-posts">There are no more media</span></a>
 </div>
-   
+</div>

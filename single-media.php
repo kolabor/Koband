@@ -9,8 +9,11 @@
  * @since Koband 1.0
  */
 
-get_header(); 
-	
+get_header(); ?>
+
+
+
+<?php
 if (have_posts() ) : 
 	
  	//start loop ?>
@@ -21,29 +24,47 @@ if (have_posts() ) :
 		<?php  while ( have_posts() ) : the_post(); 
 				$post_id = get_the_ID(); ?>
 
-				<div id="single-media-title"><?php the_title();?></div>
-				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(200,200)); ?></a>
-				<div id="single-media-content"><?php the_content(); ?></div>
-		 
-				<?php $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
-				$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false);
+				<div id="media-photo"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(1024,800)); ?></a>
+				<div class="container">
+				<h1><div id="single-media-title"><?php the_title();?></div></h1>
+						<div class="row">
+							<div class="col-sm">
+								<div id="single-media-content"><?php the_content(); ?></div>
+							</div>
+						</div>
+				 
+						<?php $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
+						$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
 
-
-				foreach ($media_video_gallery[0] as  $value_video_gallery) {
-					//var_dump($value_video_gallery);
-					echo "<br>";
-					echo $value_video_gallery['link'];
-					echo "<br>";
-				} 
-
-		       foreach ($media_gallery[0] as  $value_image) {	
-					//var_dump($value_video_gallery);
-					echo "<br>";
-					echo wp_get_attachment_image( $value_image, 'thumbnail' );
-					echo "<br>";
-				} ?>
-	</div>
-
+						<div class="row">
+							<?php foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
+								<div class="col-sd-4">
+									 <iframe width="420" height="315"
+										src="<?php echo $value_video_gallery['link']; ?>">
+										</iframe> 
+									<?php
+									echo "<br>";
+									/*echo $value_video_gallery['link'];*/
+									echo "<br>";
+									?>
+								</div>
+							<?php } ?>
+						</div>
+						<div class="row">
+						       <?php foreach ($media_gallery[0] as  $value_image) {	?>
+									<div class="col-sd-4">
+										<?php	
+										echo "<br>";
+										echo wp_get_attachment_image( $value_image, array(500,500));
+										echo "<br>";
+										?> 
+									</div> 
+								<?php } ?>
+							</div>
+						</div>
+						</div>
+				</div>
 		<?php endwhile; 
-endif;
-get_footer(); ?>
+endif;?>
+
+<?php get_footer(); ?>

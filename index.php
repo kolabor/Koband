@@ -83,14 +83,14 @@ $count_tour = wp_count_posts('tour')->publish;
 		get_template_part('custom/templates/contact', 'template');
 	};
 
-echo "<p>**********************************************************</p>";
+//echo "<p>**********************************************************</p>";
 
 /***********************************************************************************/
 //First Section if statement ends here
 
 //Second Section if statemend starts here
 /***********************************************************************************/
-echo "<p>****************************Section 2**********************</p>";
+//echo "<p>****************************Section 2**********************</p>";
 
 	if($second_section == "Discography" && $count_discography == true) 
 	{

@@ -12,6 +12,30 @@ Text Domain: koband
 */
 /* =Reset
 -------------------------------------------------------------- */
+
+h1 {
+  font-weight: 900!important;
+  margin-top: 0!important;
+  font-size: 400%!important;
+  padding: 20px 0!important;
+  margin-bottom: 0!important;
+  color: #4D0000!important;
+  word-spacing: 4px!important;
+  letter-spacing: 1px!important;
+  text-transform: uppercase!important;
+}
+h2 {
+  font-size: 20px !important;
+}
+h2 a {
+  margin-bottom: 30px!important;
+  font-size: 150%!important;
+  word-spacing: 1px!important;
+  letter-spacing: 1px!important;
+  text-decoration: none!important;
+  color: #666666!important;
+}
+
 .theband {
   background-color: #999;
   width: 100%;
@@ -25,11 +49,7 @@ Text Domain: koband
   margin: 0;
   padding: 20px;
 }
-.test {
-  width: 70%;
-  display: block;
-  float: left;
-}
+
 .img {
   width: 30%;
   float: right;
@@ -173,7 +193,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
 
 /*@media only screen and (max-width: 768px) {
->>>>>>> 5c0e0f1526338396ad769e1bed980655eac19622
     header {height: 40vh;}
     .mobile-nav-icon { display: inline-block; margin-top:17px;  }
     .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
@@ -221,37 +240,18 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 }*/
 
 
-.btn-koband-load{
-  background-color: #ddd;
-  border-radius: 2px;
-  display: block;
-  text-align: center;
-  font-size: 10px;
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing:1px;
-  cursor:pointer;
-  text-transform: uppercase;
-  padding: 10px 0;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-}
-.btn-koband-load:hover{
-  background-color: #767676;
-  color: #fff;
-}
-
-
-
-
 
 /* ----------------------------------------------- */
 /* Slider */
 /* -----------------------------------------------  */
 
+.carousel-inner {
+  height: 100vh!important;
+}
 .carousel-item img
 {
   width: 100% !important;
-  height: 100vh;
+  height: auto;
 }
 
 .sl-content {
@@ -297,28 +297,48 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   top: 90%!important;
   bottom: 100px!important;
 }
-.koband_post_container {
-  border: 1px solid rgba(139, 0, 0, 0.3);
-  background-color: #f7f7f7;
-  margin-bottom: 15px;
-}
 
-.col-sm-4, .col-sm-3 {
+/* ----------------------------------------------- */
+/* News */
+/* -----------------------------------------------  */
+.card-img-top img {
+  height: 255px;
+  width: 100%;
+  display: block;
+}
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+.news-title h2  {
+  padding-left: 10px!important;
+}
+/*
+    News single
+------------------------------------------
+ */
+#news-content {
+  padding: 15px 30px;
+}
+#news-photo img, #media-photo img {
+  width: 100%;
+  height: auto;
+}
+#news-title, #single-media-title {
+  padding-top: 30px;
   padding-bottom: 15px;
 }
-#news-title, #media-title {
-  padding-bottom: 12px;
-  padding-top: 7px;
+.read_more {
+  color: #000000;
+    &:hover {
+    text-decoration: none;
+  }
 }
-#news-title a, #media-title a{
-  font-size: 20px;
-  color: darkred;
-  text-decoration: none;
+.btn-group:hover {
+  background-color: #f6f4f4 !important;
+
 }
-#news-excerpt {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 20px;
+.btn-outline-secondary:hover{
+  background-color: #f6f4f4 !important;
 }
 
 /*
@@ -334,9 +354,17 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   width: 200px;
   color: #222;
   font-size: 20px;
-  margin: 0 auto;
   cursor: pointer;
+  margin-bottom: 20px;
   opacity: 0.5;
+  background-color: #ddd;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing:1px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
   &:hover,
   &:focus,
   &.loading {
@@ -347,5 +375,35 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   }
   span {
     display: block;
+  }
+}
+.no-news {
+  margin-left: 15px;
+  margin-bottom: 20px;
+
+}
+
+/*
+    Media Section
+-------------------------------------------
+*/
+.bg-media {
+  background-color: #fff;
+}
+.media-card {
+  border: none!important;
+}
+.btn-outline-secondary{
+  border: none!important;
+}
+.gaellry-img img {
+  width: 100%;
+  height: 255px;
+}
+.go_to_gallery {
+  color: #92979b!important;
+  &:hover {
+    text-decoration: none;
+    color: #f8f9fa;
   }
 }
