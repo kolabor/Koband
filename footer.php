@@ -10,53 +10,42 @@
  */
 
 
- get_footer();
+ ///get_footer();
 ?>
  <!-- footer row starts here -->
-<footer id="colophon" class="site-footer" role="contentinfo">
-	<div class="row">	
-		<div class="col-sm-3">
-			<div class="footer-left">
-	            <a href="http://www.kolabor.net">
-	   			    Copyright © 2018 | Kolabor.net 
-	     	     </a>
-	     	</div>
-	    </div>
-		<div class="col-sm-3">
-			<div class="main-nav">
-				<?php
-	            	$args = array(
-	            	  'theme_location' => 'primary');
-	            ?>
-	            <?php wp_nav_menu($args); ?>
-	        </div>
-		</div>
-		<div class="col-sm-3">	      	
-			<div class="footer-nav">
-	            <?php
-	            	$args = array(
-	            	  'theme_location' => 'footer');
-	            ?>
-	            <?php wp_nav_menu($args); ?>
-	       	</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="footer-right">
-				<?php $sidebars_widgets = wp_get_sidebars_widgets();
-				if(!empty($sidebars_widgets['widgets_1'])) : ?>
-					<div class="footer-bar site-pad">
-						<div class="site-container">
-							<div class="side-widgets_1">
-								<?php dynamic_sidebar('widgets_1') ?>
-							</div>
-						</div>
-					</div>
-				<?php endif; ?>
-			</div>
-		</div>
+<div class="container">
+ 	<div class="row" id="footer">
+ 	    <div class="col-sm-3 ">
+ 	    	<div class= "footer_logo">
+ 	  			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
+                	<img src="<?php echo $footer_logo; ?>" class="footer_logo">
+        			
+            </div>
+   		</div>
+
+ 	    <div class="col-sm-3 side-widgets_one">
+            <?php if ( is_active_sidebar( 'widgets_one' ) ) : ?>
+               <?php dynamic_sidebar( 'widgets_one' ); ?><!-- #first .widget-area -->
+            <?php endif; ?>
+ 	 	</div>
+
+		<div class="col-sm-3 side-widgets_two">
+ 	  		<?php if ( is_active_sidebar( 'widgets_two' ) ) : ?>
+              	<?php dynamic_sidebar( 'widgets_two' ); ?> <!-- #second .widget-area -->
+            <?php endif; ?>
+ 		</div>
+
+ 	    <div class="col-sm-3 side-widgets_three">
+ 	  		<?php if ( is_active_sidebar( 'widgets_three' ) ) : ?>
+       			<?php dynamic_sidebar( 'widgets_three' ); ?> <!-- #third .widget-area -->
+            <?php endif; ?> 
+ 	 	</div>
+ 	
+ 		<div class="col-sm copyright">
+ 			<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a> <!--Copyright-->
+ 		</div>
 	</div>
-</footer>
-		
+</div>
 <!-- footer row ends here -->
 </body>
 </html>

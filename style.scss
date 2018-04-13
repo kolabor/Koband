@@ -12,6 +12,30 @@ Text Domain: koband
 */
 /* =Reset
 -------------------------------------------------------------- */
+
+h1 {
+  font-weight: 900!important;
+  margin-top: 0!important;
+  font-size: 400%!important;
+  padding: 20px 0!important;
+  margin-bottom: 0!important;
+  color: #4D0000!important;
+  word-spacing: 4px!important;
+  letter-spacing: 1px!important;
+  text-transform: uppercase!important;
+}
+h2 {
+  font-size: 20px !important;
+}
+h2 a {
+  margin-bottom: 30px!important;
+  font-size: 150%!important;
+  word-spacing: 1px!important;
+  letter-spacing: 1px!important;
+  text-decoration: none!important;
+  color: #666666!important;
+}
+
 .theband {
   background-color: #999;
   width: 100%;
@@ -25,11 +49,7 @@ Text Domain: koband
   margin: 0;
   padding: 20px;
 }
-.test {
-  width: 70%;
-  display: block;
-  float: left;
-}
+
 .img {
   width: 30%;
   float: right;
@@ -227,7 +247,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   display: block;
   text-align: center;
   font-size: 10px;
-  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing:1px;
   cursor:pointer;
@@ -248,10 +267,13 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 /* Slider */
 /* -----------------------------------------------  */
 
+.carousel-inner {
+  height: 100vh!important;
+}
 .carousel-item img
 {
   width: 100% !important;
-  height: 100vh;
+  height: auto;
 }
 
 .sl-content {
@@ -297,29 +319,26 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   top: 90%!important;
   bottom: 100px!important;
 }
-.koband_post_container {
-  border: 1px solid rgba(139, 0, 0, 0.3);
-  background-color: #f7f7f7;
-  margin-bottom: 15px;
+
+/* ----------------------------------------------- */
+/* News */
+/* -----------------------------------------------  */
+.card-img-top img {
+  height: 255px;
+  width: 100%;
+  display: block;
+}
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+.news-title h2  {
+  padding-left: 10px!important;
 }
 
-.col-sm-4, .col-sm-3 {
-  padding-bottom: 15px;
-}
-#news-title, #media-title {
-  padding-bottom: 12px;
-  padding-top: 7px;
-}
-#news-title a, #media-title a{
-  font-size: 20px;
-  color: darkred;
-  text-decoration: none;
-}
-#news-excerpt {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-}
+
+
+
+
 
 /*
     Ajax Loading
