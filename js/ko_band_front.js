@@ -49,12 +49,12 @@ $(document).on('click', '.koband_load_more:not(.loading)', function(){
             $('.koband_load_more').hide();
             $('.no-news').slideDown(700);
             }
-
+            else {
             that.data('page', newPage);
 			$('.koband_post_news').append( response );
 			that.removeClass('loading').find('.text').slideDown(320);
 			that.addClass('loading-load').find('.koband-loading').hide(320);
-                    
+                 }   
 
 		}
 	});

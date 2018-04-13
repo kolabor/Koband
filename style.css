@@ -28,7 +28,7 @@ h2 {
 
 h2 a {
   margin-bottom: 30px !important;
-  font-size: 200% !important;
+  font-size: 150% !important;
   word-spacing: 1px !important;
   letter-spacing: 1px !important;
   text-decoration: none !important;
@@ -283,20 +283,16 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 /* ----------------------------------------------- */
 /* News */
 /* -----------------------------------------------  */
-.koband_post_container {
-  background-color: #cccccc; }
+.card-img-top img {
+  height: 255px;
+  width: 100%;
+  display: block; }
 
-.col-sm-4, .col-sm-3 {
-  padding-bottom: 15px; }
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); }
 
-#news-title, #media-title {
-  padding-bottom: 12px;
-  padding-top: 7px; }
-
-#news-excerpt {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 20px; }
+.news-title h2 {
+  padding-left: 10px !important; }
 
 /*
     Ajax Loading
