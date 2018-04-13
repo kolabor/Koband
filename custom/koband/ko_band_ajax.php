@@ -27,7 +27,7 @@ function koband_load_more(){
 
 	));
 
-	if ( $query->have_posts() ) : ?>
+	if ( $query->have_posts() ) {?>
 		<?php while ( $query->have_posts() ) : $query->the_post();?>
 			<div class="col-sm-4">
 				<div id="news-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
@@ -36,7 +36,12 @@ function koband_load_more(){
 				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Continue reading -->', 'koband'); ?></a>
 			</div>
 		<?php endwhile; ?>
-	<?php endif; 
+	<?php }
+
+	else 
+	{
+       echo "end";
+	}
 
 	wp_reset_postdata();
 
@@ -63,7 +68,7 @@ function koband_load_media(){
 
 	));
 
-	if ( $gallery->have_posts() ) : ?>
+	if ( $gallery->have_posts() ) { ?>
 		<?php while ( $gallery->have_posts() ) : $gallery->the_post();?>
 			<div class="col-sm-3"> 
 				<div id="media-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
@@ -72,7 +77,11 @@ function koband_load_media(){
 				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a>
 			</div>
 		<?php endwhile; ?>
-	<?php endif; 
+	<?php } 
+	else 
+	{
+       echo "end-media";
+	}
 
 	wp_reset_postdata();
 

@@ -12,6 +12,7 @@ Text Domain: koband
 */
 /* =Reset
 -------------------------------------------------------------- */
+
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
@@ -34,6 +35,7 @@ h2 a {
   text-decoration: none!important;
   color: #666666!important;
 }
+
 .theband {
   background-color: #999;
   width: 100%;
@@ -344,6 +346,10 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     Ajax Loading
 -------------------------------------------
 */
+.news-posts, .media-posts {
+  font-size: 20px;
+  color: #b5b5b5;
+}
 .btn-koband-load {
   display: block;
   width: 200px;
