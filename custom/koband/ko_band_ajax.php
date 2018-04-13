@@ -38,7 +38,7 @@ function koband_load_more(){
 											<div id="card-text"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
-														<button type="button" class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('Continue reading -->', 'koband'); ?></a></button>
+														<button type="button" class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE', 'koband'); ?></a></button>
 													</div>
 												</div>
 										</div>
@@ -80,11 +80,17 @@ function koband_load_media(){
 
 	if ( $gallery->have_posts() ) { ?>
 		<?php while ( $gallery->have_posts() ) : $gallery->the_post();?>
-			<div class="col-sm-3"> 
-				<div id="media-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></div>
-				<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-				
-				<a class="read_more" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a>
+			<div class="col-md-3">
+					<div class="card mb-4 box-shadow media-card">
+						<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+						<a class="gaellry-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
+						
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></button>
+							</div>
+					</div>
+				</div>
 			</div>
 		<?php endwhile; ?>
 	<?php } 
