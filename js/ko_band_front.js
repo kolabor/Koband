@@ -10,6 +10,13 @@ function ko_band_RetinaDisplay() {
         }
 }*/
 };
+
+//Limiting the number of characters for textarea to 250 chars//
+            var maxLength = 250;
+            $('textarea').keyup(function() {
+            var textlen = maxLength - $(this).val().length;
+        }); 
+        
 //show hide list of album songs
 $(".album-songs-show-hide").hide();
 $(".hide-album-song").hide();

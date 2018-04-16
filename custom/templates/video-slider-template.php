@@ -31,7 +31,7 @@
 	<!--<div class="video-body">-->
 		<div class="video-bg">
 				<div class="iframe-wrapper">
-						<iframe  src="<?php echo $slide_video_link; ?>"></iframe>
+						<iframe  src="<?php echo $slide_video_link;?>?autoplay=1"></iframe>
 				</div>		
 		</div>
 	<!--</div>	-->		
