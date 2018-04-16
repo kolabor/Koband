@@ -14,20 +14,25 @@
 
 get_header(); 
 
+// Determine if there is "vide-slider" or "image-slider"
+
+$silder_type = get_theme_mod('ko_band_home_page_slider_type');
 $count_slides = wp_count_posts('slides')->publish;
-//The if function to determine if 
-if("Slides" && $count_slides > 0) {
-get_template_part( 'custom/templates/slides', 'template' );}
-else { echo "<p>Error: You must fill up the Custom Post Type 'Slides', at this section there must be slider</p>"; };
 
+if ($silder_type == 'video'){
+  get_template_part('custom/templates/video-slider', 'template');
+}
+elseif ($silder_type == 'image' && $count_slides > 0) {
+  get_template_part( 'custom/templates/slides', 'template' );
+}
 
+// Determine if there are news, if not get the next template
 
-/*
 if("posts" && $count_news > 0) {
 	get_template_part('custom/templates/news', 'template');}
 else {
 	get_template_part('custom/templates/media', 'template');
-}*/
+}
 
 $first_section = get_theme_mod('ko_band_first_render_moduls');
 $second_section = get_theme_mod('ko_band_second_render_moduls');
@@ -119,14 +124,14 @@ $count_tour = wp_count_posts('tour')->publish;
 	elseif ($second_section == "Contact") {
 	get_template_part('custom/templates/contact', 'template');
 	};
-echo "<p>**********************************************************</p>";
+//echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Second Section if statemend ends here
 
 //Third Sections if statemend starts here
 /***********************************************************************************/
 
-echo "<p>****************************Section 3**********************</p>";
+//echo "<p>****************************Section 3**********************</p>";
    	if($third_section =="Discography" && $count_discography == true)
    	{
    		get_template_part( 'custom/templates/discography', 'template' );
