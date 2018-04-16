@@ -23,8 +23,9 @@
 				$slide_video_title = get_theme_mod('ko_band_home_page_slider_title');
 				$slide_video_subtitle = get_theme_mod('ko_band_home_page_slider_subtitle');
 				$slide_video_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink');
-				$slide_video_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); ?>
+				$slide_video_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); 
 
+				$slide_video_link = 'https://www.youtube.com/embed/' . $slide_video_link ?>
 
 	<?php endwhile; ?>
 	<!--<div class="video-body">-->
