@@ -14,6 +14,8 @@
 
 get_header(); 
 
+
+
 $count_slides = wp_count_posts('slides')->publish;
 //The if function to determine if 
 if("Slides" && $count_slides > 0) {
