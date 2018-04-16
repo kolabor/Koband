@@ -73,7 +73,7 @@
 				$slide_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle');
 			?>
 				
-			<?php if ($slider_type == "video") 
+		<?php if ($slider_type == "video") 
 		        {
                     if(isset($slide_video[0])) {echo $slide_video[0]; }
                     	
