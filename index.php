@@ -52,8 +52,7 @@ $count_tour = wp_count_posts('tour')->publish;
 // Declartaion of Vraiables ends here
 
 //First Section if statement starts here
-/********************************************************************************/
-//echo "<p>****************************Section 1**********************</p>";
+
 	if($first_section == "Discography" && $count_discography == true) 
 	{ 
      	get_template_part( 'custom/templates/discography', 'template' ); 
@@ -81,14 +80,10 @@ $count_tour = wp_count_posts('tour')->publish;
 		get_template_part('custom/templates/contact', 'template');
 	};
 
-//echo "<p>**********************************************************</p>";
 
-/***********************************************************************************/
 //First Section if statement ends here
 
 //Second Section if statemend starts here
-/***********************************************************************************/
-//echo "<p>****************************Section 2**********************</p>";
 
 	if($second_section == "Discography" && $count_discography == true) 
 	{
