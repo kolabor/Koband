@@ -384,19 +384,19 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 /*** The band section end here  ***/
 /***********************************************************************************************************************/
 
-$main_slider =   get_theme_mod( 'ko_band_home_page_slider_choose');
+$main_slider =   get_theme_mod( 'ko_band_home_page_slider_type');
 
 /*Slide section type start here */
 $wp_customize->add_section( 'ko_band_slider_section' , array(
-    'title'       => __( ' Slider homepage', 'koband' ),
+    'title'       => __( ' Slider', 'koband' ),
     'priority'    => 30,
     'description' => $main_slider,
 ) );
 /*Slider box to choose is image or video*/
-$wp_customize->add_setting( 'ko_band_home_page_slider_choose' );
-$wp_customize->add_control( 'ko_band_home_page_slider_choose', array(
+$wp_customize->add_setting( 'ko_band_home_page_slider_type' );
+$wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable Slide types:', 'koband' ),
-    'settings' => 'ko_band_home_page_slider_choose',
+    'settings' => 'ko_band_home_page_slider_type',
     'section' => 'ko_band_slider_section',
     'type'     => 'radio',
     'choices' => array(
@@ -405,15 +405,25 @@ $wp_customize->add_control( 'ko_band_home_page_slider_choose', array(
                
 )  )  );
 
-/*Slider Title**/
+/*Slider Vidoe Link**/
+$wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
+$wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
+  'settings' => 'ko_band_home_page_slider_videolink',
+  'label'    => __( 'Video Link:', 'koband' ),
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'link'
+));
+
+/*Video Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_title' );
 $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
   'settings' => 'ko_band_home_page_slider_title',
   'label'    => __( 'Title:', 'koband' ),
-  'section'  => 'ko_band_slider_section'
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'text'
 ));
 
-/*Slider SubTitle**/
+/*Video SubTitle**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_subtitle' );
 $wp_customize->add_control( 'ko_band_home_page_slider_subtitle', array(
   'settings' => 'ko_band_home_page_slider_subtitle',
@@ -422,20 +432,22 @@ $wp_customize->add_control( 'ko_band_home_page_slider_subtitle', array(
   'type' => 'textarea'
 ));
 
-/*Slider Button Link**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
-$wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
-  'settings' => 'ko_band_home_page_slider_buttonlink',
-  'label'    => __( 'Button Link:', 'koband' ),
-  'section'  => 'ko_band_slider_section'  
-));
-
-/*Slider Button Title**/
+/*Video Button Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_buttontitle' );
 $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
   'settings' => 'ko_band_home_page_slider_buttontitle',
   'label'    => __( 'Button Title:', 'koband' ),
-  'section'  => 'ko_band_slider_section'
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'text'
+));
+
+/*Video Button Link**/
+$wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
+$wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
+  'settings' => 'ko_band_home_page_slider_buttonlink',
+  'label'    => __( 'Button Link:', 'koband' ),
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'link'  
 ));
 
 /*Slide section type end here */

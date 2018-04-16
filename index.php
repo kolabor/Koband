@@ -19,14 +19,16 @@ get_header();
 $silder_type = get_theme_mod('ko_band_home_page_slider_type');
 $count_slides = wp_count_posts('slides')->publish;
 
-if ($silder_type == 'video'){
+if ($silder_type == 'Video'){
   get_template_part('custom/templates/video-slider', 'template');
 }
-elseif ($silder_type == 'image' && $count_slides > 0) {
+elseif ($silder_type == 'Image' && $count_slides > 0) {
   get_template_part( 'custom/templates/slides', 'template' );
 }
 
 // Determine if there are news, if not get the next template
+
+$count_news = wp_count_posts('post')->publish;
 
 if("posts" && $count_news > 0) {
 	get_template_part('custom/templates/news', 'template');}
