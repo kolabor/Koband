@@ -45,7 +45,7 @@ get_header();?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
-			<div class="col-sm-3"><?php the_title();?></div>
+			<div class="col-sm-3"><?php _e('Name:', 'koband');?><?php the_title();?></div>
 
 	        <?php $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
 			
@@ -54,8 +54,8 @@ get_header();?>
 			$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 
 				
-			<div class="col-sm-3"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></div>
-		    <div class="col-sm-3"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></div>
+			<div class="col-sm-3"><?php _e('Date:', 'koband');?><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></div>
+		    <div class="col-sm-3"><?php _e('Length:', 'koband');?><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></div>
 		    <div class="col-sm-1 ">
 		    	<span class="btn btn-sm album-song">
 			    	<a class="btn btn-sm show-album-song">&#8897;</a>
@@ -78,68 +78,61 @@ get_header();?>
 				<?php } ?> 
 			</div>
 		
-		<div class="row">
-			<div class="col-sm-6"><?php _e('Store Name', 'koband');?></div>
-			<div class="col-sm-6"><?php _e('Store Link', 'koband');?></div>
+			<div class="row">
+				<div class="col-sm-6"><?php _e('Store Name', 'koband');?></div>
+				<div class="col-sm-6"><?php _e('Store Link', 'koband');?></div>
+			</div>
+			<div class="row">
+				<?php 
+					foreach ($album_song_store[0] as  $value_song_store) { ?>
+					<div class="col-sm-6"><?php echo $value_song_store['name-store']; ?></div>
+					<div class="col-sm-6"><?php echo $value_song_store['link']; ?>"</div> 
+				<?php } ?> 
+			</div>			
 		</div>
-		<div class="row">
-		<?php 
-			foreach ($album_song_store[0] as  $value_song_store) { ?>
-			<div class="col-sm-6"><?php echo $value_song_store['name-store']; ?></div>
-			<div class="col-sm-6"><?php echo $value_song_store['link']; ?>"</div> 
-		<?php } ?> 
-		</div>			
 	</div>
-</div>
 <?php endwhile; endif; ?> <!-- end of the loop. -->
 <!-- 
 ================================================================================================================
 												SINGLE SONG DETAILS
 ================================================================================================================
 -->
-	<div class=" container">
-	<?php $single_posts = new WP_Query($args_singles);
-	if ($single_posts->have_posts() ) :
-		while ($single_posts->have_posts() ) : $single_posts->the_post();
-		$post_id = get_the_ID(); ?>
+		<?php $single_posts = new WP_Query($args_singles);
+		if ($single_posts->have_posts() ) :
+			while ($single_posts->have_posts() ) : $single_posts->the_post();
+			$post_id = get_the_ID(); ?>
 			
 		<h4><?php _e('Singles', 'koband');?></h4>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
-				<div class="col-sm-3"><?php the_title();?></div>
-
 			  		<?php 
 			  		$single_date = get_post_meta( $post_id, 'ko_band_singles_date_release', false );
 					$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
 					$single_store = get_post_meta($post_id, "ko_band_repetable_singles_stores", false); ?>
-
-				<div class="col-sm-3"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></div>
-			    <div class="col-sm-3"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+				<div class="col-sm-3"><?php _e('Name:', 'koband');?><?php the_title();?></div>
+				<div class="col-sm-3"><?php _e('Date:', 'koband');?><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></div>
+			    <div class="col-sm-3"><?php _e('Length:', 'koband');?><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></div>
 			   	<div class="col-sm-1 ">
 			    	<span class="btn btn-sm single-song">
 				    	<a class="btn btn-sm show-single-song">&#8897;</a>
 				    	<a class="btn btn-sm hide-single-song">&#8896;</a>
 			    	</span>
 		   		</div>
-					
-				
-				<div class="container single-songs-show-hide">
-					<div class="row">
-						<div class="col-sm-5"><?php _e('Store Name', 'koband');?></div>
-						<div class="col-sm-5"><?php _e('Store Link', 'koband');?></div>
-					</div>
-					<div class="row">
-					<?php foreach ($single_store[0] as  $value_single_store) { ?>
-						<div class="col-sm-5"><?php echo $value_single_store['name']; ?></div>
-						<div class="col-sm-5"><?php echo $value_single_store['link']; ?></div>
-					<?php } ?>
-					</div>
-				</div>	
-
-			
 			</div>
-		</div>	
+			<div class="container single-songs-show-hide">
+				<div class="row">
+					<div class="col-sm-5"><?php _e('Store Name', 'koband');?></div>
+					<div class="col-sm-5"><?php _e('Store Link', 'koband');?></div>
+				</div>
+				<div class="row">
+				<?php foreach ($single_store[0] as  $value_single_store) { ?>
+					<div class="col-sm-5"><?php echo $value_single_store['name']; ?></div>
+					<div class="col-sm-5"><?php echo $value_single_store['link']; ?></div>
+				<?php } ?>
+				</div>
+			</div>	
+		</div>
 		<?php endwhile; endif; ?>
-	</div>
+
 </div>
