@@ -27,10 +27,13 @@
 
 
 	<?php endwhile; ?>
-		
-				<iframe width="100%" height="auto" src="<?php echo $slide_video_link; ?>"></iframe>
-			
-
+	<!--<div class="video-body">-->
+		<div class="video-bg">
+				<div class="iframe-wrapper">
+						<iframe  src="<?php echo $slide_video_link; ?>"></iframe>
+				</div>		
+		</div>
+	<!--</div>	-->		
 				<?php if(isset($slide_video_title[0])) 	{ echo  $slide_video_title; } ?>
 				<?php if(isset($slide_video_subtitle[0])) 	{ echo  $slide_video_subtitle; } ?>
 				<?php if(isset($slide_video_buttonlink[0])) 	{ echo  $slide_video_buttonlink; } ?>

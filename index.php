@@ -27,14 +27,14 @@ elseif ($silder_type == 'Image' && $count_slides > 0) {
 }
 
 // Determine if there are news, if not get the next template
-
+/*
 $count_news = wp_count_posts('post')->publish;
 
 if("posts" && $count_news > 0) {
 	get_template_part('custom/templates/news', 'template');}
 else {
 	get_template_part('custom/templates/media', 'template');
-}
+}*/
 
 $first_section = get_theme_mod('ko_band_first_render_moduls');
 $second_section = get_theme_mod('ko_band_second_render_moduls');
