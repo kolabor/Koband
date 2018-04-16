@@ -10,35 +10,6 @@ function ko_band_RetinaDisplay() {
         }
 }*/
 };
-//show hide list of album songs
-$(".album-songs-show-hide").hide();
-$(".hide-album-song").hide();
-$(".show-album-song").click(function(){
-    $(".album-songs-show-hide").slideDown();
-    $(".show-album-song").hide();
-    $(".hide-album-song").show();
-
-});
-$(".hide-album-song").click(function(){
-	$(".album-songs-show-hide").slideUp();
-    $(".hide-album-song").hide();
-	$(".show-album-song").show();
-});
-
-// show hide list of single stores
-$(".single-songs-show-hide").hide();
-$(".hide-single-song").hide();
-$(".show-single-song").click(function(){
-    $(".single-songs-show-hide").slideDown();
-    $(".show-single-song").hide();
-    $(".hide-single-song").show();
-
-});
-$(".hide-single-song").click(function(){
-	$(".single-songs-show-hide").slideUp();
-    $(".hide-single-song").hide();
-	$(".show-single-song").show();
-});
 
 /*
 ============================================
