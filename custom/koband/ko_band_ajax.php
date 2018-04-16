@@ -69,7 +69,7 @@ add_action( 'wp_ajax_koband_load_media', 'koband_load_media' );
 
 function koband_load_media(){
 	
-	$paged = $_POST["page"]+1;
+	$paged = $_POST["page"]+2;
 	$gallery = new WP_Query( array(
 		'post_type' => 'media',
 		'post_status' => 'publish',
@@ -80,16 +80,15 @@ function koband_load_media(){
 
 	if ( $gallery->have_posts() ) { ?>
 		<?php while ( $gallery->have_posts() ) : $gallery->the_post();?>
-			<div class="col-md-3">
-					<div class="card mb-4 box-shadow media-card">
+			<div class="cmix category-1 col-lg-3 col-md-4 col-sm-6 single-filter-content content-1">
+				<a class="gallery-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
+					<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
 						<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
-						<a class="gaellry-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-						
-						<div class="d-flex justify-content-between align-items-center">
+						<!--<div class="d-flex justify-content-between align-items-center">-->
 							<div class="btn-group">
 								<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></button>
 							</div>
-					</div>
+					<!--</div>-->
 				</div>
 			</div>
 		<?php endwhile; ?>

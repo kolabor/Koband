@@ -12,21 +12,21 @@
  * @since Koband 1.0
  */
 get_header();?>
-<div class="album py5 bg-media" id="Media">
-	<div class="container">
-	<div class="row">
+<div class="section-full bg-media" id="Media">
+	<!--<div class="container">
+	<div class="row">-->
 				<div class="container">
 					<div class="row">
 						<h1>Gallery</h1>
 					</div>
 				</div>				
-					<div class="container">
-						<div class="row koband_post_media">
+					<!--<div class="container">-->
+						<div class="row koband_post_media no-gutters mt-70">
 								<?php
 							    $args_media = array(		
 								 	 'post_type' => 'media',   
 									 'post_staus'=> 'publish',
-									 'posts_per_page' => 4,
+									 'posts_per_page' => '8',
 									 
 								);
 
@@ -37,16 +37,15 @@ get_header();?>
 										<?php while ( $media_posts->have_posts() ) : $media_posts->the_post();
 
 											$post_id = get_the_ID(); ?>
-											<div class="col-md-3">
-													<div class="card mb-4 box-shadow media-card">
+											<div class="cmix category-1 col-lg-3 col-md-4 col-sm-6 single-filter-content content-1">
+												<a class="gallery-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
+													<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
 														<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
-														<a class="gaellry-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-														
-														<div class="d-flex justify-content-between align-items-center">
+														<!--<div class="d-flex justify-content-between align-items-center">-->
 															<div class="btn-group">
 																<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></button>
 															</div>
-													</div>
+													<!--</div>-->
 												</div>
 											</div>
 						  				<?php endwhile;?>
@@ -54,7 +53,7 @@ get_header();?>
 									<!-- loop ends here -->	
 						   		<?php endif; ?>
 						</div>	
-					</div>	
+					<!--</div>	-->
 
 				<div class="container text-center">
 					<div class="row">
@@ -65,5 +64,5 @@ get_header();?>
 					</div>
 				</div>
 </div>
-</div>
-</div>
+<!--</div
+</div>-->

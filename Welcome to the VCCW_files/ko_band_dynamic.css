@@ -1,0 +1,97 @@
+
+
+
+
+
+ 
+  
+
+
+
+    
+
+
+@import url('https://fonts.googleapis.com/css?family=');
+
+
+
+
+body
+{
+  font-family: ;
+
+$general_font = get_theme_mod( 'ko_band_general_font_selector' );
+$headding_font = get_theme_mod( 'ko_band_heading_font_selector' ); 
+?>
+
+@import url('https://fonts.googleapis.com/css?family=<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: general_font in /var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php on line <i>29</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.2080</td><td bgcolor='#eeeeec' align='right'>361496</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php' bgcolor='#eeeeec'>.../ko_band_dynamic.css.php<b>:</b>0</td></tr>
+</table></font>
+');
+@import url('https://fonts.googleapis.com/css?family=<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: headding_font in /var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php on line <i>30</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.2080</td><td bgcolor='#eeeeec' align='right'>361496</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php' bgcolor='#eeeeec'>.../ko_band_dynamic.css.php<b>:</b>0</td></tr>
+</table></font>
+');
+
+
+
+/* Menu item colors */
+
+body
+{
+  background-color:  !important;
+
+  font-family: <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: general_font in /var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php on line <i>57</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.2080</td><td bgcolor='#eeeeec' align='right'>361496</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php' bgcolor='#eeeeec'>.../ko_band_dynamic.css.php<b>:</b>0</td></tr>
+</table></font>
+ !important;
+  font-size:   !important;
+  line-height:  <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: ko_band_line_height in /var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php on line <i>59</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.2080</td><td bgcolor='#eeeeec' align='right'>361496</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php' bgcolor='#eeeeec'>.../ko_band_dynamic.css.php<b>:</b>0</td></tr>
+</table></font>
+ !important;
+
+  font-weight:   !important;
+  font-style:   !important;
+  color:   !important;
+
+
+}
+h1, h2, h3 
+{
+	
+	font-family: <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: headding_font in /var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php on line <i>70</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.2080</td><td bgcolor='#eeeeec' align='right'>361496</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/var/www/html/wp-content/themes/koband/style/ko_band_dynamic.css.php' bgcolor='#eeeeec'>.../ko_band_dynamic.css.php<b>:</b>0</td></tr>
+</table></font>
+ !important;
+	color:  !important;
+
+
+}
+
+
+
+
+
+
+
