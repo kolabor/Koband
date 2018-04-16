@@ -410,18 +410,20 @@ $wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
   'label'    => __( 'Video Link:', 'koband' ),
-  'section'  => 'ko_band_slider_section'
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'link'
 ));
 
-/*Slider Title**/
+/*Video Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_title' );
 $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
   'settings' => 'ko_band_home_page_slider_title',
   'label'    => __( 'Title:', 'koband' ),
-  'section'  => 'ko_band_slider_section'
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'text'
 ));
 
-/*Slider SubTitle**/
+/*Video SubTitle**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_subtitle' );
 $wp_customize->add_control( 'ko_band_home_page_slider_subtitle', array(
   'settings' => 'ko_band_home_page_slider_subtitle',
@@ -430,23 +432,23 @@ $wp_customize->add_control( 'ko_band_home_page_slider_subtitle', array(
   'type' => 'textarea'
 ));
 
-/*Slider Button Link**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
-$wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
-  'settings' => 'ko_band_home_page_slider_buttonlink',
-  'label'    => __( 'Button Link:', 'koband' ),
-  'section'  => 'ko_band_slider_section'  
-));
-
-/*Slider Button Title**/
+/*Video Button Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_buttontitle' );
 $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
   'settings' => 'ko_band_home_page_slider_buttontitle',
   'label'    => __( 'Button Title:', 'koband' ),
-  'section'  => 'ko_band_slider_section'
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'text'
 ));
 
-
+/*Video Button Link**/
+$wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
+$wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
+  'settings' => 'ko_band_home_page_slider_buttonlink',
+  'label'    => __( 'Button Link:', 'koband' ),
+  'section'  => 'ko_band_slider_section',
+  'type'     => 'link'  
+));
 
 /*Slide section type end here */
 /**********************************************************************************************************************/

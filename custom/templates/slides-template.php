@@ -64,39 +64,9 @@
 					    		{ echo  $slider_button_title[0]; } ?></a>
 					</div>
 
-		    <?php
-				$slide_video = get_theme_mod('ko_band_home_page_slider_choose');
-				$slide_image = get_theme_mod('ko_band_home_page_slider_choose');
-				$slide_title = get_theme_mod('ko_band_home_page_slider_title');
-				$slide_subtitle = get_theme_mod('ko_band_home_page_slider_subtitle');
-				$slide_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink');
-				$slide_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle');
-			?>
+		   
 				
-			<?php if ($slider_type == "video") 
-		        {
-                    if(isset($slide_video[0])) {echo $slide_video[0]; }
-                    	
-                    	echo $slide_title;
-                    	echo $slide_subtitle;
-						echo $slide_buttonlink;
-						echo $slide_buttontitle;
-		        }
-		        else if($slider_type == "image") 
-		        {
-             		$url = wp_get_attachment_url( get_post_thumbnail_id() );?>
-             		<img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
-             		<?php 
-             			echo $slide_title;
-                    	echo $slide_subtitle;
-						echo $slide_buttonlink;
-						echo $slide_buttontitle;
-	    		} 
-		           	/*if(isset($slide_image[0])) {echo $slide_image[0];}?>
-	           			<div class="carousel-caption d-none d-md-block">
-							<h5>...</h5>
-							<p>...</p>
-					  	</div>*/?>
+			
             	<br>
             	<br>
             	<br>
