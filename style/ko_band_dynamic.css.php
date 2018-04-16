@@ -28,6 +28,8 @@
 ?>
 
 
+
+
 @import url('https://fonts.googleapis.com/css?family=<?php echo $main_font; ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo $general_font; ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo $headding_font; ?>');

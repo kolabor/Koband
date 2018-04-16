@@ -294,13 +294,6 @@ $wp_customize->add_control( 'ko_band_googleplus_social_media', array(
     'section' => 'ko_band_social_media_section',
 ) );
 
-/*Linkedin*/
-$wp_customize->add_control( 'ko_band_linkedin_social_media', array(
-    'genericon_class'   => 'linkedin',
-    'label' => esc_html__( 'Linkedin:', 'koband' ),
-    'settings' => 'ko_band_linkedin_social_media',
-    'section' => 'ko_band_social_media_section',
-) );
 
 /*Youtube*/
 $wp_customize->add_control( 'ko_band_youtube_social_media', array(
@@ -310,13 +303,7 @@ $wp_customize->add_control( 'ko_band_youtube_social_media', array(
     'section' => 'ko_band_social_media_section',
 ) );
 
-/*Pinterest*/
-$wp_customize->add_control( 'ko_band_pinterest_social_media', array(
-    'genericon_class'   => 'pinterest',
-    'label' => esc_html__( 'Pinterest:', 'koband' ),
-    'settings' => 'ko_band_pinterest_social_media',
-    'section' => 'ko_band_social_media_section',
-) );
+
 
 /*Spotify*/
 $wp_customize->add_control( 'ko_band_spotify_social_media', array(
