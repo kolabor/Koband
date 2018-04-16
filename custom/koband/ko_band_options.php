@@ -384,19 +384,19 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 /*** The band section end here  ***/
 /***********************************************************************************************************************/
 
-$main_slider =   get_theme_mod( 'ko_band_home_page_slider_choose');
+$main_slider =   get_theme_mod( 'ko_band_home_page_slider_type');
 
 /*Slide section type start here */
 $wp_customize->add_section( 'ko_band_slider_section' , array(
-    'title'       => __( ' Slider homepage', 'koband' ),
+    'title'       => __( ' Slider', 'koband' ),
     'priority'    => 30,
     'description' => $main_slider,
 ) );
 /*Slider box to choose is image or video*/
-$wp_customize->add_setting( 'ko_band_home_page_slider_choose' );
-$wp_customize->add_control( 'ko_band_home_page_slider_choose', array(
+$wp_customize->add_setting( 'ko_band_home_page_slider_type' );
+$wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable Slide types:', 'koband' ),
-    'settings' => 'ko_band_home_page_slider_choose',
+    'settings' => 'ko_band_home_page_slider_type',
     'section' => 'ko_band_slider_section',
     'type'     => 'radio',
     'choices' => array(
@@ -404,6 +404,14 @@ $wp_customize->add_control( 'ko_band_home_page_slider_choose', array(
                 'Video' => esc_html__( 'Video',       'koband' ),
                
 )  )  );
+
+/*Slider Vidoe Link**/
+$wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
+$wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
+  'settings' => 'ko_band_home_page_slider_videolink',
+  'label'    => __( 'Video Link:', 'koband' ),
+  'section'  => 'ko_band_slider_section'
+));
 
 /*Slider Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_title' );
@@ -437,6 +445,8 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
   'label'    => __( 'Button Title:', 'koband' ),
   'section'  => 'ko_band_slider_section'
 ));
+
+
 
 /*Slide section type end here */
 /**********************************************************************************************************************/

@@ -92,11 +92,11 @@
 						echo $slide_buttonlink;
 						echo $slide_buttontitle;
 	    		} 
-		           	if(isset($slide_image[0])) {echo $slide_image[0];}?>
+		           	/*if(isset($slide_image[0])) {echo $slide_image[0];}?>
 	           			<div class="carousel-caption d-none d-md-block">
 							<h5>...</h5>
 							<p>...</p>
-					  	</div>
+					  	</div>*/?>
             	<br>
             	<br>
             	<br>
