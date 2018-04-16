@@ -68,12 +68,13 @@ h2 a {
 }
 .tour_holder .tour_row
 {
-  width: 80% !important;
+  width: 100% !important;
   text-align: left;
   background: #ffffff;
   height: auto;
   padding: 10px;
   margin-top: 15px;
+  border-bottom: 1px solid darkred;
 }
 
 header {

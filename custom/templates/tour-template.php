@@ -12,7 +12,11 @@
  * @since Koband 1.0
  */
 
-get_header(); ?> <h1>Tour Temp</h1>
+get_header(); ?> 
+<div class="container">
+<h1>Tour Temp</h1>
+
+
 <?php
 
 
@@ -33,6 +37,18 @@ get_header(); ?> <h1>Tour Temp</h1>
  	//start loop
 ?>
 <div class='tour_holder'>
+    <div class="tour_row">
+                <div class="row">
+                    <div class="col-sm-2"><?php _e('Date', 'koband');?></div>
+                    <div class="col-sm-1"><?php _e('Country', 'koband');?></div>
+                    <div class="col-sm-1"><?php _e('City', 'koband');?></div>
+                    <div class="col-sm-2"><?php _e('Address', 'koband');?></div>
+                    <div class="col-sm-1"><?php _e('ZipCode', 'koband');?></div>
+                    <div class="col-sm-1"><?php _e('Venue', 'koband');?></div>
+                    <div class="col-sm-1"><?php _e('Ticket status', 'koband');?></div>
+                    <div class="col-sm-1"><?php _e('Store', 'koband');?></div>
+                </div>
+    </div>
 <?php
 
 	 while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
@@ -51,24 +67,18 @@ get_header(); ?> <h1>Tour Temp</h1>
         ?>
             <div class="tour_row">
             	<a href="<?php the_permalink();?>"><?php the_title();?></a><br>
-
-            	<?php if(isset($tour_date[0])) 		 { echo  $tour_date[0]; } ?><br>
-            	<?php if(isset($tour_country[0])) 	 { echo  $tour_country[0]; } ?><br>
-            	<?php if(isset($tour_city[0])) 		 { echo  $tour_city[0]; } ?><br>
-            	<?php if(isset($tour_address[0])) 	 { echo  $tour_address[0]; } ?><br>
-            	<?php if(isset($tour_zipcode[0])) 	 { echo  $tour_zipcode[0]; } ?><br>
-            	<?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?><br>
-            	<?php if(isset($tour_ticket[0])) 	 { echo  $tour_ticket[0]; } ?><br>
-            	<?php if(isset($tour_ticketlink[0])) { echo  $tour_ticketlink[0]; } ?><br>
-
+                <div class="row">
+                	<div class="col-sm-2"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
+                	<div class="col-sm-1"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
+                	<div class="col-sm-1"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
+                	<div class="col-sm-2"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+                	<div class="col-sm-1"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+                	<div class="col-sm-1"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+                	<div class="col-sm-1"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
+                	<div class="col-sm-1"><?php if(isset($tour_ticketlink[0])) { echo  $tour_ticketlink[0]; } ?></div>
+                </div>
             </div>
-         <?php 
-	 endwhile; // end of the loop. 
-?>
+    <?php endwhile;?> <!-- end of the loop.  -->
 </div>;
-
-<?php
-endif;
-
- 
- ?>
+<?php endif;?>
+</div>
