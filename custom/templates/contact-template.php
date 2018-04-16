@@ -16,7 +16,10 @@
 get_header();?>
 
  <!-- Contact with Map - START -->
-<div class="page-header"> <h1>Contact Us </h1></div>
+<div class="album py5 bg-light" id="News">
+    <div class="container"> <h1>Contact Us </h1>
+        <div class="row">
+        
 
 <?php
 $google_map = get_theme_mod('ko_band_googlemap', false );
@@ -26,27 +29,31 @@ $contact_address = get_theme_mod('ko_band_address', false );
 $contact_email = get_theme_mod('ko_band_email', false );
 $contact_phone = get_theme_mod('ko_band_phone', false );
 ?>
-<div class="container">
-	<div class="row-contact"> 
 	
- 		<div class="col-country"><?php _e('Country Name', 'koband'); ?></div>
-	        <?php echo $contact_country; ?>
+ 		<div class="col-sm-4">
+        <?php _e('Country Name: ', 'koband'); ?>
+	        <?php echo $contact_country; ?></br>
 	    
-	    <div class="col-city"><?php _e('City Name', 'koband'); ?></div>
-        	<?php echo $contact_city; ?>
+	   <?php _e('City Name: ', 'koband'); ?>
+        	<?php echo $contact_city; ?></br>
 
-   		<div class="col-address"><?php _e('Address', 'koband'); ?></div>
-			<?php echo $contact_address;  ?>
+   		<?php _e('Address: ', 'koband'); ?>
+			<?php echo $contact_address;  ?></br>
 
-		<div class="col-email"><?php _e('Email', 'koband'); ?> </div>
-      		<?php echo $contact_email; ?>
+		<?php _e('Email: ', 'koband'); ?>
+      		<?php echo $contact_email; ?></br>
 
-        <div class="col-phone"><?php _e('Phone Number', 'koband'); ?></div>
-       		<?php echo $contact_phone; ?>
+       <?php _e('Phone Number: ', 'koband'); ?> 
+       		<?php echo $contact_phone; ?></br>
+        </div>
+
        
-        <div class="col-google"><?php _e('Google Map', 'koband'); ?> </div>
-       		<?php echo $google_map; ?>               
+        <div class="col-sm-8"><?php _e('Google Map: ', 'koband'); ?> </br>
+       		<?php echo $google_map; ?>  </br>
+            
+        </div>             
    </div>
+</div>
 </div>
 <!-- Contact with Map - END -->
 
@@ -143,7 +150,8 @@ $soundcloud= get_theme_mod( 'ko_band_soundcloud_social_media' , false);
         <div class="col-sm"><?php _e('Apple', 'koband'); ?></div>
             <?php if(isset($apple[0])) { echo  $apple; } ?><br>
 </div> 
-</div>                                     
+</div>  
+</div>                                   
   <?php                     
     //Social Network end here
 ?>

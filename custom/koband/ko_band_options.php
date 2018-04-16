@@ -411,8 +411,8 @@ $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
   'label'    => __( 'Video Link:', 'koband' ),
   'section'  => 'ko_band_slider_section',
-  'type'     => 'link'
-));
+  'type'     => 'link',
+ ));
 
 /*Video Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_title' );

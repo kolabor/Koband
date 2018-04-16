@@ -41,7 +41,7 @@ get_header();?>
 	while( $album_posts->have_posts() ) : $album_posts->the_post();
 		
 	$post_id = get_the_ID();?>
-	<h4><?php _e('Albums', 'koband');?></h4>
+	<h3><div id="albums-title"><?php _e('Albums', 'koband');?></div></h3>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
@@ -102,7 +102,7 @@ get_header();?>
 			while ($single_posts->have_posts() ) : $single_posts->the_post();
 			$post_id = get_the_ID(); ?>
 			
-		<h4><?php _e('Singles', 'koband');?></h4>
+		<h4><div id="single-title"><?php _e('Singles', 'koband');?></div></h4>
 			  		<?php 
 			  		$single_date = get_post_meta( $post_id, 'ko_band_singles_date_release', false );
 					$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
