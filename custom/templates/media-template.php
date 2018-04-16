@@ -26,7 +26,7 @@ get_header();?>
 							    $args_media = array(		
 								 	 'post_type' => 'media',   
 									 'post_staus'=> 'publish',
-									 'posts_per_page' => 4,
+									 'posts_per_page' => '8',
 									 
 								);
 

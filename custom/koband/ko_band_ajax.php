@@ -69,7 +69,7 @@ add_action( 'wp_ajax_koband_load_media', 'koband_load_media' );
 
 function koband_load_media(){
 	
-	$paged = $_POST["page"]+1;
+	$paged = $_POST["page"]+2;
 	$gallery = new WP_Query( array(
 		'post_type' => 'media',
 		'post_status' => 'publish',
