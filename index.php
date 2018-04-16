@@ -121,14 +121,14 @@ $count_tour = wp_count_posts('tour')->publish;
 	elseif ($second_section == "Contact") {
 	get_template_part('custom/templates/contact', 'template');
 	};
-echo "<p>**********************************************************</p>";
+//echo "<p>**********************************************************</p>";
 /***********************************************************************************/
 //Second Section if statemend ends here
 
 //Third Sections if statemend starts here
 /***********************************************************************************/
 
-echo "<p>****************************Section 3**********************</p>";
+//echo "<p>****************************Section 3**********************</p>";
    	if($third_section =="Discography" && $count_discography == true)
    	{
    		get_template_part( 'custom/templates/discography', 'template' );
