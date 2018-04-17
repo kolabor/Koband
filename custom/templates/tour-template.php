@@ -73,16 +73,16 @@ get_header(); ?>
             
             	<!--<a href="<?php the_permalink();?>"><?php the_title();?></a><br>-->
                 
-                    <div class="divTableRow">
-                	<div class="divTableCell"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
-                	<div class="divTableCell"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
-                	<div class="divTableCell"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
-                	<div class="divTableCell"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
-                	<div class="divTableCell"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
-                	<div class="divTableCell"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
-                	<div class="divTableCell"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-                	<div class="divTableCell btn-tour"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>">Buy Here</a><?php } ?></div>
-                    </div>
+                <div class="divTableRow">
+            	<div class="divTableCell"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
+            	<div class="divTableCell btn-tour"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+                </div>
             
             
     <?php endwhile;?> <!-- end of the loop.  -->

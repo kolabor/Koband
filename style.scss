@@ -391,7 +391,9 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   color: #222;
   font-size: 20px;
   cursor: pointer;
+  margin: 0 auto;
   margin-bottom: 20px;
+  margin-top: 10px;
   opacity: 0.5;
   background-color: #ddd;
   border-radius: 2px;
@@ -538,7 +540,7 @@ Tour Section
 
 .btn-tour a {
   color: #7e1c1c!important;
-  
+
   padding: 10px 25px 10px 25px!important;
   text-decoration: none!important;
 }
