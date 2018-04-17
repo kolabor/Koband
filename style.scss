@@ -301,35 +301,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 /* ----------------------------------------------- */
 /* Video */
 /* -----------------------------------------------  */
-/*.video-body {
-  position: relative;
-  height: 100vh;
-  max-height: 100vh;
-  width: auto;
-  min-width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.video-bg {
-  display: table;
-    width: 100%;
-    background-attachment: scroll;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
 
-.video {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  filter: grayscale(100%);
-
-}*/
 
 .video-bg {
   display: table;
@@ -360,6 +332,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: grayscale(100%);
 }
   /* ----------------------------------------------- */
 /* News */
@@ -516,4 +489,59 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   //-moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+/*
+Tour Section
+-------------------------------------------
+*/
+
+.divTable{
+  display: table;
+  width: 100%;
+  margin-top: 25px!important;
+  margin-bottom: 25px!important;
+}
+.divTableRow {
+  display: table-row;
+}
+
+.divTableCell, .divTableHead,.divTableHeading {
+  border-bottom: 1px solid #4D0000;
+  display: table-cell;
+  padding: 3px 10px;
+}
+.divTableHeading {
+
+  background-color: #f2f2f2;
+  font-size: 150%;
+  /*display: table-header-group;*/
+  font-weight: bold;
+  padding: 10px;
+}
+.divTableCell {
+  font-size: 100%;
+  line-height: 145%;
+  padding: 10px;
+  font-weight: 500;
+}
+.divTableRow:hover {
+  background-color: #f2f2f2;
+}
+.divTableFoot {
+  background-color: #f2f2f2;
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+.btn-tour a {
+  color: #7e1c1c!important;
+  
+  padding: 10px 25px 10px 25px!important;
+  text-decoration: none!important;
+}
+.btn-tour a:hover {
+  background-color: #dddbdb!important;
 }

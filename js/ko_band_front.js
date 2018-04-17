@@ -154,12 +154,6 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 		}
 	});
 });
-function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
+
 
 });     // Ready function ends here //

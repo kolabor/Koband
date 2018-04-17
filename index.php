@@ -52,7 +52,7 @@ $count_tour = wp_count_posts('tour')->publish;
 // Declartaion of Vraiables ends here
 
 //First Section if statement starts here
-/********************************************************************************/
+
 
 	if($first_section == "Discography" && $count_discography == true) 
 	{ 
@@ -82,12 +82,9 @@ $count_tour = wp_count_posts('tour')->publish;
 	};
 
 
-
-/***********************************************************************************/
 //First Section if statement ends here
 
 //Second Section if statemend starts here
-/***********************************************************************************/
 
 
 	if($second_section == "Discography" && $count_discography == true) 
