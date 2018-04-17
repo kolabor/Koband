@@ -344,7 +344,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   transform: translate(-50%, -50%);
   filter: grayscale(100%);
 }
-  /* ----------------------------------------------- */
+/* ----------------------------------------------- */
 /* News */
 /* -----------------------------------------------  */
 .card-img-top img {
@@ -375,7 +375,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 }
 .read_more {
   color: #000000;
-    &:hover {
+  &:hover {
     text-decoration: none;
   }
 }
@@ -416,7 +416,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   &:hover,
   &:focus,
   &.loading {
-      opacity: 1;
+    opacity: 1;
   }
   &.loading {
     cursor: default;
@@ -593,4 +593,12 @@ Tour Section
   color: #7c7c7c!important;
   font-size: 15px!important;
   font-weight: 500!important;
+}
+/*
+=======================================================
+          pop-up design
+=======================================================
+ */
+.modal-dialog {
+  padding-top: 60px;
 }

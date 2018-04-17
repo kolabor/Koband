@@ -41,14 +41,41 @@ get_header(); ?>
 			<?php 
  				if ( $theband_posts->have_posts() ) : 
  				//start loop
+ 					//$i = 0;
+ 					//$mymodal = 'myModal' . $i; 
 					while ( $theband_posts->have_posts() ) : $theband_posts->the_post(); ?>
-					<?php $post_id = get_the_ID(); ?> 
-					<?php the_title(); the_content();?></br>
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(200,200)); ?></a></br>
-					<?php $theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
-   			 		<?php if(isset($theband_role[0])) 		 { echo  $theband_role[0]; } ?></br></br></br>
-      				<?php endwhile;
-      			endif;?>
+						<?php $post_id = get_the_ID(); ?>
+						<?php $theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
+						<div data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail(array(200,200)); ?></div>
+
+					<button type="button" id="myBtn" class="btn" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button>
+
+					  <!-- Modal -->
+					  <div class="modal fade" id="myModal<?php echo $id;?>" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <h4 class="modal-title"><?php _e('Name : ', 'koband');?><?php the_title();?></h4>
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        </div>
+					        <div class="modal-body">
+					        	<?php the_post_thumbnail(array(400,400)); ?>
+					          <h4><?php _e('Biography : ', 'koband');?></h4>
+					          <p><?php the_content();?></p>
+					          <h4><?php _e('Band Role : ', 'koband');?></h4>
+					          <p><?php if(isset($theband_role[0]))  { echo  $theband_role[0]; } ?></p>
+					        </div>
+					        <!--<div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        </div>-->
+					      </div>
+					      
+					    </div>
+					  </div>
+      				<?php endwhile; ?>
+      			<?php	endif;?>
    			</div>
 		</div>
 	</div>

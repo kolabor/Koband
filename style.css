@@ -539,4 +539,12 @@ Tour Section
   font-size: 15px !important;
   font-weight: 500 !important; }
 
+/*
+=======================================================
+          pop-up design
+=======================================================
+ */
+.modal-dialog {
+  padding-top: 60px; }
+
 /*# sourceMappingURL=style.css.map */
