@@ -18,44 +18,38 @@ function ko_band_RetinaDisplay() {
 	}); 
 
 //show hide list of album songs
-/*$(".album-songs-show-hide").hide();
-$(".hide-album-song").hide();
-$(".show-album-song").click(function(){
-	$(this).closest("div.container").find(".album-songs-show-hide").slideDown(1000);
-    //$(".album-songs-show-hide").slideDown(1000);// hide container elemnts 
-    $(".show-album-song").hide(); // button down hide
-    $(".hide-album-song").show(); // button up show
-
-});/*
 $(".album-songs-show-hide").hide();
 $(".hide-album-song").hide();
 $(".show-album-song").click(function(){
-    $(".album-songs-show-hide").hide();
-    $(".hide-album-song").hide();
-    $(this).next(".album-songs-show-hide").slideDown(1000);
-    $(this).hide();
-    $(this).next(".hide-album-song").show();
+	$(this).closest("div.container").find(".album-songs-show-hide").slideDown(1000); 	// show container elemnts 
+	$(this).closest("div.album-up-down-buttons").find(".show-album-song").hide(); 		// button down hide
+	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").show();		// button up show
+  
 });
+
+
 $(".hide-album-song").click(function(){
-	$(".album-songs-show-hide").slideUp(1000);
-    $(".hide-album-song").hide();
-	$(".show-album-song").show();
+	$(this).closest("div.container").find(".album-songs-show-hide").slideUp(1000); 	// hide container elemnts 
+	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").hide();	// button up hide
+	$(this).closest("div.album-up-down-buttons").find(".show-album-song").show(); 	// button down show
 });
 
 // show hide list of single stores
 $(".single-songs-show-hide").hide();
 $(".hide-single-song").hide();
 $(".show-single-song").click(function(){
-    $(".single-songs-show-hide").slideDown(1000);
-    $(".show-single-song").hide();
-    $(".hide-single-song").show();
+	$(this).closest("div.container").find(".single-songs-show-hide").slideDown(1000); 	// show container elemnts 
+	$(this).closest("div.single-up-down-buttons").find(".show-single-song").hide(); 		// button down hide
+	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").show();		// button up show
 
 });
+
 $(".hide-single-song").click(function(){
-	$(".single-songs-show-hide").slideUp(1000);
-    $(".hide-single-song").hide();
-	$(".show-single-song").show();
-});*/
+	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(1000); 	// hide container elemnts 
+	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").hide();	// button up hide
+	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	// button down show
+});
+
 
 /*
 ============================================
