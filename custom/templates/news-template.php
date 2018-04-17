@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */?>
 
- <div class="album py5 bg-light" id="News">
+ <div class="album py5 bg section" id="News">
  	<div class="container">
  		<div class="row">
 		 	<div class="container">

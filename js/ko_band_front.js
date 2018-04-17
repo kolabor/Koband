@@ -56,6 +56,7 @@ $(".hide-single-song").click(function(){
 	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	// button down show
 });
 
+
 /*
 ============================================
   Load more +2 News with Load-More button
