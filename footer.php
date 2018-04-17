@@ -86,7 +86,7 @@ $apple= get_theme_mod( 'ko_band_apple_social_media', false);
  
 	</div>
 </div>
-
+<?php wp_footer() ?>
 <!-- footer row ends here -->
 </body>
 </html>
