@@ -53,50 +53,7 @@ $contact_phone = get_theme_mod('ko_band_phone', false );
     <!-- Contact with Map - END -->
     <div class="row">
     
-<?php
-//Social Network start here
-$facebook = get_theme_mod( 'ko_band_facebook_social_media' , false);
-$twitter = get_theme_mod( 'ko_band_twitter_social_media' , false);
-$instagram = get_theme_mod( 'ko_band_insagram_social_media' , false);
-$googleplus= get_theme_mod( 'ko_band_googleplus_social_media' , false);
 
-$youtube= get_theme_mod( 'ko_band_youtube_social_media' , false);
-$github= get_theme_mod( 'ko_band_github_social_media' , false);
-$soundcloud= get_theme_mod( 'ko_band_soundcloud_social_media' , false);
-?>
-        <div class="col-sm-4"></div>
-  
-        <div class="col-sm-8">
-          
-         
-                <?php if(isset($facebook[0])) { echo $facebook;} ?>
-           
-                <?php if(isset($twitter[0])) { echo  $twitter; } ?>
-           
-                <?php if(isset($instagram[0])) { echo  $instagram; } ?>
-           
-                <?php if(isset($googleplus[0])) { echo  $googleplus; } ?>
-           
-          
-                <?php if(isset($youtube[0])) { echo  $youtube; } ?>
-        
-           
-                <?php if(isset($spotify[0])) { echo  $spotify; } ?>
-            
-                <?php if(isset($soundcloud[0])) { echo  $soundcloud; } ?>
-           
-                <?php if(isset($bandcamp[0])) { echo  $bandcamp; } ?>
-            
-                <?php if(isset($deezer[0])) { echo  $deezer; } ?>
-            
-                <?php if(isset($apple[0])) { echo  $apple; } ?>
-        </div>
-   </div>
-</div>
-</div>
-<?php                     
-    //Social Network end here
-?>
 <script src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11858.21723189105!2d20.968557999999998!3d42.0098398!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smk!4v1523891538553"></script>
 
 <script type="text/javascript">
