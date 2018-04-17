@@ -12,39 +12,40 @@ function ko_band_RetinaDisplay() {
 };
 
 //Limiting the number of characters for textarea to 250 chars//
-            var maxLength = 250;
-            $('textarea').keyup(function() {
-            var textlen = maxLength - $(this).val().length;
-        }); 
-        
+	var maxLength = 250;
+	$('textarea').keyup(function() {
+	var textlen = maxLength - $(this).val().length;
+	}); 
+
 //show hide list of album songs
 $(".album-songs-show-hide").hide();
 $(".hide-album-song").hide();
 $(".show-album-song").click(function(){
-    $(".album-songs-show-hide").slideDown();
-    $(".show-album-song").hide();
-    $(".hide-album-song").show();
-
+	$(this).closest("div.container").find(".album-songs-show-hide").slideDown(1000); 	// show container elemnts 
+	$(this).closest("div.album-up-down-buttons").find(".show-album-song").hide(); 		// button down hide
+	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").show();		// button up show
+  
 });
+
 $(".hide-album-song").click(function(){
-	$(".album-songs-show-hide").slideUp();
-    $(".hide-album-song").hide();
-	$(".show-album-song").show();
+	$(this).closest("div.container").find(".album-songs-show-hide").slideUp(1000); 	// hide container elemnts 
+	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").hide();	// button up hide
+	$(this).closest("div.album-up-down-buttons").find(".show-album-song").show(); 	// button down show
 });
 
 // show hide list of single stores
 $(".single-songs-show-hide").hide();
 $(".hide-single-song").hide();
 $(".show-single-song").click(function(){
-    $(".single-songs-show-hide").slideDown();
-    $(".show-single-song").hide();
-    $(".hide-single-song").show();
+	$(this).closest("div.container").find(".single-songs-show-hide").slideDown(1000); 	// show container elemnts 
+	$(this).closest("div.single-up-down-buttons").find(".show-single-song").hide(); 		// button down hide
+	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").show();		// button up show
 
 });
 $(".hide-single-song").click(function(){
-	$(".single-songs-show-hide").slideUp();
-    $(".hide-single-song").hide();
-	$(".show-single-song").show();
+	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(1000); 	// hide container elemnts 
+	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").hide();	// button up hide
+	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	// button down show
 });
 
 /*
@@ -144,12 +145,6 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 		}
 	});
 });
-function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
+
 
 });     // Ready function ends here //

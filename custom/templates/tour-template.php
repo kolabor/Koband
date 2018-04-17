@@ -12,7 +12,15 @@
  * @since Koband 1.0
  */
 
-get_header(); ?> <h1>Tour Temp</h1>
+get_header(); ?> 
+<div class="container">
+    <div class="row">
+
+        <div class="container">
+            <div class="row">
+                <h1>Tour</h1>
+            </div>
+        </div>
 <?php
 
 
@@ -32,7 +40,20 @@ get_header(); ?> <h1>Tour Temp</h1>
  if ( $tour_posts->have_posts() ) : 
  	//start loop
 ?>
-<div class='tour_holder'>
+<div class="divTable">
+    <div class="divTableBody">
+               
+                                <div class="divTableRow">
+                                <div class="divTableHeading"><?php _e('Date', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('Country', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('City', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('Address', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('ZipCode', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('Venue', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('Ticket status', 'koband');?></div>
+                                <div class="divTableHeading"><?php _e('Store', 'koband');?></div>
+                                </div>
+                  
 <?php
 
 	 while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
@@ -49,26 +70,23 @@ get_header(); ?> <h1>Tour Temp</h1>
 		$tour_ticket = get_post_meta($post_id,  "ko_band_tour_ticket", false );
 		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
         ?>
-            <div class="tour_row">
-            	<a href="<?php the_permalink();?>"><?php the_title();?></a><br>
-
-            	<?php if(isset($tour_date[0])) 		 { echo  $tour_date[0]; } ?><br>
-            	<?php if(isset($tour_country[0])) 	 { echo  $tour_country[0]; } ?><br>
-            	<?php if(isset($tour_city[0])) 		 { echo  $tour_city[0]; } ?><br>
-            	<?php if(isset($tour_address[0])) 	 { echo  $tour_address[0]; } ?><br>
-            	<?php if(isset($tour_zipcode[0])) 	 { echo  $tour_zipcode[0]; } ?><br>
-            	<?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?><br>
-            	<?php if(isset($tour_ticket[0])) 	 { echo  $tour_ticket[0]; } ?><br>
-            	<?php if(isset($tour_ticketlink[0])) { echo  $tour_ticketlink[0]; } ?><br>
-
-            </div>
-         <?php 
-	 endwhile; // end of the loop. 
-?>
-</div>;
-
-<?php
-endif;
-
- 
- ?>
+            
+            	<!--<a href="<?php the_permalink();?>"><?php the_title();?></a><br>-->
+                
+                <div class="divTableRow">
+            	<div class="divTableCell"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+            	<div class="divTableCell"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
+            	<div class="divTableCell btn-tour"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+                </div>
+            
+            
+    <?php endwhile;?> <!-- end of the loop.  -->
+</div>
+<?php endif;?>
+</div>
+</div>

@@ -36,12 +36,12 @@ get_header();?>
 												ALBUM SONG DETAILS
 ================================================================================================================
 */
-	$album_posts = new WP_Query($args_album);
-    if ($album_posts->have_posts() ) : 
+	$album_posts = new WP_Query($args_album); ?>
+	<h3><div id="albums-title"><?php _e('Albums', 'koband');?></div></h3>
+    <?php if ($album_posts->have_posts() ) : 
 	while( $album_posts->have_posts() ) : $album_posts->the_post();
 		
 	$post_id = get_the_ID();?>
-	<h3><div id="albums-title"><?php _e('Albums', 'koband');?></div></h3>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
@@ -56,7 +56,7 @@ get_header();?>
 				
 			<div class="col-sm-3"><?php _e('Date:', 'koband');?><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></div>
 		    <div class="col-sm-3"><?php _e('Length:', 'koband');?><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></div>
-		    <div class="col-sm-1 ">
+		    <div class="col-sm-1 album-up-down-buttons">
 		    	<span class="btn btn-sm album-song">
 			    	<a class="btn btn-sm show-album-song">&#8897;</a>
 			    	<a class="btn btn-sm hide-album-song">&#8896;</a>
@@ -97,12 +97,12 @@ get_header();?>
 												SINGLE SONG DETAILS
 ================================================================================================================
 -->
-		<?php $single_posts = new WP_Query($args_singles);
-		if ($single_posts->have_posts() ) :
+		<?php $single_posts = new WP_Query($args_singles); ?>
+		<h3><div id="single-title"><?php _e('Singles', 'koband');?></div></h3>
+		<?php if ($single_posts->have_posts() ) :
 			while ($single_posts->have_posts() ) : $single_posts->the_post();
 			$post_id = get_the_ID(); ?>
 			
-		<h4><div id="single-title"><?php _e('Singles', 'koband');?></div></h4>
 			  		<?php 
 			  		$single_date = get_post_meta( $post_id, 'ko_band_singles_date_release', false );
 					$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
@@ -113,7 +113,7 @@ get_header();?>
 				<div class="col-sm-3"><?php _e('Name:', 'koband');?><?php the_title();?></div>
 				<div class="col-sm-3"><?php _e('Date:', 'koband');?><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></div>
 			    <div class="col-sm-3"><?php _e('Length:', 'koband');?><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></div>
-			   	<div class="col-sm-1 ">
+			   	<div class="col-sm-1 single-up-down-buttons">
 			    	<span class="btn btn-sm single-song">
 				    	<a class="btn btn-sm show-single-song">&#8897;</a>
 				    	<a class="btn btn-sm hide-single-song">&#8896;</a>

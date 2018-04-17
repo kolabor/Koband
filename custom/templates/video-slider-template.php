@@ -31,14 +31,19 @@
 	<!--<div class="video-body">-->
 		<div class="video-bg">
 				<div class="iframe-wrapper">
-						<iframe  src="<?php echo $slide_video_link;?>?autoplay=1"></iframe>
+
+						<iframe  src="<?php echo $slide_video_link;?>?autoplay=1&loop=1&mute=1"></iframe>
+
 				</div>		
 		</div>
 	<!--</div>	-->		
-				<?php if(isset($slide_video_title[0])) 	{ echo  $slide_video_title; } ?>
-				<?php if(isset($slide_video_subtitle[0])) 	{ echo  $slide_video_subtitle; } ?>
-				<?php if(isset($slide_video_buttonlink[0])) 	{ echo  $slide_video_buttonlink; } ?>
-				<?php if(isset($slide_video_buttontitle[0])) 	{ echo  $slide_video_buttontitle; } ?>
-				
+
+				 <div class="sl-content">
+					    <h5><?php if(isset($slide_video_title[0])) 	{ echo  $slide_video_title; } ?></h5>
+					    <p><?php if(isset($slide_video_subtitle[0])) 	{ echo  $slide_video_subtitle; } ?></p>
+					    <a class="btn btn-primary btn-lg" href="<?php if(isset($slide_video_buttonlink)) 	
+					    	{ echo  $slide_video_buttonlink[0]; } ?>"><?php if(isset($slide_video_buttontitle[0])) 
+					    		{ echo  $slide_video_buttontitle; } ?></a>
+					</div>
 <?php endif;
 ?>
