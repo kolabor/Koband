@@ -79,6 +79,6 @@ get_header(); ?>
                 </div>
             </div>
     <?php endwhile;?> <!-- end of the loop.  -->
-</div>;
+</div>
 <?php endif;?>
 </div>
