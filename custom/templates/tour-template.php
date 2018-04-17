@@ -13,7 +13,7 @@
  */
 
 get_header(); ?> 
-<div class="container">
+<div id="Tour" class="container section">
     <div class="row">
 
         <div class="container">
@@ -81,7 +81,7 @@ get_header(); ?>
             	<div class="divTableCell"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
             	<div class="divTableCell"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
             	<div class="divTableCell"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-            	<div class="divTableCell btn-tour"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+            	<div class="divTableCell btn-buy"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
                 </div>
             
             

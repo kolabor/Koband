@@ -12,7 +12,15 @@ Text Domain: koband
 */
 /* =Reset
 -------------------------------------------------------------- */
-
+.section{
+  padding-top: 20px !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-bottom: 20px !important;
+}
+.bg {
+  background-color: #f2f2f2!important;
+}
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
@@ -23,6 +31,7 @@ h1 {
   word-spacing: 4px!important;
   letter-spacing: 1px!important;
   text-transform: uppercase!important;
+  padding-top: 0!important;
 }
 h2 {
   font-size: 20px !important;
@@ -392,7 +401,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   font-size: 20px;
   cursor: pointer;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 10px;
   opacity: 0.5;
   background-color: #ddd;
@@ -513,7 +522,7 @@ Tour Section
   padding: 3px 10px;
 }
 .divTableHeading {
-
+  color: #878787;
   background-color: #f2f2f2;
   font-size: 150%;
   /*display: table-header-group;*/
@@ -525,6 +534,7 @@ Tour Section
   line-height: 145%;
   padding: 10px;
   font-weight: 500;
+  color:#aaa7a7;
 }
 .divTableRow:hover {
   background-color: #f2f2f2;
@@ -538,12 +548,48 @@ Tour Section
   display: table-row-group;
 }
 
-.btn-tour a {
+.btn-buy a {
   color: #7e1c1c!important;
-
-  padding: 10px 25px 10px 25px!important;
   text-decoration: none!important;
 }
-.btn-tour a:hover {
-  background-color: #dddbdb!important;
+.album-head {
+  background-color: #fff !important;
+  border-bottom: 2px solid #858383!important;
+  padding: 5px!important;
+  padding-left: 0!important;
+}
+.albums-title {
+  color: #828282!important;
+  padding-bottom: 10px!important;
+}
+.single-title {
+  color: #828282!important;
+  padding-bottom: 20px!important;
+  padding-top: 20px!important;
+}
+.col-sm-1 {
+  padding-left:5px!important;
+}
+.col-sm-3 {
+  color: #aaa7a7!important;
+  font-size: 20px!important;
+  font-weight: 700!important;
+}
+.col-sm-3 span {
+  font-size: 30px!important;
+  font-weight: 600!important;
+  color: #878787!important;
+}
+
+.songs-head {
+  font-size: 19px!important;
+  font-weight: 500!important;
+  color: #898888!important;
+}
+.song-list {
+  background-color: #f6f6f6!important;
+  border-bottom: 1px solid #999!important;
+  color: #7c7c7c!important;
+  font-size: 15px!important;
+  font-weight: 500!important;
 }
