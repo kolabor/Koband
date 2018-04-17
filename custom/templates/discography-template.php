@@ -14,7 +14,7 @@
 
 get_header();?> 
 <div id="Discography" class="container">
-	<h1>Discography Temp</h1>
+	<h1>Discography</h1>
 		
 	<?php
 

@@ -18,7 +18,7 @@ function ko_band_RetinaDisplay() {
 	}); 
 
 //show hide list of album songs
-$(".album-songs-show-hide").hide();
+/*$(".album-songs-show-hide").hide();
 $(".hide-album-song").hide();
 $(".show-album-song").click(function(){
 	$(this).closest("div.container").find(".album-songs-show-hide").slideDown(1000);
@@ -35,7 +35,7 @@ $(".show-album-song").click(function(){
     $(this).next(".album-songs-show-hide").slideDown(1000);
     $(this).hide();
     $(this).next(".hide-album-song").show();
-});*/
+});
 $(".hide-album-song").click(function(){
 	$(".album-songs-show-hide").slideUp(1000);
     $(".hide-album-song").hide();
@@ -55,7 +55,7 @@ $(".hide-single-song").click(function(){
 	$(".single-songs-show-hide").slideUp(1000);
     $(".hide-single-song").hide();
 	$(".show-single-song").show();
-});
+});*/
 
 /*
 ============================================
