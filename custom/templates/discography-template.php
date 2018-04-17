@@ -71,9 +71,9 @@ get_header();?>
 			</div>
 			<div class="row" style="background-color: #d6d6d6; border-bottom: 1px solid #000;">			
 			<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
-				<div class="col-sm-4"><?php echo $value_song_details['name-details']; ?></div>
-				<div class="col-sm-4"><?php echo $value_song_details['length']; ?></div>
-				<div class="col-sm-4"><?php echo $value_song_details['detail']; ?></div>
+				<div class="col-sm-4"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
+				<div class="col-sm-4"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
+				<div class="col-sm-4"><?php if(isset($value_song_details['detail'])) {echo $value_song_details['detail'];} ?></div>
 					
 				<?php } ?> 
 			</div>
@@ -85,8 +85,8 @@ get_header();?>
 			<div class="row">
 				<?php 
 					foreach ($album_song_store[0] as  $value_song_store) { ?>
-					<div class="col-sm-6"><?php echo $value_song_store['name-store']; ?></div>
-					<div class="col-sm-6"><?php echo $value_song_store['link']; ?>"</div> 
+					<div class="col-sm-6"><?php if(isset($value_song_details['name-store'])) {echo $value_song_store['name-store'];}?></div>
+					<div class="col-sm-6"><?php if(isset($value_song_details['link'])) {echo $value_song_store['link'];}?></div> 
 				<?php } ?> 
 			</div>			
 		</div>
