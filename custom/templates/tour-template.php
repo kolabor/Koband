@@ -87,7 +87,6 @@ get_header(); ?>
             
     <?php endwhile;?> <!-- end of the loop.  -->
 </div>
-</div>
 <?php endif;?>
 </div>
 </div>
