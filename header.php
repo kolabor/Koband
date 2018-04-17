@@ -15,6 +15,9 @@ wp_head(); ?>
     <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
      <title><?php bloginfo( 'name' ); ?></title>
+
+  
+   
 </head>
 <!--<script type="text/javascript">
   jQuery(document).ready(function( $ ){ 
@@ -44,13 +47,13 @@ wp_head(); ?>
                         );
                       ?>
 
-                      <?php wp_nav_menu($args); ?>
+                      <?php wp_nav_menu($args); ?>             
                     </div>
-
-                  </nav>
                   </div>
-          
-         
-
+                  </nav>
                 </header>
+</body>
+
+                  
+         
 
