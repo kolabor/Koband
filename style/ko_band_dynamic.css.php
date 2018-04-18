@@ -27,7 +27,11 @@
 
 ?>
 
-
+#theband{
+ background-image: url("<?php echo $theband_back_image; ?>") !important;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
 
 
 @import url('https://fonts.googleapis.com/css?family=<?php echo $main_font; ?>');
@@ -41,7 +45,7 @@
 
 body
 {
-  /*background-color: <?php echo $main_theme_color; ?> !important;
+  background-color: <?php echo $main_theme_color; ?> !important;
 
   font-family: <?php echo $general_font; ?> !important;
   font-size:  <?php echo $main_font_size; ?> !important;
@@ -62,12 +66,7 @@ h1, h2, h3
 
 }
 
-#theband
-{
- background-image: url(<?php echo $theband_back_image; ?>) !important;
- background-repeat: no-repeat;
- background-size: cover;
-}
+
 
 
 
