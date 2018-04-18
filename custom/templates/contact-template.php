@@ -16,7 +16,7 @@
 get_header();?>
 
  <!-- Contact with Map - START -->
-<div class="album py5 bg-light" id="News">
+<div class="section" id="Contact">
     <div class="container"> <h1>Contact Us </h1>
         <div class="row">
 
