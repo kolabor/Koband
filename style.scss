@@ -379,13 +379,8 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     text-decoration: none;
   }
 }
-.btn-group:hover {
-  background-color: #f6f4f4 !important;
 
-}
-.btn-outline-secondary:hover{
-  background-color: #f6f4f4 !important;
-}
+
 
 /*
     Ajax Loading
@@ -492,6 +487,9 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
 .single-filter-content:hover .overlay-bg-content {
   opacity: 1;
+}
+.btn-outline-secondary:hover{
+  background: linear-gradient(to right, rgba(221, 221, 221, 0) 0%, rgba(246, 245, 245, 0) 100%) !important;
 }
 
 .flex-column {
@@ -602,3 +600,52 @@ Tour Section
 .modal-dialog {
   padding-top: 60px;
 }
+
+/*
+=======================================================
+          the band
+=======================================================
+ */
+.theband-heading h1{
+  color: #c4c4c4!important;
+}
+.band-bio {
+  background: linear-gradient(to right, rgba(221, 221, 221, 0.75) 0%, rgba(246, 245, 245, 0.78) 100%);
+  margin-top: 200px!important;
+}
+.band-bio p {
+  width: 100%!important;
+  height: auto!important;
+  padding: 10px!important;
+  margin-top: 10px!important;
+  color: #363636!important;
+  font-size: 17px!important;
+  font-weight: 400!important;
+}
+.band-members {
+  width: 65%!important;
+  height: auto!important;
+  position: relative!important;
+  padding: 20px!important;
+}
+.bnd_mem_img {
+  width: 100%;
+  max-height: 200px;
+}
+.bnd_mem_img img {
+  width: 100%;
+  height: 200px;
+  filter: grayscale(90%)!important;
+}
+.fisnik {
+  background: linear-gradient(to right, rgba(221, 221, 221, 0) 0%, rgba(246, 245, 245, 0) 100%) !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  border-image: none!important;
+  border-style: none!important;
+  cursor: pointer!important;
+  font-weight: 500!important;
+  color: #434343!important;
+  font-size: 18px!important;
+}
+

@@ -41,11 +41,11 @@
             <?php endif; ?> 
  	 	</div>
    </div>
- </div>
- 
- 		<div class="container">
-    <div class="row" id="footer">
-    <div class="col-sm-4 copyright">
+
+   <div class="row">
+ 	
+ 		<div class="col-sm-4 copyright">
+
  			<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a> <!--Copyright-->
  		</div>
     <?php
@@ -64,25 +64,25 @@ $apple= get_theme_mod( 'ko_band_apple_social_media', false);
 
      <div class="col-sm-8 social-media">  
         
-          <div class="facebook-ikon"><?php if(isset($facebook[0])) { echo "<a href='$facebook'><i class='fab fa-facebook-f'></i></a>";} ?> 
+          <div class="facebook-ikon"><?php if(isset($facebook[0])) { echo "<a href='$facebook'><i class='fa fa-facebook'></i></a>";} ?> 
           </div>
-          <div class="twitter-ikon"><?php if(isset($twitter[0])) { echo  "<a href='$twitter'> <i class='fab fa-twitter' ></i></a>";} ?>
+          <div class="twitter-ikon"><?php if(isset($twitter[0])) { echo  "<a href='$twitter'> <i class='fa fa-twitter' ></i></a>";} ?>
           </div>
-          <div class="instagram-ikon"><?php if(isset($instagram[0])) { echo  "<a href='$instagram'><i class='fab fa-instagram'></i></a>";} ?>
+          <div class="instagram-ikon"><?php if(isset($instagram[0])) { echo  "<a href='$instagram'><i class='fa fa-instagram'></i></a>";} ?>
           </div>
-          <div class="googleplus-ikon"><?php if(isset($googleplus[0])) { echo  "<a href='$googleplus'><i class='fab fa-google-plus'></i></a>";} ?>
+          <div class="googleplus-ikon"><?php if(isset($googleplus[0])) { echo  "<a href='$googleplus'><i class='fa fa-google-plus'></i></a>";} ?>
           </div>
-          <div class="youtube-ikon"><?php if(isset($youtube[0])) { echo  "<a href='$youtube'><i class='fab fa-youtube'></i></a>";} ?>
+          <div class="youtube-ikon"><?php if(isset($youtube[0])) { echo  "<a href='$youtube'><i class='fa fa-youtube'></i></a>";} ?>
           </div>
-          <div class="spotify-ikon"><?php if(isset($spotify[0])) { echo  "<a href='$spotify'><i class='fab fa-spotify'></i></a>";} ?>
+          <div class="spotify-ikon"><?php if(isset($spotify[0])) { echo  "<a href='$spotify'><i class='fa fa-spotify'></i></a>";} ?>
           </div>
-          <div class="soundcloud-ikon"><?php if(isset($soundcloud[0])) { echo  "<a href='$soundcloud'><i class='fab fa-soundcloud'></i></a>";} ?>
+          <div class="soundcloud-ikon"><?php if(isset($soundcloud[0])) { echo  "<a href='$soundcloud'><i class='fa fa-soundcloud'></i></a>";} ?>
           </div>
-          <div class="bandcamp-ikon"> <?php if(isset($bandcamp[0])) { echo  "<a href='$bandcamp'><i class='fab fa-bandcamp'></i></a>";} ?>
+          <div class="bandcamp-ikon"> <?php if(isset($bandcamp[0])) { echo  "<a href='$bandcamp'><i class='fa fa-bandcamp'></i></a>";} ?>
           </div>
           <div class="deezer-ikon"><?php if(isset($deezer[0])) { echo   "<a href='$deezer'><i class='fa fa-deezer'></i></a>";} ?>
           </div>       
-          <div class="apple-ikon"> <?php if(isset($apple[0])) { echo  "<a href='$apple'><i class='fab fa-apple'></i></a>";} ?>
+          <div class="apple-ikon"> <?php if(isset($apple[0])) { echo  "<a href='$apple'><i class='fa fa-apple'></i></a>";} ?>
           </div>
        
         </div>

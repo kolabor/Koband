@@ -23,11 +23,17 @@
   $main_theme_first_color = get_theme_mod( 'ko_band_main_color' );
   $main_theme_second_color = get_theme_mod( 'ko_band_second_color' );
   $main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
-  $theband_back_image = get_theme_mod('ko_band_the_band_images', false);
+  $theband_back_image = get_theme_mod('ko_band_the_band_images');
 
 ?>
 
-
+#theband{
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+ url("<?php echo $theband_back_image; ?>") !important;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+}
 
 
 @import url('https://fonts.googleapis.com/css?family=<?php echo $main_font; ?>');
@@ -62,12 +68,7 @@ h1, h2, h3
 
 }
 
-#theband
-{
- background-image: url(<?php echo $theband_back_image; ?>) !important;
- background-repeat: no-repeat;
- background-size: cover;
-}
+
 
 
 

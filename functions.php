@@ -46,7 +46,7 @@ function ko_band_enqueue_dynamic_css() {
   if (! is_admin()){
     $version = get_theme_mod('koband-dynamic-css',"1.00");
     $koband_dir = get_stylesheet_directory_uri();
-    wp_enqueue_style('dynamic-css',  "{$koband_dir}/style/ko_band_dynamic.css.php",array(),$version);
+    wp_enqueue_style('dynamic-css',  $koband_dir . '/style/ko_band_dynamic.css.php', array(), $version);
   }
 }
 

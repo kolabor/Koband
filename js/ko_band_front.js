@@ -44,14 +44,14 @@ $(".hide-album-song").click(function(){
 $(".single-songs-show-hide").hide();
 $(".hide-single-song").hide();
 $(".show-single-song").click(function(){
-	$(this).closest("div.container").find(".single-songs-show-hide").slideDown(1000); 	// show container elemnts 
+	$(this).closest("div.container").find(".single-songs-show-hide").slideDown(500); 	// show container elemnts 
 	$(this).closest("div.single-up-down-buttons").find(".show-single-song").hide(); 	// button down hide
 	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").show();		// button up show
 });
 
 // hide list of single stores
 $(".hide-single-song").click(function(){
-	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(1000); 	// hide container elemnts 
+	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(500); 	// hide container elemnts 
 	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").hide();		// button up hide
 	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	// button down show
 });
@@ -95,7 +95,7 @@ $(document).on('click', '.koband_load_more:not(.loading)', function(){
 	            $('.koband_load_more').hide();
 	            $('.no-news').slideDown(700);
             }
-            else {
+            else{
 	            that.data('page', newPage);
 				$('.koband_post_news').append( response );
 				that.removeClass('loading').find('.text').slideDown(320);
@@ -145,7 +145,7 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 	            $('.koband_load_media').hide();
 	            $('.no-media').slideDown(700);
             }
-            else {
+            else{
 	            that.data('page', newPage);
 				$(".koband_post_media").append( response );
 				that.removeClass('loading').find('.text').slideDown(320);
