@@ -379,13 +379,8 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     text-decoration: none;
   }
 }
-.btn-group:hover {
-  background-color: #f6f4f4 !important;
 
-}
-.btn-outline-secondary:hover{
-  background-color: none !important;
-}
+
 
 /*
     Ajax Loading
@@ -492,6 +487,9 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
 .single-filter-content:hover .overlay-bg-content {
   opacity: 1;
+}
+.btn-outline-secondary:hover{
+  background: linear-gradient(to right, rgba(221, 221, 221, 0) 0%, rgba(246, 245, 245, 0) 100%) !important;
 }
 
 .flex-column {

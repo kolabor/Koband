@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b853037-da5b-4adb-b00e-f22a1441ef95" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/style/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/koband/ko_band_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/koband/ko_band_functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/templates/discography-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/discography-template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ko_band_front.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ko_band_front.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
@@ -25,8 +21,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="622" column="16" selection-start-line="622" selection-start-column="16" selection-end-line="622" selection-end-column="16" />
+            <state relative-caret-position="290">
+              <caret line="491" column="106" selection-start-line="491" selection-start-column="106" selection-end-line="491" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -34,8 +30,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9694">
-              <caret line="597" selection-start-line="597" selection-end-line="597" />
+            <state relative-caret-position="1122">
+              <caret line="600" selection-start-line="600" selection-end-line="600" />
             </state>
           </provider>
         </entry>
@@ -61,7 +57,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -125,12 +121,12 @@
       <updated>1523978840818</updated>
       <workItem from="1523978850322" duration="683000" />
       <workItem from="1524040282089" duration="2017000" />
-      <workItem from="1524052138687" duration="7924000" />
+      <workItem from="1524052138687" duration="8349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10624000" />
+    <option name="totallyTimeSpent" value="11049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -192,15 +188,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9694">
-          <caret line="597" selection-start-line="597" selection-end-line="597" />
+        <state relative-caret-position="1122">
+          <caret line="600" selection-start-line="600" selection-end-line="600" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="622" column="16" selection-start-line="622" selection-start-column="16" selection-end-line="622" selection-end-column="16" />
+        <state relative-caret-position="290">
+          <caret line="491" column="106" selection-start-line="491" selection-start-column="106" selection-end-line="491" selection-end-column="106" />
         </state>
       </provider>
     </entry>
