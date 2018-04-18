@@ -40,6 +40,8 @@
        			<?php dynamic_sidebar( 'widgets_three' ); ?> <!-- #third .widget-area -->
             <?php endif; ?> 
  	 	</div>
+   </div>
+   <div class="row">
  	
  		<div class="col-sm-4 copyright">
  			<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a> <!--Copyright-->

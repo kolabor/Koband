@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-<div class="album py5 bg-theband" id="theband">
+<div class="section" id="theband">
  	<div class="container">
  		<div class="row">
  			<h1>The Band Temp</h1>
