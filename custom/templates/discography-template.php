@@ -86,7 +86,7 @@ get_header();?>
 			<div class="row song-list">
 				<?php 
 					foreach ($album_song_store[0] as  $value_song_store) { ?>
-					<div class="col-sm-6"><?php if(isset($value_song_details['name-store'])) {echo $value_song_store['name-store'];}?></div>
+					<div class="col-sm-6"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
 					<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_details['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
 				<?php } ?> 
 			</div>			
@@ -128,8 +128,8 @@ get_header();?>
 				</div>
 				<div class="row song-list">
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
-					<div class="col-sm-5"><?php echo $value_single_store['name']; ?></div>
-					<div class="col-sm-6 btn-buy"><a href="<?php echo $value_song_store['link']; ?>"><?php _e('Buy Here', 'koband');?></a></div> 
+					<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
+					<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
 				<?php } ?>
 				</div>
 			</div>	
