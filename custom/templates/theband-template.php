@@ -17,7 +17,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 		 	<div class="container">
-		 		<div class="row">
+		 		<div class="row theband-heading">
 		 			<h1>The Band Temp</h1>
 				</div>
 			</div>
@@ -29,16 +29,16 @@ get_header(); ?>
 					);
 					$theband_posts = new WP_Query( $args_theband );?>
 					
-			<div class="container">
+			<div class="container band-bio">
 				<div class="row koband_post_theband">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-4">
-									<!--<h2>test</h2>-->
+							<div class="col-sm-4 ">
+									<p>
 									<?php 
 									$theband_bio = get_theme_mod('ko_band_the_band_biography');
 									echo $theband_bio;
-									?>
+									?></p>
 								</div>
 							
 				   	
@@ -57,9 +57,9 @@ get_header(); ?>
 														<?php $post_id = get_the_ID(); ?>
 														<?php $theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
 												<div class="col-sm-4">
-														<div data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail(array(200,200)); ?></div>
+														<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail(array(200,200)); ?></div>
 
-													<button type="button" id="myBtn" class="btn" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button>
+													<button type="button" id="myBtn" class="fisnik" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button>
 												</div>
 													  <!-- Modal -->
 													  <div class="modal fade" id="myModal<?php echo $id;?>" role="dialog">
