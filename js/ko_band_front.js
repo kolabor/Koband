@@ -95,7 +95,7 @@ $(document).on('click', '.koband_load_more:not(.loading)', function(){
 	            $('.koband_load_more').hide();
 	            $('.no-news').slideDown(700);
             }
-            else {
+            else{
 	            that.data('page', newPage);
 				$('.koband_post_news').append( response );
 				that.removeClass('loading').find('.text').slideDown(320);
@@ -145,7 +145,7 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 	            $('.koband_load_media').hide();
 	            $('.no-media').slideDown(700);
             }
-            else {
+            else{
 	            that.data('page', newPage);
 				$(".koband_post_media").append( response );
 				that.removeClass('loading').find('.text').slideDown(320);

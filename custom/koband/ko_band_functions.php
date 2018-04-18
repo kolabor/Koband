@@ -227,7 +227,7 @@ function ko_band_bootstrap_front_resources() {
 }
 
 add_action('wp_enqueue_scripts', 'ko_band_bootstrap_front_resources');
-
+/*
 function ko_band_load_fa(){
   wp_enqueue_style( 'ko_band_fa', 'https://use.fontawesome.com/releases/v5.0.10/js/all.js', 'sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+', 'anonymous' );
 }
@@ -235,7 +235,7 @@ add_action( 'wp_enqueue_scripts', 'ko_band_load_fa' );
 
 
 ?>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>*/
 
 
 
