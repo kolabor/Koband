@@ -40,8 +40,12 @@
        			<?php dynamic_sidebar( 'widgets_three' ); ?> <!-- #third .widget-area -->
             <?php endif; ?> 
  	 	</div>
- 	
- 		<div class="col-sm-4 copyright">
+   </div>
+ </div>
+ 
+ 		<div class="container">
+    <div class="row" id="footer">
+    <div class="col-sm-4 copyright">
  			<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a> <!--Copyright-->
  		</div>
     <?php
@@ -86,6 +90,7 @@ $apple= get_theme_mod( 'ko_band_apple_social_media', false);
  
 	</div>
 </div>
+
 <?php wp_footer() ?>
 <!-- footer row ends here -->
 </body>

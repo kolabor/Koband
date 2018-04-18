@@ -41,7 +41,7 @@
 
 body
 {
-  /*background-color: <?php echo $main_theme_color; ?> !important;
+  background-color: <?php echo $main_theme_color; ?> !important;
 
   font-family: <?php echo $general_font; ?> !important;
   font-size:  <?php echo $main_font_size; ?> !important;
@@ -49,7 +49,7 @@ body
 
   font-weight:  <?php echo $main_font_weight; ?> !important;
   font-style:  <?php echo $main_font_style; ?> !important;
-  color:  <?php echo $main_font_color; ?> !important; */
+  color:  <?php echo $main_font_color; ?> !important; 
 
 
 }
