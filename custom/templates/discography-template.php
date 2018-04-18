@@ -15,11 +15,7 @@
 get_header();?> 
 <div id="Discography" class="bg section">
 	<div class="container">
-	<h1>Discography</h1>
-<i class="fa fa-bitbucket" aria-hidden="true"></i>
-
-
-		
+	<h1>Discography</h1>		
 	<?php
 
 		$args_album = array (
