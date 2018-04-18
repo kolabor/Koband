@@ -347,7 +347,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   background-color: #f6f4f4 !important; }
 
 .btn-outline-secondary:hover {
-  background-color: #f6f4f4 !important; }
+  background-color: none !important; }
 
 /*
     Ajax Loading

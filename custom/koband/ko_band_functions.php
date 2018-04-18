@@ -48,12 +48,11 @@ add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
 // Excerpt Length
 
-function ko_band_set_excerpt_length(){
-	return 20;
+function ko_band_set_excerpt_length( $excerpt ){
+	return substr($excerpt, 0, 200);
 }
 
-add_filter('excerpt_length', 'ko_band_set_excerpt_length');
-
+add_filter('the_excerpt', 'ko_band_set_excerpt_length', 999);
 
 // Function for Media CPT to add gallery images
 
@@ -227,15 +226,13 @@ function ko_band_bootstrap_front_resources() {
 }
 
 add_action('wp_enqueue_scripts', 'ko_band_bootstrap_front_resources');
-/*
-function ko_band_load_fa(){
-  wp_enqueue_style( 'ko_band_fa', 'https://use.fontawesome.com/releases/v5.0.10/js/all.js', 'sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+', 'anonymous' );
+
+
+function ko_band_font_awesome_register() {
+
+ 	wp_register_style( 'font-awesome', get_template_directory_uri() . '/style/font-awesome.css', false, '1.0.0' );
+    wp_enqueue_style( 'font-awesome' );
+
 }
-add_action( 'wp_enqueue_scripts', 'ko_band_load_fa' );
 
-
-?>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>*/
-
-
- 
+add_action('wp_enqueue_scripts', 'ko_band_font_awesome_register');
