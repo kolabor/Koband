@@ -257,7 +257,6 @@ $wp_customize->add_setting( 'ko_band_youtube_social_media' );
 $wp_customize->add_setting( 'ko_band_spotify_social_media' );
 $wp_customize->add_setting( 'ko_band_soundcloud_social_media' );
 $wp_customize->add_setting( 'ko_band_bandcamp_social_media' );
-$wp_customize->add_setting( 'ko_band_deezer_social_media' );
 $wp_customize->add_setting( 'ko_band_apple_social_media' );
 
 /*Facebook*/
@@ -322,13 +321,6 @@ $wp_customize->add_control( 'ko_band_soundcloud_social_media', array(
 $wp_customize->add_control( 'ko_band_bandcamp_social_media', array(
     'label' => esc_html__( 'Bandcamp:', 'koband' ),
     'settings' => 'ko_band_bandcamp_social_media',
-    'section' => 'ko_band_social_media_section',
-) );
-
-/*Deezer*/
-$wp_customize->add_control( 'ko_band_deezer_social_media', array(
-    'label' => esc_html__( 'Deezer:', 'koband' ),
-    'settings' => 'ko_band_deezer_social_media',
     'section' => 'ko_band_social_media_section',
 ) );
 

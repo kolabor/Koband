@@ -68,7 +68,6 @@
                                 $spotify= get_theme_mod( 'ko_band_spotify_social_media' , false);
                                 $soundcloud= get_theme_mod( 'ko_band_soundcloud_social_media' , false);
                                 $bandcamp= get_theme_mod( 'ko_band_bandcamp_social_media', false );
-                                $deezer= get_theme_mod( 'ko_band_deezer_social_media', false);
                                 $apple= get_theme_mod( 'ko_band_apple_social_media', false);
                                 ?>
 
@@ -91,9 +90,7 @@
                                         <div class="social-icons"><?php if(isset($soundcloud[0])) { echo  "<a href='$soundcloud'><i class='fab fa-soundcloud'></i></a>";} ?>
                                         </div>
                                         <div class="social-icons"> <?php if(isset($bandcamp[0])) { echo  "<a href='$bandcamp'><i class='fab fa-bandcamp'></i></a>";} ?>
-                                        </div>
-                                        <div class="social-icons"><?php if(isset($deezer[0])) { echo   "<a href='$deezer'><i class='fab fa-deezer'></i></a>";} ?>
-                                        </div>       
+                                        </div>      
                                         <div class="social-icons"> <?php if(isset($apple[0])) { echo  "<a href='$apple'><i class='fab fa-apple'></i></a>";} ?>
                                         </div>
                                      </div>
