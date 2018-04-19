@@ -51,7 +51,12 @@
                     </div>
                        	<div class="media-container-row mbr-white">
                        		<div class="col-md-6 copyright">
-                       			<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a> <!--Copyright-->
+                            <?php 
+                            $Copyright = get_theme_mod( 'ko_band_footer_copyright_text' ); ?>
+                                    <?php echo $Copyright; ?>
+
+                            
+                       			<!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
                        		</div>
                             <?php
                                 //Social Network start here
