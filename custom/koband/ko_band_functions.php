@@ -229,9 +229,11 @@ add_action('wp_enqueue_scripts', 'ko_band_bootstrap_front_resources');
 
 
 // Load Font Awesome
-add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
-function enqueue_font_awesome() {
+add_action( 'wp_enqueue_scripts', 'ko_band_enqueue_font_awesome' );
+function ko_band_enqueue_font_awesome() {
 
-	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
+	wp_register_script( 'font-awesome', get_template_directory_uri() . '/js/fontawesome-all.min.js', false, '1.0.0' );
+    wp_enqueue_script( 'font-awesome' );
+	//wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 
 }

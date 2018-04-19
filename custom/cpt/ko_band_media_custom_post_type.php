@@ -136,7 +136,6 @@ function ko_band_get_video_options() {
         'Youtube'       => 'option1',
         'Vimeo'         => 'option2',
         'DailyMotion'   => 'option3',
-     __('Others', 'koband') => 'option4',
     );
     
     return $options;
@@ -181,7 +180,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 
     foreach ( $video_field as $field) { ?>
     <div class="row">
-        <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
+        <div class="col-sm"><input type="text" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
         <div class="col-sm"><select name="select[]">
                             <?php foreach ( $options as $label => $value ) : ?>
                             <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
@@ -193,7 +192,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <?php } else: // show a blank one  ?>
 
     <div class="row">
-        <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
+        <div class="col-sm"><input type="text" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
         <div class="col-sm"><select name="select[]">
                             <?php foreach ( $options as $label => $value ) : ?>
                             <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
@@ -205,7 +204,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <?php endif; ?>
         <!-- empty hidden one for jQuery -->
     <div class="row empty-row-media screen-reader-text">
-        <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
+        <div class="col-sm"><input type="text" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
         <div class="col-sm"><select name="select[]" >
                             <?php foreach ( $options as $label => $value ) : ?>
                             <option value="<?php echo $value; ?>"><?php echo $label; ?></option>

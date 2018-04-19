@@ -32,7 +32,6 @@ $second_section = get_theme_mod('ko_band_second_render_moduls');
 $third_section = get_theme_mod('ko_band_third_render_moduls');
 $fourth_section = get_theme_mod('ko_band_fourth_render_moduls');
 $fifth_section = get_theme_mod('ko_band_fifth_render_moduls');
-$sixth_section = get_theme_mod('ko_band_sixth_render_moduls');
 
 //Declaration of template variables
 $count_album = wp_count_posts('album')->publish; 
@@ -75,10 +74,6 @@ $count_tour = wp_count_posts('tour')->publish;
 
 	elseif ($first_section == "News" && $count_news > 0) {
 		get_template_part( 'custom/templates/news', 'template');
-	}
-
-	elseif ($first_section == "Contact") {
-		get_template_part('custom/templates/contact', 'template');
 	};
 
 
@@ -109,10 +104,6 @@ $count_tour = wp_count_posts('tour')->publish;
 
 	elseif ($second_section == "News" && $count_news > 0) {
 		get_template_part( 'custom/templates/news', 'template');
-	}
-
-	elseif ($second_section == "Contact") {
-	get_template_part('custom/templates/contact', 'template');
 	};
 
 /***********************************************************************************/
@@ -143,10 +134,6 @@ $count_tour = wp_count_posts('tour')->publish;
 
   	elseif ($third_section == "News" && $count_news > 0) {
 		get_template_part( 'custom/templates/news', 'template');
-	}
-
-	elseif ($third_section == "Contact") {
-get_template_part('custom/templates/contact', 'template');
 	};
 
 /***********************************************************************************/
@@ -177,10 +164,6 @@ get_template_part('custom/templates/contact', 'template');
 
     elseif ($fourth_section == "News" && $count_news > 0) {
 		get_template_part( 'custom/templates/news', 'template');
-	}
-
-	elseif ($fourth_section == "Contact" ) {
-		get_template_part('custom/templates/contact', 'template');
 	};
 
 /***********************************************************************************/
@@ -211,48 +194,10 @@ get_template_part('custom/templates/contact', 'template');
 
     elseif ($fifth_section == "News" && $count_news > 0) {
 		get_template_part( 'custom/templates/news', 'template');
-	}
-
-	elseif ($fifth_section == "Contact") {
-		get_template_part('custom/templates/contact', 'template');
-	};
+	 };
 
 /***********************************************************************************/
 //Fifth Sections if statemend ends here
-
-//Sixth Sections if statemend starts here
-/***********************************************************************************/
-
-  	if($sixth_section =="Discography" && $count_discography == true)
-  	{
-       	get_template_part( 'custom/templates/discography', 'template' );
-    }
-
-    elseif ($sixth_section =="Media" && $count_media > 0)
-    {
-       	get_template_part( 'custom/templates/media', 'template' );
-    }
-    
-    elseif ($sixth_section =="The Band" && $count_theband > 0)
-    {
-       	get_template_part( 'custom/templates/theband', 'template' );
-    }
-
-    elseif ($sixth_section =="Tour/Events" && $count_tour > 0)
-    {
-       	get_template_part( 'custom/templates/tour', 'template' );
-    }
-
-    elseif ($sixth_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	}
-
-	elseif ($sixth_section == "Contact" ) {
-		get_template_part('custom/templates/contact', 'template');
-	};
-
-/***********************************************************************************/
-//Sixth Sections if statemend ends here
 
 
 get_footer(); 
