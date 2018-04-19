@@ -143,6 +143,8 @@ nav {
   font-size: 100%;
   transition: border-bottom 0.1s;
   text-decoration: none !important;
+  text-transform: uppercase!important;
+
 }
 /*Hover state for top level links*/
 #menu-main-menu li a:hover {
@@ -363,6 +365,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   color: #000000;
   &:hover {
     text-decoration: none;
+    color: #828282!important;
   }
 }
 

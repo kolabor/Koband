@@ -14,7 +14,7 @@ get_header(); ?>
 	<?php if (have_posts() ) : ?>
 		<!--start loop --> 
 		<?php while (have_posts() ) : the_post(); ?>
-			<div id="news-photo"><a href="<?php the_permalink();?>"><?php the_post_thumbnail("full"); ?></a></div>
+			<div id="news-photo"><?php the_post_thumbnail(array(400,400)); ?></div>
 			<div class="container">
 			<h1><div id="news-title"><?php the_title();?></div></h1>
 				<div class="row">

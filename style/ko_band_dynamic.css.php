@@ -36,7 +36,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $main_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo $main_font_size; ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo $general_font; ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo $headding_font; ?>');
 
@@ -51,7 +51,7 @@ body
 
   font-family: <?php echo $general_font; ?> !important;
   font-size:  <?php echo $main_font_size; ?> !important;
-  line-height:  <?php echo $ko_band_line_height; ?> !important;
+  line-height:  <?php echo $main_line_height; ?> !important;
 
   font-weight:  <?php echo $main_font_weight; ?> !important;
   font-style:  <?php echo $main_font_style; ?> !important;
@@ -67,6 +67,8 @@ h1, h2, h3
 
 
 }
+
+
 
 
 
