@@ -57,24 +57,25 @@ get_header(); ?>
 														<?php $post_id = get_the_ID(); ?>
 														<?php $theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
 												<div class="col-sm-4">
+													<button type="button" id="myBtn" class="fisnik" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button>
 														<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail(array(200,200)); ?></div>
 
-													<button type="button" id="myBtn" class="fisnik" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button>
+													
 												</div>
 													  <!-- Modal -->
 													  <div class="modal fade" id="myModal<?php echo $id;?>" role="dialog">
 													    <div class="modal-dialog">
 													    
 													      <!-- Modal content-->
-													      <div class="modal-content">
+													      <div class="modal-content bg">
 													        <div class="modal-header">
 													          <h4 class="modal-title"><?php _e('Name : ', 'koband');?><?php the_title();?></h4>
 													          <button type="button" class="close" data-dismiss="modal">&times;</button>
 													        </div>
 													        <div class="modal-body">
-													        	<?php the_post_thumbnail(array(400,400)); ?>
+													        	<div class="popup-img"><?php the_post_thumbnail(array(400,400)); ?></div>
 													          <h4><?php _e('Biography : ', 'koband');?></h4>
-													          <p><?php the_content();?></p>
+													          <?php the_content();?>
 													          <h4><?php _e('Band Role : ', 'koband');?></h4>
 													          <p><?php if(isset($theband_role[0]))  { echo  $theband_role[0]; } ?></p>
 													        </div>

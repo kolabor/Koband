@@ -84,7 +84,7 @@ header {
 nav {
   width: 100%;
   position: fixed;
-  z-index: 9999999999;
+  z-index: 1045;
   background: rgba(255,255,255,0.7);
 }
 
@@ -586,7 +586,22 @@ Tour Section
 .modal-dialog {
   padding-top: 60px;
 }
-
+.popup-img {
+  width: 100%;
+  height: auto;
+}
+.popup-img img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(90%)!important;
+}
+.modal-body h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.modal-body p {
+  padding: 0!important;
+}
 /*
 =======================================================
           the band
@@ -602,7 +617,7 @@ Tour Section
 .band-bio p {
   width: 100%!important;
   height: auto!important;
-  padding: 10px!important;
+  padding: 10px;
   margin-top: 10px!important;
   color: #363636!important;
   font-size: 17px!important;
@@ -648,7 +663,7 @@ Tour Section
 .footer-section {
   padding-top: 45px;
   padding-bottom: 45px;
-  background-color: #ffffff;
+  background-color: #d1d1d1;
 }
 
 .footer_logo {
@@ -686,7 +701,7 @@ Tour Section
   width: 100%;
   height: auto;
 }
-social-media {
+.social-media {
   position: relative;
   float: right;
   width: 100%;
@@ -701,3 +716,30 @@ social-media {
   justify-content: flex-end;
   -webkit-justify-content: flex-end;
 }
+#menu-footer-menu li a {
+  color: #4b4b4b;
+  font-size: 20px;
+  font-weight: 400;
+}
+#menu-footer-menu li a:hover {
+  text-decoration: none!important;
+}
+.copyright a {
+color: #4b4b4b;
+font-size: 20px;
+font-weight: 400;
+}
+.social-icons a {
+  color: #767575;
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 20px;
+}
+.social-icons a:hover {
+  color: #640606!important;
+}
+.copyright a:hover {
+  color: #00a8a8!important;
+  text-decoration: none!important;
+}
+
