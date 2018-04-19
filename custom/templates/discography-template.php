@@ -86,7 +86,7 @@ get_header();?>
 				<?php 
 					foreach ($album_song_store[0] as  $value_song_store) { ?>
 					<div class="col-sm-6"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-					<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_details['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
+					<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
 				<?php } ?> 
 			</div>			
 		</div>
