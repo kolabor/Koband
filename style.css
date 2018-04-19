@@ -45,19 +45,6 @@ h2 a {
   text-decoration: none !important;
   color: #efefef !important; }
 
-.theband {
-  background-color: #999;
-  width: 100%;
-  height: auto;
-  display: inline-block; }
-
-.theband h1 {
-  text-align: center;
-  color: #F2F3F4;
-  background-color: #893d3d;
-  margin: 0;
-  padding: 20px; }
-
 .img {
   width: 30%;
   float: right;
@@ -90,7 +77,7 @@ header {
 nav {
   width: 100%;
   position: fixed;
-  z-index: 9999999999;
+  z-index: 1045;
   background: rgba(255, 255, 255, 0.7); }
 
 /* ----------------------------------------------- */
@@ -115,7 +102,7 @@ nav {
 .main-nav {
   position: relative; }
 
-.menu {
+#menu-main-menu {
   position: absolute;
   list-style-type: none;
   right: 0;
@@ -123,13 +110,13 @@ nav {
   text-align: right; }
 
 /*Create a horizontal list with spacing*/
-.menu li {
+#menu-main-menu li {
   display: inline-block;
   float: none;
   margin-right: 1px; }
 
 /*Style for menu links*/
-li a {
+#menu-main-menu li a {
   display: block;
   min-width: 100px;
   height: 50px;
@@ -142,7 +129,7 @@ li a {
   text-decoration: none !important; }
 
 /*Hover state for top level links*/
-li a:hover {
+#menu-main-menu li a:hover {
   color: #333;
   border-bottom: 3px solid #4D0000 !important; }
 
@@ -544,6 +531,22 @@ Tour Section
 .modal-dialog {
   padding-top: 60px; }
 
+.popup-img {
+  width: 100%;
+  height: auto; }
+
+.popup-img img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(90%) !important; }
+
+.modal-body h4 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.modal-body p {
+  padding: 0 !important; }
+
 /*
 =======================================================
           the band
@@ -559,7 +562,7 @@ Tour Section
 .band-bio p {
   width: 100% !important;
   height: auto !important;
-  padding: 10px !important;
+  padding: 10px;
   margin-top: 10px !important;
   color: #363636 !important;
   font-size: 17px !important;
@@ -596,5 +599,90 @@ Tour Section
             Footer Section
 =========================================================
  */
+.media-container-row {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto; }
+
+.footer-section {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  background-color: #d1d1d1; }
+
+.footer_logo {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto; }
+
+.footer_logo img {
+  width: 100%;
+  height: auto; }
+
+.footer-menu {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  float: right !important; }
+
+#menu-footer-menu {
+  text-decoration: none;
+  list-style: none;
+  display: inline-flex;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  list-style: none; }
+
+#menu-footer-menu li {
+  margin-right: 20px; }
+
+.copyright {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto; }
+
+.social-media {
+  position: relative;
+  float: right;
+  width: 100%;
+  height: auto; }
+
+.social-list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end; }
+
+#menu-footer-menu li a {
+  color: #4b4b4b;
+  font-size: 20px;
+  font-weight: 400; }
+
+#menu-footer-menu li a:hover {
+  text-decoration: none !important; }
+
+.copyright a {
+  color: #4b4b4b;
+  font-size: 20px;
+  font-weight: 400; }
+
+.social-icons a {
+  color: #767575;
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 20px; }
+
+.social-icons a:hover {
+  color: #640606 !important; }
+
+.copyright a:hover {
+  color: #00a8a8 !important;
+  text-decoration: none !important; }
 
 /*# sourceMappingURL=style.css.map */

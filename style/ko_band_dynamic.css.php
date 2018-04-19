@@ -55,7 +55,7 @@ body
 
   font-weight:  <?php echo $main_font_weight; ?> !important;
   font-style:  <?php echo $main_font_style; ?> !important;
-  color:  <?php echo $main_font_color; ?> !important; */
+  color:  <?php echo $main_font_color; ?> !important; 
 
 
 }
