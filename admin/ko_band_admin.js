@@ -209,8 +209,6 @@ jQuery(document).ready(function( $ ){
         });           
 
 //Disable Selected Option at other select-box if is selected at another one
-
- 
            
   $(document).on('change','#_customize-input-ko_band_first_render_moduls',function(){
       

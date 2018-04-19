@@ -43,7 +43,7 @@
 											<div id="card-text"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
-														<button type="button" class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></button>
+														<span type="button" class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></span>
 													</div>
 												</div>
 										</div>
