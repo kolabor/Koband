@@ -43,7 +43,7 @@ get_header();?>
 														<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
 														<!--<div class="d-flex justify-content-between align-items-center">-->
 															<div class="btn-group">
-																<span type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></span>
+																<span class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a></span>
 															</div>
 													<!--</div>-->
 												</div>

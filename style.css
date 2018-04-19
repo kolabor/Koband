@@ -126,7 +126,8 @@ nav {
   font-weight: 700;
   font-size: 100%;
   transition: border-bottom 0.1s;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  text-transform: uppercase !important; }
 
 /*Hover state for top level links*/
 #menu-main-menu li a:hover {
@@ -328,7 +329,8 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 .read_more {
   color: #000000; }
   .read_more:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #828282 !important; }
 
 /*
     Ajax Loading
