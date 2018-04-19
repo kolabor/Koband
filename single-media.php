@@ -32,7 +32,9 @@ if (have_posts() ) :
 	$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
 			<div class="row">
-			<?php foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
+			<?php 
+				if (isset($media_video_gallery[0])){
+				foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
 				<div class="col-sd-4"> 
 <!--================================================================================================================
 						// Checking which iframe to use from the select box at backed :)
@@ -64,9 +66,11 @@ if (have_posts() ) :
 =================================================================================================================-->
 			</div>
 			<div class="row">
-			<?php foreach ($media_gallery[0] as  $value_image) {	?>
 				<div class="col-sd-4">
-					<?php echo wp_get_attachment_image( $value_image, array(500,500)); ?> 
+					<?php if(isset($media_gallery[0])) {
+						foreach ($media_gallery[0] as  $value_image) { 
+						echo wp_get_attachment_image( $value_image, array(500,500));}
+					}?> 
 				</div> 
 			<?php } ?>
 			</div>
