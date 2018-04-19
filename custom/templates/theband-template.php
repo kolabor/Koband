@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-<div class="section" id="theband">
+<div class="section" id="Theband">
 	<div class="container">
 		<div class="row">
 		 	<div class="container">
@@ -34,7 +34,7 @@ get_header(); ?>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 ">
-									<p>
+									<p><h4>Band Bio</h4>
 									<?php 
 									$theband_bio = get_theme_mod('ko_band_the_band_biography');
 									echo $theband_bio;

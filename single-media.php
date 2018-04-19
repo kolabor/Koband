@@ -34,24 +34,53 @@ if (have_posts() ) :
 						</div>
 				 
 						<?php $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
-						$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
+						$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
+						$video_galery_options = ko_band_get_video_options(); 
+						print_r($video_galery_options);?> 
 
 						<div class="row">
 							<?php foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
-								<div class="col-sd-4">
-									 <iframe width="420" height="315"
-										src="<?php echo $value_video_gallery['link']; ?>">
-										</iframe> 
-									<?php
-									echo "<br>";
-									/*echo $value_video_gallery['link'];*/
-									echo "<br>";
-									?>
-								</div>
+							<div class="col-sd-4"> <?php
+//================================================================================================================
+							// Checking which iframe to use from the select box at backed :)
+//================================================================================================================  
+							if(isset($video_galery_options) && $video_galery_options == 'option1'){ 
+									
+								$value_video_gallery['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link']; ?>
+										
+								<iframe width="420" height="315"
+									src="<?php echo $value_video_gallery['link']?>">
+								</iframe> 
+
+							<?php	}
+							elseif(isset($video_galery_options) && $video_galery_options == 'option2'){
+							
+								$value_video_gallery['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; ?>
+
+								<iframe width="420" height="315"
+									src="<?php echo $value_video_gallery['link']?>">
+								</iframe>
+
+							<?php }
+							elseif(isset($video_galery_options) && $video_galery_options == 'option3'){
+							
+								$value_video_gallery['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link']; ?>
+
+								<iframe width="420" height="315"
+									src="<?php echo $value_video_gallery['link']?>">
+								</iframe>
+							<?php }
+							else {
+								echo "Your browser does not support iframe videos";
+							} ?>
+							</div>
 							<?php } ?>
+<!--================================================================================================================
+												iFrame support ends here :D
+================================================================================================================ -->
 						</div>
 						<div class="row">
-						       <?php foreach ($media_gallery[0] as  $value_image) {	?>
+						       <?php foreach ($media_gallery as  $value_image) {	?>
 									<div class="col-sd-4">
 										<?php	
 										echo "<br>";
