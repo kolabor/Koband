@@ -67,6 +67,7 @@
                                 $apple= get_theme_mod( 'ko_band_apple_social_media', false);
                                 ?>
 
+
                                 <div class="col-md-6 social-media">  
                                       <div class="social-list align-right">
                                       
@@ -93,12 +94,14 @@
                                      </div>
                                 </div>
                         </div>
+
  <!-- Social Network ends here-->
  
 	                 </div>
 
 </div>
 </div>
+
 <?php wp_footer() ?>
 <!-- footer row ends here -->
 </body>
