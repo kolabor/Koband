@@ -25,6 +25,8 @@
 				$slide_video_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink');
 				$slide_video_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); 
 
+				$data = $slide_video_link;
+				$slide_video_link = substr($data, strpos($data, "v=") + 2);
 				$slide_video_link = 'https://www.youtube.com/embed/' . $slide_video_link ?>
 
 	<?php endwhile; ?>

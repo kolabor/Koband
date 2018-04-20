@@ -687,4 +687,8 @@ Tour Section
   color: #00a8a8 !important;
   text-decoration: none !important; }
 
+.btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
+  font-size: 25px;
+  color: #aaa7a7 !important; }
+
 /*# sourceMappingURL=style.css.map */

@@ -58,8 +58,8 @@ get_header();?>
 		    <div class="col-sm-3"><?php _e('Length:<br>', 'koband');?><span><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
 		    <div class="col-sm-1 album-up-down-buttons">
 		    	<span class="btn btn-sm album-song">
-			    	<a class="btn btn-sm show-album-song">&#8897;</a>
-			    	<a class="btn btn-sm hide-album-song">&#8896;</a>
+			    	<a class="btn btn-sm show-album-song"><i class="fas fa-caret-down"></i></a>
+			    	<a class="btn btn-sm hide-album-song"><i class="fas fa-caret-up"></i></a>
 		    	</span>
 		    </div>
 		</div>        
@@ -115,8 +115,8 @@ get_header();?>
 			    <div class="col-sm-3"><?php _e('Length:<br>', 'koband');?><span><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
 			   	<div class="col-sm-1 single-up-down-buttons">
 			    	<span class="btn btn-sm single-song">
-				    	<a class="btn btn-sm show-single-song">&#8897;</a>
-				    	<a class="btn btn-sm hide-single-song">&#8896;</a>
+				    	<a class="btn btn-sm show-single-song"><i class="fas fa-caret-down"></i></a>
+				    	<a class="btn btn-sm hide-single-song"><i class="fas fa-caret-up"></i></a>
 			    	</span>
 		   		</div>
 			</div>
