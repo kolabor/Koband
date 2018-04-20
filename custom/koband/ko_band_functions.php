@@ -49,7 +49,7 @@ add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 // Excerpt Length
 
 function ko_band_set_excerpt_length( $excerpt ){
-	return substr($excerpt, 0, 200);
+	return substr($excerpt, 0, 150);
 }
 
 add_filter('the_excerpt', 'ko_band_set_excerpt_length', 999);

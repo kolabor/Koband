@@ -19,7 +19,7 @@
 		 		<div class="row">
 					<h1>News</h1>
 				</div>
-			</div>
+			</div><!-- container -->
 			<div class="container">
 				<div class="row koband_post_news">
 					<?php
@@ -29,11 +29,9 @@
 						 'posts_per_page' => 3,
 						 
 					);
-
 					$news_posts = new WP_Query($args_news);
 					if ( $news_posts->have_posts() ) : ?>
 						<!-- start loop --> 										
-						
 							<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
 								<div class="col-md-4">
 									<div class="card mb-4 box-shadow">
@@ -49,24 +47,25 @@
 										</div>
 									</div>
 								</div>	
-							<?php endwhile; ?>
-						
-								
+							<?php endwhile; ?>	
 							<!-- loop ends here -->
 					<?php endif; ?>
 
+				</div>
 			</div><!-- container -->
-		</div>
-		<div class="container text-center">
-		<div class="row">
-			<a class="btn-koband-load koband_load_more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-			<span class="koband-loading">Loading...</span>
-			<span class="text">Load more</span></a>
-			<a class="no-news"><span class="news-posts">There are no more news</span></a>
-		</div>
-		</div>
-</div>
-</div>
-</div>
+				<div class="container text-center">
+					<div class="row">
+						<a class="btn-koband-load koband_load_more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+							<span class="koband-loading">Loading...</span>
+							<span class="text">Load more</span></a>
+						<a class="no-news"><span class="news-posts">There are no more news</span></a>
+					</div>
+				</div>
+		
+		</div><!-- row -->
+	
+	</div><!-- container -->
+
+</div><!-- id news -->
 
 

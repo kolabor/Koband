@@ -134,16 +134,6 @@ nav {
   color: #333;
   border-bottom: 3px solid #4D0000 !important; }
 
-/*Style for dropdown links*/
-li:hover ul a {
-  color: #333 !important;
-  height: 40px !important;
-  line-height: 40px !important; }
-
-/*Hover state for dropdown links*/
-li:hover ul a:hover {
-  font-size: 80%; }
-
 /*Hide dropdown links until they are needed*/
 li ul {
   display: none;
@@ -308,8 +298,13 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 .box-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); }
 
-.news-title h2 {
-  padding-left: 10px !important; }
+.news-title h2 a {
+  color: #727272 !important; }
+
+.news-title {
+  padding-left: 10px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important; }
 
 /*
     News single
@@ -340,6 +335,10 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   font-size: 20px;
   color: #b5b5b5; }
 
+.no-news, .no-media {
+  margin: 0 auto;
+  margin-bottom: 20px; }
+
 .btn-koband-load {
   display: block;
   width: 200px;
@@ -365,9 +364,8 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   .btn-koband-load span {
     display: block; }
 
-.no-news {
-  margin-left: 15px;
-  margin-bottom: 20px; }
+.koband_load_media, .no-media {
+  margin-top: 25px; }
 
 /*
     Media Section
