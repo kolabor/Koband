@@ -24,24 +24,31 @@
                           			</div>
                               </div>
                    		
-                      	    <div class="col-md-9 footer-menu">
+                      	    <div class="col-md-4 footer-menu">
                               
-                                <?php if ( is_active_sidebar( 'widgets_one' ) ) : ?>
-                                   <?php dynamic_sidebar( 'widgets_one' ); ?><!-- #first .widget-area -->
+                                <?php if ( is_active_sidebar( 'ko_band_footer_widgets_one' ) ) : ?>
+                                   <?php dynamic_sidebar( 'ko_band_footer_widgets_one' ); ?><!-- #first .widget-area -->
                                 <?php endif; ?>
                      	 	                                 </div>
                       
-                        	<!--	<div class="col-md-3">
-                         	  		<?php if ( is_active_sidebar( 'widgets_two' ) ) : ?>
-                                      	<?php dynamic_sidebar( 'widgets_two' ); ?>  #second .widget-area
+                        	<div class="col-md-5">
+                         	  		<?php if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
+                                      	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?>  <!--#second .widget-area-->
                                     <?php endif; ?>
-                         		</div> -->
+                         		</div> 
 
-                 	   <!-- <div class="col-sm-3 side-widgets_three">
-                 	  		<?php if ( is_active_sidebar( 'widgets_three' ) ) : ?>
-                       			<?php dynamic_sidebar( 'widgets_three' ); ?>  #third .widget-area 
-                            <?php endif; ?> 
-                 	 	</div>-->
+                            <!--<div class="col-md-5 footer-search">
+
+                              <?php /*if (have_posts()){
+                                get_search_form( );
+                              }
+                              else{
+                              $footer_search_checbox = get_theme_mod('ko_band_footer_search');
+                            };*/
+                            ?>-->
+
+
+                 	  
                    </div>
                    <div class="footer-lower">
                     <div class="media-container-row">

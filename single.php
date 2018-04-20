@@ -19,7 +19,10 @@ get_header(); ?>
 			<h1><div id="news-title"><?php the_title();?></div></h1>
 				<div class="row">
 					<div class="col-sm">
+						<small><?php the_category();?> || <?php the_tag(); ?> || <?php edit_post_link();?></small>
 						<div id="news-content"><?php the_content(); ?></div>
+
+
 					</div>
 				</div>
 			</div>
