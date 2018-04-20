@@ -40,24 +40,33 @@ if (have_posts() ) :
 						// Checking which iframe to use from the select box at backed :)
 =================================================================================================================--> 	
 		            <?php
+		                
+						    
+						$whatIWant;
 		            $video_type = $value_video_gallery['select'];
-					if(isset($video_type) && $video_type == "option1"){	
+					if(isset($video_type) && $video_type == "option1"){
+						$data = $value_video_gallery['link'];
+						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
 						$value_video_gallery['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];?>		
 						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>"></iframe> 
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option2"){
+						$data = $value_video_gallery['link'];
+						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
 						$value_video_gallery['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; ?>
-						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>"></iframe>
+						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option3"){
+						$data = $value_video_gallery['link'];
+						$value_video_gallery['link'] = substr($data, strpos($data, "video/") + 6);
 						$value_video_gallery['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link']; ?>
 						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>"></iframe>
 					<?php }
 
 					else {
-						echo "Your browser does not support iframe videos";
+						echo "Your browser does not support this type of iframe videos";
 					} ?>
 				</div>
 			<?php } ?>
