@@ -25,7 +25,7 @@ weffcb
 h1 {
   font-weight: 900 !important;
   margin-top: 0 !important;
-  font-size: 400% !important;
+  font-size: 350% !important;
   padding: 20px 0 !important;
   margin-bottom: 0 !important;
   color: #4D0000 !important;
@@ -215,6 +215,16 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   width: 100% !important;
   height: auto; }
 
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 50px !important;
+  height: 90px !important; }
+
+.carousel-control-prev-icon {
+  background: url("img/testata_arrows.png") top left !important; }
+
+.carousel-control-next-icon {
+  background: url("img/testata_arrows.png") top right !important; }
+
 .sl-content {
   height: auto;
   width: 40%;
@@ -222,30 +232,27 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   top: 30% !important;
   position: absolute;
   z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 30px;
   color: #fff;
   text-align: left;
   background: rgba(0, 0, 0, 0.5); }
 
 .sl-content h5 {
-  font-size: 70px !important;
-  color: #ed4c4c; }
+  font-size: 60px !important;
+  color: #4D0000; }
 
 .sl-content p {
   font-size: 20px !important;
-  width: 60% !important; }
+  width: 100% !important; }
 
 .btn-primary {
-  color: #d7d4d4 !important;
-  background-color: #ca3333 !important;
-  border-color: #8c8e95 !important; }
+  color: #fff !important;
+  background-color: #4D0000 !important;
+  border: none !important; }
 
 .btn-primary:hover {
-  background-color: #7e1c1c !important;
-  color: #fffbfb !important; }
+  background-color: #ddd !important;
+  color: #fff !important; }
 
 .btn-group-lg > .btn, .btn-lg {
   font-size: 1.65rem !important; }
