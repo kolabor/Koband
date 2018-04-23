@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 get_header();?>
-<div class="section-full bg-media section" id="Media">
+<div id="Media" class="section section-full bg-media">
 	<div class="container">
 		<div class="row">
 			<h1 class="section_heading">Gallery</h1>

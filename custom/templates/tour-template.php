@@ -13,7 +13,7 @@
  */
 
 get_header(); ?> 
-<div id="Tour" class="container section">
+<div id="Tour" class="section container">
     <div class="row">
         <div class="container">
             <div class="row">

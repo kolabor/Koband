@@ -13,7 +13,7 @@
  */
 
 get_header();?> 
-<div id="Discography" class="section_bg section">
+<div id="Discography" class="section section_bg">
 	<div class="container">
 	<h1 class="section_heading">Discography</h1>		
 	<?php

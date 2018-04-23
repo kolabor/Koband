@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="row">
 		 	<div class="container">
 		 		<div class="row theband-heading">
-		 			<h1 class="section_heading">The Band Temp</h1>
+		 			<h1 class="section_heading">The Band</h1>
 				</div>
 			</div>
 			

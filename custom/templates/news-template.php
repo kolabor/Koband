@@ -11,8 +11,8 @@
  * @subpackage Koband
  * @since Koband 1.0
  */?>
-
- <div class="album py5 section_bg section" id="News">
+<div id="News" class="section section_bg" >
+ <div class=" album py5 " ">
  	<div class="container">
  		<div class="row">
 		 	<div class="container">
@@ -67,5 +67,5 @@
 	</div><!-- container -->
 
 </div><!-- id news -->
-
+</div>
 
