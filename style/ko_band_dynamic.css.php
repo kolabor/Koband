@@ -3,17 +3,21 @@
   include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
 
 
-  /*****Logo***/
+  /*****Main Logo***/
   $koband_main_logo = get_theme_mod('ko_band_main_logo');
   $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
-  $koband_footer_logo = get_theme_mod('ko_band_footer_logo');  
-  $koband_retina_footer_logo = get_theme_mod('ko_band_retina_footer_logo'); 
 
-  /****colors**/
+   /****Theme colors**/
   $koband_main_font_color = get_theme_mod('ko_band_main_font_color');  
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
   $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
   
+  /***Home page Module Color****/
+  $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
+  $koband_second_module_color = get_theme_mod('ko_band_background_second_section_color');
+  $koband_third_module_color = get_theme_mod('ko_band_background_third_section_color');
+  $koband_fourth_module_color = get_theme_mod('ko_band_background_fourth_section_color');
+  $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
 
 
   /***Fonts***/
@@ -48,7 +52,6 @@
   $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
 
 
-
   /***Social Media*****/
   $koband_social_media = get_theme_mod('ko_band_social_media_checkbox'); 
   $koband_facebook = get_theme_mod( 'ko_band_facebook_social_media' );
@@ -64,6 +67,10 @@
   /***The band sction Backgroud image**/
   $koband_theband_biography = get_theme_mod('ko_band_theband_biography');
   $koband_theband_image = get_theme_mod('ko_band_theband_images');
+
+   /**Footer Logo**/
+  $koband_footer_logo = get_theme_mod('ko_band_footer_logo');  
+  $koband_retina_footer_logo = get_theme_mod('ko_band_retina_footer_logo'); 
 
   /****Footer section****/
   $koband_footer_copyright = get_theme_mod('ko_band_footer_copyright');
