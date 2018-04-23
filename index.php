@@ -38,8 +38,8 @@ $count_album = wp_count_posts('album')->publish;
 $count_singles = wp_count_posts('singles')->publish;
 $count_discography = "";
 if ($count_album > 0 || $count_singles > 0) {
-	
-	$count_discography = true;
+  
+  $count_discography = true;
 };
 
 //$count_contact = wp_count_posts('')->publish;
@@ -53,28 +53,28 @@ $count_tour = wp_count_posts('tour')->publish;
 //First Section if statement starts here
 
 
-	if($first_section == "Discography" && $count_discography == true) 
-	{ 
-     	get_template_part( 'custom/templates/discography', 'template' ); 
-	}
+  if($first_section == "Discography" && $count_discography == true) 
+  { 
+      get_template_part( 'custom/templates/discography', 'template' ); 
+  }
 
-	elseif ($first_section == "Media" && $count_media > 0) 
-	{
-		get_template_part( 'custom/templates/media', 'template' );
-	}
+  elseif ($first_section == "Media" && $count_media > 0) 
+  {
+    get_template_part( 'custom/templates/media', 'template' );
+  }
 
-	elseif ($first_section == "The Band" && $count_theband > 0) 
-	{
-		get_template_part( 'custom/templates/theband', 'template' );
-	}
+  elseif ($first_section == "The Band" && $count_theband > 0) 
+  {
+    get_template_part( 'custom/templates/theband', 'template' );
+  }
 
-	elseif ($first_section == "Tour/Events" && $count_tour > 0) {
-		get_template_part( 'custom/templates/tour', 'template' );
-	}
+  elseif ($first_section == "Tour/Events" && $count_tour > 0) {
+    get_template_part( 'custom/templates/tour', 'template' );
+  }
 
-	elseif ($first_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
+  elseif ($first_section == "News" && $count_news > 0) {
+    get_template_part( 'custom/templates/news', 'template');
+  };
 
 
 //First Section if statement ends here
@@ -82,29 +82,29 @@ $count_tour = wp_count_posts('tour')->publish;
 //Second Section if statemend starts here
 
 
-	if($second_section == "Discography" && $count_discography == true) 
-	{
-		get_template_part( 'custom/templates/discography', 'template' );
-	}
+  if($second_section == "Discography" && $count_discography == true) 
+  {
+    get_template_part( 'custom/templates/discography', 'template' );
+  }
 
-	elseif ($second_section == "Media" && $count_media > 0) 
-	{
-		get_template_part( 'custom/templates/media', 'template' );
-	}
+  elseif ($second_section == "Media" && $count_media > 0) 
+  {
+    get_template_part( 'custom/templates/media', 'template' );
+  }
 
-	elseif ($second_section == "The Band" && $count_theband > 0) 
-	{
-		get_template_part( 'custom/templates/theband', 'template' );
-	}
+  elseif ($second_section == "The Band" && $count_theband > 0) 
+  {
+    get_template_part( 'custom/templates/theband', 'template' );
+  }
 
-	elseif ($second_section == "Tour/Events" && $count_tour > 0) 
-	{
-		get_template_part( 'custom/templates/tour', 'template' );
-	}
+  elseif ($second_section == "Tour/Events" && $count_tour > 0) 
+  {
+    get_template_part( 'custom/templates/tour', 'template' );
+  }
 
-	elseif ($second_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
+  elseif ($second_section == "News" && $count_news > 0) {
+    get_template_part( 'custom/templates/news', 'template');
+  };
 
 /***********************************************************************************/
 //Second Section if statemend ends here
@@ -112,29 +112,29 @@ $count_tour = wp_count_posts('tour')->publish;
 //Third Sections if statemend starts here
 /***********************************************************************************/
 
-   	if($third_section =="Discography" && $count_discography == true)
-   	{
-   		get_template_part( 'custom/templates/discography', 'template' );
-  	}
+    if($third_section =="Discography" && $count_discography == true)
+    {
+      get_template_part( 'custom/templates/discography', 'template' );
+    }
  
-  	elseif ($third_section =="Media" && $count_media > 0)
-  	{
-		get_template_part( 'custom/templates/media', 'template' );
-  	}
+    elseif ($third_section =="Media" && $count_media > 0)
+    {
+    get_template_part( 'custom/templates/media', 'template' );
+    }
 
-  	elseif ($third_section =="The Band" && $count_theband > 0)
-  	{
-   		get_template_part( 'custom/templates/theband', 'template' );
-  	}
+    elseif ($third_section =="The Band" && $count_theband > 0)
+    {
+      get_template_part( 'custom/templates/theband', 'template' );
+    }
 
-  	elseif ($third_section =="Tour/Events" && $count_tour > 0)
-  	{
-   		get_template_part( 'custom/templates/tour', 'template' );
-  	}
+    elseif ($third_section =="Tour/Events" && $count_tour > 0)
+    {
+      get_template_part( 'custom/templates/tour', 'template' );
+    }
 
-  	elseif ($third_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
+    elseif ($third_section == "News" && $count_news > 0) {
+    get_template_part( 'custom/templates/news', 'template');
+  };
 
 /***********************************************************************************/
 //Third Sections if statemend ends here
@@ -142,29 +142,29 @@ $count_tour = wp_count_posts('tour')->publish;
 //Fourth Sections if statemend starts here
 /***********************************************************************************/
 
-  	if($fourth_section =="Discography" && $count_discography == true)
-  	{
-       	get_template_part( 'custom/templates/discography', 'template' );
+    if($fourth_section =="Discography" && $count_discography == true)
+    {
+        get_template_part( 'custom/templates/discography', 'template' );
     }
 
     elseif ($fourth_section =="Media" && $count_media > 0)
     {
-       	get_template_part( 'custom/templates/media', 'template' );
+        get_template_part( 'custom/templates/media', 'template' );
     }
     
     elseif ($fourth_section =="The Band" && $count_theband > 0)
     {
-       	get_template_part( 'custom/templates/theband', 'template' );
+        get_template_part( 'custom/templates/theband', 'template' );
     }
 
     elseif ($fourth_section =="Tour/Events" && $count_tour > 0)
     {
-       	get_template_part( 'custom/templates/tour', 'template' );
+        get_template_part( 'custom/templates/tour', 'template' );
     }
 
     elseif ($fourth_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
+    get_template_part( 'custom/templates/news', 'template');
+  };
 
 /***********************************************************************************/
 //Fourth Sections if statemend ends here
@@ -172,29 +172,29 @@ $count_tour = wp_count_posts('tour')->publish;
 //Fifth Sections if statemend starts here
 /***********************************************************************************/
 
-  	if($fifth_section =="Discography" && $count_discography == true)
-  	{
-       	get_template_part( 'custom/templates/discography', 'template' );
+    if($fifth_section =="Discography" && $count_discography == true)
+    {
+        get_template_part( 'custom/templates/discography', 'template' );
     }
 
     elseif ($fifth_section =="Media" && $count_media > 0)
     {
-       	get_template_part( 'custom/templates/media', 'template' );
+        get_template_part( 'custom/templates/media', 'template' );
     }
     
     elseif ($fifth_section =="The Band" && $count_theband > 0)
     {
-       	get_template_part( 'custom/templates/theband', 'template' );
+        get_template_part( 'custom/templates/theband', 'template' );
     }
 
     elseif ($fifth_section =="Tour/Events" && $count_tour > 0)
     {
-       	get_template_part( 'custom/templates/tour', 'template' );
+        get_template_part( 'custom/templates/tour', 'template' );
     }
 
     elseif ($fifth_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	 };
+    get_template_part( 'custom/templates/news', 'template');
+   };
 
 /***********************************************************************************/
 //Fifth Sections if statemend ends here

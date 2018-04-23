@@ -387,7 +387,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable Slide types:', 'koband' ),
     'settings' => 'ko_band_home_page_slider_type',
     'section' => 'ko_band_slider_section',
-    'type'     => 'radio',
+    'type'     => 'select',
     'choices' => array(
                 'Image' => esc_html__( 'Image',       'koband' ),
                 'Video' => esc_html__( 'Video',       'koband' ),
