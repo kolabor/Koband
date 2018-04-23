@@ -16,7 +16,7 @@ get_header(); ?>
 
 <header class="archive-header">
 	<h1 class="archive-title">
-		<?php printf( __( 'Category Archives: %s', 'koband'),
+		<?php printf( __( 'Posts of category: %s', 'koband'),
 		single_cat_title( '', false )); ?>
 	</h1>
 	
@@ -43,3 +43,4 @@ get_header(); ?>
 			<?php endwhile; 
 		endif; ?> 
 </header>
+<?php get_footer(); ?>
