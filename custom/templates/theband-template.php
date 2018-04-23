@@ -36,7 +36,7 @@ get_header(); ?>
 							<div class="col-sm-4 ">
 								<p class="main_p"><h4 class="title">Band Bio</h4>
 								<?php 
-								$theband_bio = get_theme_mod('ko_band_the_band_biography');
+								$theband_bio = get_theme_mod('ko_band_theband_biography');
 								echo $theband_bio;
 								?></p>
 							</div>

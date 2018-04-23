@@ -27,11 +27,11 @@ elseif ($silder_type == 'Image' && $count_slides > 0) {
 }
 
 
-$first_section = get_theme_mod('ko_band_first_render_moduls');
-$second_section = get_theme_mod('ko_band_second_render_moduls');
-$third_section = get_theme_mod('ko_band_third_render_moduls');
-$fourth_section = get_theme_mod('ko_band_fourth_render_moduls');
-$fifth_section = get_theme_mod('ko_band_fifth_render_moduls');
+$first_section = get_theme_mod('ko_band_first_render_modules');
+$second_section = get_theme_mod('ko_band_second_render_modules');
+$third_section = get_theme_mod('ko_band_third_render_modules');
+$fourth_section = get_theme_mod('ko_band_fourth_render_modules');
+$fifth_section = get_theme_mod('ko_band_fifth_render_modules');
 
 //Declaration of template variables
 $count_album = wp_count_posts('album')->publish; 
