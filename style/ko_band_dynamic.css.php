@@ -40,14 +40,6 @@
   $koband_fourth_module = get_theme_mod('ko_band_fourth_render_modules');
   $koband_fifth_module = get_theme_mod('ko_band_fifth_render_modules');
 
-  /***Home page Module Color****/
-  $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
-  $koband_second_module_color = get_theme_mod('ko_band_background_second_section_color');
-  $koband_third_module_color = get_theme_mod('ko_band_background_third_section_color');
-  $koband_fourth_module_color = get_theme_mod('ko_band_background_fourth_section_color');
-  $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
-
-
 
   /***Social Media*****/
   $koband_social_media = get_theme_mod('ko_band_social_media_checkbox'); 
@@ -106,12 +98,34 @@ body
 
 .section {
   background-color: <?php echo $koband_backgorund_section_color; ?> !important;
+
 }
 
-.section_heading {
+.first_color {
   color: <?php echo $koband_first_theme_color; ?> !important;
 }
 
+.bg_first_color {
+  background-color: <?php echo $koband_first_theme_color; ?> !important; 
+}
+.bg_first_color:hover {
+  background-color: <?php echo $koband_second_theme_color ?> !important;
+}
+.border_first_color {
+  border-bottom-color: <?php echo $koband_first_theme_color; ?> !important;
+}
+
+.bg_second_color {
+  background-color: <?php echo $koband_second_theme_color ?> !important;
+}
+.divTableRow:hover {
+   background-color: <?php echo $koband_second_theme_color ?> !important;
+   opacity: 1!important;
+}
+
+.main_font_color{
+  color: <?php echo $koband_main_theme_color; ?> !important;
+}
 
 h1, h2, h3 
 {

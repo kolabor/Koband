@@ -58,9 +58,9 @@
 					    <?php	$url = wp_get_attachment_url( get_post_thumbnail_id() );?>
 					    	<img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
 					            <div class="sl-content">
-								    <h5 class="section_heading"><?php if(isset($slider_title[0])) 	{ echo  $slider_title[0]; } ?></h5>
-								    <p><?php if(isset($slider_subtitle[0])) 	{ echo  $slider_subtitle[0]; } ?></p>
-								    <a class="btn btn-primary btn-lg" href="<?php if(isset($slider_button_link[0])) 	
+								    <h5 class="first_color"><?php if(isset($slider_title[0])) 	{ echo  $slider_title[0]; } ?></h5>
+								    <p class="first_color"><?php if(isset($slider_subtitle[0])) 	{ echo  $slider_subtitle[0]; } ?></p>
+								    <a class="btn btn-primary btn-lg bg_first_color" href="<?php if(isset($slider_button_link[0])) 	
 								    	{ echo  $slider_button_link[0]; } ?>"><?php if(isset($slider_button_title[0])) 
 								    		{ echo  $slider_button_title[0]; } ?></a>
 								</div>

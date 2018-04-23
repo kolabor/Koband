@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="row">
         <div class="container">
             <div class="row">
-                <h1 class="section_heading">Tour</h1>
+                <h1 class="first_color">Tour</h1>
             </div>
         </div>
 
@@ -34,14 +34,14 @@ get_header(); ?>
         <div class="divTable">
             <div class="divTableBody">
                 <div class="divTableRow">
-                    <div class="divTableHeading title"><?php _e('Date', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('Country', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('City', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('Address', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('ZipCode', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('Venue', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('Ticket status', 'koband');?></div>
-                    <div class="divTableHeading title"><?php _e('Store', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Country', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Store', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -60,14 +60,14 @@ get_header(); ?>
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
                     <div class="divTableRow">
-                    	<div class="divTableCell main_p"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
-                    	<div class="divTableCell main_p"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
-                    	<div class="divTableCell main_p"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
-                    	<div class="divTableCell main_p"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
-                    	<div class="divTableCell main_p"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
-                    	<div class="divTableCell main_p"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
-                    	<div class="divTableCell main_p"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-                    	<div class="divTableCell btn-buy"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
+                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
