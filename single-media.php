@@ -25,6 +25,7 @@ if (have_posts() ) :
 		<h1><div id="single-media-title"><?php the_title();?></div></h1>
 			<div class="row">
 				<div class="col-sm">
+					<small><?php the_category();?><?php the_time( get_option( 'date_format' ) ); ?></small>
 					<div id="single-media-content"><?php the_content(); ?></div>
 				</div>
 			</div>
@@ -47,22 +48,29 @@ if (have_posts() ) :
 					if(isset($video_type) && $video_type == "option1"){
 						$data = $value_video_gallery['link'];
 						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
-						$value_video_gallery['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];?>		
-						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>"></iframe> 
+						$value_video_gallery_video['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];
+						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
+						<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe> 
+						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370"> 		
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option2"){
 						$data = $value_video_gallery['link'];
 						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
-						$value_video_gallery['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; ?>
-						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						$value_video_gallery_video['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; 
+						$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link']; ?>
+						<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<img src="<?php echo $value_video_gallery_image['link']?>.json" alt="Smiley face" height="265" width="370">
+
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option3"){
 						$data = $value_video_gallery['link'];
 						$value_video_gallery['link'] = substr($data, strpos($data, "video/") + 6);
-						$value_video_gallery['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link']; ?>
-						<iframe width="370" height="265" src="<?php echo $value_video_gallery['link']?>"></iframe>
+						$value_video_gallery_video['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link'];
+						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
+						<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>
+						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370">
 					<?php }
 
 					else {
@@ -92,4 +100,19 @@ if (have_posts() ) :
 		
 <?php endwhile; endif;?>
 
-<?php get_footer(); ?>
+<!--comment section starts here-->
+	
+	<?php 	
+			//Get only the approved comments 
+			// If comments are open or we have at least one comment, load up the comment template.
+		 if ( comments_open() || get_comments_number() ) :
+		     comments_template();
+		 endif;
+		$args = array(
+		    'status' => 'approve'
+		);
+	?>
+
+<?php 
+get_sidebar();
+get_footer(); ?>
