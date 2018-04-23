@@ -69,7 +69,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*** First theme color ***/
 $wp_customize->add_setting( 'ko_band_first_theme_color' );
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_first_theme_color', array(
-        'label'      => esc_html__( ' First Font Color', 'koband' ),
+        'label'      => esc_html__( ' First Theme Color', 'koband' ),
         'section'    => 'ko_band_fonts_and_color_section',
         'settings'   => 'ko_band_first_theme_color',
 ) ) );

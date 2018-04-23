@@ -86,7 +86,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 body
 {
-  background-color: <?php echo $koband_backgorund_section_color; ?> !important;
+
   font-family: <?php echo $general_font; ?> !important;
   font-size:  <?php echo $main_font_size; ?> !important;
   line-height:  <?php echo $main_line_height; ?> !important;
@@ -96,12 +96,20 @@ body
 
 }
 
+.section {
+  background-color: <?php echo $koband_backgorund_section_color; ?> !important;
+}
+
+.section_heading {
+  color: <?php echo $koband_first_theme_color; ?> !important;
+}
+
+
 h1, h2, h3 
 {
 	
 	font-family: <?php echo $headding_font; ?> !important;
-	color: <?php echo $heading_font_color; ?> !important;
-
+	
 
 }
 
