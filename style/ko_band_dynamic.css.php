@@ -40,6 +40,14 @@
   $koband_fourth_module = get_theme_mod('ko_band_fourth_render_modules');
   $koband_fifth_module = get_theme_mod('ko_band_fifth_render_modules');
 
+  /***Home page Module Color****/
+  $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
+  $koband_second_module_color = get_theme_mod('ko_band_background_second_section_color');
+  $koband_third_module_color = get_theme_mod('ko_band_background_third_section_color');
+  $koband_fourth_module_color = get_theme_mod('ko_band_background_fourth_section_color');
+  $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
+
+
 
   /***Social Media*****/
   $koband_social_media = get_theme_mod('ko_band_social_media_checkbox'); 
