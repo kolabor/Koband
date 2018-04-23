@@ -13,9 +13,9 @@
  */
 
 get_header();?> 
-<div id="Discography" class="bg section">
+<div id="Discography" class="section_bg section">
 	<div class="container">
-	<h1>Discography</h1>		
+	<h1 class="section_heading">Discography</h1>		
 	<?php
 
 		$args_album = array (
@@ -37,7 +37,7 @@ get_header();?>
 ================================================================================================================
 */
 	$album_posts = new WP_Query($args_album); ?>
-	<h3><div class="albums-title"><?php _e('Albums', 'koband');?></div></h3>
+	<h3><div class="albums-title title"><?php _e('Albums', 'koband');?></div></h3>
     <?php if ($album_posts->have_posts() ) : 
 	while( $album_posts->have_posts() ) : $album_posts->the_post();
 			
@@ -45,7 +45,7 @@ get_header();?>
 		<div class="container">
 			<div class="row album-head">
 				<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
-				<div class="col-sm-3"><?php _e('Album Name:<br>', 'koband');?><span><?php the_title();?></span></div>
+				<div class="col-sm-3"><?php _e('Album Name:<br>', 'koband');?><span class="title"><?php the_title();?></span></div>
 
 		        <?php 
 		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -54,8 +54,8 @@ get_header();?>
 				$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 
 					
-				<div class="col-sm-3"><?php _e('Date:<br>', 'koband');?> <span><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
-			    <div class="col-sm-3"><?php _e('Length:<br>', 'koband');?><span><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
+				<div class="col-sm-3"><?php _e('Date:<br>', 'koband');?> <span class="title"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
+			    <div class="col-sm-3"><?php _e('Length:<br>', 'koband');?><span class="title"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
 			    <div class="col-sm-1 album-up-down-buttons">
 			    	<span class="btn btn-sm album-song">
 				    	<a class="btn btn-sm show-album-song"><i class="fas fa-caret-down"></i></a>
@@ -101,7 +101,7 @@ get_header();?>
 ================================================================================================================
 -->
 		<?php $single_posts = new WP_Query($args_singles); ?>
-		<h3><div class="single-title"><?php _e('Singles', 'koband');?></div></h3>
+		<h3><div class="single-title title"><?php _e('Singles', 'koband');?></div></h3>
 		<?php 
 		if ($single_posts->have_posts() ) :
 		while ($single_posts->have_posts() ) : $single_posts->the_post();
@@ -114,9 +114,9 @@ get_header();?>
 			<div class="container">
 				<div class="row album-head">
 					<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
-					<div class="col-sm-3"><?php _e('Name:<br>', 'koband');?><span><?php the_title();?></span></div>
-					<div class="col-sm-3"><?php _e('Date:<br>', 'koband');?><span><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
-				    <div class="col-sm-3"><?php _e('Length:<br>', 'koband');?><span><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
+					<div class="col-sm-3"><?php _e('Name:<br>', 'koband');?><span class="title"><?php the_title();?></span></div>
+					<div class="col-sm-3"><?php _e('Date:<br>', 'koband');?><span class="title"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
+				    <div class="col-sm-3"><?php _e('Length:<br>', 'koband');?><span class="title"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
 				   	<div class="col-sm-1 single-up-down-buttons">
 				    	<span class="btn btn-sm single-song">
 					    	<a class="btn btn-sm show-single-song"><i class="fas fa-caret-down"></i></a>

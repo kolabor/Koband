@@ -40,11 +40,11 @@
                     <?php endif; ?>
                 </div>
                       
-            <!--<div class="col-md-5">
-            <?php /*if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
+            <div class="col-md-5">
+            <?php if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
                                       	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?>  #second .widget-area
-                                    <?php endif; */?>
-                         		</div> -->
+                                    <?php endif; ?>
+                         		</div> 
 
                             <!--<div class="col-md-5 footer-search">
 

@@ -12,12 +12,12 @@
  * @since Koband 1.0
  */?>
 
- <div class="album py5 bg section" id="News">
+ <div class="album py5 section_bg section" id="News">
  	<div class="container">
  		<div class="row">
 		 	<div class="container">
 		 		<div class="row">
-					<h1>News</h1>
+					<h1 class="section_heading">News</h1>
 				</div>
 			</div><!-- container -->
 			<div class="container">
@@ -35,10 +35,10 @@
 							<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
 								<div class="col-md-4">
 									<div class="card mb-4 box-shadow">
-										<div class="news-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+										<div class="news-title title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
 										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
 										<div class="card-body">
-											<div id="card-text"><?php the_excerpt(); ?></div>
+											<div id="card-text" class="main_p"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
 														<span  class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></span>
