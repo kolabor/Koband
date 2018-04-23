@@ -78,46 +78,33 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_second_theme_color',
 ) ) );
 
-/***Background first module color **/
-$wp_customize->add_setting( 'ko_band_background_first_section_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_first_section_color', array(
-        'label'      => esc_html__( 'First Section Color', 'koband' ),
+/***Background news module color **/
+$wp_customize->add_setting( 'ko_band_background_news_section_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_news_section_color', array(
+        'label'      => esc_html__( 'News Section Background Color', 'koband' ),
         'section'    => 'colors',
-        'settings'   => 'ko_band_background_first_section_color',
+        'settings'   => 'ko_band_background_news_section_color',
 ) ) );
 
 
-/***Background second module color **/
-$wp_customize->add_setting( 'ko_band_background_second_section_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_second_section_color', array(
-        'label'      => esc_html__( 'Second Section Color', 'koband' ),
+/***Background Tour module color **/
+$wp_customize->add_setting( 'ko_band_background_tour_section_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_tour_section_color', array(
+        'label'      => esc_html__( 'Tour Section Background Color', 'koband' ),
         'section'    => 'colors',
-        'settings'   => 'ko_band_background_second_section_color',
+        'settings'   => 'ko_band_background_tour_section_color',
 ) ) );
-/***Background third module color **/
-$wp_customize->add_setting( 'ko_band_background_third_section_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_third_section_color', array(
-        'label'      => esc_html__( 'Third Section Color', 'koband' ),
+/***Background discography module color **/
+$wp_customize->add_setting( 'ko_band_background_discography_section_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_discography_section_color', array(
+        'label'      => esc_html__( 'Discography Section Background Color', 'koband' ),
         'section'    => 'colors',
-        'settings'   => 'ko_band_background_third_section_color',
-) ) );
-
-
-/***Background fourth module color **/
-$wp_customize->add_setting( 'ko_band_background_fourth_section_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_fourth_section_color', array(
-        'label'      => esc_html__( 'Fourth Section Color', 'koband' ),
-        'section'    => 'colors',
-        'settings'   => 'ko_band_background_fourth_section_color',
+        'settings'   => 'ko_band_background_discography_section_color',
 ) ) );
 
-/***Background fifth module color **/
-$wp_customize->add_setting( 'ko_band_background_fifth_section_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_fifth_section_color', array(
-        'label'      => esc_html__( 'Fifth Section color', 'koband' ),
-        'section'    => 'colors',
-        'settings'   => 'ko_band_background_fifth_section_color',
-) ) );
+
+
+
 /********************************************************************************************************/
 
 /*Fonts and Color Section start here*/
@@ -234,7 +221,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable Slide types:', 'koband' ),
     'settings' => 'ko_band_home_page_slider_type',
     'section' => 'ko_band_slider_section',
-    'type'     => 'radio',
+    'type'     => 'select',
     'choices' => array(
                 'Image' => esc_html__( 'Image',       'koband' ),
                 'Video' => esc_html__( 'Video',       'koband' ),
