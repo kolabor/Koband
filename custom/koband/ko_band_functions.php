@@ -49,7 +49,7 @@ add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 // Excerpt Length
 
 function ko_band_set_excerpt_length( $excerpt ){
-	return substr($excerpt, 0, 200);
+	return substr($excerpt, 0, 150);
 }
 
 add_filter('the_excerpt', 'ko_band_set_excerpt_length', 999);
@@ -100,6 +100,11 @@ function ko_band_theme_support () {
 	// Add theme support thumnails
 
 	add_theme_support('post-thumbnails');
+	add_theme_support('custom-background');
+	add_theme_support('custom-header');
+	add_theme_support('post-formats', array('asaid', 'image', 'video'));
+	add_theme_support('html5', array('search-form'));
+
 
 	//Menu
 
@@ -113,43 +118,44 @@ function ko_band_theme_support () {
 add_action('after_setup_theme', 'ko_band_theme_support'); 
 
 //Widget Locations
-function footer_widgets($id){
+function ko_band_footer_widgets($id){
 
 	register_sidebar(array(
-		'name' => __('Sidebar','koband'),
-		'id' => 'sidebar',
-		'before_sidebar' => '<div  class="side-sidebar">',
+		'name' => __('Sidebar one','koband'),
+		'id' => 'ko_band_sidebar_one',
+		'before_sidebar' => '<div  class="side-ko_band_sidebar_one">',
+		'after_sidebar' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+		register_sidebar(array(
+		'name' => __('Sidebar two','koband'),
+		'id' => 'ko_band_sidebar_two',
+		'before_sidebar' => '<div  class="side-ko_band_sidebar_two">',
 		'after_sidebar' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Footer Widgets One', 'koband'),
-		'id' => 'widgets_one',
-		'before_widget' => '<div  class="side-widgets_one">',
+		'name' => __('Footer Widgets one', 'koband'),
+		'id' => 'ko_band_footer_widgets_one',
+		'before_widget' => '<div  class="side-ko_band_footer_widgets_one">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Footer Widgets Two', 'koband'),
-		'id' => 'widgets_two',
-		'before_widget' => '<div  class="side-widgets_two">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>'
-	));
-	register_sidebar(array(
-		'name' => __('Footer Widgets Three', 'koband'),
-		'id' => 'widgets_three',
-		'before_widget' => '<div  class="side-widgets_three">',
+		'name' => __('Footer Widgets two', 'koband'),
+		'id' => 'ko_band_footer_widgets_two',
+		'before_widget' => '<div  class="side-ko_band_footer_widgets_two">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	
+	
 }
-add_action('widgets_init', 'footer_widgets');
+add_action('widgets_init', 'ko_band_footer_widgets');
 
 
 

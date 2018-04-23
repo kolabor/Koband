@@ -230,6 +230,18 @@ $wp_customize->add_control( 'ko_band_footer_copyright_text', array(
     'section' => 'ko_band_footer_section',
 ) );
 
+
+/*Search checkbox*/
+$wp_customize->add_setting( 'ko_band_footer_search' );
+$wp_customize->add_control( 'ko_band_footer_search', array(
+    'settings' => 'ko_band_footer_search',
+    'section' => 'ko_band_footer_section',
+    'type'    => 'checkbox', 
+    'label' => esc_html__( ' Check this if you would like to add Search field in footer:', 'koband' ),
+) );
+
+
+
 /*** Footer section end here  ***/
 /****************************************************************************************************************/
 
