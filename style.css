@@ -19,16 +19,12 @@ weffcb
   padding-left: 0 !important;
   padding-bottom: 20px !important; }
 
-.section_bg {
-  background-color: #f2f2f2 !important; }
-
 h1 {
   font-weight: 900 !important;
   margin-top: 0 !important;
   font-size: 350% !important;
   padding: 20px 0 !important;
   margin-bottom: 0 !important;
-  color: #4D0000 !important;
   word-spacing: 4px !important;
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
@@ -42,8 +38,7 @@ h2 a {
   font-size: 150% !important;
   word-spacing: 1px !important;
   letter-spacing: 1px !important;
-  text-decoration: none !important;
-  color: #efefef !important; }
+  text-decoration: none !important; }
 
 .img {
   width: 30%;
@@ -247,11 +242,9 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #4D0000 !important;
   border: none !important; }
 
 .btn-primary:hover {
-  background-color: #ddd !important;
   color: #fff !important; }
 
 .btn-group-lg > .btn, .btn-lg {
@@ -351,14 +344,13 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 .btn-koband-load {
   display: block;
   width: 200px;
-  color: #222;
+  color: #fff !important;
   font-size: 20px;
   cursor: pointer;
   margin: 0 auto;
   margin-bottom: 10px;
   margin-top: 10px;
   opacity: 0.5;
-  background-color: #ddd;
   border-radius: 2px;
   text-align: center;
   font-weight: 800;
@@ -366,10 +358,8 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   text-transform: uppercase;
   padding: 10px 0;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; }
-  .btn-koband-load:hover, .btn-koband-load:focus, .btn-koband-load.loading {
-    opacity: 1; }
   .btn-koband-load.loading {
-    cursor: default; }
+    cursor: pointer; }
   .btn-koband-load span {
     display: block; }
 
@@ -458,7 +448,7 @@ Tour Section
   display: table-row; }
 
 .divTableCell, .divTableHead, .divTableHeading {
-  border-bottom: 1px solid #4D0000;
+  border-bottom: 1px solid;
   display: table-cell;
   padding: 3px 10px; }
 
@@ -477,9 +467,6 @@ Tour Section
   font-weight: 500;
   color: #aaa7a7; }
 
-.divTableRow:hover {
-  background-color: #f2f2f2; }
-
 .divTableFoot {
   background-color: #f2f2f2;
   display: table-footer-group;
@@ -492,18 +479,20 @@ Tour Section
   color: #7e1c1c !important;
   text-decoration: none !important; }
 
+/*
+Discography Section
+-------------------------------------------
+*/
 .album-head {
   background-color: #fff !important;
-  border-bottom: 2px solid #858383 !important;
+  border-bottom: 2px solid;
   padding: 5px !important;
   padding-left: 0 !important; }
 
 .albums-title {
-  color: #828282 !important;
   padding-bottom: 10px !important; }
 
 .single-title {
-  color: #828282 !important;
   padding-bottom: 20px !important;
   padding-top: 20px !important; }
 
@@ -511,26 +500,24 @@ Tour Section
   padding-left: 5px !important; }
 
 .col-sm-3 {
-  color: #aaa7a7 !important;
   font-size: 20px !important;
   font-weight: 700 !important; }
 
 .col-sm-3 span {
   font-size: 30px !important;
-  font-weight: 600 !important;
-  color: #878787 !important; }
+  font-weight: 600 !important; }
 
 .songs-head {
   font-size: 19px !important;
-  font-weight: 500 !important;
-  color: #898888 !important; }
+  font-weight: 500 !important; }
 
 .song-list {
-  background-color: #f6f6f6 !important;
-  border-bottom: 1px solid #999 !important;
-  color: #7c7c7c !important;
+  border-bottom: 1px solid;
   font-size: 15px !important;
   font-weight: 500 !important; }
+
+.btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
+  font-size: 25px; }
 
 /*
 =======================================================
@@ -573,7 +560,6 @@ Tour Section
   height: auto !important;
   padding: 10px;
   margin-top: 10px !important;
-  color: #363636 !important;
   font-size: 17px !important;
   font-weight: 400 !important; }
 
@@ -600,7 +586,6 @@ Tour Section
   border-style: none !important;
   cursor: pointer !important;
   font-weight: 500 !important;
-  color: #434343 !important;
   font-size: 18px !important; }
 
 /*
@@ -693,9 +678,5 @@ Tour Section
 .copyright a:hover {
   color: #00a8a8 !important;
   text-decoration: none !important; }
-
-.btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-  font-size: 25px;
-  color: #aaa7a7 !important; }
 
 /*# sourceMappingURL=style.css.map */

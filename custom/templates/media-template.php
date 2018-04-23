@@ -15,7 +15,7 @@ get_header();?>
 <div id="Media" class="section section-full bg-media">
 	<div class="container">
 		<div class="row">
-			<h1 class="section_heading">Gallery</h1>
+			<h1 class="first_color">Gallery</h1>
 		</div>
 	</div><!--container-->				
 		<div class="row koband_post_media no-gutters mt-70">
