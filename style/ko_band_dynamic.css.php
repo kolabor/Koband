@@ -10,10 +10,10 @@
   $koband_retina_footer_logo = get_theme_mod('ko_band_retina_footer_logo'); 
 
   /****colors**/
-  $koband_main_theme_color = get_theme_mod('ko_band_main_theme_color');  
+  $koband_main_font_color = get_theme_mod('ko_band_main_font_color');  
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
   $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
-  $koband_backgorund_section_color = get_theme_mod('ko_band_background_section_color');
+  
 
 
   /***Fonts***/
