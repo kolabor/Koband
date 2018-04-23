@@ -3,27 +3,66 @@
   include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
 
 
+  /*****Logo***/
+  $koband_main_logo = get_theme_mod('ko_band_main_logo');
+  $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
+  $koband_footer_logo = get_theme_mod('ko_band_footer_logo');  
+  $koband_retina_footer_logo = get_theme_mod('ko_band_retina_footer_logo'); 
 
-  //color
-  $main_theme_color = get_theme_mod( 'ko_band_main_theme_color' );
-  $second_theme_color = get_theme_mod( 'ko_band_second_theme_color' );
-  $main_font_color= get_theme_mod( 'ko_band_main_font_color' );
-  $heading_font_color = get_theme_mod( 'ko_band_heading_font_color' );
+  /****colors**/
+  $koband_main_theme_color = get_theme_mod('ko_band_main_theme_color');  
+  $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
+  $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
+  $koband_backgorund_section_color = get_theme_mod('ko_band_background_section_color');
 
 
-  //font
-  $main_font_size = get_theme_mod( 'ko_band_main_font_size' );
-  $main_line_height = get_theme_mod( 'ko_band_main_line_height' );
-  $main_font_style = get_theme_mod( 'ko_band_font_style' );
-  $main_font_weight = get_theme_mod( 'ko_band_font_weight' );
-
- 
-  $general_font = get_theme_mod( 'ko_band_general_font_selector' );
+  /***Fonts***/
+  $koband_theme_font_size = get_theme_mod( 'ko_band_theme_font_size' );
+  $koband_theme_line_height = get_theme_mod( 'ko_band_theme_line_height' );
+  $koband_general_font = get_theme_mod( 'ko_band_general_font_selector' );
   $headding_font = get_theme_mod( 'ko_band_heading_font_selector' ); 
-  $main_theme_first_color = get_theme_mod( 'ko_band_main_color' );
-  $main_theme_second_color = get_theme_mod( 'ko_band_second_color' );
-  $main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
-  $theband_back_image = get_theme_mod('ko_band_the_band_images');
+
+  /****Retina Favicon***/
+  $koband_retina_favicon = get_theme_mod('ko_band_retina_favicon'); 
+
+  /****Slider Section type****/
+  $koband_slider_type = get_theme_mod('ko_band_home_page_slider_type'); 
+  $koband_slider_video = get_theme_mod('ko_band_home_page_slider_videolink'); 
+  $koband_slider_title = get_theme_mod('ko_band_home_page_slider_title');
+  $koband_slider_subtitle = get_theme_mod('ko_band_home_page_slider_subtitle');  
+  $koband_slider_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); 
+  $koband_slider_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink');   
+
+  /****Home page Modules ****/
+  $koband_first_module = get_theme_mod('ko_band_first_render_modules'); 
+  $koband_second_module = get_theme_mod('ko_band_second_render_modules');
+  $koband_third_module = get_theme_mod('ko_band_third_render_modules');
+  $koband_fourth_module = get_theme_mod('ko_band_fourth_render_modules');
+  $koband_fifth_module = get_theme_mod('ko_band_fifth_render_modules');
+
+
+  /***Social Media*****/
+  $koband_social_media = get_theme_mod('ko_band_social_media_checkbox'); 
+  $koband_facebook = get_theme_mod( 'ko_band_facebook_social_media' );
+  $koband_twitter = get_theme_mod( 'ko_band_twitter_social_media' );
+  $koband_insagram = get_theme_mod( 'ko_band_insagram_social_media' );
+  $koband_googleplus = get_theme_mod( 'ko_band_googleplus_social_media' );
+  $koband_youtube = get_theme_mod( 'ko_band_youtube_social_media' );
+  $koband_spotify = get_theme_mod( 'ko_band_spotify_social_media' );
+  $koband_soundcloud = get_theme_mod( 'ko_band_soundcloud_social_media' );
+  $koband_bandcamp = get_theme_mod( 'ko_band_bandcamp_social_media' );
+  $koband_apple = get_theme_mod( 'ko_band_apple_social_media' );
+
+  /***The band sction Backgroud image**/
+  $koband_theband_biography = get_theme_mod('ko_band_theband_biography');
+  $koband_theband_image = get_theme_mod('ko_band_theband_images');
+
+  /****Footer section****/
+  $koband_footer_copyright = get_theme_mod('ko_band_footer_copyright');
+  $koband_footer_search = get_theme_mod('ko_band_footer_search');
+
+
+
 
 ?>
 
