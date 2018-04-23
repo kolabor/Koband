@@ -66,7 +66,7 @@
 
   /***The band sction Backgroud image**/
   $koband_theband_biography = get_theme_mod('ko_band_theband_biography');
-  $koband_theband_image = get_theme_mod('ko_band_theband_images');
+  $koband_theband_image = get_theme_mod('ko_band_theband_sectin_background_image');
 
    /**Footer Logo**/
   $koband_footer_logo = get_theme_mod('ko_band_footer_logo');  

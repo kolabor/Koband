@@ -240,29 +240,34 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
                
 )  )  );
 
+
 /*Slider Vidoe Link**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
-  'label'    => __( 'Video Link:', 'koband' ),
+  'label'    => __( 'Background Video Link:', 'koband' ),
   'section'  => 'ko_band_slider_section',
-  'type'     => 'link',
+  'type'     => 'text',
+  'description' => __('*Only Youtube Video are allowed! ', 'koband' ),
+   'input_attrs' => array(
+            'placeholder' => __( 'https://www.youtube.com', 'koband' ),
+        )
  ));
 
 /*Video Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_title' );
 $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
   'settings' => 'ko_band_home_page_slider_title',
-  'label'    => __( 'Title:', 'koband' ),
+  'label'    => __( 'Slider Title:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type'     => 'text'
 ));
 
 /*Video SubTitle**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_subtitle' );
-$wp_customize->add_control( 'ko_band_home_page_slider_subtitle', array(
-  'settings' => 'ko_band_home_page_slider_subtitle',
-  'label'    => __( 'Subtitle:', 'koband' ),
+$wp_customize->add_setting( 'ko_band_home_page_slider_text' );
+$wp_customize->add_control( 'ko_band_home_page_slider_text', array(
+  'settings' => 'ko_band_home_page_slider_text',
+  'label'    => __( 'Slider Text:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type' => 'textarea'
 ));
@@ -499,10 +504,10 @@ $wp_customize->add_control( 'ko_band_theband_biography', array(
 ) );
 
 /**The band Images**/
-$wp_customize->add_setting( 'ko_band_theband_images' );
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_theband_images', array(
-    'label' => esc_html__( 'The Band Image:', 'koband' ),
-    'settings' => 'ko_band_theband_images',
+$wp_customize->add_setting( 'ko_band_theband_sectin_background_image' );
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_theband_sectin_background_image', array(
+    'label' => esc_html__( 'The Band Sectin Background Image:', 'koband' ),
+    'settings' => 'ko_band_theband_sectin_background_image',
     'section' => 'ko_band_theband_section',
 )) );
 
