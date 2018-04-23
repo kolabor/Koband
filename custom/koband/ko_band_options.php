@@ -290,6 +290,16 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
   'type'     => 'link'  
 ));
 
+/*Slider box  background show/hide*/
+$wp_customize->add_setting( 'ko_band_home_page_box_background' );
+$wp_customize->add_control( 'ko_band_home_page_box_background', array(
+    'label' => esc_html__( 'Check if you like to show box background:', 'koband' ),
+    'settings' => 'ko_band_home_page_box_background',
+    'section' => 'ko_band_slider_section',
+    'type'     => 'checkbox',
+   
+ )  );
+
 /*Slide section type end here */
 /**********************************************************************************************************************/
 

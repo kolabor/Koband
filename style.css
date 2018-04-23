@@ -235,7 +235,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   padding: 30px;
   color: #fff;
   text-align: left;
-  background: rgba(0, 0, 0, 0.5); }
+ }
 
 .sl-content h5 {
   font-size: 60px !important;

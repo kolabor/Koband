@@ -35,7 +35,9 @@
   $koband_slider_title = get_theme_mod('ko_band_home_page_slider_title');
   $koband_slider_subtitle = get_theme_mod('ko_band_home_page_slider_subtitle');  
   $koband_slider_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); 
-  $koband_slider_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink');   
+  $koband_slider_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink'); 
+
+  $koband_slider_box_background = get_theme_mod('ko_band_home_page_box_background');
 
   /****Home page Modules ****/
   $koband_first_module = get_theme_mod('ko_band_first_render_modules'); 
@@ -119,7 +121,10 @@ h1, h2, h3
 
 
 }
-
+.sl-content{
+  
+  background:  <?php echo $koband_slider_box_background; ?> !important;
+}
 
 
 
