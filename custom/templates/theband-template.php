@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-<div class="section" id="Theband">
+<div class="section" id="theband">
 	<div class="container">
 		<div class="row">
 		 	<div class="container">

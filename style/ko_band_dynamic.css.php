@@ -20,7 +20,7 @@
   $koband_theme_font_size = get_theme_mod( 'ko_band_theme_font_size' );
   $koband_theme_line_height = get_theme_mod( 'ko_band_theme_line_height' );
   $koband_general_font = get_theme_mod( 'ko_band_general_font_selector' );
-  $headding_font = get_theme_mod( 'ko_band_heading_font_selector' ); 
+  $koband_headding_font = get_theme_mod( 'ko_band_heading_font_selector' ); 
 
   /****Retina Favicon***/
   $koband_retina_favicon = get_theme_mod('ko_band_retina_favicon'); 
@@ -68,16 +68,16 @@
 
 #theband {
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
- url("<?php echo $theband_back_image; ?>") !important;
+ url("<?php echo $koband_theband_image; ?>") !important;
  background-repeat: no-repeat;
  background-size: cover;
  background-position: center;
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $main_font_size; ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo $general_font; ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo $headding_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_theme_font_size; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
 
 
 
@@ -86,12 +86,11 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 body
 {
-  background-color: <?php echo $main_theme_color; ?> !important;
+  background-color: <?php echo $koband_backgorund_section_color; ?> !important;
   font-family: <?php echo $general_font; ?> !important;
   font-size:  <?php echo $main_font_size; ?> !important;
   line-height:  <?php echo $main_line_height; ?> !important;
-  font-weight:  <?php echo $main_font_weight; ?> !important;
-  font-style:  <?php echo $main_font_style; ?> !important;
+  
   color:  <?php echo $main_font_color; ?> !important; 
 
 
