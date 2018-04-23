@@ -32,9 +32,9 @@
 
 	<?php endwhile; ?>
 	<!--loop ends here-->
-		<div class="video-bg">
+		<div class="video-bg"><input placeholder="http://somelink.com" />
 				<div class="iframe-wrapper">
-					<iframe  src="<?php echo $slide_video_link;?>?autoplay=1&loop=1&mute=1"></iframe>
+					<iframe  src="<?php echo $slide_video_link;?>?autoplay=1&loop=1&mute=1" ></iframe>
 				</div>		
 		</div>		
 		<div class="sl-content">

@@ -12,10 +12,10 @@
  * @since Koband 1.0
  */
 get_header();?>
-<div class="section-full bg-media section" id="Media">
+<div id="Media" class="section section-full bg-media">
 	<div class="container">
 		<div class="row">
-			<h1>Gallery</h1>
+			<h1 class="first_color">Gallery</h1>
 		</div>
 	</div><!--container-->				
 		<div class="row koband_post_media no-gutters mt-70">
