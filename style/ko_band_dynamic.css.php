@@ -46,11 +46,9 @@
 
 
   /***Home page Module Color****/
-  $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
-  $koband_second_module_color = get_theme_mod('ko_band_background_second_section_color');
-  $koband_third_module_color = get_theme_mod('ko_band_background_third_section_color');
-  $koband_fourth_module_color = get_theme_mod('ko_band_background_fourth_section_color');
-  $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
+  $koband_news_background_color = get_theme_mod('ko_band_background_news_section_color'); 
+  $koband_tour_background_color = get_theme_mod('ko_band_background_tour_section_color');
+  $koband_discography_background_color = get_theme_mod('ko_band_background_discography_section_color');
 
 
   /***Social Media*****/
@@ -112,10 +110,19 @@ body
 
 }
 
-.section {
-  background-color: <?php echo $koband_backgorund_section_color; ?> !important;
-
+#News {
+  background-color: <?php echo  $koband_news_background_color; ?> !important;
 }
+
+#Tour {
+  background-color: <?php echo  $koband_tour_background_color; ?> !important;
+}
+
+#Discography {
+  background-color: <?php echo  $koband_discography_background_color; ?> !important;
+}
+
+
 
 .first_color {
   color: <?php echo $koband_first_theme_color; ?> !important;
@@ -140,7 +147,7 @@ body
 }
 
 .main_font_color{
-  color: <?php echo $koband_main_theme_color; ?> !important;
+  color: <?php echo $koband_main_font_color; ?> !important;
 }
 
 h1, h2, h3 
