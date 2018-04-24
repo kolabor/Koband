@@ -107,7 +107,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 /********************************************************************************************************/
 
-/*Fonts and Color Section start here*/
+/*Fonts Section start here*/
 $wp_customize->add_section( 'ko_band_fonts_section' , array(
     'title'       => esc_html__( 'Fonts', 'koband' ),
     'priority'    => 26,
