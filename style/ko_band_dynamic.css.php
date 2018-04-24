@@ -137,7 +137,9 @@ h1, h2, h3
 .social-icons a .first_color:hover {
   color: <?php echo $koband_second_theme_color; ?> !important;
 }
-
+.first_color a {
+  color: <?php echo $koband_first_theme_color; ?> !important;
+}
 .bg_first_color {
   background-color: <?php echo $koband_first_theme_color; ?> !important; 
 }

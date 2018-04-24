@@ -127,7 +127,7 @@ get_header();?>
 				<div class="container single-songs-show-hide">
 					<div class="row album-head border_first_color main_font_color">
 						<div class="col-sm-5"><?php _e('Store Name:', 'koband');?></div>
-						<div class="col-sm-5"><?php _e('Buy:', 'koband');?></div>
+						<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color bg_second_color main_font_color">
 					<?php foreach ($single_store[0] as  $value_single_store) { ?>

@@ -337,7 +337,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
 .news-title h2 a{
-  color : #727272 !important;
+  color : #4b4b4b !important;
 }
 .news-title {
   padding-left: 10px!important;
@@ -574,7 +574,8 @@ Discography Section
 }
 // Show hide discography icons
 .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-  font-size: 25px ;
+  font-size: 40px;
+  margin-top: 10px;
 }
 /*
 =======================================================
@@ -616,7 +617,7 @@ Discography Section
   width: 100%!important;
   height: auto!important;
   padding: 10px;
-  margin-top: 10px!important;
+  margin-top: 10px;
   font-size: 17px!important;
   font-weight: 400!important;
 }
@@ -637,14 +638,23 @@ Discography Section
 }
 .band_member_name {
   background: linear-gradient(to right, rgba(221, 221, 221, 0) 0%, rgba(246, 245, 245, 0) 100%) !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
   border-image: none!important;
   border-style: none!important;
   cursor: pointer!important;
   font-weight: 500!important;
   font-size: 18px!important;
+  padding: 0;
 }
+
+.band_member{
+padding-top: 15px;
+}
+
+.band-members-role {
+  padding: 0!important;
+  margin: 0!important;
+}
+
 /*
 =========================================================
             Footer Section
