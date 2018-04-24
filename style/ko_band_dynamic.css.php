@@ -4,11 +4,11 @@
 
 
   /*****Main Logo***/
-  $koband_main_logo = get_theme_mod('ko_band_main_logo');
+  $koband_main_logo = if(isset(get_theme_mod('ko_band_main_logo')));
   $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
 
    /****Theme colors**/
-  $koband_main_font_color = get_theme_mod('ko_band_main_font_color');  
+  $koband_main_font_color = if(isset(get_theme_mod('ko_band_main_font_color')));  
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
   $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
   
@@ -149,7 +149,7 @@ body
 }
 
 .main_font_color{
-  color: <?php echo $koband_main_font_color; ?> !important;
+  color: <?php if(isset ($koband_main_font_color)) { echo $koband_main_font_color;} else { "yellow"} ?> !important;
 }
 
 h1, h2, h3 

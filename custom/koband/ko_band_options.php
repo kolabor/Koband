@@ -78,14 +78,6 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_second_theme_color',
 ) ) );
 
-/*** Heading (h1, h2, h3...) font color ***/
-$wp_customize->add_setting( 'ko_band_heading_font_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_heading_font_color', array(
-        'label'      => esc_html__( 'Heading Font Color', 'koband' ),
-        'section'    => 'colors',
-        'settings'   => 'ko_band_heading_font_color',
-) ) );
-
 
 /***Background news module color **/
 $wp_customize->add_setting( 'ko_band_background_news_section_color' );
@@ -116,7 +108,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 /********************************************************************************************************/
 
-/*Fonts and Color Section start here*/
+/*Fonts Section start here*/
 $wp_customize->add_section( 'ko_band_fonts_section' , array(
     'title'       => esc_html__( 'Fonts', 'koband' ),
     'priority'    => 26,
