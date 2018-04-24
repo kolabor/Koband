@@ -52,7 +52,8 @@
   /***Home page Module Color****/
   $koband_news_background_color = get_theme_mod('ko_band_background_news_section_color'); 
   $koband_tour_background_color = get_theme_mod('ko_band_background_tour_section_color');
-  $koband_discography_background_color = get_theme_mod('ko_band_background_discography_section_color');
+  $koband_discography_background_color = get_theme_mod('ko_band_background_discography_section_color'); 
+  $koband_gallery_background_color = get_theme_mod('ko_band_background_gallery_section_color');
 
 
   /***Social Media*****/
