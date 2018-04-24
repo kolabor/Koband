@@ -100,11 +100,11 @@ function ko_band_theme_support () {
 	// Add theme support thumnails
 
 	add_theme_support('post-thumbnails');
-	//add_theme_support('custom-background');
-	//add_theme_support('custom-header');
-	add_theme_support('post-formats', array('asaid', 'image', 'video'));
 	add_theme_support('html5', array('search-form'));
+	add_theme_support( 'automatic-feed-links' );
 
+	// Add theme support Post Format Support
+	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
 
 	//Menu
 
@@ -112,8 +112,8 @@ function ko_band_theme_support () {
 		'primary' => __('Primary Menu', 'koband'),
 		'footer' => __('Footer Menu', 'koband')
 	));
-	// Add theme support Post Format Support
-	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
+	
+	
 }
 add_action('after_setup_theme', 'ko_band_theme_support'); 
 

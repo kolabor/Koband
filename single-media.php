@@ -112,6 +112,7 @@ if (have_posts() ) :
 		    'status' => 'approve'
 		);
 	?>
+	 <?php comment_form(); ?>
 
 <?php 
 get_sidebar();

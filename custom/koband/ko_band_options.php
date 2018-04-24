@@ -79,7 +79,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 
-/***Background news module color **/
+/***Background News module color **/
 $wp_customize->add_setting( 'ko_band_background_news_section_color' );
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_news_section_color', array(
         'label'      => esc_html__( 'News Section Background Color', 'koband' ),
@@ -101,6 +101,14 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'label'      => esc_html__( 'Discography Section Background Color', 'koband' ),
         'section'    => 'colors',
         'settings'   => 'ko_band_background_discography_section_color',
+) ) );
+
+/***Background Gallery module color **/
+$wp_customize->add_setting( 'ko_band_background_gallery_section_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_gallery_section_color', array(
+        'label'      => esc_html__( 'Gallery Section Background Color', 'koband' ),
+        'section'    => 'colors',
+        'settings'   => 'ko_band_background_gallery_section_color',
 ) ) );
 
 

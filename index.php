@@ -13,6 +13,10 @@
  */
 
 get_header(); ?>
+<head>
+  <?php wp_head();?>
+</head>
+
 <div class="container">
         <div class="row koband_post_news">
           <?php
@@ -21,9 +25,9 @@ get_header(); ?>
              'post_staus'=> 'publish',
              'posts_per_page' => -1,
              
-          );
+          );?>
 
-          $news_posts = new WP_Query($args_news);
+        <?php  $news_posts = new WP_Query($args_news);
           if ( $news_posts->have_posts() ) : ?>
             <!-- start loop -->                     
               <?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
@@ -44,5 +48,7 @@ get_header(); ?>
               <?php endwhile; ?>  
               <!-- loop ends here -->
           <?php endif; ?>
+          <?php wp_footer();?>
+        </body>
       </div><!-- container -->
 </div>

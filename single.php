@@ -43,6 +43,7 @@ get_header(); ?>
 		$args = array(
 		    'status' => 'approve'
 		);
+
 		/* 
 		// The comment Query
 		$comments_query = new WP_Comment_Query;
@@ -57,6 +58,8 @@ get_header(); ?>
 		    echo 'No comments found.';
 		}*/
 		?>
+
+		 <?php comment_form(); ?>
 <?php 
 get_sidebar();
 get_footer(); ?>
