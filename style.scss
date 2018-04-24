@@ -424,12 +424,19 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   height: 350px!important;
   position: relative!important;
 }
+.gallery-img {
+  background-color: #ffffff;
+}
+
 .gallery-img img {
   width: 100%!important;
   height: 350px!important;
+  opacity: 0.7;
 }
+
 .go_to_gallery {
-  color: #efefef!important;
+  font-size: 20px;
+  font-weight: 600;
   &:hover {
     text-decoration: none;
     color: #f8f9fa;
@@ -442,10 +449,11 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   top: 0;
   bottom: 0;
 }
+.overlay .btn-group {
+top: 10%!important;
+}
 .single-filter-content .overlay-bg-content {
-  background: -moz-linear-gradient(left, rgba(93, 32, 32, 0) 0%, rgba(93, 4, 4, 0.7) 100%);
-  background: -webkit-linear-gradient(left, rgba(93, 32, 32, 0) 0%, rgba(93, 4, 4, 0.7) 100%);
-  background: linear-gradient(to right, rgba(93, 32, 32, 0) 0%, rgba(93, 4, 4, 0.7) 100%);
+
   text-align: center;
   padding: 50px 100px;
   opacity: 0;

@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0b905c83-5768-45be-9c01-9cc42a344d98" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/cpt/ko_band_singles_custom_post_types.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/cpt/ko_band_singles_custom_post_types.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/custom/templates/discography-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/discography-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/custom/templates/media-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/media-template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/templates/theband-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/theband-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/ko_band_dynamic.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/style/ko_band_dynamic.css.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="649" column="17" selection-start-line="649" selection-start-column="17" selection-end-line="649" selection-end-column="17" />
+            <state relative-caret-position="442">
+              <caret line="436" column="16" selection-start-line="436" selection-start-column="16" selection-end-line="436" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -35,8 +34,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="244" selection-start-line="244" selection-end-line="244" />
+            <state relative-caret-position="1122">
+              <caret line="684" selection-start-line="684" selection-end-line="684" />
             </state>
           </provider>
         </entry>
@@ -128,12 +127,12 @@
       <option name="presentableId" value="Default" />
       <updated>1524468766442</updated>
       <workItem from="1524468775656" duration="14196000" />
-      <workItem from="1524555697195" duration="8537000" />
+      <workItem from="1524555697195" duration="12510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22733000" />
+    <option name="totallyTimeSpent" value="26706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -181,15 +180,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="244" selection-start-line="244" selection-end-line="244" />
+        <state relative-caret-position="1122">
+          <caret line="684" selection-start-line="684" selection-end-line="684" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="649" column="17" selection-start-line="649" selection-start-column="17" selection-end-line="649" selection-end-column="17" />
+        <state relative-caret-position="442">
+          <caret line="436" column="16" selection-start-line="436" selection-start-column="16" selection-end-line="436" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -127,8 +127,21 @@ get_header();?>
 			   		</div>
 				</div>
 				<div class="container single-songs-show-hide">
+
+					<div class="row album-head border_first_color">
+					<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
+				</div>
+				<div class="row song-list border_first_color bg_second_color main_font_color">			
+				<?php foreach ($single_detail as  $value_single_detail) { ?>
+					
+					<div class="col"><?php if(isset($value_single_detail)) {echo $value_single_detail;} ?></div>
+						
+					<?php } ?> 
+				</div>
+
+
+
 					<div class="row album-head border_first_color main_font_color">
-						<div class="col-sm-5"><?php _e('Single Detail:', 'koband');?></div>
 						<div class="col-sm-5"><?php _e('Store Name:', 'koband');?></div>
 						<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
 					</div>
