@@ -49,7 +49,7 @@ function ko_band_media_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail' ),
+    'supports' => array('title', 'editor', 'thumbnail', 'comments' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
 
