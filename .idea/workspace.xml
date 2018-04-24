@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b905c83-5768-45be-9c01-9cc42a344d98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/cpt/ko_band_singles_custom_post_types.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/cpt/ko_band_singles_custom_post_types.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/templates/discography-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/discography-template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/templates/media-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/media-template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="0b905c83-5768-45be-9c01-9cc42a344d98" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -35,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1122">
-              <caret line="684" selection-start-line="684" selection-end-line="684" />
+              <caret line="705" selection-start-line="705" selection-end-line="705" />
             </state>
           </provider>
         </entry>
@@ -127,12 +119,12 @@
       <option name="presentableId" value="Default" />
       <updated>1524468766442</updated>
       <workItem from="1524468775656" duration="14196000" />
-      <workItem from="1524555697195" duration="12510000" />
+      <workItem from="1524555697195" duration="13111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26706000" />
+    <option name="totallyTimeSpent" value="27307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -181,7 +173,7 @@
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
-          <caret line="684" selection-start-line="684" selection-end-line="684" />
+          <caret line="705" selection-start-line="705" selection-end-line="705" />
         </state>
       </provider>
     </entry>
