@@ -78,7 +78,7 @@ function ko_band_singles_display_meta_box($post, $box){
    
     $singles_length = get_post_meta( $post->ID, 'ko_band_singles_length', true );
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
-    $singles_detail= get_post_meta( $post->ID, 'ko_band_singles_detail', true );
+    $singles_detail = get_post_meta( $post->ID, 'ko_band_singles_detail', true );
   ?>
 
 
