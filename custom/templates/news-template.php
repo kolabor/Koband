@@ -55,7 +55,7 @@
 			</div><!-- container -->
 				<div class="container text-center">
 					<div class="row">
-						<a class="btn-koband-load koband_load_more bg_second_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+						<a class="btn-koband-load koband_load_more bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 							<span class="koband-loading">Loading...</span>
 							<span class="text">Load more</span></a>
 						<a class="no-news"><span class="news-posts">There are no more news</span></a>

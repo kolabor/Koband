@@ -29,7 +29,7 @@ get_header(); ?>
 					);
 					$theband_posts = new WP_Query( $args_theband );?>
 					
-			<div class="container band-bio">
+			<div class="container band-bio bg_second_color">
 				<div class="row koband_post_theband">
 					<div class="container">
 						<div class="row">
@@ -48,8 +48,8 @@ get_header(); ?>
 									while ( $theband_posts->have_posts() ) : $theband_posts->the_post();
 									$post_id = get_the_ID();
 									$theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
-									<div class="col-sm-4 ">
-										<button type="button" id="myBtn" class="band_member_name main_font_color" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button>
+									<div class="col-sm-4 band_member">
+										<button type="button" id="myBtn" class="band_member_name main_font_color" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?> / <?php if(isset($theband_role[0]))  { echo  $theband_role[0]; } ?>  </button>
 											<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail(array(200,200)); ?>
 											</div>
 									</div>

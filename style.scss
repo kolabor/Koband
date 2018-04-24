@@ -23,7 +23,7 @@ weffcb
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
-  font-size: 350% !important;
+  font-size: 250% !important;
   padding: 20px 0!important;
   margin-bottom: 0!important;
 
@@ -273,7 +273,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
 }
 
 .sl-content p {
-  font-size: 20px!important;
   width:100%!important;
 }
 
@@ -281,9 +280,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   color: #fff!important;
   border: none!important;
 }
-.btn-primary:hover {
-  color: #fff!important;
-}
+
 .btn-group-lg>.btn, .btn-lg {
   font-size: 1.65rem!important;
 }
@@ -340,7 +337,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
 .news-title h2 a{
-  color : #727272 !important;
+  color : #4b4b4b !important;
 }
 .news-title {
   padding-left: 10px!important;
@@ -366,7 +363,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   color: #000000;
   &:hover {
     text-decoration: none;
-    color: #828282!important;
   }
 }
 
@@ -542,7 +538,7 @@ Discography Section
 
 .album-head {
   background-color: #fff !important;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   padding: 5px!important;
   padding-left: 0!important;
 }
@@ -561,7 +557,7 @@ Discography Section
   font-weight: 700!important;
 }
 .col-sm-3 span {
-  font-size: 30px!important;
+  font-size: 25px!important;
   font-weight: 600!important;
 
 }
@@ -578,7 +574,8 @@ Discography Section
 }
 // Show hide discography icons
 .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-  font-size: 25px ;
+  font-size: 40px;
+  margin-top: 10px;
 }
 /*
 =======================================================
@@ -620,7 +617,7 @@ Discography Section
   width: 100%!important;
   height: auto!important;
   padding: 10px;
-  margin-top: 10px!important;
+  margin-top: 10px;
   font-size: 17px!important;
   font-weight: 400!important;
 }
@@ -641,14 +638,23 @@ Discography Section
 }
 .band_member_name {
   background: linear-gradient(to right, rgba(221, 221, 221, 0) 0%, rgba(246, 245, 245, 0) 100%) !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
   border-image: none!important;
   border-style: none!important;
   cursor: pointer!important;
   font-weight: 500!important;
   font-size: 18px!important;
+  padding: 0;
 }
+
+.band_member{
+padding-top: 15px;
+}
+
+.band-members-role {
+  padding: 0!important;
+  margin: 0!important;
+}
+
 /*
 =========================================================
             Footer Section
@@ -730,14 +736,12 @@ font-size: 20px;
 font-weight: 400;
 }
 .social-icons a {
-  color: #767575;
   font-size: 20px;
   font-weight: 400;
   margin-right: 20px;
 }
-.social-icons a:hover {
-  color: #640606!important;
-}
+//.social-icons a:hover {
+  //color: #640606!important;}
 .copyright a:hover {
   color: #00a8a8!important;
   text-decoration: none!important;

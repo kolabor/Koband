@@ -8,7 +8,9 @@
   $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
 
    /****Theme colors**/
-  $koband_main_font_color = get_theme_mod('ko_band_main_font_color');  
+  $koband_main_font_color = get_theme_mod('ko_band_main_font_color'); 
+   
+
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
   $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
   
@@ -106,12 +108,15 @@ body
   font-family: <?php echo $koband_general_font; ?> !important;
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
-  color:  <?php echo $koband_main_font_color; ?>; 
+  color:  <?php echo $koband_main_font_color; ?> !important;
 }
 
 h1, h2, h3 
 {
   font-family: <?php echo $koband_headding_font; ?> !important;
+  color:  <?php echo $koband_main_font_color; ?> !important;
+  font-size:  <?php echo $koband_theme_font_size; ?> !important;
+
 }
 
 #News {
@@ -131,12 +136,18 @@ h1, h2, h3
 .first_color {
   color: <?php echo $koband_first_theme_color; ?> !important;
 }
-
+.social-icons a .first_color:hover {
+  color: <?php echo $koband_second_theme_color; ?> !important;
+}
+.first_color a {
+  color: <?php echo $koband_first_theme_color; ?> !important;
+}
 .bg_first_color {
   background-color: <?php echo $koband_first_theme_color; ?> !important; 
 }
 .bg_first_color:hover {
-  background-color: <?php echo $koband_second_theme_color ?> !important;
+  background-color: <?php echo $koband_second_theme_color; ?> !important;
+  color: <?php echo $koband_first_theme_color; ?> !important;
 }
 .border_first_color {
   border-bottom-color: <?php echo $koband_first_theme_color; ?> !important;
@@ -151,12 +162,17 @@ h1, h2, h3
 }
 
 .main_font_color{
-  color: <?php echo $koband_main_font_color; ?> !important;
+  color:  <?php echo $koband_main_font_color; ?> !important;
 }
 
+.font-line_height {
+  font-size:  <?php echo $koband_theme_font_size; ?> !important;
+  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+}
 
-
-
+.read_more:hover {
+  color: <?php echo $koband_second_theme_color ?> !important;
+}
 
 
 .sl-content{

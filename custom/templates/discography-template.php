@@ -110,6 +110,7 @@ get_header();?>
 		<?php 
   		$single_date = get_post_meta( $post_id, 'ko_band_singles_date_release', false );
 		$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
+		$single_detail = get_post_meta($post_id, "ko_band_singles_detail", false ); 
 		$single_store = get_post_meta($post_id, "ko_band_repetable_singles_stores", false); ?>
 			<div class="container">
 				<div class="row album-head border_first_color">
@@ -117,6 +118,7 @@ get_header();?>
 					<div class="col-sm-3 main_font_color"><?php _e('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 					<div class="col-sm-3 main_font_color"><?php _e('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
 				    <div class="col-sm-3 main_font_color"><?php _e('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
+
 				   	<div class="col-sm-1 single-up-down-buttons">
 				    	<span class="btn btn-sm single-song">
 					    	<a class="btn btn-sm show-single-song first_color"><i class="fas fa-caret-down"></i></a>
@@ -126,8 +128,9 @@ get_header();?>
 				</div>
 				<div class="container single-songs-show-hide">
 					<div class="row album-head border_first_color main_font_color">
+						<div class="col-sm-5"><?php _e('Single Detail:', 'koband');?></div>
 						<div class="col-sm-5"><?php _e('Store Name:', 'koband');?></div>
-						<div class="col-sm-5"><?php _e('Buy:', 'koband');?></div>
+						<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color bg_second_color main_font_color">
 					<?php foreach ($single_store[0] as  $value_single_store) { ?>
