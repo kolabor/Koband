@@ -78,7 +78,7 @@ function ko_band_singles_display_meta_box($post, $box){
    
     $singles_length = get_post_meta( $post->ID, 'ko_band_singles_length', true );
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
-     
+    $singles_detail= get_post_meta( $post->ID, 'ko_band_singles_detail', true );
   ?>
 
 
@@ -86,14 +86,15 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row-top">
               <div class="col-sm"><?php _e('Single Length', 'koband');?></div>
               <div class="col-sm"><?php _e('Date Release', 'koband');?></div>
+              <div class="col-sm"><?php _e('Single Detail', 'koband');?></div>
               <div class="col-sm"></div>
     </div>
     
     <div class="row">
               <div class="col-sm"><input type="time" name="ko_band_singles_length" value="<?php echo esc_html( $singles_length ) ?>" class="singlelength" placeholder="00:00"></div>
               <div class="col-sm"><input type="date" name="ko_band_singles_date_release" value="<?php echo esc_html( $singles_date_release ) ?>" class="singledate"></div>
-              <div class="col-sm"></div>
-    </div>
+              <div class="col-sm"><textarea type="text" name="ko_band_singles_detail"  class="singledetail"><?php echo esc_html( $singles_detail ) ?></textarea></div>
+          </div>
 
   <div class="row-blank">
     <div class="col-sm"><?php _e('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
@@ -149,6 +150,7 @@ function ko_band_singles_save_meta_box( $post_id, $post ) {
  
         $singles_meta['ko_band_singles_length'] = esc_html( $_POST['ko_band_singles_length'] );
         $singles_meta['ko_band_singles_date_release'] = esc_html( $_POST['ko_band_singles_date_release'] );
+        $singles_meta['ko_band_singles_detail'] = esc_html( $_POST['ko_band_singles_detail'] );
   
         foreach ( $singles_meta as $key => $value ) :
         // Don't store custom data twice
@@ -165,11 +167,12 @@ function ko_band_singles_save_meta_box( $post_id, $post ) {
        if (isset($_POST["name"]))    {
               $names =$_POST['name'];
               $url = $_POST['link'];
-              $count = count( $names );   }
+             $count = count( $names );   }
     for ( $i = 0; $i < $count; $i++ )  {
         if ( $names[$i] != '' )    {
             $new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
             $new[$i]['link'] = stripslashes( strip_tags( $url[$i] ) ); 
+           
          }
      }
     if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_singles_stores', $new );}
