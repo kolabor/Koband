@@ -100,8 +100,8 @@ function ko_band_theme_support () {
 	// Add theme support thumnails
 
 	add_theme_support('post-thumbnails');
-	add_theme_support('custom-background');
-	add_theme_support('custom-header');
+	//add_theme_support('custom-background');
+	//add_theme_support('custom-header');
 	add_theme_support('post-formats', array('asaid', 'image', 'video'));
 	add_theme_support('html5', array('search-form'));
 

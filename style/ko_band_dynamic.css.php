@@ -8,7 +8,9 @@
   $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
 
    /****Theme colors**/
-  $koband_main_font_color = get_theme_mod('ko_band_main_font_color');  
+  $koband_main_font_color = get_theme_mod('ko_band_main_font_color'); 
+   
+
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
   $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
   
@@ -106,13 +108,13 @@ body
   font-family: <?php echo $koband_general_font; ?> !important;
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
-  color:  <?php echo $koband_main_font_color; ?>; 
+  color:  <?php echo $koband_main_font_color; ?> !important;
 }
 
 h1, h2, h3 
 {
   font-family: <?php echo $koband_headding_font; ?> !important;
-  color: <?php echo $koband_main_font_color; ?> !important;
+  color:  <?php echo $koband_main_font_color; ?> !important;
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
 
 }
@@ -160,7 +162,7 @@ h1, h2, h3
 }
 
 .main_font_color{
-  color: <?php echo $koband_main_font_color; ?> !important;
+  color:  <?php echo $koband_main_font_color; ?> !important;
 }
 
 .font-line_height {
