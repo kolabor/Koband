@@ -20,14 +20,13 @@
 </form>-->
 
 
-<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+<form method="get" role="search"  class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
     <label>
-        <span class="screen-reader-text"><?php echo _x( 'Search for :  ', 'koband' ) ?></span>
+        <span class="screen-reader-text"><?php echo _x( 'Search for : ', 'koband' ) ?></span>
         <input type="search" class="search-field"
             placeholder="<?php echo esc_attr_x( 'Search....', 'koband' ) ?>"
             value="<?php echo get_search_query() ?>" name="s"
             title="<?php echo esc_attr_x( 'Search for :  ', 'koband' ) ?>" />
     </label>
-    <input type="submit" class="search-submit"
-        value="<?php echo esc_attr_x( 'Search ' , 'koband' ) ?>" />
+    <button type="submit" class="search-submit"/><?php _e('Search', 'koband') ?></button>
 </form>

@@ -1,37 +1,41 @@
 <?php
 /**
- * The template for displaying Search Results pages
+ * The template for displaying Search Results pages.
  *
- **
- * @package Wordpress 
- * @subpackage Koband
- * @since Koband 1.0
+ * @package Shape
+ * @since Shape 1.0
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<?php if ( have_posts() ) : ?>
+        <section id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
 
-		<header class="page-header">
-			<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'koband' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		</header><!-- .page-header -->
+            <?php if ( have_posts() ) : ?>
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+                <header class="page-header">
+                    <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                </header><!-- .page-header -->
 
-			<?php get_template_part( 'content', 'search' ); ?>
+                <?php //shape_content_nav( 'nav-above' ); ?>
 
-		<?php endwhile; ?>
+                <?php /* Start the Loop */ ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-		<?php ko_band_content_nav( 'nav-below' ); ?>
+                    <?php get_template_part( 'index', 'search' ); ?>
 
-	<?php else : ?>
+                <?php endwhile; ?>
 
-		<?php get_template_part( 'content', 'none' ); ?>
+                <?php// shape_content_nav( 'nav-below' ); ?>
 
-	<?php endif; ?>
+            <?php else : ?>
 
-<?php
-get_sidebar();
-get_footer(); ?>
+                <?php get_template_part( 'no-results', 'search' ); ?>
+
+            <?php endif; ?>
+
+            </div><!-- #content .site-content -->
+        </section><!-- #primary .content-area -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
