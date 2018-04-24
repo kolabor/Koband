@@ -13,7 +13,8 @@
  */
 
 get_header(); ?> 
-<div id="Tour" class="section container">
+<div id="Tour" class="section">
+    <div class="container">
     <div class="row">
         <div class="container">
             <div class="row">
@@ -75,3 +76,4 @@ get_header(); ?>
     <?php endif;?>
     </div><!--row-->
 </div><!--container-->
+</div>

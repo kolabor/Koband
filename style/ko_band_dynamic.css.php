@@ -48,11 +48,9 @@
 
 
   /***Home page Module Color****/
-  $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
-  $koband_second_module_color = get_theme_mod('ko_band_background_second_section_color');
-  $koband_third_module_color = get_theme_mod('ko_band_background_third_section_color');
-  $koband_fourth_module_color = get_theme_mod('ko_band_background_fourth_section_color');
-  $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
+  $koband_news_background_color = get_theme_mod('ko_band_background_news_section_color'); 
+  $koband_tour_background_color = get_theme_mod('ko_band_background_tour_section_color');
+  $koband_discography_background_color = get_theme_mod('ko_band_background_discography_section_color');
 
 
   /***Social Media*****/
@@ -105,19 +103,30 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 body
 {
 
-  font-family: <?php echo $general_font; ?> !important;
-  font-size:  <?php echo $main_font_size; ?> !important;
-  line-height:  <?php echo $main_line_height; ?> !important;
-  
-  color:  <?php echo $main_font_color; ?> !important; 
-
-
+  font-family: <?php echo $koband_general_font; ?> !important;
+  font-size:  <?php echo $koband_theme_font_size; ?> !important;
+  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+  color:  <?php echo $koband_main_font_color; ?>; 
 }
 
-.section {
-  background-color: <?php echo $koband_backgorund_section_color; ?> !important;
-
+h1, h2, h3 
+{
+  font-family: <?php echo $koband_headding_font; ?> !important;
 }
+
+#News {
+  background-color: <?php echo  $koband_news_background_color; ?> !important;
+}
+
+#Tour {
+  background-color: <?php echo  $koband_tour_background_color; ?> !important;
+}
+
+#Discography {
+  background-color: <?php echo  $koband_discography_background_color; ?> !important;
+}
+
+
 
 .first_color {
   color: <?php echo $koband_first_theme_color; ?> !important;
@@ -142,16 +151,14 @@ body
 }
 
 .main_font_color{
-  color: <?php echo $koband_main_theme_color; ?> !important;
+  color: <?php echo $koband_main_font_color; ?> !important;
 }
 
-h1, h2, h3 
-{
-	
-	font-family: <?php echo $headding_font; ?> !important;
-	
 
-}
+
+
+
+
 .sl-content{
   
   background:  <?php echo $koband_slider_box_background; ?> !important;
