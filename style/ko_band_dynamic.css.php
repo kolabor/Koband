@@ -178,7 +178,15 @@ h1, h2, h3
 
 .sl-content{
   
-  background: <?php if ($koband_check_slider_background == '1') {echo $koband_slider_box_background;} ?> !important;
+  <?php if ($koband_check_slider_background == '1') 
+  { ?>
+  background:rgba(0,0,0,0.5) !important;
+  <?php }
+  else 
+  { ?>
+  background: none !important;
+  <?php } 
+  ?>
 }
 
 
