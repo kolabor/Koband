@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="row">
 		 	<div class="container">
 		 		<div class="row theband-heading">
-		 			<h1 class="first_color">The Band</h1>
+		 			<h1 class="first_color"><?php__('The Band', 'koband');?></h1>
 				</div>
 			</div>
 			
@@ -34,7 +34,7 @@ get_header(); ?>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 main_font_color">
-								<p class="main_font_color"><h4>Band Bio</h4>
+								<p class="main_font_color"><h4><?php __('Band Bio', 'koband');?></h4>
 								<?php 
 								$theband_bio = get_theme_mod('ko_band_theband_biography');
 								echo $theband_bio;
@@ -59,14 +59,14 @@ get_header(); ?>
 										<!-- Modal content-->
 											<div class="modal-content bg">
 												<div class="modal-header">
-										          	<h4 class="modal-title main_font_color"><?php _e('Name : ', 'koband');?><?php the_title();?></h4>
+										          	<h4 class="modal-title main_font_color"><?php __('Name : ', 'koband');?><?php the_title();?></h4>
 										          	<button type="button" class="close" data-dismiss="modal">&times;</button>
 										        </div>
 												<div class="modal-body">
 													<div class="popup-img"><?php the_post_thumbnail(array(400,400)); ?></div>
-											          	<h4 class="main_font_color"><?php _e('Biography : ', 'koband');?></h4>
+											          	<h4 class="main_font_color"><?php __('Biography : ', 'koband');?></h4>
 											          	<div class="main_font_color"><?php the_content();?></div>
-											          	<h4 class="main_font_color"><?php _e('Band Role : ', 'koband');?></h4>
+											          	<h4 class="main_font_color"><?php __('Band Role : ', 'koband');?></h4>
 											          	<p class="main_font_color"><?php if(isset($theband_role[0]))  { echo  $theband_role[0]; } ?></p>
 												</div>
 													        <!--<div class="modal-footer">

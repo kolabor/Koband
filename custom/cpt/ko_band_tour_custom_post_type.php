@@ -105,73 +105,54 @@ function ko_band_tour_display_meta_box($post, $box){
 
     <div class="container">
         <div class="row blank">
-         <div class="col-sm"><?php _e('Fill the tour informations', 'koband');?></div></div>
+         <div class="col-sm"><?php __('Fill the tour informations', 'koband');?></div></div>
         <div class="row-top row">
-            <div class="col-sm"><?php _e('Date:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Country:', 'koband');?></div>
+            <div class="col-sm"><?php __('Date:', 'koband');?></div>
+            <div class="col-sm"><?php __('Country:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="date" name="ko_band_tour_date" value="'<?php echo esc_html( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>"></div>
-            <div class="col-sm"><input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php _e('Country', 'koband');?>"></div>
+            <div class="col-sm"><input type="date" name="ko_band_tour_date" value="'<?php echo esc_html( $tour_date )?>" class="widefat" placeholder="<?php __('Date', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php __('Country', 'koband');?>"></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><?php _e('City:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Address:', 'koband');?></div>
+            <div class="col-sm"><?php __('City:', 'koband');?></div>
+            <div class="col-sm"><?php __('Address:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="text" name="ko_band_tour_city" value="<?php echo esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php _e('City', 'koband');?>"></div>
-            <div class="col-sm"><input type="text" name="ko_band_tour_address" value="<?php echo esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php _e('Address', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_city" value="<?php echo esc_textarea( $tour_city )?>" class="widefat" placeholder="<?php __('City', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_address" value="<?php echo esc_textarea( $tour_address )?>" class="widefat" placeholder="<?php __('Address', 'koband');?>"></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><?php _e('ZipCode:', 'koband');?></div>
-            <div class="col-sm"><?php _e('Venue:', 'koband');?></div>
+            <div class="col-sm"><?php __('ZipCode:', 'koband');?></div>
+            <div class="col-sm"><?php __('Venue:', 'koband');?></div>
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
-            <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue', 'koband');?>"></div>
+            <div class="col-sm"><input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php __('ZipCode', 'koband');?>"></div>
+            <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php __('Venue', 'koband');?>"></div>
         </div>
 
         <div class="row blank">
-            <div class="col-sm"><?php _e('Please, using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
+            <div class="col-sm"><?php __('Please, using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
         </div>
 
         <div class="row-top">
-            <div class="col-sm"><?php _e('Tickets Availability', 'koband');?></div>
-            <div id="tickets-title" class="col-sm"><?php _e('Ticket Link', 'koband');?></div>
+            <div class="col-sm"><?php __('Tickets Availability', 'koband');?></div>
+            <div id="tickets-title" class="col-sm"><?php __('Ticket Link', 'koband');?></div>
         </div>
         <div class="row radio_btns_row">
             <div class="col-sm">
-                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" checked="checked" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> /> <?php _e('Available', 'koband');?><br>
-                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2"<?php if($tour_ticket == 'soldout') {echo "checked";} ?> /> <?php _e('Sold Out', 'koband');?>
+                    <input id="id_radio1" type="radio" name="ko_band_tour_ticket" value="avaliable" class="radio1" checked="checked" <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> /> <?php __('Available', 'koband');?><br>
+                    <input id="id_radio2" type="radio" name="ko_band_tour_ticket" value="soldout" class="radio2"<?php if($tour_ticket == 'soldout') {echo "checked";} ?> /> <?php __('Sold Out', 'koband');?>
             </div>
 
             <div class="col-sm"><input id="tickets-link" type="url" name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="widefat" placeholder="http://www.amazon.com"></div>
         </div>
-
-
-
-
-
-
-
-
-<!--
-        <div class="row radio_btns_row">
-            <div class="col-sm">
-                    <input type="radio" id="yesCheck" onclick="javascript:yesnoCheck();" name="ko_band_tour_ticket" value="avaliable" class="radio1"  <?php  if($tour_ticket == 'avaliable') {echo "checked";} ?> />
-                    <input type="radio" id="noCheck" onclick="javascript:yesnoCheck();" name="ko_band_tour_ticket" value="soldout" class="radio2"  <?php if($tour_ticket == 'soldout') {echo "checked";} ?> />
-            </div>
-            <div id="ifYes" style="visibility:hidden;" 
-             class="col-sm"><input type="url" id='yes' name="ko_band_tour_ticket_link" value="<?php echo esc_attr($tour_ticket_link )?>" class="ticketlink" placeholder="http://www.amazon.com"></div>
-        </div> -->
-    
     </div>
-
 
      <?php }
 
