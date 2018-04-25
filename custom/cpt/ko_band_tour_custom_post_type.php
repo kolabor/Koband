@@ -159,14 +159,13 @@ function ko_band_tour_display_meta_box($post, $box){
 
 add_action( 'save_post', 'ko_band_tour_save_meta_box' , 1, 2);
 
-function ko_band_tour_save_meta_box( $post_id, $post ) {
-
+function ko_band_tour_save_meta_box( $post_id, $post ) 
+{
     // Verify this came from the screen and with proper authorization,
-
- if ( ! isset( $_POST['ko_band_tour_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_tour_save_meta_box_nonce'], 'ko_band_tour_save_meta_box_nonce' ) )
+    if ( ! isset( $_POST['ko_band_tour_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_tour_save_meta_box_nonce'], 'ko_band_tour_save_meta_box_nonce' ) )
             return;
 
-    if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
+        if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
       
     // Now that we're authenticated, time to save the data.
@@ -186,33 +185,25 @@ function ko_band_tour_save_meta_box( $post_id, $post ) {
 
         // Don't store custom data twice
 
-        if ( 'revision' === $post->post_type ) {
-
+        if ( 'revision' === $post->post_type ) 
+        {
             return;
         }
-
         if ( get_post_meta( $post_id, $key, false ) ) {
 
             // If the custom field already has a value, update it.
             update_post_meta( $post_id, $key, $value );
-
         } else {
 
             // If the custom field doesn't have a value, add it.
             add_post_meta( $post_id, $key, $value);
-
         }
 
-        if ( ! $value ) {
-
+        if ( ! $value ) 
+        {
             // Delete the meta key if there's no value
             delete_post_meta( $post_id, $key );
-
         }
-
     endforeach;
     }
-
-
-
 ?>  

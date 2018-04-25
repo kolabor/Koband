@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-	<section id="primary" class="site-content">
+	<div class="container">
 		<div id="content" role="main">
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( _e( 'Tag Archives: %s', 'koband' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
@@ -57,7 +57,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</div><!-- #content -->
-	</section><!-- #primary -->
+	</div><!-- container -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
