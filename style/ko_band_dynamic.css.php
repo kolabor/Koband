@@ -94,7 +94,6 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_theme_font_size; ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
 
@@ -130,6 +129,9 @@ h1, h2, h3
 
 #Discography {
   background-color: <?php echo  $koband_discography_background_color; ?> !important;
+}
+#Media {
+background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 }
 
 
