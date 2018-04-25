@@ -34,9 +34,10 @@ get_header();?>
 				$post_id = get_the_ID(); ?>
 					<div class="cmix category-1 col-lg-3 col-md-4 col-sm-6 single-filter-content content-1">
 						<a class="gallery-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-						<div class="media-title overlay d-flex align-items-center justify-content-center flex-column"><h2 class="first_color"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+						
 						<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
 								<div class="btn-group">
+									<div class="media-title overlay d-flex align-items-center justify-content-center flex-column"><h2 class="first_color"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
 									<span class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a></span>
 								</div>
 								
