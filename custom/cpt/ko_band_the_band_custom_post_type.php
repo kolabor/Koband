@@ -107,16 +107,14 @@ function ko_band_the_band_meta_box($post, $box){
      
 add_action( 'save_post', 'ko_band_the_band_save_meta_box' , 1, 2);
 
-function ko_band_the_band_save_meta_box( $post_id, $post ) {
-
-
-if ( ! current_user_can( 'edit_post', $post_id ) ) {
-
-        return $post_id;
-
-    }
-
-    if (isset($_POST['ko_band_the_band_bio'])) {
+function ko_band_the_band_save_meta_box( $post_id, $post ) 
+{
+    if ( ! current_user_can( 'edit_post', $post_id ) ) 
+        {
+            return $post_id;
+        }
+    if (isset($_POST['ko_band_the_band_bio'])) 
+    {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
@@ -127,19 +125,16 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $the_band_meta['ko_band_the_band_bio'] = esc_textarea( $_POST['ko_band_the_band_bio'] );
 
-  
-
     // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
     foreach ( $the_band_meta as $key => $value ) :
 
         // Don't store custom data twice
 
-        if ( 'revision' === $post->post_type ) {
-
+        if ( 'revision' === $post->post_type ) 
+        {
             return;
         }
-
         if ( get_post_meta( $post_id, $key, false ) ) {
 
             // If the custom field already has a value, update it.
@@ -149,16 +144,12 @@ if ( ! current_user_can( 'edit_post', $post_id ) ) {
 
             // If the custom field doesn't have a value, add it.
             add_post_meta( $post_id, $key, $value);
-
         }
-
-        if ( ! $value ) {
-
+        if ( ! $value ) 
+        {
             // Delete the meta key if there's no value
             delete_post_meta( $post_id, $key );
-
         }
-
     endforeach;
     }
 }

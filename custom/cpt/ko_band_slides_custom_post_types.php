@@ -127,21 +127,19 @@ function ko_band_slides_meta_box($post, $box){
             <div class="col-sm"><input type="text" name="ko_band_slides_button_link" value="<?php echo esc_textarea( $slides_button_link )?>" placeholder="<?php _e('Add Button Link', 'koband');?>" class="slidebuttonlink"></div>
         </div>
     </div>
-
   <?php }
 
 
 add_action( 'save_post', 'ko_band_slides_save_meta_box' , 1, 2);
 
-function ko_band_slides_save_meta_box( $post_id, $post ) {
-
-
-if( !current_user_can( 'edit_post', $post_id ) ) {
-     
-        return $post_id;
-    }
-
-    if (isset($_POST['ko_band_slides_check'])) {
+function ko_band_slides_save_meta_box( $post_id, $post ) 
+{
+    if( !current_user_can( 'edit_post', $post_id ) ) 
+        {
+            return $post_id;
+        }
+    if (isset($_POST['ko_band_slides_check']))
+    {
 
     // Verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times.
@@ -163,8 +161,8 @@ if( !current_user_can( 'edit_post', $post_id ) ) {
 
         // Don't store custom data twice
 
-        if ( 'revision' === $post->post_type ) {
-
+        if ( 'revision' === $post->post_type ) 
+        {
             return;
         }
 
@@ -177,19 +175,15 @@ if( !current_user_can( 'edit_post', $post_id ) ) {
 
             // If the custom field doesn't have a value, add it.
             add_post_meta( $post_id, $key, $value);
-
         }
 
         if ( ! $value ) {
 
             // Delete the meta key if there's no value
             delete_post_meta( $post_id, $key );
-
         }
 
     endforeach;
-    
     } 
 }
-
 ?> 
