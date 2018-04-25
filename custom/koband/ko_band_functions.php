@@ -73,22 +73,22 @@ add_action( 'admin_enqueue_scripts', 'ko_band_enqueue_admin_scripts' );
 
 function ko_band_featured_image_metabox_title() {
 	remove_meta_box( 'postimagediv', 'tour', 'side' );
-	add_meta_box( 'postimagediv', _e( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'tour', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'tour', 'side' );
 
 	remove_meta_box( 'postimagediv', 'album', 'side' );
-	add_meta_box( 'postimagediv', _e( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'album', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'album', 'side' );
 
 	remove_meta_box( 'postimagediv', 'media', 'side' );
-	add_meta_box( 'postimagediv', _e( 'Set gallery cover', 'koband' ), 'post_thumbnail_meta_box', 'media', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set gallery cover', 'koband' ), 'post_thumbnail_meta_box', 'media', 'side' );
 
 	remove_meta_box( 'postimagediv', 'singles', 'side' );
-	add_meta_box( 'postimagediv', _e( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
 
 	remove_meta_box( 'postimagediv', 'slides', 'side' );
-	add_meta_box( 'postimagediv', _e( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
+	add_meta_box( 'postimagediv', __( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
 
 	remove_meta_box( 'postimagediv', 'the band', 'side' );
-	add_meta_box( 'postimagediv', _e( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
+	add_meta_box( 'postimagediv', __( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
 
 }
 add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
@@ -97,9 +97,9 @@ add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
 
 function ko_band_theme_support () {
 
-	// Add theme support thumnails
+	// Add theme support thumbnails
 
-	add_theme_support('post-thumbnails');
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support('html5', array('search-form'));
 	add_theme_support( 'automatic-feed-links' );
 
