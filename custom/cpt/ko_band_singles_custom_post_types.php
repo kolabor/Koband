@@ -1,4 +1,4 @@
-_e<?php
+<?php
 /**
  * Koband Singles custom post type and metabox creation file!
  *

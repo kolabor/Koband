@@ -41,7 +41,7 @@ get_header();?>
 								<div class="btn-group">
 									<span class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a></span>
 								</div>
-								_e
+								
 						</div>
 					</div>
 				<?php endwhile;?>

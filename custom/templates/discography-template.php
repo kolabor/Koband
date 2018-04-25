@@ -146,10 +146,11 @@ get_header();?>
 						<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color bg_second_color main_font_color">
+					<?php if(isset($single_store[0])) { ?>
 					<?php foreach ($single_store[0] as  $value_single_store) { ?>
 						<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
 						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
-					<?php } ?>
+					<?php } } ?>
 					</div>
 				</div><!-- container single-songs-show-hide -->	
 			</div><!-- container -->
