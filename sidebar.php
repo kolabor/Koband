@@ -14,4 +14,4 @@
  do_action( 'before_sidebar' ); 
  ?>
 <div id="secondary" class="widget-area" role="complementary"></div>
-<h1><?php __('Side-Bar', 'koband');?></h1>
+<h1><?php _e('Side-Bar', 'koband');?></h1>
