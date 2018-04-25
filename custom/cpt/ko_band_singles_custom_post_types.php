@@ -84,9 +84,9 @@ function ko_band_singles_display_meta_box($post, $box){
 
 <div class="container"> <!-- Container div for Single Length and Date -->
     <div class="row-top">
-              <div class="col-sm"><?php _e('Single Length', 'koband');?></div>
-              <div class="col-sm"><?php _e('Date Release', 'koband');?></div>
-              <div class="col-sm"><?php _e('Single Detail', 'koband');?></div>
+              <div class="col-sm"><?php __('Single Length', 'koband');?></div>
+              <div class="col-sm"><?php __('Date Release', 'koband');?></div>
+              <div class="col-sm"><?php __('Single Detail', 'koband');?></div>
               <div class="col-sm"></div>
     </div>
     
@@ -97,13 +97,13 @@ function ko_band_singles_display_meta_box($post, $box){
           </div>
 
   <div class="row-blank">
-    <div class="col-sm"><?php _e('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
+    <div class="col-sm"><?php __('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
   </div>
 
 <div  id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
     <div class="row-top form_heading">
-                <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
-                <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
+                <div class="col-sm"><?php __('Store Name', 'koband');?></div>
+                <div class="col-sm"><?php __('Store Link', 'koband');?></div>
                 <div class="col-sm"></div>
     </div>
 
@@ -113,7 +113,7 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row">
                 <div class="col-sm"><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></div> 
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+                <div class="col-sm"><a class="button remove-row" href="#"><?php __('Remove', 'koband');?></a></div>
     </div>
 
     <?php  } else :  // show a blank one    ?>
@@ -121,7 +121,7 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row">
                 <div class="col-sm"> <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.." /></div>
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+                <div class="col-sm"><a class="button remove-row" href="#"><?php __('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
@@ -129,10 +129,10 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row empty-row-singles screen-reader-text">
                 <div class="col-sm"><input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.."/></div>
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+                <div class="col-sm"><a class="button remove-row" href="#"><?php __('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">
-<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php __('Add another', 'koband');?></a></p></div>
     </div>
   </div>
 </div>
