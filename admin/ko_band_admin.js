@@ -335,14 +335,14 @@ jQuery(document).ready(function( $ ){
           if($(this).val() == 'Image'){ 
             $('#customize-control-ko_band_home_page_slider_videolink').hide();
             $('#customize-control-ko_band_home_page_slider_title').hide();
-            $('#customize-control-ko_band_home_page_slider_subtitle').hide();
+            $('#customize-control-ko_band_home_page_slider_text').hide();
             $('#customize-control-ko_band_home_page_slider_buttontitle').hide();
             $('#customize-control-ko_band_home_page_slider_buttonlink').hide();
           }
           if($(this).val() == 'Video'){
             $('#customize-control-ko_band_home_page_slider_videolink').fadeIn(200);
             $('#customize-control-ko_band_home_page_slider_title').fadeIn(300);
-            $('#customize-control-ko_band_home_page_slider_subtitle').fadeIn(400);
+            $('#customize-control-ko_band_home_page_slider_text').fadeIn(400);
             $('#customize-control-ko_band_home_page_slider_buttontitle').fadeIn(500);
             $('#customize-control-ko_band_home_page_slider_buttonlink').fadeIn(600);
           }

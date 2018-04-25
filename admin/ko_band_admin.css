@@ -163,4 +163,10 @@ input.radio1, input.radio2 {
 .slidetitle, .slidebutton, .slidebuttonlink, .slidevideo, .slidesub {
   width: 350px; }
 
+.customize-control input[type="checkbox"] {
+  margin-top: 5px; }
+
+.customize-control .customize-inside-control-row {
+  display: inline-flex; }
+
 /*# sourceMappingURL=ko_band_admin.css.map */

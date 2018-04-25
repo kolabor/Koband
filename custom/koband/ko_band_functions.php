@@ -157,53 +157,6 @@ function ko_band_footer_widgets($id){
 }
 add_action('widgets_init', 'ko_band_footer_widgets');
 
-
-
-
-/*Function to generate Theme Colors dynamicly*/
-/*wp_enqueue_style('theme_colors',
-                 admin_url('admin-ajax.php').'?action=theme_colors'
-                 );
-function theme_colors() {
-  require(get_template_directory().'/style/ko_band_dynamic.css.php');
-  exit;
-}
-add_action('wp_ajax_theme_colors', 'theme_colors');
-add_action('wp_ajax_nopriv_theme_colors', 'theme_colors');*/
-
-/*function theme_enqueue_styles() {
-  wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
-  $custom_css = theme_get_customizer_css();
-  wp_add_inline_style( 'theme-styles', $custom_css );
-}
-
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-
-*/
-
-
-/*function ko_band_dynamic_css() {
-	?>
-	<style>
-	<?php header('Content-type: text/css');?>
-
-	<?php
-	$main_theme_first_color = get_theme_mod( 'ko_band_main_color' );
-$main_theme_second_color = get_theme_mod( 'ko_band_second_color' );
-$main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
-?>
-	
-	body {
-		
-		background-color: <?php echo $main_theme_first_color; ?> !important;
-		 border: 8px solid <?php echo $main_theme_second_color; ?> !important;
-	}
-	</style>
-	<?php
-}
-add_action( 'wp_head' , 'ko_band_dynamic_css' );*/
-
-
 /* Register frontend resources */
 
 function ko_band_custom_wp_front_resources() {
@@ -215,6 +168,7 @@ function ko_band_custom_wp_front_resources() {
 		 } 
 }
 add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
+
 /* Register frontend resources ends here */
 
 //Function for registering bootstrap for front-end with css and js, and adding front.js for front
@@ -240,6 +194,44 @@ function ko_band_enqueue_font_awesome() {
 
 	wp_register_script( 'font-awesome', get_template_directory_uri() . '/js/fontawesome-all.min.js', false, '1.0.0' );
     wp_enqueue_script( 'font-awesome' );
-	//wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
+}
 
+// Register taxonomy for Discography
+
+	// Taxonomy for Albums
+	add_action('init', 'ko_band_define_album_type_taxonomy');
+
+	function ko_band_define_album_type_taxonomy(){
+		register_taxonomy(
+			'album_year',
+			'album',
+			array(
+				'hierarchical' => true,
+				'label'		   => 'Album Year',
+				'query_var'	   => true,
+				'rewrite'	   => true
+			)
+		);
+	}
+
+	// Taxonomy for Singles
+	add_action('init', 'ko_band_define_single_type_taxonomy');
+
+	function ko_band_define_single_type_taxonomy(){
+		register_taxonomy(
+			'single_year',
+			'singles',
+			array(
+				'hierarchical' => true,
+				'label'		   => 'Single Year',
+				'query_var'	   => true,
+				'rewrite'	   => true
+			)
+		);
+	}
+// Adding support for Additional CSS at customize section
+add_action('wp_enqueue_scripts', 'ko_band_additional_css_enqueue_styles');
+
+function ko_band_additional_css_enqueue_styles(){
+	wp_enqueue_style('parent-style', get_template_directory_uri(). '/style.css');
 }
