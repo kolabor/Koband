@@ -372,11 +372,11 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     Ajax Loading
 -------------------------------------------
 */
-.news-posts, .media-posts {
+.news-posts, .media-posts, .tour-posts {
   font-size: 20px;
   color: #b5b5b5;
 }
-.no-news, .no-media {
+.no-news, .no-media, .no-tour {
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -403,7 +403,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     display: block;
   }
 }
-.koband_load_media, .no-media {
+.koband_load_media, .koband_load_tour, .no-media, .no-tour {
   margin-top: 25px;
 }
 
@@ -499,8 +499,8 @@ Tour Section
 .divTable{
   display: table;
   width: 100%;
-  margin-top: 25px!important;
-  margin-bottom: 25px!important;
+  //margin-top: 25px!important;
+  //margin-bottom: 25px!important;
 }
 .divTableRow {
   display: table-row;

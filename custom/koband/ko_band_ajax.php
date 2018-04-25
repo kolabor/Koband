@@ -104,5 +104,60 @@ function koband_load_media(){
 
 }
 
+/* 
+===============================================
+ Load more Tour with Load-More button
+===============================================
+*/
+
+add_action( 'wp_ajax_nopriv_koband_load_tour', 'koband_load_tour' );
+add_action( 'wp_ajax_koband_load_tour', 'koband_load_tour' );
+
+function koband_load_tour(){
+	
+	$paged = $_POST["page"]+2;
+	$tour = new WP_Query( array(
+		'post_type' => 'tour',
+		'post_status' => 'publish',
+		'paged' => $paged,
+		'posts_per_page' => 5,
+
+	));
+
+	if ( $tour->have_posts() ) { ?>
+        <?php while ( $tour->have_posts() ) : $tour->the_post();
+        $post_id = get_the_ID();  
+            $tour_date = get_post_meta( $post_id, 'ko_band_tour_date', false );
+    		$tour_country = get_post_meta($post_id, "ko_band_tour_country", false );
+    		$tour_city = get_post_meta($post_id, "ko_band_tour_city", false );
+    		$tour_address = get_post_meta($post_id, "ko_band_tour_address", false );
+    		$tour_zipcode = get_post_meta($post_id,  "ko_band_tour_zipCode", false );
+    		$tour_venuename = get_post_meta($post_id,  "ko_band_tour_venue_name", false );
+    		$tour_ticket = get_post_meta($post_id,  "ko_band_tour_ticket", false );
+    		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
+            ?>
+            <div class="divTableRow">
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+            	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
+            	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+            </div>
+        <?php endwhile;?> <!-- end of the loop.  -->
+	<?php }  
+	else 
+	{
+       echo "end-tour";
+	}
+
+	wp_reset_postdata();
+
+	die();
+
+}
+
 
  ?>
