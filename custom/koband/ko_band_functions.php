@@ -97,9 +97,9 @@ add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
 
 function ko_band_theme_support () {
 
-	// Add theme support thumnails
+	// Add theme support thumbnails
 
-	add_theme_support('post-thumbnails');
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support('html5', array('search-form'));
 	add_theme_support( 'automatic-feed-links' );
 

@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="container">
         <div class="container">
             <div class="row">
-                <h1 class="first_color">Tour</h1>
+                <h1 class="first_color"><?php _e('Tour', 'koband');?></h1>
             </div>
         </div>
     <div class="row">

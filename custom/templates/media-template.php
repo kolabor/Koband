@@ -12,10 +12,10 @@
  * @since Koband 1.0
  */
 get_header();?>
-<div id="Media" class="section section-full bg-media">
+<div id="Media" class="section section-full">
 	<div class="container">
 		<div class="row">
-			<h1 class="first_color">Gallery</h1>
+			<h1 class="first_color"><?php _e('Gallery', 'koband');?></h1>
 		</div>
 	</div><!--container-->				
 		<div class="row koband_post_media no-gutters mt-70">
@@ -52,9 +52,9 @@ get_header();?>
 	<div class="container text-center">
 		<div class="row">
 			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-				<span class="koband-loading">Loading...</span>
-				<span class="text">Load media</span></a>
-			<a class="no-media"><span class="media-posts">There are no more media</span></a>
+				<span class="koband-loading"><?php _e('Loading...', 'koband');?></span>
+				<span class="text"><?php _e('Load media', 'koband');?></span></a>
+			<a class="no-media"><span class="media-posts"><?php _e('There are no more media','koband');?></span></a>
 		</div>
 	</div><!--container-->
 			

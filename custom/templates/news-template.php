@@ -17,7 +17,7 @@
  		<div class="row">
 		 	<div class="container">
 		 		<div class="row">
-					<h1 class="first_color">News</h1>
+					<h1 class="first_color"><?php _e('News', 'koband');?></h1>
 				</div>
 			</div><!-- container -->
 			<div class="container">
@@ -56,9 +56,9 @@
 				<div class="container text-center">
 					<div class="row">
 						<a class="btn-koband-load koband_load_more bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-							<span class="koband-loading">Loading...</span>
-							<span class="text">Load more</span></a>
-						<a class="no-news"><span class="news-posts">There are no more news</span></a>
+							<span class="koband-loading"><?php _e('Loading...', 'koband');?></span>
+							<span class="text"><?php _e('Load more', 'koband');?></span></a>
+						<a class="no-news"><span class="news-posts"><?php _e('There are no more news', 'koband');?></span></a>
 					</div>
 				</div>
 		

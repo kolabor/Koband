@@ -43,8 +43,8 @@ get_header(); ?>
         ?>
         <nav class="navigation comment-navigation" role="navigation">
             <h1 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', 'koband' ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'koband' ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'koband' ) ); ?></div>
+            <div class="nav-previous"><?php previous_comments_link( _e( '&larr; Older Comments', 'koband' ) ); ?></div>
+            <div class="nav-next"><?php next_comments_link( _e( 'Newer Comments &rarr;', 'koband' ) ); ?></div>
         </nav><!-- .comment-navigation -->
         <?php endif; // Check for comment navigation ?>
  

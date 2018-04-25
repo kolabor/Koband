@@ -12,7 +12,7 @@
 /* Declare Album cpt arguments */
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __ ('Album', 'koband')
+    'menu_name' => __('Album', 'koband')
     ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,18 +27,18 @@ $args = array(
 function ko_band_album_custom_post_type() {
 
   $label = array(
-    'name' => __ ('Album', 'koband'),
-    'singular_name' => __ ('Album', 'koband'),
+    'name' => __('Album', 'koband'),
+    'singular_name' => __('Album', 'koband'),
     'add_new' => __('Add Album', 'koband'),
-    'all_items' => __ ('All Albums', 'koband'),
-    'add_new_item' =>__ ( 'Add Album', 'koband'),
-    'edit_item' => __ ('Edit Album', 'koband'),
-    'new_item' => __ ('New Album', 'koband'),
-    'view_item' => __ ('View Album', 'koband'),
-    'search_item' => __ ('Search Album', 'koband'),
-    'not_found' => __ ('Mo Album Found', 'koband'),
-    'not-found_in_trash' => __ ('No Album Found in Trash', 'koband'),
-    'parent_item_colon' => __ ('Parent Album', 'koband')
+    'all_items' => __('All Albums', 'koband'),
+    'add_new_item' =>__( 'Add Album', 'koband'),
+    'edit_item' => __('Edit Album', 'koband'),
+    'new_item' => __('New Album', 'koband'),
+    'view_item' => __('View Album', 'koband'),
+    'search_item' => __('Search Album', 'koband'),
+    'not_found' => __('Mo Album Found', 'koband'),
+    'not-found_in_trash' => __('No Album Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent Album', 'koband')
     );
   
   $args = array(

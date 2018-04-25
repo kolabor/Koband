@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="row">
 		 	<div class="container">
 		 		<div class="row theband-heading">
-		 			<h1 class="first_color">The Band</h1>
+		 			<h1 class="first_color"><?php _e('The Band', 'koband');?></h1>
 				</div>
 			</div>
 			
@@ -34,7 +34,7 @@ get_header(); ?>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 main_font_color">
-								<p class="main_font_color"><h4>Band Bio</h4>
+								<p class="main_font_color"><h4><?php _e('Band Bio', 'koband');?></h4>
 								<?php 
 								$theband_bio = get_theme_mod('ko_band_theband_biography');
 								echo $theband_bio;

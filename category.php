@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+<<<<<<< HEAD
 <div class="container">
 	<div class="row">
 		<header class="archive-header">

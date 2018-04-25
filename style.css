@@ -364,9 +364,6 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
     Media Section
 -------------------------------------------
 */
-.bg-media {
-  background-color: #fff; }
-
 .media-card {
   border: none !important; }
 
@@ -378,7 +375,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   position: relative !important; }
 
 .gallery-img {
-  background-color: #ffffff; }
+  color: #fff; }
 
 .gallery-img img {
   width: 100% !important;
@@ -386,7 +383,7 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   opacity: 0.7; }
 
 .go_to_gallery {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600; }
   .go_to_gallery:hover {
     text-decoration: none;
@@ -421,6 +418,9 @@ ul li a:hover + .sub-menu, .sub-menu:hover {
   background: #00ff8c; }
 
 .single-filter-content:hover .overlay-bg-content {
+  opacity: 1; }
+
+.single-filter-content:hover .gallery-img img {
   opacity: 1; }
 
 .btn-outline-secondary:hover {

@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __ ('Media','koband')
+    'menu_name' => __('Media','koband')
           ),   
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,17 +27,17 @@ function ko_band_media_custom_post_type() {
 
   $label = array(
     'name' => __('Media', 'koband'),
-    'singular_name' =>  __ ('Media', 'koband'),
-    'add_new' => __ ('Add Media','koband'),
-    'all_items' => __ ('All Medias', 'koband'),
-    'add_new_item' => __ ('Add Media','koband'),
-    'edit_item' => __ ('Edit Media','koband'),
-    'new_item' => __ ('New Media','koband'),
-    'view_item' => __ ('View Media','koband'),
-    'search_item' => __ ('Search Media', 'koband'),
-    'not_found' => __ ('Mo Media Found', 'koband'),
-    'not-found_in_trash' => __ ('No Media Found in Trash','koband'),
-    'parent_item_colon' => __ ('Parent Media','koband'),
+    'singular_name' =>  __('Media', 'koband'),
+    'add_new' => __('Add Media','koband'),
+    'all_items' => __('All Medias', 'koband'),
+    'add_new_item' => __('Add Media','koband'),
+    'edit_item' => __('Edit Media','koband'),
+    'new_item' => __('New Media','koband'),
+    'view_item' => __('View Media','koband'),
+    'search_item' => __('Search Media', 'koband'),
+    'not_found' => __('Mo Media Found', 'koband'),
+    'not-found_in_trash' => __('No Media Found in Trash','koband'),
+    'parent_item_colon' => __('Parent Media','koband'),
     );
 
   $args = array(
@@ -70,7 +70,7 @@ function ko_band_gallery_metabox($post_type) {
     {
       add_meta_box(
         'ko_band_gallery-metabox',
-        __ ('Gallery', 'koband'),
+        __('Gallery', 'koband'),
         'ko_band_gallery_meta_callback',
         'media',
         'normal',
@@ -92,7 +92,7 @@ global $post;
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)"><?php _e('Add image','koband');?></a>
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php _e('Add image(s)',' koband');?> data-uploader-button-text=<?php _e('Add image(s)',' koband');?>><?php _e('Add image','koband');?></a>
             </div>    
         </div>
 
@@ -101,7 +101,7 @@ global $post;
             <div class="col-sm"> 
                         <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                         <img class="image-preview" src="<?php echo $image[0]; ?>"><br>
-                        <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><?php _e('Change image', 'koband');?></a><br>
+                        <a class="change-image button button-small" href="#" data-uploader-title=<?php _e('Change image', 'koband');?> data-uploader-button-text=<?php _e('Change image', 'koband');?> ><?php _e('Change image', 'koband');?></a><br>
                         <a class="remove-image" href="#"><?php _e('Remove image', 'koband');?></a>
             </div>
         <?php endforeach; endif; ?>

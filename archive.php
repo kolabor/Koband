@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+<<<<<<< HEAD
 <div class="container">
 	<div class="row">
 		<h1 class="page-title">
