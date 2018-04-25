@@ -15,7 +15,7 @@ get_header();?>
 <div id="Media" class="section section-full">
 	<div class="container">
 		<div class="row">
-			<h1 class="first_color"><?php _e('Gallery', 'koband');?></h1>
+			<h1 class="first_color">Gallery</h1>
 		</div>
 	</div><!--container-->				
 		<div class="row koband_post_media no-gutters mt-70">
@@ -34,11 +34,10 @@ get_header();?>
 				$post_id = get_the_ID(); ?>
 					<div class="cmix category-1 col-lg-3 col-md-4 col-sm-6 single-filter-content content-1">
 						<a class="gallery-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
-						<div class="media-title overlay d-flex align-items-center justify-content-center flex-column"><h2 class="first_color"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+						
 						<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
-							
-								
 								<div class="btn-group">
+									<div class="media-title overlay d-flex align-items-center justify-content-center flex-column"><h2 class="first_color"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
 									<span class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a></span>
 								</div>
 								
@@ -52,9 +51,9 @@ get_header();?>
 	<div class="container text-center">
 		<div class="row">
 			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-				<span class="koband-loading"><?php _e('Loading...', 'koband');?></span>
-				<span class="text"><?php _e('Load media', 'koband');?></span></a>
-			<a class="no-media"><span class="media-posts"><?php _e('There are no more media','koband');?></span></a>
+				<span class="koband-loading">Loading...</span>
+				<span class="text">Load media</span></a>
+			<a class="no-media"><span class="media-posts">There are no more media</span></a>
 		</div>
 	</div><!--container-->
 			

@@ -142,41 +142,41 @@ function ko_band_singles_display_meta_box($post, $box){
 
 add_action( 'save_post', 'ko_band_singles_save_meta_box' , 1, 2);
 
-function ko_band_singles_save_meta_box( $post_id, $post ) {
+function ko_band_singles_save_meta_box( $post_id, $post ) 
+{
 
-        if ( ! isset( $_POST['ko_band_singles_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_singles_save_meta_box_nonce'], 'ko_band_singles_save_meta_box_nonce' ) )
+    if ( ! isset( $_POST['ko_band_singles_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_singles_save_meta_box_nonce'], 'ko_band_singles_save_meta_box_nonce' ) )
             return;
-          if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
+        if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
-        $singles_meta['ko_band_singles_length'] = esc_html( $_POST['ko_band_singles_length'] );
-        $singles_meta['ko_band_singles_date_release'] = esc_html( $_POST['ko_band_singles_date_release'] );
-        $singles_meta['ko_band_singles_detail'] = esc_html( $_POST['ko_band_singles_detail'] );
-  
+    $singles_meta['ko_band_singles_length'] = esc_html( $_POST['ko_band_singles_length'] );
+    $singles_meta['ko_band_singles_date_release'] = esc_html( $_POST['ko_band_singles_date_release'] );
+    $singles_meta['ko_band_singles_detail'] = esc_html( $_POST['ko_band_singles_detail'] );
+
         foreach ( $singles_meta as $key => $value ) :
-        // Don't store custom data twice
-        if ( 'revision' === $post->post_type ) { return;    }
-        if ( get_post_meta( $post_id, $key, false ) ) {   // If the custom field already has a value, update it.
+            // Don't store custom data twice
+            if ( 'revision' === $post->post_type ) { return;    }
+            if ( get_post_meta( $post_id, $key, false ) ) {   // If the custom field already has a value, update it.
             update_post_meta( $post_id, $key, $value );
-        } else {       // If the custom field doesn't have a value, add it.
+            } else {       // If the custom field doesn't have a value, add it.
             add_post_meta( $post_id, $key, $value);     }
-        if ( ! $value ) { delete_post_meta( $post_id, $key ); }
-    endforeach;
+            if ( ! $value ) { delete_post_meta( $post_id, $key ); }
+        endforeach;
 
     $old = get_post_meta($post_id, 'ko_band_repetable_singles_stores', true);
     $new= array();
-       if (isset($_POST["name"]))    {
-              $names =$_POST['name'];
-              $url = $_POST['link'];
-             $count = count( $names );   }
-    for ( $i = 0; $i < $count; $i++ )  {
-        if ( $names[$i] != '' )    {
-            $new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
-            $new[$i]['link'] = stripslashes( strip_tags( $url[$i] ) ); 
-           
-         }
-     }
-    if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_singles_stores', $new );}
-    elseif ( empty($new) && $old ) { delete_post_meta( $post_id, 'ko_band_repetable_singles_stores', $old ); }
+        if (isset($_POST["name"]))    {
+            $names =$_POST['name'];
+            $url = $_POST['link'];
+            $count = count( $names );   }
+        for ( $i = 0; $i < $count; $i++ )  {
+            if ( $names[$i] != '' )    {
+                $new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
+                $new[$i]['link'] = stripslashes( strip_tags( $url[$i] ) ); 
+            }
+        }
+        if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_singles_stores', $new );}
+        elseif ( empty($new) && $old ) { delete_post_meta( $post_id, 'ko_band_repetable_singles_stores', $old ); }
 }
 ?>  
 
