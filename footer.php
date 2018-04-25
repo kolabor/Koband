@@ -23,8 +23,8 @@
                 <div class="footer_search">
                     <?php
                     $footer_search = get_theme_mod('ko_band_footer_search');
-                    if(isset($footer_search)) { 
-                     get_search_form(); }?>
+                    if($footer_search == '1') { 
+                     echo get_search_form(); }?>
                 </div>
             </div>
         </div>
