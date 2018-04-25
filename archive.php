@@ -22,7 +22,7 @@ get_header(); ?>
 	elseif ( is_year() ) :
 		printf( __( 'Yearly Archives: %s', 'koband'), get_the_date( _x('Y', 'yearly archives date format', 'koband') ) );
 	else :
-		_e( 'Archives', 'koband' );
+		__( 'Archives', 'koband' );
 	endif;
 	?>
 	<?php if (have_posts() ) : ?>

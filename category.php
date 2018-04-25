@@ -34,9 +34,9 @@ get_header(); ?>
 				<div id="news-photo"><?php the_post_thumbnail(array(400,400)); ?></div>
 				<div class="container">
 					<div class="col-sm news-details">
-					<div class="news-details-admin"><?php _e('Posted by : ', 'koband');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></div>
-					<div class="news-details-category"><?php _e('Category : ', 'koband');?><?php the_category();?></div>
-					<div class="news-details-date"><?php _e('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
+					<div class="news-details-admin"><?php __('Posted by : ', 'koband');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></div>
+					<div class="news-details-category"><?php __('Category : ', 'koband');?><?php the_category();?></div>
+					<div class="news-details-date"><?php __('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
 					<div class="news-details-tag"><?php the_tags(); ?></div>
 				<h1><div id="news-title"><?php the_title();?></div></h1>
 					<div class="row">

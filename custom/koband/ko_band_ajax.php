@@ -38,7 +38,7 @@ function koband_load_more(){
 											<div id="card-text"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
-														<span class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE', 'koband'); ?></a></span>
+														<span class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php __('READ MORE', 'koband'); ?></a></span>
 													</div>
 												</div>
 										</div>
@@ -86,7 +86,7 @@ function koband_load_media(){
 						<div class="media-title"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
 						<!--<div class="d-flex justify-content-between align-items-center">-->
 							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php _e('Go to Gallery -->', 'koband'); ?></a></button>
+								<button type="button" class="btn btn-sm btn-outline-secondary"><a class="go_to_gallery" href="<?php the_permalink();?>"><?php __('Go to Gallery -->', 'koband'); ?></a></button>
 							</div>
 					<!--</div>-->
 				</div>

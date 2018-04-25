@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __ ('Media','koband')
+    'menu_name' => __('Media','koband')
           ),   
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,17 +27,17 @@ function ko_band_media_custom_post_type() {
 
   $label = array(
     'name' => __('Media', 'koband'),
-    'singular_name' =>  __ ('Media', 'koband'),
-    'add_new' => __ ('Add Media','koband'),
-    'all_items' => __ ('All Medias', 'koband'),
-    'add_new_item' => __ ('Add Media','koband'),
-    'edit_item' => __ ('Edit Media','koband'),
-    'new_item' => __ ('New Media','koband'),
-    'view_item' => __ ('View Media','koband'),
-    'search_item' => __ ('Search Media', 'koband'),
-    'not_found' => __ ('Mo Media Found', 'koband'),
-    'not-found_in_trash' => __ ('No Media Found in Trash','koband'),
-    'parent_item_colon' => __ ('Parent Media','koband'),
+    'singular_name' =>  __('Media', 'koband'),
+    'add_new' => __('Add Media','koband'),
+    'all_items' => __('All Medias', 'koband'),
+    'add_new_item' => __('Add Media','koband'),
+    'edit_item' => __('Edit Media','koband'),
+    'new_item' => __('New Media','koband'),
+    'view_item' => __('View Media','koband'),
+    'search_item' => __('Search Media', 'koband'),
+    'not_found' => __('Mo Media Found', 'koband'),
+    'not-found_in_trash' => __('No Media Found in Trash','koband'),
+    'parent_item_colon' => __('Parent Media','koband'),
     );
 
   $args = array(
@@ -88,11 +88,11 @@ global $post;
     ?>
     <div class="container form-table">
         <div class="row-blank">
-        <div class="col-sm"><?php _e('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php __('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title="Add image(s) to gallery" data-uploader-button-text="Add image(s)"><?php _e('Add image','koband');?></a>
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php __('Add image(s)',' koband');?> data-uploader-button-text=<?php __('Add image(s)',' koband');?>><?php __('Add image','koband');?></a>
             </div>    
         </div>
 
@@ -101,8 +101,8 @@ global $post;
             <div class="col-sm"> 
                         <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                         <img class="image-preview" src="<?php echo $image[0]; ?>"><br>
-                        <a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image"><?php _e('Change image', 'koband');?></a><br>
-                        <a class="remove-image" href="#"><?php _e('Remove image', 'koband');?></a>
+                        <a class="change-image button button-small" href="#" data-uploader-title=<?php __('Change image', 'koband');?> data-uploader-button-text=<?php __('Change image', 'koband');?> ><?php __('Change image', 'koband');?></a><br>
+                        <a class="remove-image" href="#"><?php __('Remove image', 'koband');?></a>
             </div>
         <?php endforeach; endif; ?>
         </div>
@@ -167,12 +167,12 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 
 <div class="container" id="ko_band_repetable_video_field_one">
     <div class="row-blank">
-        <div class="col-sm"><?php _e('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php __('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
     
     <div class="row-top">
-        <div class="col-sm"><?php _e('Video Link', 'koband');?></div>
-        <div class="col-sm"><?php _e('Select', 'koband');?></div>
+        <div class="col-sm"><?php __('Video Link', 'koband');?></div>
+        <div class="col-sm"><?php __('Select', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
 
@@ -186,7 +186,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php __('Remove', 'koband');?></a></div>
     </div>
 
     <?php } else: // show a blank one  ?>
@@ -198,7 +198,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php __('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
@@ -210,10 +210,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php __('Remove', 'koband');?></a></div>
     </div>
 <div class="row row_no_border">
-<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php __('Add another', 'koband');?></a></p></div>
 </div>
 </div>
 

@@ -23,8 +23,8 @@
                 <div class="footer_search">
                     <?php
                     $footer_search = get_theme_mod('ko_band_footer_search');
-                    if(isset($footer_search)) { 
-                     get_search_form(); }?>
+                    if($footer_search == '1') { 
+                     echo get_search_form(); }?>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                       
             <div class="col-md-5">
             <?php if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
-                                      	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?>  #second .widget-area
+                                      	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?> <!-- #second .widget-area-->
                                     <?php endif; ?>
                          		</div> 
 
