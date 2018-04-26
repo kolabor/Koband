@@ -18,6 +18,13 @@
     <div id="footer" class="container"> 
      
         <div class="media-container-row">
+            <div class= "col-md-3  ">
+                <!--Footer Logo-->
+                <div class="footer_logo">
+              			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
+                    <img src="<?php echo $footer_logo; ?>" class="footer_logo">
+            		</div>
+            </div>
             <div class= "col-md-12  ">
                 <!--Footer search fields-->
                 <div class="footer_search">
@@ -26,15 +33,6 @@
                     if($footer_search == '1') { 
                      echo get_search_form(); }?>
                 </div>
-            </div>
-        </div>
-        <div class="media-container-row">
-            <div class= "col-md-3  ">
-                <!--Footer Logo-->
-                <div class="footer_logo">
-              			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
-                       	<img src="<?php echo $footer_logo; ?>" class="footer_logo">
-            		</div>
             </div>
                 <!--Footer Widgets Menu-->
                 <div class="col-md-9 footer-menu">
@@ -45,20 +43,10 @@
                       
             <div class="col-md-5">
             <?php if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
-                                      	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?> <!-- #second .widget-area-->
-                                    <?php endif; ?>
-                         		</div> 
-
-                            <!--<div class="col-md-5 footer-search">
-
-                              <?php /*if (have_posts()){
-                                get_search_form( );
-                              }
-                              else{
-                              $footer_search_checbox = get_theme_mod('ko_band_footer_search');
-                            };*/
-                            ?>-->
-        </div>
+              	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?> <!-- #second .widget-area-->
+            <?php endif; ?>
+ 		       </div> 
+        </div><!--media-container-row -->
     <div class="footer-lower">
         <div class="media-container-row">
             <div class="col-md-12">
