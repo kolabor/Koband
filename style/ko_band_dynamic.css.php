@@ -104,8 +104,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 body
 {
-
-  font-family: <?php echo $koband_general_font; ?> !important;
+  
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
   color:  <?php echo $koband_main_font_color; ?> !important;
@@ -173,10 +172,15 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
 }
 
-.read_more:hover {
-  color: <?php echo $koband_second_theme_color ?> !important;
+.read_more a {
+  color: <?php echo $koband_first_theme_color; ?> !important;
 }
-
+.read_more:hover a {
+  color: <?php echo $koband_first_theme_color; ?> !important;
+}
+.read_more:hover {
+  background-color: <?php echo $koband_second_theme_color ?> !important;
+}
 
 .sl-content{
   
