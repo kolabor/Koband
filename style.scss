@@ -719,8 +719,7 @@ padding-top: 15px;
   display: inline-flex;
   position: absolute;
   right: 0;
-  text-decoration: none;
-  list-style: none;
+
 }
 #menu-footer-menu li {
 
@@ -859,6 +858,25 @@ label {
   padding: 4px 0;
   margin-bottom: .5rem
 }
-.search-holder{
+.search-holder {
   padding-top: 110px;
+}
+.gal {
+
+
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+
+
+}
+.gal img{ width: 100%; padding: 7px 0;}
+@media (max-width: 500px) {
+
+  .gal {
+
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+  }
 }

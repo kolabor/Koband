@@ -34,18 +34,17 @@ if (have_posts() ) :
 	<?php 
 	$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
-			<div class="row">
+			
 			<?php 
 				if (isset($media_video_gallery[0])){
 				foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
-				<div class="col-sd-4"> 
+				<div class="col-md-12">
+					<div class="row">
+						<div class="gal">
 <!--================================================================================================================
 						// Checking which iframe to use from the select box at backed :)
 =================================================================================================================--> 	
 		            <?php
-		                
-						    
-						$whatIWant;
 		            $video_type = $value_video_gallery['select'];
 					if(isset($video_type) && $video_type == "option1"){
 						$data = $value_video_gallery['link'];
@@ -79,19 +78,24 @@ if (have_posts() ) :
 						echo "<?php _e('Your browser does not support this type of iframe videos', 'koband');?>";
 					} ?>
 				</div>
+				</div>
+			<?php } ?>
+			</div>
 			<?php } ?>
 <!--================================================================================================================
 												iFrame support ends here :D
 =================================================================================================================-->
-			</div>
-			<div class="row">
-				<div class="col-sd-4">
+			
+				<div class="col-md-12">
+					<div class="row">
+						<div class="gal">
 					<?php if(isset($media_gallery[0])) {
-						foreach ($media_gallery[0] as  $value_image) { 
-						echo wp_get_attachment_image( $value_image, array(500,500));}
+								foreach ($media_gallery[0] as  $value_image) { 
+								echo wp_get_attachment_image( $value_image, array(500,500));}
 					}?> 
+				</div>
 				</div> 
-			<?php } ?>
+			
 			</div>
 		
 		</div><!-- container ends here -->
@@ -114,8 +118,6 @@ if (have_posts() ) :
 		    'status' => 'approve'
 		);
 	?>
-	 <?php comment_form(); ?>
 
 <?php 
-get_sidebar();
 get_footer(); ?>
