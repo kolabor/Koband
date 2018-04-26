@@ -53,7 +53,7 @@ get_header();?>
 			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 				<span class="koband-loading">Loading...</span>
 				<span class="text">Load media</span></a>
-			<a class="no-media"><span class="media-posts">There are no more media</span></a>
+			<a class="no-media"><span class="media-posts">There are no more media  <i class="far fa-smile"></i></span></a>
 		</div>
 	</div><!--container-->
 			

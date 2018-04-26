@@ -10,12 +10,12 @@
  */
 
 get_header(); ?>
-
+<div class="single-news-section">
 	<?php if (have_posts() ) : ?>
 		<!--start loop --> 
 		<?php while (have_posts() ) : the_post(); ?>
-			<div id="news-photo"><?php the_post_thumbnail(array(400,400)); ?></div>
 			<div class="container">
+			<div id="news-photo"><?php the_post_thumbnail(array(400,400)); ?></div>
 				<div class="col-sm news-details">
 					<div class="news-details-admin"><?php _e('Posted by : ', 'koband');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></div>
 					<div class="news-details-category"><?php _e('Category : ', 'koband');?><?php the_category();?></div>
@@ -28,7 +28,7 @@ get_header(); ?>
 						<div id="news-content"><?php the_content(); ?></div>
 					</div>
 				</div>
-			</div>
+			
 		<?php endwhile; 
 	endif; ?>
 		
@@ -59,7 +59,9 @@ get_header(); ?>
 		}*/
 		?>
 
-		 <?php comment_form(); ?>
+		 <?php //comment_form(); ?>
+		 </div>
+</div>
 <?php 
-get_sidebar();
+get_sidebar(); 
 get_footer(); ?>
