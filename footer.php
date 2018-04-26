@@ -16,18 +16,6 @@
 
 <div class="footer-section">
     <div id="footer" class="container"> 
-     
-        <div class="media-container-row">
-            <div class= "col-md-12  ">
-                <!--Footer search fields-->
-                <div class="footer_search">
-                    <?php
-                    $footer_search = get_theme_mod('ko_band_footer_search');
-                    if($footer_search == '1') { 
-                     echo get_search_form(); }?>
-                </div>
-            </div>
-        </div>
         <div class="media-container-row">
             <div class= "col-md-3  ">
                 <!--Footer Logo-->
@@ -35,6 +23,15 @@
               			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
                        	<img src="<?php echo $footer_logo; ?>" class="footer_logo">
             		</div>
+            </div>
+                        <div class= "col-md-12  ">
+                <!--Footer search fields-->
+                <div class="footer_search">
+                    <?php
+                    $footer_search = get_theme_mod('ko_band_footer_search');
+                    if($footer_search == '1') { 
+                     echo get_search_form(); }?>
+                </div>
             </div>
                 <!--Footer Widgets Menu-->
                 <div class="col-md-9 footer-menu">

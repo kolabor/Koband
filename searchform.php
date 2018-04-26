@@ -22,11 +22,10 @@
 
 <form method="get" role="search"  class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
     <label>
-        <span class="screen-reader-text"><?php echo _e( 'Search for : ', 'koband' ) ?></span>
         <input type="search" class="search-field"
             placeholder="<?php echo esc_attr_e( 'Search....', 'koband' ) ?>"
             value="<?php echo get_search_query() ?>" name="s"
             title="<?php echo esc_attr_e( 'Search for :  ', 'koband' ) ?>" />
     </label>
-    <button type="submit" class="search-submit"/><?php _e('Search', 'koband') ?></button>
+    <button type="submit" class="search-submit bg_first_color"/><?php _e('Search', 'koband') ?></button>
 </form>
