@@ -25,7 +25,7 @@
         <input type="search" class="search-field"
             placeholder="<?php echo esc_attr_e( 'Search....', 'koband' ) ?>"
             value="<?php echo get_search_query() ?>" name="s"
-            title="<?php echo esc_attr_e( 'Search for :  ', 'koband' ) ?>" />
+            title="<?php echo esc_attr_e( 'Search for :  ', 'koband' ) ?>"/>
     </label>
     <button type="submit" class="search-submit bg_first_color"/><?php _e('Search', 'koband') ?></button>
 </form>

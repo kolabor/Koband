@@ -35,19 +35,16 @@ get_header();?>
 					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 					    <div class="hovereffect">
 					      <a href="<?php the_permalink();?>"><img class="img-responsive" src="<?php the_post_thumbnail(array(230,230)); ?>"></a>
-					            <div class="overlay">
-					                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-									
-										<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>
-									
-					            </div>
+				            <div class="overlay">
+				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+									<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>
+				            </div>
 					    </div>
 					</div>
 				<?php endwhile;?>
 			<!-- loop ends here -->	
 	   		<?php endif; ?>
-		</div>	
-	
+		</div>
 	<div class="container text-center">
 		<div class="row">
 			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
@@ -56,6 +53,4 @@ get_header();?>
 			<a class="no-media"><span class="media-posts">There are no more media  <i class="far fa-smile"></i></span></a>
 		</div>
 	</div><!--container-->
-			
-
 </div><!--Section media-->

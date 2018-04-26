@@ -839,22 +839,23 @@ label {
 
 /*
 =================================
-  search 
+  search
 =================================
  */
 
 .search-form {
   float: right;
+  display: inline-flex;
 }
 .search-submit {
   color: white;
-  width: 70px;
+  width: 80px;
   font-size: 12px;
   cursor: pointer;
   border-radius: 4px;
   text-align: center;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 4px 0px;
-
+  padding: 4px 0;
+  margin-bottom: .5rem
 }
