@@ -794,5 +794,7 @@ label {
     -moz-column-count: 1;
     /* Firefox */
     column-count: 1; } }
+.modal-dialog {
+  width: 600px; }
 
 /*# sourceMappingURL=style.css.map */
