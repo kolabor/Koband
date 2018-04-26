@@ -25,7 +25,9 @@ if (have_posts() ) :
 		<h1><div id="single-media-title"><?php the_title();?></div></h1>
 			<div class="row">
 				<div class="col-sm">
-					<small><?php the_category();?><?php the_time( get_option( 'date_format' ) ); ?></small>
+					<small><?php the_category();?><?php the_time( get_option( 'date_format' ) ); ?>
+						<div class="news-details-tag"><?php the_tags(); ?></div>
+					</small>
 					<div id="single-media-content"><?php the_content(); ?></div>
 				</div>
 			</div>
