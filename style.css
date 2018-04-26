@@ -757,4 +757,23 @@ cite a {
 label {
   width: 100% !important; }
 
+/*
+=================================
+  search 
+=================================
+ */
+.search-form {
+  float: right; }
+
+.search-submit {
+  color: white;
+  width: 70px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 0px; }
+
 /*# sourceMappingURL=style.css.map */

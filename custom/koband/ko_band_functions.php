@@ -100,6 +100,7 @@ function ko_band_theme_support () {
 	// Add theme support thumbnails
 
 	add_theme_support( 'post-thumbnails' );
+	
 	add_theme_support('html5', array('search-form'));
 	add_theme_support( 'automatic-feed-links' );
 
@@ -235,3 +236,12 @@ add_action('wp_enqueue_scripts', 'ko_band_additional_css_enqueue_styles');
 function ko_band_additional_css_enqueue_styles(){
 	wp_enqueue_style('parent-style', get_template_directory_uri(). '/style.css');
 }
+//Adding support for Comments Replay
+function ko_band_enqueue_comments_reply() {
+
+    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
+        // Load comment-reply.js (into footer)
+        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
+    }
+}
+add_action(  'wp_enqueue_scripts', 'ko_band_enqueue_comments_reply' );

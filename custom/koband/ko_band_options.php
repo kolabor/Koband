@@ -532,7 +532,7 @@ $wp_customize->add_section( 'ko_band_footer_section' , array(
 /*Copyright text*/
 $wp_customize->add_setting( 'ko_band_footer_copyright' );
 $wp_customize->add_control( 'ko_band_footer_copyright', array(
-    'label' => esc_html__( 'Copyright text:', 'koband' ),
+    'label' => esc_html_e( 'Copyright text:', 'koband' ),
     'settings' => 'ko_band_footer_copyright',
     'section' => 'ko_band_footer_section',
 ) );
