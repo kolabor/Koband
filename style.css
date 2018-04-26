@@ -714,4 +714,47 @@ Discography Section
   text-decoration: none;
   padding-left: 5px; }
 
+/*
+=================================
+  news single page
+=================================
+ */
+.content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  overflow: auto; }
+
+.conent_holder {
+  width: 70%;
+  float: left; }
+
+.sidebar {
+  width: 30%;
+  float: right; }
+
+.comment-body {
+  padding-top: 10px; }
+
+.comment-list {
+  list-style: none;
+  background-color: #f6f6f6; }
+
+cite a {
+  color: #000 !important; }
+
+.commentmetadata a {
+  color: #000 !important;
+  font-size: 12px !important; }
+
+.reply a {
+  color: #000 !important; }
+
+.reply a:hover {
+  text-decoration: none; }
+
+label {
+  width: 100% !important; }
+
 /*# sourceMappingURL=style.css.map */
