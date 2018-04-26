@@ -516,6 +516,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
     'label' => esc_html__( 'The Band Sectin Background Image:', 'koband' ),
     'settings' => 'ko_band_theband_sectin_background_image',
     'section' => 'ko_band_theband_section',
+    'description' => 'In this section you will show the biography of your bend and biography of your band members and image too. '
 )) );
 
 /*** The band section end here  ***/
