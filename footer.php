@@ -69,7 +69,7 @@
             <!--Footer copyright-->
          		<div class="col-md-6 copyright">
                 <?php 
-                    $Copyright = get_theme_mod( 'ko_band_footer_copyright_text' ); ?>
+                    $Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
                 <?php echo $Copyright; ?>
                 	<!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
             </div>
