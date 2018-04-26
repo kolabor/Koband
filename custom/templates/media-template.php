@@ -32,8 +32,27 @@ get_header();?>
 				<?php 
 				while ( $media_posts->have_posts() ) : $media_posts->the_post();
 				$post_id = get_the_ID(); ?>
-					<div class="cmix category-1 col-lg-3 col-md-4 col-sm-6 single-filter-content content-1">
-						<a class="gallery-img" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					    <div class="hovereffect">
+					      <a href="<?php the_permalink();?>"><img class="img-responsive" src="<?php the_post_thumbnail(array(230,230)); ?>"></a>
+					            <div class="overlay">
+					                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+									
+										<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>
+									
+					            </div>
+					    </div>
+					</div>
+
+
+
+
+
+
+
+
+				<!--	<div class="cmix category-1 col-lg-3 col-md-4 col-sm-6 single-filter-content content-1">
+						<a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a><br>
 						
 						<div class="overlay overlay-bg-content d-flex align-items-center justify-content-center flex-column">
 								<div class="btn-group">
@@ -42,7 +61,7 @@ get_header();?>
 								</div>
 								
 						</div>
-					</div>
+					</div>-->
 				<?php endwhile;?>
 			<!-- loop ends here -->	
 	   		<?php endif; ?>
