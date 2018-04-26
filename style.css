@@ -643,9 +643,7 @@ Discography Section
   list-style: none;
   display: inline-flex;
   position: absolute;
-  right: 0;
-  text-decoration: none;
-  list-style: none; }
+  right: 0; }
 
 #menu-footer-menu li {
   margin-right: 20px; }
@@ -763,18 +761,20 @@ label {
 =================================
  */
 .search-form {
-  float: right; }
+  float: right;
+  display: inline-flex; }
 
 .search-submit {
   color: white;
-  width: 70px;
+  width: 80px;
   font-size: 12px;
   cursor: pointer;
   border-radius: 4px;
   text-align: center;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 4px 0px; }
+  padding: 4px 0;
+  margin-bottom: 0.5rem; }
 
 .gal {
   -webkit-column-count: 3;

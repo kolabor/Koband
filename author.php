@@ -23,25 +23,27 @@ get_header(); ?>
 				<?php endif; ?>
 				<?php if (have_posts() ) : ?>
 				<!--start loop --> 
+			<div class="content">
+				<div class="conent_holder">
 					<?php while (have_posts() ) : the_post(); ?>
 						<div id="news-photo"><?php the_post_thumbnail(array(400,400)); ?></div>
-						<div class="container">
-							<div class="col-sm news-details">
-							<div class="news-details-category"><?php _e('Category : ', 'koband');?><?php the_category();?></div>
-							<div class="news-details-date"><?php _e('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
-							<div class="news-details-tag"><?php the_tags(); ?></div>
-						<h1><div id="news-title"><?php the_title();?></div></h1>
-							<div class="row">
-								<div class="col-sm">
-									<div id="news-content"><?php the_content(); ?></div>
+								<h1 class="news-title section_heading"><?php the_title();?></h1>
+								<div class="col-sm news-details">
+									<div class="news-details-category"><?php _e('Category : ', 'koband');?><?php the_category();?></div>
+									<div class="news-details-date"><?php _e('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
+									<div class="news-details-tag"><?php the_tags(); ?></div>
 								</div>
-							</div>
-						</div>
-					<?php endwhile; 
-				endif; ?> 
+								<div class="row">
+									<div class="col-sm">
+										<div id="news-content"><?php the_content(); ?></div>
+									</div>
+								</div>
+					<?php endwhile; ?>
+				</div>
+			<?php get_sidebar(); ?>
+			</div>
+		<?php endif; ?> 
 		</header>
 	</div>
 </div>
-<?php 
-get_sidebar();
-get_footer(); ?>
+<?php get_footer(); ?>
