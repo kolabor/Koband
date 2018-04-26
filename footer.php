@@ -16,15 +16,9 @@
 
 <div class="footer-section">
     <div id="footer" class="container"> 
+     
         <div class="media-container-row">
-            <div class= "col-md-3  ">
-                <!--Footer Logo-->
-                <div class="footer_logo">
-              			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
-                       	<img src="<?php echo $footer_logo; ?>" class="footer_logo">
-            		</div>
-            </div>
-                        <div class= "col-md-12  ">
+            <div class= "col-md-12  ">
                 <!--Footer search fields-->
                 <div class="footer_search">
                     <?php
@@ -32,6 +26,15 @@
                     if($footer_search == '1') { 
                      echo get_search_form(); }?>
                 </div>
+            </div>
+        </div>
+        <div class="media-container-row">
+            <div class= "col-md-3  ">
+                <!--Footer Logo-->
+                <div class="footer_logo">
+              			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
+                       	<img src="<?php echo $footer_logo; ?>" class="footer_logo">
+            		</div>
             </div>
                 <!--Footer Widgets Menu-->
                 <div class="col-md-9 footer-menu">
@@ -66,8 +69,8 @@
             <!--Footer copyright-->
          		<div class="col-md-6 copyright">
                 <?php 
-                    $Copyright = get_theme_mod( 'ko_band_footer_copyright_text' ); ?>
-                <?php echo $Copyright; ?>
+                    $Koband_Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
+                <?php echo $Koband_Copyright; ?>
                 	<!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
             </div>
                 <?php
