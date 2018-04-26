@@ -858,7 +858,9 @@ label {
   padding: 4px 0;
   margin-bottom: .5rem
 }
-
+.search-holder {
+  padding-top: 110px;
+}
 .gal {
 
 
@@ -873,13 +875,9 @@ label {
 
   .gal {
 
-
     -webkit-column-count: 1; /* Chrome, Safari, Opera */
     -moz-column-count: 1; /* Firefox */
     column-count: 1;
-
-
   }
-
 }
 .modal-dialog {width:600px;}
