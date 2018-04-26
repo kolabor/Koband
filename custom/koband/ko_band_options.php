@@ -49,6 +49,17 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
     'settings' => 'ko_band_retina_footer_logo',
 ) ) );
 
+/************************************************************************************************************/
+ 
+ /** Show Retina favicon***/
+$wp_customize->add_setting( 'ko_band_retina_favicon' );
+$wp_customize->add_control( new WP_Customize_Site_Icon_Control ( $wp_customize, 'ko_band_retina_favicon', array(
+  'label'    => esc_html__( 'Retina Site Icon', 'koband' ),
+  'section'  => 'title_tagline',
+  'settings' => 'ko_band_retina_favicon',
+  'description' => 'Retina Ready Favicon:'
+) ) );
+
 /*******************************************************************************************************/
 
 /***Koband Theme Colors***/
@@ -204,15 +215,6 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Roboto+Condensed' => 'Roboto Condensed',
 ), ) ); 
 
-/************************************************************************************************************/
- 
- /** Show Retina favicon***/
-$wp_customize->add_setting( 'ko_band_retina_favicon' );
-$wp_customize->add_control( new WP_Customize_Site_Icon_Control ( $wp_customize, 'ko_band_retina_favicon', array(
-  'label'    => esc_html__( 'Retina Site Icon', 'koband' ),
-  'section'  => 'title_tagline',
-  'settings' => 'ko_band_retina_favicon',
-) ) );
 
 /**************************************************************************************************************/
 
@@ -516,7 +518,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
     'label' => esc_html__( 'The Band Sectin Background Image:', 'koband' ),
     'settings' => 'ko_band_theband_sectin_background_image',
     'section' => 'ko_band_theband_section',
-    'description' => 'In this section you will show the biography of your bend and biography of your band members and image too. '
+   
 )) );
 
 /*** The band section end here  ***/

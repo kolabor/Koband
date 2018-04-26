@@ -78,9 +78,9 @@ get_header(); ?>
     <div class="container text-center">
         <div class="row">
             <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-                <span class="koband-loading">Loading...</span>
-                <span class="text">Load tour</span></a>
-            <a class="no-tour"><span class="tour-posts">There are no more tours</span></a>
+                <span class="koband-loading"><?php _e('Loading...','koband');?></span>
+                <span class="text"><?php _e('Load tour','koband');?></span></a>
+            <a class="no-tour"><span class="tour-posts"><?php _e('There are no more tours','koband');?></span></a>
         </div>
     </div><!--container-->
 </div><!--container-->
