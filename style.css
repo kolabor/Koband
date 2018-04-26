@@ -759,7 +759,7 @@ label {
 
 /*
 =================================
-  search 
+  search
 =================================
  */
 .search-form {
@@ -775,5 +775,24 @@ label {
   font-weight: 600;
   text-transform: uppercase;
   padding: 4px 0px; }
+
+.gal {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3; }
+
+.gal img {
+  width: 100%;
+  padding: 7px 0; }
+
+@media (max-width: 500px) {
+  .gal {
+    -webkit-column-count: 1;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 1;
+    /* Firefox */
+    column-count: 1; } }
 
 /*# sourceMappingURL=style.css.map */

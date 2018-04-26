@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b905c83-5768-45be-9c01-9cc42a344d98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/ko_band_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/ko_band_admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/ko_band_admin.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/ko_band_admin.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/ko_band_admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/admin/ko_band_admin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/koband/ko_band_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/koband/ko_band_functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom/koband/ko_band_options.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/koband/ko_band_options.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchform.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-media.php" beforeDir="false" afterPath="$PROJECT_DIR$/single-media.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
@@ -28,8 +22,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="841" column="9" selection-start-line="841" selection-start-column="9" selection-end-line="841" selection-end-column="9" />
+            <state relative-caret-position="837">
+              <caret line="883" column="1" selection-start-line="883" selection-start-column="1" selection-end-line="883" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -38,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
-              <caret line="779" selection-start-line="779" selection-end-line="779" />
+              <caret line="798" selection-start-line="798" selection-end-line="798" />
             </state>
           </provider>
         </entry>
@@ -132,12 +126,12 @@
       <workItem from="1524468775656" duration="14196000" />
       <workItem from="1524555697195" duration="13816000" />
       <workItem from="1524654820238" duration="11300000" />
-      <workItem from="1524727537258" duration="10816000" />
+      <workItem from="1524727537258" duration="12051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50128000" />
+    <option name="totallyTimeSpent" value="51363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -214,14 +208,14 @@
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
-          <caret line="779" selection-start-line="779" selection-end-line="779" />
+          <caret line="798" selection-start-line="798" selection-end-line="798" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="841" column="9" selection-start-line="841" selection-start-column="9" selection-end-line="841" selection-end-column="9" />
+        <state relative-caret-position="837">
+          <caret line="883" column="1" selection-start-line="883" selection-start-column="1" selection-end-line="883" selection-end-column="1" />
         </state>
       </provider>
     </entry>
