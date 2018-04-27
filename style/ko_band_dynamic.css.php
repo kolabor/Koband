@@ -194,9 +194,21 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   <?php } 
   ?>
 }
+.reply, .submit {
+  background-color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo $koband_second_theme_color; ?> !important;
+}
+.reply a, .submit {
+  color: <?php echo $koband_second_theme_color; ?> !important;
+}
+.reply a:hover, .submit:hover {
+  color: <?php echo $koband_first_theme_color; ?> !important;
+}
 
-
-
+.reply:hover, .submit:hover {
+ background-color: <?php echo $koband_second_theme_color; ?> !important;
+  color: <?php echo $koband_first_theme_color; ?> !important;
+}
 
 
 
