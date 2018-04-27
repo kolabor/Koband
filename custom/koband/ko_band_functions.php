@@ -122,33 +122,25 @@ add_action('after_setup_theme', 'ko_band_theme_support');
 function ko_band_footer_widgets($id){
 
 	register_sidebar(array(
-		'name' => __('Sidebar one','koband'),
-		'id' => 'ko_band_sidebar_one',
-		'before_sidebar' => '<div  class="side-ko_band_sidebar_one">',
-		'after_sidebar' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>'
-	));
-		register_sidebar(array(
-		'name' => __('Sidebar two','koband'),
-		'id' => 'ko_band_sidebar_two',
-		'before_sidebar' => '<div  class="side-ko_band_sidebar_two">',
+		'name' => __('Sidebar','koband'),
+		'id' => 'ko_band_sidebar',
+		'before_sidebar' => '<div  class="side-ko_band_sidebar">',
 		'after_sidebar' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Footer Widgets one', 'koband'),
-		'id' => 'ko_band_footer_widgets_one',
-		'before_widget' => '<div  class="side-ko_band_footer_widgets_one">',
+		'name' => __('First Footer Widgets', 'koband'),
+		'id' => 'ko_band_first_footer_widgets',
+		'before_widget' => '<div  class="side-ko_band_first_footer_widgets">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Footer Widgets two', 'koband'),
-		'id' => 'ko_band_footer_widgets_two',
-		'before_widget' => '<div  class="side-ko_band_footer_widgets_two">',
+		'name' => __('Second Footer Widgets', 'koband'),
+		'id' => 'ko_band_second_footer_widgets',
+		'before_widget' => '<div  class="side-ko_band_second_footer_widgets">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
@@ -236,6 +228,7 @@ add_action('wp_enqueue_scripts', 'ko_band_additional_css_enqueue_styles');
 function ko_band_additional_css_enqueue_styles(){
 	wp_enqueue_style('parent-style', get_template_directory_uri(). '/style.css');
 }
+
 //Adding support for Comments Replay
 function ko_band_enqueue_comments_reply() {
 

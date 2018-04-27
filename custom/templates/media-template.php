@@ -48,9 +48,9 @@ get_header();?>
 	<div class="container text-center">
 		<div class="row">
 			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-				<span class="koband-loading">Loading...</span>
-				<span class="text">Load media</span></a>
-			<a class="no-media"><span class="media-posts">There are no more media  <i class="far fa-smile"></i></span></a>
+				<span class="koband-loading"><?php _e('Loading...', 'koband');?></span>
+				<span class="text"><?php _e('Load media', 'koband');?></span></a>
+			<a class="no-media"><span class="media-posts"><?php _e('There are no more media', 'koband');?>  <i class="far fa-smile"></i></span></a>
 		</div>
 	</div><!--container-->
 </div><!--Section media-->

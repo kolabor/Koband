@@ -21,9 +21,9 @@
             <div class= "col-md-3  ">
                 <!--Footer Logo-->
                 <div class="footer_logo">
-              			<?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
+                        <?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
                     <img src="<?php echo $footer_logo; ?>" class="footer_logo">
-            		</div>
+                    </div>
             </div>
             <div class= "col-md-12  ">
                 <!--Footer search fields-->
@@ -36,16 +36,16 @@
             </div>
                 <!--Footer Widgets Menu-->
                 <div class="col-md-9 footer-menu">
-                    <?php if ( is_active_sidebar( 'ko_band_footer_widgets_one' ) ) : ?>
-                        <?php dynamic_sidebar( 'ko_band_footer_widgets_one' ); ?><!-- #first .widget-area -->
+                    <?php if ( is_active_sidebar( 'ko_band_first_footer_widgets' ) ) : ?>
+                        <?php dynamic_sidebar( 'ko_band_first_footer_widgets' ); ?><!-- #first .widget-area -->
                     <?php endif; ?>
                 </div>
                       
             <div class="col-md-5">
-            <?php if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
-              	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?> <!-- #second .widget-area-->
+            <?php if ( is_active_sidebar( 'ko_band_second_footer_widgets' ) ) : ?>
+                <?php dynamic_sidebar( 'ko_band_second_footer_widgets' ); ?> <!-- #second .widget-area-->
             <?php endif; ?>
- 		       </div> 
+               </div> 
         </div><!--media-container-row -->
     <div class="footer-lower">
         <div class="media-container-row">
@@ -55,11 +55,11 @@
         </div>
         <div class="media-container-row mbr-white">
             <!--Footer copyright-->
-         		<div class="col-md-6 copyright">
+                <div class="col-md-6 copyright">
                 <?php 
                     $Koband_Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
                 <?php echo $Koband_Copyright; ?>
-                	<!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
+                    <!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
             </div>
                 <?php
                   //Social Network start here
@@ -99,7 +99,7 @@
         </div>
 
  <!-- Social Network ends here-->
- 	  </div>
+      </div>
   </div>
 </div>
 
@@ -107,8 +107,3 @@
 <!-- footer row ends here -->
 </body>
 </html>
-
-
-
-
-      
