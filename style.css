@@ -797,5 +797,7 @@ label {
     -moz-column-count: 1;
     /* Firefox */
     column-count: 1; } }
+.author-rows {
+  padding-bottom: 40px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -116,7 +116,7 @@ function ko_band_theme_support () {
 	
 	
 }
-add_action('after_setup_theme', 'ko_band_theme_support'); 
+add_action('after_setup_theme', 'ko_band_theme_support');
 
 //Widget Locations
 function ko_band_footer_widgets($id){
