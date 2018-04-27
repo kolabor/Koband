@@ -27,7 +27,7 @@ get_header(); ?>
                             number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );?>
                 </h2>
             </div>
-                    <ol class="row comment-list">
+                    <ol class="comment-list">
                         <?php
                             wp_list_comments( array(
                                 'style'       => 'ol',
