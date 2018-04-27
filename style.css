@@ -900,6 +900,9 @@ input {
     -moz-column-count: 1;
     /* Firefox */
     column-count: 1; } }
+.author-rows {
+  padding-bottom: 40px; }
+
 .modal-dialog {
   width: 600px; }
 

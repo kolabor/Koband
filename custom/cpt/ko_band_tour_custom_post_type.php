@@ -51,7 +51,7 @@ function ko_band_tour_custom_post_type() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor', 'thumbnail'),
-    'taxonomies' => array('category', 'post_type'),
+    'taxonomies' => array('category', 'post_type', 'post_tag'),
     'exclude_from_search' =>false,
 
   
@@ -117,7 +117,7 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
 
         <div class="row">
-            <div class="col-sm"><?php _e('City:', 'koband');?></div>_e
+            <div class="col-sm"><?php _e('City:', 'koband');?></div>
             <div class="col-sm"><?php _e('Address:', 'koband');?></div>
         </div>
 
@@ -134,7 +134,7 @@ function ko_band_tour_display_meta_box($post, $box){
         <div class="row">
             <div class="col-sm"><input type="number" name="ko_band_tour_zipCode" value="<?php echo esc_attr( $tour_zipCode )?>" class="widefat" placeholder="<?php _e('ZipCode', 'koband');?>"></div>
             <div class="col-sm"><input type="text" name="ko_band_tour_venue_name" value="<?php echo esc_textarea( $tour_venue_name )?>" class="widefat" placeholder="<?php _e('Venue', 'koband');?>"></div>
-        </div>_e
+        </div>
 
         <div class="row blank">
             <div class="col-sm"><?php _e('Please, using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
