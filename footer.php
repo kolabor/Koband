@@ -36,17 +36,12 @@
             </div>
                 <!--Footer Widgets Menu-->
                 <div class="col-md-9 footer-menu">
-                    <?php if ( is_active_sidebar( 'ko_band_footer_widgets_one' ) ) : ?>
-                        <?php dynamic_sidebar( 'ko_band_footer_widgets_one' ); ?><!-- #first .widget-area -->
+                    <?php if ( is_active_sidebar( 'ko_band_first_footer_widgets' ) ) : ?>
+                        <?php dynamic_sidebar( 'ko_band_first_footer_widgets' ); ?><!-- #first .widget-area -->
                     <?php endif; ?>
                 </div>
                       
-            <div class="col-md-5">
-            <?php if ( is_active_sidebar( 'ko_band_footer_widgets_two' ) ) : ?>
-              	<?php dynamic_sidebar( 'ko_band_footer_widgets_two' ); ?> <!-- #second .widget-area-->
-            <?php endif; ?>
- 		       </div> 
-        </div><!--media-container-row -->
+                    </div><!--media-container-row -->
     <div class="footer-lower">
         <div class="media-container-row">
             <div class="col-md-12">
@@ -95,11 +90,20 @@
                     <div class="social-icons "> <?php if(isset($apple[0])) { echo  "<a href='$apple'><i class='fab fa-apple first_color '></i></a>";} ?>
                     </div>
                 </div>
-            </div>
-        </div>
 
- <!-- Social Network ends here-->
- 	  </div>
+            </div>
+
+               
+        </div>
+        <!-- Social Network ends here-->
+      </div>
+
+ <div class="audio-container-row">
+
+          
+
+
+ 
   </div>
 </div>
 

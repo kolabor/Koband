@@ -18,13 +18,13 @@ get_header(); ?>
 		<h1 class="page-title">
 			<?php
 			if( is_day() ) :
-				printf( _e( 'Daily Archives: %s', 'koband' ), get_the_date() );
+				printf( __( 'Daily Archives: %s', 'koband' ), get_the_date() );
 			elseif ( is_month() ) : 
-				printf( _e( 'Monthly Archives: %s', 'koband'), get_the_date( _x('F Y', 'monthly archives date format', 'koband') ) );
+				printf( __( 'Monthly Archives: %s', 'koband'), get_the_date( _x('F Y', 'monthly archives date format', 'koband') ) );
 			elseif ( is_year() ) :
-				printf( _e( 'Yearly Archives: %s', 'koband'), get_the_date( _x('Y', 'yearly archives date format', 'koband') ) )
+				printf( __( 'Yearly Archives: %s', 'koband'), get_the_date( _x('Y', 'yearly archives date format', 'koband') ) )
 			else :
-				_e( 'Archives', 'koband' );
+				__( 'Archives', 'koband' );
 			endif;
 			?>
 			<?php if (have_posts() ) : ?>
