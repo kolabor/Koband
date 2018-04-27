@@ -14,7 +14,7 @@ get_header(); ?>
                 
             <div class="container search-holder">
                 <header class="page-header">
-     <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'koband' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+     <h1 class="page-title"><?php printf( _e( 'Search Results for: %s', 'koband' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
                 </header><!-- .page-header -->
                 <div class="row koband_post_news">
