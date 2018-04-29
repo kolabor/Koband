@@ -51,7 +51,7 @@ body
 
   font-family: <?php echo $general_font; ?> !important;
   font-size:  <?php echo $main_font_size; ?> !important;
-  line-height:  <?php echo $main_line_height; ?> !important;
+  line-height:  <?php echo $main_line_height; ?>px !important;
 
   font-weight:  <?php echo $main_font_weight; ?> !important;
   font-style:  <?php echo $main_font_style; ?> !important;
