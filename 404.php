@@ -8,23 +8,25 @@
  */
 
 get_header();
-?>
-		<?php if ( is_active_sidebar( 'sidebar-notfound' ) ) :
-			dynamic_sidebar( 'sidebar-notfound' );
-		else : ?>
-			<article id="page-404" class="error-404 not-found type-page hentry">
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'koband' ); ?></h1>
-					</header><!-- .page-header -->
+	
+	mail('developers@example.com', 'WP SQL Connection Issue on '.$_SERVER['HTTP_HOST'], 'This is an automated message from the wordpress custom db error message file.');
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title><?php _e('Temporarliy Unavailable', 'koband');?></title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<center>
+				<!-- This is the generic database error page that will be shown when a fatal db connection issue aries -->
+				<h1><?php echo $_SERVER['HTTP_HOST'];?><?php _e('is Temporarliy Unavailable', 'koband');?></h1>
+				<p><?php _e('The webmaster has been alerted. Please try again later.', 'koband');?></p>
+			</center>
+		</div>
+	</body>
+	</html>
 
-					<div class="entry-content">
-						<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'koband' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</div><!-- .entry-container -->
-			</article><!-- .error-404 -->
-		<?php endif; ?>
 <?php
 get_sidebar();
 get_footer(); ?>

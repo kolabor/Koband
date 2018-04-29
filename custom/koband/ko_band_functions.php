@@ -97,14 +97,15 @@ add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
 
 function ko_band_theme_support () {
 
-	// Add theme support thumnails
+	// Add theme support thumbnails
 
-	add_theme_support('post-thumbnails');
-	add_theme_support('custom-background');
-	add_theme_support('custom-header');
-	add_theme_support('post-formats', array('asaid', 'image', 'video'));
+	add_theme_support( 'post-thumbnails' );
+	
 	add_theme_support('html5', array('search-form'));
+	add_theme_support( 'automatic-feed-links' );
 
+	// Add theme support Post Format Support
+	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
 
 	//Menu
 
@@ -112,42 +113,34 @@ function ko_band_theme_support () {
 		'primary' => __('Primary Menu', 'koband'),
 		'footer' => __('Footer Menu', 'koband')
 	));
-	// Add theme support Post Format Support
-	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
+	
+	
 }
-add_action('after_setup_theme', 'ko_band_theme_support'); 
+add_action('after_setup_theme', 'ko_band_theme_support');
 
 //Widget Locations
 function ko_band_footer_widgets($id){
 
 	register_sidebar(array(
-		'name' => __('Sidebar one','koband'),
-		'id' => 'ko_band_sidebar_one',
-		'before_sidebar' => '<div  class="side-ko_band_sidebar_one">',
-		'after_sidebar' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>'
-	));
-		register_sidebar(array(
-		'name' => __('Sidebar two','koband'),
-		'id' => 'ko_band_sidebar_two',
-		'before_sidebar' => '<div  class="side-ko_band_sidebar_two">',
+		'name' => __('Sidebar','koband'),
+		'id' => 'ko_band_sidebar',
+		'before_sidebar' => '<div  class="side-ko_band_sidebar">',
 		'after_sidebar' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Footer Widgets one', 'koband'),
-		'id' => 'ko_band_footer_widgets_one',
-		'before_widget' => '<div  class="side-ko_band_footer_widgets_one">',
+		'name' => __('First Footer Widgets', 'koband'),
+		'id' => 'ko_band_first_footer_widgets',
+		'before_widget' => '<div  class="side-ko_band_first_footer_widgets">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Footer Widgets two', 'koband'),
-		'id' => 'ko_band_footer_widgets_two',
-		'before_widget' => '<div  class="side-ko_band_footer_widgets_two">',
+		'name' => __('Second Footer Widgets', 'koband'),
+		'id' => 'ko_band_second_footer_widgets',
+		'before_widget' => '<div  class="side-ko_band_second_footer_widgets">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
@@ -156,53 +149,6 @@ function ko_band_footer_widgets($id){
 	
 }
 add_action('widgets_init', 'ko_band_footer_widgets');
-
-
-
-
-/*Function to generate Theme Colors dynamicly*/
-/*wp_enqueue_style('theme_colors',
-                 admin_url('admin-ajax.php').'?action=theme_colors'
-                 );
-function theme_colors() {
-  require(get_template_directory().'/style/ko_band_dynamic.css.php');
-  exit;
-}
-add_action('wp_ajax_theme_colors', 'theme_colors');
-add_action('wp_ajax_nopriv_theme_colors', 'theme_colors');*/
-
-/*function theme_enqueue_styles() {
-  wp_enqueue_style( 'theme-styles', get_stylesheet_uri() ); // This is where you enqueue your theme's main stylesheet
-  $custom_css = theme_get_customizer_css();
-  wp_add_inline_style( 'theme-styles', $custom_css );
-}
-
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-
-*/
-
-
-/*function ko_band_dynamic_css() {
-	?>
-	<style>
-	<?php header('Content-type: text/css');?>
-
-	<?php
-	$main_theme_first_color = get_theme_mod( 'ko_band_main_color' );
-$main_theme_second_color = get_theme_mod( 'ko_band_second_color' );
-$main_theme_third_color = get_theme_mod( 'ko_band_third_color' );
-?>
-	
-	body {
-		
-		background-color: <?php echo $main_theme_first_color; ?> !important;
-		 border: 8px solid <?php echo $main_theme_second_color; ?> !important;
-	}
-	</style>
-	<?php
-}
-add_action( 'wp_head' , 'ko_band_dynamic_css' );*/
-
 
 /* Register frontend resources */
 
@@ -215,6 +161,7 @@ function ko_band_custom_wp_front_resources() {
 		 } 
 }
 add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
+
 /* Register frontend resources ends here */
 
 //Function for registering bootstrap for front-end with css and js, and adding front.js for front
@@ -240,6 +187,54 @@ function ko_band_enqueue_font_awesome() {
 
 	wp_register_script( 'font-awesome', get_template_directory_uri() . '/js/fontawesome-all.min.js', false, '1.0.0' );
     wp_enqueue_script( 'font-awesome' );
-	//wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
-
 }
+
+// Register taxonomy for Discography
+
+	// Taxonomy for Albums
+	add_action('init', 'ko_band_define_album_type_taxonomy');
+
+	function ko_band_define_album_type_taxonomy(){
+		register_taxonomy(
+			'album_year',
+			'album',
+			array(
+				'hierarchical' => true,
+				'label'		   => 'Album Year',
+				'query_var'	   => true,
+				'rewrite'	   => true
+			)
+		);
+	}
+
+	// Taxonomy for Singles
+	add_action('init', 'ko_band_define_single_type_taxonomy');
+
+	function ko_band_define_single_type_taxonomy(){
+		register_taxonomy(
+			'single_year',
+			'singles',
+			array(
+				'hierarchical' => true,
+				'label'		   => 'Single Year',
+				'query_var'	   => true,
+				'rewrite'	   => true
+			)
+		);
+	}
+// Adding support for Additional CSS at customize section
+add_action('wp_enqueue_scripts', 'ko_band_additional_css_enqueue_styles');
+
+function ko_band_additional_css_enqueue_styles(){
+	wp_enqueue_style('parent-style', get_template_directory_uri(). '/style.css');
+}
+
+//Adding support for Comments Replay
+function ko_band_enqueue_comments_reply() {
+
+    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
+        // Load comment-reply.js (into footer)
+        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
+    }
+}
+add_action(  'wp_enqueue_scripts', 'ko_band_enqueue_comments_reply' );

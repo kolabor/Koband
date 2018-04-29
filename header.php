@@ -16,9 +16,10 @@ wp_head(); ?>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
      <title><?php bloginfo( 'name' ); ?></title>
 
-  
+  <?php wp_head();?>
    
 </head>
+
 <!--<script type="text/javascript">
   jQuery(document).ready(function( $ ){ 
 
@@ -26,6 +27,7 @@ wp_head(); ?>
 });
 </script> -->
 <body>
+  <body <?php body_class(); ?>>
                 <header>
                   <nav>
                   <div class="container">                    
@@ -52,6 +54,8 @@ wp_head(); ?>
                   </div>
                   </nav>
                 </header>
+     
+
 </body>
 
                   

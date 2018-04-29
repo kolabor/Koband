@@ -13,4 +13,12 @@
 
  do_action( 'before_sidebar' ); 
  ?>
-<div id="secondary" class="widget-area" role="complementary">
+<div class="sidebar" role="complementary">
+<p><?php _e('Side-Bar', 'koband');?></p>
+
+
+ 	<?php if ( is_active_sidebar( 'ko_band_sidebar' ) ) : ?>
+        <?php dynamic_sidebar( 'ko_band_sidebar' ); ?><!-- #sidebar-area -->
+    <?php endif; ?>
+
+</div>

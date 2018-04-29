@@ -159,5 +159,54 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 	});
 });
 
+/*
+============================================
+  Load more Tour with Load-More button
+============================================
+ */
+
+$('.no-tour').hide();
+$('.koband_load_tour').addClass('loading-load').find('.koband-loading').hide(320);
+$(document).on('click', '.koband_load_tour:not(.loading)', function(){
+
+	var that = $(this);
+	var page = $(this).data('page');
+	var newPage = page+1;
+	var ajaxurl = $(this).data('url');
+
+	that.addClass('loading').find('.text').slideUp(320);
+	that.addClass('loading-load').find('.koband-loading').slideDown(320);
+
+	$.ajax({
+
+		url : ajaxurl,
+		type : 'POST',
+		data : {
+			page : page,
+			action: 'koband_load_tour'
+		},
+		error : function( response ){
+			console.log("-----error----");
+			console.log(response);
+		},
+		success : function( response ){
+            
+            console.log("-----success----");
+            console.log(response);
+            // if there are no more post hide loadmore show nomore
+            if($.trim(response) == "end-tour"){
+	            $('.koband_load_tour').hide();
+	            $('.no-tour').slideDown(700);
+            }
+            else{
+	            that.data('page', newPage);
+				$(".koband_post_tour").append( response );
+				that.removeClass('loading').find('.text').slideDown(320);
+				that.addClass('loading-load').find('.koband-loading').hide(320);
+			}
+		}
+	});
+});
+
 
 });     // Ready function ends here //

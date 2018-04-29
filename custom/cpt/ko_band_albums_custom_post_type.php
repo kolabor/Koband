@@ -12,7 +12,7 @@
 /* Declare Album cpt arguments */
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __ ('Album', 'koband')
+    'menu_name' => __('Album', 'koband')
     ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -27,18 +27,18 @@ $args = array(
 function ko_band_album_custom_post_type() {
 
   $label = array(
-    'name' => __ ('Album', 'koband'),
-    'singular_name' => __ ('Album', 'koband'),
+    'name' => __('Album', 'koband'),
+    'singular_name' => __('Album', 'koband'),
     'add_new' => __('Add Album', 'koband'),
-    'all_items' => __ ('All Albums', 'koband'),
-    'add_new_item' =>__ ( 'Add Album', 'koband'),
-    'edit_item' => __ ('Edit Album', 'koband'),
-    'new_item' => __ ('New Album', 'koband'),
-    'view_item' => __ ('View Album', 'koband'),
-    'search_item' => __ ('Search Album', 'koband'),
-    'not_found' => __ ('Mo Album Found', 'koband'),
-    'not-found_in_trash' => __ ('No Album Found in Trash', 'koband'),
-    'parent_item_colon' => __ ('Parent Album', 'koband')
+    'all_items' => __('All Albums', 'koband'),
+    'add_new_item' =>__( 'Add Album', 'koband'),
+    'edit_item' => __('Edit Album', 'koband'),
+    'new_item' => __('New Album', 'koband'),
+    'view_item' => __('View Album', 'koband'),
+    'search_item' => __('Search Album', 'koband'),
+    'not_found' => __('Mo Album Found', 'koband'),
+    'not-found_in_trash' => __('No Album Found in Trash', 'koband'),
+    'parent_item_colon' => __('Parent Album', 'koband')
     );
   
   $args = array(
@@ -77,15 +77,16 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
 
 function ko_band_album_display_meta_box() {
     global $post;
-   // Nonce field to validate form request came from current site
 
-        $song_details = get_post_meta($post->ID, 'ko_band_repetable_song_details', true);
-        $song_stores = get_post_meta($post->ID, 'ko_band_repetable_song_stores', true);
-        wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
+    // Nonce field to validate form request came from current site
+    $song_details = get_post_meta($post->ID, 'ko_band_repetable_song_details', true);
+    $song_stores = get_post_meta($post->ID, 'ko_band_repetable_song_stores', true);
+    
+    wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
 
-// Get the location data if it's already been entered
-         $album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
-         $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
+    // Get the location data if it's already been entered
+    $album_date_release = get_post_meta( $post->ID, 'ko_band_album_date_release', true );
+    $album_length = get_post_meta( $post->ID, 'ko_band_album_length', true );
 
 
 ?>
@@ -160,7 +161,7 @@ function ko_band_album_display_meta_box() {
 <!--Song_store-->
 <div class="container" id="ko_band_album_meta_box_store">
     <div class="row blank">
-    <div class="col-sm"><?php _e('On the following fields you can add or remove your Store links for your Albums by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php _e('On the following fields you can add or remove your Store links for your Albums by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
     <div class="row-top">
 
@@ -200,7 +201,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">
-    <div class="button-add-row"><p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+        <div class="button-add-row"><p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
     </div>
 </div>
    
@@ -217,62 +218,64 @@ function ko_band_album_save_meta_box( $post_id, $post )
             return;
     if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
-   // Now that we're authenticated, time to save the data.
+    // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
     $album_meta['ko_band_album_date_release'] = esc_textarea( $_POST['ko_band_album_date_release'] );
     $album_meta['ko_band_album_length'] = esc_html( $_POST['ko_band_album_length'] );
   
-        foreach ( $album_meta as $key => $value ) :
+    foreach ( $album_meta as $key => $value ) :
         // Don't store custom data twice
-        if ( 'revision' === $post->post_type ) {
-            return;    }
-        if ( get_post_meta( $post_id, $key, false ) ) {
-            // If the custom field already has a value, update it.
-            update_post_meta( $post_id, $key, $value );
+        if ( 'revision' === $post->post_type ) 
+        {
+        return;  
+        }
+        if ( get_post_meta( $post_id, $key, false ) ) 
+        {
+        // If the custom field already has a value, update it.
+        update_post_meta( $post_id, $key, $value );
         } else { 
-            // If the custom field doesn't have a value, add it.
-            add_post_meta( $post_id, $key, $value);     }
+        // If the custom field doesn't have a value, add it.
+        add_post_meta( $post_id, $key, $value);     
+        }
         if ( ! $value ) { delete_post_meta( $post_id, $key ); }
+
     endforeach;
 
     $old_details = get_post_meta($post_id, 'ko_band_repetable_song_details', true);
     $new_details = array();
-       if (isset($_POST["name-details"])) {   
-         $names_details =$_POST['name-details'];
-         $length = $_POST['length'];
-         $detail = $_POST['detail'];
-         $count = count( $names_details );
+        if (isset($_POST["name-details"])) {   
+            $names_details =$_POST['name-details'];
+            $length = $_POST['length'];
+            $detail = $_POST['detail'];
+            $count = count( $names_details );
 
-         for ( $i = 0; $i < $count; $i++ )    {
-        if ( $names_details[$i] != '' )     {
-            $new_details[$i]['name-details'] = stripslashes( strip_tags( $names_details[$i] ) );
-            $new_details[$i]['length'] = stripslashes( strip_tags( $length[$i] ) );
-            $new_details[$i]['detail'] = stripslashes( strip_tags( $detail[$i] ) );  } 
-       }
-     if ( !empty( $new_details ) && $new_details != $old_details ) { update_post_meta( $post_id, 'ko_band_repetable_song_details', $new_details );}
-     elseif ( empty($new_details) && $old_details ) { delete_post_meta( $post_id, 'ko_band_repetable_song_details', $old_details ); }
-    }
+        for ( $i = 0; $i < $count; $i++ )    {
+            if ( $names_details[$i] != '' )     {
+                $new_details[$i]['name-details'] = stripslashes( strip_tags( $names_details[$i] ) );
+                $new_details[$i]['length'] = stripslashes( strip_tags( $length[$i] ) );
+                $new_details[$i]['detail'] = stripslashes( strip_tags( $detail[$i] ) );  } 
+        }
+        if ( !empty( $new_details ) && $new_details != $old_details ) { update_post_meta( $post_id, 'ko_band_repetable_song_details', $new_details );}
+        elseif ( empty($new_details) && $old_details ) { delete_post_meta( $post_id, 'ko_band_repetable_song_details', $old_details ); }
+        }
    
 
     $old_stores = get_post_meta($post_id, 'ko_band_repetable_song_stores', true);
     $new_stores = array();
-       if (isset($_POST["name-store"])) {
-         $names_stores =$_POST['name-store'];
-         $url = $_POST['link'];
-         $count_stores = count( $names_stores ); }
+        if (isset($_POST["name-store"])) {
+            $names_stores =$_POST['name-store'];
+            $url = $_POST['link'];
+            $count_stores = count( $names_stores ); }
    
 
-    for ( $i = 0; $i < $count_stores; $i++ ) {
-        if ( $names_stores[$i] != '' ) {
+        for ( $i = 0; $i < $count_stores; $i++ ) {
+            if ( $names_stores[$i] != '' ) {
             $new_stores[$i]['name-store'] = stripslashes( strip_tags( $names_stores[$i] ) );
             $new_stores[$i]['link'] = stripslashes( strip_tags( $url[$i] ) );  }
-     }            
-    if ( !empty( $new_stores ) && $new_stores != $old_stores ) { update_post_meta( $post_id, 'ko_band_repetable_song_stores', $new_stores );}
-    elseif ( empty($new_stores) && $old_stores ) { delete_post_meta( $post_id, 'ko_band_repetable_song_stores', $old_stores ); }
-
+        }            
+        if ( !empty( $new_stores ) && $new_stores != $old_stores ) { update_post_meta( $post_id, 'ko_band_repetable_song_stores', $new_stores );}
+        elseif ( empty($new_stores) && $old_stores ) { delete_post_meta( $post_id, 'ko_band_repetable_song_stores', $old_stores ); }
 }
-
-
 ?>
 
 

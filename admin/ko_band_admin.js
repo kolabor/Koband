@@ -314,5 +314,28 @@ jQuery(document).ready(function( $ ){
       });
   
 }); 
-        
+
+
+// On customize on slider section hide video-fields when image is selected
+      $(document.body).on('change',"#_customize-input-ko_band_home_page_slider_type",function (e) {
+          
+          if($(this).val() == 'Image'){ 
+            $('#customize-control-ko_band_home_page_slider_videolink').hide();
+            $('#customize-control-ko_band_home_page_slider_title').hide();
+            $('#customize-control-ko_band_home_page_slider_text').hide();
+            $('#customize-control-ko_band_home_page_slider_buttontitle').hide();
+            $('#customize-control-ko_band_home_page_slider_buttonlink').hide();
+          }
+          if($(this).val() == 'Video'){
+            $('#customize-control-ko_band_home_page_slider_videolink').fadeIn(200);
+            $('#customize-control-ko_band_home_page_slider_title').fadeIn(300);
+            $('#customize-control-ko_band_home_page_slider_text').fadeIn(400);
+            $('#customize-control-ko_band_home_page_slider_buttontitle').fadeIn(500);
+            $('#customize-control-ko_band_home_page_slider_buttonlink').fadeIn(600);
+          }
+         var optVal= $("#_customize-input-ko_band_home_page_slider_type option:selected").val();
+      });        
+
+
+
 });     // Ready function ends here //

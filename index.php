@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The index template file displays the latest.
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -12,198 +12,43 @@
  * @since Koband 1.0
  */
 
-get_header(); 
+get_header(); ?>
+<head>
+  <?php wp_head();?>
+</head>
 
-// Determine if there is "vide-slider" or "image-slider"
+<div class="container">
+        <div class="row koband_post_news">
+          <?php
+            $args_news = array(   
+             'post_type' => 'post',   
+             'post_staus'=> 'publish',
+             'posts_per_page' => -1,
+             
+          );?>
 
-$silder_type = get_theme_mod('ko_band_home_page_slider_type');
-$count_slides = wp_count_posts('slides')->publish;
-
-if ($silder_type == 'Video'){
-  get_template_part('custom/templates/video-slider', 'template');
-}
-elseif ($silder_type == 'Image' && $count_slides > 0) {
-  get_template_part( 'custom/templates/slides', 'template' );
-}
-
-
-$first_section = get_theme_mod('ko_band_first_render_moduls');
-$second_section = get_theme_mod('ko_band_second_render_moduls');
-$third_section = get_theme_mod('ko_band_third_render_moduls');
-$fourth_section = get_theme_mod('ko_band_fourth_render_moduls');
-$fifth_section = get_theme_mod('ko_band_fifth_render_moduls');
-
-//Declaration of template variables
-$count_album = wp_count_posts('album')->publish; 
-$count_singles = wp_count_posts('singles')->publish;
-$count_discography = "";
-if ($count_album > 0 || $count_singles > 0) {
-	
-	$count_discography = true;
-};
-
-//$count_contact = wp_count_posts('')->publish;
-$count_news = wp_count_posts('post')->publish;
-$count_media = wp_count_posts('media')->publish;
-$count_theband = wp_count_posts('theband')->publish;
-$count_tour = wp_count_posts('tour')->publish;
-
-// Declartaion of Vraiables ends here
-
-//First Section if statement starts here
-
-
-	if($first_section == "Discography" && $count_discography == true) 
-	{ 
-     	get_template_part( 'custom/templates/discography', 'template' ); 
-	}
-
-	elseif ($first_section == "Media" && $count_media > 0) 
-	{
-		get_template_part( 'custom/templates/media', 'template' );
-	}
-
-	elseif ($first_section == "The Band" && $count_theband > 0) 
-	{
-		get_template_part( 'custom/templates/theband', 'template' );
-	}
-
-	elseif ($first_section == "Tour/Events" && $count_tour > 0) {
-		get_template_part( 'custom/templates/tour', 'template' );
-	}
-
-	elseif ($first_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
-
-
-//First Section if statement ends here
-
-//Second Section if statemend starts here
-
-
-	if($second_section == "Discography" && $count_discography == true) 
-	{
-		get_template_part( 'custom/templates/discography', 'template' );
-	}
-
-	elseif ($second_section == "Media" && $count_media > 0) 
-	{
-		get_template_part( 'custom/templates/media', 'template' );
-	}
-
-	elseif ($second_section == "The Band" && $count_theband > 0) 
-	{
-		get_template_part( 'custom/templates/theband', 'template' );
-	}
-
-	elseif ($second_section == "Tour/Events" && $count_tour > 0) 
-	{
-		get_template_part( 'custom/templates/tour', 'template' );
-	}
-
-	elseif ($second_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
-
-/***********************************************************************************/
-//Second Section if statemend ends here
-
-//Third Sections if statemend starts here
-/***********************************************************************************/
-
-   	if($third_section =="Discography" && $count_discography == true)
-   	{
-   		get_template_part( 'custom/templates/discography', 'template' );
-  	}
- 
-  	elseif ($third_section =="Media" && $count_media > 0)
-  	{
-		get_template_part( 'custom/templates/media', 'template' );
-  	}
-
-  	elseif ($third_section =="The Band" && $count_theband > 0)
-  	{
-   		get_template_part( 'custom/templates/theband', 'template' );
-  	}
-
-  	elseif ($third_section =="Tour/Events" && $count_tour > 0)
-  	{
-   		get_template_part( 'custom/templates/tour', 'template' );
-  	}
-
-  	elseif ($third_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
-
-/***********************************************************************************/
-//Third Sections if statemend ends here
-
-//Fourth Sections if statemend starts here
-/***********************************************************************************/
-
-  	if($fourth_section =="Discography" && $count_discography == true)
-  	{
-       	get_template_part( 'custom/templates/discography', 'template' );
-    }
-
-    elseif ($fourth_section =="Media" && $count_media > 0)
-    {
-       	get_template_part( 'custom/templates/media', 'template' );
-    }
-    
-    elseif ($fourth_section =="The Band" && $count_theband > 0)
-    {
-       	get_template_part( 'custom/templates/theband', 'template' );
-    }
-
-    elseif ($fourth_section =="Tour/Events" && $count_tour > 0)
-    {
-       	get_template_part( 'custom/templates/tour', 'template' );
-    }
-
-    elseif ($fourth_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	};
-
-/***********************************************************************************/
-//Fourth Sections if statemend ends here
-
-//Fifth Sections if statemend starts here
-/***********************************************************************************/
-
-  	if($fifth_section =="Discography" && $count_discography == true)
-  	{
-       	get_template_part( 'custom/templates/discography', 'template' );
-    }
-
-    elseif ($fifth_section =="Media" && $count_media > 0)
-    {
-       	get_template_part( 'custom/templates/media', 'template' );
-    }
-    
-    elseif ($fifth_section =="The Band" && $count_theband > 0)
-    {
-       	get_template_part( 'custom/templates/theband', 'template' );
-    }
-
-    elseif ($fifth_section =="Tour/Events" && $count_tour > 0)
-    {
-       	get_template_part( 'custom/templates/tour', 'template' );
-    }
-
-    elseif ($fifth_section == "News" && $count_news > 0) {
-		get_template_part( 'custom/templates/news', 'template');
-	 };
-
-/***********************************************************************************/
-//Fifth Sections if statemend ends here
-
-
-get_footer(); 
-
-
-?>
-
-
-
+        <?php  $news_posts = new WP_Query($args_news);
+          if ( $news_posts->have_posts() ) : ?>
+            <!-- start loop -->                     
+              <?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+                    <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
+                    <div class="card-body">
+                      <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <span  class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></span>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>  
+              <?php endwhile; ?>  
+              <!-- loop ends here -->
+          <?php endif; ?>
+          <?php wp_footer();?>
+        </body>
+      </div><!-- container -->
+</div>

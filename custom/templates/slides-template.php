@@ -58,9 +58,9 @@
 					    <?php	$url = wp_get_attachment_url( get_post_thumbnail_id() );?>
 					    	<img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
 					            <div class="sl-content">
-								    <h5><?php if(isset($slider_title[0])) 	{ echo  $slider_title[0]; } ?></h5>
-								    <p><?php if(isset($slider_subtitle[0])) 	{ echo  $slider_subtitle[0]; } ?></p>
-								    <a class="btn btn-primary btn-lg" href="<?php if(isset($slider_button_link[0])) 	
+								    <h5 class="first_color"><?php if(isset($slider_title[0])) 	{ echo  $slider_title[0]; } ?></h5>
+								    <p class="first_color font-line_height"><?php if(isset($slider_subtitle[0])) 	{ echo  $slider_subtitle[0]; } ?></p>
+								    <a class="btn btn-primary btn-lg bg_first_color" href="<?php if(isset($slider_button_link[0])) 	
 								    	{ echo  $slider_button_link[0]; } ?>"><?php if(isset($slider_button_title[0])) 
 								    		{ echo  $slider_button_title[0]; } ?></a>
 								</div>
@@ -72,11 +72,11 @@
 
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 	   			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	   			<span class="sr-only">Previous</span>
+	   			<span class="sr-only"><?php _e('Previous', 'koband');?></span>
 	  		</a>
 	 		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 	   			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    		<span class="sr-only">Next</span>
+	    		<span class="sr-only"><?php _e('Next', 'koband');?></span>
 	  		</a>
 		
 		</div><!--carousel-item-->

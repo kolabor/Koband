@@ -13,35 +13,36 @@
  */
 
 get_header(); ?> 
-<div id="Tour" class="container section">
-    <div class="row">
+<div id="Tour" class="section">
+    <div class="container">
         <div class="container">
             <div class="row">
-                <h1>Tour</h1>
+                <h1 class="first_color"><?php _e('Tour', 'koband');?></h1>
             </div>
         </div>
+    <div class="row">
 
     <?php
     $args_tour = array
     (		
 	 	 'post_type' => 'tour',   
 		 'post_staus'=> 'publish',
-		 'posts_per_page' => -1
+		 'posts_per_page' => '10'
 	);
     $tour_posts = new WP_Query( $args_tour );
     if ( $tour_posts->have_posts() ) : ?>
     <!--start loop-->
         <div class="divTable">
-            <div class="divTableBody">
+            <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
-                    <div class="divTableHeading"><?php _e('Date', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('Country', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('City', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('Address', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('ZipCode', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('Venue', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('Ticket status', 'koband');?></div>
-                    <div class="divTableHeading"><?php _e('Store', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Country', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Store', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -59,19 +60,28 @@ get_header(); ?>
             		$tour_ticket = get_post_meta($post_id,  "ko_band_tour_ticket", false );
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
-                    <div class="divTableRow">
-                    	<div class="divTableCell"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
-                    	<div class="divTableCell"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
-                    	<div class="divTableCell"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
-                    	<div class="divTableCell"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
-                    	<div class="divTableCell"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
-                    	<div class="divTableCell"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
-                    	<div class="divTableCell"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-                    	<div class="divTableCell btn-buy"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+                    <div class="divTableRow ">
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
+                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
         </div><!--divTable-->
     <?php endif;?>
     </div><!--row-->
+    <div class="container text-center">
+        <div class="row">
+            <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+                <span class="koband-loading"><?php _e('Loading...','koband');?></span>
+                <span class="text"><?php _e('Load tour','koband');?></span></a>
+            <a class="no-tour"><span class="tour-posts"><?php _e('There are no more tours','koband');?></span></a>
+        </div>
+    </div><!--container-->
 </div><!--container-->
+</div>
