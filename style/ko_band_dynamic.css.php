@@ -102,6 +102,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 /* Menu item colors */
 
+body
+{
+  
+  font-size:  <?php echo $koband_theme_font_size; ?> !important;
+  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+  color:  <?php if(isset($koband_main_font_color)) { if ($koband_main_font_color > 0) { echo $koband_main_font_color;} else {echo "yellow"; } }?> !important;
+}
+
 h1, h2, h3 
 {
   font-family: <?php echo $koband_headding_font; ?> !important;

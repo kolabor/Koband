@@ -93,11 +93,24 @@ jQuery(function($) {
        $(this).parent().remove(); 
 });
 
+/*
+  $(document).on('click', '#ko_band_gallery-metabox a.remove-image', function(e) {
+    e.preventDefault();
+
+      $(this).parents('li').animate({ opacity: 0 }, 200, function() {
+      $(this).remove();
+      resetIndex();
+    
+    });
+  
+  });
+
+  makeSortable(); */
 
 });
 
 jQuery(document).ready(function( $ ){ 
-      
+        
 // Saving the selected radio button for Slides //
         var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
         if (slide == "image") 
