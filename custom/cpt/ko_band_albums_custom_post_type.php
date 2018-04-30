@@ -93,8 +93,8 @@ function ko_band_album_display_meta_box() {
 <!-- Output the field -->
 <div class="container">
     <div class="row-top">
-        <div class="col-sm"><?php _e('Date Release', 'koband'); ?></div>
-        <div class="col-sm"><?php _e('Album Length', 'koband'); ?></div>
+        <div class="col-sm"><?php echo __('Date Release', 'koband'); ?></div>
+        <div class="col-sm"><?php echo __('Album Length', 'koband'); ?></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
     </div>
@@ -114,9 +114,9 @@ function ko_band_album_display_meta_box() {
     </div>
 
     <div class="row-top">
-        <div class="col-sm"><?php _e('Song Name', 'koband');?></div>
-        <div class="col-sm"><?php _e('Song Length', 'koband');?></div>
-        <div class="col-sm"><?php _e('Song Detail', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Song Name', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Song Length', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Song Detail', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
 
@@ -127,7 +127,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" value="<?php if($field_details['name-details'] != '') echo esc_attr( $field_details['name-details'] ); ?>" /></div>
         <div class="col-sm"><input type="time" class="songlength" name="length[]" value="<?php if($field_details['length'] != '') echo esc_attr( $field_details['length'] ); ?>" /></div>
         <div class="col-sm"><input type="text" class="songdetails" name="detail[]" value="<?php if($field_details['detail'] != '') echo esc_attr( $field_details['detail'] ); ?>" /></div>
-        <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a>
+        <div class="col-sm"><a class="button remove-row-details" href="#"><?php echo __('Remove', 'koband');?></a>
         </div>
     </div>
 
@@ -137,7 +137,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
         <div class="col-sm"><input type="time" class="songlength" name="length[]" placeholder="00:00" /></div>
         <div class="col-sm"><textarea class="songdetails" name="detail[]" maxlength="250" placeholder="ex.:composed,arranged..."/></textarea></div>
-        <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-details" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
@@ -148,10 +148,10 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="time" class="songlength" name="length[]" placeholder="00:00"  /></div>
         <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="ex.: composed,arranged,lyrics..."  /></div>
 
-        <div class="col-sm"><a class="button remove-row-details" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-details" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">
-       <div class="button-add-row"><p><a id="add-row-details" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+       <div class="button-add-row"><p><a id="add-row-details" class="button" href="#"><?php echo __('Add another', 'koband');?></a></p></div>
     </div>
 </div>
 
@@ -161,12 +161,12 @@ function ko_band_album_display_meta_box() {
 <!--Song_store-->
 <div class="container" id="ko_band_album_meta_box_store">
     <div class="row blank">
-        <div class="col-sm"><?php _e('On the following fields you can add or remove your Store links for your Albums by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo __('On the following fields you can add or remove your Store links for your Albums by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
     <div class="row-top">
 
-        <div class="col-sm"><?php _e('Store Name', 'koband');?></div>
-        <div class="col-sm"><?php _e('Store Link', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Store Name', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Store Link', 'koband');?></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>    
     </div>
@@ -179,7 +179,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="storename" name="name-store[]" value="<?php if($field_stores['name-store'] != '') echo esc_attr( $field_stores['name-store'] ); ?>" /></div>
         <div class="col-sm"><input type="url" class="storelink" name="link[]" value="<?php if($field_stores['link'] != '') echo esc_attr( $field_stores['link'] ); ?>" /></div>
         <div class="col-sm"></div>
-        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
 
 <?php } else :  ?>
@@ -189,7 +189,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
         <div class="col-sm"><input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
         <div class="col-sm"></div>
-        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
     
 <?php endif; ?>   
@@ -198,10 +198,10 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="storename" name="name-store[]" placeholder="Ex iTunes,Soundcloud.."  /></div>
         <div class="col-sm"><input type="url" class="storelink" name="link[]" placeholder="http://.storename.com"  /></div>
         <div class="col-sm"></div>        
-        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row-stores" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">
-        <div class="button-add-row"><p><a id="add-row-stores" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+        <div class="button-add-row"><p><a id="add-row-stores" class="button" href="#"><?php echo __('Add another', 'koband');?></a></p></div>
     </div>
 </div>
    

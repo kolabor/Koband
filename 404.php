@@ -14,14 +14,14 @@ get_header();
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title><?php _e('Temporarliy Unavailable', 'koband');?></title>
+		<title><?php echo __('Temporarliy Unavailable', 'koband');?></title>
 	</head>
 	<body>
 		<div id="wrapper">
 			<center>
 				<!-- This is the generic database error page that will be shown when a fatal db connection issue aries -->
-				<h1><?php echo $_SERVER['HTTP_HOST'];?><?php _e('is Temporarliy Unavailable', 'koband');?></h1>
-				<p><?php _e('The webmaster has been alerted. Please try again later.', 'koband');?></p>
+				<h1><?php echo $_SERVER['HTTP_HOST'];?><?php echo __('is Temporarliy Unavailable', 'koband');?></h1>
+				<p><?php echo __('The webmaster has been alerted. Please try again later.', 'koband');?></p>
 			</center>
 		</div>
 	</body>

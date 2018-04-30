@@ -106,13 +106,17 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
+
   color: <?php echo $koband_main_font_color; ?> !important;
+
 }
 
 .home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
   font-family: <?php echo $koband_headding_font; ?> !important;
-  color: <?php echo $koband_main_font_color; ?> !important;
+
+  color: <?php echo $koband_main_font_color;?> !important;
+
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
 }
 
@@ -130,6 +134,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 #Media {
 background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 }
+
 
 
 
@@ -152,17 +157,19 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 .border_first_color {
   border-bottom-color: <?php echo $koband_first_theme_color; ?> !important;
 }
+.border_second_color {
+  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+}
 
 .bg_second_color {
   background-color: <?php echo $koband_second_theme_color ?> !important;
 }
-.divTableRow:hover {
-   background-color: <?php echo $koband_second_theme_color ?> !important;
-   opacity: 1!important;
-}
+
 
 .main_font_color{
-  color: color: <?php echo $koband_main_font_color; ?> !important;  
+
+  color: <?php echo $koband_main_font_color; ?> !important;  
+
 }
 
 .font-line_height {
@@ -208,6 +215,8 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   color: <?php echo $koband_first_theme_color; ?> !important;
 }
 
-
+.border_bottom {
+  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+}
 
 

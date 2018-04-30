@@ -88,11 +88,11 @@ global $post;
     ?>
     <div class="container form-table">
         <div class="row-blank">
-        <div class="col-sm"><?php _e('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo __('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php _e('Add image(s)',' koband');?> data-uploader-button-text=<?php _e('Add image(s)',' koband');?>><?php _e('Add image','koband');?></a>
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo __('Add image(s)',' koband');?> data-uploader-button-text=<?php echo __('Add image(s)',' koband');?>><?php echo __('Add image','koband');?></a>
             </div>    
         </div>
 
@@ -101,8 +101,8 @@ global $post;
             <div class="col-sm"> 
                         <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                         <img class="image-preview" src="<?php echo $image[0]; ?>"><br>
-                        <a class="change-image button button-small" href="#" data-uploader-title=<?php _e('Change image', 'koband');?> data-uploader-button-text=<?php _e('Change image', 'koband');?> ><?php _e('Change image', 'koband');?></a><br>
-                        <a class="remove-image" href="#"><?php _e('Remove image', 'koband');?></a>
+                        <a class="change-image button button-small" href="#" data-uploader-title=<?php echo __('Change image', 'koband');?> data-uploader-button-text=<?php echo __('Change image', 'koband');?> ><?php _e('Change image', 'koband');?></a><br>
+                        <a class="remove-image" href="#"><?php echo __('Remove image', 'koband');?></a>
             </div>
         <?php endforeach; endif; ?>
         </div>
@@ -167,12 +167,12 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 
 <div class="container" id="ko_band_repetable_video_field_one">
     <div class="row-blank">
-        <div class="col-sm"><?php _e('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo __('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
     
     <div class="row-top">
-        <div class="col-sm"><?php _e('Video Link', 'koband');?></div>
-        <div class="col-sm"><?php _e('Select', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Video Link', 'koband');?></div>
+        <div class="col-sm"><?php echo __('Select', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
 
@@ -186,7 +186,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
 
     <?php } else: // show a blank one  ?>
@@ -198,7 +198,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
@@ -210,10 +210,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
                             <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php _e('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
     </div>
 <div class="row row_no_border">
-<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php _e('Add another', 'koband');?></a></p></div>
+<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php echo __('Add another', 'koband');?></a></p></div>
 </div>
 </div>
 

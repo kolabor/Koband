@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="container">
         <div class="container">
             <div class="row">
-                <h1 class="first_color"><?php _e('Tour', 'koband');?></h1>
+                <h1 class="first_color"><?php echo __('Tour', 'koband');?></h1>
             </div>
         </div>
     <div class="row">
@@ -35,14 +35,14 @@ get_header(); ?>
         <div class="divTable">
             <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Date', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Country', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('City', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Address', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('ZipCode', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Ticket status', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php _e('Store', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Country', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Store', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -68,7 +68,7 @@ get_header(); ?>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
@@ -78,9 +78,9 @@ get_header(); ?>
     <div class="container text-center">
         <div class="row">
             <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-                <span class="koband-loading"><?php _e('Loading...','koband');?></span>
-                <span class="text"><?php _e('Load tour','koband');?></span></a>
-            <a class="no-tour"><span class="tour-posts"><?php _e('There are no more tours','koband');?></span></a>
+                <span class="koband-loading"><?php echo __('Loading...','koband');?></span>
+                <span class="text"><?php echo __('Load tour','koband');?></span></a>
+            <a class="no-tour"><span class="tour-posts"><?php echo __('There are no more tours','koband');?></span></a>
         </div>
     </div><!--container-->
 </div><!--container-->

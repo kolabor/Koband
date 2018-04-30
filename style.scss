@@ -17,7 +17,7 @@ weffcb
   padding-top: 20px !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
-  padding-bottom: 20px !important;
+  padding-bottom: 30px !important;
 }
 
 h1 {
@@ -151,83 +151,6 @@ nav {
   color: #333;
   border-bottom: 3px solid #4D0000 !important;
 }
-
-/*Hide dropdown links until they are needed*/
-li ul {
-
-  display: none;
-  position: absolute;
-  background: rgba(255,255,255,0.7);
-  min-width: 100px;
-  z-index: 1;
-  padding-left: 0;
-}
-/*Make dropdown links vertical*/
-li ul li {
-  display: block!important;
-
-}
-/*Prevent text wrapping*
-li ul li a {
-    width: 100%!important;
-    min-width: 80px!important;
-
-}/
-/*Display the dropdown on hover*/
-ul li a:hover + .sub-menu, .sub-menu:hover {
-  display: block!important;
-}
-
-
-
-/*@media only screen and (max-width: 768px) {
-    header {height: 40vh;}
-    .mobile-nav-icon { display: inline-block; margin-top:17px;  }
-    .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
-    .main-nav { float: left; width: 60%; text-align: center; line-height: 30px; position: static; width: 100%; display:none; }
-    .main-nav li {display: block; width: 100%;}
-    .main-nav li a{ width: 100%; display: block; font-size: 150%;}
-     li ul { position: relative; }
-    .logo {width: 70%; margin-top: 17px; margin-left: 55px;}
-    .media-list li {width: 50%;}
-    .media {padding-bottom: 20px;}
-    .footer-nav , .social-links {font-size: 70%;}
-    li .dropdown-content li {float: none!important;}
-    h1, h2, .box p { text-align: center;}
-    li:hover ul a {background: none; color: #333; height: 40px; line-height: 40px;}
-    .divTableCell {font-size: 100%}
-    .divTableHeading {font-size: 120%}
-
-}
-
-/* Small phones: from 0 to 375px
-@media only screen and (max-width: 375px) {
-
-
-        header {height: 32vh;}
-        .logo {margin-top: 10px; margin-right: 20px; }
-        .main-nav {  width: 100%; display:none; }
-        .main-nav li a {display: block; font-size: 100%;}
-        .mobile-nav-icon { display: inline-block; margin-top: 12px; }
-        .logo { width: 70%; margin-left: 26px;}
-        .mobile-nav-icon i {top:0; font-size: 150%; margin-left: 0;}
-        h1, h2, .box p { text-align: center; padding: 10px; }
-        h2 {margin-bottom: 0; }
-        .media {padding-bottom: 20px;}
-        .media-list li {width: 100%;}
-        .footer-nav , .social-links {float:none; text-align: center;}
-        td, th { font-size: 70%;  font-weight: 400;}
-        li ul { position: relative; }
-        .divTableCell {font-size: 60%}
-        .divTableHeading {font-size: 100%}
-
-
-    }
-@media only screen and (max-width: 360px) {
-  .logo {margin-right: 10px;}
-}*/
-
-
 
 /* ----------------------------------------------- */
 /* Slider */
@@ -519,15 +442,16 @@ Tour Section
 .divTableRow {
   display: table-row;
 }
-
+.divTableRow:hover {
+  background-color: #f8f8f8;
+}
 .divTableCell, .divTableHead,.divTableHeading {
   border-bottom: 1px solid;
   display: table-cell;
   padding: 3px 10px;
 }
 .divTableHeading {
-  color: #878787;
-  background-color: #f2f2f2;
+  background-color: #f8f8f8;
   font-size: 150%;
   /*display: table-header-group;*/
   font-weight: bold;
@@ -538,7 +462,6 @@ Tour Section
   line-height: 145%;
   padding: 10px;
   font-weight: 500;
-  color:#aaa7a7;
 }
 
 .divTableFoot {
@@ -563,8 +486,11 @@ Discography Section
 .album-head {
   background-color: #fff !important;
   border-bottom: 1px solid;
-  padding: 5px!important;
-  padding-left: 0!important;
+  padding-top: 5px !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-bottom: 5px !important;
+  margin-left: 0;
 }
 .albums-title {
   padding-bottom: 10px!important;
@@ -576,7 +502,7 @@ Discography Section
 .col-sm-1 {
   padding-left:5px!important;
 }
-.col-sm-3 {
+.album_title {
   font-size: 20px!important;
   font-weight: 700!important;
 }
@@ -595,11 +521,21 @@ Discography Section
   border-bottom: 1px solid ;
   font-size: 15px!important;
   font-weight: 500!important;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
 }
 // Show hide discography icons
 .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
   font-size: 40px;
   margin-top: 10px;
+}
+
+.border_bottom {
+  border-bottom: 2px dotted;
+}
+.line {
+  line-height: 48px;
 }
 /*
 =======================================================
@@ -630,9 +566,7 @@ Discography Section
           the band
 =======================================================
  */
-.theband-heading h1{
-  color: #c4c4c4!important;
-}
+
 .band-bio {
   background: linear-gradient(to right, rgba(221, 221, 221, 0.75) 0%, rgba(246, 245, 245, 0.78) 100%);
   margin-top: 200px!important;
@@ -667,7 +601,17 @@ Discography Section
   cursor: pointer!important;
   font-weight: 500!important;
   font-size: 18px!important;
-  padding: 0;
+
+}
+.band_member_role{
+  background: linear-gradient(to right, rgba(221, 221, 221, 0) 0%, rgba(246, 245, 245, 0) 100%) !important;
+  border-image: none!important;
+  border-style: none!important;
+  cursor: pointer!important;
+  font-weight: 300!important;
+  font-size: 15px!important;
+  padding-bottom: 10px!important;
+
 }
 
 .band_member{
