@@ -75,7 +75,7 @@ if (have_posts() ) :
 					<?php }
 
 					else {
-						echo "<?php _e('Your browser does not support this type of iframe videos', 'koband');?>";
+						echo "<?php echo __('Your browser does not support this type of iframe videos', 'koband');?>";
 					} ?>
 				</div>
 				</div>

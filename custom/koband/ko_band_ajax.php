@@ -38,7 +38,7 @@ function koband_load_more(){
 											<div id="card-text"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
-														<span class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php __('READ MORE', 'koband'); ?></a></span>
+														<span class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php echo __('READ MORE', 'koband'); ?></a></span>
 													</div>
 												</div>
 										</div>
@@ -86,7 +86,7 @@ function koband_load_media(){
 					            <div class="overlay">
 					                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 									
-										<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>
+										<a class="info" first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband'); ?></a>
 									
 					            </div>
 					    </div>
@@ -144,7 +144,7 @@ function koband_load_tour(){
             	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
             	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
             	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-            	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php _e('Buy Here', 'koband');?></a><?php } ?></div>
+            	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
             </div>
         <?php endwhile;?> <!-- end of the loop.  -->
 	<?php }  
