@@ -36,7 +36,7 @@
 								<div class="col-md-4">
 									<div class="card mb-4 box-shadow">
 										<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
-										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(220, 180)); ?></a>
+										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news-thumb'); ?></a>
 										<div class="card-body">
 											<div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
