@@ -101,21 +101,23 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 
 /* Menu item colors */
-
-body
+.home, .single, .page, .default
 {
   
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
-  color:  <?php echo $koband_main_font_color;?> !important;
+
+  color: <?php echo $koband_main_font_color; ?> !important;
+
 }
 
-h1, h2, h3 
+.home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
   font-family: <?php echo $koband_headding_font; ?> !important;
-  color: <?php echo $koband_main_font_color;?> !important;
-  font-size:  <?php echo $koband_theme_font_size; ?> !important;
 
+  color: <?php echo $koband_main_font_color;?> !important;
+
+  font-size:  <?php echo $koband_theme_font_size; ?> !important;
 }
 
 #News {
@@ -164,7 +166,9 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 }
 
 .main_font_color{
-  color:  <?php echo $koband_main_font_color;?> !important;
+
+  color: color: <?php echo $koband_main_font_color; ?> !important;  
+
 }
 
 .font-line_height {
