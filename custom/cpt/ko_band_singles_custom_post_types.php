@@ -49,7 +49,7 @@ function ko_band_register_singles() {
     'rewrite' => true,
     'hierarchical' => false,
     'supports' => array('title', 'editor', 'thumbnail'),
-    'taxonomies' => array('category', 'post_type'),
+    'taxonomies' => array('category', 'post_type', 'post_tag'),
     'exclude_from_search' =>false,
   );
 
