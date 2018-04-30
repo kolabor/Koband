@@ -138,6 +138,7 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 
 
 
+
 .first_color {
   color: <?php echo $koband_first_theme_color; ?> !important;
 }
@@ -157,18 +158,18 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 .border_first_color {
   border-bottom-color: <?php echo $koband_first_theme_color; ?> !important;
 }
+.border_second_color {
+  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+}
 
 .bg_second_color {
   background-color: <?php echo $koband_second_theme_color ?> !important;
 }
-.divTableRow:hover {
-   background-color: <?php echo $koband_second_theme_color ?> !important;
-   opacity: 1!important;
-}
+
 
 .main_font_color{
 
-  color: color: <?php echo $koband_main_font_color; ?> !important;  
+  color: <?php echo $koband_main_font_color; ?> !important;  
 
 }
 
@@ -220,6 +221,9 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   background-color: <?php echo $koband_footer_background_color; ?> !important;
 }
 
+.border_bottom {
+  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+}
 
 
 <!--#logo{

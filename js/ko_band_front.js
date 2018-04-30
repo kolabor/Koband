@@ -1,5 +1,4 @@
 jQuery(document).ready(function( $ ){ 
-
 	
 //function ko_band_RetinaDisplay() {
 
@@ -208,5 +207,18 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
 	});
 });
 
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      	event.preventDefault();
+      	var hash = this.hash;
 
-});     // Ready function ends here //
+        $('html, body').animate({
+         scrollTop: $(hash).offset().top
+        }, 800, function(){
+        	window.location.hash = hash;
+      });
+    } 
+  });
+
+}); // Ready function ends here //
