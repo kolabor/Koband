@@ -15,7 +15,7 @@
 get_header();?> 
 <div id="Discography" class="section section_bg">
 	<div class="container">
-	<h1 class="first_color"><?php _e('Discography', 'koband');?></h1>		
+	<h1 class="first_color"><?php echo __('Discography', 'koband');?></h1>		
 	<?php
 
 		$args_album = array (
@@ -38,7 +38,7 @@ get_header();?>
 */
 	$album_posts = new WP_Query($args_album); ?>
 
-	<h3><div class="albums-title main_font_color"><?php _e('Albums', 'koband');?></div></h3>
+	<h3><div class="albums-title main_font_color"><?php echo __('Albums', 'koband');?></div></h3>
    	<?php if ($album_posts->have_posts() ) : 
 			while( $album_posts->have_posts() ) : $album_posts->the_post();
 			
@@ -47,7 +47,7 @@ get_header();?>
 	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
 			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
-				<div class="col-sm-3 main_font_color"><?php _e('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+				<div class="col-sm-3 main_font_color"><?php echo __('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 
 		        <?php 
 		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -55,8 +55,8 @@ get_header();?>
 				$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 				$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 					
-				<div class="col-sm-3 main_font_color"><?php _e('Date:<br>', 'koband');?> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
-			    <div class="col-sm-3 main_font_color"><?php _e('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
+				<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
+			    <div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
 			    <div class="col-sm-1 album-up-down-buttons">
 			    	<span class="btn btn-sm album-song">
 				    	<a class="btn btn-sm show-album-song first_color"><i class="fas fa-caret-down"></i></a>
@@ -67,9 +67,9 @@ get_header();?>
 			<div class="container album-songs-show-hide">
 				<!-- Labels -->
 				<div class="row album-head border_first_color">
-					<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Name', 'koband');?></div>
-					<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Length', 'koband');?></div>
-					<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
+					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Name', 'koband');?></div>
+					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Length', 'koband');?></div>
+					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 				</div>
 				<div class="row song-list border_first_color bg_second_color main_font_color">			
 				<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
@@ -81,14 +81,14 @@ get_header();?>
 				</div>
 				<!-- Labels -->
 				<div class="row album-head border_first_color main_font_color">
-					<div class="col-sm-6"><?php _e('Store Name', 'koband');?></div>
-					<div class="col-sm-6"><?php _e('Store Link', 'koband');?></div>
+					<div class="col-sm-6"><?php echo __('Store Name', 'koband');?></div>
+					<div class="col-sm-6"><?php echo __('Store Link', 'koband');?></div>
 				</div>
 				<div class="row song-list main_font_color">
 					<?php 
 						foreach ($album_song_store[0] as  $value_song_store) { ?>
 						<div class="col-sm-6"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
+						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
 					<?php } ?> 
 				</div>			
 			</div><!-- container album-songs-show-hide -->
@@ -102,7 +102,7 @@ get_header();?>
 ================================================================================================================
 -->
 	<?php $single_posts = new WP_Query($args_singles); ?>
-	<h3><div class="single-title main_font_color"><?php _e('Singles', 'koband');?></div></h3>
+	<h3><div class="single-title main_font_color"><?php echo __('Singles', 'koband');?></div></h3>
 	<?php if ($single_posts->have_posts() ) :
 			while ($single_posts->have_posts() ) : $single_posts->the_post();
 				$post_id = get_the_ID(); ?>
@@ -116,9 +116,9 @@ get_header();?>
 	<div class="container">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
-				<div class="col-sm-3 main_font_color"><?php _e('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
-				<div class="col-sm-3 main_font_color"><?php _e('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
-				<div class="col-sm-3 main_font_color"><?php _e('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
+				<div class="col-sm-3 main_font_color"><?php echo __('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+				<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
+				<div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
 
 			<div class="col-sm-1 single-up-down-buttons">
 				<span class="btn btn-sm single-song">
@@ -129,7 +129,7 @@ get_header();?>
 		</div>
 	<div class="container single-songs-show-hide">
 		<div class="row album-head border_first_color">
-			<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
+			<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 		</div>
 		<div class="row song-list border_first_color bg_second_color main_font_color">			
 		<?php foreach ($single_detail as  $value_single_detail) { ?>
@@ -138,8 +138,8 @@ get_header();?>
 		</div>
 
 		<div class="row album-head border_first_color main_font_color">
-			<div class="col-sm-5"><?php _e('Store Name:', 'koband');?></div>
-			<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
+			<div class="col-sm-5"><?php echo __('Store Name:', 'koband');?></div>
+			<div class="col-sm-5"><?php echo __('Store Link:', 'koband');?></div>
 		</div>
 		<div class="row song-list border_first_color bg_second_color main_font_color">
 			<?php if(isset($single_store[0])) { ?>
