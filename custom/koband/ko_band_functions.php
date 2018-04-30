@@ -238,3 +238,16 @@ function ko_band_enqueue_comments_reply() {
     }
 }
 add_action(  'wp_enqueue_scripts', 'ko_band_enqueue_comments_reply' );
+
+
+// Make WordPress Retina Ready
+
+function ko_band_retina_script() {
+
+wp_enqueue_script('ko_band_retina', 'http://192.168.88.225/wp-content/uploads/2018/04/retina.min_.js', null, '', true);
+
+}
+
+add_action( 'wp_head', 'ko_band_retina_script' );
+
+
