@@ -78,6 +78,7 @@
   /****Footer section****/
   $koband_footer_copyright = get_theme_mod('ko_band_footer_copyright');
   $koband_footer_search = get_theme_mod('ko_band_footer_search');
+  $koband_footer_background_color = get_theme_mod('ko_band_footer_section_background_color');
 
   /*****Slider Check Background******/
   $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
@@ -215,8 +216,37 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   color: <?php echo $koband_first_theme_color; ?> !important;
 }
 
+.footer-section
+{
+  background-color: <?php echo $koband_footer_background_color; ?> !important;
+}
+
 .border_bottom {
   border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
 }
 
 
+<!--#logo{
+  
+  <?php /*if (!empty($koband_main_logo)) 
+  { ?>
+  background-image: : <?php echo $koband_main_logo; ?> !important;
+  <?php }
+  else 
+  { ?>
+  background-image: : <?php echo $koband_retina_main_logo;?> !important;
+  <?php } 
+  ?>
+}
+
+
+//
+.site-icon-preview.wp-clearfix{
+    background-image: <?php echo url($koband_retina_favicon);?> !important;
+    background-size: 400px 300px !important;
+    background-repeat: no-repeat !important;
+    display: block !important;
+    width: 400px !important;
+    height: 300px !important;
+}-->
+*/

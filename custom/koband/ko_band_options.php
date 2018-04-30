@@ -122,7 +122,13 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_background_gallery_section_color',
 ) ) );
 
-
+/*** Footer Background color **/
+$wp_customize->add_setting( 'ko_band_footer_section_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_section_background_color', array(
+        'label'      => esc_html__( 'Footer Section Background Color', 'koband' ),
+        'section'    => 'colors',
+        'settings'   => 'ko_band_footer_section_background_color',
+) ) );
 
 
 /********************************************************************************************************/
