@@ -107,13 +107,13 @@ body
   
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
-  color:  <?php if(isset($koband_main_font_color)) { if ($koband_main_font_color > 0) { echo $koband_main_font_color;} else {echo "yellow"; } }?> !important;
+  color:  <?php echo $koband_main_font_color;?> !important;
 }
 
 h1, h2, h3 
 {
   font-family: <?php echo $koband_headding_font; ?> !important;
-  color: <?php if(isset($koband_main_font_color)) { if ($koband_main_font_color > 0) { echo $koband_main_font_color;} else {echo "yellow"; } }?> !important;
+  color: <?php echo $koband_main_font_color;?> !important;
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
 
 }
@@ -164,7 +164,7 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 }
 
 .main_font_color{
-  color:  <?php if(isset($koband_main_font_color)) { if ($koband_main_font_color > 0) { echo $koband_main_font_color;} else {echo "yellow"; } }?> !important;
+  color:  <?php echo $koband_main_font_color;?> !important;
 }
 
 .font-line_height {
