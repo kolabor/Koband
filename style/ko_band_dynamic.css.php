@@ -3,14 +3,13 @@
   include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
 
 
+  
   /*****Main Logo***/
   $koband_main_logo = get_theme_mod('ko_band_main_logo');
   $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
 
    /****Theme colors**/
   $koband_main_font_color = get_theme_mod('ko_band_main_font_color'); 
-   
-
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
   $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
   
@@ -100,22 +99,21 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 
 
 
-/* Menu item colors */
 
-body
+/* Menu item colors */
+.home, .single, .page, .default
 {
   
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
   line-height:  <?php echo $koband_theme_line_height; ?> !important;
-  color:  <?php echo $koband_main_font_color; ?> !important;
+  color: <?php echo $koband_main_font_color; ?> !important;
 }
 
-h1, h2, h3 
+.home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
   font-family: <?php echo $koband_headding_font; ?> !important;
-  color:  <?php echo $koband_main_font_color; ?> !important;
+  color: <?php echo $koband_main_font_color; ?> !important;
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
-
 }
 
 #News {
@@ -142,7 +140,7 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   color: <?php echo $koband_second_theme_color; ?> !important;
 }
 .first_color a {
-  color: <?php if(isset($koband_first_theme_color)){echo $koband_first_theme_color;} else { echo 'yellow';}?> !important;
+  color: <?php echo $koband_first_theme_color;?> !important;
 }
 .bg_first_color {
   background-color: <?php echo $koband_first_theme_color; ?> !important; 
@@ -164,7 +162,7 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 }
 
 .main_font_color{
-  color:  <?php echo $koband_main_font_color; ?> !important;
+  color: color: <?php echo $koband_main_font_color; ?> !important;  
 }
 
 .font-line_height {
@@ -209,9 +207,6 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
  background-color: <?php echo $koband_second_theme_color; ?> !important;
   color: <?php echo $koband_first_theme_color; ?> !important;
 }
-
-
-
 
 
 

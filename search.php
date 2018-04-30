@@ -7,6 +7,7 @@
  */
 
 get_header(); ?>
+
 <div class="container search-holder">
     <header class="page-header">
         <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
@@ -24,6 +25,7 @@ get_header(); ?>
                                 <div class="btn-group">
                                     <span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></span>
                                 </div>
+
                             </div>
                     </div>
                 </div>

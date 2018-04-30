@@ -17,7 +17,7 @@ get_header(); ?>
 	<div class="row">
 		<header class="archive-header">
 			<h1 class="archive-title">
-				<?php printf( __( 'Posts of category: %s', 'koband'),
+				<?php printf( _e( 'Posts of category: %s', 'koband'),
 				single_cat_title( '', false )); ?>
 			</h1>
 		</header>

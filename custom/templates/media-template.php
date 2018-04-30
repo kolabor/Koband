@@ -1,11 +1,7 @@
 <?php
 /**
- * 
  *
  * Template Name: Media
- *
- *
- *
  *
  * @package Wordpress 
  * @subpackage Koband
@@ -37,7 +33,7 @@ get_header();?>
 					      <a href="<?php the_permalink();?>"><img class="img-responsive" src="<?php the_post_thumbnail(array(230,230)); ?>"></a>
 				            <div class="overlay">
 				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-									<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>
+									<a class="info" first_color" href="<?php the_permalink();?>"><?php __('Go to Gallery', 'koband'); ?></a>
 				            </div>
 					    </div>
 					</div>
@@ -50,7 +46,8 @@ get_header();?>
 			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 				<span class="koband-loading"><?php _e('Loading...', 'koband');?></span>
 				<span class="text"><?php _e('Load media', 'koband');?></span></a>
-			<a class="no-media"><span class="media-posts"><?php _e('There are no more media', 'koband');?>  <i class="far fa-smile"></i></span></a>
+			    <a class="no-media"><span class="media-posts"><?php __('There are no more media', 'koband');?>  
+				<i class="far fa-smile"></i></span></a>
 		</div>
 	</div><!--container-->
 </div><!--Section media-->
