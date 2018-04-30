@@ -82,6 +82,7 @@
 		</div><!--carousel-item-->
 
 <?php endif; wp_reset_query(); ?>
+
 <!-- Controls -->
             
 
