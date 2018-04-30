@@ -35,14 +35,14 @@ get_header(); ?>
         <div class="divTable">
             <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Date', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Country', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('City', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Address', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Store', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Country', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Store', 'koband');?></div>
                 </div>
                       
                 <?php
