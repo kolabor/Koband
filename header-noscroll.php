@@ -38,7 +38,7 @@ wp_head(); ?>
                     <div class="main-nav">
                       <?php
                         $args = array(
-                          'theme_location' => 'secondary'
+                          'theme_location' => 'primary'
                         );
                       ?>
 

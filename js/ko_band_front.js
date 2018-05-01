@@ -226,12 +226,11 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
 
 	$(window).bind('scroll', function () {
 	    if ($(window).scrollTop() > num) {
-	        $('.menu-scroll').addClass('fixed').fadeIn(1000);
+	        $('.menu-scroll').addClass('fixed');
 	    } else {
 	        $('.menu-scroll').removeClass('fixed');
 	    }
 	});
-
 	// Back to top
 	if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px

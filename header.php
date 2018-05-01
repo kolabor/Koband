@@ -19,13 +19,6 @@ wp_head(); ?>
   <?php wp_head();?>
    
 </head>
-
-<!--<script type="text/javascript">
-  jQuery(document).ready(function( $ ){ 
-
- $('.carousel').carousel(); 
-});
-</script> -->
 <body>
   <body <?php body_class(); ?>>
                 <header>
