@@ -59,8 +59,8 @@ get_header();?>
 			    <div class="col-sm-3 album_title main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
 			    <div class="col-sm-1 album-up-down-buttons">
 			    	<span class="btn btn-sm album-song">
-				    	<a class="btn btn-sm show-album-song first_color"><i class="fas fa-caret-down"></i></a>
-				    	<a class="btn btn-sm hide-album-song first_color"><i class="fas fa-caret-up"></i></a>
+				    	<a class="btn btn-sm show-album-song first_color"><img src="<?php echo get_template_directory_uri(); ?>//img/Arrow-Down.png"/></a>
+				    	<a class="btn btn-sm hide-album-song first_color"><img src="<?php echo get_template_directory_uri(); ?>//img/Arrow-Up.png"/></a>
 			    	</span>
 			    </div>
 			</div><!-- container -->        
@@ -123,8 +123,8 @@ get_header();?>
 
 			<div class="col-sm-1 single-up-down-buttons">
 				<span class="btn btn-sm single-song">
-			    	<a class="btn btn-sm show-single-song first_color"><i class="fas fa-caret-down"></i></a>
-			    	<a class="btn btn-sm hide-single-song first_color"><i class="fas fa-caret-up"></i></a>
+			    	<a class="btn btn-sm show-single-song first_color"><img src="<?php echo get_template_directory_uri(); ?>//img/Arrow-Down.png"/></a>
+			    	<a class="btn btn-sm hide-single-song first_color"><img src="<?php echo get_template_directory_uri(); ?>//img/Arrow-Up.png"/></a>
 		    	</span>
 			</div>
 		</div>

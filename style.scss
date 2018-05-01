@@ -353,7 +353,7 @@ nav {
 
 .hovereffect .overlay {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -536,7 +536,10 @@ Discography Section
   font-size: 40px;
   margin-top: 10px;
 }
-
+.btn.btn-sm.show-album-song img, .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img{
+  height: auto;
+  width: 100%;
+}
 .border_bottom {
   border-bottom: 2px dotted;
 }

@@ -31,8 +31,7 @@ get_header();?>
 				$post_id = get_the_ID(); ?>
 					<div class="col-lg-3 img-holder col-md-4 col-sm-6 col-xs-12">
 					    <div class="hovereffect">
-					    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'gallery_thumb'); echo "<pre>"; print_r($image); echo "</pre>;" ?>
-					      <a href="<?php the_permalink();?>"><img class="img-responsive" src="<?php echo $image[0];?>"></a>
+					      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 				            <div class="overlay">
 				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 									<a class="info first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband');?></a>
