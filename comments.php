@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 
-get_header(); ?>
+ ?>
 <?php if ( post_password_required() )
     	return;
 ?>
