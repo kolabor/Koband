@@ -221,4 +221,38 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
     } 
   });
 
+  	//On scroll change menu color
+  	var num = 600; //number of pixels before modifying styles
+
+	$(window).bind('scroll', function () {
+	    if ($(window).scrollTop() > num) {
+	        $('.menu-scroll').addClass('fixed').fadeIn(1000);
+	    } else {
+	        $('.menu-scroll').removeClass('fixed');
+	    }
+	});
+
+	// Back to top
+	if ($('#back-to-top').length) {
+    var scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#back-to-top').addClass('show');
+            } else {
+                $('#back-to-top').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    $('#back-to-top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+}
+
 }); // Ready function ends here //

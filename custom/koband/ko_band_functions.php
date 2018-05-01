@@ -114,6 +114,7 @@ function ko_band_theme_support () {
 
 	register_nav_menus(array(
 		'primary' => __('Primary Menu', 'koband'),
+		'secondary' => __('Single Page', 'koband'),
 		'footer' => __('Footer Menu', 'koband')
 	));
 	

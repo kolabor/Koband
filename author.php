@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 
-get_header(); ?>
+get_header('noscroll'); ?>
 <div class="container search-holder">
 	<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>

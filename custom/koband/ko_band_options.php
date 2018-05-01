@@ -246,7 +246,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
 )  )  );
 
 
-/*Slider Vidoe Link**/
+/*Slider Video Link**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',

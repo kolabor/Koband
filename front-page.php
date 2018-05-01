@@ -12,8 +12,11 @@
  * @since Koband 1.0
  */
 
-get_header(); 
-
+get_header(); ?>
+<!-- Add back to top button -->
+<div id="content"></div>
+<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+<?php
 // Determine if there is "vide-slider" or "image-slider"
 
 $silder_type = get_theme_mod('ko_band_home_page_slider_type');

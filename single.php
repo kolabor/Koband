@@ -9,13 +9,13 @@
  * @since Koband 1.0
  */
 
-get_header(); ?>
+get_header('noscroll'); ?>
 <div class="single-news-section">
 		<?php if (have_posts() ) : ?>
 			<!--start loop --> 
 			<?php while (have_posts() ) : the_post(); ?>
 	<div class="container">
-				<div id="news-photo"><?php the_post_thumbnail(array(400,400)); ?></div>
+				<div id="news-photo"><?php the_post_thumbnail(array(800,800)); ?></div>
 			<div class="content">
 				<div class="conent_holder">
 						<h1 class="news-single-title section_heading"><?php the_title();?></h1>

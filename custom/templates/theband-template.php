@@ -65,7 +65,7 @@ get_header(); ?>
 										          	<button type="button" class="close" data-dismiss="modal">&times;</button>
 										        </div>
 												<div class="modal-body">
-													<div class="popup-img"><?php the_post_thumbnail(array(400,400)); ?></div>
+													<div class="popup-img"><?php the_post_thumbnail(array(800,800)); ?></div>
 											          	<h4 class="main_font_color"><?php echo __('Biography : ', 'koband');?></h4>
 											          	<div class="main_font_color"><?php the_content();?></div>
 											          	<h4 class="main_font_color"><?php echo __('Band Role : ', 'koband');?></h4>

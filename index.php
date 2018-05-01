@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 
-get_header(); ?>
+get_header('noscroll'); ?>
 <head>
   <?php wp_head();?>
 </head>
