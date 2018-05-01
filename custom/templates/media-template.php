@@ -34,7 +34,9 @@ get_header();?>
 					      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 				            <div class="overlay">
 				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+
 									<a class="info first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband');?></a>
+
 				            </div>
 					    </div>
 					</div>

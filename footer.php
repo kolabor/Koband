@@ -25,42 +25,26 @@
                     <img src="<?php echo $footer_logo; ?>" class="footer_logo">
                     </div>
             </div>
-            <div class= "col-md-12  ">
-                <!--Footer search fields-->
-                <div class="footer_search">
-                    <?php
-                    $footer_search = get_theme_mod('ko_band_footer_search');
-                    if($footer_search == '1') { 
-                     echo get_search_form(); }?>
-                </div>
-            </div>
-                <!--Footer Widgets Menu-->
-                <div class="col-md-9 footer-menu">
-                    <?php if ( is_active_sidebar( 'ko_band_first_footer_widgets' ) ) : ?>
-                        <?php dynamic_sidebar( 'ko_band_first_footer_widgets' ); ?><!-- #first .widget-area -->
-                    <?php endif; ?>
-                </div>
-                      
-            <div class="col-md-5">
-            <?php if ( is_active_sidebar( 'ko_band_second_footer_widgets' ) ) : ?>
-                <?php dynamic_sidebar( 'ko_band_second_footer_widgets' ); ?> <!-- #second .widget-area-->
-            <?php endif; ?>
-               </div> 
-        </div><!--media-container-row -->
-    <div class="footer-lower">
+            
+        </div>    
         <div class="media-container-row">
-            <div class="col-md-12">
-                <hr>
-            </div>
-        </div>
-        <div class="media-container-row mbr-white">
-            <!--Footer copyright-->
-                <div class="col-md-6 copyright">
-                <?php 
-                    $Koband_Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
-                <?php echo $Koband_Copyright; ?>
-                    <!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
-            </div>
+            <div class="col-md-6 footer_right_side">
+                <div class= "col-md-6 footer_search ">
+                    <!--Footer search fields-->
+                    
+                        <?php
+                        $footer_search = get_theme_mod('ko_band_footer_search');
+                        if($footer_search == '1') { 
+                         echo get_search_form(); }?>
+                    
+                </div>
+                    <!--Footer Widgets Menu-->
+                    <div class="footer-menu">
+                        <?php if ( is_active_sidebar( 'ko_band_first_footer_widgets' ) ) : ?>
+                            <?php dynamic_sidebar( 'ko_band_first_footer_widgets' ); ?><!-- #first .widget-area -->
+                        <?php endif; ?>
+                </div>
+
                 <?php
                   //Social Network start here
                   $facebook = get_theme_mod( 'ko_band_facebook_social_media' , false);
@@ -82,8 +66,6 @@
                     </div>
                     <div class="social-icons "><?php if(isset($instagram[0])) { echo  "<a href='$instagram'><i class='fab fa-instagram first_color '></i></a>";} ?>
                     </div>
-                    <div class="social-icons "><?php if(isset($googleplus[0])) { echo  "<a href='$googleplus'><i class='fab fa-google-plus first_color '></i></a>";} ?>
-                    </div>
                     <div class="social-icons "><?php if(isset($youtube[0])) { echo  "<a href='$youtube'><i class='fab fa-youtube first_color '></i></a>";} ?>
                     </div>
                     <div class="social-icons "><?php if(isset($spotify[0])) { echo  "<a href='$spotify'><i class='fab fa-spotify first_color '></i></a>";} ?>
@@ -96,6 +78,29 @@
                     </div>
                 </div>
             </div>
+
+            </div>          
+            <div class="col-md-6 footer_left_side">
+            <?php if ( is_active_sidebar( 'ko_band_second_footer_widgets' ) ) : ?>
+                <?php dynamic_sidebar( 'ko_band_second_footer_widgets' ); ?> <!-- #second .widget-area-->
+            <?php endif; ?>
+               </div> 
+        </div><!--media-container-row -->
+    <div class="footer-lower">
+        <div class="media-container-row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+        <div class="media-container-row mbr-white">
+            <!--Footer copyright-->
+                <div class="col-md-6 copyright">
+                <?php 
+                    $Koband_Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
+                <?php echo $Koband_Copyright; ?>
+                    <!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
+            </div>
+                
         </div>
 
  <!-- Social Network ends here-->
