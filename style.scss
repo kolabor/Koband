@@ -518,7 +518,7 @@ Discography Section
 
 }
 .song-list {
-  border-bottom: 1px solid ;
+
   font-size: 15px!important;
   font-weight: 500!important;
   padding-left: 0;
@@ -633,6 +633,7 @@ padding-top: 15px;
   display: inline-block;
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
 }
 .footer-section {
   padding-top: 45px;
@@ -650,18 +651,13 @@ padding-top: 15px;
   width: 100%;
   height: auto;
 }
-.footer-menu {
-  position: relative!important;
-  width: 100% !important;
-  height: auto!important;
-  float: right!important;
-}
+
 #menu-footer-menu {
   text-decoration: none;
   list-style: none;
   display: inline-flex;
-  position: absolute;
-  right: 0;
+  position: relative;
+  float: right;
 
 }
 #menu-footer-menu li {
@@ -681,13 +677,19 @@ padding-top: 15px;
   height: auto;
 }
 .social-list {
-  padding-left: 0;
-  margin-bottom: 0;
+  position: relative;
+  display: inline-block;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  -webkit-justify-content: flex-end;
+  float: right;
+  width: 100%;
+}
+
+.social-icons {
+  position: relative;
+  width: 25%;
+  height: auto;
+  display: block;
+  float: left;
 }
 #menu-footer-menu li a {
   color: #4b4b4b;
@@ -703,7 +705,7 @@ font-size: 20px;
 font-weight: 400;
 }
 .social-icons a {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 400;
   margin-right: 20px;
 }
@@ -714,7 +716,36 @@ font-weight: 400;
   text-decoration: none!important;
 }
 
+.textwidget iframe #widget {
+  height: 70%!important;
+ }
 
+.footer_right_side {
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: right;
+}
+.footer_left_side {
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.footer_search {
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: right;
+  margin-bottom: 30px;
+}
+.footer-menu {
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: right;
+  margin-bottom: 30px;
+}
 /*
 =================================
   news single page
@@ -856,7 +887,8 @@ label {
   border: none;
 }
 input {
-  padding-left: 5px;
+  padding: 4px 45px;
+  border-style: none;
 }
 .comment-author, .comment-meta, .comment-body p {
   background-color: #faf8f8;
@@ -904,14 +936,15 @@ input {
 .search-submit {
   color: white;
   width: 80px;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   border-radius: 4px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
-  padding: 4px 0;
-  margin-bottom: .5rem
+  padding: 6px 16px;
+  border-style: none;
+  margin-bottom: 0.5rem;
 }
 .search-holder {
   padding-top: 110px;
