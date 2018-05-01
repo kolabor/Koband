@@ -220,9 +220,9 @@ nav {
 /* News */
 /* -----------------------------------------------  */
 .card-img-top img {
+  display: block;
   height: auto;
-  width: 100%;
-  display: block; }
+  width: 100%; }
 
 .box-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); }
