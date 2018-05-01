@@ -52,7 +52,7 @@ get_header(); ?>
 										<button type="button" id="myBtn" class="band_member_name main_font_color" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button> <br>
 										<button type="button" id="myBtn" class="band_member_role main_font_color" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php if(isset($theband_role[0]))  { echo  $theband_role[0]; } ?></button>
 
-											<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail(array(200,200)); ?>
+											<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_post_thumbnail('member_thumb'); ?>
 											</div>
 									</div>
 									<!-- Modal -->
@@ -65,7 +65,7 @@ get_header(); ?>
 										          	<button type="button" class="close" data-dismiss="modal">&times;</button>
 										        </div>
 												<div class="modal-body">
-													<div class="popup-img"><?php the_post_thumbnail(array(400,400)); ?></div>
+													<div class="popup-img"><?php the_post_thumbnail(array(800,800)); ?></div>
 											          	<h4 class="main_font_color"><?php echo __('Biography : ', 'koband');?></h4>
 											          	<div class="main_font_color"><?php the_content();?></div>
 											          	<h4 class="main_font_color"><?php echo __('Band Role : ', 'koband');?></h4>

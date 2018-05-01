@@ -7,7 +7,7 @@
  * @since Koband 1.0
  */
 
-get_header();
+get_header('noscroll');
 	
 	mail('developers@example.com', 'WP SQL Connection Issue on '.$_SERVER['HTTP_HOST'], 'This is an automated message from the wordpress custom db error message file.');
 	?>

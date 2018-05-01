@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 
-get_header(); ?>
+get_header('noscroll'); ?>
 <div class="container search-holder">
 	<div class="row">
 		<header class="archive-header">

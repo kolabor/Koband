@@ -19,17 +19,10 @@ wp_head(); ?>
   <?php wp_head();?>
    
 </head>
-
-<!--<script type="text/javascript">
-  jQuery(document).ready(function( $ ){ 
-
- $('.carousel').carousel(); 
-});
-</script> -->
 <body>
   <body <?php body_class(); ?>>
                 <header>
-                  <nav class="menu-scroll">
+                  <nav class="menu-noscroll">
                   <div class="container">                    
                     <div class="main-logo clearfix">
                     <?php $logo = get_theme_mod( 'ko_band_main_logo' ); ?>
@@ -45,7 +38,7 @@ wp_head(); ?>
                     <div class="main-nav">
                       <?php
                         $args = array(
-                          'theme_location' => 'primary'
+                          'theme_location' => 'secondary'
                         );
                       ?>
 

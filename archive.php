@@ -12,7 +12,7 @@
  * @since Koband 1.0
  */
 
-get_header(); ?>
+get_header('noscroll'); ?>
 <div class="container">
 	<div class="row">
 		<h1 class="page-title">
@@ -22,7 +22,7 @@ get_header(); ?>
 			elseif ( is_month() ) : 
 				printf( __( 'Monthly Archives: %s', 'koband'), get_the_date( _x('F Y', 'monthly archives date format', 'koband') ) );
 			elseif ( is_year() ) :
-				printf( __( 'Yearly Archives: %s', 'koband'), get_the_date( _x('Y', 'yearly archives date format', 'koband') ) )
+				printf( __( 'Yearly Archives: %s', 'koband'), get_the_date( _x('Y', 'yearly archives date format', 'koband') ) );
 			else :
 				__( 'Archives', 'koband' );
 			endif;
