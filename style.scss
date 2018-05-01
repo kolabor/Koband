@@ -252,7 +252,7 @@ nav {
 /* News */
 /* -----------------------------------------------  */
 .card-img-top img {
-  height: 255px;
+  height: auto;
   width: 100%;
   display: block;
 }
@@ -343,7 +343,7 @@ nav {
 
 .hovereffect {
   width: 100%;
-  height: 350px;
+  height: auto;
   float: left;
   overflow: hidden;
   position: relative;
@@ -353,7 +353,7 @@ nav {
 
 .hovereffect .overlay {
   width: 100%;
-  height: 350px;
+  height: auto;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -371,9 +371,15 @@ nav {
   display: block;
   position: relative;
   width: 100%;
-  height: 350px;
+  height: auto;
 }
-
+.img-holder {
+  position: relative;
+}
+.img-holder img{
+  width: 100% !important;
+  height: auto !important;
+}
 .hovereffect h2  {
   text-transform: uppercase;
   color: #fff;
