@@ -146,7 +146,7 @@ get_header();?>
 			<?php if(isset($single_store[0])) { ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
 				<div class="col-sm-5 line"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
-				<div class="col-sm-6 btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
+				<div class="col-sm-6 btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
 			<?php } } ?>
 		</div>
 	</div><!-- container single-songs-show-hide -->	
