@@ -75,13 +75,13 @@ get_header(); ?>
         </div><!--divTable-->
     <?php endif;?>
     </div><!--row-->
-    <div class="container text-center">
-        <div class="row">
-            <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-                <span class="koband-loading"><?php echo __('Loading...','koband');?></span>
-                <span class="text"><?php echo __('Load tour','koband');?></span></a>
-            <a class="no-tour"><span class="tour-posts"><?php echo __('There are no more tours','koband');?></span></a>
-        </div>
+        <div class="container text-center">
+            <div class="row">
+                <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+                    <span class="koband-loading"><?php echo __('Loading...','koband');?></span>
+                    <span class="text"><?php echo __('Load tour','koband');?></span></a>
+                <a class="no-tour"><span class="tour-posts"><?php echo __('There are no more tours','koband');?></span></a>
+            </div>
+        </div><!--container-->
     </div><!--container-->
-</div><!--container-->
 </div>
