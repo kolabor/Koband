@@ -1078,9 +1078,23 @@ input {
   width: 100%;
   height:auto;
 }
-
-
-
+.album_single_page, .tour_single_page_container{
+  padding-bottom: 25px;
+}
+.album_single_page_details {
+  font-size: 12px !important;
+}
+.tour_single_page_row {
+  padding-left: 45px;
+  font-size: 20px;
+}
+.tour_location_label{
+  margin-left: -55px;
+}
+.the_tour_map iframe{
+  height: 400px !important;
+  width: 400px !important;
+}
 /*
 ============================================
            Media query

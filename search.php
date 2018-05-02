@@ -10,10 +10,10 @@ get_header('noscroll'); ?>
 
 <div class="container search-holder">
     <div class="row">
-    <header class="page-header">
-        <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-    </header><!-- .page-header -->
-    <?php if ( have_posts() ) : ?>
+        <header class="page-header">
+            <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+        </header><!-- .page-header -->
+    <?php if ( have_posts() ) { ?>
         <div class="content">
             <div class="conent_holder">
                 <div class="row koband_post_news">
@@ -35,15 +35,11 @@ get_header('noscroll'); ?>
                         </div>  
                     <?php endwhile; ?>
                 </div>
-    <?php else : ?>
-    <?php get_template_part( 'no-results', 'search' ); ?>
+    <?php } else { ?>
+    <?php get_template_part( 'no-results', 'search' ); }?>
             </div>
             <?php get_sidebar(); ?>
         </div>
-    <?php endif; ?>
-
-</div>
-</div>
-
-
+    </div><!--row -->
+</div><!-- container -->
 <?php get_footer(); ?>
