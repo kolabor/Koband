@@ -66,12 +66,12 @@ get_header();?>
 			</div><!-- container -->        
 			<div class="container album-songs-show-hide">
 				<!-- Labels -->
-				<div class="row album-head border_second_color">
+				<div class="row album-info">
 					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Name', 'koband');?></div>
 					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Length', 'koband');?></div>
 					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 				</div>
-				<div class="row song-list border_second_color main_font_color">			
+				<div class="row song-list main_font_color">			
 				<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
 					<div class="col-sm-4 border_bottom line"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
 					<div class="col-sm-4 border_bottom line"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
