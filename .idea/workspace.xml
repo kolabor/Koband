@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca3c361f-98e4-45f8-bc7d-2e4aff62cc86" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="ca3c361f-98e4-45f8-bc7d-2e4aff62cc86" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="723" column="15" selection-start-line="723" selection-start-column="15" selection-end-line="723" selection-end-column="15" />
+            <state relative-caret-position="-1438">
+              <caret line="737" column="20" lean-forward="true" selection-start-line="737" selection-start-column="20" selection-end-line="737" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -108,16 +106,15 @@
       <option name="presentableId" value="Default" />
       <updated>1525082238189</updated>
       <workItem from="1525082244327" duration="8692000" />
-      <workItem from="1525160240247" duration="15631000" />
+      <workItem from="1525160240247" duration="15754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24323000" />
+    <option name="totallyTimeSpent" value="24446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -154,8 +151,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="723" column="15" selection-start-line="723" selection-start-column="15" selection-end-line="723" selection-end-column="15" />
+        <state relative-caret-position="-1438">
+          <caret line="737" column="20" lean-forward="true" selection-start-line="737" selection-start-column="20" selection-end-line="737" selection-end-column="20" />
         </state>
       </provider>
     </entry>
