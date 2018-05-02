@@ -29,7 +29,7 @@ get_header(); ?>
 					);
 					$theband_posts = new WP_Query( $args_theband );?>
 					
-			<div class="container band-bio bg_second_color">
+			<div class="container band-bio">
 				<div class="row koband_post_theband">
 					<div class="container">
 						<div class="row">
