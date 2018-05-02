@@ -172,6 +172,21 @@ header {
   border-bottom: 3px solid #4D0000 !important;
 }
 
+.mobile-nav-icon {
+  width: 40%;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  padding-top: 11px;
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #666666;
+}
 /* ----------------------------------------------- */
 /* Slider */
 /* -----------------------------------------------  */
@@ -1091,10 +1106,11 @@ input {
 @media screen and (max-width: 1366px) {
   .sl-content h5 {font-size: 45px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
+  .carousel-inner {height: auto!important;}
 }
 
 @media screen and (max-width: 1024px) {
-  .carousel-inner {height: 50vh !important;}
+  .carousel-inner {height: auto!important;}
   .sl-content {width: 50%;}
   .band_member_name {text-align: left; padding: 0;}
   .band_member_role {text-align: left; padding: 0;}
@@ -1110,7 +1126,7 @@ input {
   .sl-content h5 {font-size: 30px !important;}
   .sl-content p {font-size: 12px!important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1rem !important;}
-  .carousel-inner {height: 40vh !important;}
+  .carousel-inner {height: auto !important;}
   .col-sm-1 {margin-right: 12px !important;}
   .album_title {font-size: 17px !important;}
   .col-sm-3 span {font-size: 20px !important;}
@@ -1119,4 +1135,28 @@ input {
   .bnd_mem_img img {height: 120px;}
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; margin-bottom: 2em;}
+}
+@media screen and (max-width: 768px) {
+  .sl-content {width: 70%;}
+  .btn-group-sm>.btn, .btn-sm {padding: 1px;}
+  .koband_post_theband .col-sm-4 {-webkit-box-flex: 0; -ms-flex: 0 0 33.333333%; flex: 100px; max-width: 100%;}
+  .band-members {width: 100% !important;}
+  .divTableHeading {font-size: 100%;}
+  .divTableCell {font-size: 80%;}
+  .social-icons a {font-size: 20px; margin-left: 15px;}
+}
+
+@media screen and (max-width: 414px){
+  .mobile-nav-icon { display: inline-block; }
+  .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
+  #menu-main-menu {position: relative; list-style-type: none; width: 63%; text-align: center;}
+  .main-nav { float: left; text-align: center; width: 100%; height: auto; position: relative; display: none;}
+  #menu-main-menu li {display: block; width: 100%;}
+  #menu-main-menu li a{width: 100%; display: block; font-size: 100%; line-height: 25px; height: 30px;}
+  .main-logo {width: 50%; padding-left: 25px;}
+  .menu-scroll {height: auto;}
+  .sl-content h5 {font-size: 15px !important;}
+  .sl-content p {font-size: 8px !important;}
+  .btn-lg {font-size: 10px!important; padding: 2px 8px;}
+  .carousel-indicators { top: 97% !important;}
 }

@@ -150,6 +150,20 @@ header {
   color: #333;
   border-bottom: 3px solid #4D0000 !important; }
 
+.mobile-nav-icon {
+  width: 40%;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  padding-top: 11px;
+  padding-left: 20px;
+  font-size: 30px; }
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #666666; }
+
 /* ----------------------------------------------- */
 /* Slider */
 /* -----------------------------------------------  */
@@ -996,10 +1010,13 @@ input {
     font-size: 45px !important; }
 
   .btn-group-lg > .btn, .btn-lg {
-    font-size: 1.2rem !important; } }
+    font-size: 1.2rem !important; }
+
+  .carousel-inner {
+    height: auto !important; } }
 @media screen and (max-width: 1024px) {
   .carousel-inner {
-    height: 50vh !important; }
+    height: auto !important; }
 
   .sl-content {
     width: 50%; }
@@ -1033,7 +1050,7 @@ input {
     font-size: 1rem !important; }
 
   .carousel-inner {
-    height: 40vh !important; }
+    height: auto !important; }
 
   .col-sm-1 {
     margin-right: 12px !important; }
@@ -1066,5 +1083,82 @@ input {
   .search-submit {
     line-height: 2;
     margin-bottom: 2em; } }
+@media screen and (max-width: 768px) {
+  .sl-content {
+    width: 70%; }
+
+  .btn-group-sm > .btn, .btn-sm {
+    padding: 1px; }
+
+  .koband_post_theband .col-sm-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 100px;
+    max-width: 100%; }
+
+  .band-members {
+    width: 100% !important; }
+
+  .divTableHeading {
+    font-size: 100%; }
+
+  .divTableCell {
+    font-size: 80%; }
+
+  .social-icons a {
+    font-size: 20px;
+    margin-left: 15px; } }
+@media screen and (max-width: 414px) {
+  .mobile-nav-icon {
+    display: inline-block; }
+
+  .mobile-nav-icon i {
+    font-size: 300%;
+    margin-left: 30px; }
+
+  #menu-main-menu {
+    position: relative;
+    list-style-type: none;
+    width: 63%;
+    text-align: center; }
+
+  .main-nav {
+    float: left;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: none; }
+
+  #menu-main-menu li {
+    display: block;
+    width: 100%; }
+
+  #menu-main-menu li a {
+    width: 100%;
+    display: block;
+    font-size: 100%;
+    line-height: 25px;
+    height: 30px; }
+
+  .main-logo {
+    width: 50%;
+    padding-left: 25px; }
+
+  .menu-scroll {
+    height: auto; }
+
+  .sl-content h5 {
+    font-size: 15px !important; }
+
+  .sl-content p {
+    font-size: 8px !important; }
+
+  .btn-lg {
+    font-size: 10px !important;
+    padding: 2px 8px; }
+
+  .carousel-indicators {
+    top: 97% !important; } }
 
 /*# sourceMappingURL=style.css.map */

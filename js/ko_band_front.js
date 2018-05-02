@@ -254,4 +254,20 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
     });
 }
 
+$('.mobile-nav-icon').click(function() {
+        var nav = $('.main-nav');
+        var icon = $('.js--nav-icon i');
+        
+        nav.slideToggle(200);
+        
+        if (icon.hasClass('fas fa-bars')) {
+            icon.addClass('ion-close-round');
+            icon.removeClass('fas fa-bars');
+        } else {
+            icon.addClass('fas fa-bars');
+            icon.removeClass('ion-close-round');
+        }
+
+    });
+
 }); // Ready function ends here //

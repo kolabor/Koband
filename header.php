@@ -42,8 +42,10 @@ wp_head(); ?>
                         );
                       ?>
 
-                      <?php wp_nav_menu($args); ?>             
+                      <?php wp_nav_menu($args); ?>   
+
                     </div>
+                    <a class="mobile-nav-icon"><i class="fas fa-bars"></i></a> 
                   </div>
                   </nav>
                 </header>
