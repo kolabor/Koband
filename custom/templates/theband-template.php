@@ -34,7 +34,7 @@ get_header(); ?>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 main_font_color">
-								<p class="main_font_color"><h4><?php echo __('Band Bio', 'koband');?></h4>
+								<p class="main_font_color"><h4><?php echo __('Band Biography', 'koband');?></h4>
 								<?php 
 								$theband_bio = get_theme_mod('ko_band_theband_biography');
 								echo $theband_bio;

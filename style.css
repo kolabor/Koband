@@ -920,9 +920,6 @@ input {
   line-height: 3;
   margin-bottom: 2em; }
 
-.search-holder {
-  padding-top: 110px; }
-
 .gal {
   -webkit-column-count: 3;
   /* Chrome, Safari, Opera */
@@ -999,6 +996,30 @@ input {
   position: relative;
   width: 100%;
   height: auto; }
+
+.album_single_page, .tour_single_page_container, .theband_single_page {
+  padding-bottom: 25px; }
+
+.album_single_page_details {
+  font-size: 12px !important; }
+
+.tour_single_page_row {
+  padding-left: 45px;
+  font-size: 20px; }
+
+.tour_location_label {
+  margin-left: -55px; }
+
+.the_tour_map iframe {
+  height: 400px !important;
+  width: 400px !important; }
+
+.search-holder {
+  padding-top: 15px; }
+
+.theband_single_title {
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 /*
 ============================================
