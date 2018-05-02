@@ -100,7 +100,7 @@ header {
 
 .menu-noscroll {
   width: 100%;
-  position: fixed;
+  position: relative;
   z-index: 1045;
   background: #fff !important;
   height: 70px;
@@ -1056,6 +1056,30 @@ input {
 #content {
   height: 0px;
 }
+
+
+.single_page_row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.single_page_title h1 {
+  font-size: 200%!important;
+  width: 100%;
+  height: auto;
+}
+.single_page_cover {
+  position: relative;
+  width: 100%;
+  height:auto;
+}
+.single_page_cover img {
+  position: relative;
+  width: 100%;
+  height:auto;
+}
+
+
 
 /*
 ============================================
