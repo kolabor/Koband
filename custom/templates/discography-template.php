@@ -136,7 +136,8 @@ get_header();?>
 		<?php foreach ($single_detail as  $value_single_detail) { ?>
 			<div class="col"><?php if(isset($value_single_detail)) {echo $value_single_detail;} ?></div>
 		<?php } ?> 
-		</div>
+		</div></br>
+
 
 		<div class="row album-head border_first_color main_font_color">
 			<div class="col-sm-5"><?php echo __('Store Name:', 'koband');?></div>
