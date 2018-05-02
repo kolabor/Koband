@@ -1068,13 +1068,21 @@ input {
   .sl-content h5 {font-size: 45px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
 }
+
+@media screen and (max-width: 1024px) {
+  .carousel-inner {height: 50vh !important;}
+  .sl-content {width: 50%;}
+  .band_member_name {text-align: left; padding: 0;}
+  .band_member_role {text-align: left; padding: 0;}
+  .social-icons a {margin-left: 20px;}
+}
 @media screen and (max-width: 800px) {
   #menu-main-menu li a, #menu-single-page li a {
     min-width: 60px;
     line-height: 40px;
     font-size: 90%;
   }
-  .sl-content {width: 60%;}
+  .sl-content {width: 50%;}
   .sl-content h5 {font-size: 30px !important;}
   .sl-content p {font-size: 12px!important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1rem !important;}
