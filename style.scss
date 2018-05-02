@@ -100,7 +100,7 @@ header {
 
 .menu-noscroll {
   width: 100%;
-  position: fixed;
+  position: relative;
   z-index: 1045;
   background: #fff !important;
   height: 70px;
@@ -1057,6 +1057,30 @@ input {
   height: 0px;
 }
 
+
+.single_page_row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.single_page_title h1 {
+  font-size: 200%!important;
+  width: 100%;
+  height: auto;
+}
+.single_page_cover {
+  position: relative;
+  width: 100%;
+  height:auto;
+}
+.single_page_cover img {
+  position: relative;
+  width: 100%;
+  height:auto;
+}
+
+
+
 /*
 ============================================
            Media query
@@ -1068,13 +1092,21 @@ input {
   .sl-content h5 {font-size: 45px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
 }
+
+@media screen and (max-width: 1024px) {
+  .carousel-inner {height: 50vh !important;}
+  .sl-content {width: 50%;}
+  .band_member_name {text-align: left; padding: 0;}
+  .band_member_role {text-align: left; padding: 0;}
+  .social-icons a {margin-left: 20px;}
+}
 @media screen and (max-width: 800px) {
   #menu-main-menu li a, #menu-single-page li a {
     min-width: 60px;
     line-height: 40px;
     font-size: 90%;
   }
-  .sl-content {width: 60%;}
+  .sl-content {width: 50%;}
   .sl-content h5 {font-size: 30px !important;}
   .sl-content p {font-size: 12px!important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1rem !important;}
