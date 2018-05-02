@@ -52,7 +52,5 @@ get_header('noscroll'); ?>
 			<?php get_sidebar(); ?>
 		</div>
 	</div>	 
-<?php 
-
-get_footer(); ?>
+<?php get_footer(); ?>
 </div>

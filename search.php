@@ -7,7 +7,6 @@
  */
 
 get_header('noscroll'); ?>
-
 <div class="container search-holder">
     <div class="row">
         <header class="page-header">
@@ -17,10 +16,17 @@ get_header('noscroll'); ?>
         <div class="content">
             <div class="conent_holder">
                 <div class="row koband_post_news">
-                    <?php while ( have_posts() ) : the_post(); ?>
+                    <?php while ( have_posts() ) : the_post(); 
+                    $post_type = get_post_type();?>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+                                <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2><h5><?php _e('Post Type : ', 'koband'); 
+                                if ($post_type == 'post') { echo _e('News', 'koband'); } 
+                                elseif ($post_type == 'media') { echo _e('Gallery', 'koband');}
+                                elseif ($post_type == 'album') { echo _e('Album', 'koband');}
+                                elseif ($post_type == 'singles') { echo _e('Single', 'koband');}
+                                elseif ($post_type == 'theband') { echo _e('Band Member', 'koband');}
+                                elseif ($post_type == 'tour') { echo _e('Tour', 'koband');}?></h5></div>
                                 <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
                                 <div class="card-body">
                                     <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>

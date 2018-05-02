@@ -993,9 +993,7 @@ input {
   line-height: 3;
   margin-bottom: 2em;
 }
-.search-holder {
-  padding-top: 110px;
-}
+
 .gal {
 
 
@@ -1078,7 +1076,7 @@ input {
   width: 100%;
   height:auto;
 }
-.album_single_page, .tour_single_page_container{
+.album_single_page, .tour_single_page_container, .theband_single_page{
   padding-bottom: 25px;
 }
 .album_single_page_details {
@@ -1094,6 +1092,13 @@ input {
 .the_tour_map iframe{
   height: 400px !important;
   width: 400px !important;
+}
+.search-holder{
+  padding-top: 15px;
+}
+.theband_single_title {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 /*
 ============================================
