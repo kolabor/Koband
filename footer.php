@@ -29,7 +29,7 @@
         </div>    
         <div class="media-container-row">
             <div class="col-md-6 footer_right_side">
-                <div class= "col-md-6 footer_search ">
+                <div class= "footer_search ">
                     <!--Footer search fields-->
                     
                         <?php
@@ -57,7 +57,7 @@
                   $bandcamp= get_theme_mod( 'ko_band_bandcamp_social_media', false );
                   $apple= get_theme_mod( 'ko_band_apple_social_media', false);
                 ?>
-            <div class="col-md-6 social-media"> 
+            <div class="social-media"> 
                 <!--Footer social Media-->
                 <div class="social-list align-right">
                     <div class="social-icons "><?php if(isset($facebook[0])) { echo "<a href='$facebook'><i class='fab fa-facebook-f first_color'></i></a>";} ?> 
