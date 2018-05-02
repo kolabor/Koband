@@ -254,7 +254,7 @@ wp_enqueue_script('ko_band_retina', 'http://192.168.88.225/wp-content/uploads/20
 
 add_action( 'wp_head', 'ko_band_retina_script' );
 
-// test search 
+// Search for posts and CPT
 add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
 /**
  * This function modifies the main WordPress query to include an array of 
