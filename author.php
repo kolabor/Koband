@@ -23,23 +23,24 @@ get_header('noscroll'); ?>
 	</header>
 	<div class="row author-rows">
 		<?php
-		global $current_user;                     
+		global $current_user; 
+		wp_get_current_user();                    
 	    $args_author = array(
-	    	'author' =>  $current_user->ID,		
+	    	'author' => $author,		
 		 	'post_type' => 'post',   
 			'post_staus'=> 'publish',
 			'posts_per_page' => -1,
 			 
 		); 
 	    $args_author_media = array(
-	    	'author' =>  $current_user->ID,		
+	    	'author' =>  $author,		
 		 	'post_type' => 'media',   
 			'post_staus'=> 'publish',
 			'posts_per_page' => -1,
 			 
 		);
 		$args_author_album = array (
-			'author' =>  $current_user->ID,
+			'author' =>  $author,
 			'post_type' => 'album',
 			'post_staus'=> 'publish',
 			'posts_per_page' => -1,
@@ -47,18 +48,18 @@ get_header('noscroll'); ?>
 
 		);
 		$args_author_singles = array(
-		  	'author' =>  $current_user->ID,
+		  	'author' =>  $author,
 			'post_type' => 'singles',
 			'post_staus'=> 'publish',
 			'posts_per_page' => -1,		  
 		);
 		$args_author_tour = array(	
-			'author' =>  $current_user->ID,
+			'author' =>  $author,
 		 	'post_type' => 'tour',   
 			'post_staus'=> 'publish',
 			'posts_per_page' => -1,
 		);
-		$current_user_posts = get_posts( $args );
+		$current_user_posts = get_posts( $args_author, $args_author_media, $args_author_album, $args_author_singles, $args_author_tour );
 		$total = count($current_user_posts); 
 		$author_posts = new WP_Query($args_author);
 		if ($author_posts->have_posts() ) : ?>
@@ -97,7 +98,7 @@ get_header('noscroll'); ?>
 				$post_id = get_the_ID(); ?>
 					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 					    <div class="hovereffect">
-					      <a href="<?php the_permalink();?>"><img class="img-responsive" src="<?php the_post_thumbnail(array(230,230)); ?>"></a>
+					      <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a>
 				            <div class="overlay">
 				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 									<a class="info" first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband'); ?></a>
@@ -124,7 +125,7 @@ get_header('noscroll'); ?>
 		$post_id = get_the_ID();?>
 		<div class="container">
 			<div class="row album-head border_first_color main_font_color">
-				<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+				<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
 					<div class="col-sm-3 main_font_color"><?php _e('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 
 			        <?php 
@@ -149,7 +150,7 @@ get_header('noscroll'); ?>
 						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Length', 'koband');?></div>
 						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 					</div>
-					<div class="row song-list border_first_color bg_second_color main_font_color">			
+					<div class="row song-list border_first_color main_font_color">			
 					<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
 						<div class="col-sm-4"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
 						<div class="col-sm-4"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
@@ -195,7 +196,7 @@ get_header('noscroll'); ?>
 					
 			<div class="container">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+					<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
 						<div class="col-sm-3 main_font_color"><?php echo __('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 						<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
 						<div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
@@ -211,7 +212,7 @@ get_header('noscroll'); ?>
 				<div class="row album-head border_first_color">
 					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 				</div>
-				<div class="row song-list border_first_color bg_second_color main_font_color">			
+				<div class="row song-list border_first_color main_font_color">			
 				<?php foreach ($single_detail as  $value_single_detail) { ?>
 					<div class="col"><?php if(isset($value_single_detail)) {echo $value_single_detail;} ?></div>
 				<?php } ?> 
@@ -221,7 +222,7 @@ get_header('noscroll'); ?>
 					<div class="col-sm-5"><?php echo __('Store Name:', 'koband');?></div>
 					<div class="col-sm-5"><?php echo __('Store Link:', 'koband');?></div>
 				</div>
-				<div class="row song-list border_first_color bg_second_color main_font_color">
+				<div class="row song-list border_first_color main_font_color">
 					<?php if(isset($single_store[0])) { ?>
 						<?php foreach ($single_store[0] as  $value_single_store) { ?>
 						<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
@@ -248,14 +249,14 @@ get_header('noscroll'); ?>
     	<div class="divTable">
             <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Date', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Country', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('City', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Address', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
-                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Store', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Country', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Store', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -289,4 +290,5 @@ get_header('noscroll'); ?>
     	<?php endif; ?>
 	</div>
 </div>
+
 <?php get_footer(); ?>

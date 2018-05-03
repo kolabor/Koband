@@ -2,8 +2,8 @@ jQuery(function($) {
 
   var file_frame;
 
+  //$("form").rememberState("#ko_band_gallery-metabox");
   $(document).on('click', '#ko_band_gallery-metabox a.gallery-add', function(e) {
-
   e.preventDefault();
 
   if (file_frame) file_frame.close();
