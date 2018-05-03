@@ -20,8 +20,8 @@ if (have_posts() ) :
 <div class='media_holder'>
 	<?php  while ( have_posts() ) : the_post(); 
 	$post_id = get_the_ID(); ?>
-	<div id="media-photo"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(1024,800)); ?></a>
 		<div class="container">
+		<div id="media-photo"><?php the_post_thumbnail('single_news_thumb'); ?></div>
 		<h1><div id="single-media-title"><?php the_title();?></div></h1>
 			<div class="row">
 				<div class="col-sm news-details">

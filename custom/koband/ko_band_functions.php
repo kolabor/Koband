@@ -101,6 +101,7 @@ function ko_band_theme_support () {
 	add_image_size( 'news_thumb', 694, 510, TRUE ); // Hard Crop Mode
 	add_image_size( 'gallery_thumb', 553, 546, TRUE ); // Hard Crop Mode
 	add_image_size( 'member_thumb', 400, 400, TRUE ); // Hard Crop Mode
+	add_image_size( 'single_news_thumb', 1024, 350, TRUE ); // Hard Crop Mode
 	
 	add_theme_support('html5', array('search-form'));
 	add_theme_support( 'automatic-feed-links' );

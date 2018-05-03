@@ -15,7 +15,7 @@ get_header('noscroll'); ?>
 			<!--start loop --> 
 			<?php while (have_posts() ) : the_post(); ?>
 	<div class="container">
-				<div id="news-photo"><?php the_post_thumbnail(array(800,800)); ?></div>
+				<div id="news-photo"><?php the_post_thumbnail('single_news_thumb'); ?></div>
 			<div class="content">
 				<div class="conent_holder">
 						<h1 class="news-single-title section_heading"><?php the_title();?></h1>

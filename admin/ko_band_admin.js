@@ -91,21 +91,8 @@ jQuery(function($) {
     e.preventDefault();
 
        $(this).parent().remove(); 
-});
-
-/*
-  $(document).on('click', '#ko_band_gallery-metabox a.remove-image', function(e) {
-    e.preventDefault();
-
-      $(this).parents('li').animate({ opacity: 0 }, 200, function() {
-      $(this).remove();
-      resetIndex();
-    
-    });
-  
   });
 
-  makeSortable(); */
 
 });
 
