@@ -983,7 +983,7 @@ input {
   display: block;
   overflow: hidden;
 }
-.without_ampm::-webkit-datetime-edit-ampm-field {
+.without_ampm {
   display: none;
 }
 input[type=time]::-webkit-clear-button {
