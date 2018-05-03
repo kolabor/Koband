@@ -68,7 +68,7 @@ get_header(); ?>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
+                    	<div class="divTableCell btn-buy border_first_color first_color "><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
@@ -80,7 +80,7 @@ get_header(); ?>
                 <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
                     <span class="koband-loading"><?php echo __('Loading...','koband');?></span>
                     <span class="text"><?php echo __('Load tour','koband');?></span></a>
-                <a class="no-tour"><span class="tour-posts"><?php echo __('There are no more tours','koband');?></span></a>
+                <a class="no-tour"><span class="tour-posts"><?php echo __('There are no more tours','koband');?>   <i class="far fa-smile"></i></span></a>
             </div>
         </div><!--container-->
     </div><!--container-->

@@ -58,7 +58,7 @@
 						<a class="btn-koband-load koband_load_more bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 							<span class="koband-loading"><?php echo __('Loading...', 'koband');?></span>
 							<span class="text"><?php echo __('Load more', 'koband');?></span></a>
-						<a class="no-news"><span class="news-posts"><?php echo __('There are no more news', 'koband');?></span></a>
+						<a class="no-news"><span class="news-posts"><?php echo __('There are no more news', 'koband');?>  <i class="far fa-smile"></i></span></a>
 					</div>
 				</div>
 		

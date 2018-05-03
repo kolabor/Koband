@@ -457,7 +457,6 @@ Tour Section
   display: table-row-group; }
 
 .btn-buy a {
-  color: #7e1c1c !important;
   text-decoration: none !important; }
 
 /*
@@ -901,6 +900,14 @@ input {
   display: block;
   overflow: hidden; }
 
+input[type=time]::-webkit-clear-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  margin: -10px; }
+
 /*
 =================================
   search
@@ -1023,6 +1030,16 @@ input {
 .theband_single_title {
   padding-top: 10px;
   padding-bottom: 10px; }
+
+.comment-form-author input, .comment-form-email input, .comment-form-url input {
+  width: 240px !important;
+  border: 1px solid #b5b5b5; }
+
+.comment-form-author label, .comment-form-email label, .comment-form-url label, .comment-form-comment label {
+  text-align: left !important; }
+
+.comment-form-author input:focus, .comment-form-email input:focus, .comment-form-url input:focus {
+  background-color: #aeaeae1a; }
 
 /*
 ============================================
