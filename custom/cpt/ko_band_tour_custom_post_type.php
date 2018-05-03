@@ -50,7 +50,7 @@ function ko_band_tour_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array('title', 'editor'),
     'taxonomies' => array('category', 'post_type', 'post_tag'),
     'exclude_from_search' =>false,
 
@@ -112,7 +112,7 @@ function ko_band_tour_display_meta_box($post, $box){
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="date" name="ko_band_tour_date" value="'<?php echo esc_html( $tour_date )?>" class="widefat" placeholder="<?php _e('Date', 'koband');?>"></div>
+            <div class="col-sm"><input type="date" name="ko_band_tour_date" value="<?php echo esc_html( $tour_date )?>" class="widefat" ></div>
             <div class="col-sm"><input type="text" name="ko_band_tour_country" value="<?php echo esc_textarea( $tour_country )?>" class="widefat" placeholder="<?php echo __('Country', 'koband');?>"></div>
         </div>
 

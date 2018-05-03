@@ -515,7 +515,6 @@ Tour Section
 }
 
 .btn-buy a {
-  color: #7e1c1c!important;
   text-decoration: none!important;
 }
 
@@ -984,7 +983,17 @@ input {
   display: block;
   overflow: hidden;
 }
-
+.without_ampm::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
+input[type=time]::-webkit-clear-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance:none;
+  appearance: none;
+  margin: -10px;
+}
 /*
 =================================
   search
