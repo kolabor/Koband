@@ -910,6 +910,9 @@ input {
   display: block;
   overflow: hidden; }
 
+.without_ampm {
+  display: none; }
+
 input[type=time]::-webkit-clear-button {
   -webkit-appearance: none;
   -moz-appearance: none;
