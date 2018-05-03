@@ -38,10 +38,10 @@ get_header(); ?>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo __('Date', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo __('Country', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo __('City', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Address', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color address"><?php echo __('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color zipcode"><?php echo __('ZipCode', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo __('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo __('Store', 'koband');?></div>
                 </div>
                       
@@ -64,8 +64,8 @@ get_header(); ?>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color address"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color zipcode"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
                     	<div class="divTableCell btn-buy border_first_color first_color "><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
