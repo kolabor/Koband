@@ -80,7 +80,7 @@ get_header();?>
 					<?php } ?> 
 				</div>
 				<!-- Labels -->
-				<div class="col-sm-12 row album-head border_first_color main_font_color">
+				<div class="row album-store border_first_color main_font_color">
 					<div class="col-sm-3 store"><?php echo __('Store Name', 'koband');?></div>
 					<div class="col-sm-3 store"><?php echo __('Store Link', 'koband');?></div>
 				</div>
@@ -88,8 +88,8 @@ get_header();?>
 					<?php 
 						foreach ($album_song_store[0] as  $value_song_store) { ?>
 						<div class="col-sm-12 row song-list border_second_color main_font_color">
-						<div class="col-sm-3 line"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-						<div class="col-sm-3 first_color btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> </div>
+						<div class="col-sm-3 store_name line"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
+						<div class="col-sm-3 store_link first_color btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> </div>
 
 					<?php } ?> 
 							
@@ -148,8 +148,8 @@ get_header();?>
 			<?php if(isset($single_store[0])) { ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
 
-				<div class="col-sm-5 line"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
-				<div class="col-sm-6 first_color btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
+				<div class="col-sm-5 store_name line"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
+				<div class="col-sm-6 store_link first_color btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
 
 			<?php } } ?>
 		</div>

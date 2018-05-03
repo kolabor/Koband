@@ -11,10 +11,9 @@
  * @subpackage Koband
  * @since Koband 1.0
  */
-
 get_header('noscroll'); ?>
-<div class="container search-holder">
-	<div id="content" role="main">
+<div class="container tag_page">
+	<div id="content search-holder" >
 		<header class="archive-header">
 		<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'koband' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 		</h1>
@@ -68,7 +67,7 @@ get_header('noscroll'); ?>
 		);
 	    $tags_tour_posts = new WP_Query( $args_tags_tour );
 	    if ( $tags_tour_posts->have_posts() ) : ?>
-	    	<header class="archive-header">
+	    <header class="archive-header">
 		<h1 class="archive-title"><?php printf( __( 'Tag Tour Archives: %s', 'koband' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 		</h1>
 			<?php if ( tag_description() ) : // Show an optional tag description ?>
@@ -77,16 +76,16 @@ get_header('noscroll'); ?>
 		</header><!-- .archive-header -->
 	    <!--start loop-->
 	        <div class="divTable">
-	            <div class="divTableBody koband_post_tour">
+	            <div class="divTableBody">
 	                <div class="divTableRow">
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Date', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Country', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('City', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Address', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Venue', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
-	                    <div class="divTableHeading border_first_color bg_second_color main_font_color"><?php echo __('Store', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Date', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Country', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('City', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Address', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Venue', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
+	                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Store', 'koband');?></div>
 	                </div>
 	                      
 	                <?php
@@ -152,7 +151,7 @@ get_header('noscroll'); ?>
 				
 		<div class="container">
 			<div class="row album-head border_first_color main_font_color">
-				<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+				<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
 					<div class="col-sm-3 main_font_color"><?php _e('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 
 			        <?php 
@@ -177,7 +176,7 @@ get_header('noscroll'); ?>
 						<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Length', 'koband');?></div>
 						<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
 					</div>
-					<div class="row song-list border_first_color bg_second_color main_font_color">			
+					<div class="row song-list border_first_color main_font_color">			
 					<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
 						<div class="col-sm-4"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
 						<div class="col-sm-4"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
@@ -223,7 +222,7 @@ get_header('noscroll'); ?>
 					
 			<div class="container">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+					<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
 						<div class="col-sm-3 main_font_color"><?php _e('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 						<div class="col-sm-3 main_font_color"><?php _e('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
 						<div class="col-sm-3 main_font_color"><?php _e('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
@@ -239,7 +238,7 @@ get_header('noscroll'); ?>
 				<div class="row album-head border_first_color">
 					<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
 				</div>
-				<div class="row song-list border_first_color bg_second_color main_font_color">			
+				<div class="row song-list border_first_color main_font_color">			
 				<?php foreach ($single_detail as  $value_single_detail) { ?>
 					<div class="col"><?php if(isset($value_single_detail)) {echo $value_single_detail;} ?></div>
 				<?php } ?> 
@@ -249,7 +248,7 @@ get_header('noscroll'); ?>
 					<div class="col-sm-5"><?php _e('Store Name:', 'koband');?></div>
 					<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
 				</div>
-				<div class="row song-list border_first_color bg_second_color main_font_color">
+				<div class="row song-list border_first_color main_font_color">
 					<?php if(isset($single_store[0])) { ?>
 						<?php foreach ($single_store[0] as  $value_single_store) { ?>
 						<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
@@ -284,7 +283,7 @@ get_header('noscroll'); ?>
 			$post_id = get_the_ID(); ?>
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				    <div class="hovereffect">
-				      <a href="<?php the_permalink();?>"><img class="img-responsive" src="<?php the_post_thumbnail(array(230,230)); ?>"></a>
+				      <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a>
 			            <div class="overlay">
 			                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 								<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>

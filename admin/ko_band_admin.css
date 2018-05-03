@@ -166,4 +166,7 @@ input.radio1, input.radio2 {
 .customize-control input[type="checkbox"] {
   margin-top: 5px; }
 
+#menu-media {
+  display: none !important; }
+
 /*# sourceMappingURL=ko_band_admin.css.map */
