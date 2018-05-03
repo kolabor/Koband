@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4cbbe8-020a-4527-b674-a1b601ce67a6" name="Default" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/koband/ko_band_ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/koband/ko_band_ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/templates/discography-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/discography-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/templates/tour-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/tour-template.php" afterDir="false" />
+>>>>>>> 7764607ed19b1b88d079355d8df3af4360ec4319
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
@@ -19,17 +26,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="738">
               <caret line="1273" column="30" selection-start-line="1273" selection-start-column="30" selection-end-line="1273" selection-end-column="30" />
+=======
+    <leaf>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="998" column="16" selection-start-line="998" selection-start-column="16" selection-end-line="998" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css.map" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/style.css.map">
+          <provider editor-type-id="sourcemapFileViewerProvider" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="2" column="1524" selection-start-line="2" selection-start-column="1524" selection-end-line="2" selection-end-column="1524" />
+>>>>>>> 7764607ed19b1b88d079355d8df3af4360ec4319
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>album</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +68,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/admin/ko_band_admin.scss" />
         <option value="$PROJECT_DIR$/style.scss" />
+        <option value="$PROJECT_DIR$/style.css.map" />
       </list>
     </option>
   </component>
@@ -71,6 +104,16 @@
             <path>
               <item name="koband" type="b2602c69:ProjectViewProjectNode" />
               <item name="koband" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koband" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koband" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="koband" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koband" type="462c0819:PsiDirectoryNode" />
+              <item name="style.scss" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -108,19 +151,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525341891631</updated>
+<<<<<<< HEAD
       <workItem from="1525341896923" duration="2939000" />
       <workItem from="1525361347562" duration="990000" />
+=======
+      <workItem from="1525341896923" duration="5286000" />
+>>>>>>> 7764607ed19b1b88d079355d8df3af4360ec4319
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="5630000" />
+=======
+    <option name="totallyTimeSpent" value="5286000" />
+>>>>>>> 7764607ed19b1b88d079355d8df3af4360ec4319
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+>>>>>>> 7764607ed19b1b88d079355d8df3af4360ec4319
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
@@ -146,8 +201,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin/ko_band_admin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="180" column="27" selection-start-line="180" selection-start-column="27" selection-end-line="180" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="20230">
           <caret line="1190" column="21" selection-end-line="1268" />
         </state>
@@ -185,6 +248,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="1273" column="30" selection-start-line="1273" selection-start-column="30" selection-end-line="1273" selection-end-column="30" />
+=======
+        <state relative-caret-position="554">
+          <caret line="998" column="16" selection-start-line="998" selection-start-column="16" selection-end-line="998" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="2" column="1524" selection-start-line="2" selection-start-column="1524" selection-end-line="2" selection-end-column="1524" />
+>>>>>>> 7764607ed19b1b88d079355d8df3af4360ec4319
         </state>
       </provider>
     </entry>

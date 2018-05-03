@@ -22,12 +22,12 @@ get_header(); ?>
 				</div>
 			</div>
 			
-					<?php $args_theband = array(		
-					 	'post_type' => 'theband',   
-						'post_staus'=> 'publish',
-						'posts_per_page' => -1
-					);
-					$theband_posts = new WP_Query( $args_theband );?>
+			<?php $args_theband = array(		
+			 	'post_type' => 'theband',   
+				'post_staus'=> 'publish',
+				'posts_per_page' => -1
+			);
+			$theband_posts = new WP_Query( $args_theband );?>
 					
 			<div class="container band-bio">
 				<div class="row koband_post_theband">
@@ -65,7 +65,7 @@ get_header(); ?>
 										          	<button type="button" class="close" data-dismiss="modal">&times;</button>
 										        </div>
 												<div class="modal-body">
-													<div class="popup-img"><?php the_post_thumbnail(array(800,800)); ?></div>
+													<div class="popup-img"><?php the_post_thumbnail(); ?></div>
 											          	<h4 class="main_font_color"><?php echo __('Biography : ', 'koband');?></h4>
 											          	<div class="main_font_color"><?php the_content();?></div>
 											          	<h4 class="main_font_color"><?php echo __('Band Role : ', 'koband');?></h4>
