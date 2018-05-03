@@ -87,7 +87,6 @@ function ko_band_singles_display_meta_box($post, $box){
               <div class="col-sm"><?php echo __('Single Length', 'koband');?></div>
               <div class="col-sm"><?php echo __('Date Release', 'koband');?></div>
               <div class="col-sm"><?php echo __('Single Detail', 'koband');?></div>
-              <div class="col-sm"></div>
     </div>
     
     <div class="row">
