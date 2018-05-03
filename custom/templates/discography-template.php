@@ -46,7 +46,7 @@ get_header();?>
 			
 	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
-			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+			<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo __('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 
 		        <?php 
@@ -116,7 +116,7 @@ get_header();?>
 					
 	<div class="container">
 		<div class="row album-head border_first_color">
-			<div class="col-sm-1"><?php the_post_thumbnail(array(70,70));?></div>
+			<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo __('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo __('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>

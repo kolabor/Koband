@@ -50,7 +50,7 @@ function ko_band_album_custom_post_type() {
     'query_var' => true,
     'rewrite' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array('title', 'thumbnail'),
     'taxonomies' => array('category', 'post_type', 'post_tag'),
     'exclude_from_search' =>false,
 

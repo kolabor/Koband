@@ -267,6 +267,7 @@ function ko_band_cpt_search( $query ) {
 	
     if ( $query->is_search ) {
 	$query->set( 'post_type', array( 'post', 'media', 'album', 'tour', 'singles', 'theband' ) );
+    $query->query_vars['posts_per_page'] = -1;
     }
     
     return $query;

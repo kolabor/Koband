@@ -1021,6 +1021,16 @@ input {
   padding-top: 10px;
   padding-bottom: 10px; }
 
+.comment-form-author input, .comment-form-email input, .comment-form-url input {
+  width: 240px !important;
+  border: 1px solid #b5b5b5; }
+
+.comment-form-author label, .comment-form-email label, .comment-form-url label, .comment-form-comment label {
+  text-align: left !important; }
+
+.comment-form-author input:focus, .comment-form-email input:focus, .comment-form-url input:focus {
+  background-color: #aeaeae1a; }
+
 /*
 ============================================
            Media query
