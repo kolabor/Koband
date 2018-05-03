@@ -73,16 +73,16 @@ get_header();?>
 				</div>
 				<div class="row song-list main_font_color">			
 				<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
-					<div class="col-sm-4 border_bottom line"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
-					<div class="col-sm-4 border_bottom line"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
-					<div class="col-sm-4 border_bottom "><?php if(isset($value_song_details['detail'])) {echo $value_song_details['detail'];} ?></div>
+					<div class="col-sm-4 song_info border_bottom line"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
+					<div class="col-sm-4 song_info border_bottom line"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
+					<div class="col-sm-4 song_info border_bottom "><?php if(isset($value_song_details['detail'])) {echo $value_song_details['detail'];} ?></div>
 						
 					<?php } ?> 
 				</div>
 				<!-- Labels -->
 				<div class="col-sm-12 row album-head border_first_color main_font_color">
-					<div class="col-sm-3"><?php echo __('Store Name', 'koband');?></div>
-					<div class="col-sm-3"><?php echo __('Store Link', 'koband');?></div>
+					<div class="col-sm-3 store"><?php echo __('Store Name', 'koband');?></div>
+					<div class="col-sm-3 store"><?php echo __('Store Link', 'koband');?></div>
 				</div>
 				
 					<?php 
@@ -90,6 +90,7 @@ get_header();?>
 						<div class="col-sm-12 row song-list border_second_color main_font_color">
 						<div class="col-sm-3 line"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
 						<div class="col-sm-3 first_color btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> </div>
+
 					<?php } ?> 
 							
 			</div><!-- container album-songs-show-hide -->
@@ -140,14 +141,19 @@ get_header();?>
 
 
 		<div class="row album-head border_first_color main_font_color">
-			<div class="col-sm-5"><?php echo __('Store Name:', 'koband');?></div>
-			<div class="col-sm-5"><?php echo __('Store Link:', 'koband');?></div>
+			<div class="col-sm-5 store"><?php echo __('Store Name:', 'koband');?></div>
+			<div class="col-sm-5 store"><?php echo __('Store Link:', 'koband');?></div>
 		</div>
 		<div class="row song-list border_second_color main_font_color">
 			<?php if(isset($single_store[0])) { ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
+<<<<<<< HEAD
+				<div class="col-sm-5 store_name line"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
+				<div class="col-sm-6 store_link btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
+=======
 				<div class="col-sm-5 line"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
 				<div class="col-sm-6 first_color btn-buy line"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
+>>>>>>> ebc06f45c3bae3ef1c61de9aacacab89d4f1ff40
 			<?php } } ?>
 		</div>
 	</div><!-- container single-songs-show-hide -->	

@@ -173,14 +173,13 @@ header {
 }
 
 .mobile-nav-icon {
-  width: 40%;
+  width: 29%;
   height: auto;
   position: relative;
   cursor: pointer;
   display: none;
-  padding-top: 11px;
-  padding-left: 20px;
   font-size: 30px;
+  text-align: left;
 }
 
 .mobile-nav-icon i {
@@ -573,6 +572,10 @@ Discography Section
   padding-left: 0;
   padding-right: 0;
   margin-left: 0;
+}
+.song-list .col {
+  padding: 5px 15px;
+  border-bottom: 1px solid #cacaca;
 }
 // Show hide discography icons
 .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
@@ -983,6 +986,7 @@ input {
   display: block;
   overflow: hidden;
 }
+
 .without_ampm {
   display: none;
 }
@@ -1187,14 +1191,35 @@ input[type=time]::-webkit-clear-button {
 @media screen and (max-width: 414px){
   .mobile-nav-icon { display: inline-block; }
   .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
-  #menu-main-menu {position: relative; list-style-type: none; width: 63%; text-align: center;}
+  #menu-main-menu {position: relative; list-style-type: none; width: 88%; text-align: center; padding-top: 5px;}
   .main-nav { float: left; text-align: center; width: 100%; height: auto; position: relative; display: none;}
   #menu-main-menu li {display: block; width: 100%;}
   #menu-main-menu li a{width: 100%; display: block; font-size: 100%; line-height: 25px; height: 30px;}
-  .main-logo {width: 50%; padding-left: 25px;}
+  .main-logo     {width: 60%; padding-left: 20px; margin-left: 39px;}
+  .logo {margin-top: 0;}
   .menu-scroll {height: auto;}
   .sl-content h5 {font-size: 15px !important;}
   .sl-content p {font-size: 8px !important;}
   .btn-lg {font-size: 10px!important; padding: 2px 8px;}
   .carousel-indicators { top: 97% !important;}
+  .album-up-down-buttons, .single-up-down-buttons {width: 25%; height: auto; position: absolute; right: 0;}
+  .album-song, .single-song {padding: 10px!important;  }
+  .col-sm-1 {padding-left: 15px!important; margin-bottom: 10px;}
+  .section h1 {width: 100%; text-align: center;}
+  .albums-title, .single-title {text-align: center;}
+  .news-title {text-align: center;}
+  .koband_post_theband .col-sm-4 {flex: 200px; text-align: center;}
+  .koband_post_theband h4 {text-align: center;}
+  .divTableHeading {font-size: 90%; line-height: 1; font-weight: 700; padding: 3px;}
+  .divTableCell {font-size: 70%; line-height: 100%; padding: 3px; font-weight: 500;}
+  .footer_search {padding-left: 20px; margin-bottom: 0;}
+  .search-form {float: left;}
+  #menu-footer-menu {padding-left: 0; margin-right: 75px; text-align: center;}
+  .social-media {text-align: center; margin-bottom: 14px; margin-right: 11px;}
+  #back-to-top {right: 27px;}
+  .songs-head {width: 33%; height: auto;}
+  .song_info {width: 33%; }
+  .album-head, .song-list {margin-left: -15px}
+  .line {line-height: 26px;}
+  .store, .store_name, .store_link {width: 50%;}
 }
