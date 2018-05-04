@@ -46,8 +46,8 @@ get_header('noscroll'); ?>
 				    <div class="row album-head single-info">
 						<div class="col-sm-4 border_first_color main_font_color"><?php echo __('Song Lyrics', 'koband');?></div>
 					</div>
-					<div class="row song-list border_first_color  main_font_color">   
-					      <?php the_content(); ?> 
+					<div class="row song-list border_first_color lyrics-singles main_font_color">   
+					      <div class="col"><?php the_content(); ?></div> 
 				    </div>
 					<div class="row album-head border_first_color main_font_color">
 						<div class="col-sm-4"><?php echo __('Store Name', 'koband');?></div>
