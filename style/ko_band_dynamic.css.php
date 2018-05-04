@@ -56,11 +56,9 @@
 
 
   /***Social Media*****/
-  $koband_social_media = get_theme_mod('ko_band_social_media_checkbox'); 
   $koband_facebook = get_theme_mod( 'ko_band_facebook_social_media' );
   $koband_twitter = get_theme_mod( 'ko_band_twitter_social_media' );
   $koband_insagram = get_theme_mod( 'ko_band_insagram_social_media' );
-  $koband_googleplus = get_theme_mod( 'ko_band_googleplus_social_media' );
   $koband_youtube = get_theme_mod( 'ko_band_youtube_social_media' );
   $koband_spotify = get_theme_mod( 'ko_band_spotify_social_media' );
   $koband_soundcloud = get_theme_mod( 'ko_band_soundcloud_social_media' );
@@ -71,6 +69,13 @@
   $koband_theband_biography = get_theme_mod('ko_band_theband_biography');
   $koband_theband_image = get_theme_mod('ko_band_theband_sectin_background_image');
 
+  /***Contact section**/
+  $koband_contact_country = get_theme_mod('ko_band_contact_country'); 
+  $koband_contact_city = get_theme_mod('ko_band_contact_city');
+  $koband_contact_address = get_theme_mod('ko_band_contact_address');
+  $koband_contact_email = get_theme_mod('ko_band_contact_email');
+  $koband_contact_phone = get_theme_mod('ko_band_contact_phone');
+ 
    /**Footer Logo**/
   $koband_footer_logo = get_theme_mod('ko_band_footer_logo');  
   $koband_retina_footer_logo = get_theme_mod('ko_band_retina_footer_logo'); 
@@ -230,27 +235,3 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 }
 
 
-<!--#logo{
-  
-  <?php /*if (!empty($koband_main_logo)) 
-  { ?>
-  background-image: : <?php echo $koband_main_logo; ?> !important;
-  <?php }
-  else 
-  { ?>
-  background-image: : <?php echo $koband_retina_main_logo;?> !important;
-  <?php } 
-  ?>
-}
-
-
-//
-.site-icon-preview.wp-clearfix{
-    background-image: <?php echo url($koband_retina_favicon);?> !important;
-    background-size: 400px 300px !important;
-    background-repeat: no-repeat !important;
-    display: block !important;
-    width: 400px !important;
-    height: 300px !important;
-}-->
-*/
