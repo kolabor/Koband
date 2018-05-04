@@ -781,7 +781,10 @@ Tour Section
   display: block;
   width: 30%;
   height: 100%;
-  float: right; }
+  float: right;
+  padding-left: 10px;
+  list-style: none;
+  padding-top: 25px; }
 
 .comment-body {
   padding-top: 10px;
