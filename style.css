@@ -1072,6 +1072,52 @@ input {
 .lyrics-singles {
   padding-top: 10px; }
 
+#contact {
+  padding-top: 15px; }
+
+/*
+============================================
+            Styling Contact Form 7
+============================================
+ */
+.wpcf7-submit {
+  width: 250px !important; }
+
+.contact_form {
+  padding-bottom: 25px !important; }
+
+.wpcf7-form {
+  text-align: center !important; }
+
+.wpcf7-form p {
+  text-align: left !important;
+  padding-left: 30px; }
+
+.wpcf7 {
+  width: 100%;
+  padding-top: 25px !important; }
+
+.wpcf7 input {
+  width: 95%;
+  border: 1px solid #b5b5b5; }
+
+.wpcf7 textarea {
+  border: 1px solid #b5b5b5;
+  width: 95% !important;
+  height: 30% !important; }
+
+.wpcf7 label {
+  text-align: left !important;
+  font-weight: 600; }
+
+.wpcf7 textarea:focus {
+  border: 1px solid #00a8a8;
+  background-color: #d1ecf11a; }
+
+.wpcf7 input:focus {
+  border: 1px solid #00a8a8;
+  background-color: #d1ecf11a; }
+
 /*
 ============================================
            Media query
@@ -1431,6 +1477,3 @@ input {
     width: 360px; } }
 
 /*# sourceMappingURL=style.css.map */
-
-
-

@@ -19,7 +19,6 @@ wp_head(); ?>
   <?php wp_head();?>
    
 </head>
-<body>
   <body <?php body_class(); ?>>
                 <header>
                   <nav class="menu-noscroll">
@@ -48,8 +47,6 @@ wp_head(); ?>
                   </nav>
                 </header>
      
-
-</body>
 
                   
          

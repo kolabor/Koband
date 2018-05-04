@@ -234,4 +234,6 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   opacity: 0.5!important;
 }
 
-
+#contact .wpcf7 {
+  border: 1px solid <?php echo $koband_first_theme_color; ?> !important;
+} 

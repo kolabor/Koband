@@ -19,7 +19,6 @@ wp_head(); ?>
   <?php wp_head();?>
    
 </head>
-<body>
   <body <?php body_class(); ?>>
                 <header>
                   <nav class="menu-scroll">
@@ -51,7 +50,6 @@ wp_head(); ?>
                 </header>
      
 
-</body>
 
                   
          
