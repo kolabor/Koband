@@ -511,6 +511,57 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 /*** The band section end here  ***/
 /***********************************************************************************************************************/
 
+/*** Contact section starts here  ***/
+$wp_customize->add_section( 'ko_band_contact_section' , array(
+    'title'       => esc_html__( 'Contact', 'koband' ),
+    'priority'    => 31,
+    'description' => '<hr> Contact Information about your band',
+) );
+
+/*Contact Country*/
+$wp_customize->add_setting( 'ko_band_contact_country' );
+$wp_customize->add_control( 'ko_band_contact_country', array(
+    'label' => esc_html__( 'Country Name:', 'koband' ),
+    'settings' => 'ko_band_contact_country',
+    'section' => 'ko_band_contact_section',
+) );
+
+/*Contact City*/
+$wp_customize->add_setting( 'ko_band_contact_city' );
+$wp_customize->add_control( 'ko_band_contact_city', array(
+    'label' => esc_html__( 'City Name:', 'koband' ),
+    'settings' => 'ko_band_contact_city',
+    'section' => 'ko_band_contact_section',
+) );
+
+/*Contact Adress*/
+$wp_customize->add_setting( 'ko_band_contact_address' );
+$wp_customize->add_control( 'ko_band_contact_address', array(
+    'label' => esc_html__( 'Address:', 'koband' ),
+    'settings' => 'ko_band_contact_address',
+    'section' => 'ko_band_contact_section',
+) );
+
+/*Contact Email*/
+$wp_customize->add_setting( 'ko_band_contact_email' );
+$wp_customize->add_control( 'ko_band_contact_email', array(
+    'label' => esc_html__( 'E-mail Address:', 'koband' ),
+    'settings' => 'ko_band_contact_email',
+    'section' => 'ko_band_contact_section',
+) );
+
+/*Contact Phone*/
+$wp_customize->add_setting( 'ko_band_contact_phone' );
+$wp_customize->add_control( 'ko_band_contact_phone', array(
+    'label' => esc_html__( 'Phone Number:', 'koband' ),
+    'settings' => 'ko_band_contact_phone',
+    'section' => 'ko_band_contact_section',
+    'description' => ' Write phone number with prefix ex. +389...'
+) );
+
+
+/*** Contact section end here  ***/
+/****************************************************************************************************************/
 
 /*** Footer section starts here  ***/
 $wp_customize->add_section( 'ko_band_footer_section' , array(

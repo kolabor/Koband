@@ -44,7 +44,7 @@ get_header('noscroll'); ?>
 									<div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
 										<div class="d-flex justify-content-between align-items-center">
 											<div class="btn-group">
-												<span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></span>
+												<span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php echo __('READ MORE →', 'koband');?></a></span>
 											</div>
 										</div>
 								</div>
@@ -152,7 +152,7 @@ get_header('noscroll'); ?>
 		<div class="container">
 			<div class="row album-head border_first_color main_font_color">
 				<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-					<div class="col-sm-3 main_font_color"><?php _e('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+					<div class="col-sm-3 main_font_color"><?php echo __('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
 
 			        <?php 
 			        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -160,8 +160,8 @@ get_header('noscroll'); ?>
 					$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 					$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 						
-					<div class="col-sm-3 main_font_color"><?php _e('Date:<br>', 'koband');?> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
-				    <div class="col-sm-3 main_font_color"><?php _e('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
+					<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
+				    <div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
 				    <div class="col-sm-1 album-up-down-buttons">
 				    	<span class="btn btn-sm album-song">
 					    	<a class="btn btn-sm show-album-song first_color"><i class="fas fa-caret-down"></i></a>
@@ -172,9 +172,9 @@ get_header('noscroll'); ?>
 				<div class="container album-songs-show-hide">
 					<!-- Labels -->
 					<div class="row album-head border_first_color">
-						<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Name', 'koband');?></div>
-						<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Length', 'koband');?></div>
-						<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
+						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Name', 'koband');?></div>
+						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Length', 'koband');?></div>
+						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color main_font_color">			
 					<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
@@ -186,14 +186,14 @@ get_header('noscroll'); ?>
 					</div>
 					<!-- Labels -->
 					<div class="row album-head border_first_color main_font_color">
-						<div class="col-sm-6"><?php _e('Store Name', 'koband');?></div>
-						<div class="col-sm-6"><?php _e('Store Link', 'koband');?></div>
+						<div class="col-sm-6"><?php echo __('Store Name', 'koband');?></div>
+						<div class="col-sm-6"><?php echo __('Store Link', 'koband');?></div>
 					</div>
 					<div class="row song-list main_font_color">
 						<?php 
 							foreach ($album_song_store[0] as  $value_song_store) { ?>
 							<div class="col-sm-6"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-							<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
+							<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
 						<?php } ?> 
 					</div>			
 				</div><!-- container album-songs-show-hide -->
@@ -236,7 +236,7 @@ get_header('noscroll'); ?>
 				</div>
 			<div class="container single-songs-show-hide">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-4 songs-head main_font_color"><?php _e('Song Details', 'koband');?></div>
+					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
 				</div>
 				<div class="row song-list border_first_color main_font_color">			
 				<?php foreach ($single_detail as  $value_single_detail) { ?>
@@ -245,14 +245,14 @@ get_header('noscroll'); ?>
 				</div>
 
 				<div class="row album-head border_first_color main_font_color">
-					<div class="col-sm-5"><?php _e('Store Name:', 'koband');?></div>
-					<div class="col-sm-5"><?php _e('Store Link:', 'koband');?></div>
+					<div class="col-sm-5"><?php echo __('Store Name:', 'koband');?></div>
+					<div class="col-sm-5"><?php echo __('Store Link:', 'koband');?></div>
 				</div>
 				<div class="row song-list border_first_color main_font_color">
 					<?php if(isset($single_store[0])) { ?>
 						<?php foreach ($single_store[0] as  $value_single_store) { ?>
 						<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
-						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php _e('Buy Here', 'koband');?></a></div> 
+						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
 					<?php } } ?>
 				</div>
 			</div><!-- container single-songs-show-hide -->	
@@ -286,7 +286,7 @@ get_header('noscroll'); ?>
 				      <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a>
 			            <div class="overlay">
 			                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-								<a class="info" first_color" href="<?php the_permalink();?>"><?php _e('Go to Gallery', 'koband'); ?></a>
+								<a class="info" first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband'); ?></a>
 			            </div>
 				    </div>
 				</div>
