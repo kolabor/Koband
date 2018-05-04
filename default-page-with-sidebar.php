@@ -2,7 +2,7 @@
 /**
  * 
  *
- * Template Name: Default Template
+ * Template Name: Default Template with sidebar
  *
  *
  *
@@ -28,3 +28,5 @@
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
 
+<?php get_sidebar():?>
+<?php get_footer():?>
