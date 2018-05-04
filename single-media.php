@@ -40,7 +40,7 @@ if (have_posts() ) :
 	$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
 	<div class="col-md-12">
-		<div class="row">
+		<div class="row" id="myBtn">
 			
 
 			<?php 
@@ -60,17 +60,19 @@ if (have_posts() ) :
 						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
 						$value_video_gallery_video['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];
 						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>--> 
-						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370"> 		
+						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
+						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" class="myvideo">		
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option2"){
 						$data = $value_video_gallery['link'];
 						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
 						$value_video_gallery_video['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; 
-						$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link']; ?>
+						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link']; 
+						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $value_video_gallery['link'] . '.php'));
+						$hash[0]['thumbnail_large']?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-						<img src="<?php echo $value_video_gallery_image['link']?>.json" alt="Smiley face" height="265" width="370">
+						<img src="<?php echo $hash[0]['thumbnail_large']?>" alt="Smiley face" height="265" width="370" class="myvideo">
 
 					<?php }
 
@@ -80,7 +82,7 @@ if (have_posts() ) :
 						$value_video_gallery_video['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link'];
 						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
-						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370">
+						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370" class="myvideo">
 					<?php }
 
 					else {
@@ -97,18 +99,29 @@ if (have_posts() ) :
 			
 				<div class="col-md-12">
 					<div class="row">
-						<div class="gal">
+						<div class="gal" id="myBtn">
+
 					<?php if(isset($media_gallery[0])) {
-								foreach ($media_gallery[0] as  $value_image) { 
+								foreach ($media_gallery[0] as  $value_image) { 									
 								echo wp_get_attachment_image( $value_image, array(500,500));}
 					}?> 
+						</div>
+					</div> 
 				</div>
-				</div> 
-			
-			</div>
+
+				<div class="modal fade" id="myModal<?php echo $id;?>">
+				  <div class="modal-dialog">
+				      <div class="modal-content">
+				            <div class="modal-body"> 
+				            </div>
+				      </div>
+				   </div>
+				</div>
+
 		
 </div><!-- container ends here -->
-	
+
+
 		
 <?php endwhile; endif;?>
 
