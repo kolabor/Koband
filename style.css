@@ -762,7 +762,10 @@ Discography Section
   display: block;
   width: 30%;
   height: 100%;
-  float: right; }
+  float: right;
+  padding-left: 10px;
+  list-style: none;
+  padding-top: 25px; }
 
 .comment-body {
   padding-top: 10px;
@@ -1192,6 +1195,22 @@ input {
 
   .song-list .line {
     line-height: 30px; } }
+@media screen and (max-width: 667px) {
+  .album-head .col-sm-3 {
+    max-width: 22%; }
+
+  .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img,
+  .btn.btn-sm.hide-single-song img {
+    width: 40px; }
+
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song {
+    margin-top: 0; }
+
+  .album_title {
+    font-size: 14px !important; }
+
+  .col-sm-3 span {
+    font-size: 17px !important; } }
 @media screen and (max-width: 414px) {
   .mobile-nav-icon {
     display: inline-block; }
@@ -1355,7 +1374,13 @@ input {
     padding-left: 15px; }
 
   .address, .zipcode {
-    display: none; } }
+    display: none; }
+
+  .modal-dialog {
+    width: 400px; }
+
+  .band-bio p {
+    text-align: center; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
@@ -1377,6 +1402,9 @@ input {
     padding-left: 23px; }
 
   #back-to-top {
-    right: 12px; } }
+    right: 12px; }
+
+  .modal-dialog {
+    width: 360px; } }
 
 /*# sourceMappingURL=style.css.map */
