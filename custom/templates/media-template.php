@@ -35,7 +35,7 @@ get_header();?>
 				            <div class="overlay">
 				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 
-									<a class="info first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband');?></a>
+									<a class="info" href="<?php the_permalink();?>"><i class="fas fa-link"></i></a>
 
 				            </div>
 					    </div>

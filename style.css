@@ -118,7 +118,7 @@ header {
 .main-nav {
   position: relative; }
 
-#menu-main-menu, #menu-single-page {
+.main-nav .menu {
   position: absolute;
   list-style-type: none;
   right: 0;
@@ -126,13 +126,13 @@ header {
   text-align: right; }
 
 /*Create a horizontal list with spacing*/
-#menu-main-menu li, #menu-single-page li {
+.main-nav .menu li {
   display: inline-block;
   float: none;
   margin-right: 1px; }
 
 /*Style for menu links*/
-#menu-main-menu li a, #menu-single-page li a {
+.main-nav .menu li a {
   display: block;
   min-width: 100px;
   height: 60px;
@@ -146,7 +146,7 @@ header {
   text-transform: uppercase !important; }
 
 /*Hover state for top level links*/
-#menu-main-menu li a:hover, #menu-single-page li a:hover {
+.main-nav .menu li a:hover {
   color: #333;
   border-bottom: 3px solid #4D0000 !important; }
 
@@ -351,6 +351,9 @@ header {
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81); }
 
+.overlay a {
+  font-size: 50px; }
+
 .hovereffect:hover .overlay {
   background-color: rgba(48, 152, 157, 0.4); }
 
@@ -373,7 +376,7 @@ header {
   text-align: center;
   position: relative;
   font-size: 17px;
-  padding: 10px;
+  padding: 40px;
   -webkit-transform: translateY(45px);
   -ms-transform: translateY(45px);
   transform: translateY(45px);
@@ -403,8 +406,8 @@ header {
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
-  margin: -52px 0 0 0;
-  padding: 62px 100px; }
+  margin: -113px 0 0 0;
+  padding: 197px 190px; }
 
 .hovereffect:hover a.info {
   opacity: 1;
@@ -460,12 +463,19 @@ Tour Section
   text-decoration: none !important; }
 
 .store_link a {
-  padding-left: 5px; }
+  padding: 6px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px; }
+
+.store_link a .svg-inline--fa {
+  margin-right: 5px;
+  padding-top: 1px; }
 
 /*
-Discography Section
--------------------------------------------
-*/
+  Discography Section
+  -------------------------------------------
+ */
 .album-head {
   background-color: #fff !important;
   border-bottom: 1px solid;
@@ -505,6 +515,9 @@ Discography Section
 .album_title {
   font-size: 20px !important;
   font-weight: 700 !important; }
+
+.album_title a:hover {
+  text-decoration: none; }
 
 .col-sm-3 span {
   font-size: 25px !important;
@@ -578,7 +591,9 @@ Discography Section
   padding: 10px;
   margin-top: 10px;
   font-size: 17px !important;
-  font-weight: 400 !important; }
+  font-weight: 400 !important;
+  text-align: justify;
+  text-justify: inter-word; }
 
 .band-members {
   width: 65% !important;
@@ -618,6 +633,10 @@ Discography Section
   padding: 0 !important;
   margin: 0 !important; }
 
+.justify {
+  text-align: justify;
+  text-justify: inter-word; }
+
 /*
 =========================================================
             Footer Section
@@ -644,14 +663,6 @@ Discography Section
 .footer_logo img {
   width: 100%;
   height: auto; }
-
-#menu-footer-menu {
-  text-decoration: none;
-  list-style: none;
-  display: block;
-  position: relative;
-  float: right;
-  text-align: right; }
 
 .copyright {
   position: relative;
@@ -680,12 +691,20 @@ Discography Section
   height: auto;
   display: inline; }
 
-#menu-footer-menu li a {
+.footer-menu .menu {
+  text-decoration: none;
+  list-style: none;
+  display: block;
+  position: relative;
+  float: right;
+  text-align: right; }
+
+.footer-menu .menu li a {
   color: #4b4b4b;
   font-size: 22px;
   font-weight: 400; }
 
-#menu-footer-menu li a:hover {
+.footer-menu .menu li a:hover {
   text-decoration: none !important; }
 
 .copyright a {
