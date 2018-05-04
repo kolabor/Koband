@@ -2,7 +2,7 @@
 /**
  * 
  *
- * Template Name: Default with sidebar
+ * Template Name: Default full width
  *
  *
  *
@@ -26,7 +26,6 @@
 				endwhile; // End of the loop.?>
 			</div>
 		</div>
-	<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer(); ?>
