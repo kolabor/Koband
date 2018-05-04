@@ -147,6 +147,7 @@ get_header();?>
 		<div class="row song-list border_second_color main_font_color">
 			<?php if(isset($single_store[0])) { ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
+
 				<div class="col-sm-5 store_name line"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
 				<div class="col-sm-6 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><i class="fas fa-shopping-cart"></i><?php echo __('Buy Here', 'koband');?></a></div> 
 			<?php } } ?>

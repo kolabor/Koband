@@ -1,5 +1,5 @@
 jQuery(document).ready(function( $ ){ 
-	
+
 //function ko_band_RetinaDisplay() {
 
 function ko_band_RetinaDisplay() {
@@ -206,7 +206,42 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
 		}
 	});
 });
+ // Add smooth scrolling to all links
+var jump=function(e)
+{
+   if (e){
+       e.preventDefault();
+       var target = $(this).attr("href");
+   }else{
+       var target = location.hash;
+   }
 
+   $('html,body').animate(
+   {
+       scrollTop: $(target).offset().top
+   },1000,function()
+   {
+       location.hash = target;
+   });
+
+}
+
+$('html, body').hide();
+
+$(document).ready(function()
+{
+    $('a[href^=#]').bind("click", jump);
+
+    if (location.hash){
+        setTimeout(function(){
+            $('html, body').scrollTop(0).show();
+            jump();
+        }, 0);
+    }else{
+        $('html, body').show();
+    }
+});	
+/*
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
     if (this.hash !== "") {
@@ -219,7 +254,7 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
         	window.location.hash = hash;
       });
     } 
-  });
+  }); */
 
   	//On scroll change menu color
   	var num = 600; //number of pixels before modifying styles
@@ -271,3 +306,44 @@ $('.mobile-nav-icon').click(function() {
     });
 
 }); // Ready function ends here //
+/*$(document).ready(function() {
+
+    var scrollnow = function(e) {
+        // if scrollnow()-function was triggered by an event
+        if (e) {
+            e.preventDefault();
+            var target = this.hash;
+        }
+        // else it was called when page with a #hash was loaded
+        else {
+            var target = location.hash;
+        }
+
+        // same page scroll
+        $.smoothScroll({
+            offset: -120,
+            scrollTarget: target
+        });
+    };
+
+    // if page has a #hash
+    if (location.hash) {
+        $('html, body').scrollTop(0).show();
+        // smooth-scroll to hash
+        scrollnow();
+    }
+
+    // for each <a>-element that contains a "/" and a "#"
+    $('a[href*="/"][href*=#]').each(function(){
+        // if the pathname of the href references the same page
+        if (this.pathname.replace(/^\//,'') == location.pathname.replace(/^\//,'') && this.hostname == location.hostname) {
+            // only keep the hash, i.e. do not keep the pathname
+            $(this).attr("href", this.hash);
+        }
+    });
+
+    // select all href-elements that start with #
+    // including the ones that were stripped by their pathname just above
+    $('a[href^=#]:not([href=#])').click(scrollnow);
+
+});*/
