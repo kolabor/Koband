@@ -69,6 +69,13 @@
   $koband_theband_biography = get_theme_mod('ko_band_theband_biography');
   $koband_theband_image = get_theme_mod('ko_band_theband_sectin_background_image');
 
+  /***Contact section**/
+  $koband_contact_country = get_theme_mod('ko_band_contact_country'); 
+  $koband_contact_city = get_theme_mod('ko_band_contact_city');
+  $koband_contact_address = get_theme_mod('ko_band_contact_address');
+  $koband_contact_email = get_theme_mod('ko_band_contact_email');
+  $koband_contact_phone = get_theme_mod('ko_band_contact_phone');
+ 
    /**Footer Logo**/
   $koband_footer_logo = get_theme_mod('ko_band_footer_logo');  
   $koband_retina_footer_logo = get_theme_mod('ko_band_retina_footer_logo'); 
