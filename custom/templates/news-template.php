@@ -35,7 +35,7 @@
 							<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
 								<div class="col-md-4">
 									<div class="card mb-4 box-shadow">
-										<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+										<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
 										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
 										<div class="card-body">
 											<div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>

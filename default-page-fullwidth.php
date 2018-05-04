@@ -2,7 +2,7 @@
 /**
  * 
  *
- * Template Name: Default with sidebar
+ * Template Name: Default full width
  *
  *
  *
@@ -10,9 +10,7 @@
  * @package Wordpress 
  * @subpackage Koband
  * @since Koband 1.0
-
- */
- get_header('noscroll');?>
+ */ get_header('noscroll');?>
 <div class="container">
 	<div class="content">
 			<header>
@@ -28,7 +26,6 @@
 				endwhile; // End of the loop.?>
 			</div>
 		</div>
-	<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

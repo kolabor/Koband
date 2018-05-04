@@ -222,5 +222,9 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
 .border_bottom {
   border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
 }
+.hovereffect:hover .overlay {
+  background-color: <?php echo $koband_first_theme_color; ?> !important;
+  opacity: 0.5!important;
+}
 
 
