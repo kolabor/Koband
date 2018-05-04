@@ -521,7 +521,7 @@ $wp_customize->add_section( 'ko_band_contact_section' , array(
 /*Contact Country*/
 $wp_customize->add_setting( 'ko_band_contact_country' );
 $wp_customize->add_control( 'ko_band_contact_country', array(
-    'label' => esc_html__( 'Country Name:', 'koband' ),
+    'label' => esc_html__( 'Country:', 'koband' ),
     'settings' => 'ko_band_contact_country',
     'section' => 'ko_band_contact_section',
 ) );
@@ -529,7 +529,7 @@ $wp_customize->add_control( 'ko_band_contact_country', array(
 /*Contact City*/
 $wp_customize->add_setting( 'ko_band_contact_city' );
 $wp_customize->add_control( 'ko_band_contact_city', array(
-    'label' => esc_html__( 'City Name:', 'koband' ),
+    'label' => esc_html__( 'City:', 'koband' ),
     'settings' => 'ko_band_contact_city',
     'section' => 'ko_band_contact_section',
 ) );

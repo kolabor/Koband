@@ -46,8 +46,6 @@ wp_head(); ?>
                   </div>
                   </nav>
                 </header>
-     
-
                   
          
 
