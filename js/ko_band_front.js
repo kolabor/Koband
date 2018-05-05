@@ -244,31 +244,17 @@ $(document).ready(function()
         $('html, body').show();
     }
 });	
-/*
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-    if (this.hash !== "") {
-      	event.preventDefault();
-      	var hash = this.hash;
 
-        $('html, body').animate({
-         scrollTop: $(hash).offset().top
-        }, 800, function(){
-        	window.location.hash = hash;
-      });
-    } 
-  }); */
+//On scroll change menu color
+var num = 600; //number of pixels before modifying styles
 
-  	//On scroll change menu color
-  	var num = 600; //number of pixels before modifying styles
-
-	$(window).bind('scroll', function () {
-	    if ($(window).scrollTop() > num) {
-	        $('.menu-scroll').addClass('fixed');
-	    } else {
-	        $('.menu-scroll').removeClass('fixed');
-	    }
-	});
+$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > num) {
+        $('.menu-scroll').addClass('fixed');
+    } else {
+        $('.menu-scroll').removeClass('fixed');
+    }
+});
 	// Back to top
 	if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px

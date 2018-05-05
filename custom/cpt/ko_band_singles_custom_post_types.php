@@ -177,6 +177,5 @@ function ko_band_singles_save_meta_box( $post_id, $post )
         if ( !empty( $new ) && $new != $old ) { update_post_meta( $post_id, 'ko_band_repetable_singles_stores', $new );}
         elseif ( empty($new) && $old ) { delete_post_meta( $post_id, 'ko_band_repetable_singles_stores', $old ); }
 }
-?>  
 
 

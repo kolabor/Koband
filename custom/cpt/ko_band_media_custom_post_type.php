@@ -83,8 +83,10 @@ add_action('add_meta_boxes', 'ko_band_gallery_metabox');
 
 function ko_band_gallery_meta_callback() {
 global $post;
+    
     wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
+
     ?>
     <div class="container form-table">
         <div class="row-blank">
@@ -92,20 +94,20 @@ global $post;
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo __('Add image(s)',' koband');?> data-uploader-button-text=<?php echo __('Add image(s)',' koband');?>><?php echo __('Add image','koband');?></a>
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo __("Add image's",' koband');?> data-uploader-button-text=<?php echo __("Add image's",' koband');?>><?php echo __("Add image's",'koband');?></a>
             </div>    
         </div>
 
-        <div id="gallery-metabox-list" class="row">
+        <ul id="gallery-metabox-list" class="row">
             <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
-            <div class="col-sm"> 
+            <li> 
                         <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
                         <img class="image-preview" src="<?php echo $image[0]; ?>"><br>
-                        <a class="change-image button button-small" href="#" data-uploader-title=<?php echo __('Change image', 'koband');?> data-uploader-button-text=<?php echo __('Change image', 'koband');?> ><?php _e('Change image', 'koband');?></a><br>
-                        <a class="remove-image" href="#"><?php echo __('Remove image', 'koband');?></a>
-            </div>
+                        <a class="change-image button button-small" href="#" data-uploader-title=<?php echo __('Change image', 'koband');?> data-uploader-button-text=<?php echo __('Change image', 'koband');?> ><?php _e('Change image', 'koband');?></a>
+                        <a class="remove-image button button-small" href="#"><?php echo __('Remove image', 'koband');?></a>
+            </li>
         <?php endforeach; endif; ?>
-        </div>
+        </ul>
     </div>
 
   <?php }

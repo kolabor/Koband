@@ -1,11 +1,7 @@
 <?php
 /**
  * 
- *
  * Template Name: Default with sidebar
- *
- *
- *
  *
  * @package Wordpress 
  * @subpackage Koband

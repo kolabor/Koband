@@ -186,4 +186,3 @@ function ko_band_slides_save_meta_box( $post_id, $post )
     endforeach;
     } 
 }
-?> 

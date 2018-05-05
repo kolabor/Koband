@@ -206,4 +206,4 @@ function ko_band_tour_save_meta_box( $post_id, $post )
         }
     endforeach;
     }
-?>  
+

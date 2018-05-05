@@ -276,8 +276,6 @@ function ko_band_album_save_meta_box( $post_id, $post )
         if ( !empty( $new_stores ) && $new_stores != $old_stores ) { update_post_meta( $post_id, 'ko_band_repetable_song_stores', $new_stores );}
         elseif ( empty($new_stores) && $old_stores ) { delete_post_meta( $post_id, 'ko_band_repetable_song_stores', $old_stores ); }
 }
-?>
-
 
 
 

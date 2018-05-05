@@ -80,33 +80,19 @@ function ko_band_the_band_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
-
     wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_the_band_save_meta_box' );
-
     // Get the location data if it's already been entered
-        
-
-    $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );
-   
-
-
-    // Output the field ?>
+    $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );?>
+    
     <div class="container">
-
         <div class="row-top">
             <div class="col-sm"><?php echo __('Band Member Role:', 'koband');?></div>
         </div>
-
         <div class="row">
             <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php echo __('ex.Drummer, Bass ...', 'koband');?>"></div>
-
         </div>
-    </div>
-
-     <?php }
-     
+    </div><?php }
 add_action( 'save_post', 'ko_band_the_band_save_meta_box' , 1, 2);
-
 function ko_band_the_band_save_meta_box( $post_id, $post ) 
 {
     if ( ! current_user_can( 'edit_post', $post_id ) ) 
@@ -153,4 +139,3 @@ function ko_band_the_band_save_meta_box( $post_id, $post )
     endforeach;
     }
 }
-?> 
