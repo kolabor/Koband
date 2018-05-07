@@ -20,34 +20,34 @@ wp_head(); ?>
    
 </head>
   <body <?php body_class(); ?>>
-                <header>
-                  <nav class="menu-scroll">
-                  <div class="container">                    
-                    <div class="main-logo clearfix">
-                    <?php $logo = get_theme_mod( 'ko_band_main_logo' ); ?>
-                    <img src="<?php echo $logo; ?>" class="logo">
-                    </div>
-                    
-                    <div class="retina-main-logo">
-                    <?php $logo_retina = get_theme_mod( 'ko_band_retina_main_logo' ); ?>
-                    <img src="<?php echo $logo_retina; ?>">
-                    </div>                 
+    <header>
+      <nav class="menu-scroll">
+      <div class="container">                    
+        <div class="main-logo clearfix">
+        <?php $logo = get_theme_mod( 'ko_band_main_logo' ); ?>
+        <img src="<?php echo $logo; ?>" class="logo">
+        </div>
+        
+        <div class="retina-main-logo">
+        <?php $logo_retina = get_theme_mod( 'ko_band_retina_main_logo' ); ?>
+        <img src="<?php echo $logo_retina; ?>">
+        </div>                 
 
-                  
-                    <div class="main-nav">
-                      <?php
-                        $args = array(
-                          'theme_location' => 'primary'
-                        );
-                      ?>
+      
+        <div class="main-nav">
+          <?php
+            $args = array(
+              'theme_location' => 'primary'
+            );
+          ?>
 
-                      <?php wp_nav_menu($args); ?>   
+          <?php wp_nav_menu($args); ?>   
 
-                    </div>
-                    <a class="mobile-nav-icon"><i class="fas fa-bars"></i></a> 
-                  </div>
-                  </nav>
-                </header>
+        </div>
+        <a class="mobile-nav-icon"><i class="fas fa-bars"></i></a> 
+      </div>
+      </nav>
+    </header>
      
 
 
