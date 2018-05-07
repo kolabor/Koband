@@ -125,9 +125,9 @@ function ko_band_theme_support () {
 	//Menu
 
 	register_nav_menus(array(
-		'primary' => __('Primary Menu', 'koband'),
-		'secondary' => __('Single Page', 'koband'),
-		'footer' => __('Footer Menu', 'koband')
+		'primary' => esc_html__('Primary Menu', 'koband'),
+		'secondary' => esc_html__('Single Page', 'koband'),
+		'footer' => esc_html__('Footer Menu', 'koband')
 	));
     
 	
@@ -139,7 +139,7 @@ add_action('after_setup_theme', 'ko_band_theme_support');
 function ko_band_footer_widgets($id){
 
 	register_sidebar(array(
-		'name' => __('Sidebar','koband'),
+		'name' => esc_html__('Sidebar','koband'),
 		'id' => 'ko_band_sidebar',
 		'before_sidebar' => '<div  class="side-ko_band_sidebar">',
 		'after_sidebar' => '</div>',
@@ -147,7 +147,7 @@ function ko_band_footer_widgets($id){
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('First Footer Widgets', 'koband'),
+		'name' => esc_html__('First Footer Widgets', 'koband'),
 		'id' => 'ko_band_first_footer_widgets',
 		'before_widget' => '<div  class="side-ko_band_first_footer_widgets">',
 		'after_widget' => '</div>',
@@ -155,7 +155,7 @@ function ko_band_footer_widgets($id){
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Second Footer Widgets', 'koband'),
+		'name' => esc_html__('Second Footer Widgets', 'koband'),
 		'id' => 'ko_band_second_footer_widgets',
 		'before_widget' => '<div  class="side-ko_band_second_footer_widgets">',
 		'after_widget' => '</div>',
