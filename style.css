@@ -1119,13 +1119,20 @@ input {
   background-color: #d1ecf11a; }
 
 .no-results.not-found {
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 35px !important; }
 
 .search-form input {
   border: 1px solid rgba(0, 168, 168, 0.4); }
 
 .search-form {
   float: left; }
+
+.sad_smile {
+  text-align: center !important; }
+
+.sad_smile_span {
+  font-size: 250px; }
 
 /*
 ============================================

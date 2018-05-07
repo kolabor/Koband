@@ -26,6 +26,7 @@
 				<?php elseif ( is_search() ) : ?>
 
 					<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'koband' ); ?></p>
+					<div class="sad_smile"><span class="sad_smile_span">&#9785;</span></div>
 
 				<?php else : ?>
 

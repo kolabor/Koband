@@ -34,7 +34,7 @@ get_header('noscroll'); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 	            <div class="col-md-4">
 	                <div class="card mb-4 box-shadow">
-	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
 	                    <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
 	                    <div class="card-body">
 	                        <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
@@ -272,12 +272,14 @@ get_header('noscroll'); ?>
 			<?php 
 			while ( $category_media_posts->have_posts() ) : $category_media_posts->the_post();
 			$post_id = get_the_ID(); ?>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="col-lg-3 img-holder col-md-4 col-sm-6 col-xs-12">
 				    <div class="hovereffect">
-				      <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a>
+				      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 			            <div class="overlay">
 			                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-								<a class="info first_color" href="<?php the_permalink();?>"><?php echo esc_html__('Go to Gallery', 'koband'); ?></a>
+
+								<a class="info" href="<?php the_permalink();?>"><i class="fas fa-link"></i></a>
+
 			            </div>
 				    </div>
 				</div>
