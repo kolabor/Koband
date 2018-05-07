@@ -25,7 +25,7 @@ wp_head(); ?>
       <div class="container">                    
         <div class="main-logo clearfix">
         <?php $logo = get_theme_mod( 'ko_band_main_logo' ); ?>
-        <img src="<?php echo $logo; ?>" class="logo">
+        <a href="/"><img src="<?php echo $logo; ?>" class="logo"></a>
         </div>
         
         <div class="retina-main-logo">
