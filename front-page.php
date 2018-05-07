@@ -14,8 +14,6 @@
 
 get_header(); ?>
 <!-- Add back to top button -->
-<div id="content"></div>
-<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 <?php
 // Determine if there is "vide-slider" or "image-slider"
 
