@@ -85,7 +85,9 @@ function koband_load_media(){
 			      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 		            <div class="overlay">
 		                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-							<a class="info first_color" href="<?php the_permalink();?>"><i class="fas fa-link"></i><?php echo esc_html__('Go to Gallery', 'koband');?></a>
+
+							<a class="info" href="<?php the_permalink();?>"><i class="fas fa-link"></i></a>
+
 		            </div>
 			    </div>
 			</div>
