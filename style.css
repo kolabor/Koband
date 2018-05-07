@@ -700,7 +700,7 @@ Tour Section
   text-align: right; }
 
 .footer-menu .menu li a {
-  color: #4b4b4b;
+  color: #333333;
   font-size: 22px;
   font-weight: 400; }
 
@@ -1117,6 +1117,15 @@ input {
 .wpcf7 input:focus {
   border: 1px solid #00a8a8;
   background-color: #d1ecf11a; }
+
+.no-results.not-found {
+  width: 100%; }
+
+.search-form input {
+  border: 1px solid rgba(0, 168, 168, 0.4); }
+
+.search-form {
+  float: left; }
 
 /*
 ============================================
