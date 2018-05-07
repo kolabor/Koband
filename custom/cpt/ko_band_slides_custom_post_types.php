@@ -103,7 +103,7 @@ function ko_band_slides_meta_box($post, $box){
 
         <div class="row">
             <div class="col-sm"><input type="text" name="ko_band_slides_title" value="<?php echo esc_attr( $slides_title )?>" placeholder= "<?php echo esc_html__('Add Slide Title', 'koband');?>" class="slidetitle"></div>
-            <div class="col-sm"><textarea type="text" name="ko_band_slides_subtitle" maxlength="250" placeholder= "<?php echo esc_html__('Add Slide Text', 'koband');?>" class="slidesub"><?php echo esc_attr( $slides_subtitle )?></textarea></div>
+            <div class="col-sm"><textarea type="text" name="ko_band_slides_subtitle" maxlength="250" placeholder= "<?php echo esc_html__('Add Slide Text', 'koband');?>" class="slidesub"><?php echo esc_textarea( $slides_subtitle )?></textarea></div>
         </div>
 
         <div class="row">
