@@ -19,7 +19,7 @@ get_header('noscroll');
 	<body>
 		<div id="wrapper">
 			<center>
-				<!-- This is the generic database error page that will be shown when a fatal db connection issue aries -->
+				<!--  This is the generic database error page that will be shown when a fatal db connection issue aries -->
 				<h1><?php echo $_SERVER['HTTP_HOST'];?><?php echo __('is Temporarliy Unavailable', 'koband');?></h1>
 				<p><?php echo __('The webmaster has been alerted. Please try again later.', 'koband');?></p>
 			</center>
