@@ -46,8 +46,8 @@ get_header();?>
 			
 	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
-			<div class="col-sm-1"><a href="<?php esc_url(the_permalink());?>" target="_blank" ><?php esc_url(the_post_thumbnail(array(70,70)));?></a></div>
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php esc_url(the_permalink());?>" target="_blank" >    <span class="main_font_color"><?php esc_url(the_title());?></span></a></div>
+			<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" >    <span class="main_font_color"><?php the_title();?></span></a></div>
 
 		        <?php 
 		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -117,8 +117,8 @@ get_header();?>
 					
 	<div class="container">
 		<div class="row album-head border_first_color">
-			<div class="col-sm-1"><a href="<?php esc_url(the_permalink());?>" target="_blank"><?php esc_url(the_post_thumbnail(array(70,70)));?></a></div>
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Name:', 'koband');?><br> <a href="<?php esc_url(the_permalink());?>" target="_blank"><span class="main_font_color"><?php esc_url(the_title());?></span></a></div>
+			<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank"><?php the_post_thumbnail(array(70,70));?></a></div>
+				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank"><span class="main_font_color"><?php the_title();?></span></a></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  esc_attr($single_date[0]); } ?></span></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo esc_attr($single_length[0]); } ?></span></div>
 

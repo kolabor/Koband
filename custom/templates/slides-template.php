@@ -31,7 +31,7 @@
         		<?php 
         		if ($slider_posts->have_posts() ) : 
         		while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
-       				<li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $slider_posts->current_post; ?>" class="active"></li>
+       				<li data-target="#carouselExampleIndicators" data-slide-to="<?php echo esc_attr($slider_posts->current_post); ?>" class="active"></li>
         		<?php endwhile; endif; ?>
     		</ol>
    		<div class="carousel-inner">
@@ -56,13 +56,13 @@
 			        <div class="carousel-item">
 				<?php endif; ?>
 					    <?php	$url = wp_get_attachment_url( get_post_thumbnail_id() );?>
-					    	<img src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
+					    	<img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
 					            <div class="sl-content">
-								    <h5 class="first_color"><?php if(isset($slider_title[0])) 	{ echo  $slider_title[0]; } ?></h5>
-								    <p class="first_color font-line_height"><?php if(isset($slider_subtitle[0])) 	{ echo  $slider_subtitle[0]; } ?></p>
+								    <h5 class="first_color"><?php if(isset($slider_title[0])) 	{ echo  esc_attr($slider_title[0]); } ?></h5>
+								    <p class="first_color font-line_height"><?php if(isset($slider_subtitle[0])) 	{ echo  esc_attr($slider_subtitle[0]); } ?></p>
 								    <a class="btn btn-primary btn-lg bg_first_color" href="<?php if(isset($slider_button_link[0])) 	
-								    	{ echo  $slider_button_link[0]; } ?>"><?php if(isset($slider_button_title[0])) 
-								    		{ echo  $slider_button_title[0]; } ?></a>
+								    	{ echo  esc_url($slider_button_link[0]); } ?>"><?php if(isset($slider_button_title[0])) 
+								    		{ echo  esc_url($slider_button_title[0]); } ?></a>
 								</div>
 
 		   
@@ -72,11 +72,11 @@
 
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 	   			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	   			<span class="sr-only"><?php echo __('Previous', 'koband');?></span>
+	   			<span class="sr-only"><?php echo esc_html__('Previous', 'koband');?></span>
 	  		</a>
 	 		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 	   			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    		<span class="sr-only"><?php echo __('Next', 'koband');?></span>
+	    		<span class="sr-only"><?php echo esc_html__('Next', 'koband');?></span>
 	  		</a>
 		
 		</div><!--carousel-item-->

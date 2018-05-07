@@ -79,7 +79,7 @@ function ko_band_album_display_meta_box() {
     global $post;
 
     // Nonce field to validate form request came from current site
-    $song_details = get_post_meta($post->ID, 'ko_band_repetable_song_details', true);
+    $song_details = esc_attr(get_post_meta($post->ID, 'ko_band_repetable_song_details', true));
     $song_stores = get_post_meta($post->ID, 'ko_band_repetable_song_stores', true);
     
     wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
@@ -110,7 +110,7 @@ function ko_band_album_display_meta_box() {
 
 <div class="container" id="ko_band_album_meta_box_one" >
     <div class="row blank">
-        <div class="col-sm"><?php echo esc_attr__('On the following fields you can add or remove your Album songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove your Album songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
 
     <div class="row-top">
