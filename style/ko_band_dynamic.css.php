@@ -92,15 +92,15 @@
 
 #theband {
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
- url("<?php echo $koband_theband_image; ?>") !important;
+ url("<?php echo esc_html($koband_theband_image); ?>") !important;
  background-repeat: no-repeat;
  background-size: cover;
  background-position: center;
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
 
 
 
@@ -110,87 +110,87 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 .home, .single, .page, .default
 {
   
-  font-size:  <?php echo $koband_theme_font_size; ?> !important;
-  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?> !important;
+  line-height:  <?php echo esc_html($koband_theme_line_height); ?> !important;
 
-  color: <?php echo $koband_main_font_color; ?> !important;
+  color: <?php echo esc_html($koband_main_font_color); ?> !important;
 
 }
 
 .home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
-  font-family: <?php echo $koband_headding_font; ?> !important;
+  font-family: <?php echo esc_html($koband_headding_font); ?> !important;
 
-  color: <?php echo $koband_main_font_color;?> !important;
+  color: <?php echo esc_html($koband_main_font_color);?> !important;
 
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
 }
 
 #News {
-  background-color: <?php echo  $koband_news_background_color; ?> !important;
+  background-color: <?php echo  esc_html($koband_news_background_color); ?> !important;
 }
 
 #Tour {
-  background-color: <?php echo  $koband_tour_background_color; ?> !important;
+  background-color: <?php echo  esc_html($koband_tour_background_color); ?> !important;
 }
 
 #Discography {
-  background-color: <?php echo  $koband_discography_background_color; ?> !important;
+  background-color: <?php echo  esc_html($koband_discography_background_color); ?> !important;
 }
 #Media {
-background-color: <?php echo  $koband_gallery_background_color; ?> !important;
+background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !important;
 }
 
 
 
 
 .first_color {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .social-icons a .first_color:hover {
-  color: <?php echo $koband_second_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 .first_color a {
-  color: <?php echo $koband_first_theme_color;?> !important;
+  color: <?php echo esc_html($koband_first_theme_color);?> !important;
 }
 .bg_first_color {
-  background-color: <?php echo $koband_first_theme_color; ?> !important; 
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> !important; 
 }
 .bg_first_color:hover {
-  background-color: <?php echo $koband_second_theme_color; ?> !important;
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  background-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .border_first_color {
-  border-bottom-color: <?php echo $koband_first_theme_color; ?> !important;
+  border-bottom-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .border_second_color {
-  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+  border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 
 .bg_second_color {
-  background-color: <?php echo $koband_second_theme_color ?> !important;
+  background-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 
 
 .main_font_color{
 
-  color: <?php echo $koband_main_font_color; ?> !important;  
+  color: <?php echo esc_html($koband_main_font_color); ?> !important;  
 
 }
 
 .font-line_height {
-  font-size:  <?php echo $koband_theme_font_size; ?> !important;
-  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?> !important;
+  line-height:  <?php echo esc_html($koband_theme_line_height); ?> !important;
 }
 
 .read_more a {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .read_more:hover a {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .read_more:hover {
-  background-color: <?php echo $koband_second_theme_color ?> !important;
+  background-color: <?php echo esc_html($koband_second_theme_color) ?> !important;
 }
 
 .sl-content{
@@ -206,34 +206,34 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   ?>
 }
 .submit {
-  background-color: <?php echo $koband_first_theme_color; ?> !important;
-  color: <?php echo $koband_second_theme_color; ?> !important;
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
+  color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 .reply a, .submit {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .submit:hover {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 
 .submit:hover {
- background-color: <?php echo $koband_second_theme_color; ?> !important;
-  color: <?php echo $koband_first_theme_color; ?> !important;
+ background-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 
 .footer-section
 {
-  background-color: <?php echo $koband_footer_background_color; ?> !important;
+  background-color: <?php echo esc_html($koband_footer_background_color); ?> !important;
 }
 
 .border_bottom {
-  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+  border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 .hovereffect:hover .overlay {
-  background-color: <?php echo $koband_first_theme_color; ?> !important;
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
   opacity: 0.5!important;
 }
 
 #contact .wpcf7 {
-  border: 1px solid <?php echo $koband_first_theme_color; ?> !important;
+  border: 1px solid <?php echo esc_html($koband_first_theme_color); ?> !important;
 } 
