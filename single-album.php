@@ -51,7 +51,7 @@ get_header('noscroll'); ?>
 						<?php foreach ($album_song_store[0] as  $value_song_store) { ?>
 							<div class="col-sm-12 row song-list border_second_color main_font_color">
 							<div class="col-sm-4 line album_single_page_details"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-							<div class="col-sm-4 btn-buy line album_single_page_details"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> </div>
+							<div class="col-sm-4 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><i class="fas fa-shopping-cart"></i><?php echo __('Buy Here', 'koband');?></a></div> </div>
 						<?php } ?> 
 					</div>
 				</div> 

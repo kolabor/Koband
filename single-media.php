@@ -109,15 +109,6 @@ if (have_posts() ) :
 					</div> 
 				</div>
 
-				<div class="modal fade" id="myModal<?php echo $id;?>">
-				  <div class="modal-dialog">
-				      <div class="modal-content">
-				            <div class="modal-body"> 
-				            </div>
-				      </div>
-				   </div>
-				</div>
-
 		
 </div><!-- container ends here -->
 

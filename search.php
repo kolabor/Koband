@@ -7,6 +7,8 @@
  */
 
 get_header('noscroll'); ?>
+<div id="content"></div>
+<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 <div class="container search-holder">
     <div class="row">
         <header class="page-header">
@@ -18,16 +20,18 @@ get_header('noscroll'); ?>
                 <div class="row koband_post_news">
                     <?php while ( have_posts() ) : the_post(); 
                     $post_type = get_post_type();?>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card mb-4 box-shadow">
-                                <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2><h5><?php _e('Post Type : ', 'koband'); 
+                                <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 3 ); ?></a></h2><h5><?php _e('Post Type : ', 'koband'); 
                                 if ($post_type == 'post') { echo _e('News', 'koband'); } 
                                 elseif ($post_type == 'media') { echo _e('Gallery', 'koband');}
                                 elseif ($post_type == 'album') { echo _e('Album', 'koband');}
                                 elseif ($post_type == 'singles') { echo _e('Single', 'koband');}
                                 elseif ($post_type == 'theband') { echo _e('Band Member', 'koband');}
                                 elseif ($post_type == 'tour') { echo _e('Tour', 'koband');}?></h5></div>
-                                <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
+                                <a class="card-img-top" href="<?php the_permalink();?>">
+                                    <?php if($post_type == 'tour') {?> 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/tour.jpg"/> <?php } else { the_post_thumbnail(array(300,300)); }?></a>
                                 <div class="card-body">
                                     <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
                                         <div class="d-flex justify-content-between align-items-center">
