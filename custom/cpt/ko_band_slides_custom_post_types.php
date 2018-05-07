@@ -86,8 +86,6 @@ function ko_band_slides_meta_box($post, $box){
 
     // Get the location data if it's already been entered
 
-    $slides_check = get_post_meta( $post->ID, 'ko_band_slides_check', true );
-    $slides_video = get_post_meta( $post->ID, 'ko_band_slides_video', true );
     $slides_title = get_post_meta( $post->ID, 'ko_band_slides_title', true );
     $slides_subtitle = get_post_meta( $post->ID, 'ko_band_slides_subtitle', true );
     $slides_button_title = get_post_meta( $post->ID, 'ko_band_slides_button_title', true );
@@ -96,18 +94,9 @@ function ko_band_slides_meta_box($post, $box){
     // Output the field ?>
 
     <div class="container">
-        <div class="row-blank"><?php echo esc_html__('Select your slider type:', 'koband'); ?></div>
-        <div class="row-top">
-                    <div id="image-slider" class="col-sm"><?php echo esc_html__('Slide types', 'koband');?></div>
-                    <div id="slide-title" class="col-sm"><?php echo esc_html__('Video Holder:', 'koband');?></div>
-        </div>
-        <div class="row">
-            <div class="col-sm slide-radio"><input id="radio1" type="radio" name="ko_band_slides_check" value="image" checked="checked" class="slidecheck"<?php  if($slides_check == 'image') {echo esc_attr("checked");} ?>><?php echo esc_html__('Image', 'koband');?><br>
-            <input id="radio2" type="radio" name="ko_band_slides_check" value="video" class="slidecheck"<?php  if($slides_check == 'video') {echo esc_attr("checked");} ?>><?php echo esc_html__('Video', 'koband');?></div>
-            <div class="col-sm"><input id="slider-video" type="text" name="ko_band_slides_video" value="<?php echo esc_attr( $slides_video )?>" placeholder= "<?php echo esc_html__('Embed Video Link', 'koband');?>" class="slidevideo"></div>
-        </div>
 
-        <div class="row">
+        <div class="row-blank"></div>
+        <div class="row-top">
                     <div class="col-sm"><?php echo esc_html__('Title:', 'koband');?></div>
                     <div class="col-sm"><?php echo esc_html__('Subtitle:', 'koband');?></div>
         </div>
@@ -138,7 +127,7 @@ function ko_band_slides_save_meta_box( $post_id, $post )
         {
             return $post_id;
         }
-    if (isset($_POST['ko_band_slides_check']))
+    if (isset($_POST['ko_band_slides_title']))
     {
 
     // Verify this came from the our screen and with proper authorization,
@@ -148,8 +137,6 @@ function ko_band_slides_save_meta_box( $post_id, $post )
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $slides_meta['ko_band_slides_check'] = esc_attr( $_POST['ko_band_slides_check'] ); 
-    $slides_meta['ko_band_slides_video'] = esc_attr( $_POST['ko_band_slides_video'] );
     $slides_meta['ko_band_slides_title'] = esc_attr( $_POST['ko_band_slides_title'] );
     $slides_meta['ko_band_slides_subtitle'] = esc_attr( $_POST['ko_band_slides_subtitle'] );
     $slides_meta['ko_band_slides_button_title'] = esc_attr( $_POST['ko_band_slides_button_title'] );

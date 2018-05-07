@@ -46,6 +46,8 @@ wp_head(); ?>
       </div>
       </nav>
     </header>
+<div id="content"></div>
+<a href="#" id="back-to-top" class="first_color" title="Back to top">&uarr;</a>
                   
 
                   
