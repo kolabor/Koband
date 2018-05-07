@@ -7,8 +7,6 @@
  */
 
 get_header('noscroll'); ?>
-<div id="content"></div>
-<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 <div class="container search-holder">
     <div class="row">
         <header class="page-header">

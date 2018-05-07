@@ -103,7 +103,7 @@ get_header('noscroll'); ?>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
-	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+	                    	<div class="divTableCell border_first_color main_font_color"><a href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></a></div>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
 	                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
 	                    </div>
@@ -144,8 +144,8 @@ get_header('noscroll'); ?>
 				
 		<div class="container">
 			<div class="row album-head border_first_color main_font_color">
-				<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-					<div class="col-sm-3 main_font_color"><?php echo __('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+				<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+					<div class="col-sm-3 main_font_color"><?php echo __('Album Name:<br>', 'koband');?><a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 			        <?php 
 			        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -214,8 +214,8 @@ get_header('noscroll'); ?>
 					
 			<div class="container">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-						<div class="col-sm-3 main_font_color"><?php echo __('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+					<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+						<div class="col-sm-3 main_font_color"><?php echo __('Name:<br>', 'koband');?><a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 						<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
 						<div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
 
