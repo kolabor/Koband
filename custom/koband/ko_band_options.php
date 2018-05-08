@@ -403,7 +403,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_single_menu_background_color',
 ) ) );
 
-/***** Menu Section end here********/
+/***** Single Menu Section end here********/
 /************************************************************************************************************************/
 
 /*Home page Modules start here*/
@@ -691,6 +691,38 @@ $wp_customize->add_control( 'ko_band_footer_search', array(
 
 /*** Footer section end here  ***/
 /****************************************************************************************************************/
+
+/***** Footer Menu Section start here********/
+
+/*** Footer Menu font color ***/
+$wp_customize->add_setting( 'ko_band_footer_menu_font_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_menu_font_color', array(
+        'label'      => esc_html__( ' Menu Font Color', 'koband' ),
+        'section'    => 'nav_menu[3]',
+        'settings'   => 'ko_band_footer_menu_font_color',
+) ) );
+
+/** Footer Menu font size**/
+$wp_customize->add_setting( 'ko_band_footer_menu_font_size' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_footer_menu_font_size',
+    array(
+        'label' => esc_html__( 'Menu Font Size (in px.)', 'koband' ),
+        'section' => 'nav_menu[3]',
+        'settings'   => 'ko_band_footer_menu_font_size',
+        'type' => 'number',
+) ) );
+
+/*** Footer Menu background color ***/
+$wp_customize->add_setting( 'ko_band_footer_menu_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_menu_background_color', array(
+        'label'      => esc_html__( ' Menu Background Color', 'koband' ),
+        'section'    => 'nav_menu[3]',
+        'settings'   => 'ko_band_footer_menu_background_color',
+) ) );
+
+/***** Single Menu Section end here********/
+/************************************************************************************************************************/
+
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
