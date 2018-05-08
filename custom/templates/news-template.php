@@ -17,7 +17,7 @@
  		<div class="row">
 		 	<div class="container">
 		 		<div class="row">
-					<h1 class="first_color"><?php echo __('News', 'koband');?></h1>
+					<h1 class="first_color"><?php echo esc_html__('News', 'koband');?></h1>
 				</div>
 			</div><!-- container -->
 			<div class="container">
@@ -41,7 +41,7 @@
 											<div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
-														<span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php echo __('READ MORE →', 'koband');?></a></span>
+														<span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
 													</div>
 												</div>
 										</div>
@@ -55,10 +55,10 @@
 			</div><!-- container -->
 				<div class="container text-center">
 					<div class="row">
-						<a class="btn-koband-load koband_load_more bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-							<span class="koband-loading"><?php echo __('Loading...', 'koband');?></span>
-							<span class="text"><?php echo __('Load more', 'koband');?></span></a>
-						<a class="no-news"><span class="news-posts"><?php echo __('There are no more news', 'koband');?>  <i class="far fa-smile"></i></span></a>
+						<a class="btn-koband-load koband_load_more bg_first_color" data-page="1" data-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
+							<span class="koband-loading"><?php echo esc_html__('Loading...', 'koband');?></span>
+							<span class="text"><?php echo esc_html__('Load more', 'koband');?></span></a>
+						<a class="no-news"><span class="news-posts"><?php echo esc_html__('There are no more news', 'koband');?>  <i class="far fa-smile"></i></span></a>
 					</div>
 				</div>
 		

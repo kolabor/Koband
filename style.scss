@@ -81,7 +81,6 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1045;
-  background: rgba(255,255,255,0.7);
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -90,7 +89,6 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1045;
-  background: #fff !important;
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -100,7 +98,6 @@ header {
   width: 100%;
   position: relative;
   z-index: 1045;
-  background: #fff !important;
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -156,19 +153,13 @@ header {
   height: 60px;
   text-align: center;
   line-height: 50px;
-  color: #333;
   font-weight: 700;
-  font-size: 130%;
   transition: border-bottom 0.1s;
   text-decoration: none !important;
   text-transform: uppercase!important;
 
 }
 /*Hover state for top level links*/
-.main-nav .menu li a:hover {
-  color: #333;
-  border-bottom: 3px solid #4D0000 !important;
-}
 
 .mobile-nav-icon {
   width: 29%;
@@ -189,7 +180,7 @@ header {
 /* -----------------------------------------------  */
 
 .carousel-inner {
-  height: 100vh!important;
+  height: 100% !important;
 }
 .carousel-item img
 {
@@ -216,15 +207,12 @@ header {
   top: 30%!important;
   position: absolute;
   z-index: 10;
- padding: 30px;
-  color: #fff;
+  padding: 30px;
   text-align: left;
-  background:rgba(0,0,0,0.5);
 }
 
 .sl-content h5 {
   font-size: 60px!important;
-  color: #4D0000;
 }
 
 .sl-content p {
@@ -453,7 +441,7 @@ header {
   transition: all 0.4s  cubic-bezier(0.88,-0.99, 0, 1.81);
   font-weight: normal;
   margin: -113px 0 0 0;
-  padding: 197px 190px;
+  padding: 39% 37%;
 }
 
 .hovereffect:hover a.info {
@@ -469,6 +457,82 @@ header {
 }
 
 
+/*               Lightbox                    */
+
+
+.FullscreenV {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 300px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9);
+}
+.FullscreenV iframe {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  height: 23%;
+}
+
+#Fullscreen {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: auto; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9);
+}
+#Fullscreen img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  height: auto;
+}
+.closee {
+  margin-right: 6px;
+  cursor: pointer;
+  position: absolute;
+  right: 15%;
+  top: 7%;
+  font-size: 35px;
+}
+.imageList img{cursor: pointer !important;}
+
+.next {
+  position: absolute;
+  left: 15%;
+  top: 25%;
+  background-color: #f1f1f1;
+  color: black!important;
+  border-radius: 50%;
+  text-decoration: none!important;
+  display: inline-block;
+  padding: 8px 16px;
+}
+.prev {
+  position: absolute;
+  right: 15%;
+  top: 25%;
+  background-color: #f1f1f1;
+  color: black!important;
+  border-radius: 50%;
+  text-decoration: none!important;
+  display: inline-block;
+  padding: 8px 16px;
+}
 /*
 Tour Section
 -------------------------------------------
@@ -775,8 +839,6 @@ padding-top: 15px;
   text-align: right;
 }
 .footer-menu .menu li a {
-  color: #4b4b4b;
-  font-size: 22px;
   font-weight: 400;
 }
 .footer-menu .menu li a:hover {
@@ -1086,7 +1148,7 @@ input {
   height: 50px;
   text-align: center;
   line-height: 30px;
-  background: #f5f5f5;
+  background: rgba(245, 245, 245, 0.3);
   color: #444;
   cursor: pointer;
   border: 0;
@@ -1213,7 +1275,22 @@ input {
   border: 1px solid #00a8a8;
   background-color: #d1ecf11a;
 }
-
+.no-results.not-found {
+  width: 100%;
+  padding-bottom: 35px !important;
+}
+.search-form input{
+  border: 1px solid rgba(0, 168, 168, 0.4);
+}
+.search-form{
+  float: left;
+}
+.sad_smile {
+  text-align: center !important;
+}
+.sad_smile_span {
+  font-size: 250px;
+}
 /*
 ============================================
            Media query
@@ -1224,7 +1301,7 @@ input {
 @media screen and (max-width: 1366px) {
   .sl-content h5 {font-size: 45px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
-  .carousel-inner {height: auto!important;}
+  .carousel-inner {height: 100% !important;}
 }
 
 @media screen and (max-width: 1024px) {

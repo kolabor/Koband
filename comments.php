@@ -26,7 +26,7 @@ if ( post_password_required() ) {
                 $comments_number = get_comments_number();
                 if ( '1' === $comments_number ) {
                     /* translators: %s: post title */
-                    printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'koband' ), get_the_title() );
+                    printf( esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'koband' ), esc_html(get_the_title()) );
                 } else {
                     printf(
                         /* translators: 1: number of comments, 2: post title */
@@ -37,8 +37,7 @@ if ( post_password_required() ) {
                             'comments title',
                             'koband'
                         ),
-                        number_format_i18n( $comments_number ),
-                        get_the_title()
+                        number_format_i18n( $comments_number ), esc_html(get_the_title())
                     );
                 }
             ?>
@@ -46,7 +45,7 @@ if ( post_password_required() ) {
 
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
         <nav id="comment-nav-above" class="comment-navigation" role="navigation">
-            <h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'koband' ); ?></h1>
+            <h1 class="screen-reader-text"><?php echo esc_html__( 'Comment navigation', 'koband' ); ?></h1>
             <div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'koband' ) ); ?></div>
             <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'koband' ) ); ?></div>
         </nav><!-- #comment-nav-above -->
@@ -64,7 +63,7 @@ if ( post_password_required() ) {
 
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
         <nav id="comment-nav-below" class="comment-navigation" role="navigation">
-            <h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'koband' ); ?></h1>
+            <h1 class="screen-reader-text"><?php echo esc_html__( 'Comment navigation', 'koband' ); ?></h1>
             <div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'koband' ) ); ?></div>
             <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'koband' ) ); ?></div>
         </nav><!-- #comment-nav-below -->
@@ -74,9 +73,9 @@ if ( post_password_required() ) {
 
     <?php
         // If comments are closed and there are comments, let's leave a little note, shall we?
-        if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+        if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( esc_html(get_post_type()), 'comments' ) ) :
     ?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'koband' ); ?></p>
+        <p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'koband' ); ?></p>
     <?php endif; ?>
 
     <?php comment_form(); ?>

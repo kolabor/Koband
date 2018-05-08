@@ -16,7 +16,7 @@ get_header('noscroll'); ?>
 <div class="container search-holder">
 	<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo __('Posts by ', 'koband');?><?php echo $curauth->nickname; ?>:</h1>
+	    <h1><?php echo esc_html__('Posts by ', 'koband');?><?php echo esc_html($curauth->nickname); ?>:</h1>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -67,13 +67,13 @@ get_header('noscroll'); ?>
 			<?php while ( $author_posts->have_posts() ) : $author_posts->the_post(); ?>
 	            <div class="col-md-4">
 	                <div class="card mb-4 box-shadow">
-	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( esc_html(get_the_title(), 4) ); ?></a></h2></div>
 	                    <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
 	                    <div class="card-body">
 	                        <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
 	                            <div class="d-flex justify-content-between align-items-center">
 	                                <div class="btn-group">
-	                                    <span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php echo __('READ MORE →', 'koband');?></a></span>
+	                                    <span  class="btn btn-sm btn-outline-secondary read_more"><a href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
 	                                </div>
 	                            </div>
 	                    </div>
@@ -87,7 +87,7 @@ get_header('noscroll'); ?>
 		if ($author_media->have_posts() ) : ?>
 		<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo __('Media Posted by ', 'koband');?><?php echo $curauth->nickname; ?>:</h1>
+	    <h1><?php echo esc_html__('Media Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -96,12 +96,14 @@ get_header('noscroll'); ?>
 				<?php 
 				while ( $author_media->have_posts() ) : $author_media->the_post();
 				$post_id = get_the_ID(); ?>
-					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					<div class="col-lg-3 img-holder col-md-4 col-sm-6 col-xs-12">
 					    <div class="hovereffect">
-					      <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a>
+					      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 				            <div class="overlay">
 				                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-									<a class="info" first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband'); ?></a>
+
+									<a class="info" href="<?php the_permalink();?>"><i class="fas fa-link"></i></a>
+
 				            </div>
 					    </div>
 					</div>
@@ -116,7 +118,7 @@ get_header('noscroll'); ?>
 	   	<?php if ($author_album_posts->have_posts() ) : ?>
 	   	<header class="author-header"> <?php
 			$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-		    <h1><?php echo __('Albums Posted by ', 'koband');?><?php echo $curauth->nickname; ?>:</h1>
+		    <h1><?php echo esc_html__('Albums Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
 				<?php if (get_the_author_meta('description')) : ?>
 					<div class="author-description"><?php the_author_meta('description'); ?></div>
 				<?php endif; ?>
@@ -125,8 +127,8 @@ get_header('noscroll'); ?>
 		$post_id = get_the_ID();?>
 		<div class="container">
 			<div class="row album-head border_first_color main_font_color">
-				<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-					<div class="col-sm-3 main_font_color"><?php _e('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+				<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank"><?php the_post_thumbnail(array(70,70));?></a></div>
+					<div class="col-sm-3 main_font_color"><?php esc_html__('Album Name:', 'koband');?><a href="<?php the_permalink();?>" target="_blank" ><br><span class="main_font_color"><?php the_title();?></span></a></div>
 
 			        <?php 
 			        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -134,8 +136,8 @@ get_header('noscroll'); ?>
 					$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 					$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 						
-					<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
-				    <div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
+					<div class="col-sm-3 main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  esc_attr($album_date[0]); } ?></span></div>
+				    <div class="col-sm-3 main_font_color"><?php echo esc_html__('Length:', 'koband');?><br><span class="main_font_color"><?php if(isset($album_length[0])) { echo  esc_attr($album_length[0]); } ?></span></div>
 				    <div class="col-sm-1 album-up-down-buttons">
 				    	<span class="btn btn-sm album-song">
 					    	<a class="btn btn-sm show-album-song first_color"><i class="fas fa-caret-down"></i></a>
@@ -146,28 +148,28 @@ get_header('noscroll'); ?>
 				<div class="container album-songs-show-hide">
 					<!-- Labels -->
 					<div class="row album-head border_first_color">
-						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Name', 'koband');?></div>
-						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Length', 'koband');?></div>
-						<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
+						<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Name', 'koband');?></div>
+						<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Length', 'koband');?></div>
+						<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Details', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color main_font_color">			
 					<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
-						<div class="col-sm-4"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
-						<div class="col-sm-4"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
-						<div class="col-sm-4"><?php if(isset($value_song_details['detail'])) {echo $value_song_details['detail'];} ?></div>
+						<div class="col-sm-4"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
+						<div class="col-sm-4"><?php if(isset($value_song_details['length'])) {echo esc_attr($value_song_details['length']);} ?></div>
+						<div class="col-sm-4"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>
 							
 						<?php } ?> 
 					</div>
 					<!-- Labels -->
 					<div class="row album-head border_first_color main_font_color">
-						<div class="col-sm-6"><?php echo __('Store Name', 'koband');?></div>
-						<div class="col-sm-6"><?php echo __('Store Link', 'koband');?></div>
+						<div class="col-sm-6"><?php echo esc_html__('Store Name', 'koband');?></div>
+						<div class="col-sm-6"><?php echo esc_html__('Store Link', 'koband');?></div>
 					</div>
 					<div class="row song-list main_font_color">
 						<?php 
 							foreach ($album_song_store[0] as  $value_song_store) { ?>
-							<div class="col-sm-6"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-							<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
+							<div class="col-sm-6"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
+							<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
 						<?php } ?> 
 					</div>			
 				</div><!-- container album-songs-show-hide -->
@@ -182,7 +184,7 @@ get_header('noscroll'); ?>
 		<?php if ($author_single_posts->have_posts() ) : ?>
 		<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo __('Singles Posted by ', 'koband');?><?php echo $curauth->nickname; ?>:</h1>
+	    <h1><?php echo esc_html__('Singles Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -196,10 +198,10 @@ get_header('noscroll'); ?>
 					
 			<div class="container">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-						<div class="col-sm-3 main_font_color"><?php echo __('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
-						<div class="col-sm-3 main_font_color"><?php echo __('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
-						<div class="col-sm-3 main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
+					<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+						<div class="col-sm-3 main_font_color"><?php echo esc_html__('Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
+						<div class="col-sm-3 main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo esc_attr($single_date[0]); } ?></span></div>
+						<div class="col-sm-3 main_font_color"><?php echo esc_html__('Length:', 'koband');?><br><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  esc_attr($single_length[0]); } ?></span></div>
 
 					<div class="col-sm-1 single-up-down-buttons">
 						<span class="btn btn-sm single-song">
@@ -210,23 +212,23 @@ get_header('noscroll'); ?>
 				</div>
 			<div class="container single-songs-show-hide">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
+					<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Details', 'koband');?></div>
 				</div>
 				<div class="row song-list border_first_color main_font_color">			
 				<?php foreach ($single_detail as  $value_single_detail) { ?>
-					<div class="col"><?php if(isset($value_single_detail)) {echo $value_single_detail;} ?></div>
+					<div class="col"><?php if(isset($value_single_detail)) {echo esc_attr($value_single_detail);} ?></div>
 				<?php } ?> 
 				</div>
 
 				<div class="row album-head border_first_color main_font_color">
-					<div class="col-sm-5"><?php echo __('Store Name:', 'koband');?></div>
-					<div class="col-sm-5"><?php echo __('Store Link:', 'koband');?></div>
+					<div class="col-sm-5"><?php echo esc_html__('Store Name:', 'koband');?></div>
+					<div class="col-sm-5"><?php echo esc_html__('Store Link:', 'koband');?></div>
 				</div>
 				<div class="row song-list border_first_color main_font_color">
 					<?php if(isset($single_store[0])) { ?>
 						<?php foreach ($single_store[0] as  $value_single_store) { ?>
-						<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo $value_single_store['name'];}?></div>
-						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> 
+						<div class="col-sm-5"><?php if(isset($value_single_store['name'])) {echo esc_attr($value_single_store['name']);}?></div>
+						<div class="col-sm-6 btn-buy"><a href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
 					<?php } } ?>
 				</div>
 			</div><!-- container single-songs-show-hide -->	
@@ -240,7 +242,7 @@ get_header('noscroll'); ?>
     	if ( $author_tour_posts->have_posts() ) : ?>
     	<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo __('Tours Posted by ', 'koband');?><?php echo $curauth->nickname; ?>:</h1>
+	    <h1><?php echo esc_html__('Tours Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -249,14 +251,14 @@ get_header('noscroll'); ?>
     	<div class="divTable">
             <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Date', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Country', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('City', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Address', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('ZipCode', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Ticket status', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo __('Store', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Country', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Address', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('ZipCode', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Ticket status', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Store', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -275,14 +277,14 @@ get_header('noscroll'); ?>
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
                     <div class="divTableRow ">
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  $tour_date[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  $tour_country[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
-                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  esc_attr($tour_address[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  esc_attr($tour_zipcode[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><a href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo esc_attr($tour_venuename[0]); } ?></a></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  esc_attr($tour_ticket[0]); } ?></div>
+                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><?php echo esc_html__('Buy Here', 'koband');?></a><?php } ?></div>
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>

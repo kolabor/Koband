@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __('Singles', 'koband')
+    'menu_name' => esc_html__('Singles', 'koband')
     ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -25,18 +25,18 @@ $args = array(
 function ko_band_register_singles() {
 
   $label = array(
-    'name' => __('Singles', 'koband'),
-    'singular_name' => __('Singles', 'koband'),
-    'add_new' => __('Add Single', 'koband'),
-    'all_items' => __('All Singles','koband'),
-    'add_new_item' => __('Add Singles', 'koband'),
-    'edit_item' => __('Edit Singles', 'koband'),
-    'new_item' => __('New Singles', 'koband'),
-    'view_item' => __('View Singles', 'koband'),
-    'search_item' => __('Search Singles', 'koband'),
-    'not_found' => __('No Singles Found', 'koband'),
-    'not-found_in_trash' => __('No Singles Found in Trash', 'koband'),
-    'parent_item_colon' => __('Parent Singles', 'koband')
+    'name' => esc_html__('Singles', 'koband'),
+    'singular_name' => esc_html__('Singles', 'koband'),
+    'add_new' => esc_html__('Add Single', 'koband'),
+    'all_items' => esc_html__('All Singles','koband'),
+    'add_new_item' => esc_html__('Add Singles', 'koband'),
+    'edit_item' => esc_html__('Edit Singles', 'koband'),
+    'new_item' => esc_html__('New Singles', 'koband'),
+    'view_item' => esc_html__('View Singles', 'koband'),
+    'search_item' => esc_html__('Search Singles', 'koband'),
+    'not_found' => esc_html__('No Singles Found', 'koband'),
+    'not-found_in_trash' => esc_html__('No Singles Found in Trash', 'koband'),
+    'parent_item_colon' => esc_html__('Parent Singles', 'koband')
     );
   
   $args = array(
@@ -53,14 +53,14 @@ function ko_band_register_singles() {
     'exclude_from_search' =>false,
   );
 
-register_post_type( __('Singles','koband'), $args);
+register_post_type( esc_html__('Singles','koband'), $args);
 }
 add_action('init', 'ko_band_register_singles' );
   
 function ko_band_singles_meta_box_init(){
         add_meta_box(
         'ko_band_singles_meta_box',
-        __('Song Details', 'koband'),
+        esc_html__('Song Details', 'koband'),
         'ko_band_singles_display_meta_box',
         'singles',
         'normal',
@@ -84,25 +84,25 @@ function ko_band_singles_display_meta_box($post, $box){
 
 <div class="container"> <!-- Container div for Single Length and Date -->
     <div class="row-top">
-              <div class="col-sm"><?php echo __('Single Length', 'koband');?></div>
-              <div class="col-sm"><?php echo __('Date Release', 'koband');?></div>
-              <div class="col-sm"><?php echo __('Single Detail', 'koband');?></div>
+              <div class="col-sm"><?php echo esc_html__('Single Length', 'koband');?></div>
+              <div class="col-sm"><?php echo esc_html__('Date Release', 'koband');?></div>
+              <div class="col-sm"><?php echo esc_html__('Single Detail', 'koband');?></div>
     </div>
     
     <div class="row">
-              <div class="col-sm"><input type="time" name="ko_band_singles_length" value="<?php echo esc_html( $singles_length ) ?>" class="singlelength without_ampm" placeholder="00:00"></div>
-              <div class="col-sm"><input type="date" name="ko_band_singles_date_release" value="<?php echo esc_html( $singles_date_release ) ?>" class="singledate"></div>
-              <div class="col-sm"><textarea type="text" name="ko_band_singles_detail"  class="singledetail"><?php echo esc_html( $singles_detail ) ?></textarea></div>
+              <div class="col-sm"><input type="time" name="ko_band_singles_length" value="<?php echo esc_attr( $singles_length ) ?>" class="singlelength without_ampm" placeholder="00:00"></div>
+              <div class="col-sm"><input type="date" name="ko_band_singles_date_release" value="<?php echo esc_attr( $singles_date_release ) ?>" class="singledate"></div>
+              <div class="col-sm"><textarea type="text" name="ko_band_singles_detail"  class="singledetail"><?php echo esc_textarea( $singles_detail ) ?></textarea></div>
           </div>
 
   <div class="row-blank">
-    <div class="col-sm"><?php echo __('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
+    <div class="col-sm"><?php echo esc_html__('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
   </div>
 
 <div  id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
     <div class="row-top form_heading">
-                <div class="col-sm"><?php echo __('Store Name', 'koband');?></div>
-                <div class="col-sm"><?php echo __('Store Link', 'koband');?></div>
+                <div class="col-sm"><?php echo esc_html__('Store Name', 'koband');?></div>
+                <div class="col-sm"><?php echo esc_html__('Store Link', 'koband');?></div>
                 <div class="col-sm"></div>
     </div>
 
@@ -112,7 +112,7 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row">
                 <div class="col-sm"><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></div> 
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
+                <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
 
     <?php  } else :  // show a blank one    ?>
@@ -120,7 +120,7 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row">
                 <div class="col-sm"> <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.." /></div>
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
+                <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
@@ -128,10 +128,10 @@ function ko_band_singles_display_meta_box($post, $box){
     <div class="row empty-row-singles screen-reader-text">
                 <div class="col-sm"><input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.."/></div>
                 <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
+                <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
     <div class="row row_no_border">
-<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php echo __('Add another', 'koband');?></a></p></div>
+<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
     </div>
   </div>
 </div>

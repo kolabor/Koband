@@ -22,9 +22,9 @@ get_header('noscroll'); ?>
 	<div class="row single_page_row">
 		<div class="container">
 			<div class="row single_page_title album_single_page">
-				<div class="col-sm-4 album_title main_font_color"><?php echo __('Album Name:<br>', 'koband');?><?php the_title();?></div>	
-				<div class="col-sm-4 album_title main_font_color"><?php echo __('Date:<br>', 'koband');?> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  $album_date[0]; } ?></span></div>
-			     <div class="col-sm-4 album_title main_font_color"><?php echo __('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($album_length[0])) { echo  $album_length[0]; } ?></span></div>
+				<div class="col-sm-4 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <?php the_title();?></div>	
+				<div class="col-sm-4 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  esc_attr($album_date[0]); } ?></span></div>
+			     <div class="col-sm-4 album_title main_font_color"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_length[0])) { echo  esc_attr($album_length[0]); } ?></span></div>
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
@@ -33,25 +33,25 @@ get_header('noscroll'); ?>
 				<div class="col-sm-8">
 					<div class="container ">
 						<div class="row album-info">
-								<div class="col-sm-4 songs-head main_font_color "><?php echo __('Song Name', 'koband');?></div>
-								<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Length', 'koband');?></div>
-								<div class="col-sm-4 songs-head main_font_color"><?php echo __('Song Details', 'koband');?></div>
+								<div class="col-sm-4 songs-head main_font_color "><?php echo esc_html__('Song Name', 'koband');?></div>
+								<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Length', 'koband');?></div>
+								<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Details', 'koband');?></div>
 						</div>
 						<div class="row song-list main_font_color">			
 							<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
-								<div class="col-sm-4 border_bottom line album_single_page_details"><?php if(isset($value_song_details['name-details'])) {echo $value_song_details['name-details'];}?></div>
-								<div class="col-sm-4 border_bottom line album_single_page_details"><?php if(isset($value_song_details['length'])) {echo $value_song_details['length'];} ?></div>
-								<div class="col-sm-4 border_bottom album_single_page_details"><?php if(isset($value_song_details['detail'])) {echo $value_song_details['detail'];} ?></div>		
+								<div class="col-sm-4 border_bottom line album_single_page_details"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
+								<div class="col-sm-4 border_bottom line album_single_page_details"><?php if(isset($value_song_details['length'])) {echo esc_attr($value_song_details['length']);} ?></div>
+								<div class="col-sm-4 border_bottom album_single_page_details"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>		
 								<?php } ?> 
 						</div>
 						<div class="col-sm-12 row album-head border_first_color main_font_color">
-							<div class="col-sm-4"><?php echo __('Store Name', 'koband');?></div>
-							<div class="col-sm-4"><?php echo __('Store Link', 'koband');?></div>
+							<div class="col-sm-4"><?php echo esc_html__('Store Name', 'koband');?></div>
+							<div class="col-sm-4"><?php echo esc_html__('Store Link', 'koband');?></div>
 						</div>
 						<?php foreach ($album_song_store[0] as  $value_song_store) { ?>
 							<div class="col-sm-12 row song-list border_second_color main_font_color">
-							<div class="col-sm-4 line album_single_page_details"><?php if(isset($value_song_store['name-store'])) {echo $value_song_store['name-store'];}?></div>
-							<div class="col-sm-4 btn-buy line album_single_page_details"><a href="<?php if(isset($value_song_store['link'])) {echo $value_song_store['link'];}?>"><?php echo __('Buy Here', 'koband');?></a></div> </div>
+							<div class="col-sm-4 line album_single_page_details"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
+							<div class="col-sm-4 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> </div>
 						<?php } ?> 
 					</div>
 				</div> 

@@ -14,14 +14,14 @@ get_header('noscroll');
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title><?php echo __('Temporarliy Unavailable', 'koband');?></title>
+		<title><?php echo esc_html__('Temporarliy Unavailable', 'koband');?></title>
 	</head>
 	<body>
 		<div id="wrapper">
 			<center>
 				<!-- This is the generic database error page that will be shown when a fatal db connection issue aries -->
-				<h1><?php echo $_SERVER['HTTP_HOST'];?><?php echo __('is Temporarliy Unavailable', 'koband');?></h1>
-				<p><?php echo __('The webmaster has been alerted. Please try again later.', 'koband');?></p>
+				<h1><?php echo esc_html($_SERVER['HTTP_HOST']);?><?php echo esc_html(' is Temporarliy Unavailable', 'koband');?></h1>
+				<p><?php echo esc_html('The webmaster has been alerted. Please try again later.', 'koband');?></p>
 			</center>
 		</div>
 	</body>

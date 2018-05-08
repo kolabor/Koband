@@ -11,15 +11,20 @@
    /****Theme colors**/
   $koband_main_font_color = get_theme_mod('ko_band_main_font_color'); 
   $koband_first_theme_color = get_theme_mod('ko_band_first_theme_color'); 
-  $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');  
-  
+  $koband_second_theme_color = get_theme_mod('ko_band_second_theme_color');
+
+  /*** Main Menu color & font**/
+  $koband_main_menu_font_color = get_theme_mod('ko_band_main_menu_font_color');
+  $koband_main_menu_font_size = get_theme_mod('ko_band_main_menu_font_size'); 
+  $koband_main_menu_bg_color = get_theme_mod('ko_band_main_menu_background_color');
+  list($red, $green, $blue) = sscanf($koband_main_menu_bg_color, "#%02x%02x%02x");
+   
   /***Home page Module Color****/
   $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
   $koband_second_module_color = get_theme_mod('ko_band_background_second_section_color');
   $koband_third_module_color = get_theme_mod('ko_band_background_third_section_color');
   $koband_fourth_module_color = get_theme_mod('ko_band_background_fourth_section_color');
   $koband_fifth_module_color = get_theme_mod('ko_band_background_fifth_section_color');
-
 
   /***Fonts***/
   $koband_theme_font_size = get_theme_mod( 'ko_band_theme_font_size' );
@@ -38,7 +43,16 @@
   $koband_slider_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); 
   $koband_slider_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink'); 
 
-  $koband_slider_box_background = get_theme_mod('ko_band_home_page_box_background');
+  /****Slider Section Colors****/
+  $koband_slider_text_color = get_theme_mod('ko_band_slider_text_color');
+  $koband_slider_button_text_color = get_theme_mod('ko_band_slider_button_text_color');
+  $koband_slider_button_bg_color = get_theme_mod('ko_band_slider_button_background_color');
+  $koband_slider_button_hover_bg_color = get_theme_mod('ko_band_slider_button_hover_background_color');
+  $koband_slider_text_holder_bg_color = get_theme_mod('ko_band_slider_text_holder_background_color');
+  list($r, $g, $b) = sscanf($koband_slider_text_holder_bg_color, "#%02x%02x%02x");
+
+  /*****Slider Check Background******/
+  $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
 
   /****Home page Modules ****/
   $koband_first_module = get_theme_mod('ko_band_first_render_modules'); 
@@ -47,13 +61,11 @@
   $koband_fourth_module = get_theme_mod('ko_band_fourth_render_modules');
   $koband_fifth_module = get_theme_mod('ko_band_fifth_render_modules');
 
-
   /***Home page Module Color****/
   $koband_news_background_color = get_theme_mod('ko_band_background_news_section_color'); 
   $koband_tour_background_color = get_theme_mod('ko_band_background_tour_section_color');
   $koband_discography_background_color = get_theme_mod('ko_band_background_discography_section_color'); 
   $koband_gallery_background_color = get_theme_mod('ko_band_background_gallery_section_color');
-
 
   /***Social Media*****/
   $koband_facebook = get_theme_mod( 'ko_band_facebook_social_media' );
@@ -85,22 +97,24 @@
   $koband_footer_search = get_theme_mod('ko_band_footer_search');
   $koband_footer_background_color = get_theme_mod('ko_band_footer_section_background_color');
 
-  /*****Slider Check Background******/
-  $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
+  /*** Footer Menu color & font**/
+  $koband_footer_menu_font_color = get_theme_mod('ko_band_footer_menu_font_color');
+  $koband_footer_menu_font_size = get_theme_mod('ko_band_footer_menu_font_size'); 
 
+ 
 ?>
 
 #theband {
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
- url("<?php echo $koband_theband_image; ?>") !important;
+ url("<?php echo esc_html($koband_theband_image); ?>") !important;
  background-repeat: no-repeat;
  background-size: cover;
  background-position: center;
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
 
 
 
@@ -110,94 +124,104 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 .home, .single, .page, .default
 {
   
-  font-size:  <?php echo $koband_theme_font_size; ?> !important;
-  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?> !important;
+  line-height:  <?php echo esc_html($koband_theme_line_height); ?> !important;
 
-  color: <?php echo $koband_main_font_color; ?> !important;
+  color: <?php echo esc_html($koband_main_font_color); ?> !important;
 
 }
 
 .home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
-  font-family: <?php echo $koband_headding_font; ?> !important;
+  font-family: <?php echo esc_html($koband_headding_font); ?> !important;
 
-  color: <?php echo $koband_main_font_color;?> !important;
+  color: <?php echo esc_html($koband_main_font_color);?> !important;
 
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
 }
 
 #News {
-  background-color: <?php echo  $koband_news_background_color; ?> !important;
+  background-color: <?php echo  esc_html($koband_news_background_color); ?> !important;
 }
 
 #Tour {
-  background-color: <?php echo  $koband_tour_background_color; ?> !important;
+  background-color: <?php echo  esc_html($koband_tour_background_color); ?> !important;
 }
 
 #Discography {
-  background-color: <?php echo  $koband_discography_background_color; ?> !important;
+  background-color: <?php echo  esc_html($koband_discography_background_color); ?> !important;
 }
 #Media {
-background-color: <?php echo  $koband_gallery_background_color; ?> !important;
+background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !important;
 }
 
 
 
 
 .first_color {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .social-icons a .first_color:hover {
-  color: <?php echo $koband_second_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 .first_color a {
-  color: <?php echo $koband_first_theme_color;?> !important;
+  color: <?php echo esc_html($koband_first_theme_color);?> !important;
 }
 .bg_first_color {
-  background-color: <?php echo $koband_first_theme_color; ?> !important; 
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> !important; 
 }
 .bg_first_color:hover {
-  background-color: <?php echo $koband_second_theme_color; ?> !important;
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  background-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .border_first_color {
-  border-bottom-color: <?php echo $koband_first_theme_color; ?> !important;
+  border-bottom-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .border_second_color {
-  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+  border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 
 .bg_second_color {
-  background-color: <?php echo $koband_second_theme_color ?> !important;
+  background-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 
 
 .main_font_color{
 
-  color: <?php echo $koband_main_font_color; ?> !important;  
+  color: <?php echo esc_html($koband_main_font_color); ?> !important;  
 
 }
 
 .font-line_height {
-  font-size:  <?php echo $koband_theme_font_size; ?> !important;
-  line-height:  <?php echo $koband_theme_line_height; ?> !important;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?> !important;
+  line-height:  <?php echo esc_html($koband_theme_line_height); ?> !important;
 }
 
 .read_more a {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .read_more:hover a {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .read_more:hover {
-  background-color: <?php echo $koband_second_theme_color ?> !important;
+  background-color: <?php echo esc_html($koband_second_theme_color) ?> !important;
+}
+.slider_text_color{
+  color: <?php echo esc_html($koband_slider_text_color) ?>!important;
+}
+.slider_button_text_color {
+  color: <?php echo esc_html($koband_slider_button_text_color) ?>!important;
+  background-color: <?php echo esc_html($koband_slider_button_bg_color) ?>!important;
+}
+.slider_button_text_color:hover {
+  background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> !important;
 }
 
 .sl-content{
   
   <?php if ($koband_check_slider_background == '1') 
   { ?>
-  background:rgba(0,0,0,0.5) !important;
+  background-color:rgba(<?php echo esc_html($r)?>,<?php echo esc_html($g)?>,<?php echo esc_html($b)?>,0.4)!important;
   <?php }
   else 
   { ?>
@@ -206,34 +230,56 @@ background-color: <?php echo  $koband_gallery_background_color; ?> !important;
   ?>
 }
 .submit {
-  background-color: <?php echo $koband_first_theme_color; ?> !important;
-  color: <?php echo $koband_second_theme_color; ?> !important;
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
+  color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 .reply a, .submit {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .submit:hover {
-  color: <?php echo $koband_first_theme_color; ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 
 .submit:hover {
- background-color: <?php echo $koband_second_theme_color; ?> !important;
-  color: <?php echo $koband_first_theme_color; ?> !important;
+ background-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
+  color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 
 .footer-section
 {
-  background-color: <?php echo $koband_footer_background_color; ?> !important;
+  background-color: <?php echo esc_html($koband_footer_background_color); ?> !important;
 }
 
 .border_bottom {
-  border-bottom-color: <?php echo $koband_second_theme_color; ?> !important;
+  border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
 .hovereffect:hover .overlay {
-  background-color: <?php echo $koband_first_theme_color; ?> !important;
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
   opacity: 0.5!important;
 }
 
 #contact .wpcf7 {
-  border: 1px solid <?php echo $koband_first_theme_color; ?> !important;
+  border: 1px solid <?php echo esc_html($koband_first_theme_color); ?> !important;
 } 
+.menu-scroll {
+  background-color:rgba(<?php echo esc_html($red)?>,<?php echo esc_html($green)?>,<?php echo esc_html($blue)?>,0.7)!important;
+}
+.fixed {
+  background-color: <?php echo esc_html($koband_main_menu_bg_color)?> !important;
+}
+.menu-noscroll {
+  background-color: <?php echo esc_html($koband_main_menu_bg_color)?> !important;
+  
+}
+.main-nav .menu li a {
+  color: <?php echo esc_html($koband_main_menu_font_color)?> !important;
+  font-size: <?php echo esc_html($koband_main_menu_font_size)?>px !important;
+}
+.main-nav .menu li a:hover {
+  color: <?php echo esc_html($koband_main_menu_font_color)?> !important;
+  border-bottom: 3px solid <?php echo esc_html($koband_first_theme_color); ?> !important;
+}
+.footer-menu .menu li a {
+  color: <?php echo esc_html($koband_footer_menu_font_color)?> !important;
+  font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px !important;
+}

@@ -13,8 +13,8 @@
     <label>
         <input type="search" class="search-field"
             placeholder="<?php echo esc_attr__( 'Search....', 'koband' ) ?>"
-            value="<?php echo get_search_query() ?>" name="s"
+            value="<?php echo esc_attr(get_search_query()) ?>" name="s"
             title="<?php echo esc_attr__( 'Search for :  ', 'koband' ) ?>"/>
     </label>
-    <button type="submit" class="search-submit bg_first_color"/><?php echo __('Search', 'koband') ?></button>
+    <button type="submit" class="search-submit bg_first_color"/><?php echo esc_html__('Search', 'koband') ?></button>
 </form>

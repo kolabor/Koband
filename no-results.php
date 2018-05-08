@@ -13,24 +13,28 @@
 ?>
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Error 404-Page NOT Found', 'koband' ); ?></h1>
+		<h3 class="page-title"><?php echo esc_html__( 'Error 404-Page NOT Found', 'koband' ); ?></h3>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+		<div class="content">
+			<div class="conent_holder">
+				<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( esc_html_e( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'koband' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+					<p><?php printf( esc_html__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'koband' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-		<?php elseif ( is_search() ) : ?>
+				<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'koband' ); ?></p>
-			<?php get_search_form(); ?>
+					<p><?php echo esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'koband' ); ?></p>
+					<div class="sad_smile"><span class="sad_smile_span">&#9785;</span></div>
 
-		<?php else : ?>
+				<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'koband' ); ?></p>
-			<?php get_search_form(); ?>
+					<p><?php echo esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'koband' ); ?></p></br>
 
-		<?php endif; ?>
+				<?php endif; ?>
+			</div>
+			<?php get_sidebar(); ?>
+		</div>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

@@ -46,10 +46,10 @@ get_header();?>
 		</div>
 	<div class="container text-center">
 		<div class="row">
-			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-				<span class="koband-loading"><?php echo __('Loading...', 'koband');?></span>
-				<span class="text"><?php echo __('Load media', 'koband');?></span></a>
-			    <a class="no-media"><span class="media-posts"><?php echo __('There are no more media', 'koband');?>  
+			<a class="btn-koband-load koband_load_media bg_first_color" data-page="1" data-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
+				<span class="koband-loading"><?php echo esc_html__('Loading...', 'koband');?></span>
+				<span class="text"><?php echo esc_html__('Load media', 'koband');?></span></a>
+			    <a class="no-media"><span class="media-posts"><?php echo esc_html__('There are no more media', 'koband');?>  
 				<i class="far fa-smile"></i></span></a>
 		</div>
 	</div><!--container-->
