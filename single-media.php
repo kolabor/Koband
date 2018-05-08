@@ -133,14 +133,13 @@ if (have_posts() ) :
 					
 
 					<?php if(isset($media_gallery[0])) {
-								foreach ($media_gallery[0] as  $value_image) { ?>
-																	
-						<img class="myimg" src="<?php echo esc_url(wp_get_attachment_image( $value_image, array(500,500)));} ?>">
+								foreach ($media_gallery[0] as  $value_image)  { ?>
+						<img class="myimg" src="<?php echo wp_get_attachment_image( $value_image, array(500,500)); ?>">
 						<div id="Fullscreen">
            					<img src="" alt="" />
        					
        				</div>
-					<?php }?> 
+					<?php } }?> 
 
 
 <!--	
