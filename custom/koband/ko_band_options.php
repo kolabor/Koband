@@ -75,7 +75,6 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*** First theme color ***/
 $wp_customize->add_setting( 'ko_band_first_theme_color' );
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_first_theme_color', array(
-
         'label'      => esc_html__( ' First Theme Color', 'koband' ),
         'section'    => 'colors',
         'settings'   => 'ko_band_first_theme_color',
@@ -228,7 +227,7 @@ $main_slider =   get_theme_mod( 'ko_band_home_page_slider_type');
 
 /*Slide section type start here */
 $wp_customize->add_section( 'ko_band_slider_section' , array(
-    'title'       => __( ' Slider', 'koband' ),
+    'title'       => esc_html__( ' Slider', 'koband' ),
     'priority'    => 30,
     'description' => $main_slider,
 ) );
@@ -250,12 +249,12 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
-  'label'    => __( 'Background Video Link:', 'koband' ),
+  'label'    => esc_html__( 'Background Video Link:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type'     => 'text',
-  'description' => __('*Only Youtube Video are allowed! ', 'koband' ),
+  'description' => esc_html__('*Only Youtube Video are allowed! ', 'koband' ),
    'input_attrs' => array(
-            'placeholder' => __( 'https://www.youtube.com', 'koband' ),
+            'placeholder' => esc_html__( 'https://www.youtube.com', 'koband' ),
         )
  ));
 
@@ -263,7 +262,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_title' );
 $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
   'settings' => 'ko_band_home_page_slider_title',
-  'label'    => __( 'Slider Title:', 'koband' ),
+  'label'    => esc_html__( 'Slider Title:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type'     => 'text'
 ));
@@ -272,7 +271,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_text' );
 $wp_customize->add_control( 'ko_band_home_page_slider_text', array(
   'settings' => 'ko_band_home_page_slider_text',
-  'label'    => __( 'Slider Text:', 'koband' ),
+  'label'    => esc_html__( 'Slider Text:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type' => 'textarea'
 ));
@@ -281,7 +280,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_text', array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_buttontitle' );
 $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
   'settings' => 'ko_band_home_page_slider_buttontitle',
-  'label'    => __( 'Button Title:', 'koband' ),
+  'label'    => esc_html__( 'Button Title:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type'     => 'text'
 ));
@@ -290,7 +289,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
 $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
   'settings' => 'ko_band_home_page_slider_buttonlink',
-  'label'    => __( 'Button Link:', 'koband' ),
+  'label'    => esc_html__( 'Button Link:', 'koband' ),
   'section'  => 'ko_band_slider_section',
   'type'     => 'link'  
 ));
@@ -485,7 +484,7 @@ $wp_customize->add_control( 'ko_band_apple_social_media', array(
 
 /*** The band section starts here  ***/
 $wp_customize->add_section( 'ko_band_theband_section' , array(
-    'title'       => __( 'The Band', 'koband' ),
+    'title'       => esc_html__( 'The Band', 'koband' ),
     'priority'    => 29,
     'description' => '<hr>',
 ) );
@@ -493,7 +492,7 @@ $wp_customize->add_section( 'ko_band_theband_section' , array(
 /**The band Biography**/
 $wp_customize->add_setting( 'ko_band_theband_biography' );
 $wp_customize->add_control( 'ko_band_theband_biography', array(
-    'label' => __( 'Biography:', 'koband' ),
+    'label' => esc_html__( 'Biography:', 'koband' ),
     'settings' => 'ko_band_theband_biography',
     'section' => 'ko_band_theband_section',
     'type'     => 'textarea',

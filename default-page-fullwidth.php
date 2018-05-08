@@ -1,11 +1,7 @@
 <?php
 /**
  * 
- *
  * Template Name: Default full width
- *
- *
- *
  *
  * @package Wordpress 
  * @subpackage Koband

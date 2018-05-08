@@ -38,7 +38,7 @@ get_header('noscroll'); ?>
 					<?php while ( $news_tags_posts->have_posts() ) : $news_tags_posts->the_post(); ?>
 						<div class="col-md-4">
 							<div class="card mb-4 box-shadow">
-								<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2></div>
+								<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
 								<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(220, 180)); ?></a>
 								<div class="card-body">
 									<div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
@@ -109,7 +109,7 @@ get_header('noscroll'); ?>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_city[0]))  { echo  $tour_city[0]; } ?></div>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_address[0]))	 { echo  $tour_address[0]; } ?></div>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_zipcode[0]))	 { echo  $tour_zipcode[0]; } ?></div>
-	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></div>
+	                    	<div class="divTableCell border_first_color main_font_color"><a href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  $tour_venuename[0]; } ?></a></div>
 	                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  $tour_ticket[0]; } ?></div>
 	                    	<div class="divTableCell btn-buy border_first_color main_font_color"><?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  $tour_ticketlink[0];?>"><?php echo __('Buy Here', 'koband');?></a><?php } ?></div>
 	                    </div>
@@ -151,8 +151,8 @@ get_header('noscroll'); ?>
 				
 		<div class="container">
 			<div class="row album-head border_first_color main_font_color">
-				<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-					<div class="col-sm-3 main_font_color"><?php echo __('Album Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+				<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+					<div class="col-sm-3 main_font_color"><?php echo __('Album Name:<br>', 'koband');?><a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 			        <?php 
 			        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -222,8 +222,8 @@ get_header('noscroll'); ?>
 					
 			<div class="container">
 				<div class="row album-head border_first_color">
-					<div class="col-sm-1"><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(70,70));?></a></div>
-						<div class="col-sm-3 main_font_color"><?php _e('Name:<br>', 'koband');?><span class="main_font_color"><?php the_title();?></span></div>
+					<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+						<div class="col-sm-3 main_font_color"><?php _e('Name:<br>', 'koband');?><a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 						<div class="col-sm-3 main_font_color"><?php _e('Date:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  $single_date[0]; } ?></span></div>
 						<div class="col-sm-3 main_font_color"><?php _e('Length:<br>', 'koband');?><span class="main_font_color"><?php if(isset($single_length[0])) 	{ echo  $single_length[0]; } ?></span></div>
 
@@ -281,12 +281,14 @@ get_header('noscroll'); ?>
 			<?php 
 			while ( $tags_media_posts->have_posts() ) : $tags_media_posts->the_post();
 			$post_id = get_the_ID(); ?>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="col-lg-3 img-holder col-md-4 col-sm-6 col-xs-12">
 				    <div class="hovereffect">
-				      <a href="<?php the_permalink();?>"><?php the_post_thumbnail(array(230,230)); ?></a>
+				      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 			            <div class="overlay">
 			                <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-								<a class="info" first_color" href="<?php the_permalink();?>"><?php echo __('Go to Gallery', 'koband'); ?></a>
+
+								<a class="info" href="<?php the_permalink();?>"><i class="fas fa-link"></i></a>
+
 			            </div>
 				    </div>
 				</div>

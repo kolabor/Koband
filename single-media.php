@@ -109,15 +109,6 @@ if (have_posts() ) :
 					</div> 
 				</div>
 
-				<div class="modal fade" id="myModal<?php echo $id;?>">
-				  <div class="modal-dialog">
-				      <div class="modal-content">
-				            <div class="modal-body"> 
-				            </div>
-				      </div>
-				   </div>
-				</div>
-
 		
 </div><!-- container ends here -->
 
@@ -129,15 +120,14 @@ if (have_posts() ) :
 	<div class="container">
 		<div class="row">
 			<?php 	
-					//Get only the approved comments 
-					// If comments are open or we have at least one comment, load up the comment template.
-				 if ( comments_open() || get_comments_number() ) :
-				     comments_template();
-				 endif;
-				$args = array(
-				    'status' => 'approve'
-				);
-			?>
+				//Get only the approved comments 
+				// If comments are open or we have at least one comment, load up the comment template.
+			 if ( comments_open() || get_comments_number() ) :
+			     comments_template();
+			 endif;
+			$args = array(
+			    'status' => 'approve'
+			);?>
 		</div>
 	</div>
 <?php 

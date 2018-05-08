@@ -22,7 +22,7 @@
                 <!--Footer Logo-->
                 <div class="footer_logo">
                         <?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
-                    <img src="<?php echo $footer_logo; ?>" class="footer_logo">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $footer_logo; ?>" class="footer_logo"></a>
                     </div>
             </div>
             

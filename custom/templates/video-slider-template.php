@@ -34,16 +34,16 @@
 	<!--loop ends here-->
 		<div class="video-bg"><input placeholder="http://somelink.com" />
 				<div class="iframe-wrapper">
-					<iframe  src="<?php echo $slide_video_link;?>?autoplay=1&loop=1&mute=1" ></iframe>
+					<iframe  src="<?php echo esc_url($slide_video_link);?>?autoplay=1&loop=1&mute=1" ></iframe>
 				</div>		
 		</div>		
 		<div class="sl-content">
-			    <h5><?php if(isset($slide_video_title[0])) 	{ echo  $slide_video_title; } ?></h5>
-			    <p><?php if(isset($slide_video_subtitle[0])) 	{ echo  $slide_video_subtitle; } ?></p>
+			    <h5><?php if(isset($slide_video_title[0])) 	{ echo  esc_attr($slide_video_title); } ?></h5>
+			    <p><?php if(isset($slide_video_subtitle[0])) 	{ echo  esc_attr($slide_video_subtitle); } ?></p>
 			    <a class="btn btn-primary btn-lg" href="<?php if(isset($slide_video_buttonlink)){ 
-			    	echo  $slide_video_buttonlink[0]; } ?>">
+			    	echo  esc_url($slide_video_buttonlink[0]); } ?>">
 			    <?php if(isset($slide_video_buttontitle[0])){ 
-			   	echo  $slide_video_buttontitle; } ?></a>
+			   	echo  esc_attr($slide_video_buttontitle); } ?></a>
 		</div>
 <?php endif;
 ?>

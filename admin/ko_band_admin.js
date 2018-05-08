@@ -2,7 +2,7 @@ jQuery(function($) {
 
   var file_frame;
 
-  //$("form").rememberState("#ko_band_gallery-metabox");
+
   $(document).on('click', '#ko_band_gallery-metabox a.gallery-add', function(e) {
   e.preventDefault();
 
@@ -18,15 +18,16 @@ jQuery(function($) {
     });
 
     file_frame.on('select', function() {
-      var listIndex = $('#gallery-metabox-list li').index($('#gallery-metabox-list li:last')),
-          
+       
+        var listIndex = $('#gallery-metabox-list li').index($('#gallery-metabox-list li:last')),    
+        
         selection = file_frame.state().get('selection');
 
         selection.map(function(attachment, i) {
         attachment = attachment.toJSON(),
         index      = listIndex + (i + 1);
 
-      $('#gallery-metabox-list').append('<li><input type="hidden" name="vdw_gallery_id[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><br><a class="remove-image" href="#">Remove image</a></li>');
+      $('#gallery-metabox-list').append('<li><input type="hidden" name="vdw_gallery_id[' + index + ']" value="' + attachment.id + '"><img class="image-preview" src="' + attachment.sizes.thumbnail.url + '"><a class="change-image button button-small" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image">Change image</a><a class="remove-image button button-small" href="#">Remove image</a></li>');
       
       });
 

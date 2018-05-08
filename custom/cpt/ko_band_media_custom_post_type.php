@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __('Media','koband')
+    'menu_name' => esc_html__('Media','koband')
           ),   
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -26,18 +26,18 @@ $args = array(
 function ko_band_media_custom_post_type() {
 
   $label = array(
-    'name' => __('Media', 'koband'),
-    'singular_name' =>  __('Media', 'koband'),
-    'add_new' => __('Add Media','koband'),
-    'all_items' => __('All Medias', 'koband'),
-    'add_new_item' => __('Add Media','koband'),
-    'edit_item' => __('Edit Media','koband'),
-    'new_item' => __('New Media','koband'),
-    'view_item' => __('View Media','koband'),
-    'search_item' => __('Search Media', 'koband'),
-    'not_found' => __('Mo Media Found', 'koband'),
-    'not-found_in_trash' => __('No Media Found in Trash','koband'),
-    'parent_item_colon' => __('Parent Media','koband'),
+    'name' => esc_html__('Media', 'koband'),
+    'singular_name' =>  esc_html__('Media', 'koband'),
+    'add_new' => esc_html__('Add Media','koband'),
+    'all_items' => esc_html__('All Medias', 'koband'),
+    'add_new_item' => esc_html__('Add Media','koband'),
+    'edit_item' => esc_html__('Edit Media','koband'),
+    'new_item' => esc_html__('New Media','koband'),
+    'view_item' => esc_html__('View Media','koband'),
+    'search_item' => esc_html__('Search Media', 'koband'),
+    'not_found' => esc_html__('Mo Media Found', 'koband'),
+    'not-found_in_trash' => esc_html__('No Media Found in Trash','koband'),
+    'parent_item_colon' => esc_html__('Parent Media','koband'),
     );
 
   $args = array(
@@ -56,7 +56,7 @@ function ko_band_media_custom_post_type() {
   
 );
 
-register_post_type(  __('Media', 'koband'), $args);
+register_post_type(  esc_html__('Media', 'koband'), $args);
 
 }
 
@@ -70,7 +70,7 @@ function ko_band_gallery_metabox($post_type) {
     {
       add_meta_box(
         'ko_band_gallery-metabox',
-        __('Gallery', 'koband'),
+        esc_html__('Gallery', 'koband'),
         'ko_band_gallery_meta_callback',
         'media',
         'normal',
@@ -83,29 +83,31 @@ add_action('add_meta_boxes', 'ko_band_gallery_metabox');
 
 function ko_band_gallery_meta_callback() {
 global $post;
+    
     wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
+
     ?>
     <div class="container form-table">
         <div class="row-blank">
-        <div class="col-sm"><?php echo __('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo __('Add image(s)',' koband');?> data-uploader-button-text=<?php echo __('Add image(s)',' koband');?>><?php echo __('Add image','koband');?></a>
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo esc_html__("Add image's",' koband');?> data-uploader-button-text=<?php echo esc_html__("Add image's",' koband');?>><?php echo esc_html__("Add image's",'koband');?></a>
             </div>    
         </div>
 
-        <div id="gallery-metabox-list" class="row">
+        <ul id="gallery-metabox-list" class="row">
             <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
-            <div class="col-sm"> 
-                        <input type="hidden" name="vdw_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
-                        <img class="image-preview" src="<?php echo $image[0]; ?>"><br>
-                        <a class="change-image button button-small" href="#" data-uploader-title=<?php echo __('Change image', 'koband');?> data-uploader-button-text=<?php echo __('Change image', 'koband');?> ><?php _e('Change image', 'koband');?></a><br>
-                        <a class="remove-image" href="#"><?php echo __('Remove image', 'koband');?></a>
-            </div>
+            <li> 
+                        <input type="hidden" name="vdw_gallery_id[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>">
+                        <img class="image-preview" src="<?php echo esc_url($image[0]); ?>"><br>
+                        <a class="change-image button button-small" href="#" data-uploader-title=<?php echo esc_html__('Change image', 'koband');?> data-uploader-button-text=<?php echo esc_html__('Change image', 'koband');?> ><?php echo esc_html__('Change image', 'koband');?></a>
+                        <a class="remove-image button button-small" href="#"><?php echo esc_html__('Remove image', 'koband');?></a>
+            </li>
         <?php endforeach; endif; ?>
-        </div>
+        </ul>
     </div>
 
   <?php }
@@ -146,7 +148,7 @@ add_action('add_meta_boxes', 'ko_band_media_meta_box_init');
 function ko_band_media_meta_box_init(){
         add_meta_box(
         'ko_band_media_meta_box',
-        __('Video Gallery', 'koband'),
+        esc_html__('Video Gallery', 'koband'),
         'ko_band_media_display_meta_box',
         'media',
         'normal',
@@ -167,12 +169,12 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
 
 <div class="container" id="ko_band_repetable_video_field_one">
     <div class="row-blank">
-        <div class="col-sm"><?php echo __('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
     
     <div class="row-top">
-        <div class="col-sm"><?php echo __('Video Link', 'koband');?></div>
-        <div class="col-sm"><?php echo __('Select', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Video Link', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Select', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
 
@@ -183,10 +185,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
         <div class="col-sm"><select name="select[]">
                             <?php foreach ( $options as $label => $value ) : ?>
-                            <option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
+                            <option value="<?php echo esc_attr($value); ?>"<?php selected( $field['select'], $value ); ?>><?php echo esc_attr($label); ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
 
     <?php } else: // show a blank one  ?>
@@ -195,10 +197,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
         <div class="col-sm"><select name="select[]">
                             <?php foreach ( $options as $label => $value ) : ?>
-                            <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+                            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_attr($label); ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php echo  esc_html__('Remove', 'koband');?></a></div>
     </div>
 
     <?php endif; ?>
@@ -207,13 +209,13 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
         <div class="col-sm"><select name="select[]" >
                             <?php foreach ( $options as $label => $value ) : ?>
-                            <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+                            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_attr($label); ?></option>
                             <?php endforeach; ?>
                             </select></div>
-        <div class="col-sm"><a class="button remove-row" href="#"><?php echo __('Remove', 'koband');?></a></div>
+        <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
 <div class="row row_no_border">
-<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php echo __('Add another', 'koband');?></a></p></div>
+<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
 </div>
 </div>
 

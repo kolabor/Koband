@@ -10,7 +10,7 @@
 
 $args = array(
     'labels'  =>  array(
-    'menu_name' => __('The Band', 'koband')
+    'menu_name' => esc_html__('The Band', 'koband')
           ),  
     'capabilities'  =>  array(
             'capability_type' => 'posts',
@@ -26,18 +26,18 @@ $args = array(
 function ko_band_the_band_custom_post_type() {
 
   $label = array(
-    'name' => __('The Band', 'koband'),
-    'singular_name' => __('The Band', 'koband'),
-    'add_new' => __('Add band member', 'koband'),
-    'all_items' => __('All The Bands', 'koband'),
-    'add_new_item' => __('Add The Band', 'koband'),
-    'edit_item' => __('Edit The Band', 'koband'),
-    'new_item' => __('New The Band', 'koband'),
-    'view_item' => __('View The Band', 'koband'),
-    'search_item' => __('Search The Band', 'koband'),
-    'not_found' => __('Mo The Band Found', 'koband'),
-    'not-found_in_trash' => __('No The Band Found in Trash', 'koband'),
-    'parent_item_colon' => __('Parent The Band', 'koband')
+    'name' => esc_html__('The Band', 'koband'),
+    'singular_name' => esc_html__('The Band', 'koband'),
+    'add_new' => esc_html__('Add band member', 'koband'),
+    'all_items' => esc_html__('All The Bands', 'koband'),
+    'add_new_item' => esc_html__('Add The Band', 'koband'),
+    'edit_item' => esc_html__('Edit The Band', 'koband'),
+    'new_item' => esc_html__('New The Band', 'koband'),
+    'view_item' => esc_html__('View The Band', 'koband'),
+    'search_item' => esc_html__('Search The Band', 'koband'),
+    'not_found' => esc_html__('Mo The Band Found', 'koband'),
+    'not-found_in_trash' => esc_html__('No The Band Found in Trash', 'koband'),
+    'parent_item_colon' => esc_html__('Parent The Band', 'koband')
     );
 
   $args = array(
@@ -56,7 +56,7 @@ function ko_band_the_band_custom_post_type() {
     
     );
 
-register_post_type( __('The Band', 'koband'), $args);
+register_post_type( esc_html__('The Band', 'koband'), $args);
 
 }
 
@@ -67,7 +67,7 @@ add_action('add_meta_boxes', 'ko_band_the_band_meta_box_init');
 function ko_band_the_band_meta_box_init(){
         add_meta_box(
         'ko_band_the_band_meta_box',
-        __('The Band Details', 'koband'),
+        esc_html__('The Band Details', 'koband'),
         'ko_band_the_band_meta_box',
         'the band',
         'normal',
@@ -80,33 +80,19 @@ function ko_band_the_band_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
-
     wp_nonce_field( plugin_basename( __FILE__ ), 'ko_band_the_band_save_meta_box' );
-
     // Get the location data if it's already been entered
-        
-
-    $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );
-   
-
-
-    // Output the field ?>
+    $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );?>
+    
     <div class="container">
-
         <div class="row-top">
-            <div class="col-sm"><?php echo __('Band Member Role:', 'koband');?></div>
+            <div class="col-sm"><?php echo esc_html__('Band Member Role:', 'koband');?></div>
         </div>
-
         <div class="row">
-            <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_textarea( $the_band_bio )?>" class="widefat" placeholder="<?php echo __('ex.Drummer, Bass ...', 'koband');?>"></div>
-
+            <div class="col-sm"><input type="text" name="ko_band_the_band_bio" value="<?php echo esc_attr( $the_band_bio )?>" class="widefat" placeholder="<?php echo esc_html__('ex.Drummer, Bass ...', 'koband');?>"></div>
         </div>
-    </div>
-
-     <?php }
-     
+    </div><?php }
 add_action( 'save_post', 'ko_band_the_band_save_meta_box' , 1, 2);
-
 function ko_band_the_band_save_meta_box( $post_id, $post ) 
 {
     if ( ! current_user_can( 'edit_post', $post_id ) ) 
@@ -123,7 +109,7 @@ function ko_band_the_band_save_meta_box( $post_id, $post )
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $the_band_meta['ko_band_the_band_bio'] = esc_textarea( $_POST['ko_band_the_band_bio'] );
+    $the_band_meta['ko_band_the_band_bio'] = esc_attr( $_POST['ko_band_the_band_bio'] );
 
     // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.
@@ -153,4 +139,3 @@ function ko_band_the_band_save_meta_box( $post_id, $post )
     endforeach;
     }
 }
-?> 
