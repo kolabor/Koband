@@ -278,6 +278,13 @@ $(window).bind('scroll', function () {
     });
 }
 
+/*
+============================================
+  Mobile Nav 
+============================================
+ */
+
+
 $('.mobile-nav-icon').click(function() {
         var nav = $('.main-nav');
         var icon = $('.js--nav-icon i');
