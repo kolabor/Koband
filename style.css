@@ -431,7 +431,7 @@ header {
   max-width: 1200px; }
 
 /* The Close Button */
-.close {
+.close_single {
   color: white;
   position: absolute;
   top: 10px;
@@ -439,14 +439,19 @@ header {
   font-size: 35px;
   font-weight: bold; }
 
-.close:hover,
-.close:focus {
+.close_single:hover,
+.close_single:focus {
   color: #999;
   text-decoration: none;
   cursor: pointer; }
 
 .mySlides {
-  display: none; }
+  display: none;
+  text-align: center !important; }
+
+.mySlides iframe {
+  width: 1000px;
+  height: 600px; }
 
 .cursor {
   cursor: pointer; }
@@ -507,6 +512,61 @@ img.hover-shadow {
 
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+/*               Lightbox                    */
+.FullscreenV {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 200px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); }
+
+.FullscreenV iframe {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px; }
+
+#Fullscreen {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 200px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: auto;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); }
+
+#Fullscreen img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px; }
 
 /*
 Tour Section
