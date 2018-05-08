@@ -44,6 +44,8 @@
   $koband_slider_button_bg_color = get_theme_mod('ko_band_slider_button_background_color');
   $koband_slider_button_hover_bg_color = get_theme_mod('ko_band_slider_button_hover_background_color');
   $koband_slider_text_holder_bg_color = get_theme_mod('ko_band_slider_text_holder_background_color');
+  //$koband_hexdec_holder_bg = hexdec('$koband_slider_text_holder_bg_color');
+  list($r, $g, $b) = sscanf($koband_slider_text_holder_bg_color, "#%02x%02x%02x");
 
   /*****Slider Check Background******/
   $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
@@ -198,12 +200,22 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 .read_more:hover {
   background-color: <?php echo esc_html($koband_second_theme_color) ?> !important;
 }
+.slider_text_color{
+  color: <?php echo esc_html($koband_slider_text_color) ?>!important;
+}
+.slider_button_text_color {
+  color: <?php echo esc_html($koband_slider_button_text_color) ?>!important;
+  background-color: <?php echo esc_html($koband_slider_button_bg_color) ?>!important;
+}
+.slider_button_text_color:hover {
+  background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> !important;
+}
 
 .sl-content{
   
   <?php if ($koband_check_slider_background == '1') 
   { ?>
-  background:rgba(0,0,0,0.5) !important;
+  background-color:rgba(<?php echo esc_html($r)?>,<?php echo esc_html($g)?>,<?php echo esc_html($b)?>,0.4)!important;
   <?php }
   else 
   { ?>
