@@ -38,7 +38,15 @@
   $koband_slider_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle'); 
   $koband_slider_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink'); 
 
-  $koband_slider_box_background = get_theme_mod('ko_band_home_page_box_background');
+  /****Slider Section Colors****/
+  $koband_slider_text_color = get_theme_mod('ko_band_slider_text_color');
+  $koband_slider_button_text_color = get_theme_mod('ko_band_slider_button_text_color');
+  $koband_slider_button_bg_color = get_theme_mod('ko_band_slider_button_background_color');
+  $koband_slider_button_hover_bg_color = get_theme_mod('ko_band_slider_button_hover_background_color');
+  $koband_slider_text_holder_bg_color = get_theme_mod('ko_band_slider_text_holder_background_color');
+
+  /*****Slider Check Background******/
+  $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
 
   /****Home page Modules ****/
   $koband_first_module = get_theme_mod('ko_band_first_render_modules'); 
@@ -85,9 +93,7 @@
   $koband_footer_search = get_theme_mod('ko_band_footer_search');
   $koband_footer_background_color = get_theme_mod('ko_band_footer_section_background_color');
 
-  /*****Slider Check Background******/
-  $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
-
+ 
 ?>
 
 #theband {

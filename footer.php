@@ -22,7 +22,7 @@
                 <!--Footer Logo-->
                 <div class="footer_logo">
                         <?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $footer_logo; ?>" class="footer_logo"></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url($footer_logo); ?>" class="footer_logo"></a>
                     </div>
             </div>
             
@@ -35,7 +35,7 @@
                         <?php
                         $footer_search = get_theme_mod('ko_band_footer_search');
                         if($footer_search == '1') { 
-                         echo get_search_form(); }?>
+                         echo esc_html(get_search_form()); }?>
                     
                 </div>
                     <!--Footer Widgets Menu-->
@@ -60,21 +60,42 @@
             <div class="social-media"> 
                 <!--Footer social Media-->
                 <div class="social-list align-right">
-                    <div class="social-icons "><?php if(isset($facebook[0])) { echo "<a href='$facebook'><i class='fab fa-facebook-f first_color'></i></a>";} ?> 
+                    
+                    <div class="social-icons "><?php if(isset($facebook[0])) 
+                    { ?><a href="<?php echo esc_url($facebook); ?>"><i class='fab fa-facebook-f first_color'></i></a> <?php } ?> 
                     </div>
-                    <div class="social-icons "><?php if(isset($twitter[0])) { echo  "<a href='$twitter'> <i class='fab fa-twitter first_color ' ></i></a>";} ?>
+
+                    <div class="social-icons "><?php if(isset($twitter[0])) 
+                    { ?> <a href="<?php echo esc_url($twitter);?>"><i class='fab fa-twitter first_color'></i></a>
+                    <?php } ?>
                     </div>
-                    <div class="social-icons "><?php if(isset($instagram[0])) { echo  "<a href='$instagram'><i class='fab fa-instagram first_color '></i></a>";} ?>
+
+                    <div class="social-icons "><?php if(isset($instagram[0])) 
+                    { ?> <a href="<?php echo esc_url($instagram);?>"><i class='fab fa-instagram first_color'></i></a> <?php } ?>
                     </div>
-                    <div class="social-icons "><?php if(isset($youtube[0])) { echo  "<a href='$youtube'><i class='fab fa-youtube first_color '></i></a>";} ?>
+
+                    <div class="social-icons "><?php if(isset($youtube[0])) 
+                    { ?> <a href="<?php echo esc_url($youtube);?>"><i class='fab fa-youtube first_color'></i></a>
+                    <?php } ?>
                     </div>
-                    <div class="social-icons "><?php if(isset($spotify[0])) { echo  "<a href='$spotify'><i class='fab fa-spotify first_color '></i></a>";} ?>
+
+                    <div class="social-icons "><?php if(isset($spotify[0])) 
+                    { ?> <a href="<?php echo esc_url($spotify);?>"><i class='fab fa-spotify first_color'></i></a>
+                    <?php } ?>
                     </div>
-                    <div class="social-icons "><?php if(isset($soundcloud[0])) { echo  "<a href='$soundcloud'><i class='fab fa-soundcloud first_color '></i></a>";} ?>
+
+                    <div class="social-icons "><?php if(isset($soundcloud[0])) 
+                    { ?> <a href="<?php echo esc_url($soundcloud);?>"><i class='fab fa-soundcloud first_color'></i></a> <?php } ?>
                     </div>
-                    <div class="social-icons "> <?php if(isset($bandcamp[0])) { echo  "<a href='$bandcamp'><i class='fab fa-bandcamp first_color'></i></a>";} ?>
-                    </div>      
-                    <div class="social-icons "> <?php if(isset($apple[0])) { echo  "<a href='$apple'><i class='fab fa-apple first_color '></i></a>";} ?>
+
+                    <div class="social-icons "> <?php if(isset($bandcamp[0])) 
+                    { ?> <a href="<?php echo esc_url($bandcamp);?>"><i class='fab fa-bandcamp first_color'></i></a> 
+                    <?php } ?>
+                    </div>
+
+                    <div class="social-icons "> <?php if(isset($apple[0])) 
+                    { ?> <a href="<?php echo esc_url($apple);?>"><i class='fab fa-apple first_color'></i></a> 
+                    <?php } ?>
                     </div>
                 </div>
             </div>
@@ -97,7 +118,7 @@
                 <div class="col-md-6 copyright">
                 <?php 
                     $Koband_Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
-                <?php echo $Koband_Copyright; ?>
+                <?php echo esc_html($Koband_Copyright); ?>
                     <!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
             </div>
                 
