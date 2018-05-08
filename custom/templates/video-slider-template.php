@@ -28,13 +28,13 @@
 		
 		$data = $slide_video_link;
 		$slide_video_link = substr($data, strpos($data, "v=") + 2);
-		$slide_video_link = 'https://www.youtube.com/embed/' . $slide_video_link ?>
+		$slide_video_link = 'https://www.youtube.com/embed/' . ($slide_video_link); ?>
 
 	<?php endwhile; ?>
 	<!--loop ends here-->
 		<div class="video-bg"><input placeholder="http://somelink.com" />
 				<div class="iframe-wrapper">
-					<iframe  src="<?php echo esc_url($slide_video_link);?>?autoplay=1&loop=1&mute=1" ></iframe>
+					<iframe  src="<?php echo esc_url($slide_video_link)?>?autoplay=1&loop=1&mute=1" ></iframe>
 				</div>		
 		</div>		
 		<div class="sl-content">
