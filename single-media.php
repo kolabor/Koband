@@ -94,16 +94,21 @@ if (have_posts() ) :
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option2"){
+						$vimeo_ondemand = $value_video_gallery['link'];
 						$data = $value_video_gallery['link'];
 						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
 						$value_video_gallery_video['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; 
-						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link']; 
+						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link'];
+						if (strpos($vimeo_ondemand, 'ondemand') !== false) { ?>
+						   <img src="<?php echo get_template_directory_uri(); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
+						<?php }
+						else {  
 						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $value_video_gallery['link'] . '.php'));
 						$hash[0]['thumbnail_large']?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<img src="<?php echo $hash[0]['thumbnail_large']?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" >
 
-					<?php }
+					<?php } }
 
 					elseif(isset($video_type) && $video_type == "option3"){
 						$data = $value_video_gallery['link'];

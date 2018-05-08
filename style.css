@@ -167,7 +167,7 @@ header {
 /* Slider */
 /* -----------------------------------------------  */
 .carousel-inner {
-  height: 100vh !important; }
+  height: 100% !important; }
 
 .carousel-item img {
   width: 100% !important;
@@ -1147,7 +1147,7 @@ input {
     font-size: 1.2rem !important; }
 
   .carousel-inner {
-    height: auto !important; } }
+    height: 100% !important; } }
 @media screen and (max-width: 1024px) {
   .carousel-inner {
     height: auto !important; }
