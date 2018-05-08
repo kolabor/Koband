@@ -682,13 +682,6 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_foo
         'type' => 'number',
 ) ) );
 
-/*** Footer Menu background color ***/
-$wp_customize->add_setting( 'ko_band_footer_menu_background_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_menu_background_color', array(
-        'label'      => esc_html__( ' Menu Background Color', 'koband' ),
-        'section'    => 'nav_menu[3]',
-        'settings'   => 'ko_band_footer_menu_background_color',
-) ) );
 
 /***** Single Menu Section end here********/
 /************************************************************************************************************************/

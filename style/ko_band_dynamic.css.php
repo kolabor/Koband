@@ -17,6 +17,7 @@
   $koband_main_menu_font_color = get_theme_mod('ko_band_main_menu_font_color');
   $koband_main_menu_font_size = get_theme_mod('ko_band_main_menu_font_size'); 
   $koband_main_menu_bg_color = get_theme_mod('ko_band_main_menu_background_color');
+  list($red, $green, $blue) = sscanf($koband_main_menu_bg_color, "#%02x%02x%02x");
    
   /***Home page Module Color****/
   $koband_first_module_color = get_theme_mod('ko_band_background_first_section_color'); 
@@ -48,6 +49,7 @@
   $koband_slider_button_bg_color = get_theme_mod('ko_band_slider_button_background_color');
   $koband_slider_button_hover_bg_color = get_theme_mod('ko_band_slider_button_hover_background_color');
   $koband_slider_text_holder_bg_color = get_theme_mod('ko_band_slider_text_holder_background_color');
+  list($r, $g, $b) = sscanf($koband_slider_text_holder_bg_color, "#%02x%02x%02x");
 
   /*****Slider Check Background******/
   $koband_check_slider_background = get_theme_mod('ko_band_home_page_box_background');
@@ -98,7 +100,6 @@
   /*** Footer Menu color & font**/
   $koband_footer_menu_font_color = get_theme_mod('ko_band_footer_menu_font_color');
   $koband_footer_menu_font_size = get_theme_mod('ko_band_footer_menu_font_size'); 
-  $koband_footer_menu_bg_color = get_theme_mod('ko_band_footer_menu_background_color');
 
  
 ?>
@@ -205,12 +206,22 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 .read_more:hover {
   background-color: <?php echo esc_html($koband_second_theme_color) ?> !important;
 }
+.slider_text_color{
+  color: <?php echo esc_html($koband_slider_text_color) ?>!important;
+}
+.slider_button_text_color {
+  color: <?php echo esc_html($koband_slider_button_text_color) ?>!important;
+  background-color: <?php echo esc_html($koband_slider_button_bg_color) ?>!important;
+}
+.slider_button_text_color:hover {
+  background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> !important;
+}
 
 .sl-content{
   
   <?php if ($koband_check_slider_background == '1') 
   { ?>
-  background:rgba(0,0,0,0.5) !important;
+  background-color:rgba(<?php echo esc_html($r)?>,<?php echo esc_html($g)?>,<?php echo esc_html($b)?>,0.4)!important;
   <?php }
   else 
   { ?>
@@ -250,3 +261,25 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 #contact .wpcf7 {
   border: 1px solid <?php echo esc_html($koband_first_theme_color); ?> !important;
 } 
+.menu-scroll {
+  background-color:rgba(<?php echo esc_html($red)?>,<?php echo esc_html($green)?>,<?php echo esc_html($blue)?>,0.7)!important;
+}
+.fixed {
+  background-color: <?php echo esc_html($koband_main_menu_bg_color)?> !important;
+}
+.menu-noscroll {
+  background-color: <?php echo esc_html($koband_main_menu_bg_color)?> !important;
+  
+}
+.main-nav .menu li a {
+  color: <?php echo esc_html($koband_main_menu_font_color)?> !important;
+  font-size: <?php echo esc_html($koband_main_menu_font_size)?>px !important;
+}
+.main-nav .menu li a:hover {
+  color: <?php echo esc_html($koband_main_menu_font_color)?> !important;
+  border-bottom: 3px solid <?php echo esc_html($koband_first_theme_color); ?> !important;
+}
+.footer-menu .menu li a {
+  color: <?php echo esc_html($koband_footer_menu_font_color)?> !important;
+  font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px !important;
+}

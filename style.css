@@ -73,7 +73,6 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1045;
-  background: rgba(255, 255, 255, 0.7);
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); }
@@ -82,7 +81,6 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1045;
-  background: #fff !important;
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); }
@@ -91,7 +89,6 @@ header {
   width: 100%;
   position: relative;
   z-index: 1045;
-  background: #fff !important;
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); }
@@ -138,18 +135,12 @@ header {
   height: 60px;
   text-align: center;
   line-height: 50px;
-  color: #333;
   font-weight: 700;
-  font-size: 130%;
   transition: border-bottom 0.1s;
   text-decoration: none !important;
   text-transform: uppercase !important; }
 
 /*Hover state for top level links*/
-.main-nav .menu li a:hover {
-  color: #333;
-  border-bottom: 3px solid #4D0000 !important; }
-
 .mobile-nav-icon {
   width: 29%;
   height: auto;
@@ -191,13 +182,10 @@ header {
   position: absolute;
   z-index: 10;
   padding: 30px;
-  color: #fff;
-  text-align: left;
-  background: rgba(0, 0, 0, 0.5); }
+  text-align: left; }
 
 .sl-content h5 {
-  font-size: 60px !important;
-  color: #4D0000; }
+  font-size: 60px !important; }
 
 .sl-content p {
   width: 100% !important; }
@@ -790,8 +778,6 @@ Tour Section
   text-align: right; }
 
 .footer-menu .menu li a {
-  color: #333333;
-  font-size: 22px;
   font-weight: 400; }
 
 .footer-menu .menu li a:hover {

@@ -16,7 +16,7 @@ get_header('noscroll'); ?>
 <div class="container search-holder">
 	<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo esc_html__('Posts by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
+	    <h1><?php echo esc_html__('Posts by ', 'koband');?><?php echo esc_html($curauth->nickname); ?>:</h1>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -67,7 +67,7 @@ get_header('noscroll'); ?>
 			<?php while ( $author_posts->have_posts() ) : $author_posts->the_post(); ?>
 	            <div class="col-md-4">
 	                <div class="card mb-4 box-shadow">
-	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
+	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( esc_html(get_the_title(), 4) ); ?></a></h2></div>
 	                    <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
 	                    <div class="card-body">
 	                        <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
