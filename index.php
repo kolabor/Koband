@@ -39,7 +39,7 @@ get_header('noscroll'); ?>
                       <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
-                            <span  class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php _e('READ MORE →', 'koband');?></a></span>
+                            <span  class="btn btn-sm btn-outline-secondary"><a class="read_more" href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
                           </div>
                         </div>
                     </div>

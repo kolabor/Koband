@@ -26,7 +26,7 @@ if ( post_password_required() ) {
                 $comments_number = get_comments_number();
                 if ( '1' === $comments_number ) {
                     /* translators: %s: post title */
-                    printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'koband' ), get_the_title() );
+                    printf( esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'koband' ), esc_html(get_the_title()) );
                 } else {
                     printf(
                         /* translators: 1: number of comments, 2: post title */
@@ -37,8 +37,7 @@ if ( post_password_required() ) {
                             'comments title',
                             'koband'
                         ),
-                        number_format_i18n( $comments_number ),
-                        get_the_title()
+                        number_format_i18n( $comments_number ), esc_html(get_the_title())
                     );
                 }
             ?>
@@ -74,7 +73,7 @@ if ( post_password_required() ) {
 
     <?php
         // If comments are closed and there are comments, let's leave a little note, shall we?
-        if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+        if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( esc_html(get_post_type()), 'comments' ) ) :
     ?>
         <p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'koband' ); ?></p>
     <?php endif; ?>
