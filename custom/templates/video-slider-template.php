@@ -38,9 +38,9 @@
 				</div>		
 		</div>		
 		<div class="sl-content">
-			    <h5><?php if(isset($slide_video_title[0])) 	{ echo  esc_attr($slide_video_title); } ?></h5>
-			    <p><?php if(isset($slide_video_subtitle[0])) 	{ echo  esc_attr($slide_video_subtitle); } ?></p>
-			    <a class="btn btn-primary btn-lg" href="<?php if(isset($slide_video_buttonlink)){ 
+			    <h5 class="slider_text_color"><?php if(isset($slide_video_title[0])) 	{ echo  esc_attr($slide_video_title); } ?></h5>
+			    <p class="slider_text_color font-line_height"><?php if(isset($slide_video_subtitle[0])) 	{ echo  esc_attr($slide_video_subtitle); } ?></p>
+			    <a class="btn btn-lg slider_button_text_color" href="<?php if(isset($slide_video_buttonlink)){ 
 			    	echo  esc_url($slide_video_buttonlink[0]); } ?>">
 			    <?php if(isset($slide_video_buttontitle[0])){ 
 			   	echo  esc_attr($slide_video_buttontitle); } ?></a>
