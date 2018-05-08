@@ -62,10 +62,13 @@ if (have_posts() ) :
 						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
 						<div class="videos-list">
-						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(1)" class="myvideo" >
+						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" class="myvideo" >
 					</div>
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>
+           					<div class="closee">X</div>
+           					<a href="#" class="next">&#8249;</a>
+							<a href="#" class="prev">&#8250;</a>
        					</div>		
 					<?php }
 
@@ -81,6 +84,9 @@ if (have_posts() ) :
 						</div>
 						   <div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+           					<div class="closee">X</div>
+           					<a href="#" class="next">&#8249;</a>
+							<a href="#" class="prev">&#8250;</a>
        					</div>		
 						  <!-- <iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<?php }
@@ -89,10 +95,13 @@ if (have_posts() ) :
 						$hash[0]['thumbnail_large']?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<div class="videos-list">
-						<img src="<?php echo $hash[0]['thumbnail_large']?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(2)" class="myvideo" >
+						<img src="<?php echo $hash[0]['thumbnail_large']?>" alt="Smiley face" height="265" width="370" class="myvideo" >
 					</div>
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+           					<div class="closee">X</div>
+           					<a href="#" class="next">&#8249;</a>
+							<a href="#" class="prev">&#8250;</a>
        					</div>		
 
 					<?php } }
@@ -104,10 +113,13 @@ if (have_posts() ) :
 						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
 						<div class="videos-list">
-						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(3)" class="myvideo" >
+						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370" class="myvideo" >
 					</div>
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>
+           					<div class="closee">X</div>
+           					<div  class="next">&#8249;</div>
+							<a href="#" class="prev">&#8250;</a>
        					</div>	
 					<?php }
 
@@ -125,13 +137,20 @@ if (have_posts() ) :
 			
 			
 					
-
+                   <div class="imageList">
 					<?php if(isset($media_gallery[0])) {
-								foreach ($media_gallery[0] as  $value_image) { ?>
-																	
-						<img class="myimg" src="<?php echo wp_get_attachment_image( $value_image, array(500,500));} ?>">
+								foreach ($media_gallery[0] as  $value_image) { 
+								$thumb = wp_get_attachment_image( $value_image, array(500,500)); ?>
+													
+						<!--<img class="myimg" src="<?php //echo wp_get_attachment_image( $value_image, array(500,500));?>"> -->
+                        <?php  echo $thumb; ?>
+						<?php } ?>
+				    </div>
 						<div id="Fullscreen">
            					<img src="" alt="" />
+           					<div class="closee">X</div>
+    						<a href="#" class="next">&#8249;</a>
+							<a href="#" class="prev">&#8250;</a>
        					
        				</div>
 					<?php }?> 
