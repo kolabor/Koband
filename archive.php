@@ -18,13 +18,13 @@ get_header('noscroll'); ?>
 		<h1 class="page-title">
 			<?php
 			if( is_day() ) :
-				printf( __( 'Daily Archives: %s', 'koband' ), get_the_date() );
+				printf( esc_html__( 'Daily Archives: %s', 'koband' ), get_the_date() );
 			elseif ( is_month() ) : 
-				printf( __( 'Monthly Archives: %s', 'koband'), get_the_date( _x('F Y', 'monthly archives date format', 'koband') ) );
+				printf( esc_html__( 'Monthly Archives: %s', 'koband'), get_the_date( esc_attr_x('F Y', 'monthly archives date format', 'koband') ) );
 			elseif ( is_year() ) :
-				printf( __( 'Yearly Archives: %s', 'koband'), get_the_date( _x('Y', 'yearly archives date format', 'koband') ) );
+				printf( esc_html__( 'Yearly Archives: %s', 'koband'), get_the_date( esc_attr_x('Y', 'yearly archives date format', 'koband') ) );
 			else :
-				__( 'Archives', 'koband' );
+				esc_html__( 'Archives', 'koband' );
 			endif;
 			?>
 			<?php if (have_posts() ) : ?>
