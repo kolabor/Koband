@@ -105,7 +105,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'section'    => 'colors',
         'settings'   => 'ko_band_background_tour_section_color',
 ) ) );
-/***Background discography module color **/
+/***Background Discography module color **/
 $wp_customize->add_setting( 'ko_band_background_discography_section_color' );
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_discography_section_color', array(
         'label'      => esc_html__( 'Discography Section Background Color', 'koband' ),
@@ -244,6 +244,45 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
                
 )  )  );
 
+/*** Slider text color ***/
+$wp_customize->add_setting( 'ko_band_slider_text_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_color', array(
+        'label'      => esc_html__( ' Text Color', 'koband' ),
+        'section'    => 'ko_band_slider_section',
+        'settings'   => 'ko_band_slider_text_color',
+) ) );
+
+/*** Slider Button text color ***/
+$wp_customize->add_setting( 'ko_band_slider_button_text_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_text_color', array(
+        'label'      => esc_html__( 'Button Text Color', 'koband' ),
+        'section'    => 'ko_band_slider_section',
+        'settings'   => 'ko_band_slider_button_text_color',
+) ) );
+
+/*** Slider Button Background color ***/
+$wp_customize->add_setting( 'ko_band_slider_button_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_background_color', array(
+        'label'      => esc_html__( 'Button Background Color', 'koband' ),
+        'section'    => 'ko_band_slider_section',
+        'settings'   => 'ko_band_slider_button_background_color',
+) ) );
+
+/*** Slider Button Hover Background color ***/
+$wp_customize->add_setting( 'ko_band_slider_button_hover_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_hover_background_color', array(
+        'label'      => esc_html__( 'Button Hover Background Color', 'koband' ),
+        'section'    => 'ko_band_slider_section',
+        'settings'   => 'ko_band_slider_button_hover_background_color',
+) ) );
+
+/*** Slider Text Holder Background color ***/
+$wp_customize->add_setting( 'ko_band_slider_text_holder_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_holder_background_color', array(
+        'label'      => esc_html__( 'Text Holder Background Color', 'koband' ),
+        'section'    => 'ko_band_slider_section',
+        'settings'   => 'ko_band_slider_text_holder_background_color',
+) ) );
 
 /*Slider Video Link**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
@@ -306,6 +345,36 @@ $wp_customize->add_control( 'ko_band_home_page_box_background', array(
 
 /*Slide section type end here */
 /**********************************************************************************************************************/
+/***** Main Menu Section start here********/
+
+/*** Main Menu font color ***/
+$wp_customize->add_setting( 'ko_band_main_menu_font_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_menu_font_color', array(
+        'label'      => esc_html__( ' Menu Font Color', 'koband' ),
+        'section'    => 'nav_menu[2]',
+        'settings'   => 'ko_band_main_menu_font_color',
+) ) );
+
+/** Main Menu font size**/
+$wp_customize->add_setting( 'ko_band_main_menu_font_size' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_main_menu_font_size',
+    array(
+        'label' => esc_html__( 'Menu Font Size (in px.)', 'koband' ),
+        'section' => 'nav_menu[2]',
+        'settings'   => 'ko_band_main_menu_font_size',
+        'type' => 'number',
+) ) );
+
+/*** Main Menu background color ***/
+$wp_customize->add_setting( 'ko_band_main_menu_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_menu_background_color', array(
+        'label'      => esc_html__( ' Menu Background Color', 'koband' ),
+        'section'    => 'nav_menu[2]',
+        'settings'   => 'ko_band_main_menu_background_color',
+) ) );
+
+/***** Main Menu Section end here********/
+/************************************************************************************************************************/
 
 /*Home page Modules start here*/
 /*First Module*/
@@ -592,6 +661,38 @@ $wp_customize->add_control( 'ko_band_footer_search', array(
 
 /*** Footer section end here  ***/
 /****************************************************************************************************************/
+
+/***** Footer Menu Section start here********/
+
+/*** Footer Menu font color ***/
+$wp_customize->add_setting( 'ko_band_footer_menu_font_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_menu_font_color', array(
+        'label'      => esc_html__( ' Menu Font Color', 'koband' ),
+        'section'    => 'nav_menu[3]',
+        'settings'   => 'ko_band_footer_menu_font_color',
+) ) );
+
+/** Footer Menu font size**/
+$wp_customize->add_setting( 'ko_band_footer_menu_font_size' );
+$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_footer_menu_font_size',
+    array(
+        'label' => esc_html__( 'Menu Font Size (in px.)', 'koband' ),
+        'section' => 'nav_menu[3]',
+        'settings'   => 'ko_band_footer_menu_font_size',
+        'type' => 'number',
+) ) );
+
+/*** Footer Menu background color ***/
+$wp_customize->add_setting( 'ko_band_footer_menu_background_color' );
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_menu_background_color', array(
+        'label'      => esc_html__( ' Menu Background Color', 'koband' ),
+        'section'    => 'nav_menu[3]',
+        'settings'   => 'ko_band_footer_menu_background_color',
+) ) );
+
+/***** Single Menu Section end here********/
+/************************************************************************************************************************/
+
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
