@@ -375,36 +375,6 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 /***** Main Menu Section end here********/
 /************************************************************************************************************************/
-/***** Single Menu Section start here********/
-
-/*** Single Menu font color ***/
-$wp_customize->add_setting( 'ko_band_single_menu_font_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_single_menu_font_color', array(
-        'label'      => esc_html__( ' Menu Font Color', 'koband' ),
-        'section'    => 'nav_menu[29]',
-        'settings'   => 'ko_band_single_menu_font_color',
-) ) );
-
-/** Single Menu font size**/
-$wp_customize->add_setting( 'ko_band_single_menu_font_size' );
-$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_single_menu_font_size',
-    array(
-        'label' => esc_html__( 'Menu Font Size (in px.)', 'koband' ),
-        'section' => 'nav_menu[29]',
-        'settings'   => 'ko_band_single_menu_font_size',
-        'type' => 'number',
-) ) );
-
-/*** Single Menu background color ***/
-$wp_customize->add_setting( 'ko_band_single_menu_background_color' );
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_single_menu_background_color', array(
-        'label'      => esc_html__( ' Menu Background Color', 'koband' ),
-        'section'    => 'nav_menu[29]',
-        'settings'   => 'ko_band_single_menu_background_color',
-) ) );
-
-/***** Single Menu Section end here********/
-/************************************************************************************************************************/
 
 /*Home page Modules start here*/
 /*First Module*/
