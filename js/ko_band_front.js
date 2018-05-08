@@ -317,7 +317,7 @@ $('.imageList .attachment-500x500').click(function(){
  $('#Fullscreen').fadeIn();
 
 });
-$('.closee').click(function(){
+$('#Fullscreen').click(function(){
  $('#Fullscreen').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
 });
 //video
@@ -332,7 +332,7 @@ var src = $(this).parent().next('.FullscreenV iframe').attr('src'); //get the so
  $(this).parent().next('.FullscreenV iframe').attr('src', src); //assign it to the tag for your fullscreen div
 
 });
-$('.closee').click(function(){
+$('.FullscreenV').click(function(){
  $('.FullscreenV').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
 });
 			
