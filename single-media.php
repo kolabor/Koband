@@ -101,6 +101,7 @@ if (have_posts() ) :
 						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link'];
 						if (strpos($vimeo_ondemand, 'ondemand') !== false) { ?>
 						   <img src="<?php echo get_template_directory_uri(); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
+						  <!-- <iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<?php }
 						else {  
 						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $value_video_gallery['link'] . '.php'));
