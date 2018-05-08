@@ -25,12 +25,12 @@ wp_head(); ?>
       <div class="container">                    
         <div class="main-logo clearfix">
         <?php $logo = get_theme_mod( 'ko_band_main_logo' ); ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo; ?>" class="logo"></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url($logo); ?>" class="logo"></a>
         </div>
         
         <div class="retina-main-logo">
         <?php $logo_retina = get_theme_mod( 'ko_band_retina_main_logo' ); ?>
-        <img src="<?php echo $logo_retina; ?>">
+        <img src="<?php echo esc_url($logo_retina); ?>">
         </div>                 
 
       

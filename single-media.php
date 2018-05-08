@@ -25,9 +25,9 @@ if (have_posts() ) :
 		<h1><div id="single-media-title"><?php the_title();?></div></h1>
 			<div class="row">
 				<div class="col-sm news-details">
-					<div class="news-details_li admin"><?php echo __('Posted by : ', 'koband');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></div>
-					<div class="news-details_li category"><?php echo __('Category : ', 'koband');?><?php the_category();?></div>
-					<div class="news-details_li date"><?php echo __('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
+					<div class="news-details_li admin"><?php echo esc_html__('Posted by : ', 'koband');?><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>"><?php the_author(); ?></a></div>
+					<div class="news-details_li category"><?php echo esc_html__('Category : ', 'koband');?><?php the_category();?></div>
+					<div class="news-details_li date"><?php echo esc_html__('Posted at : ', 'koband');?><?php the_time( esc_html(get_option( 'date_format' ) )); ?></div>
 					<div class="news-details_li tag"><?php the_tags(); ?></div>
 				</div>
 			</div>
@@ -89,8 +89,8 @@ if (have_posts() ) :
 						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
 						$value_video_gallery_video['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];
 						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
-						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" >		
+					
+						<img src="<?php echo esc_url($value_video_gallery_image['link']);?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" >		
 					<?php }
 
 					elseif(isset($video_type) && $video_type == "option2"){
@@ -98,16 +98,16 @@ if (have_posts() ) :
 						$data = $value_video_gallery['link'];
 						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
 						$value_video_gallery_video['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; 
-						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link'];
+						
 						if (strpos($vimeo_ondemand, 'ondemand') !== false) { ?>
-						   <img src="<?php echo get_template_directory_uri(); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
-						  <!-- <iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+						   <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
+						 
 						<?php }
 						else {  
-						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $value_video_gallery['link'] . '.php'));
+						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . esc_html($value_video_gallery['link']) . '.php'));
 						$hash[0]['thumbnail_large']?>
 						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-						<img src="<?php echo $hash[0]['thumbnail_large']?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" >
+						<img src="<?php echo esc_url($hash[0]['thumbnail_large']);?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" >
 
 					<?php } }
 
@@ -116,12 +116,12 @@ if (have_posts() ) :
 						$value_video_gallery['link'] = substr($data, strpos($data, "video/") + 6);
 						$value_video_gallery_video['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link'];
 						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
-						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" >
+					
+						<img src="<?php echo esc_url($value_video_gallery_image['link']);?>" alt="Smiley face" height="265" width="370" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" >
 					<?php }
 
 					else {
-						echo "<?php echo __('Your browser does not support this type of iframe videos', 'koband');?>";
+						echo esc_html("<?php echo esc_htlm__('Your browser does not support this type of iframe videos', 'koband');?>");
 					} ?>
 				
 			<?php } ?>
