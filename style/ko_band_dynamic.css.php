@@ -193,7 +193,7 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 }
 
 .font-line_height {
-  font-size:  <?php echo esc_html($koband_theme_font_size); ?> !important;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> !important;
 }
 
