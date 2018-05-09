@@ -156,75 +156,7 @@ if (have_posts() ) :
 					<?php }?> 
 
 
-<!--	
 
-
-					<div id="myModal_single" class="modal_single">
-						  <span class="close cursor" onclick="closeModal()">&times;</span>
-  						<div class="modal-content">
-
-
-					<?php 
-					if (isset($media_video_gallery[0])){
-					foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
-					
-		            <?php
-		            $video_type = $value_video_gallery['select'];
-					if(isset($video_type) && $video_type == "option1"){
-						$data = $value_video_gallery['link'];
-						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
-						$value_video_gallery_video['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];?>
-						<div class="mySlides">
-					      <div class="numbertext">1 / 4</div>
-					      <iframe  src="<?php echo $value_video_gallery_video['link']?>"></iframe>
-					    </div>
-					<?php }
-
-					elseif(isset($video_type) && $video_type == "option2"){
-						$vimeo_ondemand = $value_video_gallery['link'];
-						$data = $value_video_gallery['link'];
-						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
-						$value_video_gallery_video['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; 
-					?>
-						<div class="mySlides">
-					      <div class="numbertext">2 / 4</div>
-					      <iframe  src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					    </div>
-
-					<?php } 
-
-					elseif(isset($video_type) && $video_type == "option3"){
-						$data = $value_video_gallery['link'];
-						$value_video_gallery['link'] = substr($data, strpos($data, "video/") + 6);
-						$value_video_gallery_video['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link'];?>
-						<div class="mySlides">
-					      <div class="numbertext">3 / 4</div>
-					      <iframe  src="<?php echo $value_video_gallery_video['link']?>"></iframe>
-					    </div>
-						
-					<?php } ?>
-				
-			<?php } ?>
-		
-	
-			<?php } 
-			
-			
-						
-					if(isset($media_gallery[0])) {
-						
-					foreach ($media_gallery[0] as  $value_image) {?>
-						<div class="mySlides">
-					      <div class="numbertext">4 / 4</div> 
-								
-					<a href="">	<img src="<?php echo wp_get_attachment_image( $value_image);} ?>"></a>
-					    </div>									
-					<?php }?>  		
-
-					    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-					</div>
-				</div>-->
 </div>
 </div>
 </div>
@@ -232,44 +164,6 @@ if (have_posts() ) :
 
 		
 </div><!-- container ends here -->
-<!--<script>
-function openModal() {
-  document.getElementById('myModal_single').style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById('myModal_single').style.display = "none";
-}
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>-->
 
 		
 <?php endwhile; endif;?>
