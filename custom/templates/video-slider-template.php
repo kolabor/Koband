@@ -32,7 +32,7 @@
 
 	<?php endwhile; ?>
 	<!--loop ends here-->
-		<div class="video-bg"><input placeholder="http://somelink.com" />
+		<div class="video-bg">
 				<div class="iframe-wrapper">
 					<iframe  src="<?php echo esc_url($slide_video_link);?>?autoplay=1&loop=1&mute=1" ></iframe>
 				</div>		

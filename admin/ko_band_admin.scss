@@ -134,14 +134,14 @@ input.radio1, input.radio2 {
   height: auto;
   text-align: center;
   margin: 12px !important;
-  cursor: move; 
+  cursor: move;
   background: #f9f9f9 !important;
   position: relative !important;
   overflow: auto !important;
-  border: 1px solid rgba(0,168,168,0.3); 
+  border: 1px solid rgba(0,168,168,0.3);
   padding: 5px !important;}
 
-  #gallery-metabox-list li img 
+  #gallery-metabox-list li img
   {
     width: 100% !important;
     margin-bottom: 0px !important;
@@ -161,7 +161,7 @@ input.radio1, input.radio2 {
    height: auto !important;
    width: 100% !important;
  }
- 
+
 #menu-posts-album, #menu-posts-media, #menu-posts-singles,
 #menu-posts-slides, #menu-posts-theband, #menu-posts-tour {
   background: rgba(109, 94, 130, 0.5);
@@ -201,8 +201,5 @@ input.radio1, input.radio2 {
 }
 .customize-control input[type="checkbox"] {
   margin-top: 5px;
-}
-#menu-media {
-  display: none !important;
 }
 

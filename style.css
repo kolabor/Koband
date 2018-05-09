@@ -87,11 +87,14 @@ header {
 
 .menu-noscroll {
   width: 100%;
-  position: relative;
+  position: fixed;
   z-index: 1045;
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); }
+
+.no-scroll-content {
+  padding-bottom: 70px; }
 
 /* ----------------------------------------------- */
 /* Logo */
