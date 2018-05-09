@@ -484,12 +484,11 @@ header {
 #Fullscreen {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 200px; /* Location of the box */
+  z-index: 9999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: auto; /* Full height */
+  height: 100%!important; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
@@ -497,9 +496,8 @@ header {
 #Fullscreen img {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 .closee {
   margin-right: 6px;
@@ -513,8 +511,8 @@ header {
 
 .next {
   position: absolute;
-  left: 15%;
-  top: 25%;
+  left: 5%;
+  top: 52%;
   background-color: #f1f1f1;
   color: black!important;
   border-radius: 50%;
@@ -524,8 +522,8 @@ header {
 }
 .prev {
   position: absolute;
-  right: 15%;
-  top: 25%;
+  right: 5%;
+  top: 52%;
   background-color: #f1f1f1;
   color: black!important;
   border-radius: 50%;
@@ -1282,9 +1280,7 @@ input {
 .search-form input{
   border: 1px solid rgba(0, 168, 168, 0.4);
 }
-.search-form{
-  float: left;
-}
+
 .sad_smile {
   text-align: center !important;
 }
