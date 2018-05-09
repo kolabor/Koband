@@ -309,15 +309,18 @@ $('.mobile-nav-icon').click(function() {
 //your code for stuff should go here
 $('#Fullscreen').css('height', $(document).outerWidth() + 'px');
 //for when you click on an image
-$('.myimg').click(function(){
+$('.imageList .attachment-500x500').click(function(){
+ 
+ $('#Fullscreen img').attr('src', "");
  var src = $(this).attr('src'); //get the source attribute of the clicked image
  $('#Fullscreen img').attr('src', src); //assign it to the tag for your fullscreen div
  $('#Fullscreen').fadeIn();
+
 });
 $('#Fullscreen').click(function(){
- $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image. 
+ $('#Fullscreen').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
 });
-//vido
+//video
 //your code for stuff should go here
 $('.FullscreenV').css('height', $(document).outerWidth() + 'px');
 //for when you click on an image
@@ -330,8 +333,23 @@ var src = $(this).parent().next('.FullscreenV iframe').attr('src'); //get the so
 
 });
 $('.FullscreenV').click(function(){
- $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image. 
+ $('.FullscreenV').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
 });
 			
+
+
+$('.next').click(function(){
+        var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
+        var $currentImg = $('.FullscreenV iframe[src="' + $('.FullscreenV iframe').attr('src') + '"]'); // The current img being overlayed.
+        var $nextImg = $($currentImg.closest('div').next().find('iframe')); // The next img in the gallery.
+
+        if ($nextImg.length > 0) { // If there is a next img, display it.
+          $('.FullscreenV iframe').attr('src', $nextImg.attr('src'));
+        } else { // Otherwise, if you've reached the end, loop back to the first img.
+          $('.FullscreenV iframe').attr('src', $($images[0]).attr('src'));
+        }
+      });
+    
+
 
 }); // Ready function ends here //
