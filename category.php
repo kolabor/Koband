@@ -27,7 +27,7 @@ get_header('noscroll'); ?>
 		// Show an optional term description.
 		$term_description = term_description();
 		if (! empty( $term_description) ) :
-			printf( esc_html__('<div class="taxonomy-description">%s</div>', $term_description) );
+			printf( esc_html_nx('<div class="taxonomy-description">%s</div>', $term_description, 'koband') );
 		endif; ?>
 		<?php if (have_posts() ) : ?>
 		<!--start loop --> 
