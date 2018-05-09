@@ -10,7 +10,7 @@ get_header('noscroll'); ?>
 <div class="container search-holder">
     <div class="row">
         <header class="page-header">
-            <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'shape' ), '<span>' . esc_attr(get_search_query()) . '</span>' ); ?></h1>
+            <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'koband' ), '<span>' . esc_attr(get_search_query()) . '</span>' ); ?></h1>
         </header><!-- .page-header -->
     <?php if ( have_posts() ) { ?>
         <div class="content">

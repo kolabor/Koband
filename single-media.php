@@ -136,25 +136,23 @@ if (have_posts() ) :
 =================================================================================================================-->
 			
 			
-					
+				<div class="image_media_slider">
                    <div class="imageList">
 					<?php if(isset($media_gallery[0])) {
-								foreach ($media_gallery[0] as  $value_image) { 
-								$thumb = wp_get_attachment_image( $value_image, array(500,500)); ?>
-													
-						<!--<img class="myimg" src="<?php //echo wp_get_attachment_image( $value_image, array(500,500));?>"> -->
-                        <?php  echo $thumb; ?>
-						<?php } ?>
+						foreach ($media_gallery[0] as  $value_image) { 
+						$thumb = wp_get_attachment_image( $value_image, array(500,500)); 
+                        	echo $thumb; 
+						} ?>
 				    </div>
-						<div id="Fullscreen">
+					<div id="Fullscreen">
            					<img src="" alt="" />
            				
     						<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
        					
-       				</div>
 					<?php }?> 
-
+       				</div>
+       			</div>
 
 
 </div>

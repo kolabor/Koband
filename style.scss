@@ -1,13 +1,13 @@
 /*
-Theme Name: Koband theme
+Theme Name: Koband
 Theme URI: https://www.kolabor.net
 Author: Kolabor
-Author URI: https://www.kolabor.net
+Author URI: https://www.kolabor.net/koband-team/
 Description: Kolabor Band is a responsive Wordpress theme for music band. You can use Koband to build the website of your music band, We have provided you with all the needs that one rock-band website requires, you have sections for Albums,Singles,Tours,News,About the band and Media. Download Kolabor Band now and see if you like it!
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, rockband, rock, music, entertainment
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
 Text Domain: koband
 */
 /* =Reset ff
@@ -19,7 +19,6 @@ weffcb
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
-
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
@@ -104,6 +103,12 @@ header {
 }
 .no-scroll-content {
   padding-bottom:70px;
+}
+.title_and_role{
+  background-color: #f8f9fab3;
+}
+.title_and_role .name_member_padding{
+  padding-top: 8px;
 }
 /* ----------------------------------------------- */
 /* Logo */
@@ -722,7 +727,7 @@ text-decoration: none;
   padding: 10px;
   margin-top: 10px;
   font-size: 17px!important;
-  font-weight: 400!important;
+  font-weight: 500!important;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -734,6 +739,7 @@ text-decoration: none;
 }
 .bnd_mem_img {
   width: 100%;
+  cursor: pointer;
 }
 .bnd_mem_img img {
   width: 100%;

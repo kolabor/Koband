@@ -94,7 +94,7 @@ global $post;
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo esc_html__("Add image's",' koband');?> data-uploader-button-text=<?php echo esc_html__("Add image's",' koband');?>><?php echo esc_html__("Add image's",'koband');?></a>
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo esc_html__("Add image's", 'koband');?> data-uploader-button-text=<?php echo esc_html__("Add image's",'koband');?>><?php echo esc_html__("Add image's",'koband');?></a>
             </div>    
         </div>
 

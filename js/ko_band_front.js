@@ -337,7 +337,7 @@ $('.FullscreenV').click(function(){
 });
 			
 
-
+/*
 $('.next').click(function(){
         var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
         var $currentImg = $('.FullscreenV iframe[src="' + $('.FullscreenV iframe').attr('src') + '"]'); // The current img being overlayed.
@@ -348,8 +348,28 @@ $('.next').click(function(){
         } else { // Otherwise, if you've reached the end, loop back to the first img.
           $('.FullscreenV iframe').attr('src', $($images[0]).attr('src'));
         }
-      });
-    
+      });*/
+$('.image_media_slider .imageList img:first-child').addClass('active');
+
+$(document).off('click', '.prev, .next').on('click', '.prev, .next', function() {
+  var next;
+  var circler;
+  if ($(this).is('.prev')) {
+    next = 'prev';
+    circler = ':last';
+  } else {     // or if there would be more arrows, use : else if ($(this).is('.arrow-right'))
+    next = 'next';
+    circler = ':first';
+  }
+  
+  // Use bracket notation to dynamically decide which function to call.
+  var nextTarget = $('.imageList img.active')[next]('img');
+  if (nextTarget.length == 0) {
+    nextTarget = $('.imageList img' + circler);
+  }
+  $('.imageList img').removeClass('active');
+  nextTarget.addClass('active');
+});
 
 
 }); // Ready function ends here //
