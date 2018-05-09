@@ -1,13 +1,13 @@
 /*
-Theme Name: Koband theme
+Theme Name: Koband
 Theme URI: https://www.kolabor.net
 Author: Kolabor
-Author URI: https://www.kolabor.net
+Author URI: https://www.kolabor.net/koband-team/
 Description: Kolabor Band is a responsive Wordpress theme for music band. You can use Koband to build the website of your music band, We have provided you with all the needs that one rock-band website requires, you have sections for Albums,Singles,Tours,News,About the band and Media. Download Kolabor Band now and see if you like it!
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, rockband, rock, music, entertainment
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
 Text Domain: koband
 */
 /* =Reset ff
@@ -87,11 +87,20 @@ header {
 
 .menu-noscroll {
   width: 100%;
-  position: relative;
+  position: fixed;
   z-index: 1045;
   height: 70px;
   padding-top: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); }
+
+.no-scroll-content {
+  padding-bottom: 70px; }
+
+.title_and_role {
+  background-color: #f8f9fab3; }
+
+.title_and_role .name_member_padding {
+  padding-top: 8px; }
 
 /* ----------------------------------------------- */
 /* Logo */
@@ -441,15 +450,13 @@ header {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 9999;
   /* Sit on top */
-  padding-top: 200px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
   /* Full width */
-  height: auto;
+  height: 100% !important;
   /* Full height */
   overflow: auto;
   /* Enable scroll if needed */
@@ -460,9 +467,8 @@ header {
 #Fullscreen img {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
-  height: auto; }
+  width: auto;
+  height: 100%; }
 
 .closee {
   margin-right: 6px;
@@ -477,8 +483,8 @@ header {
 
 .next {
   position: absolute;
-  left: 15%;
-  top: 25%;
+  left: 5%;
+  top: 52%;
   background-color: #f1f1f1;
   color: black !important;
   border-radius: 50%;
@@ -488,8 +494,8 @@ header {
 
 .prev {
   position: absolute;
-  right: 15%;
-  top: 25%;
+  right: 5%;
+  top: 52%;
   background-color: #f1f1f1;
   color: black !important;
   border-radius: 50%;
@@ -669,7 +675,7 @@ Tour Section
   padding: 10px;
   margin-top: 10px;
   font-size: 17px !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   text-align: justify;
   text-justify: inter-word; }
 
@@ -680,7 +686,8 @@ Tour Section
   padding: 20px !important; }
 
 .bnd_mem_img {
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
 
 .bnd_mem_img img {
   width: 100%;
@@ -1200,9 +1207,6 @@ input {
 
 .search-form input {
   border: 1px solid rgba(0, 168, 168, 0.4); }
-
-.search-form {
-  float: left; }
 
 .sad_smile {
   text-align: center !important; }

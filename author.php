@@ -257,7 +257,7 @@ get_header('noscroll'); ?>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Address', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('ZipCode', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Ticket status', 'koband');?></div>
+                	<div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Ticket status', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Store', 'koband');?></div>
                 </div>
                       
