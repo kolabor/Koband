@@ -1406,7 +1406,7 @@ input {
     font-size: 14px; } }
 @media screen and (max-width: 800px) {
   .sl-content {
-    width: 50%; }
+    width: 70%; }
 
   .sl-content h5 {
     font-size: 30px !important; }
