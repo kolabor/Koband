@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00ab55b3-203c-4a8b-8027-5624869c7ed3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/custom/templates/video-slider-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/video-slider-template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="00ab55b3-203c-4a8b-8027-5624869c7ed3" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="443">
-              <caret line="1519" lean-forward="true" selection-start-line="1519" selection-end-line="1519" />
+              <caret line="1519" selection-start-line="1519" selection-end-line="1519" />
             </state>
           </provider>
         </entry>
@@ -96,11 +93,6 @@
               <item name="koband" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="koband" type="b2602c69:ProjectViewProjectNode" />
-              <item name="koband" type="462c0819:PsiDirectoryNode" />
-              <item name="style.scss" type="620a8d5e:NestingTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -148,7 +140,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="688" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962406" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -201,7 +192,7 @@
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
-          <caret line="1519" lean-forward="true" selection-start-line="1519" selection-end-line="1519" />
+          <caret line="1519" selection-start-line="1519" selection-end-line="1519" />
         </state>
       </provider>
     </entry>
