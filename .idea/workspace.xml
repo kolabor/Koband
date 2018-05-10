@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58552a05-a70e-4031-bedb-4c49297c14e5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
@@ -21,8 +22,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="1436" column="24" selection-start-line="1436" selection-start-column="24" selection-end-line="1436" selection-end-column="24" />
+            <state relative-caret-position="630">
+              <caret line="691" column="12" selection-start-line="691" selection-start-column="12" selection-end-line="691" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -115,12 +116,12 @@
       <workItem from="1525856027223" duration="18669000" />
       <workItem from="1525938442056" duration="1132000" />
       <workItem from="1525939763161" duration="12801000" />
-      <workItem from="1525958454695" duration="3070000" />
+      <workItem from="1525958454695" duration="4336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20905000" />
+    <option name="totallyTimeSpent" value="22171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -224,8 +225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="1436" column="24" selection-start-line="1436" selection-start-column="24" selection-end-line="1436" selection-end-column="24" />
+        <state relative-caret-position="630">
+          <caret line="691" column="12" selection-start-line="691" selection-start-column="12" selection-end-line="691" selection-end-column="12" />
         </state>
       </provider>
     </entry>

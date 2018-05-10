@@ -220,7 +220,7 @@ header {
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh; }
+  height: 100%; }
 
 .iframe-wrapper {
   position: absolute;
@@ -636,6 +636,9 @@ Tour Section
 
 .line {
   line-height: 48px; }
+
+.song-list .store_link {
+  padding: 0; }
 
 /*
 =======================================================
@@ -1582,7 +1585,7 @@ input {
     margin-bottom: 15px; }
 
   .video-bg {
-    height: 75vh; }
+    height: 73%; }
 
   .iframe-wrapper {
     height: 75%; } }
@@ -1628,7 +1631,7 @@ input {
     font-size: 9px; }
 
   .video-bg {
-    height: 100vh; }
+    height: 100%; }
 
   .iframe-wrapper {
     height: 100%; } }
@@ -1650,7 +1653,7 @@ input {
     font-size: 17px !important; }
 
   .video-bg {
-    height: 75vh; }
+    height: 73%; }
 
   .iframe-wrapper {
     height: 75%; } }
@@ -1887,7 +1890,7 @@ input {
     text-align: center; }
 
   .video-bg {
-    height: 75vh; }
+    height: 73%; }
 
   .iframe-wrapper {
     height: 75%; } }
@@ -1950,7 +1953,7 @@ input {
     font-size: 15px !important; }
 
   .video-bg {
-    height: 75vh; }
+    height: 73%; }
 
   .iframe-wrapper {
     height: 75%; } }
