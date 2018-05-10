@@ -109,7 +109,7 @@ function ko_band_the_band_save_meta_box( $post_id, $post )
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $the_band_meta['ko_band_the_band_bio'] = esc_attr( $_POST['ko_band_the_band_bio'] );
+    $the_band_meta['ko_band_the_band_bio'] = esc_html( $_POST['ko_band_the_band_bio'] );
 
     // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.

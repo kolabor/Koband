@@ -25,9 +25,9 @@ if (have_posts() ) :
 		<div id="single-media-title"><h1><?php the_title();?></h1></div>
 			<div class="row">
 				<div class="col-sm news-details">
-					<div class="news-details_li admin"><?php echo __('Posted by : ', 'koband');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></div>
-					<div class="news-details_li category"><?php echo __('Category : ', 'koband');?><?php the_category();?></div>
-					<div class="news-details_li date"><?php echo __('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
+					<div class="news-details_li admin"><?php echo esc_html__('Posted by : ', 'koband');?><a href="<?php echo esc_html(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>"><?php the_author(); ?></a></div>
+					<div class="news-details_li category"><?php echo esc_html__('Category : ', 'koband');?><?php the_category();?></div>
+					<div class="news-details_li date"><?php echo esc_html__('Posted at : ', 'koband');?><?php the_time( get_option( 'date_format' ) ); ?></div>
 					<div class="news-details_li tag"><?php the_tags(); ?></div>
 				</div>
 			</div>
@@ -60,12 +60,12 @@ if (have_posts() ) :
 						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
 						$value_video_gallery_video['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];
 						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
+						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>-->
 						<div class="videos-list">
-						<img src="<?php echo $value_video_gallery_image['link']?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" class="myvideo" >
+						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" class="myvideo" >
 					</div>
 						<div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>
+           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>
            					
            					<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
@@ -80,25 +80,25 @@ if (have_posts() ) :
 						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link'];
 						if (strpos($vimeo_ondemand, 'ondemand') !== false) { ?>
 						<div class="videos-list">
-						   <img src="<?php echo get_template_directory_uri(); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
+						   <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
 						</div>
 						   <div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
            					
            					<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
        					</div>		
-						  <!-- <iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+						  <!-- <iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<?php }
 						else {  
 						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $value_video_gallery['link'] . '.php'));
 						$hash[0]['thumbnail_large']?>
-						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<div class="videos-list">
-						<img src="<?php echo $hash[0]['thumbnail_large']?>" alt="Smiley face" height="265" width="370" class="myvideo" >
+						<img src="<?php echo esc_url($hash[0]['thumbnail_large'])?>" alt="Smiley face" height="265" width="370" class="myvideo" >
 					</div>
 						<div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
            					
            					<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
@@ -111,12 +111,12 @@ if (have_posts() ) :
 						$value_video_gallery['link'] = substr($data, strpos($data, "video/") + 6);
 						$value_video_gallery_video['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link'];
 						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>-->
+						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>-->
 						<div class="videos-list">
-						<img src="<?php echo $value_video_gallery_image['link']?>" alt="Smiley face" height="265" width="370" class="myvideo" >
+						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>" alt="Smiley face" height="265" width="370" class="myvideo" >
 					</div>
 						<div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo $value_video_gallery_video['link']?>"></iframe>
+           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>
            					
            					<div  class="next">&#8249;</div>
 							<a href="#" class="prev">&#8250;</a>
@@ -124,7 +124,7 @@ if (have_posts() ) :
 					<?php }
 
 					else {
-						echo "<?php echo __('Your browser does not support this type of iframe videos', 'koband');?>";
+						echo esc_html("<?php echo esc_html__('Your browser does not support this type of iframe videos', 'koband');?>");
 					} ?>
 				
 			<?php } ?>

@@ -55,7 +55,7 @@ get_header();?>
 				$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 				$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 					
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo esc_attr($album_date[0]); } ?></span></div>
+				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) { echo esc_attr($album_date[0]); } ?></span></div>
 			    <div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_length[0])) { echo esc_attr($album_length[0]); } ?></span></div>
 			    <div class="col-sm-1 album-up-down-buttons">
 			    	<span class="btn btn-sm album-song">

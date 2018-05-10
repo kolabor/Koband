@@ -87,19 +87,19 @@ add_filter('the_excerpt', 'ko_band_set_excerpt_length', 999);
 function ko_band_featured_image_metabox_title() {
 
 	remove_meta_box( 'postimagediv', 'album', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'album', 'side' );
+	add_meta_box( 'postimagediv', esc_html__( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'album', 'side' );
 
 	remove_meta_box( 'postimagediv', 'media', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set gallery cover', 'koband' ), 'post_thumbnail_meta_box', 'media', 'side' );
+	add_meta_box( 'postimagediv', esc_html__( 'Set gallery cover', 'koband' ), 'post_thumbnail_meta_box', 'media', 'side' );
 
 	remove_meta_box( 'postimagediv', 'singles', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
+	add_meta_box( 'postimagediv', esc_html__( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
 
 	remove_meta_box( 'postimagediv', 'slides', 'side' );
-	add_meta_box( 'postimagediv', __( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
+	add_meta_box( 'postimagediv', esc_html__( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
 
 	remove_meta_box( 'postimagediv', 'the band', 'side' );
-	add_meta_box( 'postimagediv', __( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
+	add_meta_box( 'postimagediv', esc_html__( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
 
 }
 add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );

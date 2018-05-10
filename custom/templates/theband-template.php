@@ -50,7 +50,7 @@ get_header(); ?>
 									$theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
 									<div class="col-sm-4 band_member">
 										<div class="title_and_role">
-											<button type="button" id="myBtn" class="band_member_name name_member_padding main_font_color" data-toggle="modal" data-target="#myModal<?php echo $id;?>"><?php the_title(); ?></button> <br>
+											<button type="button" id="myBtn" class="band_member_name name_member_padding main_font_color" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_title(); ?></button> <br>
 											<button type="button" id="myBtn" class="band_member_role main_font_color" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php if(isset($theband_role[0]))  { echo  esc_attr($theband_role[0]); } ?></button>
 										</div>
 											<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_post_thumbnail('member_thumb'); ?>
