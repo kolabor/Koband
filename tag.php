@@ -12,8 +12,7 @@
  * @since Koband 1.0
  */
 get_header('noscroll'); ?>
-<div class="container tag_page">
-	<div id="content search-holder" >
+<div class="container tag_page search-holder">
 		<header class="archive-header">
 		<h1 class="archive-title"><?php printf( esc_html__( 'Tag Archives: %s', 'koband' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 		</h1>
@@ -296,6 +295,6 @@ get_header('noscroll'); ?>
 		<!-- loop ends here -->	
    		<?php endif; ?>
    	</div>
-	</div><!-- #content -->
 </div><!-- container -->
-<?php get_footer(); ?>
+<?php get_footer();?>
+
