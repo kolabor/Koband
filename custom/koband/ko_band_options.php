@@ -224,7 +224,10 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
     'description' => $main_slider,
 ) );
 /*Slider box to choose is image or video*/
-$wp_customize->add_setting( 'ko_band_home_page_slider_type' );
+$wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable slide types:', 'koband' ),
     'settings' => 'ko_band_home_page_slider_type',
@@ -275,9 +278,20 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'section'    => 'ko_band_slider_section',
         'settings'   => 'ko_band_slider_text_holder_background_color',
 ) ) );
-
+/*Slider box  background show/hide*/
+$wp_customize->add_setting( 'ko_band_home_page_box_background' );
+$wp_customize->add_control( 'ko_band_home_page_box_background', array(
+    'label' => esc_html__( 'Show slider text hoder', 'koband' ),
+    'settings' => 'ko_band_home_page_box_background',
+    'section' => 'ko_band_slider_section',
+    'type'     => 'checkbox',
+   
+ )  );
 /*Slider Video Link**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_videolink' );
+$wp_customize->add_setting( 'ko_band_home_page_slider_videolink', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
   'label'    => esc_html__( 'Background video link:', 'koband' ),
@@ -324,15 +338,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
   'section'  => 'ko_band_slider_section',  
 ));
 
-/*Slider box  background show/hide*/
-$wp_customize->add_setting( 'ko_band_home_page_box_background' );
-$wp_customize->add_control( 'ko_band_home_page_box_background', array(
-    'label' => esc_html__( 'Show slider text hoder', 'koband' ),
-    'settings' => 'ko_band_home_page_box_background',
-    'section' => 'ko_band_slider_section',
-    'type'     => 'checkbox',
-   
- )  );
+
 
 /*Slide section type end here */
 /**********************************************************************************************************************/
