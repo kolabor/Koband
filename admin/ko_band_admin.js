@@ -98,6 +98,9 @@ jQuery(function($) {
 });
 
 jQuery(document).ready(function( $ ){ 
+
+ // var sliderrr = $("#_customize-input-ko_band_home_page_slider_type selected:selected").val();
+ // alert(sliderrr);
         
     // Saving the selected radio button for Slides //
         var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
@@ -319,8 +322,10 @@ jQuery(document).ready(function( $ ){
 
       // On customize on slider section hide video-fields when image is selected
 
-      $(document.body).on('change',"#_customize-input-ko_band_home_page_slider_type",function (e) {
-          
+      $(document).on('change',"#_customize-input-ko_band_home_page_slider_type",function (e) {
+         var optVal= $("#_customize-input-ko_band_home_page_slider_type option:selected").val();
+         alert(optVal);
+
           if($(this).val() == 'Image'){ 
             $('#customize-control-ko_band_home_page_slider_videolink').addClass("hide_video_slider_fields");
             $('#customize-control-ko_band_home_page_slider_title').addClass("hide_video_slider_fields");
@@ -335,7 +340,6 @@ jQuery(document).ready(function( $ ){
             $('#customize-control-ko_band_home_page_slider_buttontitle').removeClass("hide_video_slider_fields");
             $('#customize-control-ko_band_home_page_slider_buttonlink').removeClass("hide_video_slider_fields");
           }
-         var optVal= $("#_customize-input-ko_band_home_page_slider_type option:selected").val();
       });        
 
 
