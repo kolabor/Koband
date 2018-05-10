@@ -103,8 +103,8 @@
 
  
 ?>
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>'">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>'">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_general_font); ?>'">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">
 
 #theband {
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
