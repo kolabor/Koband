@@ -34,8 +34,8 @@
 	<!--loop ends here-->
 		<div class="video-bg">
 				<div class="iframe-wrapper">
-					<iframe  src="<?php echo esc_url($slide_video_link)?>?autoplay=1&controls=0&loop=auto&mute=1&start=10&end=30&rel=0&playlist=1" ></iframe>
-				</div>	
+					<iframe  src="<?php echo esc_url($slide_video_link)?>?autoplay=1&controls=0&loop=auto&mute=1&start=10&end=30&rel=0&playlist=1&playerapiid="<?php $slide_video_link; ?>"></iframe>
+				</div>			
 		</div>		
 		<div class="sl-content">
 			    <h5 class="slider_text_color"><?php if(isset($slide_video_title[0])) { echo esc_attr($slide_video_title); } ?></h5>
