@@ -38,13 +38,13 @@ get_header();?>
 */
 	$album_posts = new WP_Query($args_album); ?>
 
-	<div class="container">
 	<h3><div class="albums-title main_font_color"><?php echo esc_html__('Albums', 'koband');?></div></h3>
    	<?php if ($album_posts->have_posts() ) : 
 			while( $album_posts->have_posts() ) : $album_posts->the_post();
 			
 				$post_id = get_the_ID();?>
 			
+	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
 			<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
@@ -96,15 +96,14 @@ get_header();?>
 			</div><!-- container album-songs-show-hide -->
 		
 	
-	<?php endwhile; endif; ?> <!-- end of the loop. -->
 		</div><!-- container -->
+	<?php endwhile; endif; ?> <!-- end of the loop. -->
 <!-- 
 ================================================================================================================
 												SINGLE SONG DETAILS
 ================================================================================================================
 -->
 	<?php $single_posts = new WP_Query($args_singles); ?>
-	<div class="container">
 	<h3><div class="single-title main_font_color"><?php echo esc_html__('Singles', 'koband');?></div></h3>
 	<?php if ($single_posts->have_posts() ) :
 			while ($single_posts->have_posts() ) : $single_posts->the_post();
@@ -116,6 +115,7 @@ get_header();?>
 				$single_detail = get_post_meta($post_id, "ko_band_singles_detail", false ); 
 				$single_store = get_post_meta($post_id, "ko_band_repetable_singles_stores", false); ?>
 					
+	<div class="container">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank"><?php the_post_thumbnail(array(70,70));?></a></div>
 				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank"><span class="main_font_color"><?php the_title();?></span></a></div>
@@ -153,7 +153,7 @@ get_header();?>
 			<?php } } ?>
 		</div>
 	</div><!-- container single-songs-show-hide -->	
-<?php endwhile; endif; ?>
 	</div><!-- container -->
+<?php endwhile; endif; ?>
 </div><!-- container -->
 </div><!-- Discography -->

@@ -187,4 +187,7 @@ input.radio1, input.radio2 {
 .customize-control input[type="checkbox"] {
   margin-top: 5px; }
 
+.hide_video_slider_fields {
+  display: none !important; }
+
 /*# sourceMappingURL=ko_band_admin.css.map */

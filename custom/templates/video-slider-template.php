@@ -28,14 +28,16 @@
 		
 		$data = $slide_video_link;
 		$slide_video_link = substr($data, strpos($data, "v=") + 2);
-		$slide_video_link = 'https://www.youtube.com/embed/' . $slide_video_link; ?>
-
+		$playlist_loop = substr($data, strrpos($data, "v=") + 2);
+		$slide_video_link = 'https://www.youtube.com/embed/' . ($slide_video_link); 
+		$video_loop = $slide_video_link . '?rel=0&autoplay=1&loop=1&mute=1&playlist=' . $playlist_loop ;
+		str_replace(array("http://"), "", $video_loop);?>
 	<?php endwhile; ?>
 	<!--loop ends here-->
 		<div class="video-bg">
 				<div class="iframe-wrapper">
-					<iframe  src="<?php echo esc_url($slide_video_link)?>?autoplay=1&controls=0&loop=auto&mute=1&start=10&end=30&rel=0&playlist=1" ></iframe>
-				</div>	
+					<iframe  src="<?php echo esc_url($video_loop)?>" ></iframe>
+				</div>		
 		</div>		
 		<div class="sl-content">
 			    <h5 class="slider_text_color"><?php if(isset($slide_video_title[0])) { echo esc_attr($slide_video_title); } ?></h5>
