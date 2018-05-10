@@ -549,7 +549,7 @@ Tour Section
 .store_link a {
   padding: 6px;
   border-radius: 5px;
-  color: #fff;
+  color: #fff !important;
   font-size: 14px; }
 
 .store_link a .svg-inline--fa {
@@ -565,7 +565,7 @@ Tour Section
   border-bottom: 1px solid;
   padding-top: 5px !important;
   padding-right: 0 !important;
-  padding-left: 0 !important;
+  padding-left: 25px !important;
   padding-bottom: 5px !important; }
 
 .album-store {
@@ -852,7 +852,7 @@ Tour Section
   width: 100%;
   height: auto;
   display: inline-block;
-  overflow: auto; }
+  overflow: hidden; }
 
 .conent_holder {
   width: 70%;
@@ -922,8 +922,8 @@ label {
   padding-right: 7px;
   height: 24px; }
 
-.admin a {
-  padding-left: 5px; }
+.admin a, .category a, .tag a, .date .dates {
+  margin-left: 5px; }
 
 .post-categories {
   list-style: none;
@@ -941,7 +941,8 @@ label {
   float: right; }
 
 .comment-form-comment textarea {
-  width: 100%; }
+  width: 100%;
+  border: 1px solid #b5b5b5; }
 
 .comment-form-author {
   position: relative;
@@ -1013,7 +1014,8 @@ input {
   width: 100%;
   position: relative;
   display: block;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 15px; }
 
 .tag_page {
   padding-top: 25px; }
@@ -1232,7 +1234,7 @@ input {
     display: inline-block;
     font-size: 42px; }
 
-  #menu-main-menu {
+  .main-nav .menu {
     position: relative;
     list-style-type: none;
     width: 100%;
@@ -1247,11 +1249,11 @@ input {
     position: relative;
     display: none; }
 
-  #menu-main-menu li {
+  .main-nav .menu li {
     display: block;
     width: 100%; }
 
-  #menu-main-menu li a {
+  .main-nav .menu li a {
     width: 100%;
     display: block;
     font-size: 26px !important;
@@ -1266,8 +1268,8 @@ input {
   .logo {
     margin-top: 0; }
 
-  .menu-scroll {
-    height: auto; }
+  .menu-scroll, .menu-noscroll {
+    height: auto !important; }
 
   .sl-content {
     width: 70%;
@@ -1325,13 +1327,77 @@ input {
 
   .store_link a {
     padding: 5px;
-    font-size: 12px; } }
+    font-size: 12px; }
+
+  /*news_single_page*/
+  .conent_holder {
+    width: 100%; }
+
+  .sidebar {
+    width: 100%;
+    height: 50%;
+    float: left; }
+
+  .conent_holder h1 {
+    text-align: center; }
+
+  .news-details {
+    display: inline-block;
+    text-align: center;
+    font-size: 17px; }
+
+  .content_single_page {
+    text-align: center;
+    font-size: 20px !important; }
+
+  .comment-notes {
+    font-size: 20px; }
+
+  .comments-area {
+    text-align: center; }
+
+  .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url {
+    width: 100%;
+    font-size: 20px; }
+
+  .comment-form-author input, .comment-form-email input, .comment-form-url input {
+    width: 100% !important; }
+
+  .form-submit {
+    width: 100%;
+    text-align: center; }
+
+  .submit {
+    float: none; }
+
+  /*media_single_page*/
+  #single-media-title {
+    text-align: center; }
+
+  .gal {
+    column-count: 1; }
+
+  .gal img {
+    height: auto; }
+
+  /*author*/
+  .author-header h1 {
+    text-align: center; } }
 @media screen and (max-width: 991px) {
   .mobile-nav-icon {
     font-size: 32px; }
 
   .main-logo {
-    margin-left: 180px; } }
+    margin-left: 180px; }
+
+  input {
+    width: 160px;
+    line-height: 2; }
+
+  .search-submit {
+    line-height: 2;
+    height: 35px;
+    font-size: 14px; } }
 @media screen and (max-width: 800px) {
   .sl-content {
     width: 50%; }
@@ -1383,7 +1449,7 @@ input {
     display: inline-block;
     font-size: 35px; }
 
-  #menu-main-menu {
+  .main-nav .menu {
     position: relative;
     list-style-type: none;
     width: 94%;
@@ -1398,11 +1464,11 @@ input {
     position: relative;
     display: none; }
 
-  #menu-main-menu li {
+  .main-nav .menu li {
     display: block;
     width: 100%; }
 
-  #menu-main-menu li a {
+  .main-nav .menu li a {
     width: 100%;
     display: block;
     font-size: 24px !important;
@@ -1417,7 +1483,7 @@ input {
   .logo {
     margin-top: 0; }
 
-  .menu-scroll {
+  .menu-scroll, .menu-noscroll {
     height: auto; }
 
   .sl-content {
@@ -1439,6 +1505,13 @@ input {
 
   .albums-title, .single-title {
     text-align: center; }
+
+  .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img,
+  .btn.btn-sm.hide-single-song img {
+    width: 55px; }
+
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song {
+    margin-top: 0; }
 
   .news-title {
     text-align: center; }
@@ -1616,7 +1689,7 @@ input {
     font-size: 300%;
     margin-left: 30px; }
 
-  #menu-main-menu {
+  .main-nav .menu {
     position: relative;
     list-style-type: none;
     width: 95%;
@@ -1631,11 +1704,11 @@ input {
     position: relative;
     display: none; }
 
-  #menu-main-menu li {
+  .main-nav .menu li {
     display: block;
     width: 100%; }
 
-  #menu-main-menu li a {
+  .main-nav .menu li a {
     width: 100%;
     display: block;
     font-size: 17px !important;
@@ -1650,7 +1723,7 @@ input {
   .logo {
     margin-top: 0; }
 
-  .menu-scroll {
+  .menu-scroll, .menu-noscroll {
     height: auto; }
 
   .sl-content {
@@ -1869,6 +1942,12 @@ input {
 
   .footer-menu .menu li a {
     font-size: 19px !important; } }
+@media screen and (max-width: 324px) {
+  .main-logo {
+    margin-left: 57px; }
+
+  .mobile-nav-icon {
+    font-size: 15px; } }
 @media screen and (max-width: 319px) {
   .main-logo {
     margin-left: 55px; }
