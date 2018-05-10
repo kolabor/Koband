@@ -169,14 +169,14 @@ function ko_band_tour_save_meta_box( $post_id, $post )
       
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $tour_meta['ko_band_tour_date'] = esc_attr( $_POST['ko_band_tour_date'] );
-    $tour_meta['ko_band_tour_country'] = esc_attr( $_POST['ko_band_tour_country'] );
-    $tour_meta['ko_band_tour_city'] = esc_attr( $_POST['ko_band_tour_city'] );
-    $tour_meta['ko_band_tour_address'] = esc_attr( $_POST['ko_band_tour_address'] );
-    $tour_meta['ko_band_tour_zipCode'] = esc_attr( $_POST['ko_band_tour_zipCode'] );
-    $tour_meta['ko_band_tour_venue_name'] = esc_attr( $_POST['ko_band_tour_venue_name'] );
-    $tour_meta['ko_band_tour_ticket'] = esc_attr($_POST['ko_band_tour_ticket']);
-    $tour_meta['ko_band_tour_ticket_link'] = esc_attr( $_POST['ko_band_tour_ticket_link'] );
+    $tour_meta['ko_band_tour_date'] = esc_html( $_POST['ko_band_tour_date'] );
+    $tour_meta['ko_band_tour_country'] = esc_html( $_POST['ko_band_tour_country'] );
+    $tour_meta['ko_band_tour_city'] = esc_html( $_POST['ko_band_tour_city'] );
+    $tour_meta['ko_band_tour_address'] = esc_html( $_POST['ko_band_tour_address'] );
+    $tour_meta['ko_band_tour_zipCode'] = esc_html( $_POST['ko_band_tour_zipCode'] );
+    $tour_meta['ko_band_tour_venue_name'] = esc_html( $_POST['ko_band_tour_venue_name'] );
+    $tour_meta['ko_band_tour_ticket'] = esc_html($_POST['ko_band_tour_ticket']);
+    $tour_meta['ko_band_tour_ticket_link'] = esc_html( $_POST['ko_band_tour_ticket_link'] );
 
     // Cycle through the $tour_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.

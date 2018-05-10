@@ -12,8 +12,7 @@
  * @since Koband 1.0
  */
 get_header('noscroll'); ?>
-<div class="container tag_page">
-	<div id="content search-holder" >
+<div class="container tag_page search-holder">
 		<header class="archive-header">
 		<h1 class="archive-title"><?php printf( esc_html__( 'Tag Archives: %s', 'koband' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 		</h1>
@@ -38,7 +37,7 @@ get_header('noscroll'); ?>
 					<?php while ( $news_tags_posts->have_posts() ) : $news_tags_posts->the_post(); ?>
 						<div class="col-md-4">
 							<div class="card mb-4 box-shadow">
-								<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( esc_html(get_the_title(), 4 )); ?></a></h2></div>
+								<div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
 								<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(220, 180)); ?></a>
 								<div class="card-body">
 									<div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
@@ -296,6 +295,6 @@ get_header('noscroll'); ?>
 		<!-- loop ends here -->	
    		<?php endif; ?>
    	</div>
-	</div><!-- #content -->
 </div><!-- container -->
-<?php get_footer(); ?>
+<?php get_footer();?>
+

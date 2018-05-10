@@ -47,7 +47,7 @@ get_header();?>
 	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
 			<div class="col-sm-1"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" >    <span class="main_font_color"><?php the_title();?></span></a></div>
+				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 		        <?php 
 		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -55,7 +55,7 @@ get_header();?>
 				$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 				$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 					
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo esc_attr($album_date[0]); } ?></span></div>
+				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) { echo esc_attr($album_date[0]); } ?></span></div>
 			    <div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_length[0])) { echo esc_attr($album_length[0]); } ?></span></div>
 			    <div class="col-sm-1 album-up-down-buttons">
 			    	<span class="btn btn-sm album-song">
@@ -95,8 +95,8 @@ get_header();?>
 							
 			</div><!-- container album-songs-show-hide -->
 		
-		</div><!-- container -->
 	
+		</div><!-- container -->
 	<?php endwhile; endif; ?> <!-- end of the loop. -->
 <!-- 
 ================================================================================================================

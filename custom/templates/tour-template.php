@@ -77,10 +77,10 @@ get_header(); ?>
     </div><!--row-->
         <div class="container text-center">
             <div class="row">
-                <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+                <a class="btn-koband-load koband_load_tour bg_first_color" data-page="1" data-url="<?php echo esc_attr(admin_url('admin-ajax.php')); ?>">
                     <span class="koband-loading"><?php echo esc_html__('Loading...','koband');?></span>
                     <span class="text"><?php echo esc_html__('Load tour','koband');?></span></a>
-                <a class="no-tour"><span class="tour-posts"><?php echo esc_html__('There are no more tours','koband');?>   <i class="far fa-smile"></i></span></a>
+                <a class="no-tour"><span class="tour-posts"><?php echo esc_html__('There are no more tours', 'koband');?>   <i class="far fa-smile"></i></span></a>
             </div>
         </div><!--container-->
     </div><!--container-->

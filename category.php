@@ -27,14 +27,14 @@ get_header('noscroll'); ?>
 		// Show an optional term description.
 		$term_description = term_description();
 		if (! empty( $term_description) ) :
-			printf( esc_html__('<div class="taxonomy-description">%s</div>', $term_description) );
+			printf( esc_html_nx('<div class="taxonomy-description">%s</div>', $term_description, 'koband') );
 		endif; ?>
 		<?php if (have_posts() ) : ?>
 		<!--start loop --> 
 			<?php while ( have_posts() ) : the_post(); ?>
 	            <div class="col-md-4">
 	                <div class="card mb-4 box-shadow">
-	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( esc_html(get_the_title(), 4 )); ?></a></h2></div>
+	                    <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo  esc_html(wp_trim_words(get_the_title(), 4 )); ?></a></h2></div>
 	                    <a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail(array(300,300)); ?></a>
 	                    <div class="card-body">
 	                        <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>

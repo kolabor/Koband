@@ -30,7 +30,7 @@ function ko_band_register_slides() {
     'singular_name' => esc_html__('Slides', 'koband'),
     'add_new' => esc_html__('Add Slide', 'koband'),
     'all_items' => esc_html__('All Slides', 'koband'),
-    'add_new_item' => esc_html__('Add Slides','koband'),
+    'add_new_item' => esc_html__('Add Slides', 'koband'),
     'edit_item' => esc_html__('Edit Slides', 'koband'),
     'new_item' => esc_html__('New Slides', 'koband'),
     'view_item' => esc_html__('View Slides','koband'),
@@ -137,10 +137,10 @@ function ko_band_slides_save_meta_box( $post_id, $post )
 
     // Now that we're authenticated, time to save the data.
     // This sanitizes the data from the field and saves it into an array $events_meta.
-    $slides_meta['ko_band_slides_title'] = esc_attr( $_POST['ko_band_slides_title'] );
-    $slides_meta['ko_band_slides_subtitle'] = esc_attr( $_POST['ko_band_slides_subtitle'] );
-    $slides_meta['ko_band_slides_button_title'] = esc_attr( $_POST['ko_band_slides_button_title'] );
-    $slides_meta['ko_band_slides_button_link'] = esc_attr( $_POST['ko_band_slides_button_link'] ); 
+    $slides_meta['ko_band_slides_title'] = esc_html( $_POST['ko_band_slides_title'] );
+    $slides_meta['ko_band_slides_subtitle'] = esc_html( $_POST['ko_band_slides_subtitle'] );
+    $slides_meta['ko_band_slides_button_title'] = esc_html( $_POST['ko_band_slides_button_title'] );
+    $slides_meta['ko_band_slides_button_link'] = esc_html( $_POST['ko_band_slides_button_link'] ); 
    
     // Cycle through the $events_meta array.
     // Note, in this example we just have one item, but this is helpful if you have multiple.

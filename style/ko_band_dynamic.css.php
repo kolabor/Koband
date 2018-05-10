@@ -103,21 +103,8 @@
 
  
 ?>
-
-#theband {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
- url("<?php echo esc_html($koband_theband_image); ?>") !important;
- background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
-}
-
-
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
-
-
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_general_font); ?>'">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">
 
 
 /* Menu item colors */
@@ -130,7 +117,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   color: <?php echo esc_html($koband_main_font_color); ?> !important;
 
 }
-
+ 
 .home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
   font-family: <?php echo esc_html($koband_headding_font); ?> !important;
@@ -138,6 +125,13 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   color: <?php echo esc_html($koband_main_font_color);?> !important;
 
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
+}
+#theband {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("<?php echo esc_html($koband_theband_image); ?>") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #News {
@@ -156,9 +150,12 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 }
 
 
-
+a {
+   color: <?php echo esc_html($koband_first_theme_color); ?> !important;
+}
 
 .first_color {
+  font-family: <?php echo esc_html($koband_headding_font); ?> !important;
   color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .social-icons a .first_color:hover {
@@ -187,13 +184,13 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 
 
 .main_font_color{
-
+  font-family : <?php echo esc_html($koband_general_font); ?> !important;
   color: <?php echo esc_html($koband_main_font_color); ?> !important;  
 
 }
 
 .font-line_height {
-  font-size:  <?php echo esc_html($koband_theme_font_size); ?> !important;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> !important;
 }
 

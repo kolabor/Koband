@@ -22,7 +22,7 @@ get_header('noscroll'); ?>
 					<div class="col-sm news-details">
 						<div class="news-details_li admin"><?php echo esc_html__('Posted by : ', 'koband');?><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>"><?php the_author(); ?></a></div>
 						<div class="news-details_li category"><?php echo esc_html__('Category : ', 'koband');?><?php the_category();?></div>
-						<div class="news-details_li date"><?php echo esc_html__('Posted at : ', 'koband');?><?php the_time( esc_html(get_option( 'date_format' )) ); ?></div>
+						<div class="news-details_li date"><?php echo esc_html__('Posted at : ', 'koband');?><?php the_time(get_option( 'date_format' )); ?></div>
 						<div class="news-details_li tag"><?php the_tags(); ?></div>
 					</div>
 					

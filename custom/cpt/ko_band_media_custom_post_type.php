@@ -26,17 +26,17 @@ $args = array(
 function ko_band_media_custom_post_type() {
 
   $label = array(
-    'name' => esc_html__('Media', 'koband'),
-    'singular_name' =>  esc_html__('Media', 'koband'),
-    'add_new' => esc_html__('Add Media','koband'),
-    'all_items' => esc_html__('All Medias', 'koband'),
-    'add_new_item' => esc_html__('Add Media','koband'),
-    'edit_item' => esc_html__('Edit Media','koband'),
-    'new_item' => esc_html__('New Media','koband'),
-    'view_item' => esc_html__('View Media','koband'),
-    'search_item' => esc_html__('Search Media', 'koband'),
-    'not_found' => esc_html__('Mo Media Found', 'koband'),
-    'not-found_in_trash' => esc_html__('No Media Found in Trash','koband'),
+    'name' => esc_html__('Gallery', 'koband'),
+    'singular_name' =>  esc_html__('Gallery', 'koband'),
+    'add_new' => esc_html__('Add Gallery','koband'),
+    'all_items' => esc_html__('All Gallerys', 'koband'),
+    'add_new_item' => esc_html__('Add Gallery','koband'),
+    'edit_item' => esc_html__('Edit Gallery','koband'),
+    'new_item' => esc_html__('New Gallery','koband'),
+    'view_item' => esc_html__('View Gallery','koband'),
+    'search_item' => esc_html__('Search Gallery', 'koband'),
+    'not_found' => esc_html__('No Gallerys Found', 'koband'),
+    'not-found_in_trash' => esc_html__('No Gallery Found in Trash','koband'),
     'parent_item_colon' => esc_html__('Parent Media','koband'),
     );
 
@@ -94,7 +94,9 @@ global $post;
         </div>
 
         <div class="row-top media">
-            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo esc_html__("Add image's",' koband');?> data-uploader-button-text=<?php echo esc_html__("Add image's",' koband');?>><?php echo esc_html__("Add image's",'koband');?></a>
+
+            <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo esc_html__("Add image's", 'koband');?> data-uploader-button-text=<?php echo esc_html__("Add image's",'koband');?>><?php echo esc_html__("Add image's",'koband');?></a>
+
             </div>    
         </div>
 
