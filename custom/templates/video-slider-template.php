@@ -30,6 +30,8 @@
 		$slide_video_link = substr($data, strpos($data, "v=") + 2);
 		$slide_video_link = 'https://www.youtube.com/embed/' . ($slide_video_link); ?>
 
+		<iframe  src="<?php echo esc_url('https://www.youtube.com/embed/')?>?autoplay=1&loop=1&mute=1&start=10&end=30&rel=0&playlist='".$slide_video_link."'></iframe>
+
 	<?php endwhile; ?>
 	<!--loop ends here-->
 		<div class="video-bg"><input placeholder="http://somelink.com" />
