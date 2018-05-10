@@ -106,14 +106,6 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_general_font); ?>'">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">
 
-#theband {
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
- url("<?php echo esc_html($koband_theband_image); ?>") !important;
- background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
-}
-
 
 /* Menu item colors */
 .home, .single, .page, .default
@@ -133,6 +125,13 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   color: <?php echo esc_html($koband_main_font_color);?> !important;
 
   font-size:  <?php echo $koband_theme_font_size; ?> !important;
+}
+#theband {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("<?php echo esc_html($koband_theband_image); ?>") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #News {
