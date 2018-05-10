@@ -50,7 +50,7 @@ $(".show-single-song").click(function(){
 
 // hide list of single stores
 $(".hide-single-song").click(function(){
-	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(500); 	// hide container elemnts 
+	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(500); 	    // hide container elemnts 
 	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").hide();		// button up hide
 	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	// button down show
 });
@@ -318,7 +318,7 @@ $('.imageList .attachment-500x500').click(function(){
 
 });
 $('#Fullscreen').click(function(){
- $('#Fullscreen').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
+  $('#Fullscreen').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
 });
 //video
 //your code for stuff should go here
@@ -349,27 +349,30 @@ $('.next').click(function(){
           $('.FullscreenV iframe').attr('src', $($images[0]).attr('src'));
         }
       });*/
-$('.image_media_slider .imageList img:first-child').addClass('active');
+    var speed = 100;
 
-$(document).off('click', '.prev, .next').on('click', '.prev, .next', function() {
-  var next;
-  var circler;
-  if ($(this).is('.prev')) {
-    next = 'prev';
-    circler = ':last';
-  } else {     // or if there would be more arrows, use : else if ($(this).is('.arrow-right'))
-    next = 'next';
-    circler = ':first';
-  }
-  
-  // Use bracket notation to dynamically decide which function to call.
-  var nextTarget = $('.imageList img.active')[next]('img');
-  if (nextTarget.length == 0) {
-    nextTarget = $('.imageList img' + circler);
-  }
-  $('.imageList img').removeClass('active');
-  nextTarget.addClass('active');
-});
+    $(".prev").click(function() {
+        var now = $(this).parent().next("div#Fullscreen").children(":visible"),
+            last = $(this).parent().next("div#Fullscreen").children(":last"),
+            prev = now.prev();
+            prev = prev.index() == 0 ? last : prev;
+        now.fadeOut(speed, function() {prev.fadeIn(speed);});
+    });
+
+    $(".next").click(function() {
+        var now = $(this).parent().next("div#Fullscreen").children(':visible'),
+            first = $(this).parent().next("div#Fullscreen").children(':first'),
+            next = now.next();
+            next = next.index() == 0 ? first : next;
+        now.fadeOut(speed, function() {next.fadeIn(speed);});
+    });
+
+    $("#Fullscreen img").click(function() {
+        var first = $(this).parent().children(':first'),
+            next = $(this).next();
+            next = next.index() == 0 ? first : next;
+        $(this).fadeOut(speed, function() {next.fadeIn(speed);});
+    });    
 
 
 }); // Ready function ends here //

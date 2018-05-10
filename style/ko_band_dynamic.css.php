@@ -103,6 +103,8 @@
 
  
 ?>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>'">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>'">
 
 #theband {
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -111,13 +113,6 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
  background-size: cover;
  background-position: center;
 }
-
-
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
-
-
-
 
 
 /* Menu item colors */
@@ -130,7 +125,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   color: <?php echo esc_html($koband_main_font_color); ?> !important;
 
 }
-
+ 
 .home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
 {
   font-family: <?php echo esc_html($koband_headding_font); ?> !important;
@@ -159,6 +154,7 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 
 
 .first_color {
+  font-family: <?php echo esc_html($koband_headding_font); ?> !important;
   color: <?php echo esc_html($koband_first_theme_color); ?> !important;
 }
 .social-icons a .first_color:hover {
@@ -187,7 +183,7 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 
 
 .main_font_color{
-
+  font-family : <?php echo esc_html($koband_general_font); ?> !important;
   color: <?php echo esc_html($koband_main_font_color); ?> !important;  
 
 }

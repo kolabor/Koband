@@ -329,8 +329,7 @@ $wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
 $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
   'settings' => 'ko_band_home_page_slider_buttonlink',
   'label'    => esc_html__( 'Button Link:', 'koband' ),
-  'section'  => 'ko_band_slider_section',
-  'type'     => 'link'  
+  'section'  => 'ko_band_slider_section',  
 ));
 
 /*Slider box  background show/hide*/
