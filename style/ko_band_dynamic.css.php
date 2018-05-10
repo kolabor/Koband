@@ -151,7 +151,9 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> !im
 }
 
 
-
+a {
+   color: <?php echo esc_html($koband_first_theme_color); ?> !important;
+}
 
 .first_color {
   font-family: <?php echo esc_html($koband_headding_font); ?> !important;
