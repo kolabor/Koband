@@ -375,7 +375,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 /*Home page Modules start here*/
 /*First Module*/
-$wp_customize->add_setting( 'ko_band_first_render_modules' );
+$wp_customize->add_setting( 'ko_band_first_render_modules', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_first_render_modules',
     array(
 
@@ -394,7 +397,10 @@ $wp_customize->add_control( 'ko_band_first_render_modules',
 
 
 /*Second module**/
-$wp_customize->add_setting( 'ko_band_second_render_modules' );
+$wp_customize->add_setting( 'ko_band_second_render_modules', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_second_render_modules',
     array(
         'label' => esc_html__( 'Second module on home page', 'koband' ),
@@ -412,7 +418,10 @@ $wp_customize->add_control( 'ko_band_second_render_modules',
 
 
 /**Third module**/
-$wp_customize->add_setting( 'ko_band_third_render_modules' );
+$wp_customize->add_setting( 'ko_band_third_render_modules', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_third_render_modules',
     array(
         'label' => esc_html__( 'Third module on home page', 'koband' ),
@@ -429,7 +438,10 @@ $wp_customize->add_control( 'ko_band_third_render_modules',
 )  )  );
 
 /**Fourth module**/
-$wp_customize->add_setting( 'ko_band_fourth_render_modules' );
+$wp_customize->add_setting( 'ko_band_fourth_render_modules', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_fourth_render_modules',
     array(
         'label' => esc_html__( 'Fourth module on home page', 'koband' ),
@@ -446,7 +458,10 @@ $wp_customize->add_control( 'ko_band_fourth_render_modules',
 )  )  );
 
 /**Fifth module**/
-$wp_customize->add_setting( 'ko_band_fifth_render_modules' );
+$wp_customize->add_setting( 'ko_band_fifth_render_modules', array(
+        'default'    => 0,
+        'transport'  => 'postMessage'
+    ));
 $wp_customize->add_control( 'ko_band_fifth_render_modules',
     array(
         'label' => esc_html__( 'Fifth module on home page', 'koband' ),

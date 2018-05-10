@@ -344,27 +344,6 @@ jQuery(document).ready(function( $ ){
   }); 
 
 
-      // On customize on slider section hide video-fields when image is selected
-
-      $(document).on('change',"#_customize-input-ko_band_home_page_slider_type",function (e) {
-         var optVal= $("#_customize-input-ko_band_home_page_slider_type option:selected").val();
-        // alert(optVal);
-
-          if($(this).val() == 'Image'){ 
-            $('#customize-control-ko_band_home_page_slider_videolink').addClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_title').addClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_text').addClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_buttontitle').addClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_buttonlink').addClass("hide_video_slider_fields");
-          }
-          if($(this).val() == 'Video'){
-            $('#customize-control-ko_band_home_page_slider_videolink').removeClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_title').removeClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_text').removeClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_buttontitle').removeClass("hide_video_slider_fields");
-            $('#customize-control-ko_band_home_page_slider_buttonlink').removeClass("hide_video_slider_fields");
-          }
-      });        
 
 
 });     
@@ -397,8 +376,16 @@ jQuery(window).load(function ($) {
 
    });
   /*Show hide slider attribues based on slider type ends*/
+   
+   wp.customize.control('ko_band_first_render_modules', function( control ) 
+   {
+        var first_moduel_value = control.settings.default._value;
 
- 
+        $('#_customize-input-ko_band_second_render_modules option[value="'+first_moduel_value+'"]').remove();
+        //$('#_customize-input-ko_band_second_render_modules').find('option[value="'+first_moduel_value+'"]').hide();
+
+   });
+
 
 });
 jQuery(function($) {
