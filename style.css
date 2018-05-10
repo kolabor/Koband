@@ -586,11 +586,13 @@ Tour Section
   margin-left: 0; }
 
 .albums-title {
-  padding-bottom: 10px !important; }
+  padding-bottom: 10px !important;
+  padding-left: 15px; }
 
 .single-title {
   padding-bottom: 20px !important;
-  padding-top: 20px !important; }
+  padding-top: 20px !important;
+  padding-left: 15px; }
 
 .col-sm-1 {
   padding-left: 5px !important; }
