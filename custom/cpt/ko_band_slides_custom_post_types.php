@@ -30,7 +30,7 @@ function ko_band_register_slides() {
     'singular_name' => esc_html__('Slides', 'koband'),
     'add_new' => esc_html__('Add Slide', 'koband'),
     'all_items' => esc_html__('All Slides', 'koband'),
-    'add_new_item' => esc_html__('Add Slides','koband'),
+    'add_new_item' => esc_html__('Add Slides', 'koband'),
     'edit_item' => esc_html__('Edit Slides', 'koband'),
     'new_item' => esc_html__('New Slides', 'koband'),
     'view_item' => esc_html__('View Slides','koband'),
