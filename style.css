@@ -117,6 +117,11 @@ header {
   margin-top: 10px;
   padding-bottom: 7px; }
 
+.retina-main-logo {
+  position: relative;
+  width: 21%;
+  float: left; }
+
 /* ----------------------------------------------- */
 /* Main menu */
 /* -----------------------------------------------  */
@@ -1937,7 +1942,12 @@ input {
     height: 75%; }
 
   .next, .prev {
-    top: 42%; } }
+    top: 42%; }
+
+  .FullscreenV iframe {
+    width: 100%;
+    height: 30%;
+    margin-top: 208px; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
@@ -2013,7 +2023,7 @@ input {
 
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
     margin-left: 31px;
-    margin-top: -2px; }
+    margin-top: -17px; }
 
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {
     width: 27px; }
@@ -2032,7 +2042,7 @@ input {
 
   .mobile-nav-icon {
     font-size: 15px; } }
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
   .main-logo {
     margin-left: 55px; }
 
@@ -2052,6 +2062,22 @@ input {
     padding: 10px; }
 
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-    margin-left: 22px; } }
+    margin-left: 22px; }
+
+  .album-head .col-sm-1 a img {
+    width: 100%;
+    height: auto;
+    padding-top: 18px; }
+
+  .divTableHeading {
+    font-size: 80%; }
+
+  .divTableCell {
+    font-size: 63%; }
+
+  .FullscreenV iframe {
+    width: 100%;
+    height: 30%;
+    margin-top: 159px; } }
 
 /*# sourceMappingURL=style.css.map */

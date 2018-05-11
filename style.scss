@@ -128,7 +128,11 @@ header {
   margin-top: 10px;
   padding-bottom: 7px;
 }
-
+.retina-main-logo {
+  position: relative;
+  width: 21%;
+  float: left;
+}
 
 /* ----------------------------------------------- */
 /* Main menu */
@@ -1537,6 +1541,7 @@ input {
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
   .next, .prev {top: 42%;}
+  .FullscreenV iframe {width: 100%; height: 30%; margin-top: 208px;}
 }
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
@@ -1558,12 +1563,13 @@ input {
   #menu-main-menu li a {font-size: 15px !important;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+
 }
 @media screen and (max-width: 355px) {
   .main-logo {margin-left: 61px;}
   .sl-content p {margin-bottom: 5px;}
   .album-head .col-sm-1 {padding-left: 0!important;}
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 31px; margin-top: -2px;}
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 31px; margin-top: -17px;}
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 27px;}
   .divTableHeading {font-size: 100%;}
   .social-icons a {font-size: 14px;}
@@ -1573,13 +1579,17 @@ input {
   .main-logo {margin-left: 57px;}
   .mobile-nav-icon {font-size: 15px;}
 }
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
   .main-logo {margin-left: 55px;}
   .mobile-nav-icon {font-size: 17px;}
   .sl-content h5 {font-size: 13px !important; margin-bottom: 5px;}
   .sl-content {height: 149px; padding: 17px;}
   .album-head .col-sm-3 { max-width: 100%; padding: 10px;}
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 22px;}
+  .album-head .col-sm-1 a img {width: 100%; height: auto; padding-top: 18px; }
+  .divTableHeading {font-size: 80%;}
+  .divTableCell {font-size: 63%;}
+  .FullscreenV iframe {width: 100%; height: 30%; margin-top: 159px;}
 }
 
 
