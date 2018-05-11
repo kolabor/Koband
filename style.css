@@ -1277,8 +1277,14 @@ input {
     height: auto !important; }
 
   .sl-content {
-    width: 70%;
-    top: 23% !important; }
+    width: 100%;
+    top: 28% !important;
+    left: 0 !important;
+    padding-left: 200px !important;
+    padding-right: 200px !important; }
+
+  .sl-content p {
+    font-size: 25px !important; }
 
   .koband_post_news .col-md-4 {
     flex: 0 0 100%;
@@ -1393,6 +1399,14 @@ input {
   .archive-header h1 {
     text-align: center; } }
 @media screen and (max-width: 991px) {
+  .sl-content {
+    top: 22% !important;
+    padding-left: 150px !important;
+    padding-right: 150px !important; }
+
+  .sl-content p {
+    font-size: 19px !important; }
+
   .mobile-nav-icon {
     font-size: 32px; }
 
@@ -1411,14 +1425,8 @@ input {
     height: 35px;
     font-size: 14px; } }
 @media screen and (max-width: 800px) {
-  .sl-content {
-    width: 70%; }
-
   .sl-content h5 {
     font-size: 30px !important; }
-
-  .sl-content p {
-    font-size: 12px !important; }
 
   .btn-group-lg > .btn, .btn-lg {
     font-size: 1rem !important; }
@@ -1456,7 +1464,7 @@ input {
 @media screen and (max-width: 768px) {
   .mobile-nav-icon {
     display: inline-block;
-    font-size: 35px; }
+    font-size: 40px; }
 
   .main-nav .menu {
     position: relative;
@@ -1485,19 +1493,15 @@ input {
     height: 35px; }
 
   .main-logo {
-    width: 56%;
-    padding-left: 26px;
-    margin-left: 75px; }
+    width: 55%;
+    padding-left: 63px;
+    margin-left: 81px; }
 
   .logo {
     margin-top: 0; }
 
   .menu-scroll, .menu-noscroll {
     height: auto; }
-
-  .sl-content {
-    width: 70%;
-    top: 23% !important; }
 
   .section h1 {
     width: 100%;
@@ -1756,7 +1760,9 @@ input {
   .sl-content {
     top: 22% !important;
     height: 160px;
-    padding: 21px; }
+    padding: 21px;
+    padding-left: 100px !important;
+    padding-right: 100px !important; }
 
   .sl-content h5 {
     font-size: 15px !important; }
