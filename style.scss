@@ -470,12 +470,11 @@ header {
 .FullscreenV {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 300px; /* Location of the box */
+  z-index: 999999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  height: 100%!important; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
@@ -483,9 +482,8 @@ header {
 .FullscreenV iframe {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
-  height: 23%;
+  width: 70%;
+  height:100%;
 }
 
 #Fullscreen {
@@ -499,6 +497,7 @@ header {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
+
 }
 #Fullscreen img {
   margin: auto;
@@ -506,14 +505,18 @@ header {
   width: auto;
   height: 100%;
 }
-.closee {
-  margin-right: 6px;
-  cursor: pointer;
+.close {
   position: absolute;
-  right: 15%;
-  top: 7%;
-  font-size: 35px;
+  right: 5%;
+  top: 6%;
+  background-color: #f1f1f1;
+  color: black !important;
+  border-radius: 65%;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 8px 16px;
 }
+
 .imageList img{cursor: pointer !important;}
 
 .next {
@@ -1358,11 +1361,12 @@ input {
   #single-media-title {text-align: center;}
   .gal {column-count: 1;}
   .gal img {height: auto;}
+  .FullscreenV iframe {width: 100%;}
   /*author*/
   .author-header h1 {text-align: center;}
   /*archive*/
   .archive-header h1 {text-align: center;}
-
+  .next, .prev, .close {position: fixed}
 
 }
 @media screen and (max-width: 991px) {
@@ -1425,6 +1429,7 @@ input {
   .social-media {text-align: center; margin-bottom: 15px;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+  .FullscreenV iframe {width: 100%; margin-top: 46%; height: 40%;}
 }
 
 @media screen and (max-width: 736px) {
@@ -1444,6 +1449,7 @@ input {
   .song-list .store_link a {padding: 6px; font-size: 9px;}
   .video-bg {height: 100%;}
   .iframe-wrapper {height: 100%;}
+  .FullscreenV iframe {width: 100%; height: 100%; margin-top: 0;}
 }
 
 @media screen and (max-width: 667px) {
@@ -1530,6 +1536,7 @@ input {
   .band-bio p {text-align: center;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+  .next, .prev {top: 42%;}
 }
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
