@@ -36,7 +36,18 @@ function ko_band_custom_wp_admin_resources() {
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
+// Load script for customizer live preview
+function ko_band_customizer_scrip(){
 
+	wp_enqueue_script( 
+		  'koband_wp_customizer_js',									//Give the script an ID
+		  get_template_directory_uri().'/admin/theme-customizer.js',	//Point to file
+		  array( 'jquery','customize-preview' ),						//Define dependencies
+		  '',															//Define a version (optional) 
+		  true															//Put script in footer?
+	);
+}
+add_action('customize_preview_init', 'ko_band_customizer_scrip');
 
 /* Register frontend resources */
 function ko_band_custom_wp_front_resources() {
