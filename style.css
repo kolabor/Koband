@@ -187,7 +187,7 @@ header {
   height: auto;
   width: 40%;
   left: 15% !important;
-  top: 30% !important;
+  top: 25% !important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -1399,11 +1399,6 @@ input {
   .archive-header h1 {
     text-align: center; } }
 @media screen and (max-width: 991px) {
-  .sl-content {
-    top: 22% !important;
-    padding-left: 150px !important;
-    padding-right: 150px !important; }
-
   .sl-content p {
     font-size: 19px !important; }
 
@@ -1423,7 +1418,12 @@ input {
   .search-submit {
     line-height: 2;
     height: 35px;
-    font-size: 14px; } }
+    font-size: 14px; }
+
+  .sl-content {
+    top: 31% !important;
+    padding-left: 105px !important;
+    padding-right: 105px !important; } }
 @media screen and (max-width: 800px) {
   .sl-content h5 {
     font-size: 30px !important; }
@@ -1464,7 +1464,7 @@ input {
 @media screen and (max-width: 768px) {
   .mobile-nav-icon {
     display: inline-block;
-    font-size: 40px; }
+    font-size: 30px; }
 
   .main-nav .menu {
     position: relative;
@@ -1495,13 +1495,16 @@ input {
   .main-logo {
     width: 55%;
     padding-left: 63px;
-    margin-left: 81px; }
+    margin-left: 70px; }
 
   .logo {
     margin-top: 0; }
 
   .menu-scroll, .menu-noscroll {
     height: auto; }
+
+  .sl-content {
+    top: 21% !important; }
 
   .section h1 {
     width: 100%;
@@ -1594,6 +1597,19 @@ input {
   .iframe-wrapper {
     height: 75%; } }
 @media screen and (max-width: 736px) {
+  .mobile-nav-icon {
+    display: inline-block;
+    font-size: 30px; }
+
+  .sl-content p {
+    margin-bottom: 5px; }
+
+  .sl-content {
+    top: 22% !important;
+    height: 61%;
+    padding-left: 105px !important;
+    padding-right: 105px !important; }
+
   .footer_search {
     padding-left: 78px;
     margin-bottom: 0; }
@@ -1640,6 +1656,9 @@ input {
   .iframe-wrapper {
     height: 100%; } }
 @media screen and (max-width: 667px) {
+  .sl-content p {
+    font-size: 17px !important; }
+
   .album-head .col-sm-3 {
     max-width: 22%; }
 
@@ -1661,6 +1680,9 @@ input {
 
   .iframe-wrapper {
     height: 75%; } }
+@media screen and (max-width: 639px) {
+  .sl-content {
+    display: none; } }
 @media screen and (max-width: 546px) {
   .main-logo {
     width: 50%;
@@ -1673,9 +1695,6 @@ input {
   .btn-lg {
     padding: 6px !important;
     font-size: 10px !important; }
-
-  .sl-content {
-    top: 18% !important; }
 
   .sl-content h5 {
     font-size: 25px !important; }

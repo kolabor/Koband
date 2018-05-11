@@ -211,7 +211,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 30%!important;
+  top: 25%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -1366,13 +1366,14 @@ input {
 
 }
 @media screen and (max-width: 991px) {
-  .sl-content {top: 22% !important; padding-left: 150px !important; padding-right: 150px !important;}
+
   .sl-content p {font-size: 19px !important;}
   .mobile-nav-icon {font-size: 32px;}
   .main-logo {margin-left: 180px;}
   .col-sm-1 { margin-right: 12px !important;}
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; height: 35px; font-size: 14px;}
+  .sl-content {top: 31% !important; padding-left: 105px !important;padding-right: 105px !important;}
 }
 
 @media screen and (max-width: 800px) {
@@ -1390,14 +1391,15 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-  .mobile-nav-icon { display: inline-block; font-size: 40px; }
+  .mobile-nav-icon { display: inline-block; font-size: 30px;; }
   .main-nav .menu {position: relative; list-style-type: none; width: 94%; text-align: center; padding-top: 5px;}
   .main-nav { float: left; text-align: center; width: 100%; height: auto; position: relative; display: none;}
   .main-nav .menu li {display: block; width: 100%;}
   .main-nav .menu li a{width: 100%; display: block;  font-size: 24px!important; line-height: 25px; height: 35px;}
-  .main-logo {width: 55%; padding-left: 63px; margin-left: 81px;}
+  .main-logo {width: 55%; padding-left: 63px; margin-left: 70px;}
   .logo {margin-top: 0;}
   .menu-scroll, .menu-noscroll {height: auto;}
+  .sl-content {top: 21% !important;}
   .section h1 { width: 100%; text-align: center;}
   .album-head .col-sm-1 {flex: 0 0 19.333333%; max-width: 19.333333%; margin-right: 0!important;}
   .album-head .col-sm-3 {flex: 0 0 19%; max-width: 19%;}
@@ -1426,6 +1428,9 @@ input {
 }
 
 @media screen and (max-width: 736px) {
+  .mobile-nav-icon {display: inline-block; font-size: 30px;}
+  .sl-content p {margin-bottom: 5px;}
+  .sl-content {top: 22% !important; height: 61%; padding-left: 105px !important;padding-right: 105px !important;}
   .footer_search {padding-left: 78px; margin-bottom: 0;}
   .search-form {float: left;}
   #menu-footer-menu {padding-left: 0; text-align: center;}
@@ -1439,9 +1444,10 @@ input {
   .song-list .store_link a {padding: 6px; font-size: 9px;}
   .video-bg {height: 100%;}
   .iframe-wrapper {height: 100%;}
-
 }
+
 @media screen and (max-width: 667px) {
+  .sl-content p {font-size: 17px !important;}
   .album-head .col-sm-3 {max-width: 22%;}
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img,
   .btn.btn-sm.hide-single-song img {width: 40px;}
@@ -1451,11 +1457,12 @@ input {
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
 }
+@media screen and (max-width: 639px) {.sl-content {display: none;}}
 @media screen and (max-width: 546px) {
   .main-logo {width: 50%; padding-left: 38px; margin-left: 83px;}
   .mobile-nav-icon {font-size: 29px;}
   .btn-lg {padding:6px!important; font-size: 10px !important;}
-  .sl-content {top: 18% !important;}
+
   .sl-content h5 {font-size: 25px !important;}
   .sl-content p {font-size: 10px !important;}
   .address, .zipcode {display: none;}

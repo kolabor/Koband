@@ -352,7 +352,7 @@ jQuery(document).ready(function( $ ){
 
 jQuery(window).load(function ($) {
 
-  /*Show hide slider attribues based on slider type*/
+  /*Show hide slider attribues based on slider type
   wp.customize.control('ko_band_home_page_slider_type', function( control ) 
    {       
              
@@ -375,7 +375,7 @@ jQuery(window).load(function ($) {
              }
 
    });
-  /*Show hide slider attribues based on slider type ends*/
+  /*Show hide slider attribues based on slider type ends
    
    wp.customize.control('ko_band_first_render_modules', function( control ) 
    {
