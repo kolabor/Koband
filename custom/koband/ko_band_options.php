@@ -16,7 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 function ko_band_theme_customize_register( $wp_customize ) {
 
 /*** Main Top Logo ***/
-$wp_customize->add_setting( 'ko_band_main_logo' );
+$wp_customize->add_setting( 'ko_band_main_logo', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_main_logo', array(
     'label'    => esc_html__( 'Main top logo', 'koband' ),
     'section'  => 'title_tagline',
@@ -24,7 +27,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 ) ) );
 
 /*** Main Top Retina Logo ***/
-$wp_customize->add_setting( 'ko_band_retina_main_logo' );
+$wp_customize->add_setting( 'ko_band_retina_main_logo', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_retina_main_logo', array(
     'label'    => esc_html__( 'Main top retina logo', 'koband' ),
     'section'  => 'title_tagline',
@@ -34,7 +40,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 /*******************************************************************************************************/
 
  /*** Main Footer Logo ***/
-$wp_customize->add_setting( 'ko_band_footer_logo' );
+$wp_customize->add_setting( 'ko_band_footer_logo', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_footer_logo', array(
     'label'    => esc_html__( 'Footer logo', 'koband' ),
     'section'  => 'title_tagline',
@@ -42,7 +51,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 ) ) );
 
  /*** Main Footer Retina Logo ***/
-$wp_customize->add_setting( 'ko_band_retina_footer_logo' );
+$wp_customize->add_setting( 'ko_band_retina_footer_logo', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_retina_footer_logo', array(
     'label'    => esc_html__( 'Footer retina logo', 'koband' ),
     'section'  => 'title_tagline',
@@ -52,7 +64,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_b
 /************************************************************************************************************/
  
  /** Show Retina favicon***/
-$wp_customize->add_setting( 'ko_band_retina_favicon' );
+$wp_customize->add_setting( 'ko_band_retina_favicon', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Site_Icon_Control ( $wp_customize, 'ko_band_retina_favicon', array(
   'label'    => esc_html__( 'Retina site icon', 'koband' ),
   'section'  => 'title_tagline',
@@ -65,7 +80,10 @@ $wp_customize->add_control( new WP_Customize_Site_Icon_Control ( $wp_customize, 
 /***Koband Theme Colors***/
 
 /*** Main Font color ***/
-$wp_customize->add_setting( 'ko_band_main_font_color' );
+$wp_customize->add_setting( 'ko_band_main_font_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_font_color', array(
         'label'      => esc_html__( 'Main font color', 'koband' ),
         'section'    => 'colors',
@@ -73,15 +91,23 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /*** First theme color ***/
-$wp_customize->add_setting( 'ko_band_first_theme_color' );
+$wp_customize->add_setting( 'ko_band_first_theme_color', array(
+        'default'    => 0,
+        'type'       => 'theme_mod',
+        'transport'  => 'refresh',
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_first_theme_color', array(
         'label'      => esc_html__( ' First theme color', 'koband' ),
         'section'    => 'colors',
         'settings'   => 'ko_band_first_theme_color',
+        'priority'   => 2,
 ) ) );
 
 /*** Second theme color ***/
-$wp_customize->add_setting( 'ko_band_second_theme_color' );
+$wp_customize->add_setting( 'ko_band_second_theme_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_second_theme_color', array(
         'label'      => esc_html__( 'Second theme color', 'koband' ),
         'section'    => 'colors',
@@ -90,7 +116,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 
 /***Background News module color **/
-$wp_customize->add_setting( 'ko_band_background_news_section_color' );
+$wp_customize->add_setting( 'ko_band_background_news_section_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_news_section_color', array(
         'label'      => esc_html__( 'News section background color', 'koband' ),
         'section'    => 'colors',
@@ -99,14 +128,20 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 
 /***Background Tour module color **/
-$wp_customize->add_setting( 'ko_band_background_tour_section_color' );
+$wp_customize->add_setting( 'ko_band_background_tour_section_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_tour_section_color', array(
         'label'      => esc_html__( 'Tour section background color', 'koband' ),
         'section'    => 'colors',
         'settings'   => 'ko_band_background_tour_section_color',
 ) ) );
 /***Background Discography module color **/
-$wp_customize->add_setting( 'ko_band_background_discography_section_color' );
+$wp_customize->add_setting( 'ko_band_background_discography_section_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_discography_section_color', array(
         'label'      => esc_html__( 'Discography section background color', 'koband' ),
         'section'    => 'colors',
@@ -114,7 +149,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /***Background Gallery module color **/
-$wp_customize->add_setting( 'ko_band_background_gallery_section_color' );
+$wp_customize->add_setting( 'ko_band_background_gallery_section_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_background_gallery_section_color', array(
         'label'      => esc_html__( 'Gallery section background color', 'koband' ),
         'section'    => 'colors',
@@ -132,7 +170,10 @@ $wp_customize->add_section( 'ko_band_fonts_section' , array(
 ) );
 
 /**Theme font size**/
-$wp_customize->add_setting( 'ko_band_theme_font_size' );
+$wp_customize->add_setting( 'ko_band_theme_font_size', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_theme_font_size',
     array(
         'label' => esc_html__( 'Theme font size (in px.)', 'koband' ),
@@ -142,7 +183,10 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_the
 ) ) );
 
 /**Theme line height***/
-$wp_customize->add_setting( 'ko_band_theme_line_height' );
+$wp_customize->add_setting( 'ko_band_theme_line_height', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_theme_line_height',
     array(
         'label' => esc_html__( 'Theme line height (in px.)', 'koband' ),
@@ -153,7 +197,10 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_the
 
 
 /*** Main Font Selector ***/
-$wp_customize->add_setting( 'ko_band_general_font_selector' );
+$wp_customize->add_setting( 'ko_band_general_font_selector', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_general_font_selector', array(
 
         'type'      => 'select',
@@ -183,7 +230,10 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
 ), ) );
 
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
-$wp_customize->add_setting( 'ko_band_heading_font_selector' );
+$wp_customize->add_setting( 'ko_band_heading_font_selector', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_heading_font_selector', array(
 
         'type'      => 'select',
@@ -226,7 +276,7 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
 /*Slider box to choose is image or video*/
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable slide types:', 'koband' ),
@@ -240,7 +290,10 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
 )  )  );
 
 /*** Slider text color ***/
-$wp_customize->add_setting( 'ko_band_slider_text_color' );
+$wp_customize->add_setting( 'ko_band_slider_text_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_color', array(
         'label'      => esc_html__( ' Text color', 'koband' ),
         'section'    => 'ko_band_slider_section',
@@ -248,7 +301,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /*** Slider Button text color ***/
-$wp_customize->add_setting( 'ko_band_slider_button_text_color' );
+$wp_customize->add_setting( 'ko_band_slider_button_text_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_text_color', array(
         'label'      => esc_html__( 'Button text color', 'koband' ),
         'section'    => 'ko_band_slider_section',
@@ -256,7 +312,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /*** Slider Button Background color ***/
-$wp_customize->add_setting( 'ko_band_slider_button_background_color' );
+$wp_customize->add_setting( 'ko_band_slider_button_background_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_background_color', array(
         'label'      => esc_html__( 'Button background color', 'koband' ),
         'section'    => 'ko_band_slider_section',
@@ -264,7 +323,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /*** Slider Button Hover Background color ***/
-$wp_customize->add_setting( 'ko_band_slider_button_hover_background_color' );
+$wp_customize->add_setting( 'ko_band_slider_button_hover_background_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_hover_background_color', array(
         'label'      => esc_html__( 'Button hover background color', 'koband' ),
         'section'    => 'ko_band_slider_section',
@@ -272,14 +334,20 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /*** Slider Text Holder Background color ***/
-$wp_customize->add_setting( 'ko_band_slider_text_holder_background_color' );
+$wp_customize->add_setting( 'ko_band_slider_text_holder_background_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_holder_background_color', array(
         'label'      => esc_html__( 'Text holder background color', 'koband' ),
         'section'    => 'ko_band_slider_section',
         'settings'   => 'ko_band_slider_text_holder_background_color',
 ) ) );
 /*Slider box  background show/hide*/
-$wp_customize->add_setting( 'ko_band_home_page_box_background' );
+$wp_customize->add_setting( 'ko_band_home_page_box_background', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_box_background', array(
     'label' => esc_html__( 'Show slider text hoder', 'koband' ),
     'settings' => 'ko_band_home_page_box_background',
@@ -290,7 +358,7 @@ $wp_customize->add_control( 'ko_band_home_page_box_background', array(
 /*Slider Video Link**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
@@ -304,7 +372,10 @@ $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
  ));
 
 /*Video Title**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_title' );
+$wp_customize->add_setting( 'ko_band_home_page_slider_title', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
   'settings' => 'ko_band_home_page_slider_title',
   'label'    => esc_html__( 'Slider title:', 'koband' ),
@@ -313,7 +384,10 @@ $wp_customize->add_control( 'ko_band_home_page_slider_title', array(
 ));
 
 /*Video SubTitle**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_text' );
+$wp_customize->add_setting( 'ko_band_home_page_slider_text', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_slider_text', array(
   'settings' => 'ko_band_home_page_slider_text',
   'label'    => esc_html__( 'Slider text:', 'koband' ),
@@ -322,7 +396,10 @@ $wp_customize->add_control( 'ko_band_home_page_slider_text', array(
 ));
 
 /*Video Button Title**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_buttontitle' );
+$wp_customize->add_setting( 'ko_band_home_page_slider_buttontitle', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
   'settings' => 'ko_band_home_page_slider_buttontitle',
   'label'    => esc_html__( 'Button title:', 'koband' ),
@@ -331,7 +408,10 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttontitle', array(
 ));
 
 /*Video Button Link**/
-$wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink' );
+$wp_customize->add_setting( 'ko_band_home_page_slider_buttonlink', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
   'settings' => 'ko_band_home_page_slider_buttonlink',
   'label'    => esc_html__( 'Button Link:', 'koband' ),
@@ -345,7 +425,10 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
 /***** Main Menu Section start here********/
 
 /*** Main Menu font color ***/
-$wp_customize->add_setting( 'ko_band_main_menu_font_color' );
+$wp_customize->add_setting( 'ko_band_main_menu_font_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_menu_font_color', array(
         'label'      => esc_html__( ' Menu font color', 'koband' ),
         'section'    => 'nav_menu[2]',
@@ -353,7 +436,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /** Main Menu font size**/
-$wp_customize->add_setting( 'ko_band_main_menu_font_size' );
+$wp_customize->add_setting( 'ko_band_main_menu_font_size', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_main_menu_font_size',
     array(
         'label' => esc_html__( 'Menu font size (in px.)', 'koband' ),
@@ -363,7 +449,10 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_mai
 ) ) );
 
 /*** Main Menu background color ***/
-$wp_customize->add_setting( 'ko_band_main_menu_background_color' );
+$wp_customize->add_setting( 'ko_band_main_menu_background_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_menu_background_color', array(
         'label'      => esc_html__( ' Menu background color', 'koband' ),
         'section'    => 'nav_menu[2]',
@@ -377,7 +466,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*First Module*/
 $wp_customize->add_setting( 'ko_band_first_render_modules', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_first_render_modules',
     array(
@@ -399,7 +488,7 @@ $wp_customize->add_control( 'ko_band_first_render_modules',
 /*Second module**/
 $wp_customize->add_setting( 'ko_band_second_render_modules', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_second_render_modules',
     array(
@@ -420,7 +509,7 @@ $wp_customize->add_control( 'ko_band_second_render_modules',
 /**Third module**/
 $wp_customize->add_setting( 'ko_band_third_render_modules', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_third_render_modules',
     array(
@@ -440,7 +529,7 @@ $wp_customize->add_control( 'ko_band_third_render_modules',
 /**Fourth module**/
 $wp_customize->add_setting( 'ko_band_fourth_render_modules', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_fourth_render_modules',
     array(
@@ -460,7 +549,7 @@ $wp_customize->add_control( 'ko_band_fourth_render_modules',
 /**Fifth module**/
 $wp_customize->add_setting( 'ko_band_fifth_render_modules', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'refresh'
     ));
 $wp_customize->add_control( 'ko_band_fifth_render_modules',
     array(
@@ -490,14 +579,38 @@ $wp_customize->add_section( 'ko_band_social_media_section' , array(
 
 
 
-$wp_customize->add_setting( 'ko_band_facebook_social_media' );
-$wp_customize->add_setting( 'ko_band_twitter_social_media' );
-$wp_customize->add_setting( 'ko_band_insagram_social_media' );
-$wp_customize->add_setting( 'ko_band_youtube_social_media' );
-$wp_customize->add_setting( 'ko_band_spotify_social_media' );
-$wp_customize->add_setting( 'ko_band_soundcloud_social_media' );
-$wp_customize->add_setting( 'ko_band_bandcamp_social_media' );
-$wp_customize->add_setting( 'ko_band_apple_social_media' );
+$wp_customize->add_setting( 'ko_band_facebook_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_twitter_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_insagram_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_youtube_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_spotify_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_soundcloud_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_bandcamp_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
+$wp_customize->add_setting( 'ko_band_apple_social_media', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 
 /*Facebook*/
 $wp_customize->add_control( 'ko_band_facebook_social_media', array(
@@ -571,7 +684,10 @@ $wp_customize->add_section( 'ko_band_theband_section' , array(
 ) );
 
 /**The band Biography**/
-$wp_customize->add_setting( 'ko_band_theband_biography' );
+$wp_customize->add_setting( 'ko_band_theband_biography', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_theband_biography', array(
     'label' => esc_html__( 'Biography:', 'koband' ),
     'settings' => 'ko_band_theband_biography',
@@ -580,7 +696,10 @@ $wp_customize->add_control( 'ko_band_theband_biography', array(
 ) );
 
 /**The band Images**/
-$wp_customize->add_setting( 'ko_band_theband_sectin_background_image' );
+$wp_customize->add_setting( 'ko_band_theband_sectin_background_image', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_theband_sectin_background_image', array(
     'label' => esc_html__( 'The band sectin background image:', 'koband' ),
     'settings' => 'ko_band_theband_sectin_background_image',
@@ -599,7 +718,10 @@ $wp_customize->add_section( 'ko_band_contact_section' , array(
 ) );
 
 /*Contact Country*/
-$wp_customize->add_setting( 'ko_band_contact_country' );
+$wp_customize->add_setting( 'ko_band_contact_country', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_contact_country', array(
     'label' => esc_html__( 'Country:', 'koband' ),
     'settings' => 'ko_band_contact_country',
@@ -607,7 +729,10 @@ $wp_customize->add_control( 'ko_band_contact_country', array(
 ) );
 
 /*Contact City*/
-$wp_customize->add_setting( 'ko_band_contact_city' );
+$wp_customize->add_setting( 'ko_band_contact_city', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_contact_city', array(
     'label' => esc_html__( 'City:', 'koband' ),
     'settings' => 'ko_band_contact_city',
@@ -615,7 +740,10 @@ $wp_customize->add_control( 'ko_band_contact_city', array(
 ) );
 
 /*Contact Adress*/
-$wp_customize->add_setting( 'ko_band_contact_address' );
+$wp_customize->add_setting( 'ko_band_contact_address', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_contact_address', array(
     'label' => esc_html__( 'Address:', 'koband' ),
     'settings' => 'ko_band_contact_address',
@@ -623,7 +751,10 @@ $wp_customize->add_control( 'ko_band_contact_address', array(
 ) );
 
 /*Contact Email*/
-$wp_customize->add_setting( 'ko_band_contact_email' );
+$wp_customize->add_setting( 'ko_band_contact_email', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_contact_email', array(
     'label' => esc_html__( 'E-mail sddress:', 'koband' ),
     'settings' => 'ko_band_contact_email',
@@ -631,7 +762,10 @@ $wp_customize->add_control( 'ko_band_contact_email', array(
 ) );
 
 /*Contact Phone*/
-$wp_customize->add_setting( 'ko_band_contact_phone' );
+$wp_customize->add_setting( 'ko_band_contact_phone', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_contact_phone', array(
     'label' => esc_html__( 'Phone number:', 'koband' ),
     'settings' => 'ko_band_contact_phone',
@@ -651,7 +785,10 @@ $wp_customize->add_section( 'ko_band_footer_section' , array(
 ) );
 
 /*Copyright text*/
-$wp_customize->add_setting( 'ko_band_footer_copyright' );
+$wp_customize->add_setting( 'ko_band_footer_copyright', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_footer_copyright', array(
     'label' => esc_html__( 'Copyright text:', 'koband' ),
     'settings' => 'ko_band_footer_copyright',
@@ -660,7 +797,10 @@ $wp_customize->add_control( 'ko_band_footer_copyright', array(
 
 
 /*Search checkbox*/
-$wp_customize->add_setting( 'ko_band_footer_search' );
+$wp_customize->add_setting( 'ko_band_footer_search', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( 'ko_band_footer_search', array(
     'settings' => 'ko_band_footer_search',
     'section' => 'ko_band_footer_section',
@@ -670,7 +810,10 @@ $wp_customize->add_control( 'ko_band_footer_search', array(
 ) );
 
 /*** Footer section Background color **/
-$wp_customize->add_setting( 'ko_band_footer_section_background_color' );
+$wp_customize->add_setting( 'ko_band_footer_section_background_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_section_background_color', array(
         'label'      => esc_html__( 'Footer section background color', 'koband' ),
         'section'    => 'ko_band_footer_section',
@@ -685,7 +828,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /***** Footer Menu Section start here********/
 
 /*** Footer Menu font color ***/
-$wp_customize->add_setting( 'ko_band_footer_menu_font_color' );
+$wp_customize->add_setting( 'ko_band_footer_menu_font_color', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_menu_font_color', array(
         'label'      => esc_html__( ' Menu font color', 'koband' ),
         'section'    => 'nav_menu[3]',
@@ -693,7 +839,10 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /** Footer Menu font size**/
-$wp_customize->add_setting( 'ko_band_footer_menu_font_size' );
+$wp_customize->add_setting( 'ko_band_footer_menu_font_size', array(
+        'default'    => 0,
+        'transport'  => 'refresh'
+    ));
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_footer_menu_font_size',
     array(
         'label' => esc_html__( 'Menu font size (in px.)', 'koband' ),
@@ -705,7 +854,6 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_foo
 
 /***** Single Menu Section end here********/
 /************************************************************************************************************************/
-
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
