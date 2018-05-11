@@ -66,7 +66,7 @@ if (have_posts() ) :
 					</div>
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>
-           					
+           					<a href="#" class="close">X</a>
            					<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
        					</div>		
@@ -84,7 +84,7 @@ if (have_posts() ) :
 						</div>
 						   <div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-           					
+           					<a href="#" class="close">X</a>
            					<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
        					</div>		
@@ -99,7 +99,7 @@ if (have_posts() ) :
 					</div>
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-           					
+           					<a href="#" class="close">X</a>
            					<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
        					</div>		
@@ -117,7 +117,7 @@ if (have_posts() ) :
 					</div>
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>
-           					
+           					<a href="#" class="close">X</a>
            					<div  class="next">&#8249;</div>
 							<a href="#" class="prev">&#8250;</a>
        					</div>	
@@ -146,7 +146,7 @@ if (have_posts() ) :
 						} ?>
 						<div id="Fullscreen">
            					<img src="" alt="" />
-           				
+           					<a href="#" class="close">X</a>
     						<a href="#" class="next">&#8249;</a>
 							<a href="#" class="prev">&#8250;</a>
        					</div>

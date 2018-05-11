@@ -353,6 +353,7 @@ jQuery(document).ready(function( $ ){
 jQuery(window).load(function( $ ) {
     "use strict";
 
+
   //Show hide slider attribues based on slider type
   wp.customize.control('ko_band_home_page_slider_type', function( control ) 
    {       

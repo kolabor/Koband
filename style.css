@@ -117,6 +117,11 @@ header {
   margin-top: 10px;
   padding-bottom: 7px; }
 
+.retina-main-logo {
+  position: relative;
+  width: 21%;
+  float: left; }
+
 /* ----------------------------------------------- */
 /* Main menu */
 /* -----------------------------------------------  */
@@ -187,7 +192,7 @@ header {
   height: auto;
   width: 40%;
   left: 15% !important;
-  top: 30% !important;
+  top: 25% !important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -422,15 +427,13 @@ header {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 999999;
   /* Sit on top */
-  padding-top: 300px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
   /* Full width */
-  height: 100%;
+  height: 100% !important;
   /* Full height */
   overflow: auto;
   /* Enable scroll if needed */
@@ -441,9 +444,8 @@ header {
 .FullscreenV iframe {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
-  height: 23%; }
+  width: 70%;
+  height: 100%; }
 
 #Fullscreen {
   display: none;
@@ -470,13 +472,16 @@ header {
   width: auto;
   height: 100%; }
 
-.closee {
-  margin-right: 6px;
-  cursor: pointer;
+.close {
   position: absolute;
-  right: 15%;
-  top: 7%;
-  font-size: 35px; }
+  right: 5%;
+  top: 6%;
+  background-color: #f1f1f1;
+  color: black !important;
+  border-radius: 65%;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 8px 16px; }
 
 .imageList img {
   cursor: pointer !important; }
@@ -637,8 +642,8 @@ Tour Section
 .line {
   line-height: 48px; }
 
-.song-list .store_link {
-  padding: 0; }
+.song-list-sinlge .store_link {
+  padding-left: 11px; }
 
 /*
 =======================================================
@@ -1277,8 +1282,14 @@ input {
     height: auto !important; }
 
   .sl-content {
-    width: 70%;
-    top: 23% !important; }
+    width: 100%;
+    top: 28% !important;
+    left: 0 !important;
+    padding-left: 200px !important;
+    padding-right: 200px !important; }
+
+  .sl-content p {
+    font-size: 25px !important; }
 
   .koband_post_news .col-md-4 {
     flex: 0 0 100%;
@@ -1385,14 +1396,23 @@ input {
   .gal img {
     height: auto; }
 
+  .FullscreenV iframe {
+    width: 100%; }
+
   /*author*/
   .author-header h1 {
     text-align: center; }
 
   /*archive*/
   .archive-header h1 {
-    text-align: center; } }
+    text-align: center; }
+
+  .next, .prev, .close {
+    position: fixed; } }
 @media screen and (max-width: 991px) {
+  .sl-content p {
+    font-size: 19px !important; }
+
   .mobile-nav-icon {
     font-size: 32px; }
 
@@ -1409,16 +1429,15 @@ input {
   .search-submit {
     line-height: 2;
     height: 35px;
-    font-size: 14px; } }
-@media screen and (max-width: 800px) {
-  .sl-content {
-    width: 70%; }
+    font-size: 14px; }
 
+  .sl-content {
+    top: 31% !important;
+    padding-left: 105px !important;
+    padding-right: 105px !important; } }
+@media screen and (max-width: 800px) {
   .sl-content h5 {
     font-size: 30px !important; }
-
-  .sl-content p {
-    font-size: 12px !important; }
 
   .btn-group-lg > .btn, .btn-lg {
     font-size: 1rem !important; }
@@ -1456,7 +1475,7 @@ input {
 @media screen and (max-width: 768px) {
   .mobile-nav-icon {
     display: inline-block;
-    font-size: 35px; }
+    font-size: 30px; }
 
   .main-nav .menu {
     position: relative;
@@ -1485,9 +1504,9 @@ input {
     height: 35px; }
 
   .main-logo {
-    width: 56%;
-    padding-left: 26px;
-    margin-left: 75px; }
+    width: 55%;
+    padding-left: 63px;
+    margin-left: 70px; }
 
   .logo {
     margin-top: 0; }
@@ -1496,8 +1515,7 @@ input {
     height: auto; }
 
   .sl-content {
-    width: 70%;
-    top: 23% !important; }
+    top: 21% !important; }
 
   .section h1 {
     width: 100%;
@@ -1588,8 +1606,26 @@ input {
     height: 73%; }
 
   .iframe-wrapper {
-    height: 75%; } }
+    height: 75%; }
+
+  .FullscreenV iframe {
+    width: 100%;
+    margin-top: 46%;
+    height: 40%; } }
 @media screen and (max-width: 736px) {
+  .mobile-nav-icon {
+    display: inline-block;
+    font-size: 30px; }
+
+  .sl-content p {
+    margin-bottom: 5px; }
+
+  .sl-content {
+    top: 22% !important;
+    height: auto;
+    padding-left: 105px !important;
+    padding-right: 105px !important; }
+
   .footer_search {
     padding-left: 78px;
     margin-bottom: 0; }
@@ -1634,8 +1670,16 @@ input {
     height: 100%; }
 
   .iframe-wrapper {
-    height: 100%; } }
+    height: 100%; }
+
+  .FullscreenV iframe {
+    width: 100%;
+    height: 100%;
+    margin-top: 0; } }
 @media screen and (max-width: 667px) {
+  .sl-content p {
+    font-size: 17px !important; }
+
   .album-head .col-sm-3 {
     max-width: 22%; }
 
@@ -1653,10 +1697,13 @@ input {
     font-size: 17px !important; }
 
   .video-bg {
-    height: 73%; }
+    height: 100%; }
 
   .iframe-wrapper {
-    height: 75%; } }
+    height: 100%; } }
+@media screen and (max-width: 639px) {
+  .sl-content {
+    display: none; } }
 @media screen and (max-width: 546px) {
   .main-logo {
     width: 50%;
@@ -1669,9 +1716,6 @@ input {
   .btn-lg {
     padding: 6px !important;
     font-size: 10px !important; }
-
-  .sl-content {
-    top: 18% !important; }
 
   .sl-content h5 {
     font-size: 25px !important; }
@@ -1756,7 +1800,9 @@ input {
   .sl-content {
     top: 22% !important;
     height: 160px;
-    padding: 21px; }
+    padding: 21px;
+    padding-left: 100px !important;
+    padding-right: 100px !important; }
 
   .sl-content h5 {
     font-size: 15px !important; }
@@ -1893,7 +1939,15 @@ input {
     height: 73%; }
 
   .iframe-wrapper {
-    height: 75%; } }
+    height: 75%; }
+
+  .next, .prev {
+    top: 42%; }
+
+  .FullscreenV iframe {
+    width: 100%;
+    height: 30%;
+    margin-top: 208px; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
@@ -1969,7 +2023,7 @@ input {
 
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
     margin-left: 31px;
-    margin-top: -2px; }
+    margin-top: -17px; }
 
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {
     width: 27px; }
@@ -1988,7 +2042,7 @@ input {
 
   .mobile-nav-icon {
     font-size: 15px; } }
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
   .main-logo {
     margin-left: 55px; }
 
@@ -2008,6 +2062,22 @@ input {
     padding: 10px; }
 
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-    margin-left: 22px; } }
+    margin-left: 22px; }
+
+  .album-head .col-sm-1 a img {
+    width: 100%;
+    height: auto;
+    padding-top: 18px; }
+
+  .divTableHeading {
+    font-size: 80%; }
+
+  .divTableCell {
+    font-size: 63%; }
+
+  .FullscreenV iframe {
+    width: 100%;
+    height: 30%;
+    margin-top: 159px; } }
 
 /*# sourceMappingURL=style.css.map */
