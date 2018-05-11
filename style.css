@@ -637,8 +637,8 @@ Tour Section
 .line {
   line-height: 48px; }
 
-.song-list .store_link {
-  padding: 0; }
+.song-list-sinlge .store_link {
+  padding-left: 11px; }
 
 /*
 =======================================================
@@ -1606,7 +1606,7 @@ input {
 
   .sl-content {
     top: 22% !important;
-    height: 61%;
+    height: auto;
     padding-left: 105px !important;
     padding-right: 105px !important; }
 
@@ -1676,10 +1676,10 @@ input {
     font-size: 17px !important; }
 
   .video-bg {
-    height: 73%; }
+    height: 100%; }
 
   .iframe-wrapper {
-    height: 75%; } }
+    height: 100%; } }
 @media screen and (max-width: 639px) {
   .sl-content {
     display: none; } }

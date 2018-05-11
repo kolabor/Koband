@@ -688,8 +688,8 @@ text-decoration: none;
 .line {
   line-height: 48px;
 }
-.song-list .store_link{
-  padding: 0;
+.song-list-sinlge .store_link{
+  padding-left: 11px;
 }
 /*
 =======================================================
@@ -1430,7 +1430,7 @@ input {
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {display: inline-block; font-size: 30px;}
   .sl-content p {margin-bottom: 5px;}
-  .sl-content {top: 22% !important; height: 61%; padding-left: 105px !important;padding-right: 105px !important;}
+  .sl-content {top: 22% !important; height: auto; padding-left: 105px !important;padding-right: 105px !important;}
   .footer_search {padding-left: 78px; margin-bottom: 0;}
   .search-form {float: left;}
   #menu-footer-menu {padding-left: 0; text-align: center;}
@@ -1454,8 +1454,8 @@ input {
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song {margin-top: 0;}
   .album_title {font-size: 14px !important;}
   .col-sm-3 span {font-size: 17px !important;}
-  .video-bg {height: 73%;}
-  .iframe-wrapper {height: 75%;}
+  .video-bg {height: 100%;}
+  .iframe-wrapper {height: 100%;}
 }
 @media screen and (max-width: 639px) {.sl-content {display: none;}}
 @media screen and (max-width: 546px) {

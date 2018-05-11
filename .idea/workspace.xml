@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58552a05-a70e-4031-bedb-4c49297c14e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/ko_band_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/ko_band_admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/templates/discography-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/discography-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom/templates/video-slider-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/custom/templates/video-slider-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
@@ -22,8 +24,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="1459" lean-forward="true" selection-start-line="1459" selection-end-line="1459" />
+            <state relative-caret-position="307">
+              <caret line="691" column="21" selection-start-line="691" selection-start-column="21" selection-end-line="691" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -50,7 +52,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="624" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -117,15 +119,15 @@
       <workItem from="1525938442056" duration="1132000" />
       <workItem from="1525939763161" duration="12801000" />
       <workItem from="1525958454695" duration="5342000" />
-      <workItem from="1526024235507" duration="4951000" />
+      <workItem from="1526024235507" duration="7325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28128000" />
+    <option name="totallyTimeSpent" value="30502000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24077977" />
@@ -233,8 +235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="1459" lean-forward="true" selection-start-line="1459" selection-end-line="1459" />
+        <state relative-caret-position="307">
+          <caret line="691" column="21" selection-start-line="691" selection-start-column="21" selection-end-line="691" selection-end-column="21" />
         </state>
       </provider>
     </entry>
