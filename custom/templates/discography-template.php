@@ -144,7 +144,7 @@ get_header();?>
 			<div class="col-sm-5 store"><?php echo esc_html__('Store Name:', 'koband');?></div>
 			<div class="col-sm-5 store"><?php echo esc_html__('Store Link:', 'koband');?></div>
 		</div>
-		<div class="row song-list border_second_color main_font_color">
+		<div class="row song-list-sinlge border_second_color main_font_color">
 			<?php if(isset($single_store[0])) { ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
 

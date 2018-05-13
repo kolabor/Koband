@@ -128,7 +128,11 @@ header {
   margin-top: 10px;
   padding-bottom: 7px;
 }
-
+.retina-main-logo {
+  position: relative;
+  width: 21%;
+  float: left;
+}
 
 /* ----------------------------------------------- */
 /* Main menu */
@@ -211,7 +215,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 30%!important;
+  top: 25%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -436,7 +440,7 @@ header {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
-  color: #fff;
+  color: #fff!important;
   border: 1px solid #fff;
   background-color: transparent;
   opacity: 0;
@@ -450,6 +454,24 @@ header {
   margin: -113px 0 0 0;
   padding: 39% 37%;
 }
+.hovereffect a.play {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff !important;
+  /* border: 1px solid #fff; */
+  background-color: transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  font-weight: normal;
+  margin: -30px 0 0 0;
+  padding: 39% 39%;
+}
 
 .hovereffect:hover a.info {
   opacity: 1;
@@ -458,9 +480,18 @@ header {
   -ms-transform: scale(1);
   transform: scale(1);
 }
+.hovereffect:hover a.play {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
 
 .hovereffect a.info:hover {
   box-shadow: 0 0 5px #fff;
+
 }
 
 
@@ -470,12 +501,11 @@ header {
 .FullscreenV {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 300px; /* Location of the box */
+  z-index: 999999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  height: 100%!important; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
@@ -483,9 +513,8 @@ header {
 .FullscreenV iframe {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
-  height: 23%;
+  width: 70%;
+  height:100%;
 }
 
 #Fullscreen {
@@ -499,6 +528,7 @@ header {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
+
 }
 #Fullscreen img {
   margin: auto;
@@ -506,14 +536,18 @@ header {
   width: auto;
   height: 100%;
 }
-.closee {
-  margin-right: 6px;
-  cursor: pointer;
+.close {
   position: absolute;
-  right: 15%;
-  top: 7%;
-  font-size: 35px;
+  right: 5%;
+  top: 6%;
+  background-color: #f1f1f1;
+  color: black !important;
+  border-radius: 65%;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 8px 16px;
 }
+
 .imageList img{cursor: pointer !important;}
 
 .next {
@@ -688,8 +722,8 @@ text-decoration: none;
 .line {
   line-height: 48px;
 }
-.song-list .store_link{
-  padding: 0;
+.song-list-sinlge .store_link{
+  padding-left: 11px;
 }
 /*
 =======================================================
@@ -1325,7 +1359,8 @@ input {
   .main-logo {width: 40%; padding-left: 36px; margin-left: 236px;}
   .logo {margin-top: 0;}
   .menu-scroll, .menu-noscroll {height: auto!important;}
-  .sl-content {width: 70%; top: 23% !important;}
+  .sl-content {width: 100%; top: 28% !important; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
+  .sl-content p {font-size: 25px!important;}
   .koband_post_news .col-md-4 {flex: 0 0 100%; max-width: 100%;}
   .koband_post_media .col-md-4 {flex: 0 0 100%; max-width: 100%;}
   .section h1 { width: 100%; text-align: center;}
@@ -1357,26 +1392,28 @@ input {
   #single-media-title {text-align: center;}
   .gal {column-count: 1;}
   .gal img {height: auto;}
+  .FullscreenV iframe {width: 100%;}
   /*author*/
   .author-header h1 {text-align: center;}
   /*archive*/
   .archive-header h1 {text-align: center;}
-
+  .next, .prev, .close {position: fixed}
 
 }
 @media screen and (max-width: 991px) {
+
+  .sl-content p {font-size: 19px !important;}
   .mobile-nav-icon {font-size: 32px;}
   .main-logo {margin-left: 180px;}
   .col-sm-1 { margin-right: 12px !important;}
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; height: 35px; font-size: 14px;}
+  .sl-content {top: 31% !important; padding-left: 105px !important;padding-right: 105px !important;}
 }
 
 @media screen and (max-width: 800px) {
 
-  .sl-content {width: 70%;}
   .sl-content h5 {font-size: 30px !important;}
-  .sl-content p {font-size: 12px!important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1rem !important;}
   .carousel-inner {height: auto !important;}
   .col-sm-1 {margin-right: 12px !important;}
@@ -1389,15 +1426,15 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-  .mobile-nav-icon { display: inline-block; font-size: 35px; }
+  .mobile-nav-icon { display: inline-block; font-size: 30px;; }
   .main-nav .menu {position: relative; list-style-type: none; width: 94%; text-align: center; padding-top: 5px;}
   .main-nav { float: left; text-align: center; width: 100%; height: auto; position: relative; display: none;}
   .main-nav .menu li {display: block; width: 100%;}
   .main-nav .menu li a{width: 100%; display: block;  font-size: 24px!important; line-height: 25px; height: 35px;}
-  .main-logo {width: 56%; padding-left: 26px; margin-left: 75px;}
+  .main-logo {width: 55%; padding-left: 63px; margin-left: 70px;}
   .logo {margin-top: 0;}
   .menu-scroll, .menu-noscroll {height: auto;}
-  .sl-content {width: 70%; top: 23% !important;}
+  .sl-content {top: 21% !important;}
   .section h1 { width: 100%; text-align: center;}
   .album-head .col-sm-1 {flex: 0 0 19.333333%; max-width: 19.333333%; margin-right: 0!important;}
   .album-head .col-sm-3 {flex: 0 0 19%; max-width: 19%;}
@@ -1423,9 +1460,13 @@ input {
   .social-media {text-align: center; margin-bottom: 15px;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+  .FullscreenV iframe {width: 100%; margin-top: 46%; height: 40%;}
 }
 
 @media screen and (max-width: 736px) {
+  .mobile-nav-icon {display: inline-block; font-size: 30px;}
+  .sl-content p {margin-bottom: 5px;}
+  .sl-content {top: 22% !important; height: auto; padding-left: 105px !important;padding-right: 105px !important;}
   .footer_search {padding-left: 78px; margin-bottom: 0;}
   .search-form {float: left;}
   #menu-footer-menu {padding-left: 0; text-align: center;}
@@ -1439,23 +1480,26 @@ input {
   .song-list .store_link a {padding: 6px; font-size: 9px;}
   .video-bg {height: 100%;}
   .iframe-wrapper {height: 100%;}
-
+  .FullscreenV iframe {width: 100%; height: 100%; margin-top: 0;}
 }
+
 @media screen and (max-width: 667px) {
+  .sl-content p {font-size: 17px !important;}
   .album-head .col-sm-3 {max-width: 22%;}
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img,
   .btn.btn-sm.hide-single-song img {width: 40px;}
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song {margin-top: 0;}
   .album_title {font-size: 14px !important;}
   .col-sm-3 span {font-size: 17px !important;}
-  .video-bg {height: 73%;}
-  .iframe-wrapper {height: 75%;}
+  .video-bg {height: 100%;}
+  .iframe-wrapper {height: 100%;}
 }
+@media screen and (max-width: 639px) {.sl-content {display: none;}}
 @media screen and (max-width: 546px) {
   .main-logo {width: 50%; padding-left: 38px; margin-left: 83px;}
   .mobile-nav-icon {font-size: 29px;}
   .btn-lg {padding:6px!important; font-size: 10px !important;}
-  .sl-content {top: 18% !important;}
+
   .sl-content h5 {font-size: 25px !important;}
   .sl-content p {font-size: 10px !important;}
   .address, .zipcode {display: none;}
@@ -1485,7 +1529,7 @@ input {
   .main-logo     {width: 50%; padding-left: 20px; margin-left: 68px;}
   .logo {margin-top: 0;}
   .menu-scroll, .menu-noscroll {height: auto;}
-  .sl-content {top: 22% !important; height: 160px; padding: 21px;}
+  .sl-content {top: 22% !important; height: 160px; padding: 21px; padding-left: 100px !important; padding-right: 100px !important;}
   .sl-content h5 {font-size: 15px !important;}
   .sl-content p {font-size: 8px !important;}
   .btn-lg {font-size: 8px!important; padding: 1px;}
@@ -1523,6 +1567,8 @@ input {
   .band-bio p {text-align: center;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+  .next, .prev {top: 42%;}
+  .FullscreenV iframe {width: 100%; height: 30%; margin-top: 208px;}
 }
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
@@ -1544,12 +1590,13 @@ input {
   #menu-main-menu li a {font-size: 15px !important;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+
 }
 @media screen and (max-width: 355px) {
   .main-logo {margin-left: 61px;}
   .sl-content p {margin-bottom: 5px;}
   .album-head .col-sm-1 {padding-left: 0!important;}
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 31px; margin-top: -2px;}
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 31px; margin-top: -17px;}
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 27px;}
   .divTableHeading {font-size: 100%;}
   .social-icons a {font-size: 14px;}
@@ -1559,13 +1606,17 @@ input {
   .main-logo {margin-left: 57px;}
   .mobile-nav-icon {font-size: 15px;}
 }
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
   .main-logo {margin-left: 55px;}
   .mobile-nav-icon {font-size: 17px;}
   .sl-content h5 {font-size: 13px !important; margin-bottom: 5px;}
   .sl-content {height: 149px; padding: 17px;}
   .album-head .col-sm-3 { max-width: 100%; padding: 10px;}
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 22px;}
+  .album-head .col-sm-1 a img {width: 100%; height: auto; padding-top: 18px; }
+  .divTableHeading {font-size: 80%;}
+  .divTableCell {font-size: 63%;}
+  .FullscreenV iframe {width: 100%; height: 30%; margin-top: 159px;}
 }
 
 

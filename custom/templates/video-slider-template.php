@@ -30,7 +30,7 @@
 		$slide_video_link = substr($data, strpos($data, "v=") + 2);
 		$playlist_loop = substr($data, strrpos($data, "v=") + 2);
 		$slide_video_link = 'https://www.youtube.com/embed/' . ($slide_video_link); 
-		$video_loop = $slide_video_link . '?rel=0&autoplay=1&loop=1&mute=1&playlist=' . $playlist_loop . '&start=5&end=15&version=3' ;
+		$video_loop = $slide_video_link . '?rel=0&autoplay=1&loop=1&mute=1&playlist=' . $playlist_loop ;
 		str_replace(array("http://"), "", $video_loop);?>
 	<?php endwhile; ?>
 	<!--loop ends here-->

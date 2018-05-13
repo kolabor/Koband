@@ -36,6 +36,17 @@ function ko_band_custom_wp_admin_resources() {
 }
 add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
+// Load script for customizer live preview
+function ko_band_customize_preview_js() {
+	wp_enqueue_script( 'ko-band-customize-preview', get_template_directory_uri() . '/admin/customizer-preview.js', array( 'customize-preview' ), '20141216', true );
+}
+add_action( 'customize_preview_init', 'ko_band_customize_preview_js' );
+
+
+/*function ko_band_customize_control_js() {
+    wp_enqueue_script( 'tuts_customizer_control', get_template_directory_uri() . '/admin/customizer-control.js', array( 'customize-controls', 'jquery' ), null, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'ko_band_customize_control_js' );*/
 
 
 /* Register frontend resources */
