@@ -119,12 +119,8 @@ if (have_posts() ) :
            					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
            					<a href="#" class="close">X</a>
            					<a href="#" class="prev">&#8249;</a>
-<<<<<<< HEAD
-           					<a href="#" class="next">&#8250;</a>
-							
-=======
 							<a href="#" class="next">&#8250;</a>
->>>>>>> 298bad6722590b6f830657816e17e038f309dc77
+
        					</div>		
 
 					<?php } }
