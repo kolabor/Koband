@@ -63,12 +63,12 @@ if (have_posts() ) :
 						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
 						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>-->						 
 						<div class="videos-list">	
-						<div class="hovereffect">						
-						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" class="myvideo" >
+						<div class="myvideo">						
+						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" " >
 						 
-							 <div class="overlay">
-							 	<a class="play" href=""><i class="fas fa-play"></i></a>
-							</div>
+							 
+							 		<span class="play"><i class="fas fa-play"></i></span>
+							
 						</div>
 					</div>
 						<div class="FullscreenV">
@@ -87,11 +87,11 @@ if (have_posts() ) :
 						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link'];
 						if (strpos($vimeo_ondemand, 'ondemand') !== false) { ?>
 						<div class="videos-list">
-							<div class="hovereffect">
-						   <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/vimeo.jpg" height="265" width="370" class="myvideo" />
-						   <div class="overlay">
-							 	<a class="play" href=""><i class="fas fa-play"></i></a>
-							</div>
+							<div class="myvideo">
+						   <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/vimeo.jpg" height="265" width="370"  />
+						  
+							 		<span class="play"><i class="fas fa-play"></i></span>
+							
 
 						</div>
 						</div>
@@ -108,11 +108,11 @@ if (have_posts() ) :
 						$hash[0]['thumbnail_large']?>
 						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 						<div class="videos-list">
-					<div class="hovereffect">
+					<div class="myvideo">
 						<img src="<?php echo esc_url($hash[0]['thumbnail_large'])?>" alt="Smiley face" height="265" width="370" class="myvideo" >
-						<div class="overlay">
-							 	<a class="play" href=""><i class="fas fa-play"></i></a>
-							</div>
+						
+							 		<span class="play"><i class="fas fa-play"></i></span>
+							
 					</div>
 					</div>
 						<div class="FullscreenV">
@@ -131,11 +131,11 @@ if (have_posts() ) :
 						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
 						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>-->
 						<div class="videos-list">
-							<div class="hovereffect">
-						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>" alt="Smiley face" height="265" width="370" class="myvideo" >
-						<div class="overlay">
-							 	<a class="play" href=""><i class="fas fa-play"></i></a>
-							</div>
+							<div class="myvideo">
+						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>" alt="Smiley face" height="265" width="370"  >
+						
+							 	<span class="play"><i class="fas fa-play"></i></span>
+							
 						</div>
 					</div>
 						<div class="FullscreenV">

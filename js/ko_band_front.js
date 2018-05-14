@@ -348,7 +348,7 @@ $('.next').click(function(){
         } else { // Otherwise, if you've reached the end, loop back to the first img.
           $('.FullscreenV iframe').attr('src', $($images[0]).attr('src'));
         }
-      });*/
+      });
     var speed = 100;
 
     $(".prev").click(function() {
@@ -372,7 +372,7 @@ $('.next').click(function(){
             next = $(this).next();
             next = next.index() == 0 ? first : next;
         $(this).fadeOut(speed, function() {next.fadeIn(speed);});
-    });    
+    });    */
 
 
 }); // Ready function ends here //
