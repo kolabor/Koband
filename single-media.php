@@ -178,8 +178,8 @@ if (have_posts() ) :
        			<div id="Fullscreen">
    					<img src="" alt="" />
    					<a href="#" class="close">X</a>
-					<a href="#" class="next">&#8249;</a>
-					<a href="#" class="prev">&#8250;</a>
+					<a href="#" class="prev">&#8249;</a>
+					<a href="#" class="next">&#8250;</a>
        			</div>
 
 
