@@ -587,7 +587,7 @@ header {
 
 .imageList img{cursor: pointer !important;}
 
-.next {
+.prev {
   position: absolute;
   left: 5%;
   top: 52%;
@@ -598,7 +598,7 @@ header {
   display: inline-block;
   padding: 8px 16px;
 }
-.prev {
+.next {
   position: absolute;
   right: 5%;
   top: 52%;
