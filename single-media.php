@@ -118,8 +118,9 @@ if (have_posts() ) :
 						<div class="FullscreenV">
            					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
            					<a href="#" class="close">X</a>
-           					<a href="#" class="next">&#8249;</a>
-							<a href="#" class="prev">&#8250;</a>
+           					<a href="#" class="prev">&#8249;</a>
+           					<a href="#" class="next">&#8250;</a>
+							
        					</div>		
 
 					<?php } }
@@ -168,14 +169,17 @@ if (have_posts() ) :
 						$thumb = wp_get_attachment_image( $value_image, array(500,500)); 
                         	echo $thumb; 
 						} ?>
-						<div id="Fullscreen">
-           					<img src="" alt="" />
-           					<a href="#" class="close">X</a>
-    						<a href="#" class="next">&#8249;</a>
-							<a href="#" class="prev">&#8250;</a>
-       					</div>
+						
 						<?php }?> 
 				    </div>
+       			</div>
+
+
+       			<div id="Fullscreen">
+   					<img src="" alt="" />
+   					<a href="#" class="close">X</a>
+					<a href="#" class="next">&#8249;</a>
+					<a href="#" class="prev">&#8250;</a>
        			</div>
 
 
