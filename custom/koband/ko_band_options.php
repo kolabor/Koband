@@ -18,7 +18,7 @@ function ko_band_theme_customize_register( $wp_customize ) {
 /*** Main Top Logo ***/
 $wp_customize->add_setting( 'ko_band_main_logo', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'  => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_main_logo', array(
     'label'    => esc_html__( 'Main top logo', 'koband' ),
@@ -81,8 +81,8 @@ $wp_customize->add_control( new WP_Customize_Site_Icon_Control ( $wp_customize, 
 
 /*** Main Font color ***/
 $wp_customize->add_setting( 'ko_band_main_font_color', array(
-        'default'    => 0,
-        'transport'  => 'refresh'
+        'default'           => 0,
+        'transport'         => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_main_font_color', array(
         'label'      => esc_html__( 'Main font color', 'koband' ),
@@ -92,9 +92,8 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 
 /*** First theme color ***/
 $wp_customize->add_setting( 'ko_band_first_theme_color', array(
-        'default'    => 0,
-        'type'       => 'theme_mod',
-        'transport'  => 'refresh',
+        'default'           => 0,
+        'transport'         => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_first_theme_color', array(
         'label'      => esc_html__( ' First theme color', 'koband' ),
@@ -276,7 +275,7 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
 /*Slider box to choose is image or video*/
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'         => 'postMessage'
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable slide types:', 'koband' ),
@@ -292,7 +291,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
 /*** Slider text color ***/
 $wp_customize->add_setting( 'ko_band_slider_text_color', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport' => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_color', array(
         'label'      => esc_html__( ' Text color', 'koband' ),
@@ -303,7 +302,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*** Slider Button text color ***/
 $wp_customize->add_setting( 'ko_band_slider_button_text_color', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'  => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_text_color', array(
         'label'      => esc_html__( 'Button text color', 'koband' ),
@@ -314,7 +313,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*** Slider Button Background color ***/
 $wp_customize->add_setting( 'ko_band_slider_button_background_color', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'  => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_background_color', array(
         'label'      => esc_html__( 'Button background color', 'koband' ),
@@ -325,7 +324,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*** Slider Button Hover Background color ***/
 $wp_customize->add_setting( 'ko_band_slider_button_hover_background_color', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'  => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_hover_background_color', array(
         'label'      => esc_html__( 'Button hover background color', 'koband' ),
@@ -336,7 +335,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*** Slider Text Holder Background color ***/
 $wp_customize->add_setting( 'ko_band_slider_text_holder_background_color', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'   => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_holder_background_color', array(
         'label'      => esc_html__( 'Text holder background color', 'koband' ),
@@ -346,7 +345,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 /*Slider box  background show/hide*/
 $wp_customize->add_setting( 'ko_band_home_page_box_background', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'  => 'postMessage'
     ));
 $wp_customize->add_control( 'ko_band_home_page_box_background', array(
     'label' => esc_html__( 'Show slider text hoder', 'koband' ),
@@ -358,7 +357,7 @@ $wp_customize->add_control( 'ko_band_home_page_box_background', array(
 /*Slider Video Link**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink', array(
         'default'    => 0,
-        'transport'  => 'refresh'
+        'transport'   => 'postMessage'
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'settings' => 'ko_band_home_page_slider_videolink',
