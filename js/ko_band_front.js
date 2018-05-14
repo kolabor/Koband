@@ -338,10 +338,19 @@ $('.FullscreenV').click(function(){
 			
 
 
+<<<<<<< HEAD
 $('.next').click(function(){
 
     alert('test');
        /* var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
+=======
+
+    
+
+
+/*$('.next').click(function(){
+        var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
+>>>>>>> 298bad6722590b6f830657816e17e038f309dc77
         var $currentImg = $('.FullscreenV iframe[src="' + $('.FullscreenV iframe').attr('src') + '"]'); // The current img being overlayed.
         var $nextImg = $($currentImg.closest('div').next().find('iframe')); // The next img in the gallery.
 
@@ -376,5 +385,7 @@ $('.next').click(function(){
         $(this).fadeOut(speed, function() {next.fadeIn(speed);});
     });    */
   });
+
+
 
 }); // Ready function ends here //
