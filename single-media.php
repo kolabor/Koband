@@ -39,6 +39,7 @@ if (have_posts() ) :
 	<?php 
 	$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
+
 	<div class="col-md-12">
 		<div class="row">
 			<div class="gal">
@@ -153,6 +154,7 @@ if (have_posts() ) :
 		
 	
 			<?php } ?>
+			
 <!--================================================================================================================
 												iFrame support ends here :D
 =================================================================================================================-->
