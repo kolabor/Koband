@@ -639,8 +639,7 @@ Tour Section
   padding: 10px;
 }
 .divTableCell {
-  font-size: 100%;
-  line-height: 145%;
+  font-size: 90%;
   padding: 10px;
   font-weight: 500;
 }
@@ -1435,6 +1434,7 @@ input {
   /*archive*/
   .archive-header h1 {text-align: center;}
   .next, .prev, .close {position: fixed}
+  .address, .zipcode {display: none;}
 
 }
 @media screen and (max-width: 991px) {
@@ -1536,11 +1536,10 @@ input {
   .main-logo {width: 50%; padding-left: 38px; margin-left: 83px;}
   .mobile-nav-icon {font-size: 29px;}
   .btn-lg {padding:6px!important; font-size: 10px !important;}
-
+  .divTableCell {padding: 2px 6px;}
   .sl-content h5 {font-size: 25px !important;}
   .sl-content p {font-size: 10px !important;}
   .address, .zipcode {display: none;}
-  .divTableCell { padding: 5px 10px;}
   .footer-menu .menu {padding-right: 6px;}
   .sl-content h5 {font-size: 22px !important;}
   .sl-content {top: 15% !important;}
@@ -1584,7 +1583,7 @@ input {
   .band_member_name {font-size: 32px !important; text-align: center; float: none;}
   .band_member_role {font-size: 20px !important;}
   .divTableHeading {font-size: 135%; line-height: 1; font-weight: 700; padding: 3px;}
-  .divTableCell {font-size: 75%; line-height: 100%; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; font-weight: 500;}
+  .divTableCell {font-size: 65%; line-height: 100%; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; font-weight: 500;}
   .footer_search {padding-left: 20px; margin-bottom: 0;}
   .search-form {float: left;}
   #menu-footer-menu {padding-left: 0; margin-right: 0; text-align: center;}

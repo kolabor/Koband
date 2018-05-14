@@ -596,8 +596,7 @@ Tour Section
   padding: 10px; }
 
 .divTableCell {
-  font-size: 100%;
-  line-height: 145%;
+  font-size: 90%;
   padding: 10px;
   font-weight: 500; }
 
@@ -1470,7 +1469,10 @@ input {
     text-align: center; }
 
   .next, .prev, .close {
-    position: fixed; } }
+    position: fixed; }
+
+  .address, .zipcode {
+    display: none; } }
 @media screen and (max-width: 991px) {
   .sl-content p {
     font-size: 19px !important; }
@@ -1779,6 +1781,9 @@ input {
     padding: 6px !important;
     font-size: 10px !important; }
 
+  .divTableCell {
+    padding: 2px 6px; }
+
   .sl-content h5 {
     font-size: 25px !important; }
 
@@ -1787,9 +1792,6 @@ input {
 
   .address, .zipcode {
     display: none; }
-
-  .divTableCell {
-    padding: 5px 10px; }
 
   .footer-menu .menu {
     padding-right: 6px; }
@@ -1930,7 +1932,7 @@ input {
     padding: 3px; }
 
   .divTableCell {
-    font-size: 75%;
+    font-size: 65%;
     line-height: 100%;
     padding-bottom: 5px;
     padding-left: 5px;
