@@ -1122,6 +1122,7 @@ input {
 
 .gal img {
   width: 100%;
+  height: auto;
   padding: 7px 0; }
 
 @media (max-width: 500px) {
