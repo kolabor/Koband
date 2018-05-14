@@ -235,9 +235,13 @@ header {
   border: none!important;
 }
 
-.btn-group-lg>.btn, .btn-lg {
-  font-size: 1.65rem!important;
-}
+
+.btn-group-lg > .btn, .btn-lg {
+    font-size: 20px!important;
+    padding: 10px!important;
+    border-radius: 4px !important;
+  }
+
 
 .carousel-indicators {
   top: 90%!important;
@@ -396,11 +400,9 @@ header {
 .overlay a {
   font-size: 50px;
 }
-
-.hovereffect:hover .overlay {
-  background-color: rgba(48, 152, 157, 0.4) ;
+.videos-list .overlay {
+  background-color: transparent!important;
 }
-
 .hovereffect img {
   display: block;
   position: relative;
@@ -418,7 +420,8 @@ header {
   text-transform: uppercase;
   color: #fff;
   text-align: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
   font-size: 17px;
   padding: 40px;
   -webkit-transform: translateY(45px);
@@ -440,7 +443,7 @@ header {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
-  color: #fff!important;
+  color: #fff !important;
   border: 1px solid #fff;
   background-color: transparent;
   opacity: 0;
@@ -448,18 +451,23 @@ header {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: all 0.4s  cubic-bezier(0.88,-0.99, 0, 1.81);
-  transition: all 0.4s  cubic-bezier(0.88,-0.99, 0, 1.81);
+  -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  /* transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81); */
   font-weight: normal;
-  margin: -113px 0 0 0;
-  padding: 39% 37%;
+  /* margin: -113px 0 0 0; */
+  width: 90%;
+  height: 90%;
+  margin: 5%;
 }
-.hovereffect a.play {
+.info svg {
+  margin-top: 45%;
+}
+/*.videos-list a.play {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff !important;
-  /* border: 1px solid #fff; */
+
   background-color: transparent;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -471,7 +479,7 @@ header {
   font-weight: normal;
   margin: -30px 0 0 0;
   padding: 39% 39%;
-}
+}*/
 
 .hovereffect:hover a.info {
   opacity: 1;
@@ -480,13 +488,42 @@ header {
   -ms-transform: scale(1);
   transform: scale(1);
 }
-.hovereffect:hover a.play {
+.myvideo {
+  width: 100%;
+  height: auto;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.myvideo:hover span.play {
+  opacity: 1;
+}
+.play {
+  display: inline-block;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.play svg {
+  width: 40%!important;
+  height: 40%;
+  margin: 20%;
+  color: #fff;
+}
+/*.videos-list:hover a.play {
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-}
+}*/
 
 
 .hovereffect a.info:hover {
