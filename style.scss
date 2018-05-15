@@ -114,7 +114,7 @@ header {
 /* Logo */
 /* ----------------------------------------------- */
 
-.main-logo{
+.main-logo, .retina-main-logo{
   position: relative;
   width: 21%;
   float: left;
@@ -575,14 +575,14 @@ header {
 }
 .close {
   position: absolute;
-  right: 5%;
-  top: 6%;
+  right: 3%;
+  top: 2%;
   background-color: #f1f1f1;
   color: black !important;
   border-radius: 65%;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px;
+  padding: 8px 16px !important;
 }
 
 .imageList img{cursor: pointer !important;}
@@ -872,13 +872,13 @@ padding-top: 15px;
   background-color: #d1d1d1;
 }
 
-.footer_logo {
+.footer_logo, .retina-footer-logo {
   position: relative;
   float: left;
   width: 100%;
   height: auto;
 }
-.footer_logo img {
+.footer_logo img, .retina-footer-logo img{
   width: 100%;
   height: auto;
 }
@@ -1693,7 +1693,11 @@ only screen and (        min-device-pixel-ratio: 2)      and (min-width: 700px),
 only screen and (                min-resolution: 192dpi) and (min-width: 700px),
 only screen and (                min-resolution: 2dppx)  and (min-width: 700px) {
   .logo{display: none !important;}
+  .footer_logo{display: none !important;}
   .retina-logo {display: block !important;}
+  .retina-footer-logo {display: block !important;}
 }
+.retina-footer-logo{display: none !important;}
 .retina-logo{display: none !important;}
 .logo {display: block !important;}
+.footer_logo {display: block !important;}

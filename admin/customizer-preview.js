@@ -17,7 +17,7 @@
 			$('.border_first_color').css('border-bottom-color', newThemeFirstColor, 'important');	
 			$('.submit').css('background-color', newThemeFirstColor, 'important');	
 			$('.submit:hover').css('color', newThemeFirstColor, 'important');	
-			$('.reply a,).css('color', newThemeFirstColor, 'important');	
+			$('.reply a,').css('color', newThemeFirstColor, 'important');	
 			$('.submit').css('color', newThemeFirstColor, 'important');	
 			$('.hovereffect:hover .overlay').css('background-color', newThemeFirstColor, 'important');
 			$('.hovereffect:hover .overlay').css('opacity', '0.5', 'important')	
@@ -74,7 +74,7 @@
 	api( 'ko_band_main_menu_font_size', function( value ) {
 		value.bind( function( newThemeMenuFontSize ) {
 		
-			$('.main-nav .menu li a ').css( 'font-size', newThemeMenuFontSize, 'important');
+			$('.main-nav .menu li a').css( 'font-size', newThemeMenuFontSize, 'important');
 						
 		} );
 	} );
