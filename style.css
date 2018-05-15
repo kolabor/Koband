@@ -1475,7 +1475,24 @@ input {
     padding-left: 0; }
 
   .theband_single_title h3 {
-    text-align: center; } }
+    text-align: center; }
+
+  #contact header {
+    text-align: center; }
+
+  .contact_row {
+    text-align: center; }
+
+  .contact_row .col-sm-3 {
+    flex: 0 0 50%;
+    max-width: 50%; }
+
+  .contact_form p {
+    text-align: center !important;
+    padding: 0; }
+
+  .wpcf7 label {
+    text-align: center !important; } }
 @media screen and (max-width: 991px) {
   .sl-content p {
     font-size: 19px !important; }
