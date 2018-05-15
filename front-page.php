@@ -27,7 +27,7 @@ elseif ($silder_type == 'Image' && $count_slides > 0) {
   get_template_part( 'custom/templates/slides', 'template' );
 }
 else { ?>
-  <img src="<?php echo esc_hmtl(get_template_directory_uri()); ?>//img/noslider.jpeg" height="auto" width="100%" />
+  <img src="<?php echo get_template_directory_uri(); ?>//img/noslider.jpeg" height="auto" width="100%" />
 <?php }
 
 
@@ -59,7 +59,7 @@ $count_tour = wp_count_posts('tour')->publish;
 
   if($first_section == "Discography" && $count_discography == true) 
   { 
-      get_template_part( 'custom/templates/discography', 'template' ); 
+    get_template_part( 'custom/templates/discography', 'template' ); 
   }
 
   elseif ($first_section == "Media" && $count_media > 0) 
