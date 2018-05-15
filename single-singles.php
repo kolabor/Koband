@@ -21,22 +21,22 @@ get_header('noscroll'); ?>
 	<div class="row single_page_row">
 		<div class="container">
 			<div class="row single_page_title album_single_page">
-			<div class="col-sm-4 album_title main_font_color"><?php echo esc_html__('Single Name:', 'koband');?><br><?php the_title();?></div>	
-			<div class="col-sm-4 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  esc_attr($single_date[0]); } ?></span></div>
-		     <div class="col-sm-4 album_title main_font_color"><?php echo esc_html__('Length:', 'koband');?><br><span class="main_font_color"><?php if(isset($single_length[0])) { echo  esc_attr($single_length[0]); } ?></span></div>
+			<div class="col-sm-4 album_title_single main_font_color"><?php echo esc_html__('Single Name:', 'koband');?><br><?php the_title();?></div>	
+			<div class="col-sm-4 album_title_single main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($single_date[0])) 	{ echo  esc_attr($single_date[0]); } ?></span></div>
+		     <div class="col-sm-4 album_title_single main_font_color"><?php echo esc_html__('Length:', 'koband');?><br><span class="main_font_color"><?php if(isset($single_length[0])) { echo  esc_attr($single_length[0]); } ?></span></div>
 			</div>
 		<div class="row single_page_title">
 			<h1></h1>
 		</div>
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-4 sng_alb_cvr">
 				<div class="single_page_cover"><?php the_post_thumbnail(array(400,400));?></div>
 			</div>
 
-			<div class="col-sm-8">
+			<div class="col-sm-8 sng_alb_hld">
 				<div class="container">
 					<div class="row album-head single-info">
-						<div class="col-sm-4 border_first_color main_font_color"><?php echo esc_html__('Song Details', 'koband');?></div>
+						<div class="col-sm-4 border_first_color main_font_color song_details"><?php echo esc_html__('Song Details', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color  main_font_color">   
 					      <?php foreach ($single_detail as  $value_single_detail) { ?>
