@@ -121,18 +121,18 @@ header {
 
 }
 
-.logo {
+.logo, .retina-logo {
   float: left;
   width: 100%;
   height: auto;
   margin-top: 10px;
   padding-bottom: 7px;
 }
-.retina-main-logo {
+/*.retina-main-logo {
   position: relative;
   width: 21%;
   float: left;
-}
+}*/
 
 /* ----------------------------------------------- */
 /* Main menu */
@@ -1684,5 +1684,15 @@ input {
   .store_name, .store {font-size: 16px;}
   .media-container-row {margin-bottom: 0;}
 }
-
-
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 700px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 700px),
+only screen and (                min-resolution: 192dpi) and (min-width: 700px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 700px) {
+  .logo{display: none !important;}
+  .retina-logo {display: block !important;}
+}
+.retina-logo{display: none !important;}
+.logo {display: block !important;}
