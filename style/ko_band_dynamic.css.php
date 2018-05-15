@@ -275,3 +275,7 @@ a {
   color: <?php echo esc_html($koband_footer_menu_font_color)?> ;
   font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px ;
 }
+.venue_name:hover {
+  text-decoration: none !important;
+  color: <?php echo esc_html($koband_first_theme_color)?> ;
+}
