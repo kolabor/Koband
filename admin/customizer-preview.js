@@ -139,6 +139,29 @@
 		} );
 	} );
 
+
+	 // Update theme heading font selector
+	api( 'ko_band_heading_font_selector', function( value ) {
+		value.bind( function( newThemeHeadingFontSelector ) {
+		
+			$('.first_color').css( 'font-family', newThemeHeadingFontSelector, 'important'); 
+			$('.home h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.home h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.home h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.home h4, ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.single h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.single h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.single h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.single h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.page h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.page h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.page h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.page h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
+
+		} );
+	} );
+
+
 	// Update Theme logo
 	api( 'ko_band_main_logo', function( value ) {
 		value.bind( function( themeNewLogo ) {
@@ -221,6 +244,83 @@
 			
 		} );
 	} );
+
+/*Show theband section bg image*/
+	api( 'ko_band_theband_sectin_background_image', function( value ) {
+		value.bind( function( newThebandSectionBGImage ) {
+
+			$('#theband ').css('background-image', newThebandSectionBGImage, 'important');
+			$('#theband ').css('linear-gradient', 'rgba(0, 0, 0, 0.5)', 'important');
+			$('#theband ').css('background-repeat', 'no-repeat', 'important');
+			$('#theband ').css('background-size', 'cover', 'important');
+			$('#theband ').css('background-position', 'center', 'important');
+					
+		} );
+	} );
+
+/*Update Beckground News section color*/
+	api( 'ko_band_background_news_section_color', function( value ) {
+		value.bind( function( newBGNewsSectionColor) {
+
+			$('#News ').css('background-color', newBGNewsSectionColor, 'important');
+								
+		} );
+	} );
+
+/*Update Beckground Tour section color*/
+	api( 'ko_band_background_tour_section_color', function( value ) {
+		value.bind( function( newBGTourSectionColor) {
+
+			$('#Tour ').css('background-color', newBGTourSectionColor, 'important');
+								
+		} );
+	} );
+
+/*Update Beckground Discography section color*/
+	api( 'ko_band_background_discography_section_color', function( value ) {
+		value.bind( function( newBGDiscographySectionColor) {
+
+			$('#Discography ').css('background-color', newBGDiscographySectionColor, 'important');
+								
+		} );
+	} );
+
+/*Update Beckground Gallery section color*/
+	api( 'ko_band_background_gallery_section_color', function( value ) {
+		value.bind( function( newBGMediaSectionColor) {
+
+			$('#Media ').css('background-color', newBGMediaSectionColor, 'important');
+								
+		} );
+	} );
+
+/*Update Beckground Footer section color*/
+	api( 'ko_band_footer_section_background_color', function( value ) {
+		value.bind( function( newBGFooterSectionColor) {
+
+			$('.footer-section').css('background-color', newBGFooterSectionColor, 'important');
+								
+		} );
+	} );
+
+	/*Update Footer Menu font color*/
+	api( 'ko_band_footer_menu_font_color', function( value ) {
+		value.bind( function( newFooterMenuFontColor) {
+
+			$('.footer-menu .menu li a').css('color', newFooterMenuFontColor, 'important');
+								
+		} );
+	} );
+
+	/*Update Footer Menu font size*/
+	api( 'koband_footer_menu_font_size', function( value ) {
+		value.bind( function( newFooterMenuFontSize) {
+
+			$('.footer-menu .menu li a').css('font-size', newFooterMenuFontSize, 'important');
+								
+		} );
+	} );
+
 /*SLIDER Live changes ends here */
 
 

@@ -113,7 +113,6 @@
   
   font-size:  <?php echo esc_html($koband_theme_font_size); ?> ;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
-
   color: <?php echo esc_html($koband_main_font_color); ?> ;
 
 }
@@ -121,9 +120,7 @@
 .home h1, .home h2, .home h3, .home h4, .single h1, .single h2, .single h3, .single h4, .page h1, .page h2, .page h3, .page h4,
 {
   font-family: <?php echo esc_html($koband_headding_font); ?> ;
-
   color: <?php echo esc_html($koband_main_font_color);?> ;
-
   font-size:  <?php echo $koband_theme_font_size; ?> ;
 }
 #theband {
