@@ -64,7 +64,7 @@ get_header();?>
 			    	</span>
 			    </div>
 			</div><!-- container -->        
-			<div class="container album-songs-show-hide">
+			<div class="container album-songs-show-hide bg">
 				<!-- Labels -->
 				<div class="row album-info">
 					<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Name', 'koband');?></div>
