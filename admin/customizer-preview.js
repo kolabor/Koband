@@ -17,10 +17,10 @@
 			$('.border_first_color').css('border-bottom-color', newThemeFirstColor, 'important');	
 			$('.submit').css('background-color', newThemeFirstColor, 'important');	
 			$('.submit:hover').css('color', newThemeFirstColor, 'important');	
-			$('.reply a,').css('color', newThemeFirstColor, 'important');	
+			$('.reply a').css('color', newThemeFirstColor, 'important');	
 			$('.submit').css('color', newThemeFirstColor, 'important');	
 			$('.hovereffect:hover .overlay').css('background-color', newThemeFirstColor, 'important');
-			$('.hovereffect:hover .overlay').css('opacity', '0.5', 'important')	
+			$('.hovereffect:hover .overlay').css('opacity', '0.5', 'important');	
 			$('.main-nav .menu li a:hover').css('background-color', newThemeFirstColor, 'important');	
 			$('#contact .wpcf7').css('border-bottom', newThemeFirstColor, 'important');	
 
@@ -56,13 +56,13 @@
 			$('.home h1').css( 'color', newThemeFontColor, 'important');
 			$('.home h2 ').css( 'color', newThemeFontColor, 'important');
 			$('.home h3').css( 'color', newThemeFontColor, 'important');
-			$('.home h4, ').css( 'color', newThemeFontColor, 'important');
+			$('.home h4').css( 'color', newThemeFontColor, 'important');
 			$('.single h1').css( 'color', newThemeFontColor, 'important');
-			$('.single h2 ').css( 'color', newThemeFontColor, 'important');
+			$('.single h2').css( 'color', newThemeFontColor, 'important');
 			$('.single h3').css( 'color', newThemeFontColor, 'important');
 			$('.single h4').css( 'color', newThemeFontColor, 'important');
 			$('.page h1').css( 'color', newThemeFontColor, 'important');
-			$('.page h2 ').css( 'color', newThemeFontColor, 'important');
+			$('.page h2').css( 'color', newThemeFontColor, 'important');
 			$('.page h3').css( 'color', newThemeFontColor, 'important');
 			$('.page h4').css( 'color', newThemeFontColor, 'important');
 			
@@ -83,9 +83,9 @@
 	api( 'ko_band_main_menu_background_color', function( value ) {
 		value.bind( function( newThemeMenuBGColor ) {
 		
-			$('.menu-scroll').css( ' background-color', 'rgba(255,255,255, 0.7)', 'important');
-			$('.fixed').css( ' background-color', newThemeMenuBGColor, 'important');
-			$('.menu-noscroll').css( ' background-color', newThemeMenuBGColor, 'important');
+			$('.menu-scroll').css( 'background-color', 'rgba(255,255,255, 0.7)', 'important');
+			$('.fixed').css( 'background-color', newThemeMenuBGColor, 'important');
+			$('.menu-noscroll').css( 'background-color', newThemeMenuBGColor, 'important');
 						
 		} );
 	} );
@@ -99,15 +99,15 @@
 			$('.page').css( 'font-size', newThemeFontSize, 'important');//if have any problem take it out
 			$('.default').css( 'font-size', newThemeFontSize, 'important');
 			$('.home h1').css( 'font-size', newThemeFontSize, 'important');
-			$('.home h2 ').css( 'font-size', newThemeFontSize, 'important');
+			$('.home h2').css( 'font-size', newThemeFontSize, 'important');
 			$('.home h3').css( 'font-size', newThemeFontSize, 'important');
-			$('.home h4, ').css( 'font-size', newThemeFontSize, 'important');
+			$('.home h4').css( 'font-size', newThemeFontSize, 'important');
 			$('.single h1').css( 'font-size', newThemeFontSize, 'important');
-			$('.single h2 ').css( 'font-size', newThemeFontSize, 'important');
+			$('.single h2').css( 'font-size', newThemeFontSize, 'important');
 			$('.single h3').css( 'font-size', newThemeFontSize, 'important');
 			$('.single h4').css( 'font-size', newThemeFontSize, 'important');
 			$('.page h1').css( 'font-size', newThemeFontSize, 'important');
-			$('.page h2 ').css( 'font-size', newThemeFontSize, 'important');
+			$('.page h2').css( 'font-size', newThemeFontSize, 'important');
 			$('.page h3').css( 'font-size', newThemeFontSize, 'important');
 			$('.page h4').css( 'font-size', newThemeFontSize, 'important');
 			$('.font-line_height').css( 'font-size', newThemeFontSize, 'important');
@@ -148,13 +148,13 @@
 			$('.home h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.home h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.home h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.home h4, ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.home h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.single h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.single h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.single h2').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.single h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.single h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.page h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.page h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.page h2').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.page h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
 			$('.page h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
 
@@ -249,11 +249,11 @@
 	api( 'ko_band_theband_sectin_background_image', function( value ) {
 		value.bind( function( newThebandSectionBGImage ) {
 
-			$('#theband ').css('background-image', newThebandSectionBGImage, 'important');
-			$('#theband ').css('linear-gradient', 'rgba(0, 0, 0, 0.5)', 'important');
-			$('#theband ').css('background-repeat', 'no-repeat', 'important');
-			$('#theband ').css('background-size', 'cover', 'important');
-			$('#theband ').css('background-position', 'center', 'important');
+			$('#theband').css('background-image', newThebandSectionBGImage, 'important');
+			$('#theband').css('linear-gradient', 'rgba(0, 0, 0, 0.5)', 'important');
+			$('#theband').css('background-repeat', 'no-repeat', 'important');
+			$('#theband').css('background-size', 'cover', 'important');
+			$('#theband').css('background-position', 'center', 'important');
 					
 		} );
 	} );
@@ -262,7 +262,7 @@
 	api( 'ko_band_background_news_section_color', function( value ) {
 		value.bind( function( newBGNewsSectionColor) {
 
-			$('#News ').css('background-color', newBGNewsSectionColor, 'important');
+			$('#News').css('background-color', newBGNewsSectionColor, 'important');
 								
 		} );
 	} );
@@ -271,7 +271,7 @@
 	api( 'ko_band_background_tour_section_color', function( value ) {
 		value.bind( function( newBGTourSectionColor) {
 
-			$('#Tour ').css('background-color', newBGTourSectionColor, 'important');
+			$('#Tour').css('background-color', newBGTourSectionColor, 'important');
 								
 		} );
 	} );
@@ -280,7 +280,7 @@
 	api( 'ko_band_background_discography_section_color', function( value ) {
 		value.bind( function( newBGDiscographySectionColor) {
 
-			$('#Discography ').css('background-color', newBGDiscographySectionColor, 'important');
+			$('#Discography').css('background-color', newBGDiscographySectionColor, 'important');
 								
 		} );
 	} );
@@ -289,7 +289,7 @@
 	api( 'ko_band_background_gallery_section_color', function( value ) {
 		value.bind( function( newBGMediaSectionColor) {
 
-			$('#Media ').css('background-color', newBGMediaSectionColor, 'important');
+			$('#Media').css('background-color', newBGMediaSectionColor, 'important');
 								
 		} );
 	} );
