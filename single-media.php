@@ -40,6 +40,19 @@ if (have_posts() ) :
 	$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
 	<div class="col-md-12">
+
+     <?php 
+      
+      echo "<pre>";
+      print_r($media_gallery);
+      echo "</pre>";
+
+      echo "<pre>";
+      print_r($media_video_gallery);
+      echo "</pre>";
+
+     ?>
+
 		<div class="row">
 			<div class="gal">
 
