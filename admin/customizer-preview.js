@@ -21,7 +21,7 @@
 			$('.submit').css('color', newThemeFirstColor, 'important');	
 			$('.hovereffect:hover .overlay').css('background-color', newThemeFirstColor, 'important');
 			$('.hovereffect:hover .overlay').css('opacity', '0.5', 'important');	
-			$('.main-nav .menu li a:hover').css('background-color', newThemeFirstColor, 'important');	
+			$('.main-nav .menu li a:hover').css('border-bottom', newThemeFirstColor, 'important');	
 			$('#contact .wpcf7').css('border-bottom', newThemeFirstColor, 'important');	
 
 		} );
@@ -67,6 +67,16 @@
 			$('.page h4').css( 'color', newThemeFontColor, 'important');
 			
 			
+		} );
+	} );
+
+	 // Update theme main menu font Color
+	api( 'ko_band_main_menu_font_color', function( value ) {
+		value.bind( function( newThemeMenuFontColor ) {
+		
+			$('.main-nav .menu li a').css( 'color', newThemeMenuFontColor, 'important');
+			$('.main-nav .menu li a:hover ').css( 'color', newThemeMenuFontColor, 'important');
+						
 		} );
 	} );
 
@@ -313,7 +323,7 @@
 	} );
 
 	/*Update Footer Menu font size*/
-	api( 'koband_footer_menu_font_size', function( value ) {
+	api( 'ko_band_footer_menu_font_size', function( value ) {
 		value.bind( function( newFooterMenuFontSize) {
 
 			$('.footer-menu .menu li a').css('font-size', newFooterMenuFontSize, 'important');
