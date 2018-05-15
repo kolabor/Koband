@@ -1295,6 +1295,8 @@ input {
 .theband_single_title {
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 100%;
+
 }
 .comment-form-author input, .comment-form-email input, .comment-form-url input{
   width: 240px !important;
@@ -1437,7 +1439,12 @@ input {
   .archive-header h1 {text-align: center;}
   .next, .prev, .close {position: fixed}
   .st_link {padding-left: 0;}
-
+  .theband_single_title h3 {text-align: center;}
+  #contact header {text-align: center;}
+  .contact_row {text-align: center;}
+  .contact_row .col-sm-3 {flex: 0 0 50%; max-width: 50%;}
+  .contact_form p {text-align: center!important; padding: 0;}
+  .wpcf7 label {text-align: center!important;}
 
 }
 @media screen and (max-width: 991px) {
@@ -1476,8 +1483,8 @@ input {
   .menu-scroll, .menu-noscroll {height: auto;}
   .sl-content {top: 21% !important;}
   .section h1 { width: 100%; text-align: center;}
-  .album-head .col-sm-1 {flex: 0 0 19.333333%; max-width: 19.333333%; margin-right: 0!important;}
-  .album-head .col-sm-3 {flex: 0 0 19%; max-width: 19%;}
+  .album-head .col-sm-1 {flex: 0 0 19.333333%; max-width: 19.333333%; margin-right: 0!important; padding: 0;}
+  .album-head .col-sm-3 {flex: 0 0 19%; max-width: 19%; padding: 0;}
   .albums-title, .single-title {text-align: center;}
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img,
   .btn.btn-sm.hide-single-song img {width: 55px;}
@@ -1492,12 +1499,12 @@ input {
   .social-icons a {font-size: 20px; margin-left: 15px;}
   .song-list .line {line-height: 30px;}
   .songs-head {font-size: 23px !important}
-  .song-list {font-size: 18px !important;}
-  .store {font-size: 23px;}
+  .song-list {font-size: 21px !important;}
+  .store {font-size: 23px; flex: 0 0 50%; max-width: 50%;}
   .store_name {font-size: 20px; flex: 0 0 50%; max-width: 50%;}
   .divTableRow .store_link a {padding: 3px; font-size: 9px}
   .footer_logo {text-align: center; float: none; margin-bottom: 15px;}
-  .footer_logo img {width: 66%;}
+  .footer_logo img { width: 100%;}
   .footer_search {float: none;text-align: center; padding-right: 32px;}
   .search-form {float: none; }
   .footer-menu .menu {float: none; text-align: center; padding-right: 32px;}
@@ -1510,8 +1517,20 @@ input {
   .sng_alb_hld {flex: 0 0 100%; max-width: 100%;}
   .sng_alb_hld .songs-head{font-size: 23px!important;}
   .album_single_page_details {font-size: 19px !important;}
-  .sng_store {font-size: 23px; flex: 0 0 50%; max-width: 50%;}
-
+  .sng_store {font-size: 23px; flex: 0 0 50%; max-width: 50%;  text-align: center;}
+  .sng_sng {flex: 0 0 50%; max-width: 50%;     text-align: center;}
+  .single-info .songs-head  {flex: 0 0 100%; max-width: 100%; text-align: center;}
+  .single-info .col { text-align: center;}
+  .album-songs-show-hide {margin-bottom: 20px;}
+  .album-head {text-align: center; }
+  .single-songs-show-hide .album-head {text-align: center;}
+  .single-songs-show-hide .songs-head {flex: 0 0 100%; max-width: 100%;}
+  .single-songs-show-hide .song-list  {text-align: center;}
+  .single-songs-show-hide .song-list-sinlge {text-align: center;}
+  .theband_sng_content_hld .col-sm-8 {flex: 0 0 100%; max-width: 100%; text-align: center; font-size: 25px;}
+  .theband_sng_content_hld .col-sm-4 {flex: 0 0 100%; max-width: 100%; margin-bottom: 20px;}
+  .theband_sng_content_hld .col-sm-8 h4 {font-size: 42px;}
+  .bio_content { padding-left: 20px; padding-right: 20px;}
 }
 
 @media screen and (max-width: 736px) {
@@ -1534,6 +1553,7 @@ input {
   .FullscreenV iframe {width: 100%; height: 100%; margin-top: 0;}
   .main-logo {width: 55%; padding-left: 63px; margin-left: 70px;}
   .tour_single_page_row .store_link a {font-size: 13px; }
+
 }
 
 @media screen and (max-width: 667px) {
@@ -1629,7 +1649,10 @@ input {
   .album_single_page_details {font-size: 18px !important; width: 33%;}
   .tour_single_page_row .album-info {margin-left: 0; width: 50%; }
   .tour_single_page_row .store_link a {font-size: 13px; }
-  .song_details {font-size: 28px;}
+  .sng_alb_hld .song-list {font-size: 28px!important;}
+
+  .sng_store a {font-size: 13px!important;}
+
 
 }
 @media screen and (max-width: 375px) {
