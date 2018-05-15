@@ -1295,6 +1295,8 @@ input {
 .theband_single_title {
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 100%;
+
 }
 .comment-form-author input, .comment-form-email input, .comment-form-url input{
   width: 240px !important;
@@ -1437,7 +1439,7 @@ input {
   .archive-header h1 {text-align: center;}
   .next, .prev, .close {position: fixed}
   .st_link {padding-left: 0;}
-
+  .theband_single_title h3 {text-align: center;}
 
 }
 @media screen and (max-width: 991px) {
@@ -1520,6 +1522,10 @@ input {
   .single-songs-show-hide .songs-head {flex: 0 0 100%; max-width: 100%;}
   .single-songs-show-hide .song-list  {text-align: center;}
   .single-songs-show-hide .song-list-sinlge {text-align: center;}
+  .theband_sng_content_hld .col-sm-8 {flex: 0 0 100%; max-width: 100%; text-align: center; font-size: 25px;}
+  .theband_sng_content_hld .col-sm-4 {flex: 0 0 100%; max-width: 100%; margin-bottom: 20px;}
+  .theband_sng_content_hld .col-sm-8 h4 {font-size: 42px;}
+  .bio_content { padding-left: 20px; padding-right: 20px;}
 }
 
 @media screen and (max-width: 736px) {
