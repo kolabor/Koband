@@ -20,7 +20,7 @@ if (have_posts() ) :
 
 	<?php  while ( have_posts() ) : the_post(); 
 	$post_id = get_the_ID(); ?>
-<div class="container">
+<div class="container"><!-- Container starts here -->
 		<div id="media-photo"><?php the_post_thumbnail('single_news_thumb'); ?></div>
 		<div id="single-media-title"><h1><?php the_title();?></h1></div>
 			<div class="row">
@@ -31,182 +31,137 @@ if (have_posts() ) :
 					<div class="news-details_li tag"><?php the_tags(); ?></div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm">
-					<div class="content_single_page"><?php the_content(); ?></div>
-				</div>
-			</div>
-	<?php 
-	$media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
-	$media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); ?>
+		<div class="row">
+		<div class="col-sm">
+			<div class="content_single_page"><?php the_content(); ?></div>
+		</div>
+
 
 	<div class="col-md-12">
 
      <?php 
-      
-      echo "<pre>";
-      print_r($media_gallery);
-      echo "</pre>";
 
-      echo "<pre>";
-      print_r($media_video_gallery);
-      echo "</pre>";
+      $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
+	  $media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
+
+      $count_images = count($media_gallery[0]);
+      $count_videos = count($media_video_gallery[0]);
+      
+      /*Declaring an array that will hold all gallery items*/
+      $all_gallery_items = array();
+      
+      /*Insert images to the all_gallery_items array*/
+      for($i=0; $i < $count_images; $i++)
+      {
+      	array_push($all_gallery_items, array("type" => "image",  "videotype" => "none", "link"=> $media_gallery[0][$i] ));
+      }
+      
+      /*Insert videos to the all_gallery_items array*/
+      for($v=0; $v < $count_videos; $v++)
+      {
+      	array_push($all_gallery_items, array("type" => "video",  "videotype" =>$media_video_gallery[0][$v]['select'], "link"=> $media_video_gallery[0][$v]['link'] ));
+      }
+     
+     /*Randomize Gallery videos and images*/
+     shuffle($all_gallery_items);
 
      ?>
 
 		<div class="row">
 			<div class="gal">
 
-			<?php 
-
-				if (isset($media_video_gallery[0])){
-				foreach ($media_video_gallery[0] as  $value_video_gallery) { ?>
-				
-					
-<!--================================================================================================================
-						// Checking which iframe to use from the select box at backed :)
-=================================================================================================================-->
-					
-		            <?php
-		            $video_type = $value_video_gallery['select'];
-					if(isset($video_type) && $video_type == "option1"){
-						$data = $value_video_gallery['link'];
-						$value_video_gallery['link'] = substr($data, strpos($data, "v=") + 2);	
-						$value_video_gallery_video['link'] = 'https://www.youtube.com/embed/' . $value_video_gallery['link'];
-						$value_video_gallery_image['link'] = 'https://img.youtube.com/vi/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>-->						 
-						<div class="videos-list">	
-						<div class="myvideo">						
-						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>/hqdefault.jpg" alt="Smiley face" height="265" width="370" " >
-						 
-							 
-							 		<span class="play"><i class="fas fa-play"></i></span>
-							
-						</div>
-					</div>
-						<div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>
-           					<a href="#" class="close">X</a>
-           					<a href="#" class="prev">&#8249;</a>
-							<a href="#" class="next">&#8250;</a>
-       					</div>		
-					<?php }
-
-					elseif(isset($video_type) && $video_type == "option2"){
-						$vimeo_ondemand = $value_video_gallery['link'];
-						$data = $value_video_gallery['link'];
-						$value_video_gallery['link'] = substr($data, strrpos($data, "/") +1);
-						$value_video_gallery_video['link'] = 'https://player.vimeo.com/video/' . $value_video_gallery['link']; 
-						//$value_video_gallery_image['link'] = 'http://vimeo.com/api/v2/video/' . $value_video_gallery['link'];
-						if (strpos($vimeo_ondemand, 'ondemand') !== false) { ?>
-						<div class="videos-list">
-							<div class="myvideo">
-						   <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/vimeo.jpg" height="265" width="370"  />
-						  
-							 		<span class="play"><i class="fas fa-play"></i></span>
-							
-
-						</div>
-						</div>
-						   <div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-           					<a href="#" class="close">X</a>
-           					<a href="#" class="prev">&#8249;</a>
-							<a href="#" class="next">&#8250;</a>
-       					</div>		
-						  <!-- <iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-						<?php }
-						else {  
-						$hash = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $value_video_gallery['link'] . '.php'));
-						$hash[0]['thumbnail_large']?>
-						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-						<div class="videos-list">
-					<div class="myvideo">
-						<img src="<?php echo esc_url($hash[0]['thumbnail_large'])?>" alt="Smiley face" height="265" width="370" class="myvideo" >
-						
-							 		<span class="play"><i class="fas fa-play"></i></span>
-							
-					</div>
-					</div>
-						<div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-           					<a href="#" class="close">X</a>
-           					<a href="#" class="prev">&#8249;</a>
-							<a href="#" class="next">&#8250;</a>
-
-       					</div>		
-
-					<?php } }
-
-					elseif(isset($video_type) && $video_type == "option3"){
-						$data = $value_video_gallery['link'];
-						$value_video_gallery['link'] = substr($data, strpos($data, "video/") + 6);
-						$value_video_gallery_video['link'] = '//www.dailymotion.com/embed/video/' . $value_video_gallery['link'];
-						$value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/' . $value_video_gallery['link']; ?>
-						<!--<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>-->
-						<div class="videos-list">
-							<div class="myvideo">
-						<img src="<?php echo esc_url($value_video_gallery_image['link'])?>" alt="Smiley face" height="265" width="370"  >
-						
-							 	<span class="play"><i class="fas fa-play"></i></span>
-							
-						</div>
-					</div>
-						<div class="FullscreenV">
-           					<iframe width="370" height="265" src="<?php echo esc_url($value_video_gallery_video['link'])?>"></iframe>
-           					<a href="#" class="close">X</a>
-           					<a href="#" class="prev">&#8249;</a>
-							<a href="#" class="next">&#8250;</a>
-       					</div>	
-					<?php }
-
-					else {
-						echo esc_html("<?php echo esc_html__('Your browser does not support this type of iframe videos', 'koband');?>");
-					} ?>
-				
-			<?php } ?>
-		
-	
-			<?php } ?>
-			
-<!--================================================================================================================
-												iFrame support ends here :D
-=================================================================================================================-->
-			
-			
-				<div class="image_media_slider">
-       					
+				<div class="image_media_slider">			
                    <div class="imageList">
-					<?php if(isset($media_gallery[0])) {
-						foreach ($media_gallery[0] as  $value_image) { 
-						$thumb = wp_get_attachment_image( $value_image, array(500,500)); 
-                        	echo $thumb; 
-						} ?>
-						
-						<?php }?> 
-				    </div>
-       			</div>
+                   <?php 
+                    
+                     foreach ($all_gallery_items as  $galleryItem) 
+                     {
+                         $itemType = $galleryItem['type'];
 
+                         if($itemType == "image")
+                         {
+                         	$thumb = wp_get_attachment_image( $galleryItem['link'], array(500,500));
+                         	echo $thumb;
+                         }
+                         else if($itemType == "video")
+                         {
+                         	switch ($galleryItem['videotype']) 
+                         	{
+							    case "option1":
 
-       			<div id="Fullscreen">
+							       $videoLink = $galleryItem['link'];
+							       $youtubeCode = substr($videoLink, strpos($videoLink, "v=") + 2);
+							       $youtubeImage  = 'https://img.youtube.com/vi/' . $youtubeCode;
+							       ?>
+
+                                    <img src="<?php echo esc_url($youtubeImage)?>/hqdefault.jpg" 
+                                         alt="Smiley face" 
+                                         class="video_image"
+                                         data-video-type="youtube"
+                                         data-video-link = "<?php echo $videoLink;?>"
+                                         data-video-code = "<?php echo  $youtubeCode;?>"
+                                         height="265" 
+                                         width="370">
+                                    <?php 
+							        break;
+							     case "option2":
+							       
+							       $videoLink = $galleryItem['link'];
+							       $vimeoCode = substr($videoLink, strrpos($videoLink, "/") +1);
+							        
+							       if (strpos($videoLink, 'ondemand') !== false) 
+							       {
+                                        $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
+							       }
+							       else 
+							       {
+							        $vimeoImage = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $vimeoCode . '.php'));
+						            $vimeoImage =  $vimeoImage[0]['thumbnail_large'];     	
+							       }?>
+							       <img src="<?php echo esc_url($vimeoImage)?>" 
+                                         alt="Vimeo video image" 
+                                         class="video_image"
+                                         data-video-type="vimeo"
+                                         data-video-link = "<?php echo $videoLink;?>"
+                                         data-video-code = "<?php echo  $vimeoCode;?>"
+                                         height="265" 
+                                         width="370">
+                                    <?php
+							        break;
+							     case "option3":
+							        $videoLink = $galleryItem['link'];
+							        $dailyCode = substr($videoLink, strpos($videoLink, "video/") + 6);
+							        $dailyImage  = $value_video_gallery_image['link'] = '//www.dailymotion.com/thumbnail/video/'. $dailyCode; ?>
+
+							        <img src="<?php echo esc_url($dailyImage)?>" 
+                                         alt="dailymotion video image" 
+                                         class="video_image"
+                                         data-video-type="dailymotion"
+                                         data-video-link = "<?php echo $videoLink;?>"
+                                         data-video-code = "<?php echo  $dailyCode;?>"
+                                         height="265" 
+                                         width="370">
+                                    <?php
+							        break;
+							    default:
+							        echo "No video";
+                            }
+                         }             
+                        }?>
+                   </div><!-- imageList class ends here -->
+                </div><!-- image_media_slider class ends here -->
+                <div id="Fullscreen">
    					<img src="" alt="" />
    					<a href="#" class="close">X</a>
 					<a href="#" class="prev">&#8249;</a>
 					<a href="#" class="next">&#8250;</a>
        			</div>
-
-
-</div>
-</div>
-</div>
-						
-
-		
-</div><!-- container ends here -->
-
-		
+       	</div><!-- gal class ends here -->
+      </div><!-- row class ends here -->
+     </div><!-- col-md-12 class ends here -->
+    </div><!-- row ends here -->
+   </div><!-- Container class ends here -->
 <?php endwhile; endif;?>
-
 <!--comment section starts here-->
 	<div class="container">
 		<div class="row">
@@ -220,6 +175,8 @@ if (have_posts() ) :
 			    'status' => 'approve'
 			);?>
 		</div>
-	</div>
-<?php 
-get_footer(); ?>
+	</div><!--comment section ends here-->
+<?php get_footer(); 
+
+
+	
