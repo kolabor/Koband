@@ -1587,11 +1587,13 @@ input {
   .album-head .col-sm-1 {
     flex: 0 0 19.333333%;
     max-width: 19.333333%;
-    margin-right: 0 !important; }
+    margin-right: 0 !important;
+    padding: 0; }
 
   .album-head .col-sm-3 {
     flex: 0 0 19%;
-    max-width: 19%; }
+    max-width: 19%;
+    padding: 0; }
 
   .albums-title, .single-title {
     text-align: center; }
@@ -1643,7 +1645,9 @@ input {
     font-size: 21px !important; }
 
   .store {
-    font-size: 23px; }
+    font-size: 23px;
+    flex: 0 0 50%;
+    max-width: 50%; }
 
   .store_name {
     font-size: 20px;
@@ -1660,7 +1664,7 @@ input {
     margin-bottom: 15px; }
 
   .footer_logo img {
-    width: 66%; }
+    width: 100%; }
 
   .footer_search {
     float: none;
@@ -1712,7 +1716,40 @@ input {
   .sng_store {
     font-size: 23px;
     flex: 0 0 50%;
-    max-width: 50%; } }
+    max-width: 50%;
+    text-align: center; }
+
+  .sng_sng {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center; }
+
+  .single-info .songs-head {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center; }
+
+  .single-info .col {
+    text-align: center; }
+
+  .album-songs-show-hide {
+    margin-bottom: 20px; }
+
+  .album-head {
+    text-align: center; }
+
+  .single-songs-show-hide .album-head {
+    text-align: center; }
+
+  .single-songs-show-hide .songs-head {
+    flex: 0 0 100%;
+    max-width: 100%; }
+
+  .single-songs-show-hide .song-list {
+    text-align: center; }
+
+  .single-songs-show-hide .song-list-sinlge {
+    text-align: center; } }
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -2083,7 +2120,10 @@ input {
     font-size: 13px; }
 
   .sng_alb_hld .song-list {
-    font-size: 28px !important; } }
+    font-size: 28px !important; }
+
+  .sng_store a {
+    font-size: 13px !important; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
