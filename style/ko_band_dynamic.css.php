@@ -156,7 +156,8 @@ a {
 
 .first_color {
   font-family: <?php echo esc_html($koband_headding_font); ?> ;
-  color: <?php echo get_theme_mod($koband_first_theme_color); ?> ;
+  color: <?php echo esc_html($koband_first_theme_color); ?> ;
+
 }
 .social-icons a .first_color:hover {
   color: <?php echo esc_html($koband_second_theme_color); ?> ;

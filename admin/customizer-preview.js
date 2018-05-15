@@ -150,9 +150,9 @@
 
 		// Update Theme retina logo
 	api( 'ko_band_retina_main_logo', function( value ) {
-		value.bind( function( themeNewLogo ) {
+		value.bind( function( themeNewRetinaLogo ) {
 		
-			$(".retina-main-logo a img").attr("src",themeNewLogo);
+			$(".retina-main-logo a img").attr("src",themeNewRetinaLogo);
 			
 		} );
 	} );

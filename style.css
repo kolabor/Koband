@@ -110,18 +110,18 @@ header {
   width: 21%;
   float: left; }
 
-.logo {
+.logo, .retina-logo {
   float: left;
   width: 100%;
   height: auto;
   margin-top: 10px;
   padding-bottom: 7px; }
 
-.retina-main-logo {
+/*.retina-main-logo {
   position: relative;
   width: 21%;
-  float: left; }
-
+  float: left;
+}*/
 /* ----------------------------------------------- */
 /* Main menu */
 /* -----------------------------------------------  */
@@ -634,8 +634,7 @@ Tour Section
   padding-bottom: 5px !important; }
 
 .album-store {
-  border-bottom: 1px solid;
-  margin-left: 0; }
+  border-bottom: 1px solid; }
 
 .store {
   padding-top: 5px;
@@ -647,8 +646,7 @@ Tour Section
   padding-top: 5px !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
-  padding-bottom: 5px !important;
-  margin-left: 0; }
+  padding-bottom: 5px !important; }
 
 .albums-title {
   padding-bottom: 10px !important;
@@ -662,7 +660,7 @@ Tour Section
 .col-sm-1 {
   padding-left: 5px !important; }
 
-.album_title {
+.album_title, .album_title_single {
   font-size: 20px !important;
   font-weight: 700 !important; }
 
@@ -681,8 +679,7 @@ Tour Section
   font-size: 15px !important;
   font-weight: 500 !important;
   padding-left: 0;
-  padding-right: 0;
-  margin-left: 0; }
+  padding-right: 0; }
 
 .song-list .col {
   padding: 5px 15px;
@@ -1197,15 +1194,14 @@ input {
   font-size: 12px !important; }
 
 .tour_single_page_row {
-  padding-left: 45px;
   font-size: 20px; }
 
-.tour_location_label {
-  margin-left: -55px; }
+.tour_single_page_row .store_link {
+  margin-top: 5px; }
 
 .the_tour_map iframe {
-  height: 400px !important;
-  width: 400px !important; }
+  height: auto !important;
+  width: 100% !important; }
 
 .search-holder {
   padding-top: 15px; }
@@ -1406,14 +1402,17 @@ input {
     padding: 5px;
     font-size: 12px; }
 
+  .address, .zipcode {
+    display: none; }
+
   /*news_single_page*/
   .conent_holder {
     width: 100%; }
 
   .sidebar {
     width: 100%;
-    height: 50%;
-    float: left; }
+    height: auto;
+    text-align: center; }
 
   .conent_holder h1 {
     text-align: center; }
@@ -1471,8 +1470,8 @@ input {
   .next, .prev, .close {
     position: fixed; }
 
-  .address, .zipcode {
-    display: none; } }
+  .st_link {
+    padding-left: 0; } }
 @media screen and (max-width: 991px) {
   .sl-content p {
     font-size: 19px !important; }
@@ -1481,7 +1480,7 @@ input {
     font-size: 32px; }
 
   .main-logo {
-    margin-left: 180px; }
+    margin-left: 131px; }
 
   .col-sm-1 {
     margin-right: 12px !important; }
@@ -1539,7 +1538,7 @@ input {
 @media screen and (max-width: 768px) {
   .mobile-nav-icon {
     display: inline-block;
-    font-size: 30px; }
+    font-size: 39px; }
 
   .main-nav .menu {
     position: relative;
@@ -1570,7 +1569,7 @@ input {
   .main-logo {
     width: 55%;
     padding-left: 63px;
-    margin-left: 70px; }
+    margin-left: 85px; }
 
   .logo {
     margin-top: 0; }
@@ -1637,6 +1636,20 @@ input {
   .song-list .line {
     line-height: 30px; }
 
+  .songs-head {
+    font-size: 23px !important; }
+
+  .song-list {
+    font-size: 18px !important; }
+
+  .store {
+    font-size: 23px; }
+
+  .store_name {
+    font-size: 20px;
+    flex: 0 0 50%;
+    max-width: 50%; }
+
   .divTableRow .store_link a {
     padding: 3px;
     font-size: 9px; }
@@ -1675,7 +1688,31 @@ input {
   .FullscreenV iframe {
     width: 100%;
     margin-top: 46%;
-    height: 40%; } }
+    height: 40%; }
+
+  .album_title_single {
+    text-align: center;
+    font-size: 25px !important; }
+
+  .sng_alb_cvr {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 10px; }
+
+  .sng_alb_hld {
+    flex: 0 0 100%;
+    max-width: 100%; }
+
+  .sng_alb_hld .songs-head {
+    font-size: 23px !important; }
+
+  .album_single_page_details {
+    font-size: 19px !important; }
+
+  .sng_store {
+    font-size: 23px;
+    flex: 0 0 50%;
+    max-width: 50%; } }
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -1739,8 +1776,21 @@ input {
   .FullscreenV iframe {
     width: 100%;
     height: 100%;
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .main-logo {
+    width: 55%;
+    padding-left: 63px;
+    margin-left: 70px; }
+
+  .tour_single_page_row .store_link a {
+    font-size: 13px; } }
 @media screen and (max-width: 667px) {
+  .main-logo {
+    width: 55%;
+    padding-left: 63px;
+    margin-left: 72px; }
+
   .sl-content p {
     font-size: 17px !important; }
 
@@ -1806,7 +1856,11 @@ input {
     padding: 2px !important; } }
 @media screen and (max-width: 502px) {
   .mobile-nav-icon {
-    font-size: 23px; } }
+    font-size: 23px; }
+
+  .tour_single_page_row .album-info {
+    margin-left: 0;
+    width: 50%; } }
 @media screen and (max-width: 442px) {
   .main-logo {
     margin-left: 73px; }
@@ -2011,7 +2065,22 @@ input {
   .FullscreenV iframe {
     width: 100%;
     height: 30%;
-    margin-top: 208px; } }
+    margin-top: 208px; }
+
+  .album_title_single {
+    font-size: 19px !important;
+    width: 33%; }
+
+  .album_single_page_details {
+    font-size: 18px !important;
+    width: 33%; }
+
+  .tour_single_page_row .album-info {
+    margin-left: 0;
+    width: 50%; }
+
+  .tour_single_page_row .store_link a {
+    font-size: 13px; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
@@ -2062,7 +2131,8 @@ input {
   .search-submit {
     line-height: 1.5;
     height: 27px;
-    font-size: 12px; }
+    font-size: 12px;
+    width: 90px; }
 
   .menu li a {
     font-size: 19px !important; }
@@ -2142,6 +2212,39 @@ input {
   .FullscreenV iframe {
     width: 100%;
     height: 30%;
+<<<<<<< HEAD
+    margin-top: 159px; }
+
+  .album_title_single {
+    font-size: 17px !important; }
+
+  .songs-head {
+    font-size: 21px !important; }
+
+  .album_single_page_details, .song_info {
+    font-size: 15px !important; }
+
+  .sng_store {
+    font-size: 21px; }
+
+  .store_name, .store {
+    font-size: 16px; }
+
+  .media-container-row {
+    margin-bottom: 0; } }
+=======
     margin-top: 159px; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 700px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 700px), only screen and (min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min-resolution: 192dpi) and (min-width: 700px), only screen and (min-resolution: 2dppx) and (min-width: 700px) {
+  .logo {
+    display: none !important; }
+
+  .retina-logo {
+    display: block !important; } }
+.retina-logo {
+  display: none !important; }
+
+.logo {
+  display: block !important; }
+>>>>>>> ed4eefd1444d84242498ec132763c71205e39850
 
 /*# sourceMappingURL=style.css.map */
