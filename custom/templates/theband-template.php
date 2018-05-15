@@ -62,8 +62,8 @@ get_header(); ?>
 										<!-- Modal content-->
 											<div class="modal-content bg">
 												<div class="modal-header">
-										          	<h4 class="modal-title main_font_color"><?php the_title();?></h4>
 										          	<button type="button" class="close" data-dismiss="modal">&times;</button>
+										          	<h4 class="modal-title main_font_color"><?php the_title();?></h4>
 										        </div>
 												<div class="modal-body">
 													<div class="popup-img"><?php the_post_thumbnail(); ?></div>
