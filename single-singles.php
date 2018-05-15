@@ -36,7 +36,7 @@ get_header('noscroll'); ?>
 			<div class="col-sm-8 sng_alb_hld">
 				<div class="container">
 					<div class="row album-head single-info">
-						<div class="col-sm-4 border_first_color main_font_color song_details"><?php echo esc_html__('Song Details', 'koband');?></div>
+						<div class="col-sm-4 border_first_color main_font_color songs-head"><?php echo esc_html__('Song Details', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color  main_font_color">   
 					      <?php foreach ($single_detail as  $value_single_detail) { ?>
@@ -44,14 +44,14 @@ get_header('noscroll'); ?>
 					      <?php } ?> 
 				    </div>
 				    <div class="row album-head single-info">
-						<div class="col-sm-4 border_first_color main_font_color"><?php echo esc_html__('Song Lyrics', 'koband');?></div>
+						<div class="col-sm-4 border_first_color main_font_color songs-head"><?php echo esc_html__('Song Lyrics', 'koband');?></div>
 					</div>
 					<div class="row song-list border_first_color lyrics-singles main_font_color">   
 					      <div class="col"><?php the_content(); ?></div> 
 				    </div>
 					<div class="row album-head border_first_color main_font_color">
-						<div class="col-sm-4"><?php echo esc_html__('Store Name', 'koband');?></div>
-						<div class="col-sm-4"><?php echo esc_html__('Store Link', 'koband');?></div>
+						<div class="col-sm-4 store"><?php echo esc_html__('Store Name', 'koband');?></div>
+						<div class="col-sm-4 store"><?php echo esc_html__('Store Link', 'koband');?></div>
 					</div>
 				
 				

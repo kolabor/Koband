@@ -1640,7 +1640,7 @@ input {
     font-size: 23px !important; }
 
   .song-list {
-    font-size: 18px !important; }
+    font-size: 21px !important; }
 
   .store {
     font-size: 23px; }
@@ -2082,8 +2082,8 @@ input {
   .tour_single_page_row .store_link a {
     font-size: 13px; }
 
-  .song_details {
-    font-size: 28px; } }
+  .sng_alb_hld .song-list {
+    font-size: 28px !important; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }

@@ -1492,7 +1492,7 @@ input {
   .social-icons a {font-size: 20px; margin-left: 15px;}
   .song-list .line {line-height: 30px;}
   .songs-head {font-size: 23px !important}
-  .song-list {font-size: 18px !important;}
+  .song-list {font-size: 21px !important;}
   .store {font-size: 23px;}
   .store_name {font-size: 20px; flex: 0 0 50%; max-width: 50%;}
   .divTableRow .store_link a {padding: 3px; font-size: 9px}
@@ -1629,8 +1629,7 @@ input {
   .album_single_page_details {font-size: 18px !important; width: 33%;}
   .tour_single_page_row .album-info {margin-left: 0; width: 50%; }
   .tour_single_page_row .store_link a {font-size: 13px; }
-  .song_details {font-size: 28px;}
-
+  .sng_alb_hld .song-list {font-size: 28px!important;}
 }
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
