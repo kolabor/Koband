@@ -30,7 +30,7 @@ wp_head(); ?>
         
         <div class="retina-main-logo">
         <?php $logo_retina = get_theme_mod( 'ko_band_retina_main_logo' ); ?>
-        <img src="<?php echo esc_url($logo_retina); ?>">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url($logo_retina); ?>" class="retina-logo"></a>
         </div>                 
 
       
