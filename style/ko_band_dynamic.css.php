@@ -113,17 +113,14 @@
   
   font-size:  <?php echo esc_html($koband_theme_font_size); ?> ;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
-
   color: <?php echo esc_html($koband_main_font_color); ?> ;
 
 }
  
-.home h1, .home h2 .home h3, .home h4, .single h1, .single h2 .single h3, .single h4, .page h1, .page h2 .page h3, .page h4,
+.home h1, .home h2, .home h3, .home h4, .single h1, .single h2, .single h3, .single h4, .page h1, .page h2, .page h3, .page h4,
 {
   font-family: <?php echo esc_html($koband_headding_font); ?> ;
-
   color: <?php echo esc_html($koband_main_font_color);?> ;
-
   font-size:  <?php echo $koband_theme_font_size; ?> ;
 }
 #theband {
@@ -156,7 +153,8 @@ a {
 
 .first_color {
   font-family: <?php echo esc_html($koband_headding_font); ?> ;
-  color: <?php echo get_theme_mod('ko_band_first_theme_color'); ?> ;
+  color: <?php echo esc_html($koband_first_theme_color); ?> ;
+
 }
 .social-icons a .first_color:hover {
   color: <?php echo esc_html($koband_second_theme_color); ?> ;
@@ -233,9 +231,6 @@ a {
 .reply a, .submit {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
-.submit:hover {
-  color: <?php echo esc_html($koband_first_theme_color); ?> ;
-}
 
 .submit:hover {
  background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
@@ -279,4 +274,8 @@ a {
 .footer-menu .menu li a {
   color: <?php echo esc_html($koband_footer_menu_font_color)?> ;
   font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px ;
+}
+.venue_name:hover {
+  text-decoration: none !important;
+  color: <?php echo esc_html($koband_first_theme_color)?> ;
 }

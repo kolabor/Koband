@@ -64,7 +64,7 @@ get_header();?>
 			    	</span>
 			    </div>
 			</div><!-- container -->        
-			<div class="container album-songs-show-hide">
+			<div class="container album-songs-show-hide bg">
 				<!-- Labels -->
 				<div class="row album-info">
 					<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Name', 'koband');?></div>
@@ -82,7 +82,7 @@ get_header();?>
 				<!-- Labels -->
 				<div class="row album-store border_first_color main_font_color">
 					<div class="col-sm-3 store"><?php echo esc_html__('Store Name', 'koband');?></div>
-					<div class="col-sm-3 store"><?php echo esc_html__('Store Link', 'koband');?></div>
+					<div class="col-sm-3 store st_link"><?php echo esc_html__('Store Link', 'koband');?></div>
 				</div>
 				
 					<?php 

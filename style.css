@@ -105,23 +105,23 @@ header {
 /* ----------------------------------------------- */
 /* Logo */
 /* ----------------------------------------------- */
-.main-logo {
+.main-logo, .retina-main-logo {
   position: relative;
   width: 21%;
   float: left; }
 
-.logo {
+.logo, .retina-logo {
   float: left;
   width: 100%;
   height: auto;
   margin-top: 10px;
   padding-bottom: 7px; }
 
-.retina-main-logo {
+/*.retina-main-logo {
   position: relative;
   width: 21%;
-  float: left; }
-
+  float: left;
+}*/
 /* ----------------------------------------------- */
 /* Main menu */
 /* -----------------------------------------------  */
@@ -209,7 +209,9 @@ header {
   border: none !important; }
 
 .btn-group-lg > .btn, .btn-lg {
-  font-size: 1.65rem !important; }
+  font-size: 20px !important;
+  padding: 10px !important;
+  border-radius: 4px !important; }
 
 .carousel-indicators {
   top: 90% !important;
@@ -356,8 +358,8 @@ header {
 .overlay a {
   font-size: 50px; }
 
-.hovereffect:hover .overlay {
-  background-color: rgba(48, 152, 157, 0.4); }
+.videos-list .overlay {
+  background-color: transparent !important; }
 
 .hovereffect img {
   display: block;
@@ -376,7 +378,8 @@ header {
   text-transform: uppercase;
   color: #fff;
   text-align: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
   font-size: 17px;
   padding: 40px;
   -webkit-transform: translateY(45px);
@@ -406,17 +409,22 @@ header {
   -ms-transform: scale(0);
   transform: scale(0);
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  /* transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81); */
   font-weight: normal;
-  margin: -113px 0 0 0;
-  padding: 39% 37%; }
+  /* margin: -113px 0 0 0; */
+  width: 90%;
+  height: 90%;
+  margin: 5%; }
 
-.hovereffect a.play {
+.info svg {
+  margin-top: 45%; }
+
+/*.videos-list a.play {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff !important;
-  /* border: 1px solid #fff; */
+
   background-color: transparent;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -427,8 +435,8 @@ header {
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
   margin: -30px 0 0 0;
-  padding: 39% 39%; }
-
+  padding: 39% 39%;
+}*/
 .hovereffect:hover a.info {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -436,13 +444,41 @@ header {
   -ms-transform: scale(1);
   transform: scale(1); }
 
-.hovereffect:hover a.play {
+.myvideo {
+  width: 100%;
+  height: auto;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer; }
+
+.myvideo:hover span.play {
+  opacity: 1; }
+
+.play {
+  display: inline-block;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0; }
+
+.play svg {
+  width: 40% !important;
+  height: 40%;
+  margin: 20%;
+  color: #fff; }
+
+/*.videos-list:hover a.play {
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
-  transform: scale(1); }
-
+  transform: scale(1);
+}*/
 .hovereffect a.info:hover {
   box-shadow: 0 0 5px #fff; }
 
@@ -499,19 +535,19 @@ header {
 
 .close {
   position: absolute;
-  right: 5%;
-  top: 6%;
+  right: 3%;
+  top: 2%;
   background-color: #f1f1f1;
   color: black !important;
   border-radius: 65%;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px; }
+  padding: 8px 16px !important; }
 
 .imageList img {
   cursor: pointer !important; }
 
-.next {
+.prev {
   position: absolute;
   left: 5%;
   top: 52%;
@@ -522,7 +558,7 @@ header {
   display: inline-block;
   padding: 8px 16px; }
 
-.prev {
+.next {
   position: absolute;
   right: 5%;
   top: 52%;
@@ -560,8 +596,7 @@ Tour Section
   padding: 10px; }
 
 .divTableCell {
-  font-size: 100%;
-  line-height: 145%;
+  font-size: 90%;
   padding: 10px;
   font-weight: 500; }
 
@@ -590,6 +625,9 @@ Tour Section
   Discography Section
   -------------------------------------------
  */
+.bg {
+  background-color: #fafafa82; }
+
 .album-head {
   background-color: #fff !important;
   border-bottom: 1px solid;
@@ -599,8 +637,7 @@ Tour Section
   padding-bottom: 5px !important; }
 
 .album-store {
-  border-bottom: 1px solid;
-  margin-left: 0; }
+  border-bottom: 1px solid; }
 
 .store {
   padding-top: 5px;
@@ -612,8 +649,7 @@ Tour Section
   padding-top: 5px !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
-  padding-bottom: 5px !important;
-  margin-left: 0; }
+  padding-bottom: 5px !important; }
 
 .albums-title {
   padding-bottom: 10px !important;
@@ -627,7 +663,7 @@ Tour Section
 .col-sm-1 {
   padding-left: 5px !important; }
 
-.album_title {
+.album_title, .album_title_single {
   font-size: 20px !important;
   font-weight: 700 !important; }
 
@@ -646,8 +682,7 @@ Tour Section
   font-size: 15px !important;
   font-weight: 500 !important;
   padding-left: 0;
-  padding-right: 0;
-  margin-left: 0; }
+  padding-right: 0; }
 
 .song-list .col {
   padding: 5px 15px;
@@ -773,13 +808,13 @@ Tour Section
   padding-bottom: 45px;
   background-color: #d1d1d1; }
 
-.footer_logo {
+.footer_logo, .retina-footer-logo {
   position: relative;
   float: left;
   width: 100%;
   height: auto; }
 
-.footer_logo img {
+.footer_logo img, .retina-footer-logo img {
   width: 100%;
   height: auto; }
 
@@ -1086,6 +1121,7 @@ input {
 
 .gal img {
   width: 100%;
+  height: auto;
   padding: 7px 0; }
 
 @media (max-width: 500px) {
@@ -1161,22 +1197,22 @@ input {
   font-size: 12px !important; }
 
 .tour_single_page_row {
-  padding-left: 45px;
   font-size: 20px; }
 
-.tour_location_label {
-  margin-left: -55px; }
+.tour_single_page_row .store_link {
+  margin-top: 5px; }
 
 .the_tour_map iframe {
-  height: 400px !important;
-  width: 400px !important; }
+  height: auto !important;
+  width: 100% !important; }
 
 .search-holder {
   padding-top: 15px; }
 
 .theband_single_title {
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  width: 100%; }
 
 .comment-form-author input, .comment-form-email input, .comment-form-url input {
   width: 240px !important;
@@ -1370,14 +1406,17 @@ input {
     padding: 5px;
     font-size: 12px; }
 
+  .address, .zipcode {
+    display: none; }
+
   /*news_single_page*/
   .conent_holder {
     width: 100%; }
 
   .sidebar {
     width: 100%;
-    height: 50%;
-    float: left; }
+    height: auto;
+    text-align: center; }
 
   .conent_holder h1 {
     text-align: center; }
@@ -1433,7 +1472,30 @@ input {
     text-align: center; }
 
   .next, .prev, .close {
-    position: fixed; } }
+    position: fixed; }
+
+  .st_link {
+    padding-left: 0; }
+
+  .theband_single_title h3 {
+    text-align: center; }
+
+  #contact header {
+    text-align: center; }
+
+  .contact_row {
+    text-align: center; }
+
+  .contact_row .col-sm-3 {
+    flex: 0 0 50%;
+    max-width: 50%; }
+
+  .contact_form p {
+    text-align: center !important;
+    padding: 0; }
+
+  .wpcf7 label {
+    text-align: center !important; } }
 @media screen and (max-width: 991px) {
   .sl-content p {
     font-size: 19px !important; }
@@ -1442,7 +1504,7 @@ input {
     font-size: 32px; }
 
   .main-logo {
-    margin-left: 180px; }
+    margin-left: 131px; }
 
   .col-sm-1 {
     margin-right: 12px !important; }
@@ -1500,7 +1562,7 @@ input {
 @media screen and (max-width: 768px) {
   .mobile-nav-icon {
     display: inline-block;
-    font-size: 30px; }
+    font-size: 39px; }
 
   .main-nav .menu {
     position: relative;
@@ -1531,7 +1593,7 @@ input {
   .main-logo {
     width: 55%;
     padding-left: 63px;
-    margin-left: 70px; }
+    margin-left: 85px; }
 
   .logo {
     margin-top: 0; }
@@ -1549,11 +1611,13 @@ input {
   .album-head .col-sm-1 {
     flex: 0 0 19.333333%;
     max-width: 19.333333%;
-    margin-right: 0 !important; }
+    margin-right: 0 !important;
+    padding: 0; }
 
   .album-head .col-sm-3 {
     flex: 0 0 19%;
-    max-width: 19%; }
+    max-width: 19%;
+    padding: 0; }
 
   .albums-title, .single-title {
     text-align: center; }
@@ -1598,6 +1662,22 @@ input {
   .song-list .line {
     line-height: 30px; }
 
+  .songs-head {
+    font-size: 23px !important; }
+
+  .song-list {
+    font-size: 21px !important; }
+
+  .store {
+    font-size: 23px;
+    flex: 0 0 50%;
+    max-width: 50%; }
+
+  .store_name {
+    font-size: 20px;
+    flex: 0 0 50%;
+    max-width: 50%; }
+
   .divTableRow .store_link a {
     padding: 3px;
     font-size: 9px; }
@@ -1608,7 +1688,7 @@ input {
     margin-bottom: 15px; }
 
   .footer_logo img {
-    width: 66%; }
+    width: 100%; }
 
   .footer_search {
     float: none;
@@ -1636,7 +1716,82 @@ input {
   .FullscreenV iframe {
     width: 100%;
     margin-top: 46%;
-    height: 40%; } }
+    height: 40%; }
+
+  .album_title_single {
+    text-align: center;
+    font-size: 25px !important; }
+
+  .sng_alb_cvr {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 10px; }
+
+  .sng_alb_hld {
+    flex: 0 0 100%;
+    max-width: 100%; }
+
+  .sng_alb_hld .songs-head {
+    font-size: 23px !important; }
+
+  .album_single_page_details {
+    font-size: 19px !important; }
+
+  .sng_store {
+    font-size: 23px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center; }
+
+  .sng_sng {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center; }
+
+  .single-info .songs-head {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center; }
+
+  .single-info .col {
+    text-align: center; }
+
+  .album-songs-show-hide {
+    margin-bottom: 20px; }
+
+  .album-head {
+    text-align: center; }
+
+  .single-songs-show-hide .album-head {
+    text-align: center; }
+
+  .single-songs-show-hide .songs-head {
+    flex: 0 0 100%;
+    max-width: 100%; }
+
+  .single-songs-show-hide .song-list {
+    text-align: center; }
+
+  .single-songs-show-hide .song-list-sinlge {
+    text-align: center; }
+
+  .theband_sng_content_hld .col-sm-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 25px; }
+
+  .theband_sng_content_hld .col-sm-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px; }
+
+  .theband_sng_content_hld .col-sm-8 h4 {
+    font-size: 42px; }
+
+  .bio_content {
+    padding-left: 20px;
+    padding-right: 20px; } }
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -1700,8 +1855,21 @@ input {
   .FullscreenV iframe {
     width: 100%;
     height: 100%;
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .main-logo {
+    width: 55%;
+    padding-left: 63px;
+    margin-left: 70px; }
+
+  .tour_single_page_row .store_link a {
+    font-size: 13px; } }
 @media screen and (max-width: 667px) {
+  .main-logo {
+    width: 55%;
+    padding-left: 63px;
+    margin-left: 72px; }
+
   .sl-content p {
     font-size: 17px !important; }
 
@@ -1742,6 +1910,9 @@ input {
     padding: 6px !important;
     font-size: 10px !important; }
 
+  .divTableCell {
+    padding: 2px 6px; }
+
   .sl-content h5 {
     font-size: 25px !important; }
 
@@ -1750,9 +1921,6 @@ input {
 
   .address, .zipcode {
     display: none; }
-
-  .divTableCell {
-    padding: 5px 10px; }
 
   .footer-menu .menu {
     padding-right: 6px; }
@@ -1767,7 +1935,11 @@ input {
     padding: 2px !important; } }
 @media screen and (max-width: 502px) {
   .mobile-nav-icon {
-    font-size: 23px; } }
+    font-size: 23px; }
+
+  .tour_single_page_row .album-info {
+    margin-left: 0;
+    width: 50%; } }
 @media screen and (max-width: 442px) {
   .main-logo {
     margin-left: 73px; }
@@ -1893,7 +2065,7 @@ input {
     padding: 3px; }
 
   .divTableCell {
-    font-size: 75%;
+    font-size: 65%;
     line-height: 100%;
     padding-bottom: 5px;
     padding-left: 5px;
@@ -1972,7 +2144,28 @@ input {
   .FullscreenV iframe {
     width: 100%;
     height: 30%;
-    margin-top: 208px; } }
+    margin-top: 208px; }
+
+  .album_title_single {
+    font-size: 19px !important;
+    width: 33%; }
+
+  .album_single_page_details {
+    font-size: 18px !important;
+    width: 33%; }
+
+  .tour_single_page_row .album-info {
+    margin-left: 0;
+    width: 50%; }
+
+  .tour_single_page_row .store_link a {
+    font-size: 13px; }
+
+  .sng_alb_hld .song-list {
+    font-size: 28px !important; }
+
+  .sng_store a {
+    font-size: 13px !important; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
@@ -2023,7 +2216,8 @@ input {
   .search-submit {
     line-height: 1.5;
     height: 27px;
-    font-size: 12px; }
+    font-size: 12px;
+    width: 90px; }
 
   .menu li a {
     font-size: 19px !important; }
@@ -2103,6 +2297,47 @@ input {
   .FullscreenV iframe {
     width: 100%;
     height: 30%;
-    margin-top: 159px; } }
+    margin-top: 159px; }
+
+  .album_title_single {
+    font-size: 17px !important; }
+
+  .songs-head {
+    font-size: 21px !important; }
+
+  .album_single_page_details, .song_info {
+    font-size: 15px !important; }
+
+  .sng_store {
+    font-size: 21px; }
+
+  .store_name, .store {
+    font-size: 16px; }
+
+  .media-container-row {
+    margin-bottom: 0; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 700px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 700px), only screen and (min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min-resolution: 192dpi) and (min-width: 700px), only screen and (min-resolution: 2dppx) and (min-width: 700px) {
+  .logo {
+    display: none !important; }
+
+  .footer_logo {
+    display: none !important; }
+
+  .retina-logo {
+    display: block !important; }
+
+  .retina-footer-logo {
+    display: block !important; } }
+.retina-footer-logo {
+  display: none !important; }
+
+.retina-logo {
+  display: none !important; }
+
+.logo {
+  display: block !important; }
+
+.footer_logo {
+  display: block !important; }
 
 /*# sourceMappingURL=style.css.map */

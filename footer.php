@@ -23,8 +23,12 @@
                 <div class="footer_logo">
                         <?php $footer_logo = get_theme_mod( 'ko_band_footer_logo' ); ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url($footer_logo); ?>" class="footer_logo"></a>
-                    </div>
-            </div>
+                </div>
+                <div class="retina-footer-logo">
+                    <?php $footer_retina = get_theme_mod( 'ko_band_retina_footer_logo' ); ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url($footer_retina); ?>" class="retina-footer-logo"></a>
+                    </div>   
+                </div>
             
         </div>    
         <div class="media-container-row">
