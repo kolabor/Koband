@@ -105,7 +105,7 @@ header {
 /* ----------------------------------------------- */
 /* Logo */
 /* ----------------------------------------------- */
-.main-logo {
+.main-logo, .retina-main-logo {
   position: relative;
   width: 21%;
   float: left; }
@@ -535,14 +535,14 @@ header {
 
 .close {
   position: absolute;
-  right: 5%;
-  top: 6%;
+  right: 3%;
+  top: 2%;
   background-color: #f1f1f1;
   color: black !important;
   border-radius: 65%;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px; }
+  padding: 8px 16px !important; }
 
 .imageList img {
   cursor: pointer !important; }
@@ -805,13 +805,13 @@ Tour Section
   padding-bottom: 45px;
   background-color: #d1d1d1; }
 
-.footer_logo {
+.footer_logo, .retina-footer-logo {
   position: relative;
   float: left;
   width: 100%;
   height: auto; }
 
-.footer_logo img {
+.footer_logo img, .retina-footer-logo img {
   width: 100%;
   height: auto; }
 
@@ -1208,7 +1208,8 @@ input {
 
 .theband_single_title {
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  width: 100%; }
 
 .comment-form-author input, .comment-form-email input, .comment-form-url input {
   width: 240px !important;
@@ -1471,7 +1472,10 @@ input {
     position: fixed; }
 
   .st_link {
-    padding-left: 0; } }
+    padding-left: 0; }
+
+  .theband_single_title h3 {
+    text-align: center; } }
 @media screen and (max-width: 991px) {
   .sl-content p {
     font-size: 19px !important; }
@@ -1587,11 +1591,13 @@ input {
   .album-head .col-sm-1 {
     flex: 0 0 19.333333%;
     max-width: 19.333333%;
-    margin-right: 0 !important; }
+    margin-right: 0 !important;
+    padding: 0; }
 
   .album-head .col-sm-3 {
     flex: 0 0 19%;
-    max-width: 19%; }
+    max-width: 19%;
+    padding: 0; }
 
   .albums-title, .single-title {
     text-align: center; }
@@ -1640,10 +1646,12 @@ input {
     font-size: 23px !important; }
 
   .song-list {
-    font-size: 18px !important; }
+    font-size: 21px !important; }
 
   .store {
-    font-size: 23px; }
+    font-size: 23px;
+    flex: 0 0 50%;
+    max-width: 50%; }
 
   .store_name {
     font-size: 20px;
@@ -1660,7 +1668,7 @@ input {
     margin-bottom: 15px; }
 
   .footer_logo img {
-    width: 66%; }
+    width: 100%; }
 
   .footer_search {
     float: none;
@@ -1712,7 +1720,58 @@ input {
   .sng_store {
     font-size: 23px;
     flex: 0 0 50%;
-    max-width: 50%; } }
+    max-width: 50%;
+    text-align: center; }
+
+  .sng_sng {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center; }
+
+  .single-info .songs-head {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center; }
+
+  .single-info .col {
+    text-align: center; }
+
+  .album-songs-show-hide {
+    margin-bottom: 20px; }
+
+  .album-head {
+    text-align: center; }
+
+  .single-songs-show-hide .album-head {
+    text-align: center; }
+
+  .single-songs-show-hide .songs-head {
+    flex: 0 0 100%;
+    max-width: 100%; }
+
+  .single-songs-show-hide .song-list {
+    text-align: center; }
+
+  .single-songs-show-hide .song-list-sinlge {
+    text-align: center; }
+
+  .theband_sng_content_hld .col-sm-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 25px; }
+
+  .theband_sng_content_hld .col-sm-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px; }
+
+  .theband_sng_content_hld .col-sm-8 h4 {
+    font-size: 42px; }
+
+  .bio_content {
+    padding-left: 20px;
+    padding-right: 20px; } }
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -2082,8 +2141,11 @@ input {
   .tour_single_page_row .store_link a {
     font-size: 13px; }
 
-  .song_details {
-    font-size: 28px; } }
+  .sng_alb_hld .song-list {
+    font-size: 28px !important; }
+
+  .sng_store a {
+    font-size: 13px !important; } }
 @media screen and (max-width: 375px) {
   .address, .zipcode {
     display: none; }
@@ -2238,12 +2300,24 @@ input {
   .logo {
     display: none !important; }
 
+  .footer_logo {
+    display: none !important; }
+
   .retina-logo {
+    display: block !important; }
+
+  .retina-footer-logo {
     display: block !important; } }
+.retina-footer-logo {
+  display: none !important; }
+
 .retina-logo {
   display: none !important; }
 
 .logo {
+  display: block !important; }
+
+.footer_logo {
   display: block !important; }
 
 /*# sourceMappingURL=style.css.map */
