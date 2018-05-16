@@ -42,7 +42,7 @@ if (have_posts() ) :
      <?php 
 
       $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
-	  $media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
+	    $media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
 
       $count_images = count($media_gallery[0]);
       $count_videos = count($media_video_gallery[0]);
