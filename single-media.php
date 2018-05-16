@@ -43,9 +43,10 @@ if (have_posts() ) :
 
       $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	    $media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
+       
+      if(isset($media_gallery[0])){$count_images = count($media_gallery[0]);}
+      if(isset($media_video_gallery[0])){$count_videos = count($media_video_gallery[0]);}
 
-      $count_images = count($media_gallery[0]);
-      $count_videos = count($media_video_gallery[0]);
       
       /*Declaring an array that will hold all gallery items*/
       $all_gallery_items = array();
