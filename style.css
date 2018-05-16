@@ -204,6 +204,9 @@ header {
 .sl-content p {
   width: 100% !important; }
 
+.sl-content a:hover {
+  color: #ffffff; }
+
 .btn-primary {
   color: #fff !important;
   border: none !important; }

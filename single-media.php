@@ -127,7 +127,7 @@ if (have_posts() ) :
 							       else 
 							       {
 							        $vimeoImage = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $vimeoCode . '.php'));
-						            $vimeoImage =  $vimeoImage[0]['thumbnail_large'];     	
+						          $vimeoImage =  $vimeoImage[0]['thumbnail_large'];     	
 							       }?>
 							       <img src="<?php echo esc_url($vimeoImage)?>" 
                                          alt="Vimeo video image" 
