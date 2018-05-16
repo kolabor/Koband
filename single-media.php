@@ -51,15 +51,20 @@ if (have_posts() ) :
       $all_gallery_items = array();
       
       /*Insert images to the all_gallery_items array*/
-      for($i=0; $i < $count_images; $i++)
+      if($count_images > 0)
       {
-      	array_push($all_gallery_items, array("type" => "image",  "videotype" => "none", "link"=> $media_gallery[0][$i] ));
+        for($i=0; $i < $count_images; $i++)
+        {
+        	array_push($all_gallery_items, array("type" => "image",  "videotype" => "none", "link"=> $media_gallery[0][$i] ));
+        }
       }
-      
       /*Insert videos to the all_gallery_items array*/
-      for($v=0; $v < $count_videos; $v++)
+      if($count_videos > 0)
       {
-      	array_push($all_gallery_items, array("type" => "video",  "videotype" =>$media_video_gallery[0][$v]['select'], "link"=> $media_video_gallery[0][$v]['link'] ));
+        for($v=0; $v < $count_videos; $v++)
+        {
+        	array_push($all_gallery_items, array("type" => "video",  "videotype" =>$media_video_gallery[0][$v]['select'], "link"=> $media_video_gallery[0][$v]['link'] ));
+        }
       }
      
      /*Randomize Gallery videos and images*/
