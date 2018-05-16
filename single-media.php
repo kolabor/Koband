@@ -118,7 +118,7 @@ if (have_posts() ) :
 							        
 							       if (strpos($videoLink, 'ondemand') !== false) 
 							       {
-                                        $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
+                      $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
 							       }
 							       else 
 							       {

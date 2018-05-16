@@ -335,14 +335,37 @@ var src = $(this).parent().next('.FullscreenV iframe').attr('src'); //get the so
 $('.FullscreenV').click(function(){
  $('.FullscreenV').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
 });
-			
+		
 
 
+        $('.image_media_slider .imageList img:first-child').addClass('active');
 
+        $(document).off('click', '.prev, .next').on('click', '.prev, .next', function() {
+          var next;
+          var circler;
+          if ($(this).is('.prev')) {
+            next = 'prev';
+            circler = ':last';
+          } else {     // or if there would be more arrows, use : else if ($(this).is('.arrow-right'))
+            next = 'next';
+            circler = ':first';
+          }
+          
+          // Use bracket notation to dynamically decide which function to call.
+          var nextTarget = $('.imageList img.active')[next]('img');
+          if (nextTarget.length == 0) {
+            nextTarget = $('.imageList img' + circler);
+          }
+          $('.imageList img').removeClass('active');
+          nextTarget.addClass('active');
+        });	
+
+
+/*
 $('.next').click(function(){
 
     alert('test');
-       /* var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
+        var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
 
         var $currentImg = $('.FullscreenV iframe[src="' + $('.FullscreenV iframe').attr('src') + '"]'); // The current img being overlayed.
         var $nextImg = $($currentImg.closest('div').next().find('iframe')); // The next img in the gallery.
@@ -377,7 +400,7 @@ $('.next').click(function(){
             next = next.index() == 0 ? first : next;
         $(this).fadeOut(speed, function() {next.fadeIn(speed);});
     });    */
-  });
+
 
 
 
