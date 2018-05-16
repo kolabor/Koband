@@ -76,6 +76,7 @@
 		
 			$('.main-nav .menu li a').css( 'color', newThemeMenuFontColor, 'important');
 			$('.main-nav .menu li a:hover ').css( 'color', newThemeMenuFontColor, 'important');
+			$('.main-nav .menu li a:hover ').css( 'opacity', '0.5', 'important');
 						
 		} );
 	} );
@@ -245,10 +246,12 @@
 		    if(newBgHolderMode == false)
 		    {   
                $('.sl-content').css('background-color', 'rgba(255,255,255, 0)', 'important');
+               
 		    }
 		    else if (newBgHolderMode == true) 
 		    {
 		    	$('.sl-content').css('background-color', 'rgba(0,0,0, 0.4)', 'important');
+
 		    }
 			
 			

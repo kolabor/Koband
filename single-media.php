@@ -46,7 +46,7 @@ if (have_posts() ) :
        
       $all_gallery_items = array();
 
-      if (isset($media_gallery[0]))
+      if (isset($media_gallery))
       {
         $count_images = count($media_gallery[0]);
         /*Insert images to the all_gallery_items array*/
@@ -59,7 +59,7 @@ if (have_posts() ) :
         } 
       }
 
-      if(isset($media_video_gallery[0])) 
+      if(isset($media_video_gallery)) 
       {
       
         $count_videos = count($media_video_gallery[0]);
