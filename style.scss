@@ -1513,14 +1513,14 @@ input {
   .btn-group-sm>.btn, .btn-sm {padding: 1px;}
   .koband_post_theband .col-sm-4 {-webkit-box-flex: 0; -ms-flex: 0 0 33.333333%; flex: 100px; max-width: 100%;}
   .band-members {width: 100% !important;}
-  .divTableCell {font-size: 80%; padding: 0;}
+  .divTableCell {font-size: 80%; padding: 10;}
   .social-icons a {font-size: 20px; margin-left: 15px;}
   .song-list .line {line-height: 30px;}
   .songs-head {font-size: 23px !important}
-  .song-list {font-size: 21px !important;}
+  .song-list {font-size: 16px !important;}
   .store {font-size: 23px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%;}
   .store_name {font-size: 20px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%;}
-  .divTableRow .store_link a {padding: 3px; font-size: 9px}
+  .divTableRow .store_link a {font-size: 11px; padding-left: 14px; padding-right: 12px;}
   .footer_logo {text-align: center; float: none; margin-bottom: 15px;}
   .footer_logo img { width: 100%;}
   .footer_search {float: none;text-align: center; padding-right: 32px;}
@@ -1549,6 +1549,7 @@ input {
   .theband_sng_content_hld .col-sm-4 {-webkit-box-flex: 0;-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%; margin-bottom: 20px;}
   .theband_sng_content_hld .col-sm-8 h4 {font-size: 42px;}
   .bio_content { padding-left: 20px; padding-right: 20px;}
+  .store_link span {display: none;}
 }
 
 @media screen and (max-width: 736px) {
@@ -1559,7 +1560,7 @@ input {
   .search-form {float: left;}
   #menu-footer-menu {padding-left: 0; text-align: center;}
   .social-media {text-align: center; margin-bottom: 14px; margin-right: 11px;}
-  .footer_logo {width: 88%; padding-left: 31px;}
+  .footer_logo {width: 100%; }
   .album-head .col-sm-1 { max-width: 20%;}
   .album-head .col-sm-3 {max-width: 24%;}
   .song-list .line {line-height: 30px;}
@@ -1632,7 +1633,7 @@ input {
   .album-song, .single-song {padding: 10px!important;  }
   .album-head .col-sm-3 {max-width: 100%;}
   .album-head .col-sm-1 {max-width: 24.333333%;}
-  .col-sm-1 {padding-left: 15px!important; margin-bottom: 10px;}
+  .col-sm-1 { margin-bottom: 10px;}
   .section h1 {width: 100%; text-align: center;}
   .albums-title, .single-title {text-align: center;}
   .news-title {text-align: center;}
@@ -1641,7 +1642,7 @@ input {
   .band_member_name {font-size: 32px !important; text-align: center; float: none;}
   .band_member_role {font-size: 20px !important;}
   .divTableHeading {font-size: 135%; line-height: 1; font-weight: 700; padding: 3px;}
-  .divTableCell {font-size: 65%; line-height: 100%; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; font-weight: 500;}
+  .divTableCell {font-size: 13px; line-height: 1.5; padding-left: 5px; padding-right: 5px; font-weight: 600;}
   .footer_search {padding-left: 20px; margin-bottom: 0;}
   .search-form {float: left;}
   #menu-footer-menu {padding-left: 0; margin-right: 0; text-align: center;}
@@ -1653,7 +1654,10 @@ input {
   .album-head {margin-bottom: 17px; margin-top: 17px;}
   .album-head, .song-list {margin-left: -15px}
   .line {line-height: 26px;}
-  .store, .store_name, .store_link {width: 50%;}
+  .song-list .store_link {width: 50%}
+  .song-list-sinlge .store_link {width: 50%}
+  .song-list-sinlge .store_link a {font-size: 14px;}
+  .song-list .store_link a {font-size: 15px;}
   .album-store {margin-left: -15; margin-right: -12px;}
   .store_link a {font-size: 7px; padding: 3px;}
   .address, .zipcode {display: none;}
@@ -1679,16 +1683,18 @@ input {
   .footer_search {padding-left: 3px;}
   #menu-footer-menu {margin-left: 11px;}
   .social-media {margin-right: 6px;}
-  .footer_logo {padding-left: 23px;}
+ 
   #back-to-top {right: 12px;}
   .modal-dialog {width: 360px;}
-  .col-sm-3 span {font-size: 11px !important;}
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-top: -13px; margin-left: 15px; font-size: 40px;}
+  .col-sm-3 span {font-size: 15px !important;}
+  .album_title { font-size: 13px !important;}
+  .album-head .col-sm-3 {padding-right: 15px; padding-left: 15px;}
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-top: -13px; font-size: 40px;}
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 30px;}
   .divTableHeading {font-size: 112%;}
   .social-icons a {font-size: 18px;}
-  input { width: 146px; line-height: 1.5;}
-  .search-submit { line-height: 1.5; height: 27px; font-size: 12px; width: 90px;}
+  
+  
   .menu li a {font-size: 19px !important;}
   #menu-main-menu li a {font-size: 15px !important;}
   .video-bg {height: 73%;}
@@ -1726,6 +1732,7 @@ input {
   .sng_store {font-size: 21px;}
   .store_name, .store {font-size: 16px;}
   .media-container-row {margin-bottom: 0;}
+  .divTableRow .store_link a {font-size: 11px; padding-left: 7px; padding-right: 5px;}
 }
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 700px),
