@@ -44,12 +44,12 @@ if (have_posts() ) :
       $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	    $media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
        
-      if(isset($media_gallery[0])){$count_images = count($media_gallery[0]);}
-      if(isset($media_video_gallery[0])){$count_videos = count($media_video_gallery[0]);}
-
-      
-      /*Declaring an array that will hold all gallery items*/
       $all_gallery_items = array();
+
+      if (isset($media_gallery[0])){
+      foreach ($media_gallery[0] as  $count_images) { 
+
+      /*Declaring an array that will hold all gallery items*/
       
       /*Insert images to the all_gallery_items array*/
       if($count_images > 0)
@@ -58,7 +58,9 @@ if (have_posts() ) :
         {
         	array_push($all_gallery_items, array("type" => "image",  "videotype" => "none", "link"=> $media_gallery[0][$i] ));
         }
-      }
+      } } }
+      if (isset($media_video_gallery[0])){
+      foreach ($media_video_gallery[0] as  $count_videos) { 
       /*Insert videos to the all_gallery_items array*/
       if($count_videos > 0)
       {
@@ -66,7 +68,7 @@ if (have_posts() ) :
         {
         	array_push($all_gallery_items, array("type" => "video",  "videotype" =>$media_video_gallery[0][$v]['select'], "link"=> $media_video_gallery[0][$v]['link'] ));
         }
-      }
+      } } }
      
      /*Randomize Gallery videos and images*/
      shuffle($all_gallery_items);
