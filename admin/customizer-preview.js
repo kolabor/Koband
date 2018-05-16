@@ -76,7 +76,7 @@
 		
 			$('.main-nav .menu li a').css( 'color', newThemeMenuFontColor, 'important');
 			$('.main-nav .menu li a:hover ').css( 'color', newThemeMenuFontColor, 'important');
-			$('.main-nav .menu li a:hover ').css( 'opacity', '0.5', 'important');
+			$('.main-nav .menu li a:hover ').css( 'opacity', '0.4', 'important');
 						
 		} );
 	} );
