@@ -19,6 +19,7 @@ weffcb
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
+a:hover {text-decoration: none!important;}
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
@@ -1470,6 +1471,7 @@ input {
   /*news_single_page*/
   .conent_holder {width: 100%;}
   .sidebar {width: 100%; height: auto; text-align: center; }
+  .sidebar_content {float: none;}
   .conent_holder h1 {text-align: center;}
   .news-details {display: inline-block; text-align: center; font-size: 17px;}
   .content_single_page {text-align: center; font-size: 20px!important;}
@@ -1498,6 +1500,8 @@ input {
   .wpcf7 label {text-align: center!important;}
   .bio_holder{padding-right: 32px;}
   .modal {padding-right: 0!important;}
+  .conent_holder {text-align: center;}
+  header h1 {text-align: center;}
 }
 @media screen and (max-width: 991px) {
 
