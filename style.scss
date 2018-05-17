@@ -40,7 +40,6 @@ h2 a {
   letter-spacing: 1px!important;
   text-decoration: none!important;
 }
-
 .img {
   width: 30%;
   float: right;
@@ -228,7 +227,9 @@ header {
 .sl-content p {
   width:100%!important;
 }
-
+.sl-content a:hover{
+  color:#ffffff;
+}
 .btn-primary {
   color: #fff!important;
   border: none!important;
@@ -1275,7 +1276,17 @@ input {
   height: 0px;
 }
 
-
+.tour_map_label {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+.tour_location_label{
+  padding-top: 20px;
+  padding-bottom: 18px;
+}
+.single-tour-container-holder {
+  padding-bottom: 20px;
+}
 .single_page_row {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1375,7 +1386,7 @@ input {
   font-weight: 600;
 }
 .wpcf7 textarea:focus{
-  border: 1px solid #00a8a8;
+  border: 1px solid #00a8a8; 
   background-color: #d1ecf11a;
 }
 .wpcf7 input:focus{
@@ -1389,7 +1400,6 @@ input {
 .search-form input{
   border: 1px solid rgba(0, 168, 168, 0.4);
 }
-
 .sad_smile {
   text-align: center !important;
 }
@@ -1688,7 +1698,7 @@ input {
   .footer_search {padding-left: 3px;}
   #menu-footer-menu {margin-left: 11px;}
   .social-media {margin-right: 6px;}
- 
+
   #back-to-top {right: 12px;}
   .modal-dialog {width: 360px;}
   .col-sm-3 span {font-size: 15px !important;}
@@ -1698,8 +1708,8 @@ input {
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 30px;}
   .divTableHeading {font-size: 112%;}
   .social-icons a {font-size: 18px;}
-  
-  
+
+
   .menu li a {font-size: 19px !important;}
   #menu-main-menu li a {font-size: 15px !important;}
   .video-bg {height: 73%;}
