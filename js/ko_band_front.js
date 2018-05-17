@@ -373,24 +373,34 @@ $('#Fullscreen').click(function(){
 });
 
 
+
 $('.FullscreenV').css('height', $(document).outerWidth() + 'px');
 
 $('.close').click(function(){ 
   
-  $('#Fullscreen').fadeOut();
-
+     $('#Fullscreen').fadeOut();
 });			
+
+
+/*$('.FullscreenV').click(function(){
+ $('.FullscreenV').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
+});*/
+		
+
 
 
 $('.next').click(function(){
 
+
     $.nexMedia();     
 });
+
 
 $('.prev').click(function(){
 
      
 });
+
 
 $.nexMedia = function()
 {
@@ -403,8 +413,6 @@ $.nexMedia = function()
   var next = $(".imageList").find("[data-nr='"+ nextMedia +"']");
   console.log(next);
  // $('#Fullscreen').prepend('<iframe width="370" height="265" src="//www.dailymotion.com/embed/video/'+videoCode+'"></iframe>');
-
- 
 }
 
 }); // Ready function ends here //

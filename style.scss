@@ -40,7 +40,6 @@ h2 a {
   letter-spacing: 1px!important;
   text-decoration: none!important;
 }
-
 .img {
   width: 30%;
   float: right;
@@ -107,12 +106,7 @@ header {
 .no-scroll-content {
   padding-bottom:70px;
 }
-.title_and_role{
-  background-color: #f8f9fab3;
-}
-.title_and_role .name_member_padding{
-  padding-top: 8px;
-}
+
 /* ----------------------------------------------- */
 /* Logo */
 /* ----------------------------------------------- */
@@ -233,7 +227,9 @@ header {
 .sl-content p {
   width:100%!important;
 }
-
+.sl-content a:hover{
+  color:#ffffff;
+}
 .btn-primary {
   color: #fff!important;
   border: none!important;
@@ -678,7 +674,7 @@ Tour Section
   Discography Section
   -------------------------------------------
  */
-  .bg {background-color: #b4b4b4;}
+  .bg {background-color: #f6f6f6;}
 
 
 
@@ -803,11 +799,15 @@ text-decoration: none;
   background: linear-gradient(to right, rgba(221, 221, 221, 0.75) 0%, rgba(246, 245, 245, 0.78) 100%);
   margin-top: 200px!important;
 }
+.bio_holder {
+      padding-left: 32px;
+}
+
 .band-bio p {
   width: 100%!important;
   height: auto!important;
   padding: 10px;
-  margin-top: 10px;
+  margin-bottom: 0;
   font-size: 17px!important;
   font-weight: 500!important;
   text-align: justify;
@@ -817,7 +817,7 @@ text-decoration: none;
   width: 65%!important;
   height: auto!important;
   position: relative!important;
-  padding: 20px!important;
+  margin: 0;
 }
 .bnd_mem_img {
   width: 100%;
@@ -849,12 +849,18 @@ text-decoration: none;
   cursor: pointer!important;
   font-weight: 300!important;
   font-size: 15px!important;
-  padding-bottom: 10px!important;
 
+}
+.title_and_role{
+  background-color: #f8f9fab3;
+}
+.title_and_role .name_member_padding{
+  line-height: 1;
 }
 
 .band_member{
 padding-top: 15px;
+padding-bottom: 15px;
 }
 
 .band-members-role {
@@ -1270,7 +1276,17 @@ input {
   height: 0px;
 }
 
-
+.tour_map_label {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+.tour_location_label{
+  padding-top: 20px;
+  padding-bottom: 18px;
+}
+.single-tour-container-holder {
+  padding-bottom: 20px;
+}
 .single_page_row {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1370,7 +1386,7 @@ input {
   font-weight: 600;
 }
 .wpcf7 textarea:focus{
-  border: 1px solid #00a8a8;
+  border: 1px solid #00a8a8; 
   background-color: #d1ecf11a;
 }
 .wpcf7 input:focus{
@@ -1384,7 +1400,6 @@ input {
 .search-form input{
   border: 1px solid rgba(0, 168, 168, 0.4);
 }
-
 .sad_smile {
   text-align: center !important;
 }
@@ -1683,7 +1698,7 @@ input {
   .footer_search {padding-left: 3px;}
   #menu-footer-menu {margin-left: 11px;}
   .social-media {margin-right: 6px;}
- 
+
   #back-to-top {right: 12px;}
   .modal-dialog {width: 360px;}
   .col-sm-3 span {font-size: 15px !important;}
@@ -1693,8 +1708,8 @@ input {
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 30px;}
   .divTableHeading {font-size: 112%;}
   .social-icons a {font-size: 18px;}
-  
-  
+
+
   .menu li a {font-size: 19px !important;}
   #menu-main-menu li a {font-size: 15px !important;}
   .video-bg {height: 73%;}
