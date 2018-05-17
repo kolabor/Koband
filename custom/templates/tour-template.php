@@ -60,7 +60,7 @@ get_header(); ?>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  esc_attr($tour_venuename[0]); } ?></a></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if($tour_ticket[0] == 'avaliable'){ ?>
+                    	<div class="divTableCell border_first_color main_font_color ticket"><?php if($tour_ticket[0] == 'avaliable'){ ?>
                             <?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour bg_first_color"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
                       <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
                           <span class="btn_tour bg_first_color"><?php echo esc_html__('Sold Out', 'koband');?></span>

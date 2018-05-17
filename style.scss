@@ -634,13 +634,13 @@ Tour Section
 }
 .divTableHeading {
   background-color: #f8f8f8;
-  font-size: 32px;
+  font-size: 25px;
   /*display: table-header-group;*/
   font-weight: bold;
   padding: 10px;
 }
 .divTableCell {
-  font-size: 30px;
+  font-size: 20px;
   padding: 10px;
   font-weight: 500;
 }
@@ -675,7 +675,7 @@ Tour Section
   margin-right: 5px;
   padding-top: 1px;
 }
-
+.ticket {width: 30%}
 
 /*
   Discography Section
@@ -1617,7 +1617,6 @@ input {
   .main-logo {width: 50%; padding-left: 38px; margin-left: 83px;}
   .mobile-nav-icon {font-size: 29px;}
   .btn-lg {padding:6px!important; font-size: 10px !important;}
-  .divTableCell {padding: 2px 6px;}
   .sl-content h5 {font-size: 25px !important;}
   .sl-content p {font-size: 10px !important;}
   .address, .zipcode {display: none;}
