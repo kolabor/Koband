@@ -81,15 +81,15 @@ get_header();?>
 				</div>
 				<!-- Labels -->
 				<div class="row album-store border_first_color main_font_color">
-					<div class="col-sm-3 store"><?php echo esc_html__('Store Name', 'koband');?></div>
-					<div class="col-sm-3 store st_link"><?php echo esc_html__('Store Link', 'koband');?></div>
+					<div class="col-sm-5 store"><?php echo esc_html__('Store Name', 'koband');?></div>
+					<div class="col-sm-5 store st_link"><?php echo esc_html__('Store Link', 'koband');?></div>
 				</div>
 				
 					<?php 
 						foreach ($album_song_store[0] as  $value_song_store) { ?>
-						<div class="col-sm-12 row song-list border_second_color main_font_color">
-						<div class="col-sm-3 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
-						<div class="col-sm-3 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> </div>
+						<div class=" row song-list border_second_color main_font_color">
+						<div class="col-sm-5 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
+						<div class="col-sm-6 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> </div>
 
 					<?php } ?> 
 							
@@ -129,7 +129,7 @@ get_header();?>
 		    	</span>
 			</div>
 		</div>
-	<div class="container single-songs-show-hide">
+	<div class="container single-songs-show-hide bg">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Details', 'koband');?></div>
 		</div>

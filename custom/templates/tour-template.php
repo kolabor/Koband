@@ -64,10 +64,8 @@ get_header(); ?>
                             <?php if(isset($tour_ticketlink[0])) {?> <a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour bg_first_color"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
                       <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
                           <span class="btn_tour bg_first_color"><?php echo esc_html__('Sold Out', 'koband');?></span>
-                    <?php  }
-
-
-                        //if(isset($tour_ticket[0]))  { echo  esc_attr($tour_ticket[0]); } ?></div>
+                    <?php  } ?>
+                        </div>
                     	
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->

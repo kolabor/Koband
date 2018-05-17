@@ -298,7 +298,9 @@ $('.mobile-nav-icon').click(function() {
             icon.addClass('fas fa-bars');
             icon.removeClass('ion-close-round');
         }
-
+  $('.main-nav ul li').click(function(){
+      nav.slideUp(200);
+      })
     });
 
 
