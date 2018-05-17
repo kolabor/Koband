@@ -107,12 +107,7 @@ header {
 .no-scroll-content {
   padding-bottom:70px;
 }
-.title_and_role{
-  background-color: #f8f9fab3;
-}
-.title_and_role .name_member_padding{
-  padding-top: 8px;
-}
+
 /* ----------------------------------------------- */
 /* Logo */
 /* ----------------------------------------------- */
@@ -853,8 +848,13 @@ text-decoration: none;
   cursor: pointer!important;
   font-weight: 300!important;
   font-size: 15px!important;
-  padding-bottom: 10px!important;
 
+}
+.title_and_role{
+  background-color: #f8f9fab3;
+}
+.title_and_role .name_member_padding{
+  line-height: 1;
 }
 
 .band_member{
