@@ -39,7 +39,6 @@ get_header(); ?>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Location', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Venue', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Ticket', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Store', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -61,8 +60,15 @@ get_header(); ?>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  esc_attr($tour_venuename[0]); } ?></a></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_ticket[0]))  { echo  esc_attr($tour_ticket[0]); } ?></div>
-                    	<div class="divTableCell store_link btn-buy border_first_color "><?php if(isset($tour_ticketlink[0])) {?> <a class="bg_first_color" href="<?php echo  esc_url($tour_ticketlink[0]);?>"><i class="fas fa-shopping-cart"></i><span><?php echo esc_html__('Buy Here', 'koband');?></span></a><?php } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><?php if($tour_ticket[0] == 'avaliable'){ ?>
+                            <?php if(isset($tour_ticketlink[0])) {?> <a class="bg_first_color" href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
+                      <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
+                          <span><?php echo esc_html__('Sold Out', 'koband');?></span>
+                    <?php  }
+
+
+                        //if(isset($tour_ticket[0]))  { echo  esc_attr($tour_ticket[0]); } ?></div>
+                    	
                     </div>
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
