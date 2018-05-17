@@ -36,7 +36,7 @@ get_header(); ?>
             <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Date', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('City', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Location', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Venue', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Ticket', 'koband');?></div>
                     <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Store', 'koband');?></div>
