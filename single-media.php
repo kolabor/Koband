@@ -55,7 +55,10 @@ if (have_posts() ) :
         {
           for($i=0; $i < $count_images; $i++)
           {
-            array_push($all_gallery_items, array("type" => "image",  "videotype" => "none", "link"=> $media_gallery[0][$i] ));
+            if (isset($media_gallery[0][$i])) {
+              array_push($all_gallery_items, array("type" => "image",  "videotype" => "none", "link"=> $media_gallery[0][$i] ));
+            }
+            
           }
         } 
       }
@@ -69,14 +72,17 @@ if (have_posts() ) :
         {
           for($v=0; $v < $count_videos; $v++)
           {
+             if (isset($media_video_gallery[0][$v]['link']))
+            {
           	array_push($all_gallery_items, array("type" => "video",  "videotype" =>$media_video_gallery[0][$v]['select'], "link"=> $media_video_gallery[0][$v]['link'] ));
+            }
           }
         }
       }
      
      /*Randomize Gallery videos and images*/
      shuffle($all_gallery_items);
-
+     
      ?>
 
 		<div class="row">
@@ -185,7 +191,7 @@ if (have_posts() ) :
                 </div><!-- image_media_slider class ends here -->
                 <div id="Fullscreen">
    					<img src="" alt="" />
-   					<a href="#" class="close">X</a>
+   					<a href="#" class="close_gallery">X</a>
 					<a href="#" class="prev">&#8249;</a>
 					<a href="#" class="next">&#8250;</a>
        			</div>
