@@ -23,12 +23,13 @@ get_header('noscroll'); ?>
 		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
         ?>
     <div class="row">
-        
+    	<div class="col-sm-12 tour_map_label"><h3><?php echo esc_html__('Location :', 'koband');?></h3></div>
+    	<div class="col-sm-12 the_tour_map single_page_cover"><?php the_content() ?></div>
+    </div>
+    <div class="row">
             <div class="col-sm-12 tour_location_label"><h3><?php echo esc_html__('Tour Details :', 'koband');?></h3></div>
-            
-        
         <div class="col-sm-12">
-            <div class="container">
+            <div class="container single-tour-container-holder">
                 <div class="row tour_single_page_row">
                     <div class="col-sm-6 main_font_color album-info"><?php echo esc_html__('Date', 'koband');?></div>
                     <div class="col-sm-6 main_font_color album-info"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
@@ -52,10 +53,6 @@ get_header('noscroll'); ?>
             </div><!-- container -->
         </div><!-- col-sm-8 -->
     </div><!-- row -->      
-    <div class="row single_page_row">
-    	<div class="col-sm-12"><h3><?php echo esc_html__('Location :', 'koband');?></h3></div>
-    	<div class="col-sm-12 the_tour_map single_page_cover"><?php the_content() ?></div>
-    </div>
 <?php endwhile; endif; ?>
 </div><!-- container -->
 
