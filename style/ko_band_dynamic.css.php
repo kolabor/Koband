@@ -290,3 +290,7 @@ a {
   color: <?php echo esc_html($koband_second_theme_color);?>;
   text-decoration: none !important;
 }
+.soldout_btn:hover {
+   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
+   color: #ffffff;
+}

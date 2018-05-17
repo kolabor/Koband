@@ -7,7 +7,7 @@ Description: Kolabor Band is a responsive Wordpress theme for music band. You ca
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
+Tags: band, music, artist, audio, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
 Text Domain: koband
 */
 /* =Reset ff
@@ -878,6 +878,12 @@ padding-bottom: 15px;
   text-align: justify!important;
   text-justify: inter-word;
 }
+.band_member_name{
+  padding-top: 6px;
+}
+.band_member_role {
+  padding-bottom: 4px;
+}
 
 /*
 =========================================================
@@ -1290,6 +1296,9 @@ input {
   padding-top: 25px;
   padding-bottom: 20px;
 }
+.onsale_btn:hover {
+  color:#ffffff;
+}
 .tour_location_label{
   padding-top: 20px;
   padding-bottom: 18px;
@@ -1488,6 +1497,7 @@ input {
   .contact_row .col-sm-3 {-webkit-box-flex: 0;-ms-flex: 0 0 50%;flex: 0 0 50%; max-width: 50%;}
   .contact_form p {text-align: center!important; padding: 0;}
   .wpcf7 label {text-align: center!important;}
+  .bio_holder{padding-right: 32px;}
 
 }
 @media screen and (max-width: 991px) {
@@ -1641,7 +1651,7 @@ input {
 @media screen and (max-width: 414px){
   .mobile-nav-icon { display: inline-block; }
   .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
-  .main-nav .menu {position: relative; list-style-type: none; width: 95%; text-align: center; padding-top: 5px;}
+  .main-nav .menu {position: relative; list-style-type: none; width: 95%; text-align: center; padding-top: 5px; padding-left: 0px;}
   .main-nav { float: left; text-align: center; width: 100%; height: auto; position: relative; display: none;}
   .main-nav .menu li {display: block; width: 100%;}
   .main-nav .menu li a{width: 100%; display: block; font-size: 17px !important; line-height: 25px; height: 30px;}
