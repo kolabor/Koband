@@ -33,7 +33,7 @@ get_header(); ?>
 				<div class="row koband_post_theband">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-4 justify main_font_color">
+							<div class="col-sm-4 justify main_font_color bio_holder">
 								<p class="main_font_color"><h4><?php echo esc_html__('Band Biography', 'koband');?></h4>
 								<?php 
 								$theband_bio = get_theme_mod('ko_band_theband_biography');

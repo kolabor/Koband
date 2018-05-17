@@ -679,7 +679,7 @@ Tour Section
   Discography Section
   -------------------------------------------
  */
-  .bg {background-color: #b4b4b4;}
+  .bg {background-color: #f6f6f6;}
 
 
 
@@ -804,11 +804,15 @@ text-decoration: none;
   background: linear-gradient(to right, rgba(221, 221, 221, 0.75) 0%, rgba(246, 245, 245, 0.78) 100%);
   margin-top: 200px!important;
 }
+.bio_holder {
+      padding-left: 32px;
+}
+
 .band-bio p {
   width: 100%!important;
   height: auto!important;
   padding: 10px;
-  margin-top: 10px;
+  margin-bottom: 0;
   font-size: 17px!important;
   font-weight: 500!important;
   text-align: justify;
@@ -818,7 +822,7 @@ text-decoration: none;
   width: 65%!important;
   height: auto!important;
   position: relative!important;
-  padding: 20px!important;
+  margin: 0;
 }
 .bnd_mem_img {
   width: 100%;
@@ -856,6 +860,7 @@ text-decoration: none;
 
 .band_member{
 padding-top: 15px;
+padding-bottom: 15px;
 }
 
 .band-members-role {
@@ -1371,7 +1376,7 @@ input {
   font-weight: 600;
 }
 .wpcf7 textarea:focus{
-  border: 1px solid #00a8a8;
+  border: 1px solid #00a8a8; 
   background-color: #d1ecf11a;
 }
 .wpcf7 input:focus{
