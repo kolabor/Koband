@@ -634,13 +634,13 @@ Tour Section
 }
 .divTableHeading {
   background-color: #f8f8f8;
-  font-size: 150%;
+  font-size: 32px;
   /*display: table-header-group;*/
   font-weight: bold;
   padding: 10px;
 }
 .divTableCell {
-  font-size: 90%;
+  font-size: 30px;
   padding: 10px;
   font-weight: 500;
 }
@@ -654,8 +654,15 @@ Tour Section
   display: table-row-group;
 }
 
-.btn-buy a {
+.divTableCell  a {
   text-decoration: none!important;
+}
+.btn_tour {
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+  color: #fff;
 }
 .store_link a {
   padding: 6px;

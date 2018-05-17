@@ -43,10 +43,11 @@ if (have_posts() ) :
 
       $media_gallery = get_post_meta($post_id, 'vdw_gallery_id', false);
 	    $media_video_gallery = get_post_meta($post_id, 'ko_band_repetable_video_field', false); 
-       
+      
+
       $all_gallery_items = array();
 
-      if (isset($media_gallery))
+      if (!empty($media_gallery))
       {
         $count_images = count($media_gallery[0]);
         /*Insert images to the all_gallery_items array*/
@@ -59,7 +60,7 @@ if (have_posts() ) :
         } 
       }
 
-      if(isset($media_video_gallery)) 
+      if(!empty($media_video_gallery)) 
       {
       
         $count_videos = count($media_video_gallery[0]);
@@ -84,15 +85,28 @@ if (have_posts() ) :
 				<div class="image_media_slider">			
                    <div class="imageList">
                    <?php 
-                    
+                     
+                     $gallery_item = 0;
+
                      foreach ($all_gallery_items as  $galleryItem) 
                      {
+                         $gallery_item++;
                          $itemType = $galleryItem['type'];
 
                          if($itemType == "image")
                          {
-                         	$thumb = wp_get_attachment_image( $galleryItem['link'], array(500,500));
-                         	echo $thumb;
+                         	$thumb = wp_get_attachment_image_src( $galleryItem['link'], array(500,500));?>
+                          
+                           <img src="<?php echo esc_url($thumb[0])?>" 
+                                         alt="Smiley face" 
+                                         class="thumb_image"
+                                         data-nr = <?php echo $gallery_item; ?>
+                                         data-type="image"
+                                         data-video-type="novideo"
+                                         data-video-link = "nolink"
+                                         data-video-code = "nocode">
+
+                          <?php 
                          }
                          else if($itemType == "video")
                          {
@@ -108,6 +122,8 @@ if (have_posts() ) :
                                     <img src="<?php echo esc_url($youtubeImage)?>/hqdefault.jpg" 
                                          alt="Smiley face" 
                                          class="video_image"
+                                         data-nr = <?php echo $gallery_item; ?>
+                                         data-type="video"
                                          data-video-type="youtube"
                                          data-video-link = "<?php echo $videoLink;?>"
                                          data-video-code = "<?php echo  $youtubeCode;?>"
@@ -122,7 +138,9 @@ if (have_posts() ) :
 							        
 							       if (strpos($videoLink, 'ondemand') !== false) 
 							       {
-                      $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
+
+                        $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
+
 							       }
 							       else 
 							       {
@@ -132,6 +150,8 @@ if (have_posts() ) :
 							       <img src="<?php echo esc_url($vimeoImage)?>" 
                                          alt="Vimeo video image" 
                                          class="video_image"
+                                         data-nr = <?php echo $gallery_item; ?>
+                                         data-type="video"
                                          data-video-type="vimeo"
                                          data-video-link = "<?php echo $videoLink;?>"
                                          data-video-code = "<?php echo  $vimeoCode;?>"
@@ -147,6 +167,8 @@ if (have_posts() ) :
 							        <img src="<?php echo esc_url($dailyImage)?>" 
                                          alt="dailymotion video image" 
                                          class="video_image"
+                                         data-nr = <?php echo $gallery_item; ?>
+                                         data-type="video"
                                          data-video-type="dailymotion"
                                          data-video-link = "<?php echo $videoLink;?>"
                                          data-video-code = "<?php echo  $dailyCode;?>"

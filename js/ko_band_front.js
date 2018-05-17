@@ -87,8 +87,8 @@ $(document).on('click', '.koband_load_more:not(.loading)', function(){
 		},
 		success : function( response ){
             
-            console.log("-----success----");
-            console.log($.trim(response));
+           // console.log("-----success----");
+          // console.log($.trim(response));
             // if there are no more post hide loadmore show nomore
             if($.trim(response) == "end"){
 	            $('.koband_load_more').hide();
@@ -141,8 +141,8 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 		},
 		success : function( response ){
             
-            console.log("-----success----");
-            console.log(response);
+           // console.log("-----success----");
+           // console.log(response);
             // if there are no more post hide loadmore show nomore
             if($.trim(response) == "end-media"){
 	            $('.koband_load_media').hide();
@@ -185,13 +185,13 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
 			action: 'koband_load_tour'
 		},
 		error : function( response ){
-			console.log("-----error----");
+			//console.log("-----error----");
 			console.log(response);
 		},
 		success : function( response ){
             
-            console.log("-----success----");
-            console.log(response);
+            //console.log("-----success----");
+           // console.log(response);
             // if there are no more post hide loadmore show nomore
             if($.trim(response) == "end-tour"){
 	            $('.koband_load_tour').hide();
@@ -303,81 +303,116 @@ $('.mobile-nav-icon').click(function() {
 
 
 
-
+/*============================================
+Gallery click, next, prev function
+============================================*/
  
-				//image
-//your code for stuff should go here
 $('#Fullscreen').css('height', $(document).outerWidth() + 'px');
-//for when you click on an image
-$('.imageList .attachment-500x500').click(function(){
- 
- $('#Fullscreen img').attr('src', "");
- var src = $(this).attr('src'); //get the source attribute of the clicked image
- $('#Fullscreen img').attr('src', src); //assign it to the tag for your fullscreen div
- $('#Fullscreen').fadeIn();
 
+$('.imageList img').click(function(){
+ 
+  var mediaType = $(this).attr("data-type");
+  var data_nr = $(this).attr("data-nr");
+ 
+  $('#Fullscreen').attr('data-nr', data_nr);
+  $('#Fullscreen').attr('data-type', mediaType);
+
+
+  if( mediaType == "video")
+  {
+    
+    var videoType = $(this).attr("data-video-type");
+    var videoLink = $(this).attr("data-video-link");
+    var videoCode = $(this).attr("data-video-code");     
+   
+
+    switch (videoType) { 
+    case 'youtube': 
+        $("#Fullscreen img").remove();
+        $("#Fullscreen iframe").remove();
+        $('#Fullscreen').prepend('<iframe src="https://www.youtube.com/embed/'+videoCode+'"></iframe>');
+        $('#Fullscreen').fadeIn();
+        break;
+    case 'vimeo': 
+        $("#Fullscreen img").remove();
+        $("#Fullscreen iframe").remove();
+        $('#Fullscreen').prepend('<iframe width="370" height="265" src="https://player.vimeo.com/video/'+videoCode+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+        $('#Fullscreen').fadeIn();
+        
+        break;
+    case 'dailymotion': 
+        $("#Fullscreen img").remove();
+        $("#Fullscreen iframe").remove();
+        $('#Fullscreen').prepend('<iframe width="370" height="265" src="//www.dailymotion.com/embed/video/'+videoCode+'"></iframe>');
+        $('#Fullscreen').fadeIn();
+        break;     
+    default:
+        console.log()
+}
+  }
+  else if( mediaType == "image")
+  { 
+    $("#Fullscreen img").remove();
+    $("#Fullscreen iframe").remove();
+    var src = $(this).attr('src');
+    $('#Fullscreen').prepend('<img  src="'+src+'" />');
+    $('#Fullscreen').fadeIn();
+  }
+ 
 });
+
+
 $('#Fullscreen').click(function(){
-  $('#Fullscreen').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
+    /*Stop All videos on iframe*/
+    $("iframe").each(function() 
+    { 
+       var src= $(this).attr('src');
+       $(this).attr('src',src);  
+    });
+  /*$('#Fullscreen').fadeOut(); //this will hide the fullscreen div if you click away from the image. */
 });
-//video
-//your code for stuff should go here
+
+
+
 $('.FullscreenV').css('height', $(document).outerWidth() + 'px');
-//for when you click on an image
-$('.myvideo').click(function(){
 
-var src = $(this).parent().next('.FullscreenV iframe').attr('src'); //get the source attribute of the clicked image
- 
- $(this).parent().next('.FullscreenV').fadeIn();
- $(this).parent().next('.FullscreenV iframe').attr('src', src); //assign it to the tag for your fullscreen div
+$('.close').click(function(){ 
+  
+     $('#Fullscreen').fadeOut();
+});			
 
-});
-$('.FullscreenV').click(function(){
+
+/*$('.FullscreenV').click(function(){
  $('.FullscreenV').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
-});
+});*/
 		
 
-/*
+
+
 $('.next').click(function(){
 
-    alert('test');
-        var $images = $('.FullscreenV iframe'); // A list of the images in your gallery.
 
-        var $currentImg = $('.FullscreenV iframe[src="' + $('.FullscreenV iframe').attr('src') + '"]'); // The current img being overlayed.
-        var $nextImg = $($currentImg.closest('div').next().find('iframe')); // The next img in the gallery.
-
-        if ($nextImg.length > 0) { // If there is a next img, display it.
-          $('.FullscreenV iframe').attr('src', $nextImg.attr('src'));
-        } else { // Otherwise, if you've reached the end, loop back to the first img.
-          $('.FullscreenV iframe').attr('src', $($images[0]).attr('src'));
-        }
-      });
-    var speed = 100;
-
-    $(".prev").click(function() {
-        var now = $(this).parent().next("div#Fullscreen").children(":visible"),
-            last = $(this).parent().next("div#Fullscreen").children(":last"),
-            prev = now.prev();
-            prev = prev.index() == 0 ? last : prev;
-        now.fadeOut(speed, function() {prev.fadeIn(speed);});
-    });
-
-    $(".next").click(function() {
-        var now = $(this).parent().next("div#Fullscreen").children(':visible'),
-            first = $(this).parent().next("div#Fullscreen").children(':first'),
-            next = now.next();
-            next = next.index() == 0 ? first : next;
-        now.fadeOut(speed, function() {next.fadeIn(speed);});
-    });
-
-    $("#Fullscreen img").click(function() {
-        var first = $(this).parent().children(':first'),
-            next = $(this).next();
-            next = next.index() == 0 ? first : next;
-        $(this).fadeOut(speed, function() {next.fadeIn(speed);});
-    });    */
+    $.nexMedia();     
+});
 
 
+$('.prev').click(function(){
 
+     
+});
+
+
+$.nexMedia = function()
+{
+
+  var mediaNr  = $('#Fullscreen').attr("data-nr");
+  var mediaType = $('#Fullscreen').attr("mediaType");
+  var nextMedia = mediaNr - 1;
+  $("#Fullscreen img").remove();
+  $("#Fullscreen iframe").remove();
+  var next = $(".imageList").find("[data-nr='"+ nextMedia +"']");
+  console.log(next);
+ // $('#Fullscreen').prepend('<iframe width="370" height="265" src="//www.dailymotion.com/embed/video/'+videoCode+'"></iframe>');
+}
 
 }); // Ready function ends here //
