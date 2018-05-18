@@ -19,6 +19,9 @@ weffcb
   padding-left: 0 !important;
   padding-bottom: 30px !important; }
 
+a:hover {
+  text-decoration: none !important; }
+
 h1 {
   font-weight: 900 !important;
   margin-top: 0 !important;
@@ -614,7 +617,7 @@ Tour Section
   text-decoration: none !important; }
 
 .btn_tour {
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -630,15 +633,15 @@ Tour Section
   margin-right: 5px;
   padding-top: 1px; }
 
-.ticket {
-  width: 30%; }
-
 /*
   Discography Section
   -------------------------------------------
  */
 .bg {
   background-color: #f6f6f6; }
+
+.single-songs-show-hide {
+  margin-bottom: 20px; }
 
 .album-head {
   background-color: #fff !important;
@@ -1479,6 +1482,9 @@ input {
     height: auto;
     text-align: center; }
 
+  .sidebar_content {
+    float: none; }
+
   .conent_holder h1 {
     text-align: center; }
 
@@ -1565,7 +1571,13 @@ input {
     padding-right: 32px; }
 
   .modal {
-    padding-right: 0 !important; } }
+    padding-right: 0 !important; }
+
+  .conent_holder {
+    text-align: center; }
+
+  header h1 {
+    text-align: center; } }
 @media screen and (max-width: 991px) {
   .sl-content p {
     font-size: 19px !important; }
@@ -1574,7 +1586,7 @@ input {
     font-size: 32px; }
 
   .main-logo {
-    margin-left: 165px; }
+    margin-left: 180px; }
 
   .col-sm-1 {
     margin-right: 12px !important; }
@@ -1739,17 +1751,20 @@ input {
     line-height: 30px; }
 
   .songs-head {
-    font-size: 23px !important; }
+    font-size: 23px !important;
+    text-align: center; }
 
   .song-list {
-    font-size: 16px !important; }
+    font-size: 16px !important;
+    text-align: center; }
 
   .store {
     font-size: 23px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
-    max-width: 50%; }
+    max-width: 50%;
+    text-align: center; }
 
   .store_name {
     font-size: 20px;
@@ -1782,7 +1797,7 @@ input {
   .footer-menu .menu {
     float: none;
     text-align: center;
-    padding-right: 32px; }
+    padding-left: 0; }
 
   .social-media {
     text-align: center;
@@ -1891,7 +1906,13 @@ input {
     padding-right: 20px; }
 
   .store_link span {
-    display: none; } }
+    display: none; }
+
+  .ticket {
+    width: 30%; }
+
+  .divTableRow {
+    text-align: center; } }
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -1905,17 +1926,6 @@ input {
     height: auto;
     padding-left: 105px !important;
     padding-right: 105px !important; }
-
-  .footer_search {
-    padding-left: 78px;
-    margin-bottom: 0; }
-
-  .search-form {
-    float: left; }
-
-  #menu-footer-menu {
-    padding-left: 0;
-    text-align: center; }
 
   .social-media {
     text-align: center;
@@ -1933,10 +1943,6 @@ input {
 
   .song-list .line {
     line-height: 30px; }
-
-  .store_link a {
-    padding: 4px;
-    font-size: 5px; }
 
   .divTableCell {
     font-size: 70%; }
@@ -1962,7 +1968,10 @@ input {
     margin-left: 70px; }
 
   .tour_single_page_row .store_link a {
-    font-size: 13px; } }
+    font-size: 13px; }
+
+  .main-nav .menu {
+    width: 96%; } }
 @media screen and (max-width: 667px) {
   .main-logo {
     width: 55%;
@@ -1996,11 +2005,21 @@ input {
 @media screen and (max-width: 639px) {
   .sl-content {
     display: none; } }
+@media screen and (max-width: 575px) {
+  .song_info {
+    width: 33%; }
+
+  .songs-head {
+    width: 33%;
+    height: auto; }
+
+  .store_link {
+    width: 50%; } }
 @media screen and (max-width: 546px) {
   .main-logo {
     width: 50%;
     padding-left: 38px;
-    margin-left: 83px; }
+    margin-left: 96px; }
 
   .mobile-nav-icon {
     font-size: 29px; }
@@ -2018,9 +2037,6 @@ input {
   .address, .zipcode {
     display: none; }
 
-  .footer-menu .menu {
-    padding-right: 6px; }
-
   .sl-content h5 {
     font-size: 22px !important; }
 
@@ -2036,12 +2052,15 @@ input {
   .tour_single_page_row .album-info {
     margin-left: 0;
     width: 50%; } }
-@media screen and (max-width: 442px) {
+@media screen and (max-width: 486px) {
   .main-logo {
     margin-left: 73px; }
 
-  .footer_search {
-    padding-left: 30px; }
+  .main-nav .menu {
+    width: 93%; } }
+@media screen and (max-width: 442px) {
+  .main-logo {
+    margin-left: 73px; }
 
   .divTableRow .store_link a {
     font-size: 7px; } }
@@ -2056,7 +2075,7 @@ input {
   .main-nav .menu {
     position: relative;
     list-style-type: none;
-    width: 95%;
+    width: 90%;
     text-align: center;
     padding-top: 5px; }
 
@@ -2110,20 +2129,15 @@ input {
   .carousel-indicators {
     top: 97% !important; }
 
-  .album-up-down-buttons, .single-up-down-buttons {
-    width: 25%;
-    height: auto;
-    position: absolute;
-    right: 0; }
-
+  /*.album-up-down-buttons, .single-up-down-buttons {width: 25%; height: auto; position: absolute; right: 0;}*/
   .album-song, .single-song {
     padding: 10px !important; }
 
   .album-head .col-sm-3 {
-    max-width: 100%; }
+    max-width: 19%; }
 
   .album-head .col-sm-1 {
-    max-width: 24.333333%; }
+    max-width: 19.333333%; }
 
   .col-sm-1 {
     margin-bottom: 10px; }
@@ -2169,11 +2183,7 @@ input {
     font-weight: 600; }
 
   .footer_search {
-    padding-left: 20px;
     margin-bottom: 0; }
-
-  .search-form {
-    float: left; }
 
   #menu-footer-menu {
     padding-left: 0;
@@ -2197,10 +2207,6 @@ input {
 
   .album-info {
     margin-left: -15; }
-
-  .album-head {
-    margin-bottom: 17px;
-    margin-top: 17px; }
 
   .album-head, .song-list {
     margin-left: -15px; }
@@ -2230,6 +2236,11 @@ input {
 
   .address, .zipcode {
     display: none; }
+
+  .cover_img a img {
+    width: 100%;
+    height: auto;
+    padding-top: 5px; }
 
   .band-bio p {
     text-align: center; }
@@ -2276,12 +2287,6 @@ input {
     width: 28%;
     font-size: 21px; }
 
-  .footer_search {
-    padding-left: 3px; }
-
-  #menu-footer-menu {
-    margin-left: 11px; }
-
   .social-media {
     margin-right: 6px; }
 
@@ -2294,16 +2299,15 @@ input {
   .album_title {
     font-size: 13px !important; }
 
+  .album-head .col-sm-1 {
+    max-width: 19.333333%; }
+
   .album-head .col-sm-3 {
     padding-right: 15px;
     padding-left: 15px; }
 
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-    margin-top: -13px;
-    font-size: 40px; }
-
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {
-    width: 30px; }
+    width: 40px; }
 
   .divTableHeading {
     font-size: 112%; }
@@ -2321,17 +2325,29 @@ input {
     height: 73%; }
 
   .iframe-wrapper {
-    height: 75%; } }
+    height: 75%; }
+
+  .main-nav .menu {
+    width: 90%; }
+
+  .main-logo {
+    margin-left: 63px; }
+
+  .search-submit {
+    height: 30px;
+    width: 100px; }
+
+  input {
+    height: 31px; }
+
+  .footer_search {
+    padding-right: 35px; } }
 @media screen and (max-width: 355px) {
   .main-logo {
     margin-left: 61px; }
 
   .sl-content p {
     margin-bottom: 5px; }
-
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-    margin-left: 31px;
-    margin-top: -7px; }
 
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {
     width: 36px; }
@@ -2344,12 +2360,18 @@ input {
 
   .footer-menu .menu li a {
     font-size: 19px !important; } }
+@media screen and (max-width: 340px) {
+  .search-submit {
+    width: 92px; } }
 @media screen and (max-width: 324px) {
   .main-logo {
     margin-left: 57px; }
 
   .mobile-nav-icon {
-    font-size: 15px; } }
+    font-size: 15px; }
+
+  .search-submit {
+    width: 84px; } }
 @media screen and (max-width: 320px) {
   .main-logo {
     margin-left: 55px; }
@@ -2365,18 +2387,9 @@ input {
     height: 149px;
     padding: 17px; }
 
-  .album-head .col-sm-3 {
-    max-width: 100%;
-    padding: 10px; }
-
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
-    margin-left: -15px; }
-
-  .album-head .col-sm-1 a img {
-    width: 100%;
-    height: auto;
-    padding-top: 18px; }
-
+  /*.album-head .col-sm-3 { max-width: 100%; padding: 10px;}
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {  margin-left: -15px;}
+  .album-head .col-sm-1 a img {width: 100%; height: auto; padding-top: 18px; }*/
   .divTableHeading {
     font-size: 80%; }
 

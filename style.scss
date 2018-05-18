@@ -19,6 +19,7 @@ weffcb
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
+a:hover {text-decoration: none!important;}
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
@@ -656,7 +657,7 @@ Tour Section
   text-decoration: none!important;
 }
 .btn_tour {
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
           box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
@@ -673,14 +674,14 @@ Tour Section
   margin-right: 5px;
   padding-top: 1px;
 }
-.ticket {width: 30%}
+
 
 /*
   Discography Section
   -------------------------------------------
  */
-  .bg {background-color: #f6f6f6;}
-
+.bg {background-color: #f6f6f6;}
+.single-songs-show-hide {margin-bottom: 20px;}
 
 
 .album-head {
@@ -1469,6 +1470,7 @@ input {
   /*news_single_page*/
   .conent_holder {width: 100%;}
   .sidebar {width: 100%; height: auto; text-align: center; }
+  .sidebar_content {float: none;}
   .conent_holder h1 {text-align: center;}
   .news-details {display: inline-block; text-align: center; font-size: 17px;}
   .content_single_page {text-align: center; font-size: 20px!important;}
@@ -1497,12 +1499,14 @@ input {
   .wpcf7 label {text-align: center!important;}
   .bio_holder{padding-right: 32px;}
   .modal {padding-right: 0!important;}
+  .conent_holder {text-align: center;}
+  header h1 {text-align: center;}
 }
 @media screen and (max-width: 991px) {
 
   .sl-content p {font-size: 19px !important;}
   .mobile-nav-icon {font-size: 32px;}
-  .main-logo {margin-left: 165px;}
+  .main-logo {margin-left: 180px;}
   .col-sm-1 { margin-right: 12px !important;}
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; height: 35px; font-size: 14px;}
@@ -1549,16 +1553,16 @@ input {
   .divTableCell {font-size: 80%; padding: 10;}
   .social-icons a {font-size: 20px; margin-left: 15px;}
   .song-list .line {line-height: 30px;}
-  .songs-head {font-size: 23px !important}
-  .song-list {font-size: 16px !important;}
-  .store {font-size: 23px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%;}
-  .store_name {font-size: 20px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%;}
+  .songs-head {font-size: 23px !important; text-align: center;}
+  .song-list {font-size: 16px !important; text-align: center;}
+  .store {font-size: 23px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; text-align: center;}
+  .store_name {font-size: 20px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; }
   .divTableRow .store_link a {font-size: 11px; padding-left: 14px; padding-right: 12px;}
   .footer_logo {text-align: center; float: none; margin-bottom: 15px;}
   .footer_logo img { width: 100%;}
   .footer_search {float: none;text-align: center; padding-right: 32px;}
   .search-form {float: none; }
-  .footer-menu .menu {float: none; text-align: center; padding-right: 32px;}
+  .footer-menu .menu {float: none; text-align: center; padding-left: 0;}
   .social-media {text-align: center; margin-bottom: 15px;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
@@ -1583,21 +1587,20 @@ input {
   .theband_sng_content_hld .col-sm-8 h4 {font-size: 42px;}
   .bio_content { padding-left: 20px; padding-right: 20px;}
   .store_link span {display: none;}
+  .ticket {width: 30%}
+  .divTableRow {text-align: center;}
+
 }
 
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {display: inline-block; font-size: 30px;}
   .sl-content p {margin-bottom: 5px;}
   .sl-content {top: 22% !important; height: auto; padding-left: 105px !important;padding-right: 105px !important;}
-  .footer_search {padding-left: 78px; margin-bottom: 0;}
-  .search-form {float: left;}
-  #menu-footer-menu {padding-left: 0; text-align: center;}
   .social-media {text-align: center; margin-bottom: 14px; margin-right: 11px;}
   .footer_logo {width: 100%; }
   .album-head .col-sm-1 { max-width: 20%;}
   .album-head .col-sm-3 {max-width: 24%;}
   .song-list .line {line-height: 30px;}
-  .store_link a {padding: 4px; font-size: 5px;}
   .divTableCell {font-size: 70%;}
   .song-list .store_link a {padding: 6px; font-size: 9px;}
   .video-bg {height: 100%;}
@@ -1605,6 +1608,7 @@ input {
   .FullscreenV iframe {width: 100%; height: 100%; margin-top: 0;}
   .main-logo {width: 55%; padding-left: 63px; margin-left: 70px;}
   .tour_single_page_row .store_link a {font-size: 13px; }
+  .main-nav .menu {width: 96%;}
 
 }
 
@@ -1621,14 +1625,19 @@ input {
   .iframe-wrapper {height: 100%;}
 }
 @media screen and (max-width: 639px) {.sl-content {display: none;}}
+
+@media screen and (max-width: 575px) {
+.song_info {width: 33%;} 
+.songs-head {width: 33%; height: auto;}
+.store_link {width: 50%}
+}
 @media screen and (max-width: 546px) {
-  .main-logo {width: 50%; padding-left: 38px; margin-left: 83px;}
+  .main-logo {width: 50%; padding-left: 38px; margin-left: 96px;}
   .mobile-nav-icon {font-size: 29px;}
   .btn-lg {padding:6px!important; font-size: 10px !important;}
   .sl-content h5 {font-size: 25px !important;}
   .sl-content p {font-size: 10px !important;}
   .address, .zipcode {display: none;}
-  .footer-menu .menu {padding-right: 6px;}
   .sl-content h5 {font-size: 22px !important;}
   .sl-content {top: 15% !important;}
   .btn-lg {padding: 2px !important;}
@@ -1640,16 +1649,21 @@ input {
   .mobile-nav-icon {font-size: 23px;}
   .tour_single_page_row .album-info {margin-left: 0; width: 50%; }
 }
+@media screen and (max-width: 486px){
+.main-logo {margin-left: 73px;}
+.main-nav .menu {
+    width: 93%;
+}
+}
 @media screen and (max-width: 442px){
   .main-logo {margin-left: 73px;}
-  .footer_search {padding-left: 30px;}
   .divTableRow .store_link a {font-size: 7px;}
 }
 
 @media screen and (max-width: 414px){
   .mobile-nav-icon { display: inline-block; }
   .mobile-nav-icon i {font-size: 300%; margin-left: 30px;}
-  .main-nav .menu {position: relative; list-style-type: none; width: 95%; text-align: center; padding-top: 5px;}
+  .main-nav .menu {position: relative; list-style-type: none; width: 90%; text-align: center; padding-top: 5px;}
   .main-nav { float: left; text-align: center; width: 100%; height: auto; position: relative; display: none;}
   .main-nav .menu li {display: block; width: 100%;}
   .main-nav .menu li a{width: 100%; display: block; font-size: 17px !important; line-height: 25px; height: 30px;}
@@ -1661,10 +1675,10 @@ input {
   .sl-content p {font-size: 8px !important;}
   .btn-lg {font-size: 8px!important; padding: 1px;}
   .carousel-indicators { top: 97% !important;}
-  .album-up-down-buttons, .single-up-down-buttons {width: 25%; height: auto; position: absolute; right: 0;}
+  /*.album-up-down-buttons, .single-up-down-buttons {width: 25%; height: auto; position: absolute; right: 0;}*/
   .album-song, .single-song {padding: 10px!important;  }
-  .album-head .col-sm-3 {max-width: 100%;}
-  .album-head .col-sm-1 {max-width: 24.333333%;}
+  .album-head .col-sm-3 {max-width: 19%;}
+  .album-head .col-sm-1 {max-width: 19.333333%;}
   .col-sm-1 { margin-bottom: 10px;}
   .section h1 {width: 100%; text-align: center;}
   .albums-title, .single-title {text-align: center;}
@@ -1675,15 +1689,13 @@ input {
   .band_member_role {font-size: 20px !important;}
   .divTableHeading {font-size: 135%; line-height: 1; font-weight: 700; padding: 3px;}
   .divTableCell {font-size: 13px; line-height: 1.5; padding-left: 5px; padding-right: 5px; font-weight: 600;}
-  .footer_search {padding-left: 20px; margin-bottom: 0;}
-  .search-form {float: left;}
+  .footer_search { margin-bottom: 0;}
   #menu-footer-menu {padding-left: 0; margin-right: 0; text-align: center;}
   .social-media {text-align: center; margin-bottom: 14px; margin-right: 11px;}
   #back-to-top {right: 27px;}
   .songs-head {width: 33%; height: auto;}
   .song_info {width: 33%;}
   .album-info {margin-left: -15;}
-  .album-head {margin-bottom: 17px; margin-top: 17px;}
   .album-head, .song-list {margin-left: -15px}
   .line {line-height: 26px;}
   .song-list .store_link {width: 50%}
@@ -1693,7 +1705,7 @@ input {
   .album-store {margin-left: -15; margin-right: -12px;}
   .store_link a {font-size: 7px; padding: 3px;}
   .address, .zipcode {display: none;}
-  
+  .cover_img a img {width: 100%; height: auto; padding-top: 5px;}
   .band-bio p {text-align: center;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
@@ -1704,7 +1716,6 @@ input {
   .tour_single_page_row .album-info {margin-left: 0; width: 50%; }
   .tour_single_page_row .store_link a {font-size: 13px; }
   .sng_alb_hld .song-list {font-size: 28px!important;}
-
   .sng_store a {font-size: 13px!important;}
 
 
@@ -1712,45 +1723,50 @@ input {
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
   .mobile-nav-icon {width: 28%; font-size: 21px}
-  .footer_search {padding-left: 3px;}
-  #menu-footer-menu {margin-left: 11px;}
   .social-media {margin-right: 6px;}
   #back-to-top {right: 12px;}
   .col-sm-3 span {font-size: 15px !important;}
   .album_title { font-size: 13px !important;}
-  .album-head .col-sm-3 {padding-right: 15px; padding-left: 15px;}
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-top: -13px; font-size: 40px;}
-  .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 30px;}
+  .album-head .col-sm-1 {max-width: 19.333333%;}
+  .album-head .col-sm-3 {padding-right: 15px; padding-left: 15px;}  
+  .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 40px;}
   .divTableHeading {font-size: 112%;}
   .social-icons a {font-size: 18px;}
   .menu li a {font-size: 19px !important;}
   #menu-main-menu li a {font-size: 15px !important;}
   .video-bg {height: 73%;}
   .iframe-wrapper {height: 75%;}
+  .main-nav .menu {width: 90%;}
+  .main-logo {margin-left: 63px;}
+  .search-submit {height: 30px; width: 100px;}
+  input {height: 31px;}
+  .footer_search {padding-right: 35px;}
 
 }
 @media screen and (max-width: 355px) {
   .main-logo {margin-left: 61px;}
-  .sl-content p {margin-bottom: 5px;}
-  
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 31px; margin-top: -7px;;}
+  .sl-content p {margin-bottom: 5px;}  
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 36px;}
   .divTableHeading {font-size: 100%;}
   .social-icons a {font-size: 14px;}
   .footer-menu .menu li a {font-size: 19px !important;}
 }
+@media screen and (max-width: 340px) {
+  .search-submit {width: 92px;}
+}
 @media screen and (max-width: 324px){
   .main-logo {margin-left: 57px;}
   .mobile-nav-icon {font-size: 15px;}
+  .search-submit {width: 84px;}
 }
 @media screen and (max-width: 320px) {
   .main-logo {margin-left: 55px;}
   .mobile-nav-icon {font-size: 17px;}
   .sl-content h5 {font-size: 13px !important; margin-bottom: 5px;}
   .sl-content {height: 149px; padding: 17px;}
-  .album-head .col-sm-3 { max-width: 100%; padding: 10px;}
+  /*.album-head .col-sm-3 { max-width: 100%; padding: 10px;}
   .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {  margin-left: -15px;}
-  .album-head .col-sm-1 a img {width: 100%; height: auto; padding-top: 18px; }
+  .album-head .col-sm-1 a img {width: 100%; height: auto; padding-top: 18px; }*/
   .divTableHeading {font-size: 80%;}
   .divTableCell {font-size: 63%;}
   .FullscreenV iframe {width: 100%; height: 30%; margin-top: 159px;}
