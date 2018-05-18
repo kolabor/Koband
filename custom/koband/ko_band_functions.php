@@ -28,7 +28,7 @@ function ko_band_custom_wp_admin_resources() {
     wp_register_script( 'koband_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
     wp_enqueue_script( 'koband_wp_admin_js' );
 
-    wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
+   wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
     wp_enqueue_style( 'bootstrap_grid' );
 
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
