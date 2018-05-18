@@ -13,13 +13,33 @@ Text Domain: koband
 /* =Reset ff
 weffcb
 -------------------------------------------------------------- */
+
+.flex{
+     display: flex;
+    display: -webkit-flex; 
+    flex-wrap:wrap;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+            justify-content: center;
+}
+
+.row:after, .row:before {
+  display: flex !important;
+}
+.col-md-4 {
+  display: inline-block !important;
+  float: left;
+}
+
 .section{
   padding-top: 20px !important;
   padding-right: 0 !important;
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
+
 a:hover {text-decoration: none!important;}
+
 h1 {
   font-weight: 900!important;
   margin-top: 0!important;
