@@ -328,7 +328,8 @@ $('.imageList img').click(function(){
     var videoCode = $(this).attr("data-video-code");     
    
 
-    switch (videoType) { 
+    switch (videoType) 
+    { 
     case 'youtube': 
         $("#Fullscreen img").remove();
         $("#Fullscreen iframe").remove();
@@ -349,8 +350,8 @@ $('.imageList img').click(function(){
         $('#Fullscreen').fadeIn();
         break;     
     default:
-        console.log()
-}
+        console.log(videoType);
+      }
   }
   else if( mediaType == "image")
   { 
@@ -378,7 +379,7 @@ $('#Fullscreen').click(function(){
 
 $('.FullscreenV').css('height', $(document).outerWidth() + 'px');
 
-$('.close').click(function(){ 
+$('.close_gallery').click(function(){ 
   
      $('#Fullscreen').fadeOut();
 });			
@@ -409,12 +410,73 @@ $.nexMedia = function()
 
   var mediaNr  = $('#Fullscreen').attr("data-nr");
   var mediaType = $('#Fullscreen').attr("mediaType");
-  var nextMedia = mediaNr - 1;
-  $("#Fullscreen img").remove();
-  $("#Fullscreen iframe").remove();
-  var next = $(".imageList").find("[data-nr='"+ nextMedia +"']");
-  console.log(next);
- // $('#Fullscreen').prepend('<iframe width="370" height="265" src="//www.dailymotion.com/embed/video/'+videoCode+'"></iframe>');
-}
+  var mediaCount = $(".imageList img").length;
+
+  var nextMedia = +mediaNr + 1;
+  if (nextMedia > mediaCount){nextMedia = 1;}
+  
+  var className = ".nr-"+nextMedia;
+  
+  
+  if(nextMedia <= mediaCount)
+  {
+
+    $("#Fullscreen img").remove();
+    $("#Fullscreen iframe").remove();
+    
+    var next = $(".imageList").find(className);
+    var mediaType = $(next).attr("data-type");
+
+    $('#Fullscreen').attr('data-nr', nextMedia);
+    $('#Fullscreen').attr('data-type', mediaType);
+    
+     if (mediaType == "image")
+    {
+       //var src = $(next).attr("data-type");
+        var src= $(next).attr('src');
+        console.log(src);
+        $('#Fullscreen').prepend('<img  src="'+src+'" />');
+
+    }
+    else if (mediaType == "video")
+    {
+        var videoType = $(next).attr("data-video-type");
+        var videoLink = $(next).attr("data-video-link");
+        var videoCode = $(next).attr("data-video-code");     
+       
+
+        switch (videoType) 
+        { 
+        case 'youtube': 
+            $("#Fullscreen img").remove();
+            $("#Fullscreen iframe").remove();
+            $('#Fullscreen').prepend('<iframe src="https://www.youtube.com/embed/'+videoCode+'"></iframe>');
+            $('#Fullscreen').fadeIn();
+            break;
+        case 'vimeo': 
+            $("#Fullscreen img").remove();
+            $("#Fullscreen iframe").remove();
+            $('#Fullscreen').prepend('<iframe width="370" height="265" src="https://player.vimeo.com/video/'+videoCode+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+            $('#Fullscreen').fadeIn();
+            
+            break;
+        case 'dailymotion': 
+            $("#Fullscreen img").remove();
+            $("#Fullscreen iframe").remove();
+            $('#Fullscreen').prepend('<iframe width="370" height="265" src="//www.dailymotion.com/embed/video/'+videoCode+'"></iframe>');
+            $('#Fullscreen').fadeIn();
+            break;     
+        default:
+            console.log(videoType);
+          }  
+    }
+
+   
+  }
+  
+ 
+  
+ ;
+}/*Next function ends here */
 
 }); // Ready function ends here //
