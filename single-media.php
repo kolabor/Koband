@@ -105,7 +105,7 @@ if (have_posts() ) :
                           
                            <img src="<?php echo esc_url($thumb[0])?>" 
                                          alt="Smiley face" 
-                                         class="thumb_image"
+                                         class="thumb_image nr-<?php echo $gallery_item ?>"
                                          data-nr = <?php echo $gallery_item; ?>
                                          data-type="image"
                                          data-video-type="novideo"
@@ -127,7 +127,7 @@ if (have_posts() ) :
 
                                     <img src="<?php echo esc_url($youtubeImage)?>/hqdefault.jpg" 
                                          alt="Smiley face" 
-                                         class="video_image"
+                                         class="video_image nr-<?php echo $gallery_item ?>"
                                          data-nr = <?php echo $gallery_item; ?>
                                          data-type="video"
                                          data-video-type="youtube"
@@ -155,7 +155,7 @@ if (have_posts() ) :
 							       }?>
 							       <img src="<?php echo esc_url($vimeoImage)?>" 
                                          alt="Vimeo video image" 
-                                         class="video_image"
+                                         class="video_image nr-<?php echo $gallery_item ?>"
                                          data-nr = <?php echo $gallery_item; ?>
                                          data-type="video"
                                          data-video-type="vimeo"
@@ -172,7 +172,7 @@ if (have_posts() ) :
 
 							        <img src="<?php echo esc_url($dailyImage)?>" 
                                          alt="dailymotion video image" 
-                                         class="video_image"
+                                         class="video_image nr-<?php echo $gallery_item ?>"
                                          data-nr = <?php echo $gallery_item; ?>
                                          data-type="video"
                                          data-video-type="dailymotion"
