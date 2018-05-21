@@ -95,7 +95,7 @@ function koband_load_media(){
 	<?php } 
 	else 
 	{
-       echo "end-media";
+       echo esc_html__("end-media", 'koband');s
 	}
 
 	wp_reset_postdata();
@@ -152,7 +152,7 @@ function koband_load_tour(){
 	<?php }  
 	else 
 	{
-       echo "end-tour";
+       echo esc_html__("end-tour",'koband');
 	}
 
 	wp_reset_postdata();

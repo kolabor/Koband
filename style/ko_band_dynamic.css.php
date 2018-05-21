@@ -106,8 +106,8 @@
 ?>
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
 
 
 
@@ -125,7 +125,7 @@
 {
   font-family: <?php echo esc_html($koband_headding_font); ?> ;
   color: <?php echo esc_html($koband_main_font_color);?> ;
-  font-size:  <?php echo $koband_theme_font_size; ?> ;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?> ;
 }
 #theband {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -136,18 +136,18 @@
 }
 
 #News {
-  background-color: <?php echo  esc_html($koband_news_background_color); ?> ;
+  background-color: <?php echo esc_html($koband_news_background_color); ?> ;
 }
 
 #Tour {
-  background-color: <?php echo  esc_html($koband_tour_background_color); ?> ;
+  background-color: <?php echo esc_html($koband_tour_background_color); ?> ;
 }
 
 #Discography {
-  background-color: <?php echo  esc_html($koband_discography_background_color); ?> ;
+  background-color: <?php echo esc_html($koband_discography_background_color); ?> ;
 }
 #Media {
-background-color: <?php echo  esc_html($koband_gallery_background_color); ?> ;
+background-color: <?php echo esc_html($koband_gallery_background_color); ?> ;
 }
 
 
