@@ -221,10 +221,11 @@ a {
 }
 .slider_button_text_color {
   color: <?php echo esc_html($koband_slider_button_text_color) ?>;
-  background-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
+  border-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
 }
 .slider_button_text_color:hover {
   background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
+  border-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
 }
 
 .sl-content{
