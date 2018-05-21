@@ -14,9 +14,9 @@
 <div id="News" class="section section_bg" >
  <div class=" album py5 " ">
  	<div class="container">
- 		<div class="row">
+ 		<div class="row ">
 		 	<div class="container">
-		 		<div class="row">
+		 		<div class="row ">
 					<h1 class="first_color"><?php echo esc_html__('News', 'koband');?></h1>
 				</div>
 			</div><!-- container -->
@@ -54,7 +54,7 @@
 				</div>
 			</div><!-- container -->
 				<div class="container text-center">
-					<div class="row">
+					<div class="row ">
 						<a class="btn-koband-load koband_load_more bg_first_color" data-page="1" data-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
 							<span class="koband-loading"><?php echo esc_html__('Loading...', 'koband');?></span>
 							<span class="text"><?php echo esc_html__('Load more', 'koband');?></span></a>

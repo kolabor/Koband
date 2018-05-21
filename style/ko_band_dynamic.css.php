@@ -148,7 +148,7 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> ;
 
 
 a {
-   color: <?php echo esc_html($koband_first_theme_color); ?>;
+  color: <?php echo esc_html($koband_first_theme_color);?>;
 }
 
 .first_color {
@@ -231,6 +231,9 @@ a {
 .reply a, .submit {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+.reply a:hover {
+  color: <?php echo esc_html($koband_second_theme_color); ?> ;
+}
 
 .submit:hover {
  background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
@@ -278,4 +281,16 @@ a {
 .venue_name:hover {
   text-decoration: none !important;
   color: <?php echo esc_html($koband_first_theme_color)?> ;
+}
+.news-details_li a{
+  color: <?php echo esc_html($koband_first_theme_color);?>;
+  text-decoration: none !important;
+}
+.news-details_li a:hover{
+  color: <?php echo esc_html($koband_second_theme_color);?>;
+  text-decoration: none !important;
+}
+.soldout_btn:hover {
+   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
+   color: #ffffff;
 }

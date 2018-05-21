@@ -29,7 +29,7 @@ get_header();?>
 				<?php 
 				while ( $media_posts->have_posts() ) : $media_posts->the_post();
 				$post_id = get_the_ID(); ?>
-					<div class="col-lg-3 img-holder col-md-4 col-sm-6 col-xs-12">
+					<div class="col-lg-3 img-holder col-xs-12">
 					    <div class="hovereffect">
 					      <a href="<?php the_permalink();?>"><?php the_post_thumbnail('gallery_thumb');?></a>
 				            <div class="overlay">
