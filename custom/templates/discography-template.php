@@ -38,7 +38,7 @@ get_header();?>
 */
 	$album_posts = new WP_Query($args_album); ?>
 
-	<h3><div class="albums-title main_font_color"><?php echo esc_html__('Albums', 'koband');?></div></h3>
+	<div class="albums-title main_font_color main_font"><h3 class="main_font"><?php echo esc_html__('Albums', 'koband');?></h3></div>
    	<?php if ($album_posts->have_posts() ) : 
 			while( $album_posts->have_posts() ) : $album_posts->the_post();
 			
@@ -47,7 +47,7 @@ get_header();?>
 	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
 			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
+				<div class="col-sm-3 album_title main_font_color "><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 		        <?php 
 		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -104,7 +104,7 @@ get_header();?>
 ================================================================================================================
 -->
 	<?php $single_posts = new WP_Query($args_singles); ?>
-	<h3><div class="single-title main_font_color"><?php echo esc_html__('Singles', 'koband');?></div></h3>
+	<div class="single-title main_font_color"><h3 class="main_font"><?php echo esc_html__('Singles', 'koband');?></h3></div>
 	<?php if ($single_posts->have_posts() ) :
 			while ($single_posts->have_posts() ) : $single_posts->the_post();
 				$post_id = get_the_ID(); ?>
