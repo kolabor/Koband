@@ -48,9 +48,9 @@ get_header();?>
 	<div class="container text-center">
 		<div class="row">
 			<a class="btn-koband-load koband_load_media border_color main_font" data-page="1" data-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-				<span class="koband-loading main_font"><?php echo esc_html__('Loading...', 'koband');?></span>
-				<span class="text main_font"><?php echo esc_html__('Load media', 'koband');?></span></a>
-			    <a class="no-media"><span class="media-posts main_font"><?php echo esc_html__('There are no more media', 'koband');?>  
+				<span class="koband-loading first_color main_font"><?php echo esc_html__('Loading...', 'koband');?></span>
+				<span class="text first_color main_font"><?php echo esc_html__('Load media', 'koband');?></span></a>
+			    <a class="no-media"><span class="media-posts first_color main_font"><?php echo esc_html__('There are no more media', 'koband');?>  
 				<i class="far fa-smile"></i></span></a>
 		</div>
 	</div><!--container-->

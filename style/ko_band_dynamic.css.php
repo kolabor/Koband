@@ -205,7 +205,9 @@ a {
   color:#fff!important;
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
-
+.divTableCell a {
+  color: <?php echo esc_html($koband_first_theme_color); ?> ;
+}
 .font-line_height {
   font-size:  <?php echo esc_html($koband_theme_font_size); ?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
@@ -312,9 +314,10 @@ a {
   color: <?php echo esc_html($koband_second_theme_color);?>;
   text-decoration: none !important;
 }
-.soldout_btn:hover {
-   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
-   color: #ffffff;
+.onsale_btn:hover {
+  color: <?php echo esc_html($koband_second_theme_color);?>;
+ border-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
+}
 }
 .search-submit {
   font-family : <?php echo esc_html($koband_general_font); ?> ;
