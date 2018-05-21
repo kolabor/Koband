@@ -117,7 +117,10 @@ header {
   width: 100%;
   height: auto;
 }
-
+.archive-header, .author-header {
+  margin-bottom: 30px;
+  border-bottom: 1px dashed black;
+}
 
 .menu-scroll {
   width: 100%;
