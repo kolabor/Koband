@@ -1,4 +1,4 @@
-( function( $ ) {
+	( function( $ ) {
 
    api = wp.customize;
 
