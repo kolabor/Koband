@@ -106,10 +106,10 @@
  
 ?>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_url($koband_general_font); ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>');
-</style>
+
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
+
 <!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">-->
 
 
@@ -157,7 +157,7 @@ a {
   color: <?php echo esc_html($koband_first_theme_color);?>;
 }
 .heading_font{
-  font-family: <?php echo esc_html($koband_headding_font);?>!important;
+  font-family: <?php echo esc_html($koband_headding_font);?>, serif !important;
 }
 
 .first_color {
