@@ -116,7 +116,10 @@ header {
   width: 100%;
   height: auto;
 }
-
+.archive-header, .author-header {
+  margin-bottom: 30px;
+  border-bottom: 1px dashed black;
+}
 
 .menu-scroll {
   width: 100%;
@@ -903,6 +906,8 @@ text-decoration: none;
 }
 .title_and_role{
   background-color: #f8f9fab3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .title_and_role .name_member_padding{
   line-height: 1;

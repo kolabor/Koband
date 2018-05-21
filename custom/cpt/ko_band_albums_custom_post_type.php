@@ -92,7 +92,7 @@ function ko_band_album_display_meta_box() {
 ?>
 <!-- Output the field -->
 <div class="container">
-    <div class="row-top">
+    <div class="row top">
         <div class="col-sm"><?php echo esc_html__('Date Release', 'koband'); ?></div>
         <div class="col-sm"><?php echo esc_html__('Album Length', 'koband'); ?></div>
         <div class="col-sm"></div>
@@ -113,7 +113,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove your Album songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
 
-    <div class="row-top">
+    <div class="row top">
         <div class="col-sm"><?php echo esc_html__('Song Name', 'koband');?></div>
         <div class="col-sm"><?php echo esc_html__('Song Length', 'koband');?></div>
         <div class="col-sm"><?php echo esc_html__('Song Detail', 'koband');?></div>
@@ -146,7 +146,7 @@ function ko_band_album_display_meta_box() {
         <div class="col-sm"><input type="text" class="songname" name="name-details[]" placeholder="Song name" /></div>
 
         <div class="col-sm"><input type="time" class="songlength without_ampm" name="length[]" placeholder="00:00"  /></div>
-        <div class="col-sm"><input type="text" class="songdetails" name="detail[]" placeholder="ex.: composed,arranged,lyrics..."  /></div>
+        <div class="col-sm"><textarea class="songdetails" name="detail[]" maxlength="250" placeholder="ex.:composed,arranged..."/></textarea></div>
 
         <div class="col-sm"><a class="button remove-row-details" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
@@ -163,7 +163,7 @@ function ko_band_album_display_meta_box() {
     <div class="row blank">
         <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove your Store links for your Albums by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
-    <div class="row-top">
+    <div class="row top">
 
         <div class="col-sm"><?php echo esc_html__('Store Name', 'koband');?></div>
         <div class="col-sm"><?php echo esc_html__('Store Link', 'koband');?></div>

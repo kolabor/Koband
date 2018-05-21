@@ -93,7 +93,7 @@ global $post;
         <div class="col-sm"><?php echo esc_html__('You are able to upload images and videos on same Gallery.<br> On the following fields you can add or remove images by clicking a button "Add Images" or "Remove"', 'koband');?></div>
         </div>
 
-        <div class="row-top media">
+        <div class="row top media">
 
             <div class="col-sm"><a class="gallery-add button" href="#" data-uploader-title=<?php echo esc_html__("Add image's", 'koband');?> data-uploader-button-text=<?php echo esc_html__("Add image's",'koband');?>><?php echo esc_html__("Add image's",'koband');?></a>
 
@@ -174,7 +174,7 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
         <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove videos by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
     
-    <div class="row-top">
+    <div class="row top">
         <div class="col-sm"><?php echo esc_html__('Video Link', 'koband');?></div>
         <div class="col-sm"><?php echo esc_html__('Select', 'koband');?></div>
         <div class="col-sm"></div>

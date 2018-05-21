@@ -101,16 +101,16 @@
   $koband_footer_menu_font_color = get_theme_mod('ko_band_footer_menu_font_color');
   $koband_footer_menu_font_size = get_theme_mod('ko_band_footer_menu_font_size'); 
   
-  $main_font_on_class = str_replace("+"," ",$koband_general_font);
-  $heading_font_on_class = str_replace("+"," ",$koband_headding_font);
+  /*$main_font_on_class = str_replace("+"," ",$koband_general_font);
+  $heading_font_on_class = str_replace("+"," ",$koband_general_font);*/
  
 ?>
 
-<!--<style>
+<style>
 @import url('https://fonts.googleapis.com/css?family=<?php echo esc_url($koband_general_font); ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>');
-</style>-->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">
+</style>
+<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">-->
 
 
 /* Menu item colors */
@@ -157,7 +157,7 @@ a {
   color: <?php echo esc_html($koband_first_theme_color);?>;
 }
 .heading_font{
-  font-family: <?php echo esc_html($heading_font_on_class);?>!important;
+  font-family: <?php echo esc_html($koband_headding_font);?>!important;
 }
 
 .first_color {
@@ -190,7 +190,7 @@ a {
 }
 
 .main_font {
-   font-family : <?php echo esc_html( $main_font_on_class); ?> ;
+   font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
 .main_font_color{
  

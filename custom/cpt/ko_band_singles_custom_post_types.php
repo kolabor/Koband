@@ -83,7 +83,7 @@ function ko_band_singles_display_meta_box($post, $box){
 
 
 <div class="container"> <!-- Container div for Single Length and Date -->
-    <div class="row-top">
+    <div class="row top">
               <div class="col-sm"><?php echo esc_html__('Single Length', 'koband');?></div>
               <div class="col-sm"><?php echo esc_html__('Date Release', 'koband');?></div>
               <div class="col-sm"><?php echo esc_html__('Single Detail', 'koband');?></div>
@@ -100,7 +100,7 @@ function ko_band_singles_display_meta_box($post, $box){
   </div>
 
 <div  id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
-    <div class="row-top form_heading">
+    <div class="row top form_heading">
                 <div class="col-sm"><?php echo esc_html__('Store Name', 'koband');?></div>
                 <div class="col-sm"><?php echo esc_html__('Store Link', 'koband');?></div>
                 <div class="col-sm"></div>

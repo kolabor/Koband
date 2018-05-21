@@ -85,7 +85,7 @@ function ko_band_the_band_meta_box($post, $box){
     $the_band_bio = get_post_meta( $post->ID, 'ko_band_the_band_bio', true );?>
     
     <div class="container">
-        <div class="row-top">
+        <div class="row top">
             <div class="col-sm"><?php echo esc_html__('Band Member Role:', 'koband');?></div>
         </div>
         <div class="row">
