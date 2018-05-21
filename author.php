@@ -16,7 +16,7 @@ get_header('noscroll'); ?>
 <div class="container search-holder">
 	<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo esc_html__('Posts by ', 'koband');?><?php echo esc_html($curauth->nickname); ?>:</h1>
+	    <h4><?php echo esc_html__('News by ', 'koband');?><?php echo esc_html($curauth->nickname); ?>:</h4>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -87,7 +87,7 @@ get_header('noscroll'); ?>
 		if ($author_media->have_posts() ) : ?>
 		<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo esc_html__('Media Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
+	    <h4><?php echo esc_html__('Media Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h4>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -118,7 +118,7 @@ get_header('noscroll'); ?>
 	   	<?php if ($author_album_posts->have_posts() ) : ?>
 	   	<header class="author-header"> <?php
 			$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-		    <h1><?php echo esc_html__('Albums Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
+		    <h4><?php echo esc_html__('Albums Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h4>
 				<?php if (get_the_author_meta('description')) : ?>
 					<div class="author-description"><?php the_author_meta('description'); ?></div>
 				<?php endif; ?>
@@ -186,7 +186,7 @@ get_header('noscroll'); ?>
 		<?php if ($author_single_posts->have_posts() ) : ?>
 		<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo esc_html__('Singles Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
+	    <h4><?php echo esc_html__('Singles Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h4>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>
@@ -246,7 +246,7 @@ get_header('noscroll'); ?>
     	if ( $author_tour_posts->have_posts() ) : ?>
     	<header class="author-header"> <?php
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
-	    <h1><?php echo esc_html__('Tours Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h1>
+	    <h4><?php echo esc_html__('Tours Posted by ', 'koband');?><?php echo esc_attr($curauth->nickname); ?>:</h4>
 			<?php if (get_the_author_meta('description')) : ?>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 			<?php endif; ?>

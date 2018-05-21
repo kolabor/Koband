@@ -100,11 +100,15 @@
   /*** Footer Menu color & font**/
   $koband_footer_menu_font_color = get_theme_mod('ko_band_footer_menu_font_color');
   $koband_footer_menu_font_size = get_theme_mod('ko_band_footer_menu_font_size'); 
-
+  
+  
  
 ?>
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_general_font); ?>'">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">
+
+
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
+
 
 
 /* Menu item colors */
@@ -150,9 +154,12 @@ background-color: <?php echo  esc_html($koband_gallery_background_color); ?> ;
 a {
   color: <?php echo esc_html($koband_first_theme_color);?>;
 }
+.heading_font{
+  font-family: <?php echo esc_html($koband_headding_font);?>, serif !important;
+}
 
 .first_color {
-  font-family: <?php echo esc_html($koband_headding_font); ?> ;
+  
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 
 }
@@ -180,11 +187,19 @@ a {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
 
-
+.main_font {
+   font-family : <?php echo esc_html($koband_general_font); ?> ;
+}
 .main_font_color{
-  font-family : <?php echo esc_html($koband_general_font); ?> ;
+ 
   color: <?php echo esc_html($koband_main_font_color); ?> ;  
-
+}
+.border_color {
+  border-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
+}
+.btn-koband-load:hover {
+  color:#fff!important;
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
 
 .font-line_height {
@@ -193,13 +208,13 @@ a {
 }
 
 .read_more a {
-  color: <?php echo esc_html($koband_first_theme_color); ?> ;
+  color: <?php echo esc_html($koband_main_font_color); ?> ;
 }
-.read_more:hover a {
+.read_more a:hover  {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
 .read_more:hover {
-  background-color: <?php echo esc_html($koband_second_theme_color) ?> ;
+  background-color: #fff!important ;
 }
 .slider_text_color{
   color: <?php echo esc_html($koband_slider_text_color) ?>;
@@ -269,6 +284,7 @@ a {
 .main-nav .menu li a {
   color: <?php echo esc_html($koband_main_menu_font_color)?>;
   font-size: <?php echo esc_html($koband_main_menu_font_size)?>px ;
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
 .main-nav .menu li a:hover {
   color: <?php echo esc_html($koband_main_menu_font_color)?> ;
@@ -277,6 +293,7 @@ a {
 .footer-menu .menu li a {
   color: <?php echo esc_html($koband_footer_menu_font_color)?> ;
   font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px ;
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
 .venue_name:hover {
   text-decoration: none !important;
@@ -293,4 +310,7 @@ a {
 .soldout_btn:hover {
    background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
    color: #ffffff;
+}
+.search-submit {
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
 }

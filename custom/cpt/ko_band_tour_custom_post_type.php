@@ -105,7 +105,7 @@ function ko_band_tour_display_meta_box($post, $box){
     <div class="container">
         <div class="row blank">
          <div class="col-sm"><?php echo esc_html__('Fill the tour informations', 'koband');?></div></div>
-        <div class="row-top row">
+        <div class="row top row">
             <div class="col-sm"><?php echo esc_html__('Date:', 'koband');?></div>
             <div class="col-sm"><?php echo esc_html__('Country:', 'koband');?></div>
         </div>
@@ -139,7 +139,7 @@ function ko_band_tour_display_meta_box($post, $box){
             <div class="col-sm"><?php echo esc_html__('Please, using radio buttons check if there are available tickes and ADD the link of the store where tickets can be found', 'koband');?></div>
         </div>
 
-        <div class="row-top">
+        <div class="row top">
             <div class="col-sm"><?php echo esc_html__('Tickets Availability', 'koband');?></div>
             <div id="tickets-title" class="col-sm"><?php echo esc_html__('Ticket Link', 'koband');?></div>
         </div>

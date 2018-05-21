@@ -226,6 +226,9 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
             'Roboto+Condensed' => 'Roboto Condensed',
+            'Inconsolata' => 'Inconsolata',
+            'Libre+Franklin' => 'Libre Franklin',
+            
 ), ) );
 
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
@@ -259,6 +262,9 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
             'Roboto+Condensed' => 'Roboto Condensed',
+            'Inconsolata' => 'Inconsolata',
+            'Libre Franklin' => 'Libre Franklin',
+           
 ), ) ); 
 
 

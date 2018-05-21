@@ -96,7 +96,7 @@ function ko_band_slides_meta_box($post, $box){
     <div class="container">
 
         <div class="row-blank"></div>
-        <div class="row-top">
+        <div class="row top">
                     <div class="col-sm"><?php echo esc_html__('Title:', 'koband');?></div>
                     <div class="col-sm"><?php echo esc_html__('Subtitle:', 'koband');?></div>
         </div>

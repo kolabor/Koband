@@ -20,7 +20,7 @@ get_header('noscroll'); ?>
                     $post_type = get_post_type();?>
                         <div class="col-md-6">
                             <div class="card mb-4 box-shadow">
-                                <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(esc_html(get_the_title(), 3 )); ?></a></h2><h5><?php echo esc_html__('Post Type : ', 'koband'); 
+                                <div class="news-title main_font_color"><h2><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 3 ); ?></a></h2><h5><?php echo esc_html__('Post Type : ', 'koband'); 
                                 if ($post_type == 'post') { echo esc_html__('News', 'koband'); } 
                                 elseif ($post_type == 'media') { echo esc_html__('Gallery', 'koband');}
                                 elseif ($post_type == 'album') { echo esc_html__('Album', 'koband');}
@@ -29,7 +29,7 @@ get_header('noscroll'); ?>
                                 elseif ($post_type == 'tour') { echo esc_html__('Tour', 'koband');}?></h5></div>
                                 <a class="card-img-top" href="<?php the_permalink();?>">
                                     <?php if($post_type == 'tour') {?> 
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/tour.jpg"/> <?php } else { the_post_thumbnail(array(300,300)); }?></a>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/tour.jpg"/> <?php } else { the_post_thumbnail(array(300,300)); }?></a>
                                 <div class="card-body">
                                     <div id="card-text" class="main_font_color"><?php the_excerpt(); ?></div>
                                         <div class="d-flex justify-content-between align-items-center">
