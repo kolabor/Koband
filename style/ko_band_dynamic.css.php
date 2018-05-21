@@ -190,6 +190,10 @@ a {
 .main_font {
    font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
+.comments-area, .sidebar {
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
+   color: <?php echo esc_html($koband_main_font_color); ?> ;
+}
 .main_font_color{
  
   color: <?php echo esc_html($koband_main_font_color); ?> ;  
