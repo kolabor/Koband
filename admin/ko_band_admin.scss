@@ -94,14 +94,14 @@ li { list-style-type: none; }
   border: none;
   background: #fff;
 }
-.row-top {
+.row.top {
   font-size: 14px;
   font-weight: 500;
   background: rgba(249, 249, 249, 0.4);
   padding: 2px;
   border: 1px solid rgba(0, 168, 168, 0.3) !important;
 }
-.row-top.media {
+.row.top.media {
   border-bottom: none !important;
 }
 .row {
