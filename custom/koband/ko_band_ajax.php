@@ -95,7 +95,7 @@ function koband_load_media(){
 	<?php } 
 	else 
 	{
-       echo esc_html__("end-media", 'koband');s
+       echo esc_html__("end-media", 'koband');
 	}
 
 	wp_reset_postdata();

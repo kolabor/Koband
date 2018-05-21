@@ -186,9 +186,12 @@ a {
 .bg_second_color {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
-
-.main_font {
+.main_font_color .main_font {
    font-family : <?php echo esc_html($koband_general_font); ?> ;
+}
+.comments-area, .sidebar {
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
+   color: <?php echo esc_html($koband_main_font_color); ?> ;
 }
 .main_font_color{
  
@@ -221,10 +224,11 @@ a {
 }
 .slider_button_text_color {
   color: <?php echo esc_html($koband_slider_button_text_color) ?>;
-  background-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
+  border-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
 }
 .slider_button_text_color:hover {
   background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
+  border-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
 }
 
 .sl-content{
