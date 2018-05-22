@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="container">
         <div class="container">
             <div class="row">
-                <h1 class="first_color"><?php echo esc_html__('Tour', 'koband');?></h1>
+                <h1 class="first_color heading_font"><?php echo esc_html__('Tour', 'koband');?></h1>
             </div>
         </div>
     <div class="row">
@@ -35,10 +35,10 @@ get_header(); ?>
         <div class="divTable">
             <div class="divTableBody koband_post_tour">
                 <div class="divTableRow">
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Date', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Location', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Venue', 'koband');?></div>
-                    <div class="divTableHeading border_first_color main_font_color"><?php echo esc_html__('Ticket', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color heading_font"><?php echo esc_html__('Date', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color heading_font"><?php echo esc_html__('Location', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color heading_font"><?php echo esc_html__('Venue', 'koband');?></div>
+                    <div class="divTableHeading border_first_color main_font_color heading_font"><?php echo esc_html__('Ticket', 'koband');?></div>
                 </div>
                       
                 <?php
@@ -57,13 +57,15 @@ get_header(); ?>
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
                     <div class="divTableRow ">
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  esc_attr($tour_venuename[0]); } ?></a></div>
-                    	<div class="divTableCell border_first_color main_font_color ticket"><?php if($tour_ticket[0] == 'avaliable'){ ?>
-                            <?php if(isset($tour_ticketlink[0])) {?><a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour bg_first_color onsale_btn"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
+                    	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_date[0])) { echo esc_attr($tour_date[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_country[0])) { echo esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo esc_attr($tour_city[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name main_font" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo esc_attr($tour_venuename[0]); } ?></a></div>
+                    	<div class="divTableCell border_first_color main_font_color ticket main_font"><?php if($tour_ticket[0] == 'avaliable'){ ?>
+
+                            <?php if(isset($tour_ticketlink[0])) {?><a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour onsale_btn border_color main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
+
                       <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
-                          <span class="btn_tour bg_second_color soldout_btn"><?php echo esc_html__('Sold Out', 'koband');?></span>
+                          <span class="btn_tour soldout_btn border_color main_font"><?php echo esc_html__('Sold Out', 'koband');?></span>
                     <?php  } ?>
                         </div>
                     	
@@ -75,10 +77,12 @@ get_header(); ?>
     </div><!--row-->
         <div class="container text-center">
             <div class="row">
-                <a class="btn-koband-load koband_load_tour border_color" data-page="1" data-url="<?php echo esc_attr(admin_url('admin-ajax.php')); ?>">
-                    <span class="koband-loading"><?php echo esc_html__('Loading...','koband');?></span>
-                    <span class="text"><?php echo esc_html__('Load tour','koband');?></span></a>
-                <a class="no-tour"><span class="tour-posts"><?php echo esc_html__('There are no more tours', 'koband');?>   <i class="far fa-smile"></i></span></a>
+
+                <a class="btn-koband-load koband_load_tour border_color first_color main_font" data-page="1" data-url="<?php echo esc_attr(admin_url('admin-ajax.php')); ?>">
+                    <span class="koband-loading first_color main_font"><?php echo esc_html__('Loading...','koband');?></span>
+                    <span class="text first_color main_font"><?php echo esc_html__('Load tour','koband');?></span></a>
+                <a class="no-tour"><span class="tour-posts first_color main_font"><?php echo esc_html__('There are no more tours', 'koband');?>   <i class="far fa-smile"></i></span></a>
+
             </div>
         </div><!--container-->
     </div><!--container-->

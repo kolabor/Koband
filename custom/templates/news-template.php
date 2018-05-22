@@ -35,7 +35,7 @@
 							<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
 								<div class="col-md-4">
 									<div class="card mb-4 box-shadow">
-										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
+										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
 										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
 										<div class="card-body">
 											<div id="card-text" class="main_font_color main_font"><?php the_excerpt(); ?></div>
@@ -55,10 +55,12 @@
 			</div><!-- container -->
 				<div class="container text-center">
 					<div class="row ">
+
 						<a class="btn-koband-load koband_load_more border_color main_font" data-page="1" data-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-							<span class="koband-loading main_font"><?php echo esc_html__('Loading...', 'koband');?></span>
-							<span class="text main_font"><?php echo esc_html__('Load more', 'koband');?></span></a>
-						<a class="no-news"><span class="news-posts"><?php echo esc_html__('There are no more news', 'koband');?>  <i class="far fa-smile"></i></span></a>
+							<span class="koband-loading main_font first_color"><?php echo esc_html__('Loading...', 'koband');?></span>
+							<span class="text main_font first_color"><?php echo esc_html__('Load more', 'koband');?></span></a>
+						<a class="no-news"><span class="news-posts first_color main_fonts"><?php echo esc_html__('There are no more news', 'koband');?>  <i class="far fa-smile"></i></span></a>
+
 					</div>
 				</div>
 		

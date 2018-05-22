@@ -258,7 +258,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 25%!important;
+  top: 18%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -266,11 +266,12 @@ header {
 }
 
 .sl-content h5 {
-  font-size: 60px!important;
+  font-size: 100px!important;
 }
 
 .sl-content p {
-  width:100%!important;
+  width: 100%;
+  font-size: 18px;
 }
 .sl-content a:hover{
   color:#ffffff;
@@ -285,6 +286,7 @@ header {
     font-size: 20px!important;
     padding: 10px!important;
     border-radius: 4px !important;
+    border: 3px solid;
   }
 
 
@@ -416,6 +418,9 @@ header {
   span {
     display: block;
   }
+}
+.btn-koband-load span:hover{
+  color: #fff;
 }
 .koband_load_media, .koband_load_tour, .no-media, .no-tour {
   margin-top: 25px;
@@ -704,11 +709,9 @@ Tour Section
   text-decoration: none!important;
 }
 .btn_tour {
-  padding: 8px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-  color: #fff;
+    padding: 8px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
 }
 .store_link a {
   padding: 6px;
@@ -1270,7 +1273,7 @@ input {
 .search-submit {
   color: white;
   width: 120px;
-  height: 52px;
+  height: 48px;
   font-size: 16px;
   cursor: pointer;
   text-align: center;
@@ -1344,9 +1347,7 @@ input {
   padding-top: 25px;
   padding-bottom: 20px;
 }
-.onsale_btn:hover {
-  color:#ffffff;
-}
+
 .tour_location_label{
   padding-top: 20px;
   padding-bottom: 18px;
@@ -1481,12 +1482,13 @@ input {
 
 
 @media screen and (max-width: 1366px) {
-  .sl-content h5 {font-size: 45px !important;}
+  .sl-content {top: 28% !important;}
+  .sl-content h5 {font-size: 80px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
-  .carousel-inner {height: 100% !important;}
+  .carousel-inner {height: auto !important;}
 }
 @media screen and (max-width: 1024px) {
-
+.sl-content {width: 100%; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
 
 }
 @media screen and (max-width: 1023px) {
@@ -1498,7 +1500,7 @@ input {
   .main-logo {width: 40%; padding-left: 36px; margin-left: 236px;}
   .logo {margin-top: 0;}
   .menu-scroll, .menu-noscroll {height: auto!important;}
-  .sl-content {width: 100%; top: 28% !important; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
+  .sl-content {width: 100%; top: 22% !important; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
   .sl-content p {font-size: 25px!important;}
   .koband_post_news .col-md-4 {-webkit-box-flex: 0;-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%;}
   .koband_post_media .col-lg-3 {-webkit-box-flex: 0;-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%;}

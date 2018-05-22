@@ -101,16 +101,14 @@
   $koband_footer_menu_font_color = get_theme_mod('ko_band_footer_menu_font_color');
   $koband_footer_menu_font_size = get_theme_mod('ko_band_footer_menu_font_size'); 
   
-  /*$main_font_on_class = str_replace("+"," ",$koband_general_font);
-  $heading_font_on_class = str_replace("+"," ",$koband_general_font);*/
+  
  
 ?>
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_general_font; ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo $koband_headding_font; ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
 
-<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=<?php echo esc_url($koband_headding_font); ?>'">-->
 
 
 /* Menu item colors */
@@ -127,7 +125,7 @@
 {
   font-family: <?php echo esc_html($koband_headding_font); ?> ;
   color: <?php echo esc_html($koband_main_font_color);?> ;
-  font-size:  <?php echo $koband_theme_font_size; ?> ;
+  font-size:  <?php echo esc_html($koband_theme_font_size); ?> ;
 }
 #theband {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -138,18 +136,18 @@
 }
 
 #News {
-  background-color: <?php echo  esc_html($koband_news_background_color); ?> ;
+  background-color: <?php echo esc_html($koband_news_background_color); ?> ;
 }
 
 #Tour {
-  background-color: <?php echo  esc_html($koband_tour_background_color); ?> ;
+  background-color: <?php echo esc_html($koband_tour_background_color); ?> ;
 }
 
 #Discography {
-  background-color: <?php echo  esc_html($koband_discography_background_color); ?> ;
+  background-color: <?php echo esc_html($koband_discography_background_color); ?> ;
 }
 #Media {
-background-color: <?php echo  esc_html($koband_gallery_background_color); ?> ;
+background-color: <?php echo esc_html($koband_gallery_background_color); ?> ;
 }
 
 
@@ -188,9 +186,12 @@ a {
 .bg_second_color {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
-
-.main_font {
+.main_font_color .main_font {
    font-family : <?php echo esc_html($koband_general_font); ?> ;
+}
+.comments-area, .sidebar {
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
+   color: <?php echo esc_html($koband_main_font_color); ?> ;
 }
 .main_font_color{
  
@@ -203,7 +204,9 @@ a {
   color:#fff!important;
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
-
+.divTableCell a {
+  color: <?php echo esc_html($koband_first_theme_color); ?> ;
+}
 .font-line_height {
   font-size:  <?php echo esc_html($koband_theme_font_size); ?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
@@ -223,10 +226,11 @@ a {
 }
 .slider_button_text_color {
   color: <?php echo esc_html($koband_slider_button_text_color) ?>;
-  background-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
+  border-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
 }
 .slider_button_text_color:hover {
   background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
+  border-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
 }
 
 .sl-content{
@@ -286,6 +290,7 @@ a {
 .main-nav .menu li a {
   color: <?php echo esc_html($koband_main_menu_font_color)?>;
   font-size: <?php echo esc_html($koband_main_menu_font_size)?>px ;
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
 .main-nav .menu li a:hover {
   color: <?php echo esc_html($koband_main_menu_font_color)?> ;
@@ -294,6 +299,7 @@ a {
 .footer-menu .menu li a {
   color: <?php echo esc_html($koband_footer_menu_font_color)?> ;
   font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px ;
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
 .venue_name:hover {
   text-decoration: none !important;
@@ -307,7 +313,11 @@ a {
   color: <?php echo esc_html($koband_second_theme_color);?>;
   text-decoration: none !important;
 }
-.soldout_btn:hover {
-   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
-   color: #ffffff;
+.onsale_btn:hover {
+  color: <?php echo esc_html($koband_second_theme_color);?>;
+ border-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
+}
+}
+.search-submit {
+  font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
