@@ -182,20 +182,14 @@
   /*Show hider slider text holder box*/
 	api( 'ko_band_home_page_box_background', function( value ) {
 		value.bind( function( newBgHolderMode ) {
-		    
-		    if(newBgHolderMode == false)
-		    {   
+		    if(newBgHolderMode == false){   
 		       $('.sl-content').addClass('no_background_color')
-               
 		    }
-		     else if (newBgHolderMode == true) 
-		    {
+		    else if (newBgHolderMode == true){
 		    	$('.sl-content').removeClass('no_background_color')
-
 		    }
-			
-		} );
-	} );
+		});
+	});
 
 /* Show or hide search at footer*/
 	api('ko_band_footer_search', function( value ) {
@@ -203,11 +197,12 @@
 			if (hideSearchFooter == false){
 				$('.search-form').slideUp()
 			}
-			if (hideSearchFooter == true){
-				$('.search-form').slideDown()
+			else if (hideSearchFooter == '1'){
+				$('.search-form').show()
 			}
-		})
-	})
+		});
+	});
+	
 /*Show theband section bg image*/
 	api( 'ko_band_theband_sectin_background_image', function( value ) {
 		value.bind( function( newThebandSectionBGImage ) {
