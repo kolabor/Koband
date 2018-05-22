@@ -47,7 +47,7 @@ get_header();?>
 	<div class="container">
 		<div class="row album-head border_first_color main_font_color">
 			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
-				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
+				<div class="col-sm-3 album_title main_font_color main_font"><h4><?php echo esc_html__('Album Name:', 'koband');?></h4><a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 		        <?php 
 		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
@@ -55,8 +55,8 @@ get_header();?>
 				$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
 				$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false); ?>
 					
-				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color main_font"><?php if(isset($album_date[0])) { echo esc_attr($album_date[0]); } ?></span></div>
-			    <div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color main_font"><?php if(isset($album_length[0])) { echo esc_attr($album_length[0]); } ?></span></div>
+				<div class="col-sm-3 album_title main_font_color main_font"><h4><?php echo esc_html__('Date:', 'koband');?></h4><span class="main_font_color main_font"><?php if(isset($album_date[0])) { echo esc_attr($album_date[0]); } ?></span></div>
+			    <div class="col-sm-3 album_title main_font_color main_font"><h4><?php echo esc_html__('Length:', 'koband');?></h4><span class="main_font_color main_font"><?php if(isset($album_length[0])) { echo esc_attr($album_length[0]); } ?></span></div>
 			    <div class="col-sm-1 album-up-down-buttons">
 			    	<span class="btn btn-sm album-song">
 				    	<a class="btn btn-sm show-album-song first_color"><img src="<?php echo esc_url(get_template_directory_uri()); ?>//img/Arrow-Down.png"/></a>
@@ -118,9 +118,9 @@ get_header();?>
 	<div class="container">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank"><?php the_post_thumbnail(array(70,70));?></a></div>
-				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank"><span class="main_font_color main_font"><?php the_title();?></span></a></div>
-				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color main_font"><?php if(isset($single_date[0])) 	{ echo  esc_attr($single_date[0]); } ?></span></div>
-				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color main_font"><?php if(isset($single_length[0])) 	{ echo esc_attr($single_length[0]); } ?></span></div>
+				<div class="col-sm-3 album_title main_font_color main_font"><h4><?php echo esc_html__('Name:', 'koband');?></h4><a href="<?php the_permalink();?>" target="_blank"><span class="main_font_color main_font"><?php the_title();?></span></a></div>
+				<div class="col-sm-3 album_title main_font_color main_font"><h4><?php echo esc_html__('Date:', 'koband');?></h4><span class="main_font_color main_font"><?php if(isset($single_date[0])) 	{ echo  esc_attr($single_date[0]); } ?></span></div>
+				<div class="col-sm-3 album_title main_font_color main_font"><h4><?php echo esc_html__('Length:', 'koband');?></h4><span class="main_font_color main_font"><?php if(isset($single_length[0])) 	{ echo esc_attr($single_length[0]); } ?></span></div>
 
 			<div class="col-sm-1 single-up-down-buttons">
 				<span class="btn btn-sm single-song">

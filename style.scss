@@ -285,7 +285,7 @@ header {
 .btn-group-lg > .btn, .btn-lg {
     font-size: 20px!important;
     padding: 10px!important;
-    border-radius: 4px !important;
+    border-radius:0 !important;
     border: 3px solid;
   }
 
@@ -335,6 +335,9 @@ header {
 /* ----------------------------------------------- */
 /* News */
 /* -----------------------------------------------  */
+.card {
+  border-radius: 0;
+}
 .card-img-top img {
   display: block;
   height: auto;
@@ -775,6 +778,10 @@ Tour Section
   font-size: 20px!important;
   font-weight: 700!important;
 }
+.album_title h4 {
+  opacity: 0.4;
+  font-size: 20px;
+}
 .album_title a:hover{
 text-decoration: none;
 }
@@ -858,7 +865,9 @@ text-decoration: none;
   margin-top: 200px!important;
 }
 .bio_holder {
-      padding-left: 32px;
+  padding-left: 32px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .band-bio p {
@@ -876,6 +885,8 @@ text-decoration: none;
   height: auto!important;
   position: relative!important;
   margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .bnd_mem_img {
   width: 100%;
@@ -911,8 +922,6 @@ text-decoration: none;
 }
 .title_and_role{
   background-color: #f8f9fab3;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 .title_and_role .name_member_padding{
   line-height: 1;
@@ -922,7 +931,10 @@ text-decoration: none;
 padding-top: 15px;
 padding-bottom: 15px;
 }
-
+.band_member:hover {
+    -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+}
 .band-members-role {
   padding: 0!important;
   margin: 0!important;
