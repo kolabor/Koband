@@ -556,11 +556,13 @@ header {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9); }
 
-.FullscreenV iframe {
+#Fullscreen iframe {
   margin: auto;
   display: block;
   width: 70%;
-  height: 100%; }
+  height: 100%;
+  border: none;
+  padding: 50px; }
 
 #Fullscreen {
   display: none;
@@ -589,14 +591,12 @@ header {
 
 .close_gallery {
   position: absolute;
-  right: 3%;
-  top: 2%;
-  background-color: #f1f1f1;
-  color: black !important;
-  border-radius: 65%;
+  right: 5%;
+  top: 3%;
+  color: #dfdfdf !important;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px !important; }
+  font-size: 35px; }
 
 .imageList img {
   cursor: pointer !important; }
@@ -604,24 +604,24 @@ header {
 .prev {
   position: absolute;
   left: 5%;
-  top: 52%;
-  background-color: #f1f1f1;
-  color: black !important;
+  top: 42%;
+  color: #b2b2b2 !important;
   border-radius: 50%;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px; }
+  font-size: 70px; }
 
 .next {
   position: absolute;
   right: 5%;
-  top: 52%;
-  background-color: #f1f1f1;
-  color: black !important;
+  top: 42%;
+  /* background-color: #f1f1f1; */
+  color: #b2b2b2 !important;
   border-radius: 50%;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px; }
+  font-size: 70px;
+  /* padding: 8px 16px; */ }
 
 /*
 Tour Section
@@ -672,8 +672,7 @@ Tour Section
 
 .store_link a {
   padding: 6px;
-  border-radius: 5px;
-  color: #fff !important;
+  border: 3px solid;
   font-size: 14px; }
 
 .store_link a .svg-inline--fa {
@@ -1459,8 +1458,8 @@ input {
     width: 100%;
     top: 22% !important;
     left: 0 !important;
-    padding-left: 200px !important;
-    padding-right: 200px !important; }
+    padding-left: 150px !important;
+    padding-right: 150px !important; }
 
   .sl-content p {
     font-size: 25px !important; }
@@ -1656,13 +1655,23 @@ input {
     font-size: 14px; }
 
   .sl-content {
-    top: 31% !important;
-    padding-left: 105px !important;
-    padding-right: 105px !important; } }
-@media screen and (max-width: 800px) {
-  .sl-content h5 {
-    font-size: 30px !important; }
+    top: 25% !important;
+    padding-left: 120px !important;
+    padding-right: 120px !important; } }
+@media screen and (max-width: 843px) {
+  .sl-content {
+    top: 20% !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important; } }
+@media screen and (max-width: 803px) {
+  .sl-content {
+    top: 20% !important;
+    padding-left: 85px !important;
+    padding-right: 85px !important; }
 
+  .sl-content h5 {
+    font-size: 70px !important; } }
+@media screen and (max-width: 800px) {
   .btn-group-lg > .btn, .btn-lg {
     font-size: 1rem !important; }
 
@@ -1696,6 +1705,9 @@ input {
     line-height: 2;
     height: 35px;
     font-size: 14px; } }
+@media screen and (max-width: 768px) {
+  .sl-content {
+    top: 22% !important; } }
 @media screen and (max-width: 767px) {
   .mobile-nav-icon {
     display: inline-block;

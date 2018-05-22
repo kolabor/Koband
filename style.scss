@@ -598,11 +598,13 @@ header {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
 }
-.FullscreenV iframe {
+#Fullscreen iframe {
   margin: auto;
   display: block;
   width: 70%;
   height:100%;
+  border: none;
+  padding: 50px;
 }
 
 #Fullscreen {
@@ -626,39 +628,39 @@ header {
 }
 .close_gallery {
   position: absolute;
-  right: 3%;
-  top: 2%;
-  background-color: #f1f1f1;
-  color: black !important;
-  border-radius: 65%;
+  right: 5%;
+  top: 3%;
+  color: #dfdfdf !important;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px !important;
+  font-size: 35px;
 }
 
 .imageList img{cursor: pointer !important;}
 
 .prev {
   position: absolute;
-  left: 5%;
-  top: 52%;
-  background-color: #f1f1f1;
-  color: black!important;
-  border-radius: 50%;
-  text-decoration: none!important;
-  display: inline-block;
-  padding: 8px 16px;
+    left: 5%;
+    top: 42%;
+    
+    color: #b2b2b2 !important;
+    border-radius: 50%;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 70px;
+   
 }
 .next {
-  position: absolute;
-  right: 5%;
-  top: 52%;
-  background-color: #f1f1f1;
-  color: black!important;
-  border-radius: 50%;
-  text-decoration: none!important;
-  display: inline-block;
-  padding: 8px 16px;
+ position: absolute;
+    right: 5%;
+    top: 42%;
+    /* background-color: #f1f1f1; */
+    color: #b2b2b2 !important;
+    border-radius: 50%;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 70px;
+    /* padding: 8px 16px; */
 }
 /*
 Tour Section
@@ -714,8 +716,8 @@ Tour Section
 }
 .store_link a {
   padding: 6px;
-  border-radius: 5px;
-  color: #fff!important;
+ border: 3px solid ;
+
   font-size: 14px;
 }
 
@@ -1490,6 +1492,9 @@ input {
 .sl-content {width: 100%; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
 
 }
+@media screen and (max-width: 1004px) {
+
+}
 @media screen and (max-width: 1023px) {
   .mobile-nav-icon { display: inline-block; font-size: 42px;}
   .main-nav .menu {position: relative; list-style-type: none; width: 100%; text-align: center; padding-top: 5px;}
@@ -1499,7 +1504,7 @@ input {
   .main-logo {width: 40%; padding-left: 36px; margin-left: 236px;}
   .logo {margin-top: 0;}
   .menu-scroll, .menu-noscroll {height: auto!important;}
-  .sl-content {width: 100%; top: 22% !important; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
+  .sl-content {width: 100%; top: 22% !important; left: 0!important; padding-left: 150px!important; padding-right: 150px!important;}
   .sl-content p {font-size: 25px!important;}
   .koband_post_news .col-md-4 {-webkit-box-flex: 0;-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%;}
   .koband_post_media .col-lg-3 {-webkit-box-flex: 0;-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%;}
@@ -1560,12 +1565,18 @@ input {
   .col-sm-1 { margin-right: 12px !important;}
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; height: 35px; font-size: 14px;}
-  .sl-content {top: 31% !important; padding-left: 105px !important;padding-right: 105px !important;}
+  .sl-content {top: 25% !important; padding-left: 120px !important; padding-right: 120px !important;}
 }
-
+@media screen and (max-width: 843px) {
+.sl-content {top: 20% !important; padding-left: 100px !important; padding-right: 100px !important;}
+}
+@media screen and (max-width: 803px) {
+  .sl-content {top: 20% !important; padding-left: 85px !important; padding-right: 85px !important;}
+  .sl-content h5 {font-size: 70px !important;}
+}
 @media screen and (max-width: 800px) {
 
-  .sl-content h5 {font-size: 30px !important;}
+ 
   .btn-group-lg > .btn, .btn-lg {font-size: 1rem !important;}
   .carousel-inner {height: auto !important;}
   .col-sm-1 {margin-right: 12px !important;}
@@ -1576,7 +1587,7 @@ input {
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; height: 35px; font-size: 14px;}
 }
-
+@media screen and (max-width: 768px){.sl-content {top: 22% !important;}}
 @media screen and (max-width: 767px) {
   .mobile-nav-icon { display: inline-block; font-size: 28px;; }
   .main-nav .menu {position: relative; list-style-type: none; width: 94%; text-align: center; padding-top: 5px;}
