@@ -599,11 +599,13 @@ header {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9);
 }
-.FullscreenV iframe {
+#Fullscreen iframe {
   margin: auto;
   display: block;
   width: 70%;
   height:100%;
+  border: none;
+  padding: 50px;
 }
 
 #Fullscreen {
@@ -627,39 +629,39 @@ header {
 }
 .close_gallery {
   position: absolute;
-  right: 3%;
-  top: 2%;
-  background-color: #f1f1f1;
-  color: black !important;
-  border-radius: 65%;
+  right: 5%;
+  top: 3%;
+  color: #dfdfdf !important;
   text-decoration: none !important;
   display: inline-block;
-  padding: 8px 16px !important;
+  font-size: 35px;
 }
 
 .imageList img{cursor: pointer !important;}
 
 .prev {
   position: absolute;
-  left: 5%;
-  top: 52%;
-  background-color: #f1f1f1;
-  color: black!important;
-  border-radius: 50%;
-  text-decoration: none!important;
-  display: inline-block;
-  padding: 8px 16px;
+    left: 5%;
+    top: 42%;
+    
+    color: #b2b2b2 !important;
+    border-radius: 50%;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 70px;
+   
 }
 .next {
-  position: absolute;
-  right: 5%;
-  top: 52%;
-  background-color: #f1f1f1;
-  color: black!important;
-  border-radius: 50%;
-  text-decoration: none!important;
-  display: inline-block;
-  padding: 8px 16px;
+ position: absolute;
+    right: 5%;
+    top: 42%;
+    /* background-color: #f1f1f1; */
+    color: #b2b2b2 !important;
+    border-radius: 50%;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 70px;
+    /* padding: 8px 16px; */
 }
 /*
 Tour Section
