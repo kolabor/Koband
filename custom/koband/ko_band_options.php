@@ -277,7 +277,7 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Roboto' => 'Roboto',
             'Roboto+Condensed' => 'Roboto Condensed',
             'Inconsolata' => 'Inconsolata',
-            'Libre+Franklin' => 'Libre Franklin',
+            'Libre Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
             'Yatra+One' => 'Yatra One',
