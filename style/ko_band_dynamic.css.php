@@ -171,7 +171,7 @@ a {
 .bg_second_color {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
-.main_font_color .main_font {
+.main_font {
    font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
 .comments-area, .sidebar {
