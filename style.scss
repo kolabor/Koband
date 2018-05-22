@@ -13,7 +13,9 @@ Text Domain: koband
 /* =Reset ff
 weffcb
 -------------------------------------------------------------- */
-
+a {
+  text-decoration: none !important;
+}
 .flex{
      display: flex;
     display: -webkit-flex; 
@@ -347,9 +349,6 @@ header {
   -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
           box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
-.news-title h2 a{
-  color : #4b4b4b !important;
-}
 .news-title {
   padding-left: 10px!important;
   padding-top: 6px!important;
@@ -400,7 +399,7 @@ header {
 .btn-koband-load {
   display: block;
   width: 200px;
-  
+  text-decoration:none !important;
   font-size: 20px;
   cursor: pointer;
   margin: 0 auto;
@@ -1791,8 +1790,6 @@ input {
   .tour_single_page_row .store_link a {font-size: 13px; }
   .sng_alb_hld .song-list {font-size: 28px!important;}
   .sng_store a {font-size: 13px!important;}
-
-
 }
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
