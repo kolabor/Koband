@@ -179,8 +179,7 @@ a {
    color: <?php echo esc_html($koband_main_font_color); ?> ;
 }
 .main_font_color{
- 
-  color: <?php echo esc_html($koband_main_font_color); ?> ;  
+   color: <?php echo esc_html($koband_main_font_color); ?> ;  
 }
 body > div > .border_color {
   border-color: <?php echo esc_html($koband_first_theme_color); ?>;

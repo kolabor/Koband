@@ -165,7 +165,6 @@
 		value.bind( function( newSliderButtonBorderColor ) {
 		
 			$('.slider_button_text_color').css('border-color', newSliderButtonBorderColor, 'important');
-
 			
 		} );
 	} );
@@ -213,8 +212,7 @@
 	api( 'ko_band_theband_sectin_background_image', function( value ) {
 		value.bind( function( newThebandSectionBGImage ) {
 
-			$('#theband').css('background-image', newThebandSectionBGImage, 'important');
-			$('#theband').css('linear-gradient', 'rgba(0, 0, 0, 0.5)', 'important');
+			$('#theband').css('background-image', 'url('+newThebandSectionBGImage+')', 'important');
 			$('#theband').css('background-repeat', 'no-repeat', 'important');
 			$('#theband').css('background-size', 'cover', 'important');
 			$('#theband').css('background-position', 'center', 'important');
