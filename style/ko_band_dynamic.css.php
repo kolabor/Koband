@@ -45,7 +45,7 @@
 
   /****Slider Section Colors****/
   $koband_slider_title_color = get_theme_mod('ko_band_slider_title_color'); 
-  $koband_slider_subtitle_color = get_theme_mod('ko_band_slider_subtitle_color');
+  $koband_slider_paragraph_text_color = get_theme_mod('ko_band_slider_paragraph_text_color');
   $koband_slider_button_text_color = get_theme_mod('ko_band_slider_button_text_color');
   $koband_slider_button_border_color = get_theme_mod('ko_band_slider_button_border_color');
   $koband_slider_button_hover_bg_color = get_theme_mod('ko_band_slider_button_hover_background_color');
@@ -230,7 +230,7 @@ a {
   color: <?php echo esc_html($koband_slider_title_color) ?>;
 }
 .slider_text_color.main_font{
-  color: <?php echo esc_html($koband_slider_subtitle_color) ?>;
+  color: <?php echo esc_html($koband_slider_paragraph_text_color) ?>;
 }
 .slider_button_text_color {
   color: <?php echo esc_html($koband_slider_button_text_color) ?>;

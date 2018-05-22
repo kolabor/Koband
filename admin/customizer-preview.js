@@ -63,7 +63,7 @@
 		
 			$('.main_font_color').css( 'color', newThemeMainFontColor, 'important');
 			$('.home').css( 'color', newThemeMainFontColor, 'important'); //if have any problem take it out
-			//$('.single').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
+			$('.single').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
 			$('.page').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
 			$('.default').css( 'color', newThemeMainFontColor, 'important');
 			$('.home h1').css( 'color', newThemeMainFontColor, 'important');
@@ -214,7 +214,7 @@
 
 /*SLIDER Live changes start here */
 
-    //Update slider title color
+   		//Update slider title color
 	api( 'ko_band_slider_title_color', function( value ) {
 		value.bind( function( newSliderTitleColor ) {
 		
@@ -223,17 +223,16 @@
 		} );
 	} );
 
-	   //Update slider subtitle color
-	api( 'ko_band_slider_subtitle_color', function( value ) {
-		value.bind( function( newSliderSubTitleColor ) {
+	   //Update slider paragraph text color
+	api( 'ko_band_slider_paragraph_text_color', function( value ) {
+		value.bind( function( newSliderParagraphTextColor ) {
 		
-			$('.slider_text_color.main_font').css( 'color', newSliderSubTitleColor, 'important');
+			$('.slider_text_color.main_font').css( 'color', newSliderParagraphTextColor, 'important');
 			
 		} );
 	} );
     
-    
-    /*Update slider button text color*/
+       /*Update slider button text color*/
 	api( 'ko_band_slider_button_text_color', function( value ) {
 		value.bind( function( newSliderButtonTextColor ) {
 		
@@ -242,11 +241,11 @@
 		} );
 	} );
 
-	/*Update slider button bg color*/
+	/*Update slider button border color*/
 	api( 'ko_band_slider_button_border_color', function( value ) {
-		value.bind( function( newSliderButtonBgColor ) {
+		value.bind( function( newSliderButtonBorderColor ) {
 		
-			$('.slider_button_text_color').css('border-color', newSliderButtonBgColor, 'important');
+			$('.slider_button_text_color').css('border-color', newSliderButtonBorderColor, 'important');
 
 			
 		} );

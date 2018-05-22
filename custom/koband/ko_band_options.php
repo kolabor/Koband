@@ -300,20 +300,20 @@ $wp_customize->add_setting( 'ko_band_slider_title_color', array(
         'transport' => 'postMessage'
     ));
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_title_color', array(
-        'label'      => esc_html__( ' Title color', 'koband' ),
+        'label'      => esc_html__( 'Slider title color', 'koband' ),
         'section'    => 'ko_band_slider_section',
         'settings'   => 'ko_band_slider_title_color',
 ) ) );
 
 /*** Slider subtitle color ***/
-$wp_customize->add_setting( 'ko_band_slider_subtitle_color', array(
+$wp_customize->add_setting( 'ko_band_slider_paragraph_text_color', array(
         'default'    => 0,
         'transport' => 'postMessage'
     ));
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_subtitle_color', array(
-        'label'      => esc_html__( ' Subtitle color', 'koband' ),
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_paragraph_text_color', array(
+        'label'      => esc_html__( 'Slider paragraph text color', 'koband' ),
         'section'    => 'ko_band_slider_section',
-        'settings'   => 'ko_band_slider_subtitle_color',
+        'settings'   => 'ko_band_slider_paragraph_text_color',
 ) ) );
 
 /*** Slider Button text color ***/
