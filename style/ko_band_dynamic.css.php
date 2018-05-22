@@ -107,8 +107,8 @@
 ?>
 
 
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_general_font); ?>');
-@import url('https://fonts.googleapis.com/css?family=<?php echo esc_html($koband_headding_font); ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_general_font); ?>');
+@import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_headding_font); ?>');
 
 
 
@@ -186,7 +186,6 @@ body > div > .border_color {
   border-color: <?php echo esc_html($koband_first_theme_color); ?>;
 }
 .btn-koband-load:hover {
-  color:#fff!important;
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
 .store_link a:hover {

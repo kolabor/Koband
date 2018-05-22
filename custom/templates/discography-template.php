@@ -75,7 +75,7 @@ get_header();?>
 				<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
 					<div class="col-sm-4 song_info border_bottom line main_font"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
 					<div class="col-sm-4 song_info border_bottom line main_font"><?php if(isset($value_song_details['length'])) {echo esc_attr($value_song_details['length']);} ?></div>
-					<div class="col-sm-4 song_info border_bottom main_font"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>
+					<div class="col-sm-4 song_info border_bottom main_font song_dt"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>
 						
 					<?php } ?> 
 				</div>
