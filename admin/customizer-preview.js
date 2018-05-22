@@ -13,16 +13,25 @@
 			$('.read_more a').css('color', newThemeFirstColor, 'important');	
 			$('.read_more:hover a').css('color', newThemeFirstColor, 'important');	
 			$('.bg_first_color').css('background-color', newThemeFirstColor, 'important');
-			$('.bg_first_color:hover').css('color', newThemeFirstColor, 'important');	
+			$('.bg_first_color:hover').css('color', newThemeFirstColor, 'important');			
+			//$('.read_more a:hover ').css('color', newThemeFirstColor, 'important');	
+			//$('.read_more:hover').css(' background-color', '#fff', 'important');	
+			
 			$('.border_first_color').css('border-bottom-color', newThemeFirstColor, 'important');	
 			$('.submit').css('background-color', newThemeFirstColor, 'important');	
 			$('.submit:hover').css('color', newThemeFirstColor, 'important');	
-			$('.reply a').css('color', newThemeFirstColor, 'important');	
-			$('.submit').css('color', newThemeFirstColor, 'important');	
+			$('.reply a, .submit').css('color', newThemeFirstColor, 'important');	
 			$('.hovereffect:hover .overlay').css('background-color', newThemeFirstColor, 'important');
 			$('.hovereffect:hover .overlay').css('opacity', '0.5', 'important');	
-			$('.main-nav .menu li a:hover').css('border-bottom', newThemeFirstColor, 'important');	
-			$('#contact .wpcf7').css('border-bottom', newThemeFirstColor, 'important');	
+			$('.main-nav .menu li a:hover').css('border-bottom', newThemeFirstColor, 'important');
+			//$('.border_color').css('border-color', newThemeFirstColor, 'important');	
+			//$('.btn-koband-load:hover').css('color', '#fff', 'important');		
+			//$('.btn-koband-load:hover').css('background-color', newThemeFirstColor, 'important');	
+			//$('.venue_name:hover').css('color', newThemeFirstColor, 'important');		
+			//$('.venue_name:hover').css('text-decoration', 'none', 'important');				
+			//$('.news-details_li a').css('color', newThemeFirstColor, 'important');		
+			//$('.news-details_li a').css('text-decoration', 'none', 'important');					
+			$('#contact .wpcf7').css(' border', newThemeFirstColor, 'important');	
 
 		} );
 	} ); 
@@ -39,33 +48,40 @@
 			$('.submit').css('color', newThemeSecondColor, 'important');
 			$('.submit:hover').css('background-color', newThemeSecondColor, 'important');	
 			$('.border_bottom').css('border-bottom-color', newThemeSecondColor, 'important');	
-		
+			//$('.reply a:hover').css('color', newThemeSecondColor, 'important');
+			//$('.news-details_li a:hover').css('color', newThemeSecondColor, 'important'); 
+			//$('.news-details_li a:hover').css('text-decoration', 'none', 'important'); 
+			//$('.soldout_btn:hover').css('background-color', newThemeSecondColor, 'important'); 
+			//$('.soldout_btn:hover').css('color', '#ffffff', 'important'); 
 		} );
 	} );
    
 
     // Update theme main font color
 	api( 'ko_band_main_font_color', function( value ) {
-		value.bind( function( newThemeFontColor ) {
+		value.bind( function( newThemeMainFontColor ) {
 		
-			$('.main_font_color').css( 'color', newThemeFontColor, 'important');
-			$('.home').css( 'color', newThemeFontColor, 'important'); //if have any problem take it out
-			$('.single').css( 'color', newThemeFontColor, 'important');//if have any problem take it out
-			$('.page').css( 'color', newThemeFontColor, 'important');//if have any problem take it out
-			$('.default').css( 'color', newThemeFontColor, 'important');
-			$('.home h1').css( 'color', newThemeFontColor, 'important');
-			$('.home h2 ').css( 'color', newThemeFontColor, 'important');
-			$('.home h3').css( 'color', newThemeFontColor, 'important');
-			$('.home h4').css( 'color', newThemeFontColor, 'important');
-			$('.single h1').css( 'color', newThemeFontColor, 'important');
-			$('.single h2').css( 'color', newThemeFontColor, 'important');
-			$('.single h3').css( 'color', newThemeFontColor, 'important');
-			$('.single h4').css( 'color', newThemeFontColor, 'important');
-			$('.page h1').css( 'color', newThemeFontColor, 'important');
-			$('.page h2').css( 'color', newThemeFontColor, 'important');
-			$('.page h3').css( 'color', newThemeFontColor, 'important');
-			$('.page h4').css( 'color', newThemeFontColor, 'important');
-			
+			$('.main_font_color').css( 'color', newThemeMainFontColor, 'important');
+			$('.home').css( 'color', newThemeMainFontColor, 'important'); //if have any problem take it out
+			$('.single').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
+			$('.page').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
+			$('.default').css( 'color', newThemeMainFontColor, 'important');
+			$('.home h1').css( 'color', newThemeMainFontColor, 'important');
+			$('.home h2 ').css( 'color', newThemeMainFontColor, 'important');
+			$('.home h3').css( 'color', newThemeMainFontColor, 'important');
+			$('.home h4').css( 'color', newThemeMainFontColor, 'important');
+			$('.single h1').css( 'color', newThemeMainFontColor, 'important');
+			$('.single h2').css( 'color', newThemeMainFontColor, 'important');
+			$('.single h3').css( 'color', newThemeMainFontColor, 'important');
+			$('.single h4').css( 'color', newThemeMainFontColor, 'important');
+			$('.page h1').css( 'color', newThemeMainFontColor, 'important');
+			$('.page h2').css( 'color', newThemeMainFontColor, 'important');
+			$('.page h3').css( 'color', newThemeMainFontColor, 'important');
+			$('.page h4').css( 'color', newThemeMainFontColor, 'important');
+			//$('.comments-area, .sidebar').css( 'color', newThemeMainFontColor, 'important');
+			//$('.read_more a').css( 'color', newThemeMainFontColor, 'important');
+
+
 			
 		} );
 	} );
@@ -76,7 +92,7 @@
 		
 			$('.main-nav .menu li a').css( 'color', newThemeMenuFontColor, 'important');
 			$('.main-nav .menu li a:hover ').css( 'color', newThemeMenuFontColor, 'important');
-			$('.main-nav .menu li a:hover ').css( 'opacity', '0.5', 'important');
+			$('.main-nav .menu li a:hover ').css( 'opacity', '0.4', 'important');
 						
 		} );
 	} );
@@ -143,9 +159,13 @@
 
 	 // Update theme general font selector
 	api( 'ko_band_general_font_selector', function( value ) {
-		value.bind( function( newThemeGeneralFontSelector ) {
+		value.bind( function( newThemeGeneralFont ) {
 		
-			$('.main_font_color').css( 'font-family', newThemeGeneralFontSelector, 'important'); 
+			$('.main_font_color').css( 'font-family', newThemeGeneralFont, 'important'); 
+			$('.comments-area, .sidebar').css( 'font-family', newThemeGeneralFont, 'important'); 
+			$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
+			$('.footer-menu .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
+			$('.search-submit').css( 'font-family', newThemeGeneralFont, 'important'); 
 										
 		} );
 	} );
@@ -153,21 +173,22 @@
 
 	 // Update theme heading font selector
 	api( 'ko_band_heading_font_selector', function( value ) {
-		value.bind( function( newThemeHeadingFontSelector ) {
+		value.bind( function( newThemeHeadingFont ) {
 		
-			$('.first_color').css( 'font-family', newThemeHeadingFontSelector, 'important'); 
-			$('.home h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.home h2 ').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.home h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.home h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.single h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.single h2').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.single h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.single h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.page h1').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.page h2').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.page h3').css( 'font-family', newThemeHeadingFontSelector, 'important');
-			$('.page h4').css( 'font-family', newThemeHeadingFontSelector, 'important');
+			$('.first_color').css( 'font-family', newThemeHeadingFont, 'important'); 
+			$('.heading_font').css( 'font-family', newThemeHeadingFont, 'important'); 
+			$('.home h1').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.home h2').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.home h3').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.home h4').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.single h1').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.single h2').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.single h3').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.single h4').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.page h1').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.page h2').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.page h3').css( 'font-family', newThemeHeadingFont, 'important');
+			$('.page h4').css( 'font-family', newThemeHeadingFont, 'important');
 
 		} );
 	} );
@@ -216,6 +237,7 @@
 		value.bind( function( newSliderButtonBgColor ) {
 		
 			$('.slider_button_text_color').css('background-color', newSliderButtonBgColor, 'important');
+
 			
 		} );
 	} );
@@ -225,7 +247,7 @@
 		value.bind( function( newSliderHoverButtonBgColor ) {
 		
 			$('.slider_button_text_color:hover').css('background-color', newSliderHoverButtonBgColor, 'important');
-			
+			//$('.slider_button_text_color:hover').css('border-color', newSliderButtonBgColor, 'important');
 		} );
 	} );
 
@@ -248,12 +270,11 @@
                $('.sl-content').css('background-color', 'rgba(255,255,255, 0)', 'important');
                
 		    }
-		    else if (newBgHolderMode == true) 
+		     else if (newBgHolderMode == true) 
 		    {
 		    	$('.sl-content').css('background-color', 'rgba(0,0,0, 0.4)', 'important');
 
 		    }
-			
 			
 		} );
 	} );

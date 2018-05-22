@@ -105,8 +105,8 @@ if (have_posts() ) :
                           
                            <img src="<?php echo esc_url($thumb[0])?>" 
                                          alt="Smiley face" 
-                                         class="thumb_image nr-<?php echo $gallery_item ?>"
-                                         data-nr = <?php echo $gallery_item; ?>
+                                         class="thumb_image nr-<?php echo esc_attr($gallery_item) ?>"
+                                         data-nr = <?php echo esc_html($gallery_item); ?>
                                          data-type="image"
                                          data-video-type="novideo"
                                          data-video-link = "nolink"
@@ -127,12 +127,12 @@ if (have_posts() ) :
 
                                     <img src="<?php echo esc_url($youtubeImage)?>/hqdefault.jpg" 
                                          alt="Smiley face" 
-                                         class="video_image nr-<?php echo $gallery_item ?>"
-                                         data-nr = <?php echo $gallery_item; ?>
+                                         class="video_image nr-<?php echo esc_attr($gallery_item) ?>"
+                                         data-nr = <?php echo esc_html($gallery_item); ?>
                                          data-type="video"
                                          data-video-type="youtube"
-                                         data-video-link = "<?php echo $videoLink;?>"
-                                         data-video-code = "<?php echo  $youtubeCode;?>"
+                                         data-video-link = "<?php echo esc_url($videoLink);?>"
+                                         data-video-code = "<?php echo esc_attr($youtubeCode);?>"
                                          height="265" 
                                          width="370">
                                     <?php 
@@ -155,12 +155,12 @@ if (have_posts() ) :
 							       }?>
 							       <img src="<?php echo esc_url($vimeoImage)?>" 
                                          alt="Vimeo video image" 
-                                         class="video_image nr-<?php echo $gallery_item ?>"
-                                         data-nr = <?php echo $gallery_item; ?>
+                                         class="video_image nr-<?php echo esc_attr($gallery_item) ?>"
+                                         data-nr = <?php echo esc_html($gallery_item); ?>
                                          data-type="video"
                                          data-video-type="vimeo"
-                                         data-video-link = "<?php echo $videoLink;?>"
-                                         data-video-code = "<?php echo  $vimeoCode;?>"
+                                         data-video-link = "<?php echo esc_url($videoLink);?>"
+                                         data-video-code = "<?php echo esc_attr($vimeoCode);?>"
                                          height="265" 
                                          width="370">
                                     <?php
@@ -172,12 +172,12 @@ if (have_posts() ) :
 
 							        <img src="<?php echo esc_url($dailyImage)?>" 
                                          alt="dailymotion video image" 
-                                         class="video_image nr-<?php echo $gallery_item ?>"
-                                         data-nr = <?php echo $gallery_item; ?>
+                                         class="video_image nr-<?php echo esc_attr($gallery_item) ?>"
+                                         data-nr = <?php echo esc_html($gallery_item); ?>
                                          data-type="video"
                                          data-video-type="dailymotion"
-                                         data-video-link = "<?php echo $videoLink;?>"
-                                         data-video-code = "<?php echo  $dailyCode;?>"
+                                         data-video-link = "<?php echo esc_url($videoLink);?>"
+                                         data-video-code = "<?php echo  esc_attr($dailyCode);?>"
                                          height="265" 
                                          width="370">
                                     <?php

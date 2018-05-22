@@ -65,6 +65,7 @@ get_header('noscroll'); ?>
 		if ($author_posts->have_posts() ) : ?>
 				<!--start loop --> 
 			<?php while ( $author_posts->have_posts() ) : $author_posts->the_post(); ?>
+
 	           <div class="col-md-4">
 									<div class="card mb-4 box-shadow">
 										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
@@ -79,6 +80,7 @@ get_header('noscroll'); ?>
 										</div>
 									</div>
 								</div>	
+
         	<?php endwhile; ?>
 		<?php endif; ?>
 	</div>
@@ -209,8 +211,10 @@ get_header('noscroll'); ?>
 
 			<div class="col-sm-1 single-up-down-buttons">
 				<span class="btn btn-sm single-song">
+
 			    	<a class="btn btn-sm show-single-song first_color main_font"><img src="<?php echo esc_url(get_template_directory_uri()); ?>//img/Arrow-Down.png"/></a>
 			    	<a class="btn btn-sm hide-single-song first_color main_font"><img src="<?php echo esc_url(get_template_directory_uri()); ?>//img/Arrow-Up.png"/></a>
+
 		    	</span>
 			</div>
 		</div>
@@ -279,6 +283,7 @@ get_header('noscroll'); ?>
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
                     <div class="divTableRow ">
+
                     	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name main_font" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  esc_attr($tour_venuename[0]); } ?></a></div>
@@ -290,6 +295,7 @@ get_header('noscroll'); ?>
                         </div>
                     	
                     </div>
+
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
         </div><!--divTable-->

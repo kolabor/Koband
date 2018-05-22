@@ -22,9 +22,11 @@ get_header('noscroll'); ?>
 	<div class="row single_page_row">
 		<div class="container">
 			<div class="row single_page_title album_single_page">
+
 				<div class="col-sm-4 album_title_single main_font_color main_font"><?php echo esc_html__('Album Name:', 'koband');?><br> <?php the_title();?></div>	
 				<div class="col-sm-4 album_title_single main_font_color main_font"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) 	{ echo  esc_attr($album_date[0]); } ?></span></div>
 			     <div class="col-sm-4 album_title_single main_font_color main_font"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_length[0])) { echo  esc_attr($album_length[0]); } ?></span></div>
+
 			</div>
 			<div class="row">
 				<div class="col-sm-4 sng_alb_cvr">

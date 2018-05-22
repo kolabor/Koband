@@ -305,8 +305,9 @@ $('.mobile-nav-icon').click(function() {
 
 
 
+
 /*============================================
-Gallery click, next, prev function
+Gallery click, next, prev functions
 ============================================*/
  
 $('#Fullscreen').css('height', $(document).outerWidth() + 'px');
@@ -325,34 +326,11 @@ $('.imageList img').click(function(){
     
     var videoType = $(this).attr("data-video-type");
     var videoLink = $(this).attr("data-video-link");
-    var videoCode = $(this).attr("data-video-code");     
+    var videoCode = $(this).attr("data-video-code");      
+    $.videoSlide(videoCode, videoLink, videoType);
    
-
-    switch (videoType) 
-    { 
-    case 'youtube': 
-        $("#Fullscreen img").remove();
-        $("#Fullscreen iframe").remove();
-        $('#Fullscreen').prepend('<iframe src="https://www.youtube.com/embed/'+videoCode+'"></iframe>');
-        $('#Fullscreen').fadeIn();
-        break;
-    case 'vimeo': 
-        $("#Fullscreen img").remove();
-        $("#Fullscreen iframe").remove();
-        $('#Fullscreen').prepend('<iframe width="370" height="265" src="https://player.vimeo.com/video/'+videoCode+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
-        $('#Fullscreen').fadeIn();
-        
-        break;
-    case 'dailymotion': 
-        $("#Fullscreen img").remove();
-        $("#Fullscreen iframe").remove();
-        $('#Fullscreen').prepend('<iframe width="370" height="265" src="//www.dailymotion.com/embed/video/'+videoCode+'"></iframe>');
-        $('#Fullscreen').fadeIn();
-        break;     
-    default:
-        console.log(videoType);
-      }
   }
+
   else if( mediaType == "image")
   { 
     $("#Fullscreen img").remove();
@@ -378,33 +356,26 @@ $('#Fullscreen').click(function(){
 
 
 $('.FullscreenV').css('height', $(document).outerWidth() + 'px');
+$('.close_gallery').click(function(){ $('#Fullscreen').fadeOut();});			
 
-$('.close_gallery').click(function(){ 
-  
-     $('#Fullscreen').fadeOut();
-});			
+/*Next prev button clicks*/
+$('.next').click(function(){  $.nexMedia();  });
+$('.prev').click(function(){ $.prevMedia();  });
 
-
-/*$('.FullscreenV').click(function(){
- $('.FullscreenV').fadeOut(); //this will hide the fullscreen div if you click away from the image. 
-});*/
-		
-
-
-
-$('.next').click(function(){
-
-
-    $.nexMedia();     
+/*Next prev functions with keycodes */
+$(document).keydown(function(e){
+    if (e.keyCode == 39) {
+       $.nexMedia();
+       return false;
+    }
+    else if (e.keyCode == 37) {
+       $.prevMedia();
+       return false;
+    }
 });
+/*Next prev functions with keycodes ends here*/
 
-
-$('.prev').click(function(){
-
-     
-});
-
-
+/*Next media function starts here*/
 $.nexMedia = function()
 {
 
@@ -442,9 +413,67 @@ $.nexMedia = function()
     {
         var videoType = $(next).attr("data-video-type");
         var videoLink = $(next).attr("data-video-link");
-        var videoCode = $(next).attr("data-video-code");     
-       
+        var videoCode = $(next).attr("data-video-code");
+        $.videoSlide(videoCode, videoLink, videoType);
+    }
 
+   
+  } 
+}
+/*Next function ends here */
+
+/*Prev function starts here */
+$.prevMedia = function()
+{
+
+  var mediaNr  = $('#Fullscreen').attr("data-nr");
+  var mediaType = $('#Fullscreen').attr("mediaType");
+  var mediaCount = $(".imageList img").length;
+
+  var nextMedia = +mediaNr - 1;
+  if (nextMedia == 0){nextMedia = mediaCount;}
+  
+  var className = ".nr-"+nextMedia;
+  
+  
+  if(nextMedia <= mediaCount)
+  {
+
+    $("#Fullscreen img").remove();
+    $("#Fullscreen iframe").remove();
+    
+    var next = $(".imageList").find(className);
+    var mediaType = $(next).attr("data-type");
+
+    $('#Fullscreen').attr('data-nr', nextMedia);
+    $('#Fullscreen').attr('data-type', mediaType);
+    
+     if (mediaType == "image")
+    {
+       //var src = $(next).attr("data-type");
+        var src= $(next).attr('src');
+        console.log(src);
+        $('#Fullscreen').prepend('<img  src="'+src+'" />');
+
+    }
+    else if (mediaType == "video")
+    {
+        var videoType = $(next).attr("data-video-type");
+        var videoLink = $(next).attr("data-video-link");
+        var videoCode = $(next).attr("data-video-code");
+        $.videoSlide(videoCode, videoLink, videoType);
+    }
+
+   
+  } 
+}/*Prev function ends here */
+
+
+
+/*Video slide gunction starts here*/
+$.videoSlide = function(videoCode, videoLink, videoType)
+{
+            
         switch (videoType) 
         { 
         case 'youtube': 
@@ -468,15 +497,9 @@ $.nexMedia = function()
             break;     
         default:
             console.log(videoType);
-          }  
-    }
+        }  
 
-   
-  }
-  
- 
-  
- ;
-}/*Next function ends here */
+}
+/*Video slide function ends here*/
 
 }); // Ready function ends here //

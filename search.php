@@ -10,7 +10,9 @@ get_header('noscroll'); ?>
 <div class="container search-holder">
     <div class="row">
         <header class="page-header">
+
             <h1 class="page-title heading_font"><?php printf( esc_html__( 'Search Results for: %s', 'koband' ), '<span>' . esc_attr(get_search_query()) . '</span>' ); ?></h1>
+
         </header><!-- .page-header -->
     <?php if ( have_posts() ) { ?>
         <div class="content">
@@ -29,7 +31,7 @@ get_header('noscroll'); ?>
                                 elseif ($post_type == 'tour') { echo esc_html__('Tour', 'koband');}?></h5></div>
                                 <a class="card-img-top" href="<?php the_permalink();?>">
                                     <?php if($post_type == 'tour') {?> 
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/tour.jpg"/> <?php } else { the_post_thumbnail(array(300,300)); }?></a>
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/tour.jpg"/> <?php } else { the_post_thumbnail(array(300,300)); }?></a>
                                 <div class="card-body">
                                     <div id="card-text" class="main_font_color main_font"><?php the_excerpt(); ?></div>
                                         <div class="d-flex justify-content-between align-items-center">

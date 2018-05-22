@@ -58,11 +58,13 @@
 					    <?php	$url = wp_get_attachment_url( get_post_thumbnail_id() );?>
 					    	<img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
 					            <div class="sl-content">
+
 								    <h5 class="slider_text_color heading_font"><?php if(isset($slider_title[0])) 	{ echo  esc_attr($slider_title[0]); } ?></h5>
 								    <p class="slider_text_color main_font"><?php if(isset($slider_subtitle[0])) 	{ echo  esc_attr($slider_subtitle[0]); } ?></p>
 								    <a class="btn btn-lg slider_button_text_color main_font" href="<?php if(isset($slider_button_link[0])) 	
 								    	{ echo  esc_url($slider_button_link[0]); } ?>"><?php if(isset($slider_button_title[0])) 
 								    		{ echo  esc_attr($slider_button_title[0]); } ?></a>
+
 								</div>
 
 		   

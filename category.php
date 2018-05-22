@@ -33,6 +33,7 @@ get_header('noscroll'); ?>
 		<!--start loop --> 
 			<?php while ( have_posts() ) : the_post(); ?>
 	            <div class="col-md-4">
+
 									<div class="card mb-4 box-shadow">
 										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
 										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
@@ -46,6 +47,7 @@ get_header('noscroll'); ?>
 										</div>
 									</div>
 								</div>	
+
         	<?php endwhile; ?>
 		<?php endif; ?> 
 	</div>
@@ -94,6 +96,7 @@ get_header('noscroll'); ?>
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
                     <div class="divTableRow ">
+
                     	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
                     	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name main_font" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  esc_attr($tour_venuename[0]); } ?></a></div>
@@ -105,6 +108,7 @@ get_header('noscroll'); ?>
                         </div>
                     	
                     </div>
+
                 <?php endwhile;?> <!-- end of the loop.  -->
             </div>
         </div><!--divTable-->
@@ -216,9 +220,11 @@ get_header('noscroll'); ?>
 			<div class="container">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank"><?php the_post_thumbnail(array(70,70));?></a></div>
+
 				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank"><span class="main_font_color main_font"><?php the_title();?></span></a></div>
 				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color main_font"><?php if(isset($single_date[0])) 	{ echo  esc_attr($single_date[0]); } ?></span></div>
 				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color main_font"><?php if(isset($single_length[0])) 	{ echo esc_attr($single_length[0]); } ?></span></div>
+
 
 			<div class="col-sm-1 single-up-down-buttons">
 				<span class="btn btn-sm single-song">
