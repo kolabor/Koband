@@ -85,7 +85,7 @@
 	api( 'ko_band_general_font_selector', function( value ) {
 		value.bind( function( newThemeGeneralFont ) {
 		
-			$('.main_font_color').css('font-family', newThemeGeneralFont, 'important'); 
+			$('.main_font').css('font-family', newThemeGeneralFont, 'important'); 
 			//$('.comments-area, .sidebar').css( 'font-family', newThemeGeneralFont, 'important'); 
 			//$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
 			//$('.footer-menu .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
