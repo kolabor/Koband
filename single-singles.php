@@ -59,7 +59,7 @@ get_header('noscroll'); ?>
 					<?php foreach ($single_store[0] as  $value_single_store) { ?>
 					<div class="row song-list border_first_color main_font_color main_font">
 						<div class="col-sm-4 line sng_store "><?php if(isset($value_single_store['name'])) {echo esc_attr($value_single_store['name']);}?></div>
-						<div class="col-sm-4 store_link btn-buy line sng_store"><a class="bg_first_color main_font" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div>
+						<div class="col-sm-4 store_link btn-buy border_color line sng_store"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div>
 					</div>
 				<?php } } ?>
 				</div>	 
