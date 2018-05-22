@@ -112,21 +112,6 @@
 
 
 /* Menu item colors */
-.home, .single, .page, .default
-{
-  
-  font-size:  <?php echo esc_html($koband_theme_font_size); ?> ;
-  line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
-  color: <?php echo esc_html($koband_main_font_color); ?> ;
-
-}
- 
-.home h1, .home h2, .home h3, .home h4, .single h1, .single h2, .single h3, .single h4, .page h1, .page h2, .page h3, .page h4,
-{
-  font-family: <?php echo esc_html($koband_headding_font); ?> ;
-  color: <?php echo esc_html($koband_main_font_color);?> ;
-  font-size:  <?php echo esc_html($koband_theme_font_size); ?> ;
-}
 #theband {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url("<?php echo esc_html($koband_theband_image); ?>") ;
@@ -177,12 +162,11 @@ a {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
 .border_first_color {
-  border-bottom-color: <?php echo esc_html($koband_first_theme_color); ?> ;
+  border-color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
 .border_second_color {
   border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
-
 .bg_second_color {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
@@ -197,8 +181,8 @@ a {
  
   color: <?php echo esc_html($koband_main_font_color); ?> ;  
 }
-.border_color {
-  border-color: <?php echo esc_html($koband_first_theme_color); ?> !important;
+body > div > .border_color {
+  border-color: <?php echo esc_html($koband_first_theme_color); ?>;
 }
 .btn-koband-load:hover {
   color:#fff!important;
@@ -211,7 +195,9 @@ a {
   font-size:  <?php echo esc_html($koband_theme_font_size); ?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
 }
-
+.news-title h2 a{
+  color: <?php echo esc_html($koband_first_theme_color); ?> ;
+}
 .read_more a {
   color: <?php echo esc_html($koband_main_font_color); ?> ;
 }

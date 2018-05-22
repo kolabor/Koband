@@ -13,7 +13,9 @@ Text Domain: koband
 /* =Reset ff
 weffcb
 -------------------------------------------------------------- */
-
+a {
+  text-decoration: none !important;
+}
 .flex{
      display: flex;
     display: -webkit-flex; 
@@ -344,9 +346,6 @@ header {
   -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
           box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
-.news-title h2 a{
-  color : #4b4b4b !important;
-}
 .news-title {
   padding-left: 10px!important;
   padding-top: 6px!important;
@@ -397,7 +396,7 @@ header {
 .btn-koband-load {
   display: block;
   width: 200px;
-  
+  text-decoration:none !important;
   font-size: 20px;
   cursor: pointer;
   margin: 0 auto;

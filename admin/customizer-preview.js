@@ -7,82 +7,30 @@
 	api( 'ko_band_first_theme_color', function( value ) {
 		value.bind( function( newThemeFirstColor ) {
 
-			$('a').css('color', newThemeFirstColor, 'important');
-			$('.first_color').css( 'color', newThemeFirstColor , 'important');
-			$('.first_color a ').css('color', newThemeFirstColor, 'important');	
-			$('.read_more a').css('color', newThemeFirstColor, 'important');	
-			$('.read_more:hover a').css('color', newThemeFirstColor, 'important');	
+
+			$('.first_color').css('color', newThemeFirstColor, 'important');
+			$('.border_color').css('color', newThemeFirstColor, 'important');
+			$('.news-details_li a').css('color', newThemeFirstColor, 'important');
+			$('.reply a').css('color', newThemeFirstColor, 'important');
+			$('.logged-in-as a').css('color', newThemeFirstColor, 'important');
+			$('.news-title h2 a').css('color', newThemeFirstColor, 'important');
+			$('.submit').css('background-color', newThemeFirstColor, 'important');
 			$('.bg_first_color').css('background-color', newThemeFirstColor, 'important');
-			$('.bg_first_color:hover').css('color', newThemeFirstColor, 'important');			
-			//$('.read_more a:hover ').css('color', newThemeFirstColor, 'important');	
-			//$('.read_more:hover').css(' background-color', '#fff', 'important');	
-			
-			$('.border_first_color').css('border-bottom-color', newThemeFirstColor, 'important');	
-			$('.submit').css('background-color', newThemeFirstColor, 'important');	
-			$('.submit:hover').css('color', newThemeFirstColor, 'important');	
-			$('.reply a, .submit').css('color', newThemeFirstColor, 'important');	
-			$('.hovereffect:hover .overlay').css('background-color', newThemeFirstColor, 'important');
-			$('.hovereffect:hover .overlay').css('opacity', '0.5', 'important');	
-			$('.main-nav .menu li a:hover').css('border-bottom', newThemeFirstColor, 'important');
-			//$('.border_color').css('border-color', newThemeFirstColor, 'important');	
-			//$('.btn-koband-load:hover').css('color', '#fff', 'important');		
-			//$('.btn-koband-load:hover').css('background-color', newThemeFirstColor, 'important');	
-			//$('.venue_name:hover').css('color', newThemeFirstColor, 'important');		
-			//$('.venue_name:hover').css('text-decoration', 'none', 'important');				
-			//$('.news-details_li a').css('color', newThemeFirstColor, 'important');		
-			//$('.news-details_li a').css('text-decoration', 'none', 'important');					
-			$('#contact .wpcf7').css(' border', newThemeFirstColor, 'important');	
+			$('#contact .wpcf7').css('border-color', newThemeFirstColor, 'important');				
+			$('.border_first_color').css('border-color', newThemeFirstColor, 'important');				
 
 		} );
 	} ); 
-
-	 // Update theme second color
-	api( 'ko_band_second_theme_color', function( value ) {
-		value.bind( function( newThemeSecondColor ) {
-
-			$('.social-icons a .first_color:hover').css('color', newThemeSecondColor, 'important');
-			$('.bg_first_color:hover').css( 'background-color', newThemeSecondColor , 'important');
-			$('.border_second_color').css('border-bottom-color', newThemeSecondColor, 'important');	
-			$('.bg_second_color').css('background-color', newThemeSecondColor, 'important');	
-			$('.read_more:hover').css('background-color', newThemeSecondColor, 'important');	
-			$('.submit').css('color', newThemeSecondColor, 'important');
-			$('.submit:hover').css('background-color', newThemeSecondColor, 'important');	
-			$('.border_bottom').css('border-bottom-color', newThemeSecondColor, 'important');	
-			//$('.reply a:hover').css('color', newThemeSecondColor, 'important');
-			//$('.news-details_li a:hover').css('color', newThemeSecondColor, 'important'); 
-			//$('.news-details_li a:hover').css('text-decoration', 'none', 'important'); 
-			//$('.soldout_btn:hover').css('background-color', newThemeSecondColor, 'important'); 
-			//$('.soldout_btn:hover').css('color', '#ffffff', 'important'); 
-		} );
-	} );
-   
 
     // Update theme main font color
 	api( 'ko_band_main_font_color', function( value ) {
 		value.bind( function( newThemeMainFontColor ) {
 		
 			$('.main_font_color').css( 'color', newThemeMainFontColor, 'important');
-			$('.home').css( 'color', newThemeMainFontColor, 'important'); //if have any problem take it out
-			$('.single').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
-			$('.page').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
-			$('.default').css( 'color', newThemeMainFontColor, 'important');
-			$('.home h1').css( 'color', newThemeMainFontColor, 'important');
-			$('.home h2 ').css( 'color', newThemeMainFontColor, 'important');
-			$('.home h3').css( 'color', newThemeMainFontColor, 'important');
-			$('.home h4').css( 'color', newThemeMainFontColor, 'important');
-			$('.single h1').css( 'color', newThemeMainFontColor, 'important');
-			$('.single h2').css( 'color', newThemeMainFontColor, 'important');
-			$('.single h3').css( 'color', newThemeMainFontColor, 'important');
-			$('.single h4').css( 'color', newThemeMainFontColor, 'important');
-			$('.page h1').css( 'color', newThemeMainFontColor, 'important');
-			$('.page h2').css( 'color', newThemeMainFontColor, 'important');
-			$('.page h3').css( 'color', newThemeMainFontColor, 'important');
-			$('.page h4').css( 'color', newThemeMainFontColor, 'important');
-			//$('.comments-area, .sidebar').css( 'color', newThemeMainFontColor, 'important');
-			//$('.read_more a').css( 'color', newThemeMainFontColor, 'important');
-
-
-			
+			$('.main_font').css( 'color', newThemeMainFontColor, 'important');
+			$('.comment-list p').css( 'color', newThemeMainFontColor, 'important');
+			$('.read_more a').css( 'color', newThemeMainFontColor, 'important');
+			$('.copyright').css( 'color', newThemeMainFontColor, 'important');
 		} );
 	} );
 
@@ -90,9 +38,7 @@
 	api( 'ko_band_main_menu_font_color', function( value ) {
 		value.bind( function( newThemeMenuFontColor ) {
 		
-			$('.main-nav .menu li a').css( 'color', newThemeMenuFontColor, 'important');
-			$('.main-nav .menu li a:hover ').css( 'color', newThemeMenuFontColor, 'important');
-			$('.main-nav .menu li a:hover ').css( 'opacity', '0.4', 'important');
+			$('.main-nav li a').css( 'color', newThemeMenuFontColor, 'important');
 						
 		} );
 	} );
@@ -101,7 +47,7 @@
 	api( 'ko_band_main_menu_font_size', function( value ) {
 		value.bind( function( newThemeMenuFontSize ) {
 		
-			$('.main-nav .menu li a').css( 'font-size', newThemeMenuFontSize, 'important');
+			$('.main-nav li a').css( 'font-size', newThemeMenuFontSize, 'important');
 						
 		} );
 	} );
@@ -110,7 +56,7 @@
 	api( 'ko_band_main_menu_background_color', function( value ) {
 		value.bind( function( newThemeMenuBGColor ) {
 		
-			$('.menu-scroll').css( 'background-color', 'rgba(255,255,255, 0.7)', 'important');
+			$('.menu-scroll').css( 'background-color', newThemeMenuBGColor, 'important');
 			$('.fixed').css( 'background-color', newThemeMenuBGColor, 'important');
 			$('.menu-noscroll').css( 'background-color', newThemeMenuBGColor, 'important');
 						
