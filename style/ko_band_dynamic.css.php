@@ -205,6 +205,10 @@ a {
   color:#fff!important;
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
+.store_link a:hover {
+  color:#fff!important;
+  background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
+}
 .divTableCell a {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
