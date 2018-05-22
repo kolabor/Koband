@@ -22,7 +22,7 @@ if (have_posts() ) :
 	$post_id = get_the_ID(); ?>
 <div class="container"><!-- Container starts here -->
 		<div id="media-photo"><?php the_post_thumbnail('single_news_thumb'); ?></div>
-		<div id="single-media-title heading_font"><h1><?php the_title();?></h1></div>
+		<div class="single-media-title heading_font"><h1><?php the_title();?></h1></div>
 			<div class="row">
 				<div class="col-sm news-details main_font">
 					<div class="news-details_li admin"><?php echo esc_html__('Posted by : ', 'koband');?><a href="<?php echo esc_html(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>"><?php the_author(); ?></a></div>

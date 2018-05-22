@@ -1550,7 +1550,8 @@ input {
   .form-submit { width: 100%; text-align: center;}
   .submit {float: none;}
   /*media_single_page*/
-  #single-media-title {text-align: center;}
+  .single-media-title {text-align: center;}
+  .single-media-title h1 {padding-top: 20px!important;}
   .gal {-webkit-column-count: 1;column-count: 1;}
   .gal img {height: auto;}
   .FullscreenV iframe {width: 100%;}
@@ -1570,6 +1571,7 @@ input {
   .modal {padding-right: 0!important;}
   .conent_holder {text-align: center;}
   header h1 {text-align: center;}
+  
 }
 @media screen and (max-width: 991px) {
 
