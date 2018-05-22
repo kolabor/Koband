@@ -165,7 +165,6 @@
 		value.bind( function( newSliderButtonBorderColor ) {
 		
 			$('.slider_button_text_color').css('border-color', newSliderButtonBorderColor, 'important');
-
 			
 		} );
 	} );
