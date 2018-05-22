@@ -380,13 +380,13 @@ header {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 10px 0;
   -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out; }
   .btn-koband-load.loading {
     cursor: pointer; }
   .btn-koband-load span {
-    display: block; }
+    display: block;
+    padding: 10px 0; }
 
 .btn-koband-load span:hover {
   color: #fff; }
@@ -596,7 +596,7 @@ header {
   height: 100%; }
 
 .close_gallery {
-  position: absolute;
+  position: fixed;
   right: 5%;
   top: 3%;
   color: #dfdfdf !important;
@@ -608,7 +608,7 @@ header {
   cursor: pointer !important; }
 
 .prev {
-  position: absolute;
+  position: fixed;
   left: 5%;
   top: 42%;
   color: #b2b2b2 !important;
@@ -618,7 +618,7 @@ header {
   font-size: 70px; }
 
 .next {
-  position: absolute;
+  position: fixed;
   right: 5%;
   top: 42%;
   /* background-color: #f1f1f1; */
@@ -1431,7 +1431,10 @@ input {
     width: 100%;
     left: 0 !important;
     padding-left: 200px !important;
-    padding-right: 200px !important; } }
+    padding-right: 200px !important; }
+
+  #Fullscreen iframe {
+    width: 100%; } }
 @media screen and (max-width: 1023px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -1592,8 +1595,11 @@ input {
     float: none; }
 
   /*media_single_page*/
-  #single-media-title {
+  .single-media-title {
     text-align: center; }
+
+  .single-media-title h1 {
+    padding-top: 20px !important; }
 
   .gal {
     -webkit-column-count: 1;
@@ -1727,7 +1733,13 @@ input {
     font-size: 14px; } }
 @media screen and (max-width: 768px) {
   .sl-content {
-    top: 22% !important; } }
+    top: 18% !important; }
+
+  #Fullscreen iframe {
+    width: auto;
+    height: auto;
+    margin-top: 53%;
+    padding: 0; } }
 @media screen and (max-width: 767px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -1769,9 +1781,6 @@ input {
 
   .menu-scroll, .menu-noscroll {
     height: auto; }
-
-  .sl-content {
-    top: 21% !important; }
 
   .section h1 {
     width: 100%;
@@ -1896,11 +1905,6 @@ input {
   .iframe-wrapper {
     height: 75%; }
 
-  .FullscreenV iframe {
-    width: 100%;
-    margin-top: 46%;
-    height: 40%; }
-
   .album_title_single {
     text-align: center;
     font-size: 25px !important; }
@@ -2000,6 +2004,9 @@ input {
 
   .divTableRow {
     text-align: center; } }
+@media screen and (max-width: 760px) {
+  .sl-content {
+    display: none; } }
 @media screen and (max-width: 736px) {
   .mobile-nav-icon {
     display: inline-block;
@@ -2044,10 +2051,8 @@ input {
   .iframe-wrapper {
     height: 100%; }
 
-  .FullscreenV iframe {
-    width: 100%;
-    height: 100%;
-    margin-top: 0; }
+  #Fullscreen iframe {
+    margin-top: 21%; }
 
   .main-logo {
     width: 55%;
@@ -2321,6 +2326,9 @@ input {
     font-size: 7px;
     padding: 3px; }
 
+  .band_member_name {
+    padding-top: 6px; }
+
   .address, .zipcode {
     display: none; }
 
@@ -2339,12 +2347,13 @@ input {
     height: 75%; }
 
   .next, .prev {
-    top: 42%; }
+    top: 30%; }
 
-  .FullscreenV iframe {
-    width: 100%;
-    height: 30%;
-    margin-top: 208px; }
+  #Fullscreen iframe {
+    width: auto;
+    height: auto;
+    margin-top: 50%;
+    padding: 0; }
 
   .album_title_single {
     font-size: 19px !important;
@@ -2509,7 +2518,10 @@ input {
   .divTableRow .store_link a {
     font-size: 11px;
     padding-left: 7px;
-    padding-right: 5px; } }
+    padding-right: 5px; }
+
+  #Fullscreen iframe {
+    margin-top: 69%; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min-resolution: 192dpi) and (min-width: 700px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 700px), only screen and (min-resolution: 2dppx) and (min-width: 700px) {
   .logo {
     display: none !important; }
