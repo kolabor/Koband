@@ -294,15 +294,26 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
                
 )  )  );
 
-/*** Slider text color ***/
-$wp_customize->add_setting( 'ko_band_slider_text_color', array(
+/*** Slider title color ***/
+$wp_customize->add_setting( 'ko_band_slider_title_color', array(
         'default'    => 0,
         'transport' => 'postMessage'
     ));
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_text_color', array(
-        'label'      => esc_html__( ' Text color', 'koband' ),
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_title_color', array(
+        'label'      => esc_html__( 'Slider title color', 'koband' ),
         'section'    => 'ko_band_slider_section',
-        'settings'   => 'ko_band_slider_text_color',
+        'settings'   => 'ko_band_slider_title_color',
+) ) );
+
+/*** Slider subtitle color ***/
+$wp_customize->add_setting( 'ko_band_slider_paragraph_text_color', array(
+        'default'    => 0,
+        'transport' => 'postMessage'
+    ));
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_paragraph_text_color', array(
+        'label'      => esc_html__( 'Slider paragraph text color', 'koband' ),
+        'section'    => 'ko_band_slider_section',
+        'settings'   => 'ko_band_slider_paragraph_text_color',
 ) ) );
 
 /*** Slider Button text color ***/
@@ -317,14 +328,14 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /*** Slider Button Background color ***/
-$wp_customize->add_setting( 'ko_band_slider_button_background_color', array(
+$wp_customize->add_setting( 'ko_band_slider_button_border_color', array(
         'default'    => 0,
         'transport'  => 'postMessage'
     ));
-$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_background_color', array(
-        'label'      => esc_html__( 'Button background color', 'koband' ),
+$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_slider_button_border_color', array(
+        'label'      => esc_html__( 'Button border color', 'koband' ),
         'section'    => 'ko_band_slider_section',
-        'settings'   => 'ko_band_slider_button_background_color',
+        'settings'   => 'ko_band_slider_button_border_color',
 ) ) );
 
 /*** Slider Button Hover Background color ***/

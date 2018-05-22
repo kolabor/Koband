@@ -7,7 +7,7 @@
 	api( 'ko_band_first_theme_color', function( value ) {
 		value.bind( function( newThemeFirstColor ) {
 
-			$('a').css('color', newThemeFirstColor, 'important');
+			//$('a').css('color', newThemeFirstColor, 'important');
 			$('.first_color').css( 'color', newThemeFirstColor , 'important');
 			$('.first_color a ').css('color', newThemeFirstColor, 'important');	
 			$('.read_more a').css('color', newThemeFirstColor, 'important');	
@@ -214,16 +214,25 @@
 
 /*SLIDER Live changes start here */
 
-    //Update slider text color
-	api( 'ko_band_slider_text_color', function( value ) {
-		value.bind( function( newSliderTextColor ) {
+   		//Update slider title color
+	api( 'ko_band_slider_title_color', function( value ) {
+		value.bind( function( newSliderTitleColor ) {
 		
-			$('.slider_text_color').css( 'color', newSliderTextColor, 'important');
+			$('.slider_text_color.heading_font').css( 'color', newSliderTitleColor, 'important');
+			
+		} );
+	} );
+
+	   //Update slider paragraph text color
+	api( 'ko_band_slider_paragraph_text_color', function( value ) {
+		value.bind( function( newSliderParagraphTextColor ) {
+		
+			$('.slider_text_color.main_font').css( 'color', newSliderParagraphTextColor, 'important');
 			
 		} );
 	} );
     
-    /*Update slider button text color*/
+       /*Update slider button text color*/
 	api( 'ko_band_slider_button_text_color', function( value ) {
 		value.bind( function( newSliderButtonTextColor ) {
 		
@@ -232,11 +241,11 @@
 		} );
 	} );
 
-	/*Update slider button bg color*/
-	api( 'ko_band_slider_button_background_color', function( value ) {
-		value.bind( function( newSliderButtonBgColor ) {
+	/*Update slider button border color*/
+	api( 'ko_band_slider_button_border_color', function( value ) {
+		value.bind( function( newSliderButtonBorderColor ) {
 		
-			$('.slider_button_text_color').css('background-color', newSliderButtonBgColor, 'important');
+			$('.slider_button_text_color').css('border-color', newSliderButtonBorderColor, 'important');
 
 			
 		} );

@@ -44,9 +44,10 @@
   $koband_slider_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink'); 
 
   /****Slider Section Colors****/
-  $koband_slider_text_color = get_theme_mod('ko_band_slider_text_color');
+  $koband_slider_title_color = get_theme_mod('ko_band_slider_title_color'); 
+  $koband_slider_paragraph_text_color = get_theme_mod('ko_band_slider_paragraph_text_color');
   $koband_slider_button_text_color = get_theme_mod('ko_band_slider_button_text_color');
-  $koband_slider_button_bg_color = get_theme_mod('ko_band_slider_button_background_color');
+  $koband_slider_button_border_color = get_theme_mod('ko_band_slider_button_border_color');
   $koband_slider_button_hover_bg_color = get_theme_mod('ko_band_slider_button_hover_background_color');
   $koband_slider_text_holder_bg_color = get_theme_mod('ko_band_slider_text_holder_background_color');
   list($r, $g, $b) = sscanf($koband_slider_text_holder_bg_color, "#%02x%02x%02x");
@@ -225,12 +226,15 @@ a {
 .read_more:hover {
   background-color: #fff!important ;
 }
-.slider_text_color{
-  color: <?php echo esc_html($koband_slider_text_color) ?>;
+.slider_text_color.heading_font{
+  color: <?php echo esc_html($koband_slider_title_color) ?>;
+}
+.slider_text_color.main_font{
+  color: <?php echo esc_html($koband_slider_paragraph_text_color) ?>;
 }
 .slider_button_text_color {
   color: <?php echo esc_html($koband_slider_button_text_color) ?>;
-  border-color: <?php echo esc_html($koband_slider_button_bg_color) ?>;
+  border-color: <?php echo esc_html($koband_slider_button_border_color) ?>;
 }
 .slider_button_text_color:hover {
   background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
