@@ -333,7 +333,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_slider_title_color',
 ) ) );
 
-/*** Slider subtitle color ***/
+/*** Slider paragraph text color ***/
 $wp_customize->add_setting( 'ko_band_slider_paragraph_text_color', array(
         'default'    => 0,
         'transport' => 'postMessage'
@@ -355,7 +355,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_slider_button_text_color',
 ) ) );
 
-/*** Slider Button Background color ***/
+/*** Slider Button border color ***/
 $wp_customize->add_setting( 'ko_band_slider_button_border_color', array(
         'default'    => 0,
         'transport'  => 'postMessage'
