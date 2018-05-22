@@ -7,7 +7,7 @@
 	api( 'ko_band_first_theme_color', function( value ) {
 		value.bind( function( newThemeFirstColor ) {
 
-			$('a').css('color', newThemeFirstColor, 'important');
+			//$('a').css('color', newThemeFirstColor, 'important');
 			$('.first_color').css( 'color', newThemeFirstColor , 'important');
 			$('.first_color a ').css('color', newThemeFirstColor, 'important');	
 			$('.read_more a').css('color', newThemeFirstColor, 'important');	
@@ -63,7 +63,7 @@
 		
 			$('.main_font_color').css( 'color', newThemeMainFontColor, 'important');
 			$('.home').css( 'color', newThemeMainFontColor, 'important'); //if have any problem take it out
-			$('.single').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
+			//$('.single').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
 			$('.page').css( 'color', newThemeMainFontColor, 'important');//if have any problem take it out
 			$('.default').css( 'color', newThemeMainFontColor, 'important');
 			$('.home h1').css( 'color', newThemeMainFontColor, 'important');
@@ -214,14 +214,24 @@
 
 /*SLIDER Live changes start here */
 
-    //Update slider text color
-	api( 'ko_band_slider_text_color', function( value ) {
-		value.bind( function( newSliderTextColor ) {
+    //Update slider title color
+	api( 'ko_band_slider_title_color', function( value ) {
+		value.bind( function( newSliderTitleColor ) {
 		
-			$('.slider_text_color').css( 'color', newSliderTextColor, 'important');
+			$('.slider_text_color.heading_font').css( 'color', newSliderTitleColor, 'important');
 			
 		} );
 	} );
+
+	   //Update slider subtitle color
+	api( 'ko_band_slider_subtitle_color', function( value ) {
+		value.bind( function( newSliderSubTitleColor ) {
+		
+			$('.slider_text_color.main_font').css( 'color', newSliderSubTitleColor, 'important');
+			
+		} );
+	} );
+    
     
     /*Update slider button text color*/
 	api( 'ko_band_slider_button_text_color', function( value ) {
@@ -233,10 +243,10 @@
 	} );
 
 	/*Update slider button bg color*/
-	api( 'ko_band_slider_button_background_color', function( value ) {
+	api( 'ko_band_slider_button_border_color', function( value ) {
 		value.bind( function( newSliderButtonBgColor ) {
 		
-			$('.slider_button_text_color').css('background-color', newSliderButtonBgColor, 'important');
+			$('.slider_button_text_color').css('border-color', newSliderButtonBgColor, 'important');
 
 			
 		} );
