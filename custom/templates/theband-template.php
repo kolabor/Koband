@@ -33,8 +33,8 @@ get_header(); ?>
 				<div class="row koband_post_theband">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-4 justify main_font_color bio_holder main_font">
-								<p class="main_font_color main_font"><h4><?php echo esc_html__('Band Biography', 'koband');?></h4>
+							<div class="col-sm-4 justify main_font_color bio_holder main_font font_size">
+								<p class="main_font_color main_font font_size"><h4><?php echo esc_html__('Band Biography', 'koband');?></h4>
 								<?php 
 								$theband_bio = get_theme_mod('ko_band_theband_biography');
 								echo esc_html($theband_bio);
@@ -51,7 +51,7 @@ get_header(); ?>
 									<div class="col-sm-4 band_member">
 										<div class="title_and_role">
 											<button type="button" id="myBtn" class="band_member_name name_member_padding main_font_color main_font" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_title(); ?></button> <br>
-											<button type="button" id="myBtn" class="band_member_role main_font_color main_font" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></button>
+											<button type="button" id="myBtn" class="band_member_role main_font_color main_font font_size" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></button>
 										</div>
 											<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_post_thumbnail('member_thumb'); ?>
 											</div>
@@ -68,7 +68,7 @@ get_header(); ?>
 												<div class="modal-body">
 													<div class="popup-img"><?php the_post_thumbnail(); ?></div>
 											          	<h4 class="main_font_color main_font"><?php echo esc_html__('Biography : ', 'koband');?></h4>
-											          	<div class="main_font_color main_font"><?php the_content();?></div>
+											          	<div class="main_font_color main_font font_size"><?php the_content();?></div>
 											          	<h4 class="main_font_color main_font"><?php echo esc_html__('Member Role : ', 'koband');?>
 											          	<?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></h4>
 												</div>

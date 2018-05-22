@@ -73,9 +73,11 @@ get_header();?>
 				</div>
 				<div class="row song-list main_font_color">			
 				<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
-					<div class="col-sm-4 song_info border_bottom line main_font"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
-					<div class="col-sm-4 song_info border_bottom line main_font"><?php if(isset($value_song_details['length'])) {echo esc_attr($value_song_details['length']);} ?></div>
-					<div class="col-sm-4 song_info border_bottom main_font song_dt"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>
+
+					<div class="col-sm-4 song_info border_bottom line main_font font_size"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
+					<div class="col-sm-4 song_info border_bottom line main_font font_size"><?php if(isset($value_song_details['length'])) {echo esc_attr($value_song_details['length']);} ?></div>
+					<div class="col-sm-4 song_info border_bottom main_font font_size song_dt"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>
+
 						
 					<?php } ?> 
 				</div>
@@ -88,7 +90,7 @@ get_header();?>
 					<?php 
 						foreach ($album_song_store[0] as  $value_song_store) { ?>
 						<div class=" row song-list border_second_color main_font_color main_font">
-						<div class="col-sm-5 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
+						<div class="col-sm-5 store_name line font_size"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
 						<div class="col-sm-6 store_link border_color btn-buy line"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> </div>
 
 					<?php } ?> 
@@ -133,7 +135,7 @@ get_header();?>
 		<div class="row album-head border_first_color">
 			<div class="col-sm-4 songs-head main_font_color main_font"><?php echo esc_html__('Song Details', 'koband');?></div>
 		</div>
-		<div class="row song-list border_second_color  main_font_color main_font">			
+		<div class="row song-list border_second_color  main_font_color main_font font_size">			
 		<?php foreach ($single_detail as  $value_single_detail) { ?>
 			<div class="col"><?php if(isset($value_single_detail)) {echo esc_attr($value_single_detail);} ?></div>
 		<?php } ?> 
@@ -148,8 +150,8 @@ get_header();?>
 			<?php if(isset($single_store[0])) { ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
 
-				<div class="col-sm-5 store_name line"><?php if(isset($value_single_store['name'])) {echo esc_attr($value_single_store['name']);}?></div>
-				<div class="col-sm-6 store_link border_color btn-buy line"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
+				<div class="col-sm-5 store_name line font_size"><?php if(isset($value_single_store['name'])) {echo esc_attr($value_single_store['name']);}?></div>
+				<div class="col-sm-6 store_link border_color btn-buy line font_size"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
 			<?php } } ?>
 		</div>
 	</div><!-- container single-songs-show-hide -->	
