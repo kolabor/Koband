@@ -196,8 +196,8 @@ body > div > .border_color {
 .divTableCell a {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
-.font-line_height {
-  font-size:  <?php echo esc_html($koband_theme_font_size); ?>;
+.font_size {
+  font-size:  <?php echo esc_html($koband_theme_font_size);?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
 }
 .news-title h2 a{

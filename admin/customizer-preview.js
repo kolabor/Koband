@@ -65,23 +65,7 @@
 	api( 'ko_band_theme_font_size', function( value ) {
 		value.bind( function( newThemeFontSize ) {
 		
-			$('.home').css( 'font-size', newThemeFontSize, 'important'); //if have any problem take it out
-			$('.single').css( 'font-size', newThemeFontSize, 'important');//if have any problem take it out
-			$('.page').css( 'font-size', newThemeFontSize, 'important');//if have any problem take it out
-			$('.default').css( 'font-size', newThemeFontSize, 'important');
-			$('.home h1').css( 'font-size', newThemeFontSize, 'important');
-			$('.home h2').css( 'font-size', newThemeFontSize, 'important');
-			$('.home h3').css( 'font-size', newThemeFontSize, 'important');
-			$('.home h4').css( 'font-size', newThemeFontSize, 'important');
-			$('.single h1').css( 'font-size', newThemeFontSize, 'important');
-			$('.single h2').css( 'font-size', newThemeFontSize, 'important');
-			$('.single h3').css( 'font-size', newThemeFontSize, 'important');
-			$('.single h4').css( 'font-size', newThemeFontSize, 'important');
-			$('.page h1').css( 'font-size', newThemeFontSize, 'important');
-			$('.page h2').css( 'font-size', newThemeFontSize, 'important');
-			$('.page h3').css( 'font-size', newThemeFontSize, 'important');
-			$('.page h4').css( 'font-size', newThemeFontSize, 'important');
-			$('.font-line_height').css( 'font-size', newThemeFontSize, 'important');
+			$('.font_size').css( 'font-size', newThemeFontSize, 'important');
 						
 		} );
 	} );
@@ -91,11 +75,7 @@
 	api( 'ko_band_theme_line_height', function( value ) {
 		value.bind( function( newThemeLineHeight ) {
 		
-			$('.home').css( 'line-height', newThemeLineHeight, 'important'); 
-			$('.single').css( 'line-height', newThemeLineHeight, 'important');
-			$('.page').css( 'line-height', newThemeLineHeight, 'important');
-			$('.default').css( 'line-height', newThemeLineHeight, 'important');
-			$('.font-line_height').css( 'line-height', newThemeLineHeight, 'important');
+			$('.font_size').css( 'line-height', newThemeLineHeight, 'important');
 								
 		} );
 	} );
@@ -105,11 +85,11 @@
 	api( 'ko_band_general_font_selector', function( value ) {
 		value.bind( function( newThemeGeneralFont ) {
 		
-			$('.main_font_color').css( 'font-family', newThemeGeneralFont, 'important'); 
-			$('.comments-area, .sidebar').css( 'font-family', newThemeGeneralFont, 'important'); 
-			$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
-			$('.footer-menu .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
-			$('.search-submit').css( 'font-family', newThemeGeneralFont, 'important'); 
+			$('.main_font_color').css('font-family', newThemeGeneralFont, 'important'); 
+			//$('.comments-area, .sidebar').css( 'font-family', newThemeGeneralFont, 'important'); 
+			//$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
+			//$('.footer-menu .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
+			//$('.search-submit').css( 'font-family', newThemeGeneralFont, 'important'); 
 										
 		} );
 	} );
@@ -119,21 +99,7 @@
 	api( 'ko_band_heading_font_selector', function( value ) {
 		value.bind( function( newThemeHeadingFont ) {
 		
-			$('.first_color').css( 'font-family', newThemeHeadingFont, 'important'); 
 			$('.heading_font').css( 'font-family', newThemeHeadingFont, 'important'); 
-			$('.home h1').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.home h2').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.home h3').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.home h4').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.single h1').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.single h2').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.single h3').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.single h4').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.page h1').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.page h2').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.page h3').css( 'font-family', newThemeHeadingFont, 'important');
-			$('.page h4').css( 'font-family', newThemeHeadingFont, 'important');
-
 		} );
 	} );
 
@@ -152,6 +118,15 @@
 		value.bind( function( themeNewRetinaLogo ) {
 		
 			$(".retina-main-logo a img").attr("src",themeNewRetinaLogo);
+			
+		} );
+	} );
+
+	// Update Footer logo
+	api( 'ko_band_footer_logo', function( value ) {
+		value.bind( function( themeNewFooterLogo ) {
+		
+			$(".footer_logo a img").attr("src",themeNewFooterLogo);
 			
 		} );
 	} );
