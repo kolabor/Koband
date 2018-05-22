@@ -186,12 +186,12 @@
 		    
 		    if(newBgHolderMode == false)
 		    {   
-               $('.sl-content').css('background-color', 'rgba(255,255,255, 0)', 'important');
+		       $('.sl-content').addClass('no_background_color')
                
 		    }
 		     else if (newBgHolderMode == true) 
 		    {
-		    	$('.sl-content').css('background-color', 'rgba(0,0,0, 0.4)', 'important');
+		    	$('.sl-content').removeClass('no_background_color')
 
 		    }
 			

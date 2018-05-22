@@ -282,7 +282,9 @@ header {
   color: #fff!important;
   border: none!important;
 }
-
+.no_background_color {
+  background-color: rgba(255,255,255, 0) !important;
+}
 
 .btn-group-lg > .btn, .btn-lg {
     font-size: 20px!important;
