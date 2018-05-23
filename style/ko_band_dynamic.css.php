@@ -210,10 +210,10 @@ body > div > .border_color {
 .read_more:hover {
   background-color: #fff!important ;
 }
-.slider_text_color.heading_font{
+.slider_title_text_color{
   color: <?php echo esc_html($koband_slider_title_color) ?>;
 }
-.slider_text_color.main_font{
+.slider_subtitle_text_color{
   color: <?php echo esc_html($koband_slider_paragraph_text_color) ?>;
 }
 .slider_button_text_color {
@@ -286,7 +286,7 @@ body > div > .border_color {
 }
 .main-nav .menu li a:hover {
   color: <?php echo esc_html($koband_main_menu_font_color)?> ;
-  border-bottom: 3px solid <?php echo esc_html($koband_first_theme_color); ?> ;
+  border-bottom: 3px solid <?php echo esc_html($koband_second_theme_color); ?> ;
 }
 .footer-menu .menu li a {
   color: <?php echo esc_html($koband_footer_menu_font_color)?> ;

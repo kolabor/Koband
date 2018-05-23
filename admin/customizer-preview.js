@@ -137,7 +137,7 @@
 	api( 'ko_band_slider_title_color', function( value ) {
 		value.bind( function( newSliderTitleColor ) {
 		
-			$('.sl-content h5').css( 'color', newSliderTitleColor, 'important');
+			$('.slider_title_text_color').css( 'color', newSliderTitleColor, 'important');
 			
 		} );
 	} );
@@ -146,7 +146,7 @@
 	api( 'ko_band_slider_paragraph_text_color', function( value ) {
 		value.bind( function( newSliderParagraphTextColor ) {
 		
-			$('.sl-content p').css( 'color', newSliderParagraphTextColor, 'important');
+			$('.slider_subtitle_text_color').css( 'color', newSliderParagraphTextColor, 'important');
 			
 		} );
 	} );

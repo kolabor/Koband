@@ -235,13 +235,15 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
             'Dancing+Script' => 'Dancing Script',
             'IBM+Plex+Mono' => 'IBM Plex Mono',
             'Gloria+Hallelujah' => 'Gloria Hallelujah',
-            'Amatic+SC' => 'Amatic+SC',
+            'Amatic SC' => 'Amatic SC',
             'Acme' => 'Acme',
             'Signika' => 'Signika',
             'Comfortaa' => 'Comfortaa',
             'Rokkitt' => 'Rokkitt',
             'Rajdhani' => 'Rajdhani',
-            'Great+Vibes' => 'Great Vibes',
+            'Great Vibes' => 'Great Vibes',
+            'Roboto Mono' => 'Roboto Mono',
+
             
 ), ) );
 
@@ -285,13 +287,14 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Dancing+Script' => 'Dancing Script',
             'IBM+Plex+Mono' => 'IBM Plex Mono',
             'Gloria+Hallelujah' => 'Gloria Hallelujah',
-            'Amatic+SC' => 'Amatic+SC',
+            'Amatic SC' => 'Amatic+SC',
             'Acme' => 'Acme',
             'Signika' => 'Signika',
             'Comfortaa' => 'Comfortaa',
             'Rokkitt' => 'Rokkitt',
             'Rajdhani' => 'Rajdhani',
-            'Great+Vibes' => 'Great Vibes',
+            'Great Vibes' => 'Great Vibes',
+            'Roboto Mono' => 'Roboto Mono',
            
 ), ) ); 
 
