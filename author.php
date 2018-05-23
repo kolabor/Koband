@@ -173,7 +173,7 @@ get_header('noscroll'); ?>
 						foreach ($album_song_store[0] as  $value_song_store) { ?>
 						<div class=" row song-list border_second_color main_font_color main_font">
 						<div class="col-sm-5 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
-						<div class="col-sm-6 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> </div>
+						<div class="col-sm-6 store_link border_color btn-buy line"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> </div>
 
 					<?php } ?> 
 							
@@ -238,7 +238,7 @@ get_header('noscroll'); ?>
 				<?php foreach ($single_store[0] as  $value_single_store) { ?>
 
 				<div class="col-sm-5 store_name line"><?php if(isset($value_single_store['name'])) {echo esc_attr($value_single_store['name']);}?></div>
-				<div class="col-sm-6 store_link btn-buy line"><a class="bg_first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
+				<div class="col-sm-6 store_link border_color btn-buy line font_size"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
 			<?php } } ?>
 		</div>
 	</div><!-- container single-songs-show-hide -->	
@@ -269,7 +269,7 @@ get_header('noscroll'); ?>
                       
                 <?php
 
-    	        while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
+    	        while ( $author_tour_posts->have_posts() ) : $author_tour_posts->the_post(); 
         		    $post_id = get_the_ID();  
 
             		the_post_thumbnail(array(200,200));
@@ -283,14 +283,15 @@ get_header('noscroll'); ?>
             		$tour_ticketlink = get_post_meta($post_id, "ko_band_tour_ticket_link", false );
                     ?>
                     <div class="divTableRow ">
-
-                    	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_date[0])) { echo  esc_attr($tour_date[0]); } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_country[0])) { echo  esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo  esc_attr($tour_city[0]); } ?></div>
-                    	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name main_font" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo  esc_attr($tour_venuename[0]); } ?></a></div>
+                    	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_date[0])) { echo esc_attr($tour_date[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color main_font"><?php if(isset($tour_country[0])) { echo esc_attr($tour_country[0]); } ?> / <?php if(isset($tour_city[0]))  { echo esc_attr($tour_city[0]); } ?></div>
+                    	<div class="divTableCell border_first_color main_font_color"><a class="first_color venue_name main_font" href="<?php the_permalink();?>" target="_blank" ><?php if(isset($tour_venuename[0]))  { echo esc_attr($tour_venuename[0]); } ?></a></div>
                     	<div class="divTableCell border_first_color main_font_color ticket main_font"><?php if($tour_ticket[0] == 'avaliable'){ ?>
-                            <?php if(isset($tour_ticketlink[0])) {?><a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour bg_first_color onsale_btn main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
+
+                            <?php if(isset($tour_ticketlink[0])) {?><a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour onsale_btn border_color main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
+
                       <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
-                          <span class="btn_tour bg_second_color soldout_btn main_font"><?php echo esc_html__('Sold Out', 'koband');?></span>
+                          <span class="btn_tour soldout_btn border_color main_font"><?php echo esc_html__('Sold Out', 'koband');?></span>
                     <?php  } ?>
                         </div>
                     	
