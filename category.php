@@ -33,21 +33,19 @@ get_header('noscroll'); ?>
 		<!--start loop --> 
 			<?php while ( have_posts() ) : the_post(); ?>
 	            <div class="col-md-4">
-
-									<div class="card mb-4 box-shadow">
-										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
-										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
-										<div class="card-body">
-											<div id="card-text" class="main_font_color main_font"><?php the_excerpt(); ?></div>
-												<div class="d-flex justify-content-between align-items-center">
-													<div class="btn-group">
-														<span  class="btn btn-sm btn-outline-secondary read_more main_font"><a href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
-													</div>
-												</div>
-										</div>
+	            	<div class="card mb-4 box-shadow">
+						<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
+						<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
+						<div class="card-body">
+							<div id="card-text" class="main_font_color main_font"><?php the_excerpt(); ?></div>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<span  class="btn btn-sm btn-outline-secondary read_more main_font"><a href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
 									</div>
-								</div>	
-
+								</div>
+						</div>
+					</div>
+				</div>	
         	<?php endwhile; ?>
 		<?php endif; ?> 
 	</div>
@@ -142,12 +140,11 @@ get_header('noscroll'); ?>
 				</h4>
 			</header>
 			<?php while( $category_album_posts->have_posts() ) : $category_album_posts->the_post();
-				
-					$post_id = get_the_ID();?>
-				
+				$post_id = get_the_ID();?>
+		
 		<div class="container">
-		<div class="row album-head border_first_color main_font_color">
-			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+			<div class="row album-head border_first_color main_font_color">
+				<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
 				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 		        <?php 
@@ -177,21 +174,19 @@ get_header('noscroll'); ?>
 					<div class="col-sm-4 song_info border_bottom line main_font"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
 					<div class="col-sm-4 song_info border_bottom line main_font"><?php if(isset($value_song_details['length'])) {echo esc_attr($value_song_details['length']);} ?></div>
 					<div class="col-sm-4 song_info border_bottom main_font"><?php if(isset($value_song_details['detail'])) {echo esc_attr($value_song_details['detail']);} ?></div>
-						
-					<?php } ?> 
+				<?php } ?> 
 				</div>
 				<!-- Labels -->
 				<div class="row album-store border_first_color main_font_color main_font">
 					<div class="col-sm-5 store"><?php echo esc_html__('Store Name', 'koband');?></div>
 					<div class="col-sm-5 store st_link"><?php echo esc_html__('Store Link', 'koband');?></div>
 				</div>
-				
 					<?php 
 						foreach ($album_song_store[0] as  $value_song_store) { ?>
 						<div class=" row song-list border_second_color main_font_color main_font">
-						<div class="col-sm-5 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
-						<div class="col-sm-6 store_link border_color btn-buy line"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div></div>
-
+							<div class="col-sm-5 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
+							<div class="col-sm-6 store_link border_color btn-buy line"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div>
+						</div>
 					<?php } ?> 
 							
 			</div><!-- container album-songs-show-hide -->
@@ -243,7 +238,6 @@ get_header('noscroll'); ?>
 			<div class="col"><?php if(isset($value_single_detail)) {echo esc_attr($value_single_detail);} ?></div>
 		<?php } ?> 
 		</div></br>
-
 
 		<div class="row album-head border_first_color main_font_color main_font">
 			<div class="col-sm-5 store"><?php echo esc_html__('Store Name:', 'koband');?></div>

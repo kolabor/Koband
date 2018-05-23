@@ -129,8 +129,8 @@ get_header('noscroll'); ?>
 		<?php while( $author_album_posts->have_posts() ) : $author_album_posts->the_post();
 		$post_id = get_the_ID();?>
 		<div class="container">
-		<div class="row album-head border_first_color main_font_color">
-			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+			<div class="row album-head border_first_color main_font_color">
+				<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
 				<div class="col-sm-3 album_title main_font_color main_font"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
 		        <?php 
