@@ -720,6 +720,9 @@ Tour Section
     border-left: 2px solid;
     border-bottom: 2px solid;
 }
+.soldout_btn{
+  opacity: 0.5;
+}
 .store_link a {
   padding: 6px;
  border: 3px solid ;
@@ -738,7 +741,7 @@ Tour Section
   -------------------------------------------
  */
 .bg {background-color: #f6f6f6;}
-.single-songs-show-hide {margin-bottom: 20px;}
+.single-songs-show-hide, .album-songs-show-hide {margin-bottom: 20px;}
 
 
 .album-head {
@@ -828,9 +831,7 @@ text-decoration: none;
 .line {
   line-height: 48px;
 }
-.song-list-sinlge .store_link{
-  padding-left: 11px;
-}
+
 /*
 =======================================================
           pop-up design
@@ -1536,8 +1537,6 @@ input {
   .divTableHeading {font-size: 100%;}
   .divTableCell {font-size: 80%;}
   .social-icons a {font-size: 20px; margin-left: 15px;}
-  .song-list .line {line-height: 30px;}
-  .store_link a {padding: 5px; font-size: 12px;}
   .address, .zipcode {display: none;}
   /*news_single_page*/
   .conent_holder {width: 100%;}
@@ -1563,7 +1562,6 @@ input {
   /*archive*/
   .archive-header h1 {text-align: center;}
   .next, .prev, .close_gallery {position: fixed}
-  .st_link {padding-left: 0;}
   .theband_single_title h3 {text-align: center;}
   #contact header {text-align: center;}
   .contact_row {text-align: center;}
@@ -1636,7 +1634,6 @@ input {
   .band-members {width: 100% !important;}
   .divTableCell {font-size: 80%; padding: 10;}
   .social-icons a {font-size: 20px; margin-left: 15px;}
-  .song-list .line {line-height: 30px;}
   .songs-head {font-size: 23px !important; text-align: center;}
   .song-list {font-size: 16px !important; text-align: center;}
   .store {font-size: 23px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; text-align: center;}
@@ -1672,6 +1669,7 @@ input {
   .store_link span {display: none;}
   .ticket {width: 30%}
   .divTableRow {text-align: center;}
+  .album_title h4 {font-size: 17px;}
   
 }
 @media screen and (max-width: 760px) {.sl-content {display: none;}}
@@ -1684,9 +1682,7 @@ input {
   .footer_logo {width: 100%; }
   .album-head .col-sm-1 { max-width: 20%;}
   .album-head .col-sm-3 {max-width: 24%;}
-  .song-list .line {line-height: 30px;}
   .divTableCell {font-size: 70%;}
-  .song-list .store_link a {padding: 6px; font-size: 9px;}
   .video-bg {height: 100%;}
   .iframe-wrapper {height: 100%;}
   #Fullscreen iframe { margin-top: 21%;}
@@ -1781,14 +1777,10 @@ input {
   .song_info {width: 33%;}
   .album-info {margin-left: -15;}
   .album-head, .song-list {margin-left: -15px}
-  .line {line-height: 26px;}
   .song-list .store_link {width: 50%}
   .song-list-sinlge .store_link {width: 50%}
-  .song-list-sinlge .store_link a {font-size: 14px;}
-  .song-list .store_link a {font-size: 15px;}
   .album-store {margin-left: -15; margin-right: -12px;}
-  .store_link a {font-size: 7px; padding: 3px;}
-  .band_member_name {padding-top: 6px;}
+  .band_member_name {padding-top: 8px;}
   .address, .zipcode {display: none;}
   .cover_img a img {width: 100%; height: auto; padding-top: 5px;}
   .band-bio p {text-align: center;}
@@ -1802,6 +1794,8 @@ input {
   .tour_single_page_row .store_link a {font-size: 13px; }
   .sng_alb_hld .song-list {font-size: 28px!important;}
   .sng_store a {font-size: 13px!important;}
+  .album_title h4 {font-size: 14px;}
+  .band-bio {margin-top: 0!important;}
 }
 @media screen and (max-width: 375px) {
   .address, .zipcode {display: none;}
@@ -1824,6 +1818,9 @@ input {
   .search-submit {height: 30px; width: 100px;}
   input {height: 31px;}
   .footer_search {padding-right: 35px;}
+  .store {font-size: 17px;}
+  .store_name {font-size: 16px;}
+  .store_link a {font-size: 11px;}
 
 }
 @media screen and (max-width: 355px) {
@@ -1847,9 +1844,6 @@ input {
   .mobile-nav-icon {font-size: 17px;}
   .sl-content h5 {font-size: 13px !important; margin-bottom: 5px;}
   .sl-content {height: 149px; padding: 17px;}
-  /*.album-head .col-sm-3 { max-width: 100%; padding: 10px;}
-  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {  margin-left: -15px;}
-  .album-head .col-sm-1 a img {width: 100%; height: auto; padding-top: 18px; }*/
   .divTableHeading {font-size: 80%;}
   .divTableCell {font-size: 63%;}
   .FullscreenV iframe {width: 100%; height: 30%; margin-top: 159px;}
@@ -1861,6 +1855,8 @@ input {
   .media-container-row {margin-bottom: 0;}
   .divTableRow .store_link a {font-size: 11px; padding-left: 7px; padding-right: 5px;}
   #Fullscreen iframe {margin-top:69%;}
+  .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {margin-left: 8px;}
+   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 33px;}
 }
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 700px),
