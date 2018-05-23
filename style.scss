@@ -1499,10 +1499,10 @@ input {
 
 
 @media screen and (max-width: 1366px) {
-  .sl-content {top: 20% !important;}
+  .sl-content .sl-content {top: 15% !important; width: 45%;}
   .sl-content h5 {font-size: 80px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
-  .carousel-inner {height: auto !important;}
+  .carousel-inner {height: 100% !important;}
 }
 @media screen and (max-width: 1024px) {
 .sl-content {width: 100%; left: 0!important; padding-left: 200px!important; padding-right: 200px!important;}
