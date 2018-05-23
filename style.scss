@@ -1156,7 +1156,7 @@ label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 15px;
+  font-size: 10px;
   color: #4e555b;
   background-color: #f2f2f2;
   padding: 5px;
@@ -1168,11 +1168,24 @@ label {
   margin-right: 20px;
   border-right: 2px solid #ebebeb;
   padding-right: 7px;
-  height: 24px;
-
+  height: auto;
+width: 100%;
+line-height: 1.5;
 }
-.admin a, .category a, .tag a, .date .dates {
+.admin a, .category a, .tag a, .date a, .post-categories {
   margin-left: 5px;
+    width: 100%;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: auto;
+}
+.news-details_li span {
+width: 100%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
 }
 .post-categories {
   list-style: none;
