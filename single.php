@@ -19,12 +19,14 @@ get_header('noscroll'); ?>
 				<div class="content">
 					<div class="conent_holder">
 						<h1 class="news-single-title section_heading heading_font"><?php the_title();?></h1>
-							<div class="col-sm news-details main_font">
-								<div class="news-details_li admin"><?php echo esc_html__('Posted by : ', 'koband');?><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>"><?php the_author(); ?></a></div>
-								<div class="news-details_li category"><?php echo esc_html__('Category : ', 'koband');?><?php the_category();?></div>
-								<div class="news-details_li date"><?php echo esc_html__('Posted at : ', 'koband');?><?php the_time(get_option( 'date_format' )); ?></div>
-								<div class="news-details_li tag"><?php the_tags(); ?></div>
-							</div>
+
+					<div class="col-sm news-details main_font">
+						<div class="news-details_li admin"><span><?php echo esc_html__('Posted by:', 'koband');?><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) )); ?>"></span><?php the_author(); ?></a></div>
+						<div class="news-details_li category"><span><?php echo esc_html__('Category: ', 'koband');?></span><?php the_category();?></div>
+						<div class="news-details_li date"><span><?php echo esc_html__('Posted at: ', 'koband');?></span><a href=""><?php the_time(get_option( 'date_format' )); ?></a></div>
+						<div class="news-details_li tag"><?php the_tags(); ?></div>
+					</div>
+
 					
 							<div class="row">
 								<div class="col-sm">
