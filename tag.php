@@ -106,7 +106,7 @@ get_header('noscroll'); ?>
                     		<div class="divTableCell border_first_color main_font_color ticket main_font"><?php if($tour_ticket[0] == 'avaliable'){ ?>
 
 		                        <?php if(isset($tour_ticketlink[0])) {?>
-		                        	<a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour onsale_btn border_color main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
+		                        	<a href="<?php echo esc_url($tour_ticketlink[0]);?>"><span class="btn_tour onsale_btn border_color main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
 
 		                     	<?php }elseif ($tour_ticket[0] == 'soldout') { ?>
 		                          	<span class="btn_tour soldout_btn border_color main_font"><?php echo esc_html__('Sold Out', 'koband');?></span>
