@@ -11,6 +11,7 @@
  * @subpackage Koband
  * @since Koband 1.0
  */
+
 get_header('noscroll'); ?>
 <div class="container tag_page search-holder">
 	<header class="archive-header">
@@ -29,9 +30,8 @@ get_header('noscroll'); ?>
 		 	 'post_type' => 'post',   
 			 'post_staus'=> 'publish',
 			 'posts_per_page' => 3,
-				 
-
 		);
+
 		$news_tags_posts = new WP_Query($args_tags_news);
 		if ( $news_tags_posts->have_posts() ) : ?>
 			<!-- start loop --> 										
