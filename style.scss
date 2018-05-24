@@ -265,7 +265,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 25%!important;
+  top: 30%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -1503,10 +1503,10 @@ input {
 
 
 @media screen and (max-width: 1366px) {
-  .sl-content {top: 15% !important; width: 45%;}
+  .sl-content    {top: 31% !important; width: 50%;}
   .sl-content h5 {font-size: 80px !important;}
   .btn-group-lg > .btn, .btn-lg {font-size: 1.2rem !important;}
-  .carousel-inner {height: 100% !important;}
+  .carousel-inner {height: auto!important;}
 }
 @media screen and (max-width: 1175px){
   .carousel-inner {height: auto !important;}
