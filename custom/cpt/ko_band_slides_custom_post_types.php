@@ -8,6 +8,8 @@
  * @since Koband 1.0
  */
 
+
+/* Declare Slides cpt arguments */
 $args = array(
     'labels'  =>  array(
     'menu_name' => esc_html__('Slides', 'koband')
@@ -52,17 +54,14 @@ function ko_band_register_slides() {
     'supports' => array('title', 'thumbnail' ),
     'taxonomies' => array('category', 'post_type'),
     'exclude_from_search' =>false,
+    );
 
-  
-  );
-
-register_post_type( esc_html__('Slides', 'koband'),$args);
+    register_post_type( esc_html__('Slides', 'koband'),$args);
 
 }
 
 add_action('init', 'ko_band_register_slides');
 
-add_action('add_meta_boxes', 'ko_band_slides_meta_box_init');
 
 function ko_band_slides_meta_box_init(){
         add_meta_box(
@@ -75,6 +74,7 @@ function ko_band_slides_meta_box_init(){
     );
 
 }
+add_action('add_meta_boxes', 'ko_band_slides_meta_box_init');
 
 function ko_band_slides_meta_box($post, $box){
 
@@ -97,8 +97,8 @@ function ko_band_slides_meta_box($post, $box){
 
         <div class="row-blank"></div>
         <div class="row top">
-                    <div class="col-sm"><?php echo esc_html__('Title:', 'koband');?></div>
-                    <div class="col-sm"><?php echo esc_html__('Subtitle:', 'koband');?></div>
+            <div class="col-sm"><?php echo esc_html__('Title:', 'koband');?></div>
+            <div class="col-sm"><?php echo esc_html__('Subtitle:', 'koband');?></div>
         </div>
 
         <div class="row">
@@ -107,8 +107,8 @@ function ko_band_slides_meta_box($post, $box){
         </div>
 
         <div class="row">
-                    <div class="col-sm"><?php echo esc_html__('Button Title:', 'koband');?></div>
-                    <div class="col-sm"><?php echo esc_html__('Button Link:', 'koband');?></div>
+            <div class="col-sm"><?php echo esc_html__('Button Title:', 'koband');?></div>
+            <div class="col-sm"><?php echo esc_html__('Button Link:', 'koband');?></div>
         </div>
 
         <div class="row">        

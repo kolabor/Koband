@@ -94,49 +94,11 @@ jQuery(function($) {
        $(this).parent().remove(); 
   });
 
-
-
-
-
-/*Check slider type and hide/show elements based on value*/
-/*wp.customize.control('ko_band_home_page_slider_type', function( control ) {
-
-   var slider_type = control.settings.default._value;
-   console.log(slider_type);
-  
-});*/
-
-
-/*WP Customization part ends here */
-/*wp.customize( 'blogname', function( value ) {
-    console.log(value);
-  } );*/
-
-
-//var yourval = wp.customize.value( 'ko_band_home_page_slider_type[ko_band_home_page_slider_type]' )();
-
-
 });
 
 
 
 jQuery(document).ready(function( $ ){ 
-
-    
-        
-
-        
-    // Saving the selected radio button for Slides //
-        var slide = $("input[type=radio][name='ko_band_slides_check']:checked").val()
-        if (slide == "image") 
-          {
-            $("#slider-video").hide();
-            $("#slide-title").hide()
-          };
-         if (slide == "video") {
-            $("#slider-video").show();
-            $("#slide-title").show();
-          };
 
     // Saving the selected radio button for Tour //
         var sale = $("input[type=radio][name='ko_band_tour_ticket']:checked").val()
@@ -151,6 +113,7 @@ jQuery(document).ready(function( $ ){
           };
 
     // Repetable fields functions starts here //
+    // Album Repetable fields ends here //
         $( '#add-row-details' ).unbind('click').bind('click', function() {
             var row_details = $( '.empty-row-detail.screen-reader-text' ).clone(true);
             row_details.removeClass( 'empty-row-details screen-reader-text' );
@@ -172,7 +135,11 @@ jQuery(document).ready(function( $ ){
             $(this).parents('.row').remove();
             return false;
         });
+
+    
     // Album Repetable fields ends here //
+
+    // Media Repetable fields stars here //
         $( '#add-row-media' ).unbind('click').bind('click', function() {
             var row_media = $( '.empty-row-media.screen-reader-text' ).clone(true);
             row_media.removeClass( 'empty-row-media screen-reader-text' );
@@ -184,7 +151,10 @@ jQuery(document).ready(function( $ ){
             $(this).parents('.row').remove();
             return false;
         });
+    
     // Media Repetable fields ends here //
+
+    // Single Repetable fields stars here //
         $( '#add-row-single' ).unbind('click').bind('click', function() {
             var row_single = $( '.empty-row-singles.screen-reader-text' ).clone(true);
             row_single.removeClass( 'empty-row-singles screen-reader-text' );
@@ -195,8 +165,11 @@ jQuery(document).ready(function( $ ){
             $(this).parents('.row').remove();
             return false;
         }); 
+    
+
     // Single Repetable fields ends here //
 
+    
     // Show hide fields for Tickets on Tour CPT radio buttons//
             $('#id_radio1').click(function () {
             $('#tickets-link').show('fast');
@@ -206,17 +179,7 @@ jQuery(document).ready(function( $ ){
             $('#tickets-link').hide('fast');
             $('#tickets-title').hide('fast');
         });
-    // Show hide fields for Slides CPT radio buttons//
-            $('#radio2').click(function () {
-            $('#slider-video').show('fast');
-            $('#slide-title').show('fast');
 
-        });
-            $('#radio1').click(function () {
-            $('#slider-video').hide('fast');
-            $('#slide-title').hide('fast');
-
-        });
     //Limiting the number of characters for textarea to 250 chars//
             var maxLength = 250;
             $('textarea').keyup(function() {

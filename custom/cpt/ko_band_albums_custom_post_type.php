@@ -21,7 +21,7 @@ $args = array(
     'map_meta_cap' => true, 
     'menu_position' => 3,
     'public'    =>  true
-    );
+);
 
 /* Register Album custom post type function */
 function ko_band_album_custom_post_type() {
@@ -56,7 +56,8 @@ function ko_band_album_custom_post_type() {
 
   );
 
-register_post_type( esc_html__('Album','koband') ,$args);
+    register_post_type( esc_html__('Album','koband') ,$args);
+
 }  
 
 add_action( 'init', 'ko_band_album_custom_post_type' );
@@ -78,10 +79,10 @@ add_action('add_meta_boxes', 'ko_band_album_meta_box_init');
 function ko_band_album_display_meta_box() {
     global $post;
 
-    // Nonce field to validate form request came from current site
     $song_details =get_post_meta($post->ID, 'ko_band_repetable_song_details', true);
     $song_stores = get_post_meta($post->ID, 'ko_band_repetable_song_stores', true);
     
+    // Nonce field to validate form request came from current site
     wp_nonce_field( 'ko_band_album_save_meta_box_nonce', 'ko_band_album_save_meta_box_nonce' );
 
     // Get the location data if it's already been entered
@@ -108,7 +109,7 @@ function ko_band_album_display_meta_box() {
 </div>
 
 
-<div class="container" id="ko_band_album_meta_box_one" >
+<div class="container" id="ko_band_album_meta_box_one">
     <div class="row blank">
         <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove your Album songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
@@ -154,8 +155,6 @@ function ko_band_album_display_meta_box() {
        <div class="button-add-row"><p><a id="add-row-details" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
     </div>
 </div>
-
-      
 
 
 <!--Song_store-->

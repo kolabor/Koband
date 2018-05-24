@@ -53,8 +53,8 @@ get_header(); ?>
 											<button type="button" id="myBtn" class="band_member_name name_member_padding main_font_color main_font" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_title(); ?></button> <br>
 											<button type="button" id="myBtn" class="band_member_role main_font_color main_font font_size" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></button>
 										</div>
-											<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_post_thumbnail('member_thumb'); ?>
-											</div>
+										<div class="bnd_mem_img" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_post_thumbnail('member_thumb'); ?>
+										</div>
 									</div>
 									<!-- Modal -->
 									<div class="modal fade" id="myModal<?php echo esc_attr($id);?>" role="dialog">
@@ -67,28 +67,22 @@ get_header(); ?>
 										        </div>
 												<div class="modal-body">
 													<div class="popup-img"><?php the_post_thumbnail(); ?></div>
-											          	<h4 class="main_font_color main_font"><?php echo esc_html__('Biography : ', 'koband');?></h4>
-											          	<div class="main_font_color main_font font_size"><?php the_content();?></div>
-											          	<h4 class="main_font_color main_font"><?php echo esc_html__('Member Role : ', 'koband');?>
-											          	<?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></h4>
+										          	<h4 class="main_font_color main_font"><?php echo esc_html__('Biography : ', 'koband');?></h4>
+										          	<div class="main_font_color main_font font_size"><?php the_content();?></div>
+										          	<h4 class="main_font_color main_font"><?php echo esc_html__('Member Role : ', 'koband');?>
+										          	<?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></h4>
 												</div>
-													        
-											</div><!--modal-content bg-->
-													      
+											</div><!--modal-content bg-->     
 										</div><!--modal-dialog-->
 									</div><!--modal fade-->
 								    <?php endwhile; ?>
-								    <?php	endif;?>
-								      		
-							   					
+								    <?php	endif;?>	
 							   	</div><!--row-->
 							</div><!--container band-members-->	
-					   	
 					   	</div><!--row-->	
 				   	</div><!--container-->
 				</div><!--row koband_post_theband-->
 			</div><!--container band-bio-->	
-		
 		</div><!--row-->
 	</div><!--container-->
 </div><!--Section Theband-->

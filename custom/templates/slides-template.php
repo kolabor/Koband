@@ -14,34 +14,31 @@
 
  <?php 
  $args_slider = array (
-		  	'post_type' => 'slides',
-		  	'post_staus'=> 'publish',
-		 	'posts_per_page' => -1
+  	'post_type' => 'slides',
+  	'post_staus'=> 'publish',
+ 	'posts_per_page' => -1
 
-			);
+	);
 
  $slider_posts = new WP_Query($args_slider);?>
 
             <!-- Wrapper for slides -->  
-<?php
-    if ($slider_posts->have_posts() ) : ?>
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-   			 <!-- Indicators -->
-  			<ol class="carousel-indicators">
-        		<?php 
-        		if ($slider_posts->have_posts() ) : 
-        		while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
-       				<li data-target="#carouselExampleIndicators" data-slide-to="<?php echo esc_attr($slider_posts->current_post); ?>" class="active"></li>
-        		<?php endwhile; endif; ?>
-    		</ol>
+<?php if ($slider_posts->have_posts() ) : ?>
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			 <!-- Indicators -->
+			<ol class="carousel-indicators">
+    		<?php 
+    		if ($slider_posts->have_posts() ) : 
+    		while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
+   				<li data-target="#carouselExampleIndicators" data-slide-to="<?php echo esc_attr($slider_posts->current_post); ?>" class="active"></li>
+    		<?php endwhile; endif; ?>
+		</ol>
    		<div class="carousel-inner">
    			<?php 
 			$i = 0;
 			while( $slider_posts->have_posts() ) : $slider_posts->the_post(); $i++;
 		
-				$post_id = get_the_ID();?>
-
-	            <?php
+				$post_id = get_the_ID();
 				$slider_type = get_post_meta( $post_id, 'ko_band_slides_check', true);
 		        $slider_video = get_post_meta( $post_id, 'ko_band_slides_video', false );
 				$slider_title = get_post_meta($post_id, "ko_band_slides_title", false );
@@ -84,7 +81,7 @@
 	  		</a>
 		
 		</div><!--carousel-item-->
-
+	</div><!-- carouselExampleIndicators-->
 <?php endif; wp_reset_query(); ?>
 
 <!-- Controls -->
