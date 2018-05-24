@@ -8,6 +8,8 @@
  * @since Koband 1.0
  */
 
+
+/* Declare The Band cpt arguments */
 $args = array(
     'labels'  =>  array(
     'menu_name' => esc_html__('The Band', 'koband')
@@ -51,18 +53,15 @@ function ko_band_the_band_custom_post_type() {
     'hierarchical' => false,
    'supports' => array('title', 'editor', 'thumbnail'),
     'taxonomies' => array('category', 'post_type', 'post_tag'),
-    'exclude_from_search' =>false,
-
-    
+    'exclude_from_search' =>false, 
     );
 
-register_post_type( esc_html__('The Band', 'koband'), $args);
+    register_post_type( esc_html__('The Band', 'koband'), $args);
 
 }
 
 add_action( 'init', 'ko_band_the_band_custom_post_type' );
   
-add_action('add_meta_boxes', 'ko_band_the_band_meta_box_init');
 
 function ko_band_the_band_meta_box_init(){
         add_meta_box(
@@ -75,8 +74,9 @@ function ko_band_the_band_meta_box_init(){
     );
 
 }
-function ko_band_the_band_meta_box($post, $box){
+add_action('add_meta_boxes', 'ko_band_the_band_meta_box_init');
 
+function ko_band_the_band_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
@@ -93,6 +93,7 @@ function ko_band_the_band_meta_box($post, $box){
         </div>
     </div><?php }
 add_action( 'save_post', 'ko_band_the_band_save_meta_box' , 1, 2);
+
 function ko_band_the_band_save_meta_box( $post_id, $post ) 
 {
     if ( ! current_user_can( 'edit_post', $post_id ) ) 

@@ -8,6 +8,8 @@
  * @since Koband 1.0
  */
 
+
+/* Declare Media cpt arguments */
 $args = array(
     'labels'  =>  array(
     'menu_name' => esc_html__('Media','koband')
@@ -21,7 +23,7 @@ $args = array(
     'public'    =>  true
 );
 
-//Custom post type function
+/* Register Media custom post type function */
 
 function ko_band_media_custom_post_type() {
 
@@ -54,9 +56,9 @@ function ko_band_media_custom_post_type() {
     'exclude_from_search' =>false,
 
   
-);
+    );
 
-register_post_type(  esc_html__('Media', 'koband'), $args);
+    register_post_type(  esc_html__('Media', 'koband'), $args);
 
 }
 
@@ -82,7 +84,7 @@ add_action('add_meta_boxes', 'ko_band_gallery_metabox');
 
 
 function ko_band_gallery_meta_callback() {
-global $post;
+    global $post;
     
     wp_nonce_field( basename(__FILE__), 'gallery_meta_nonce' );
     $ids = get_post_meta($post->ID, 'vdw_gallery_id', true);
@@ -103,10 +105,10 @@ global $post;
         <ul id="gallery-metabox-list" class="row">
             <?php if ($ids) : foreach ($ids as $key => $value) : $image = wp_get_attachment_image_src($value); ?>
             <li> 
-                        <input type="hidden" name="vdw_gallery_id[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>">
-                        <img class="image-preview" src="<?php echo esc_url($image[0]); ?>"><br>
-                        <a class="change-image button button-small" href="#" data-uploader-title=<?php echo esc_html__('Change image', 'koband');?> data-uploader-button-text=<?php echo esc_html__('Change image', 'koband');?> ><?php echo esc_html__('Change image', 'koband');?></a>
-                        <a class="remove-image button button-small" href="#"><?php echo esc_html__('Remove image', 'koband');?></a>
+                <input type="hidden" name="vdw_gallery_id[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>">
+                <img class="image-preview" src="<?php echo esc_url($image[0]); ?>"><br>
+                <a class="change-image button button-small" href="#" data-uploader-title=<?php echo esc_html__('Change image', 'koband');?> data-uploader-button-text=<?php echo esc_html__('Change image', 'koband');?> ><?php echo esc_html__('Change image', 'koband');?></a>
+                <a class="remove-image button button-small" href="#"><?php echo esc_html__('Remove image', 'koband');?></a>
             </li>
         <?php endforeach; endif; ?>
         </ul>
@@ -161,8 +163,7 @@ function ko_band_media_meta_box_init(){
 function ko_band_media_display_meta_box($post, $box){
     global $post;
 
-    // Nonce field to validate form request came from current site
-//$singles_details = get_post_meta($post->ID, 'ko_band_repetable_singles_details', true);
+// Nonce field to validate form request came from current site
 $video_field = get_post_meta($post->ID, 'ko_band_repetable_video_field', true);
 $options = ko_band_get_video_options();
 wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_box_nonce' );
@@ -186,10 +187,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <div class="row">
         <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
         <div class="col-sm"><select name="select[]">
-                            <?php foreach ( $options as $label => $value ) : ?>
-                            <option value="<?php echo esc_attr($value); ?>"<?php selected( $field['select'], $value ); ?>><?php echo esc_attr($label); ?></option>
-                            <?php endforeach; ?>
-                            </select></div>
+            <?php foreach ( $options as $label => $value ) : ?>
+            <option value="<?php echo esc_attr($value); ?>"<?php selected( $field['select'], $value ); ?>><?php echo esc_attr($label); ?></option>
+            <?php endforeach; ?>
+            </select></div>
         <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
 
@@ -198,10 +199,10 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <div class="row">
         <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
         <div class="col-sm"><select name="select[]">
-                            <?php foreach ( $options as $label => $value ) : ?>
-                            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_attr($label); ?></option>
-                            <?php endforeach; ?>
-                            </select></div>
+            <?php foreach ( $options as $label => $value ) : ?>
+            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_attr($label); ?></option>
+            <?php endforeach; ?>
+            </select></div>
         <div class="col-sm"><a class="button remove-row" href="#"><?php echo  esc_html__('Remove', 'koband');?></a></div>
     </div>
 
@@ -210,15 +211,15 @@ wp_nonce_field( 'ko_band_media_save_meta_box_nonce', 'ko_band_media_save_meta_bo
     <div class="row empty-row-media screen-reader-text">
         <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://somelink.com" /></div>
         <div class="col-sm"><select name="select[]" >
-                            <?php foreach ( $options as $label => $value ) : ?>
-                            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_attr($label); ?></option>
-                            <?php endforeach; ?>
-                            </select></div>
+            <?php foreach ( $options as $label => $value ) : ?>
+            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_attr($label); ?></option>
+            <?php endforeach; ?>
+            </select></div>
         <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
     </div>
-<div class="row row_no_border">
-<div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
-</div>
+    <div class="row row_no_border">
+        <div class="button-add-row"><p><a id="add-row-media" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
+    </div>
 </div>
 
  
@@ -230,11 +231,11 @@ add_action( 'save_post', 'ko_band_media_save_meta_box' , 1, 2);
 
 function ko_band_media_save_meta_box( $post_id, $post ) {
 
-        if ( ! isset( $_POST['ko_band_media_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_media_save_meta_box_nonce'], 'ko_band_media_save_meta_box_nonce' ) )
+    if ( ! isset( $_POST['ko_band_media_save_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['ko_band_media_save_meta_box_nonce'], 'ko_band_media_save_meta_box_nonce' ) )
 
-            return;
+        return;
 
-        if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
  
 
 

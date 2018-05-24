@@ -8,6 +8,8 @@
  * @since Koband 1.0
  */
 
+
+/* Declare Single cpt arguments */
 $args = array(
     'labels'  =>  array(
     'menu_name' => esc_html__('Singles', 'koband')
@@ -51,10 +53,11 @@ function ko_band_register_singles() {
     'supports' => array('title', 'editor', 'thumbnail'),
     'taxonomies' => array('category', 'post_type', 'post_tag'),
     'exclude_from_search' =>false,
-  );
+    );
 
-register_post_type( esc_html__('Singles','koband'), $args);
+    register_post_type( esc_html__('Singles','koband'), $args);
 }
+
 add_action('init', 'ko_band_register_singles' );
   
 function ko_band_singles_meta_box_init(){
@@ -73,9 +76,9 @@ function ko_band_singles_display_meta_box($post, $box){
     global $post;
 
     // Nonce field to validate form request came from current site
-    $singles_stores = get_post_meta($post->ID, 'ko_band_repetable_singles_stores', true);
     wp_nonce_field( 'ko_band_singles_save_meta_box_nonce', 'ko_band_singles_save_meta_box_nonce' );
    
+    $singles_stores = get_post_meta($post->ID, 'ko_band_repetable_singles_stores', true);
     $singles_length = get_post_meta( $post->ID, 'ko_band_singles_length', true );
     $singles_date_release = get_post_meta( $post->ID, 'ko_band_singles_date_release', true );
     $singles_detail = get_post_meta( $post->ID, 'ko_band_singles_detail', true );
@@ -84,56 +87,56 @@ function ko_band_singles_display_meta_box($post, $box){
 
 <div class="container"> <!-- Container div for Single Length and Date -->
     <div class="row top">
-              <div class="col-sm"><?php echo esc_html__('Single Length', 'koband');?></div>
-              <div class="col-sm"><?php echo esc_html__('Date Release', 'koband');?></div>
-              <div class="col-sm"><?php echo esc_html__('Single Detail', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Single Length', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Date Release', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Single Detail', 'koband');?></div>
     </div>
     
     <div class="row">
-              <div class="col-sm"><input type="text" name="ko_band_singles_length" value="<?php echo esc_attr( $singles_length ) ?>" class="singlelength" placeholder="00:00"></div>
-              <div class="col-sm"><input type="date" name="ko_band_singles_date_release" value="<?php echo esc_attr( $singles_date_release ) ?>" class="singledate"></div>
-              <div class="col-sm"><textarea type="text" name="ko_band_singles_detail"  class="singledetail"><?php echo esc_textarea( $singles_detail ) ?></textarea></div>
-          </div>
-
-  <div class="row-blank">
-    <div class="col-sm"><?php echo esc_html__('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
-  </div>
-
-<div  id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
-    <div class="row top form_heading">
-                <div class="col-sm"><?php echo esc_html__('Store Name', 'koband');?></div>
-                <div class="col-sm"><?php echo esc_html__('Store Link', 'koband');?></div>
-                <div class="col-sm"></div>
+        <div class="col-sm"><input type="text" name="ko_band_singles_length" value="<?php echo esc_attr( $singles_length ) ?>" class="singlelength" placeholder="00:00"></div>
+        <div class="col-sm"><input type="date" name="ko_band_singles_date_release" value="<?php echo esc_attr( $singles_date_release ) ?>" class="singledate"></div>
+        <div class="col-sm"><textarea type="text" name="ko_band_singles_detail"  class="singledetail"><?php echo esc_textarea( $singles_detail ) ?></textarea></div>
     </div>
 
-    <?php if ( $singles_stores ) :    
-         foreach ( $singles_stores as $field) { ?>
-    
-    <div class="row">
-                <div class="col-sm"><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></div> 
-                <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
+    <div class="row-blank">
+        <div class="col-sm"><?php echo esc_html__('The following fields are repetable by clickin "Add Another" you will be able to add another row of fields and if you want you can remove the row with "Remove" button', 'koband');?></div>
     </div>
 
-    <?php  } else :  // show a blank one    ?>
-    
-    <div class="row">
-                <div class="col-sm"> <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.." /></div>
-                <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
-    </div>
+    <div  id="ko_band_repetable_singles_stores_one"> <!-- Container form for Repetable Single fields -->
+        <div class="row top form_heading">
+            <div class="col-sm"><?php echo esc_html__('Store Name', 'koband');?></div>
+            <div class="col-sm"><?php echo esc_html__('Store Link', 'koband');?></div>
+            <div class="col-sm"></div>
+        </div>
 
-    <?php endif; ?>
-        <!-- empty hidden one for jQuery -->
-    <div class="row empty-row-singles screen-reader-text">
-                <div class="col-sm"><input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.."/></div>
-                <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
-                <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
+        <?php if ( $singles_stores ) :    
+             foreach ( $singles_stores as $field) { ?>
+        
+        <div class="row">
+            <div class="col-sm"><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></div> 
+            <div class="col-sm"><input type="url" class="widefat" name="link[]" value="<?php if($field['link'] != '') echo esc_attr( $field['link'] ); ?>" /></div>
+            <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
+        </div>
+
+        <?php  } else :  // show a blank one    ?>
+        
+        <div class="row">
+            <div class="col-sm"> <input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.." /></div>
+            <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
+            <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
+        </div>
+
+        <?php endif; ?>
+            <!-- empty hidden one for jQuery -->
+        <div class="row empty-row-singles screen-reader-text">
+            <div class="col-sm"><input type="text" class="widefat" name="name[]" placeholder="Ex iTunes,Soundcloud.."/></div>
+            <div class="col-sm"><input type="url" class="widefat" name="link[]" placeholder="http://.storename.com" /></div>
+            <div class="col-sm"><a class="button remove-row" href="#"><?php echo esc_html__('Remove', 'koband');?></a></div>
+        </div>
+        <div class="row row_no_border">
+            <div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
+        </div>
     </div>
-    <div class="row row_no_border">
-<div class="button-add-row-single"><p><a id="add-row-single" class="button" href="#"><?php echo esc_html__('Add another', 'koband');?></a></p></div>
-    </div>
-  </div>
 </div>
 
 
@@ -152,15 +155,15 @@ function ko_band_singles_save_meta_box( $post_id, $post )
     $singles_meta['ko_band_singles_date_release'] = esc_html( $_POST['ko_band_singles_date_release'] );
     $singles_meta['ko_band_singles_detail'] = esc_html( $_POST['ko_band_singles_detail'] );
 
-        foreach ( $singles_meta as $key => $value ) :
-            // Don't store custom data twice
-            if ( 'revision' === $post->post_type ) { return;    }
-            if ( get_post_meta( $post_id, $key, false ) ) {   // If the custom field already has a value, update it.
-            update_post_meta( $post_id, $key, $value );
-            } else {       // If the custom field doesn't have a value, add it.
-            add_post_meta( $post_id, $key, $value);     }
-            if ( ! $value ) { delete_post_meta( $post_id, $key ); }
-        endforeach;
+    foreach ( $singles_meta as $key => $value ) :
+        // Don't store custom data twice
+        if ( 'revision' === $post->post_type ) { return;    }
+        if ( get_post_meta( $post_id, $key, false ) ) {   // If the custom field already has a value, update it.
+        update_post_meta( $post_id, $key, $value );
+        } else {       // If the custom field doesn't have a value, add it.
+        add_post_meta( $post_id, $key, $value);     }
+        if ( ! $value ) { delete_post_meta( $post_id, $key ); }
+    endforeach;
 
     $old = get_post_meta($post_id, 'ko_band_repetable_singles_stores', true);
     $new= array();

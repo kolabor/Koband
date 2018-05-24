@@ -2,8 +2,6 @@
   header('Content-type: text/css');
   include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
 
-
-  
   /*****Main Logo***/
   $koband_main_logo = get_theme_mod('ko_band_main_logo');
   $koband_retina_main_logo = get_theme_mod('ko_band_retina_main_logo');
@@ -105,6 +103,9 @@
    
 ?>
 
+
+/*importing google fonts*/
+
 @import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_general_font); ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_headding_font); ?>');
 
@@ -141,7 +142,7 @@ a {
   font-family: <?php echo esc_html($koband_headding_font);?>, serif !important;
 }
 
-.first_color {
+.first_color { 
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
 
@@ -244,7 +245,6 @@ body > div > .border_color {
 }
 
 .sl-content{
-  
   <?php if ($koband_check_slider_background == '1') 
   { ?>
   background-color:rgba(<?php echo esc_html($r)?>,<?php echo esc_html($g)?>,<?php echo esc_html($b)?>,0.4);
@@ -268,11 +268,11 @@ body > div > .border_color {
 .reply a:hover {
   color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
-
 .submit:hover {
  background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 
 .footer-section {
   background-color: <?php echo esc_html($koband_footer_background_color); ?> ;
@@ -286,7 +286,6 @@ body > div > .border_color {
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ;
   opacity: 0.5;
 }
-
 #contact .wpcf7 {
   border: 1px solid <?php echo esc_html($koband_first_theme_color); ?> ;
 } 

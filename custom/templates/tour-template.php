@@ -20,7 +20,7 @@ get_header(); ?>
                 <h1 class="first_color heading_font"><?php echo esc_html__('Tour', 'koband');?></h1>
             </div>
         </div>
-    <div class="row">
+        <div class="row">
 
     <?php
     $args_tour = array
@@ -45,8 +45,6 @@ get_header(); ?>
 
     	        while ( $tour_posts->have_posts() ) : $tour_posts->the_post(); 
         		    $post_id = get_the_ID();  
-
-            		the_post_thumbnail(array(200,200));
                     $tour_date = get_post_meta( $post_id, 'ko_band_tour_date', false );
             		$tour_country = get_post_meta($post_id, "ko_band_tour_country", false );
             		$tour_city = get_post_meta($post_id, "ko_band_tour_city", false );
@@ -64,9 +62,9 @@ get_header(); ?>
 
                             <?php if(isset($tour_ticketlink[0])) {?><a href="<?php echo  esc_url($tour_ticketlink[0]);?>"><span class="btn_tour onsale_btn border_color main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
 
-                      <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
+                        <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
                           <span class="btn_tour soldout_btn border_color main_font"><?php echo esc_html__('Sold Out', 'koband');?></span>
-                    <?php  } ?>
+                        <?php  } ?>
                         </div>
                     	
                     </div>
@@ -74,16 +72,14 @@ get_header(); ?>
             </div>
         </div><!--divTable-->
     <?php endif;?>
-    </div><!--row-->
+        </div><!--row-->
         <div class="container text-center">
             <div class="row">
-
                 <div class="btn-koband-load koband_load_tour border_color first_color main_font" data-page="1" data-url="<?php echo esc_attr(admin_url('admin-ajax.php')); ?>">
                     <span class="koband-loading first_color main_font"><?php echo esc_html__('Loading...','koband');?></span>
                     <span class="text first_color main_font"><?php echo esc_html__('Load tour','koband');?></span></div>
                 <a class="no-tour"><span class="tour-posts first_color main_font"><?php echo esc_html__('There are no more tours', 'koband');?>   <i class="far fa-smile"></i></span></a>
-
             </div>
         </div><!--container-->
     </div><!--container-->
-</div>
+</div><!--Tour-->

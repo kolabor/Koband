@@ -42,14 +42,14 @@ function ko_band_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'ko_band_customize_preview_js' );
 
-
+// Load Script Customizer Controll
 function ko_band_customize_control_js() {
     wp_enqueue_script( 'tuts_customizer_control', get_template_directory_uri() . '/admin/customizer-control.js', array( 'customize-controls', 'jquery' ), null, true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'ko_band_customize_control_js' );
 
 
-/* Register frontend resources */
+//Register frontend resources
 function ko_band_custom_wp_front_resources() {
 
 if( !is_admin() ) 
@@ -85,7 +85,7 @@ add_action( 'wp_enqueue_scripts', 'ko_band_custom_wp_front_resources' );
 
 
 
-// Excerpt Length
+// Shorten Excerpt Length
 function ko_band_set_excerpt_length( $excerpt ){
 	return substr($excerpt, 0, 150);
 }
@@ -134,7 +134,6 @@ function ko_band_theme_support () {
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
 
 	//Menu
-
 	register_nav_menus(array(
 		'primary' => esc_html__('Primary Menu', 'koband'),
 		'secondary' => esc_html__('Single Page', 'koband'),
