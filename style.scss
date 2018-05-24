@@ -265,7 +265,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 30%!important;
+  top: 34%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -1303,6 +1303,19 @@ input {
   border-style: none;
   line-height: 3;
 }
+.video_image{position: relative;}
+.video_image::after {
+    content: url(img/play-button.png);
+    opacity: 1;
+    position: absolute;
+  top: 0;
+  left: 0;
+  
+  background: url() 0 0 no-repeat / cover;
+  height: 100%;
+  width: 100%;
+}
+
 
 .gal {
 
@@ -1501,7 +1514,9 @@ input {
 ============================================
  */
 
-
+@media screen and (max-width: 1440px){
+ .sl-content {top: 32%!important; width: 55%;}
+}
 @media screen and (max-width: 1366px) {
   .sl-content    {top: 28% !important; width: 50%;}
   .sl-content h5 {font-size: 80px !important;}
