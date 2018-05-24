@@ -25,7 +25,7 @@ function ko_band_custom_wp_admin_resources() {
     wp_register_style( 'koband_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
     wp_enqueue_style( 'koband_wp_admin_css' );
 
-    wp_register_script( 'koband_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin.js', false, '1.0.0' );
+    wp_register_script( 'koband_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin_min.js', false, '1.0.0' );
     wp_enqueue_script( 'koband_wp_admin_js' );
 
    wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
@@ -38,7 +38,7 @@ add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
 // Load script for customizer live preview
 function ko_band_customize_preview_js() {
-	wp_enqueue_script( 'ko-band-customize-preview', get_template_directory_uri() . '/admin/customizer-preview.js', array( 'customize-preview' ), '20141216', true );
+	wp_enqueue_script( 'ko-band-customize-preview', get_template_directory_uri() . '/admin/customizer-preview-min.js', array( 'customize-preview' ), '20141216', true );
 }
 add_action( 'customize_preview_init', 'ko_band_customize_preview_js' );
 
@@ -66,7 +66,7 @@ if( !is_admin() )
     wp_register_script( 'bootstrap_wp_front_js', get_template_directory_uri() . '/js/bootstrap.min.js', false, '1.0.0' );
     wp_enqueue_script( 'bootstrap_wp_front_js' );
 
-	wp_register_script( 'script_wp_front_css', get_template_directory_uri() . '/js/ko_band_front.js', false, '1.0.0' );
+	wp_register_script( 'script_wp_front_css', get_template_directory_uri() . '/js/ko_band_front_min.js', false, '1.0.0' );
     wp_enqueue_script( 'script_wp_front_css' );
 
     wp_register_script( 'font-awesome', get_template_directory_uri() . '/js/fontawesome-all.min.js', false, '1.0.0' );

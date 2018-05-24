@@ -261,7 +261,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 18%!important;
+  top: 25%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -1576,7 +1576,7 @@ input {
 }
 @media screen and (max-width: 991px) {
   .mobile-nav-icon {font-size: 32px;}
-  .main-logo {margin-left: 180px;}
+  .main-logo {margin-left: 175px;}
   .col-sm-1 { margin-right: 12px !important;}
   input {width: 160px; line-height: 2;}
   .search-submit {line-height: 2; height: 35px; font-size: 14px;}
@@ -1602,7 +1602,7 @@ input {
 @media screen and (max-width: 768px){
   .sl-content {top: 18% !important;}
    #Fullscreen iframe { width: auto; height: auto;     margin-top: 53%;; padding: 0;}
-   .menu-scroll, .menu-noscroll {height: 70px; padding-top: 20px;}
+   .menu-scroll, .menu-noscroll {padding-top: 35px; padding-bottom: 25px;}
 }
 
 @media screen and (max-width: 767px) {
@@ -1613,7 +1613,7 @@ input {
   .main-nav .menu li a{width: 100%; display: block;  font-size: 24px!important; line-height: 25px; height: 35px;}
   .main-logo {width: 51%; padding-left: 63px; margin-left: 75px;}
   .logo {margin-top: 0;}
-  .menu-scroll, .menu-noscroll {height: 70px; padding-top: 20px;}
+   .menu-scroll, .menu-noscroll {padding-top: 35px; padding-bottom: 25px;}
   .section h1 { width: 100%; text-align: center;}
   .album-head .col-sm-1 {-webkit-box-flex: 0;-ms-flex: 0 0 19.333333%;flex: 0 0 19.333333%; max-width: 19.333333%; margin-right: 0!important; padding: 0;}
   .album-head .col-sm-3 {-webkit-box-flex: 0;-ms-flex: 0 0 19%;flex: 0 0 19%; max-width: 19%; padding: 0;}
@@ -1744,7 +1744,7 @@ input {
   .main-nav .menu li a{width: 100%; display: block; font-size: 17px !important; line-height: 25px; height: 30px;}
   .main-logo     {width: 50%; padding-left: 20px; margin-left: 68px;}
   .logo {margin-top: 0;}
-  .menu-scroll, .menu-noscroll {padding-top: 25px;}
+  .menu-scroll, .menu-noscroll {padding-top: 25px; padding-bottom: 25px;}
   .sl-content {top: 22% !important; height: 160px; padding: 21px; padding-left: 100px !important; padding-right: 100px !important;}
   .sl-content h5 {font-size: 15px !important;}
   .sl-content p {font-size: 8px !important;}
@@ -1762,13 +1762,13 @@ input {
   .koband_post_theband h4 {text-align: center;}
   .band_member_name {font-size: 32px !important; text-align: center; float: none;}
   .band_member_role {font-size: 20px !important;}
-  .divTableHeading {font-size: 135%; line-height: 1; font-weight: 700; padding: 3px;}
+  .divTableHeading {font-size: 135%; line-height: 1; font-weight: 700;}
   .divTableCell {font-size: 13px; line-height: 1.5; padding-left: 5px; padding-right: 5px; font-weight: 600;}
   .footer_search { margin-bottom: 0;}
   #menu-footer-menu {padding-left: 0; margin-right: 0; text-align: center;}
   .social-media {text-align: center; margin-bottom: 14px; margin-right: 11px;}
   #back-to-top {right: 27px;}
-  .songs-head {width: 33%; height: auto;}
+  .songs-head {width: 33%; height: auto; font-size: 20px !important}
   .song_info {width: 33%;}
   .album-info {margin-left: -15;}
   .album-head, .song-list {margin-left: -15px}
@@ -1797,12 +1797,12 @@ input {
   .mobile-nav-icon {width: 28%; font-size: 21px}
   .social-media {margin-right: 6px;}
   #back-to-top {right: 12px;}
-  .col-sm-3 span {font-size: 15px !important;}
+  .col-sm-3 span {font-size: 13px !important;}
   .album_title { font-size: 13px !important;}
   .album-head .col-sm-1 {max-width: 19.333333%;}
   .album-head .col-sm-3 {padding-right: 15px; padding-left: 15px;}  
   .btn.btn-sm.hide-album-song img, .btn.btn-sm.show-album-song img, .btn.btn-sm.show-single-song img, .btn.btn-sm.hide-single-song img {width: 40px;}
-  .divTableHeading {font-size: 112%;}
+  .divTableHeading {font-size: 115%;}
   .social-icons a {font-size: 18px;}
   .menu li a {font-size: 19px !important;}
   #menu-main-menu li a {font-size: 15px !important;}
@@ -1825,6 +1825,7 @@ input {
   .divTableHeading {font-size: 100%;}
   .social-icons a {font-size: 14px;}
   .footer-menu .menu li a {font-size: 19px !important;}
+  .song-list .col {font-size: 11px;}
 }
 @media screen and (max-width: 340px) {
   .search-submit {width: 92px;}
@@ -1832,21 +1833,21 @@ input {
 @media screen and (max-width: 324px){
   .main-logo {margin-left: 57px;}
   .mobile-nav-icon {font-size: 15px;}
-  .search-submit {width: 84px;}
+  .search-submit {width: 88px;}
 }
 @media screen and (max-width: 320px) {
   .main-logo {margin-left: 55px;}
   .mobile-nav-icon {font-size: 17px;}
   .sl-content h5 {font-size: 13px !important; margin-bottom: 5px;}
   .sl-content {height: 149px; padding: 17px;}
-  .divTableHeading {font-size: 80%;}
+  .divTableHeading {font-size: 90%; padding-bottom: 10px;padding-top: 10px;}
   .divTableCell {font-size: 63%;}
   .FullscreenV iframe {width: 100%; height: 30%; margin-top: 159px;}
   .album_title_single {font-size: 17px !important;}
-  .songs-head {font-size: 21px !important;}
-  .album_single_page_details, .song_info {font-size: 15px !important;}
+  .songs-head {font-size: 15px !important;}
+  .album_single_page_details, .song_info {font-size: 11px !important;}
   .sng_store {font-size: 21px;}
-  .store_name, .store {font-size: 16px;}
+  .store_name, .store {font-size: 15px;}
   .media-container-row {margin-bottom: 0;}
   .divTableRow .store_link a {font-size: 11px; padding-left: 7px; padding-right: 5px;}
   #Fullscreen iframe {margin-top:69%;}
