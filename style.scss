@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: Koband
 Theme URI: https://www.kolabor.net
 Author: Kolabor
@@ -7,12 +7,20 @@ Description: Kolabor Band is a responsive Wordpress theme for music band. You ca
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: band, music, artist, audio, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
 Text Domain: koband
 */
 /* =Reset ff
 weffcb
 -------------------------------------------------------------- */
+.wp-caption,
+.wp-caption-text,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter{width:0.1px}
 a {
   text-decoration: none !important;
 }
@@ -64,6 +72,7 @@ a {
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
+
 
 a:hover {text-decoration: none!important;}
 
@@ -1315,7 +1324,6 @@ input {
   height: 100%;
   width: 100%;
 }
-
 
 .gal {
 

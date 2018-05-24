@@ -11,6 +11,7 @@
  * @subpackage Koband
  * @since Koband 1.0
  */
+
 get_header('noscroll'); ?>
 <div class="container tag_page search-holder">
 	<header class="archive-header">
@@ -29,16 +30,15 @@ get_header('noscroll'); ?>
 		 	 'post_type' => 'post',   
 			 'post_staus'=> 'publish',
 			 'posts_per_page' => 3,
-				 
-
 		);
+
 		$news_tags_posts = new WP_Query($args_tags_news);
 		if ( $news_tags_posts->have_posts() ) : ?>
 			<!-- start loop --> 										
 			<?php while ( $news_tags_posts->have_posts() ) : $news_tags_posts->the_post(); ?>
 				<div class="col-md-4">
 	            	<div class="card mb-4 box-shadow">
-						<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
+						<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>">		<?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
 						<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
 						<div class="card-body">
 							<div id="card-text" class="main_font_color main_font"><?php the_excerpt(); ?></div>
@@ -52,6 +52,7 @@ get_header('noscroll'); ?>
 				</div>
 		<?php endwhile;endif; ?>
 	</div><!--row-->
+
 	<div class="row author-rows"> 
 		<?php
 		$tags = single_term_title("", false);
@@ -64,6 +65,7 @@ get_header('noscroll'); ?>
 			 'posts_per_page' => -1,
 		);
 	    $tags_tour_posts = new WP_Query( $args_tags_tour );
+
     	if ( $tags_tour_posts->have_posts() ) : ?>
    			<header class="archive-header">
 				<h4 class="archive-title"><?php printf( esc_html__( 'Tag Tour Archives: %s', 'koband' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
@@ -138,18 +140,18 @@ get_header('noscroll'); ?>
 			</header><!-- .archive-header -->
 		<?php while( $tags_album_posts->have_posts() ) : $tags_album_posts->the_post();
 			$post_id = get_the_ID();?>
-				
-		<div class="container">
-			<div class="row album-head border_first_color main_font_color">
-				<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
-				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
 
-		        <?php 
-		        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
-				$album_length = get_post_meta($post_id, "ko_band_album_length", false ); 
-				$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
-				$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false);
-				?>
+			<div class="container">
+				<div class="row album-head border_first_color main_font_color">
+					<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank" ><?php the_post_thumbnail(array(70,70));?></a></div>
+					<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Album Name:', 'koband');?><br> <a href="<?php the_permalink();?>" target="_blank" ><span class="main_font_color"><?php the_title();?></span></a></div>
+
+			        <?php 
+			        $album_date = get_post_meta( $post_id, 'ko_band_album_date_release', false );
+					$album_length = get_post_meta($post_id, "ko_band_album_length", false ); 
+					$album_song_details = get_post_meta($post_id, "ko_band_repetable_song_details", false);
+					$album_song_store = get_post_meta($post_id, "ko_band_repetable_song_stores", false);
+					?>
 					
 				<div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Date:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_date[0])) { echo esc_attr($album_date[0]); } ?></span></div>
 			    <div class="col-sm-3 album_title main_font_color"><?php echo esc_html__('Length:', 'koband');?><br> <span class="main_font_color"><?php if(isset($album_length[0])) { echo esc_attr($album_length[0]); } ?></span></div>
@@ -166,7 +168,7 @@ get_header('noscroll'); ?>
 					<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Name', 'koband');?></div>
 					<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Length', 'koband');?></div>
 					<div class="col-sm-4 songs-head main_font_color"><?php echo esc_html__('Song Details', 'koband');?></div>
-				</div>
+				</div><!-- .row album-info-->
 				<div class="row song-list main_font_color">			
 					<?php foreach ($album_song_details[0] as  $value_song_details) { ?>
 					<div class="col-sm-4 song_info border_bottom line"><?php if(isset($value_song_details['name-details'])) {echo esc_attr($value_song_details['name-details']);}?></div>
