@@ -48,6 +48,8 @@
 				$slider_subtitle = get_post_meta($post_id, "ko_band_slides_subtitle", false );
 				$slider_button_title = get_post_meta($post_id, "ko_band_slides_button_title", false );
 				$slider_button_link = get_post_meta($post_id,  "ko_band_slides_button_link", false );
+				$slider_sub_trim_chars = $slider_subtitle[0];
+				$slider_trim_chars = substr($slider_sub_trim_chars,0,200);
 				?>
 
 				<?php if ( $i == 1 ): ?>
@@ -60,7 +62,7 @@
 					            <div class="sl-content">
 
 								    <h5 class="slider_title_text_color heading_font"><?php if(isset($slider_title[0])) 	{ echo esc_attr($slider_title[0]); } ?></h5>
-								    <p class="slider_subtitle_text_color main_font"><?php if(isset($slider_subtitle[0])) 	{ echo esc_attr($slider_subtitle[0]); } ?></p>
+								    <p class="slider_subtitle_text_color main_font"><?php if(isset($slider_trim_chars)) 	{ echo esc_attr($slider_trim_chars); } ?></p>
 								    <a class="btn btn-lg slider_button_text_color main_font" href="<?php if(isset($slider_button_link[0])) 	
 								    	{ echo esc_url($slider_button_link[0]); } ?>"><?php if(isset($slider_button_title[0])) 
 								    		{ echo esc_attr($slider_button_title[0]); } ?></a>
