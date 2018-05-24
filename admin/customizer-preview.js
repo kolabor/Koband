@@ -25,14 +25,13 @@
 		value.bind( function( newThemeMainFontColor ) {
 		
 			$('.main_font_color').css( 'color', newThemeMainFontColor, 'important');
-			//$('.main_font').css( 'color', newThemeMainFontColor, 'important');
 			$('.comment-list p').css( 'color', newThemeMainFontColor, 'important');
 			$('.read_more a').css( 'color', newThemeMainFontColor, 'important');
 			$('.copyright').css( 'color', newThemeMainFontColor, 'important');
 		} );
 	} );
 
-	 // Update theme main menu font Color
+	// Update theme main menu font Color
 	api( 'ko_band_main_menu_font_color', function( value ) {
 		value.bind( function( newThemeMenuFontColor ) {
 		
@@ -41,7 +40,7 @@
 		} );
 	} );
 
-	 // Update theme main menu font size
+	// Update theme main menu font size
 	api( 'ko_band_main_menu_font_size', function( value ) {
 		value.bind( function( newThemeMenuFontSize ) {
 		
@@ -50,7 +49,7 @@
 		} );
 	} );
 
-	 // Update theme main menu bg color
+	// Update theme main menu bg color
 	api( 'ko_band_main_menu_background_color', function( value ) {
 		value.bind( function( newThemeMenuBGColor ) {
 		
@@ -61,7 +60,7 @@
 		} );
 	} );
 
-	 // Update theme font size
+	// Update theme font size
 	api( 'ko_band_theme_font_size', function( value ) {
 		value.bind( function( newThemeFontSize ) {
 		
@@ -71,7 +70,7 @@
 	} );
 
 
-	 // Update theme line height
+	// Update theme line height
 	api( 'ko_band_theme_line_height', function( value ) {
 		value.bind( function( newThemeLineHeight ) {
 		
@@ -81,21 +80,20 @@
 	} );
 
 
-	 // Update theme general font selector
+	// Update theme general font selector
 	api( 'ko_band_general_font_selector', function( value ) {
 		value.bind( function( newThemeGeneralFont ) {
 		
-			$('.main_font').css('font-family', newThemeGeneralFont, 'important'); 
-			//$('.comments-area, .sidebar').css( 'font-family', newThemeGeneralFont, 'important'); 
-			//$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
-			//$('.footer-menu .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
-			//$('.search-submit').css( 'font-family', newThemeGeneralFont, 'important'); 
+			$('.main_font').css('font-family', newThemeGeneralFont, 'important');
+			$('.comment-list p').css('font-family', newThemeGeneralFont, 'important');
+			$('.footer-menu .menu li a').css('font-family', newThemeGeneralFont, 'important');
+			$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
 										
 		} );
 	} );
 
 
-	 // Update theme heading font selector
+	// Update theme heading font selector
 	api( 'ko_band_heading_font_selector', function( value ) {
 		value.bind( function( newThemeHeadingFont ) {
 		
@@ -113,7 +111,7 @@
 		} );
 	} );
 
-		// Update Theme retina logo
+	// Update Theme retina logo
 	api( 'ko_band_retina_main_logo', function( value ) {
 		value.bind( function( themeNewRetinaLogo ) {
 		
@@ -131,9 +129,10 @@
 		} );
 	} );
 
-/*SLIDER Live changes start here */
+	
+	/*SLIDER Live changes start here */
 
-   		//Update slider title color
+   	//Update slider title color
 	api( 'ko_band_slider_title_color', function( value ) {
 		value.bind( function( newSliderTitleColor ) {
 		
@@ -142,7 +141,7 @@
 		} );
 	} );
 
-	   //Update slider paragraph text color
+	//Update slider paragraph text color
 	api( 'ko_band_slider_paragraph_text_color', function( value ) {
 		value.bind( function( newSliderParagraphTextColor ) {
 		
@@ -151,7 +150,7 @@
 		} );
 	} );
     
-       /*Update slider button text color*/
+    //Update slider button text color
 	api( 'ko_band_slider_button_text_color', function( value ) {
 		value.bind( function( newSliderButtonTextColor ) {
 		
@@ -160,7 +159,7 @@
 		} );
 	} );
 
-	/*Update slider button border color*/
+	//Update slider button border color
 	api( 'ko_band_slider_button_border_color', function( value ) {
 		value.bind( function( newSliderButtonBorderColor ) {
 		
@@ -169,7 +168,7 @@
 		} );
 	} );
 
-   /*Update slider text holder box*/
+   	//Update slider text holder box
 	api( 'ko_band_slider_text_holder_background_color', function( value ) {
 		value.bind( function( newtextHolderBgColor ) {
 		   
@@ -179,7 +178,7 @@
 		} );
 	} );
   
-  /*Show hider slider text holder box*/
+  	//Show hider slider text holder box
 	api( 'ko_band_home_page_box_background', function( value ) {
 		value.bind( function( newBgHolderMode ) {
 		    if(newBgHolderMode == false){   
@@ -191,7 +190,7 @@
 		});
 	});
 
-/* Show or hide search at footer*/
+	//Show or hide search at footer
 	api('ko_band_footer_search', function( value ) {
 		value.bind( function( hideSearchFooter ) {
 			if (hideSearchFooter == false){
@@ -203,7 +202,7 @@
 		});
 	});
 	
-/*Show theband section bg image*/
+	//Show theband section bg image
 	api( 'ko_band_theband_sectin_background_image', function( value ) {
 		value.bind( function( newThebandSectionBGImage ) {
 
@@ -215,7 +214,7 @@
 		} );
 	} );
 
-/*Update Beckground News section color*/
+	//Update Beckground News section color
 	api( 'ko_band_background_news_section_color', function( value ) {
 		value.bind( function( newBGNewsSectionColor) {
 
@@ -224,7 +223,7 @@
 		} );
 	} );
 
-/*Update Beckground Tour section color*/
+	//Update Beckground Tour section color
 	api( 'ko_band_background_tour_section_color', function( value ) {
 		value.bind( function( newBGTourSectionColor) {
 
@@ -233,7 +232,7 @@
 		} );
 	} );
 
-/*Update Beckground Discography section color*/
+	//Update Beckground Discography section color
 	api( 'ko_band_background_discography_section_color', function( value ) {
 		value.bind( function( newBGDiscographySectionColor) {
 
@@ -242,7 +241,7 @@
 		} );
 	} );
 
-/*Update Beckground Gallery section color*/
+	//Update Beckground Gallery section color
 	api( 'ko_band_background_gallery_section_color', function( value ) {
 		value.bind( function( newBGMediaSectionColor) {
 
@@ -251,7 +250,7 @@
 		} );
 	} );
 
-/*Update Beckground Footer section color*/
+	//Update Beckground Footer section color
 	api( 'ko_band_footer_section_background_color', function( value ) {
 		value.bind( function( newBGFooterSectionColor) {
 
@@ -260,7 +259,7 @@
 		} );
 	} );
 
-	/*Update Footer Menu font color*/
+	//Update Footer Menu font color
 	api( 'ko_band_footer_menu_font_color', function( value ) {
 		value.bind( function( newFooterMenuFontColor) {
 
@@ -269,7 +268,7 @@
 		} );
 	} );
 
-	/*Update Footer Menu font size*/
+	//Update Footer Menu font size
 	api( 'ko_band_footer_menu_font_size', function( value ) {
 		value.bind( function( newFooterMenuFontSize) {
 
@@ -278,7 +277,7 @@
 		} );
 	} );
 
-/*SLIDER Live changes ends here */
+	/*SLIDER Live changes ends here */
 
 
 } )( jQuery );

@@ -55,19 +55,14 @@
 			</div><!-- container -->
 				<div class="container text-center">
 					<div class="row ">
-
 						<div class="btn-koband-load koband_load_more border_color first_color main_font" data-page="1" data-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
 							<span class="koband-loading main_font first_color"><?php echo esc_html__('Loading...', 'koband');?></span>
 							<span class="text first_color main_font"><?php echo esc_html__('Load more', 'koband');?></span></div>
-						<a class="no-news"><span class="news-posts first_color main_fonts"><?php echo esc_html__('There are no more news', 'koband');?>  <i class="far fa-smile"></i></span></a>
-
+						<a class="no-news"><span class="news-posts first_color main_fonts"><?php echo esc_html__('There are no more news', 'koband');?><i class="far fa-smile"></i></span></a>
 					</div>
 				</div>
-		
 		</div><!-- row -->
-	
 	</div><!-- container -->
-
+</div><!-- album py5 -->
 </div><!-- id news -->
-</div>
 

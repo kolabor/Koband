@@ -53,9 +53,9 @@
 									
 					endwhile; // End of the loop.?>
 				</div>
-			</div>
-		</div>
+			</div><!--container -->
+		</div><!--content_holder -->
 	<?php get_sidebar(); ?>
-	</div>
-</div>
+	</div><!--content -->
+</div><!--contact -->
 <?php get_footer(); ?>

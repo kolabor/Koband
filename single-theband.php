@@ -34,10 +34,10 @@ get_header('noscroll'); ?>
 							if (isset($single_theband_role[0])){ echo esc_attr($single_theband_role[0]);}?>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
+			</div><!--row-->
+		</div><!--container-->
+	</div><!--theband_holder-->
 	<?php endif;?>
-</div>
+</div><!--container theband_single_page-->
 
 <?php get_footer(); ?>

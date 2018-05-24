@@ -1,15 +1,5 @@
 jQuery(document).ready(function( $ ){ 
 
-//function ko_band_RetinaDisplay() {
-
-function ko_band_RetinaDisplay() {
-        if (window.matchMedia) {
-            var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
-            return (mq && mq.matches || (window.devicePixelRatio > 1)); 
-        }
-//}
-};
-
 //Limiting the number of characters for textarea to 250 chars//
 	var maxLength = 250;
 	$('textarea').keyup(function() {
@@ -87,8 +77,7 @@ $(document).on('click', '.koband_load_more:not(.loading)', function(){
 		},
 		success : function( response ){
             
-           // console.log("-----success----");
-          // console.log($.trim(response));
+            console.log("-----success----");
             // if there are no more post hide loadmore show nomore
             if($.trim(response) == "end"){
 	            $('.koband_load_more').hide();
@@ -141,8 +130,7 @@ $(document).on('click', '.koband_load_media:not(.loading)', function(){
 		},
 		success : function( response ){
             
-           // console.log("-----success----");
-           // console.log(response);
+            console.log("-----success----");
             // if there are no more post hide loadmore show nomore
             if($.trim(response) == "end-media"){
 	            $('.koband_load_media').hide();
@@ -190,8 +178,7 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
 		},
 		success : function( response ){
             
-            //console.log("-----success----");
-           // console.log(response);
+            console.log("-----success----");
             // if there are no more post hide loadmore show nomore
             if($.trim(response) == "end-tour"){
 	            $('.koband_load_tour').hide();
@@ -206,7 +193,13 @@ $(document).on('click', '.koband_load_tour:not(.loading)', function(){
 		}
 	});
 });
- // Add smooth scrolling to all links
+
+/*
+============================================
+  Add smooth scrolling to all links
+============================================
+ */
+
 var jump=function(e)
 {
    if (e){
@@ -245,7 +238,12 @@ $(document).ready(function()
     }
 });	
 
-//On scroll change menu color
+/*
+============================================
+  On scroll change menu color
+============================================
+ */
+
 var num = 600; //number of pixels before modifying styles
 
 $(window).bind('scroll', function () {
@@ -306,9 +304,11 @@ $('.mobile-nav-icon').click(function() {
 
 
 
-/*============================================
-Gallery click, next, prev functions
-============================================*/
+/*
+============================================
+  Gallery click, next, prev functions
+============================================
+*/
  
 $('#Fullscreen').css('height', $(document).outerWidth() + 'px');
 
@@ -470,7 +470,7 @@ $.prevMedia = function()
 
 
 
-/*Video slide gunction starts here*/
+/*Video slide function starts here*/
 $.videoSlide = function(videoCode, videoLink, videoType)
 {
             

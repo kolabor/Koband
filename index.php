@@ -18,7 +18,7 @@ get_header('noscroll'); ?>
 </head>
 
 <div class="container">
-        <div class="row koband_post_news">
+  <div class="row koband_post_news">
           <?php
             $args_news = array(   
              'post_type' => 'post',   
@@ -46,9 +46,9 @@ get_header('noscroll'); ?>
                   </div>
                 </div>  
               <?php endwhile; ?>  
-              <!-- loop ends here -->
-          <?php endif; ?>
-          <?php wp_footer();?>
-        </body>
-      </div><!-- container -->
-</div>
+        <!-- loop ends here -->
+        <?php endif; ?>
+      <?php wp_footer();?>
+    </body>
+  </div><!-- row -->
+</div><!--container-->

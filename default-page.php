@@ -22,8 +22,8 @@
 								
 				endwhile; // End of the loop.?>
 			</div>
-		</div>
+		</div><!--conent_holder-->
 	<?php get_sidebar(); ?>
-	</div>
-</div>
+	</div><!--content-->
+</div><!--container-->
 <?php get_footer(); ?>

@@ -21,7 +21,7 @@
 								
 				endwhile; // End of the loop.?>
 			</div>
-		</div>
-	</div>
-</div>
+		</div><!--conent_holder-->
+	</div><!--content-->
+</div><!--container-->
 <?php get_footer(); ?>
