@@ -48,7 +48,7 @@ get_header('noscroll'); ?>
 				</div>	
         	<?php endwhile; ?>
 		<?php endif; ?> 
-	</div>
+	</div><!--row author-rows -->
 	<div class="row author-rows"> 
 		<?php
 		$category = single_term_title("", false);
@@ -79,11 +79,8 @@ get_header('noscroll'); ?>
                 </div>
                       
                 <?php
-
     	        while ( $category_tour_posts->have_posts() ) : $category_tour_posts->the_post(); 
         		    $post_id = get_the_ID();  
-
-            		the_post_thumbnail(array(200,200));
                     $tour_date = get_post_meta( $post_id, 'ko_band_tour_date', false );
             		$tour_country = get_post_meta($post_id, "ko_band_tour_country", false );
             		$tour_city = get_post_meta($post_id, "ko_band_tour_city", false );
@@ -101,18 +98,17 @@ get_header('noscroll'); ?>
 
                             <?php if(isset($tour_ticketlink[0])) {?><a href="<?php echo esc_url($tour_ticketlink[0]);?>"><span class="btn_tour onsale_btn border_color main_font"><?php echo esc_html__('On Sale', 'koband');?></span></a><?php } ?>
 
-                      <?php }elseif ($tour_ticket[0] == 'soldout') { ?>
+                      	<?php }elseif ($tour_ticket[0] == 'soldout') { ?>
                           <span class="btn_tour soldout_btn border_color main_font"><?php echo esc_html__('Sold Out', 'koband');?></span>
-                    <?php  } ?>
+                    	<?php  } ?>
                         </div>
-                    	
                     </div>
 
                 <?php endwhile;?> <!-- end of the loop.  -->
-            </div>
+            </div><!--divTableBody -->
         </div><!--divTable-->
 	    <?php endif;?>
-	</div>
+	</div><!--row author-rows -->
 	<div class="row author-rows">
 		<?php
 
@@ -161,7 +157,7 @@ get_header('noscroll'); ?>
 				    	<a class="btn btn-sm hide-album-song first_color"><img src="<?php echo esc_url(get_template_directory_uri()); ?>//img/Arrow-Up.png"/></a>
 			    	</span>
 			    </div>
-			</div><!-- container -->        
+			</div><!-- row -->        
 			<div class="container album-songs-show-hide bg">
 				<!-- Labels -->
 				<div class="row album-info">
@@ -181,20 +177,16 @@ get_header('noscroll'); ?>
 					<div class="col-sm-5 store"><?php echo esc_html__('Store Name', 'koband');?></div>
 					<div class="col-sm-5 store st_link"><?php echo esc_html__('Store Link', 'koband');?></div>
 				</div>
-					<?php 
-						foreach ($album_song_store[0] as  $value_song_store) { ?>
+					<?php foreach ($album_song_store[0] as  $value_song_store) { ?>
 						<div class=" row song-list border_second_color main_font_color main_font">
 							<div class="col-sm-5 store_name line"><?php if(isset($value_song_store['name-store'])) {echo esc_attr($value_song_store['name-store']);}?></div>
 							<div class="col-sm-6 store_link border_color btn-buy line"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div>
 						</div>
-					<?php } ?> 
-							
+					<?php } ?> 	
 			</div><!-- container album-songs-show-hide -->
-		
-	
 		</div><!-- container -->
 		<?php endwhile; endif; ?> <!-- end of the loop. -->
-	</div>
+	</div><!--row author-rows -->
 	<div class="row author-rows">
 		<?php $category_single_posts = new WP_Query($args_category_singles); ?>
 		<?php if ($category_single_posts->have_posts() ) : ?>
@@ -205,15 +197,13 @@ get_header('noscroll'); ?>
 				</h4>
 			</header>
 			<?php while ($category_single_posts->have_posts() ) : $category_single_posts->the_post();
-				$post_id = get_the_ID(); ?>
-			
-				<?php 
+				$post_id = get_the_ID(); 
 		  		$single_date = get_post_meta( $post_id, 'ko_band_singles_date_release', false );
 				$single_length = get_post_meta($post_id, "ko_band_singles_length", false ); 
 				$single_detail = get_post_meta($post_id, "ko_band_singles_detail", false ); 
 				$single_store = get_post_meta($post_id, "ko_band_repetable_singles_stores", false); ?>
 					
-			<div class="container">
+	<div class="container">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-1 cover_img"><a href="<?php the_permalink();?>" target="_blank"><?php the_post_thumbnail(array(70,70));?></a></div>
 
@@ -228,7 +218,7 @@ get_header('noscroll'); ?>
 			    	<a class="btn btn-sm hide-single-song first_color main_font"><img src="<?php echo esc_url(get_template_directory_uri()); ?>//img/Arrow-Up.png"/></a>
 		    	</span>
 			</div>
-		</div>
+		</div><!--row -->
 	<div class="container single-songs-show-hide bg">
 		<div class="row album-head border_first_color">
 			<div class="col-sm-4 songs-head main_font_color main_font"><?php echo esc_html__('Song Details', 'koband');?></div>
@@ -250,7 +240,7 @@ get_header('noscroll'); ?>
 				<div class="col-sm-5 store_name line"><?php if(isset($value_single_store['name'])) {echo esc_attr($value_single_store['name']);}?></div>
 				<div class="col-sm-6 store_link border_color btn-buy line font_size"><a class="first_color" href="<?php if(isset($value_song_store['link'])) {echo esc_url($value_song_store['link']);}?>"><i class="fas fa-shopping-cart"></i><?php echo esc_html__('Buy Here', 'koband');?></a></div> 
 			<?php } } ?>
-		</div>
+		</div><!--row-->
 	</div><!-- container single-songs-show-hide -->	
 	</div><!-- container -->
 		<?php endwhile; endif; ?>
@@ -291,6 +281,6 @@ get_header('noscroll'); ?>
 			<?php endwhile;?>
 		<!-- loop ends here -->	
    		<?php endif; ?>
-	</div>
-</div>
+	</div><!--row-->
+</div><!--container search-holder-->
 <?php get_footer(); ?>

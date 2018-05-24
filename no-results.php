@@ -15,7 +15,6 @@
 	<header class="page-header">
 		<h3 class="page-title"><?php echo esc_html__( 'Error 404-Page NOT Found', 'koband' ); ?></h3>
 	</header><!-- .page-header -->
-
 	<div class="page-content">
 		<div class="content">
 			<div class="conent_holder">
@@ -32,8 +31,8 @@
 					<p><?php echo esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'koband' ); ?></p></br>
 
 				<?php endif; ?>
-			</div>
+			</div><!--conent_holder-->
 			<?php get_sidebar(); ?>
-		</div>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+		</div><!--content-->
+	</div><!--page-content -->
+</section><!--no-results -->

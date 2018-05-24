@@ -44,12 +44,14 @@ get_header('noscroll'); ?>
                             </div>
                         </div>  
                     <?php endwhile; ?>
-                </div>
-    <?php } else { ?>
-    <?php get_template_part( 'no-results', 'search' ); }?>
-            </div>
+                </div><!--row-->
+
+            <?php } else { ?>
+            <?php get_template_part( 'no-results', 'search' ); }?>
+
+            </div><!--conent_holder-->
             <?php get_sidebar(); ?>
-        </div>
+        </div><!--content-->
     </div><!--row -->
 </div><!-- container -->
 <?php get_footer(); ?>
