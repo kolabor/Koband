@@ -85,7 +85,6 @@ get_header('noscroll'); ?>
                			</div>
                       
                		<?php
-
     	        		while ( $tags_tour_posts->have_posts() ) : $tags_tour_posts->the_post(); 
         		  		$post_id = get_the_ID();  
 

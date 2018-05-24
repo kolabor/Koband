@@ -102,15 +102,11 @@
   $koband_footer_menu_font_color = get_theme_mod('ko_band_footer_menu_font_color');
   $koband_footer_menu_font_size = get_theme_mod('ko_band_footer_menu_font_size'); 
   
-  
- 
+   
 ?>
-
 
 @import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_general_font); ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_headding_font); ?>');
-
-
 
 /* Menu item colors */
 #theband {
@@ -132,94 +128,116 @@
 #Discography {
   background-color: <?php echo esc_html($koband_discography_background_color); ?> ;
 }
+
 #Media {
 background-color: <?php echo esc_html($koband_gallery_background_color); ?> ;
 }
 
-
 a {
   color: <?php echo esc_html($koband_first_theme_color);?>;
 }
+
 .heading_font{
   font-family: <?php echo esc_html($koband_headding_font);?>, serif !important;
 }
 
 .first_color {
-  
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
-
 }
+
 .social-icons a .first_color:hover {
   color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
+
 .first_color a {
   color: <?php echo esc_html($koband_first_theme_color);?> ;
 }
+
 .bg_first_color {
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
+
 .bg_first_color:hover {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 .border_first_color {
   border-color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 .border_second_color {
   border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
+
 .bg_second_color {
   background-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
+
 .main_font {
    font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
+
 .comments-area, .sidebar {
   font-family : <?php echo esc_html($koband_general_font); ?> ;
    color: <?php echo esc_html($koband_main_font_color); ?> ;
 }
+
 .main_font_color{
    color: <?php echo esc_html($koband_main_font_color); ?> ;  
 }
+
 body > div > .border_color {
   border-color: <?php echo esc_html($koband_first_theme_color); ?>;
 }
+
 .btn-koband-load:hover {
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
+
 .store_link a:hover {
   color:#fff!important;
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ; 
 }
+
 .divTableCell a {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 .font_size {
   font-size:  <?php echo esc_html($koband_theme_font_size);?>;
   line-height:  <?php echo esc_html($koband_theme_line_height); ?> ;
 }
+
 .news-title h2 a{
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 .read_more a {
   color: <?php echo esc_html($koband_main_font_color); ?> ;
 }
+
 .read_more a:hover  {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 .read_more:hover {
   background-color: #fff!important ;
 }
+
 .slider_title_text_color{
   color: <?php echo esc_html($koband_slider_title_color) ?>;
 }
+
 .slider_subtitle_text_color{
   color: <?php echo esc_html($koband_slider_paragraph_text_color) ?>;
 }
+
 .slider_button_text_color {
   color: <?php echo esc_html($koband_slider_button_text_color) ?>;
   border-color: <?php echo esc_html($koband_slider_button_border_color) ?>;
 }
+
 .slider_button_text_color:hover {
   background-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
   border-color: <?php echo esc_html($koband_slider_button_hover_bg_color) ?> ;
@@ -237,13 +255,16 @@ body > div > .border_color {
   <?php } 
   ?>
 }
+
 .submit {
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ;
   color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
+
 .reply a, .submit {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
+
 .reply a:hover {
   color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
@@ -253,14 +274,14 @@ body > div > .border_color {
   color: <?php echo esc_html($koband_first_theme_color); ?> ;
 }
 
-.footer-section
-{
+.footer-section {
   background-color: <?php echo esc_html($koband_footer_background_color); ?> ;
 }
 
 .border_bottom {
   border-bottom-color: <?php echo esc_html($koband_second_theme_color); ?> ;
 }
+
 .hovereffect:hover .overlay {
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ;
   opacity: 0.5;
@@ -269,47 +290,56 @@ body > div > .border_color {
 #contact .wpcf7 {
   border: 1px solid <?php echo esc_html($koband_first_theme_color); ?> ;
 } 
+
 .menu-scroll {
   background-color:rgba(<?php echo esc_html($red)?>,<?php echo esc_html($green)?>,<?php echo esc_html($blue)?>,0.7);
 }
+
 .fixed {
   background-color: <?php echo esc_html($koband_main_menu_bg_color)?> ;
 }
+
 .menu-noscroll {
   background-color: <?php echo esc_html($koband_main_menu_bg_color)?> ;
-  
 }
+
 .main-nav .menu li a {
   color: <?php echo esc_html($koband_main_menu_font_color)?>;
   font-size: <?php echo esc_html($koband_main_menu_font_size)?>px ;
   font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
+
 .main-nav .menu li a:hover {
   color: <?php echo esc_html($koband_main_menu_font_color)?> ;
   border-bottom: 3px solid <?php echo esc_html($koband_second_theme_color); ?> ;
 }
+
 .footer-menu .menu li a {
   color: <?php echo esc_html($koband_footer_menu_font_color)?> ;
   font-size: <?php echo esc_html($koband_footer_menu_font_size)?>px ;
   font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
+
 .venue_name:hover {
   text-decoration: none !important;
   color: <?php echo esc_html($koband_first_theme_color)?> ;
 }
-.news-details_li a{
+
+.news-details_li a {
   color: <?php echo esc_html($koband_first_theme_color);?>;
   text-decoration: none !important;
 }
+
 .news-details_li a:hover{
   color: <?php echo esc_html($koband_second_theme_color);?>;
   text-decoration: none !important;
 }
+
 .onsale_btn:hover {
   color: <?php echo esc_html($koband_second_theme_color);?>;
  border-color: <?php echo esc_html($koband_second_theme_color); ?> !important;
 }
-}
+
 .search-submit {
   font-family : <?php echo esc_html($koband_general_font); ?> ;
 }
