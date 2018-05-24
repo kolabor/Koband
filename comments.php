@@ -17,9 +17,6 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
-    <?php // You can start editing here -- including this comment! ?>
-
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title">
             <?php
@@ -27,7 +24,8 @@ if ( post_password_required() ) {
                 if ( '1' === $comments_number ) {
                     /* translators: %s: post title */
                     printf( esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'koband' ), get_the_title());
-                } else {
+                } 
+                else {
                   echo esc_html(
                         sprintf(
                          /* translators: 1: number of comments, 2: post title */
@@ -52,7 +50,6 @@ if ( post_password_required() ) {
             <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'koband' ) ); ?></div>
         </nav><!-- #comment-nav-above -->
         <?php endif; // check for comment navigation ?>
-
         <ol class="comment-list">
             <?php
                 wp_list_comments( array(
@@ -62,7 +59,6 @@ if ( post_password_required() ) {
                 ) );
             ?>
         </ol>
-
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
         <nav id="comment-nav-below" class="comment-navigation" role="navigation">
             <h1 class="screen-reader-text"><?php echo esc_html__( 'Comment navigation', 'koband' ); ?></h1>

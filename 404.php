@@ -9,8 +9,7 @@
 
 get_header('noscroll');
 	
-	mail('developers@example.com', 'WP SQL Connection Issue on '.$_SERVER['HTTP_HOST'], 'This is an automated message from the wordpress custom db error message file.');
-	?>
+	mail('developers@example.com', 'WP SQL Connection Issue on '.$_SERVER['HTTP_HOST'], 'This is an automated message from the wordpress custom db error message file.');?>
 <div class="container search-holder">
 	<div class="content">
         <div class="conent_holder">
@@ -24,7 +23,7 @@ get_header('noscroll');
 			</div>
 		</div>
 	<?php get_sidebar(); ?>
-	</div>
-</div>
+	</div><!--container-->
+</div><!--container search-holder -->
 <?php
 get_footer(); ?>

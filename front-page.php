@@ -15,7 +15,7 @@
 get_header(); ?>
 <!-- Add back to top button -->
 <?php
-// Determine if there is "vide-slider" or "image-slider"
+// Determine if there is "video-slider" or "image-slider"
 
 $silder_type = get_theme_mod('ko_band_home_page_slider_type');
 $count_slides = wp_count_posts('slides')->publish;
@@ -137,7 +137,7 @@ $count_tour = wp_count_posts('tour')->publish;
     }
 
     elseif ($third_section == "News" && $count_news > 0) {
-    get_template_part( 'custom/templates/news', 'template');
+      get_template_part( 'custom/templates/news', 'template');
   };
 
 /***********************************************************************************/
@@ -148,26 +148,26 @@ $count_tour = wp_count_posts('tour')->publish;
 
     if($fourth_section =="Discography" && $count_discography == true)
     {
-        get_template_part( 'custom/templates/discography', 'template' );
+      get_template_part( 'custom/templates/discography', 'template' );
     }
 
     elseif ($fourth_section =="Media" && $count_media > 0)
     {
-        get_template_part( 'custom/templates/media', 'template' );
+      get_template_part( 'custom/templates/media', 'template' );
     }
     
     elseif ($fourth_section =="The Band" && $count_theband > 0)
     {
-        get_template_part( 'custom/templates/theband', 'template' );
+      get_template_part( 'custom/templates/theband', 'template' );
     }
 
     elseif ($fourth_section =="Tour/Events" && $count_tour > 0)
     {
-        get_template_part( 'custom/templates/tour', 'template' );
+      get_template_part( 'custom/templates/tour', 'template' );
     }
 
     elseif ($fourth_section == "News" && $count_news > 0) {
-    get_template_part( 'custom/templates/news', 'template');
+      get_template_part( 'custom/templates/news', 'template');
   };
 
 /***********************************************************************************/
@@ -178,26 +178,26 @@ $count_tour = wp_count_posts('tour')->publish;
 
     if($fifth_section =="Discography" && $count_discography == true)
     {
-        get_template_part( 'custom/templates/discography', 'template' );
+      get_template_part( 'custom/templates/discography', 'template' );
     }
 
     elseif ($fifth_section =="Media" && $count_media > 0)
     {
-        get_template_part( 'custom/templates/media', 'template' );
+      get_template_part( 'custom/templates/media', 'template' );
     }
     
     elseif ($fifth_section =="The Band" && $count_theband > 0)
     {
-        get_template_part( 'custom/templates/theband', 'template' );
+      get_template_part( 'custom/templates/theband', 'template' );
     }
 
     elseif ($fifth_section =="Tour/Events" && $count_tour > 0)
     {
-        get_template_part( 'custom/templates/tour', 'template' );
+      get_template_part( 'custom/templates/tour', 'template' );
     }
 
     elseif ($fifth_section == "News" && $count_news > 0) {
-    get_template_part( 'custom/templates/news', 'template');
+      get_template_part( 'custom/templates/news', 'template');
    };
 
 /***********************************************************************************/
