@@ -40,8 +40,8 @@
 				</div>		
 		</div>		
 		<div class="sl-content">
-			    <h5 class="slider_text_color"><?php if(isset($slide_video_title[0])) { echo esc_attr($slide_video_title); } ?></h5>
-			    <p class="slider_text_color font-line_height"><?php if(isset($slide_video_subtitle[0])) 	{ echo esc_attr($slide_video_subtitle); } ?></p>
+			    <h5 class="slider_title_text_color heading_font"><?php if(isset($slide_video_title[0])) { echo esc_attr($slide_video_title); } ?></h5>
+			    <p class="slider_subtitle_text_color main_font"><?php if(isset($slide_video_subtitle[0])) 	{ echo esc_attr($slide_video_subtitle); } ?></p>
 			    <a class="btn btn-lg slider_button_text_color" href="<?php if(isset($slide_video_buttonlink[0])){echo esc_url($slide_video_buttonlink); } ?>">
 			    <?php if(isset($slide_video_buttontitle[0])){ 
 			   	echo esc_attr($slide_video_buttontitle); } ?></a>
