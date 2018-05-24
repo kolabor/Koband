@@ -23,7 +23,7 @@
 		$slide_video_subtitle = get_theme_mod('ko_band_home_page_slider_subtitle');
 		$slide_video_buttonlink = get_theme_mod('ko_band_home_page_slider_buttonlink');
 		$slide_video_buttontitle = get_theme_mod('ko_band_home_page_slider_buttontitle');
-		$slide_video_trim = $slide_video_subtitle[0];
+		$slide_video_trim = $slide_video_subtitle;
 		$slider_video_sub_trim = substr($slide_video_trim,0,200);
 
 		/* Setting function to take only the data afer "v=" chars */
@@ -43,7 +43,7 @@
 		</div>		
 		<div class="sl-content">
 			    <h5 class="slider_title_text_color heading_font"><?php if(isset($slide_video_title[0])) { echo esc_attr($slide_video_title); } ?></h5>
-			    <p class="slider_subtitle_text_color main_font"><?php if(isset($slider_video_sub_trim)) 	{ echo esc_attr($slider_video_sub_trim); } ?></p>
+			    <p class="slider_subtitle_text_color main_font"><?php if(isset($slider_video_sub_trim)) { echo esc_attr($slider_video_sub_trim); } ?></p>
 			    <a class="btn btn-lg slider_button_text_color" href="<?php if(isset($slide_video_buttonlink[0])){echo esc_url($slide_video_buttonlink); } ?>">
 			    <?php if(isset($slide_video_buttontitle[0])){ 
 			   	echo esc_attr($slide_video_buttontitle); } ?></a>
