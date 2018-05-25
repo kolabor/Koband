@@ -15,7 +15,6 @@
 get_header(); ?>
 <!-- Add back to top button -->
 <?php
-if ( ! isset( $content_width ) ) $content_width = 900;
 // Determine if there is "video-slider" or "image-slider"
 
 $silder_type = get_theme_mod('ko_band_home_page_slider_type');
