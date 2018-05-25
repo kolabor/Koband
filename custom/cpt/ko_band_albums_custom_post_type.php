@@ -61,7 +61,22 @@ function ko_band_album_custom_post_type() {
 }  
 
 add_action( 'init', 'ko_band_album_custom_post_type' );
-  
+
+// Taxonomy for Albums
+add_action('init', 'ko_band_define_album_type_taxonomy');
+
+function ko_band_define_album_type_taxonomy(){
+    register_taxonomy(
+        'album_year',
+        'album',
+        array(
+            'hierarchical' => true,
+            'label'        => 'Album Year',
+            'query_var'    => true,
+            'rewrite'      => true
+        )
+    );
+}  
 
 function ko_band_album_meta_box_init(){
         add_meta_box(

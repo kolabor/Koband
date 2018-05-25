@@ -29,6 +29,7 @@ get_header('noscroll'); ?>
 
         <?php  $news_posts = new WP_Query($args_news);
           if ( $news_posts->have_posts() ) : ?>
+            <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <!-- start loop -->                     
               <?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
                 <div class="col-md-4">

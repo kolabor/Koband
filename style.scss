@@ -7,7 +7,7 @@ Description: Kolabor Band is a responsive Wordpress theme for music band. You ca
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: band, music, artist, audio, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, entertainment
 Text Domain: koband
 */
 /* =Reset ff
@@ -64,7 +64,6 @@ a {
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
-
 a:hover {text-decoration: none!important;}
 
 h1 {
@@ -577,14 +576,6 @@ header {
   margin: 20%;
   color: #fff;
 }
-/*.videos-list:hover a.play {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}*/
-
 
 .hovereffect a.info:hover {
   -webkit-box-shadow: 0 0 5px #fff;
@@ -1495,6 +1486,14 @@ input {
 .sad_smile_span {
   font-size: 250px;
 }
+.wp-caption,
+.wp-caption-text,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter{color: #ffffff;}
 /*
 ============================================
            Media query

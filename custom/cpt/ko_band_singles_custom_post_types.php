@@ -59,6 +59,22 @@ function ko_band_register_singles() {
 }
 
 add_action('init', 'ko_band_register_singles' );
+
+// Taxonomy for Singles
+add_action('init', 'ko_band_define_single_type_taxonomy');
+
+function ko_band_define_single_type_taxonomy(){
+    register_taxonomy(
+        'single_year',
+        'singles',
+        array(
+            'hierarchical' => true,
+            'label'        => 'Single Year',
+            'query_var'    => true,
+            'rewrite'      => true
+        )
+    );
+}
   
 function ko_band_singles_meta_box_init(){
         add_meta_box(

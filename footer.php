@@ -121,7 +121,6 @@
                     <?php 
                         $Koband_Copyright = get_theme_mod( 'ko_band_footer_copyright' ); ?>
                     <?php echo esc_html($Koband_Copyright); ?>
-                        <!--<a href="http://www.kolabor.net">Copyright © 2018 | Kolabor.net </a>--> <!--Copyright-->
                 </div>
                     
             </div>
