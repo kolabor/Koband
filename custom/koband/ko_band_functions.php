@@ -121,6 +121,9 @@ function ko_band_theme_support () {
 
 	// Add theme support thumbnails
 
+	//add_theme_support('custom-header', $args);
+	//add_theme_support('custom-background', $args);
+
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'news_thumb', 694, 510, TRUE ); // Hard Crop Mode
 	add_image_size( 'gallery_thumb', 553, 546, TRUE ); // Hard Crop Mode
