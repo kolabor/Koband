@@ -965,7 +965,6 @@ add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
 
 
-
 function ko_band_sanitize_text( $str ) {
     return sanitize_text_field( $str );
 } 
@@ -973,8 +972,42 @@ function ko_band_sanitize_text( $str ) {
 function ko_band_sanitize_textarea( $text ) {
     return esc_textarea( $text );
 } 
+ //checkbox sanitization function
+function ko_band_sanitize_checkbox( $input ){
+ 
+//returns true if checkbox is checked
+return ( isset( $input ) ? true : false );
+}
 
-function bookish_sanitize_number( $int ) {
+  //radio box sanitization function
+function ko_band_sanitize_radio( $input, $setting ){
+     
+//input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+$input = sanitize_key($input);
+
+//get the list of possible radio box options 
+$choices = $setting->manager->get_control( $setting->id )->choices;
+                 
+//return input if valid or return default option
+return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+ 
+}
+
+ //select sanitization function
+function ko_band_sanitize_select( $input, $setting ){
+ 
+    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+    $input = sanitize_key($input);
+
+    //get the list of possible select options 
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+                     
+    //return input if valid or return default option
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+     
+}
+
+function ko_band_sanitize_number( $int ) {
     return absint( $int );
 } 
 
