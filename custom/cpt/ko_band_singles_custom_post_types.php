@@ -104,7 +104,7 @@ function ko_band_singles_display_meta_box($post, $box){
 <div class="container"> <!-- Container div for Single Length and Date -->
     <div class="row top">
         <div class="col-sm"><?php echo esc_html__('Single Length', 'koband');?></div>
-        <div class="col-sm"><?php echo esc_html__('Date Release', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Date Released', 'koband');?></div>
         <div class="col-sm"><?php echo esc_html__('Single Detail', 'koband');?></div>
     </div>
     
