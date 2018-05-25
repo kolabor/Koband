@@ -28,8 +28,8 @@ $args = array(
 function ko_band_register_slides() {
 
   $label = array(
-    'name' => esc_html__('Slider', 'koband'),
-    'singular_name' => esc_html__('Slider', 'koband'),
+    'name' => esc_html__('Slides', 'koband'),
+    'singular_name' => esc_html__('Slides', 'koband'),
     'add_new' => esc_html__('Add Slide', 'koband'),
     'all_items' => esc_html__('All Slides', 'koband'),
     'add_new_item' => esc_html__('Add Slides', 'koband'),
@@ -102,8 +102,8 @@ function ko_band_slides_meta_box($post, $box){
         </div>
 
         <div class="row">
-            <div class="col-sm"><input type="text" name="ko_band_slides_title" value="<?php echo esc_attr( $slides_title )?>" placeholder= "<?php echo esc_html__('Add Slider Title', 'koband');?>" class="slidetitle"></div>
-            <div class="col-sm"><textarea type="text" name="ko_band_slides_subtitle" maxlength="250" placeholder= "<?php echo esc_html__('Add Slider Text', 'koband');?>" class="slidesub"><?php echo esc_textarea( $slides_subtitle )?></textarea></div>
+            <div class="col-sm"><input type="text" name="ko_band_slides_title" value="<?php echo esc_attr( $slides_title )?>" placeholder= "<?php echo esc_html__('Add Slide Title', 'koband');?>" class="slidetitle"></div>
+            <div class="col-sm"><textarea type="text" name="ko_band_slides_subtitle" maxlength="250" placeholder= "<?php echo esc_html__('Add Slide Text', 'koband');?>" class="slidesub"><?php echo esc_textarea( $slides_subtitle )?></textarea></div>
         </div>
 
         <div class="row">

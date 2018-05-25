@@ -47,8 +47,7 @@
 					<div class="col-sm-3"><?php if(isset($koband_contact_phone)) { echo esc_attr($koband_contact_phone); } ?></div>
 				</div> </br>
 				<div class="contact_form main_font">
-					<?php // start th loop
-					 while ( have_posts() ) : the_post();
+					<?php while ( have_posts() ) : the_post();
 			
 						the_content();
 									

@@ -23,22 +23,22 @@ $args = array(
     'public'    =>  true
 );
 
-/* Register Albums custom post type function */
+/* Register Album custom post type function */
 function ko_band_album_custom_post_type() {
 
   $label = array(
-    'name' => esc_html__('Albums', 'koband'),
-    'singular_name' => esc_html__('Albums', 'koband'),
-    'add_new' => esc_html__('Add Albums', 'koband'),
+    'name' => esc_html__('Album', 'koband'),
+    'singular_name' => esc_html__('Album', 'koband'),
+    'add_new' => esc_html__('Add Album', 'koband'),
     'all_items' => esc_html__('All Albums', 'koband'),
-    'add_new_item' => esc_html__( 'Add Albums', 'koband'),
-    'edit_item' => esc_html__('Edit Albums', 'koband'),
-    'new_item' => esc_html__('New Albums', 'koband'),
-    'view_item' => esc_html__('View Albums', 'koband'),
-    'search_item' => esc_html__('Search Albums', 'koband'),
-    'not_found' => esc_html__('Mo Albums Found', 'koband'),
-    'not-found_in_trash' => esc_html__('No Albums Found in Trash', 'koband'),
-    'parent_item_colon' => esc_html__('Parent Albums', 'koband')
+    'add_new_item' => esc_html__( 'Add Album', 'koband'),
+    'edit_item' => esc_html__('Edit Album', 'koband'),
+    'new_item' => esc_html__('New Album', 'koband'),
+    'view_item' => esc_html__('View Album', 'koband'),
+    'search_item' => esc_html__('Search Album', 'koband'),
+    'not_found' => esc_html__('Mo Album Found', 'koband'),
+    'not-found_in_trash' => esc_html__('No Album Found in Trash', 'koband'),
+    'parent_item_colon' => esc_html__('Parent Album', 'koband')
     );
   
   $args = array(
@@ -94,7 +94,7 @@ function ko_band_album_display_meta_box() {
 <!-- Output the field -->
 <div class="container">
     <div class="row top">
-        <div class="col-sm"><?php echo esc_html__('Date Released', 'koband'); ?></div>
+        <div class="col-sm"><?php echo esc_html__('Date Release', 'koband'); ?></div>
         <div class="col-sm"><?php echo esc_html__('Album Length', 'koband'); ?></div>
         <div class="col-sm"></div>
         <div class="col-sm"></div>
@@ -111,13 +111,13 @@ function ko_band_album_display_meta_box() {
 
 <div class="container" id="ko_band_album_meta_box_one">
     <div class="row blank">
-        <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove your Albums songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('On the following fields you can add or remove your Album songs by clicking a button "Add Another" or "Remove"', 'koband');?></div>
     </div>
 
     <div class="row top">
         <div class="col-sm"><?php echo esc_html__('Song Name', 'koband');?></div>
         <div class="col-sm"><?php echo esc_html__('Song Length', 'koband');?></div>
-        <div class="col-sm"><?php echo esc_html__('Song Details', 'koband');?></div>
+        <div class="col-sm"><?php echo esc_html__('Song Detail', 'koband');?></div>
         <div class="col-sm"></div>
     </div>
 

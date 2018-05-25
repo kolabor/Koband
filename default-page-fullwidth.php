@@ -14,7 +14,7 @@
 			</header>
 		<div class="conent_holder">
 			<div class="container">
-				<?php //start the loop
+				<?php
 				while ( have_posts() ) : the_post();
 		
 					the_content();

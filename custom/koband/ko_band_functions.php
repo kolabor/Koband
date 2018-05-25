@@ -129,8 +129,6 @@ function ko_band_theme_support () {
 	
 	add_theme_support('html5', array('search-form'));
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( "title-tag" );
-	add_theme_support( "get_post_format" );
 
 	// Add theme support Post Format Support
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));

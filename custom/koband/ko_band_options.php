@@ -12,10 +12,9 @@
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-/********** koband Main theme settings start *******************/
+/********** koband Main theme settings  *******************/
 function ko_band_theme_customize_register( $wp_customize ) {
 
-/**Logo***/
 /*** Main Top Logo ***/
 $wp_customize->add_setting( 'ko_band_main_logo', array(
         'default'    => 0,
@@ -114,6 +113,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_second_theme_color',
 ) ) );
 
+
 /***Background News module color **/
 $wp_customize->add_setting( 'ko_band_background_news_section_color', array(
         'default'    => 0,
@@ -125,6 +125,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_background_news_section_color',
 ) ) );
 
+
 /***Background Tour module color **/
 $wp_customize->add_setting( 'ko_band_background_tour_section_color', array(
         'default'    => 0,
@@ -135,7 +136,6 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'section'    => 'colors',
         'settings'   => 'ko_band_background_tour_section_color',
 ) ) );
-
 /***Background Discography module color **/
 $wp_customize->add_setting( 'ko_band_background_discography_section_color', array(
         'default'    => 0,
@@ -157,6 +157,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'section'    => 'colors',
         'settings'   => 'ko_band_background_gallery_section_color',
 ) ) );
+
 
 /********************************************************************************************************/
 
@@ -206,34 +207,34 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
         'section'    => 'ko_band_fonts_section',
         'settings'   => 'ko_band_general_font_selector',
         'choices' => array(
-            'Open Sans' => 'Open Sans',
-            'Josefin Slab' => 'Josefin Slab',
+            'Open+Sans' => 'Open Sans',
+            'Josefin+Slab' => 'Josefin Slab',
             'Arvo' => 'Arvo',
             'Lato' => 'Lato',
             'Vollkorn' => 'Vollkorn',
-            'Abril Fatface' => 'Abril Fatface',
+            'Abril+Fatface' => 'Abril Fatface',
             'Ubuntu' => 'Ubuntu',
-            'PT Sans' => 'PT Sans',
-            'Old Standard TT' => 'Old Standard TT',
-            'Droid Sans' => 'Droid Sans',
+            'PT+Sans' => 'PT Sans',
+            'Old+Standard TT' => 'Old Standard TT',
+            'Droid+Sans' => 'Droid Sans',
             'Anivers' => 'Anivers',
-            'Source Sans Pro' => 'Source Sans Pro',
+            'Source+Sans+Pro' => 'Source Sans Pro',
             'Fertigo' => 'Fertigo',
             'Allerta' => 'Allerta',
             'Montserrat' => 'Montserrat',
             'Raleway' => 'Raleway',
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
-            'Roboto Condensed' => 'Roboto Condensed',
+            'Roboto+Condensed' => 'Roboto Condensed',
             'Inconsolata' => 'Inconsolata',
-            'Libre Franklin' => 'Libre Franklin',
+            'Libre+Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
-            'Yatra One' => 'Yatra One',
-            'Shadows Into Light' => 'Shadows Into Light',
-            'Dancing Script' => 'Dancing Script',
-            'IBM+Plex Mono' => 'IBM Plex Mono',
-            'Gloria Hallelujah' => 'Gloria Hallelujah',
+            'Yatra+One' => 'Yatra One',
+            'Shadows+Into+Light' => 'Shadows Into Light',
+            'Dancing+Script' => 'Dancing Script',
+            'IBM+Plex+Mono' => 'IBM Plex Mono',
+            'Gloria+Hallelujah' => 'Gloria Hallelujah',
             'Amatic SC' => 'Amatic SC',
             'Acme' => 'Acme',
             'Signika' => 'Signika',
@@ -241,7 +242,9 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
             'Rokkitt' => 'Rokkitt',
             'Rajdhani' => 'Rajdhani',
             'Great Vibes' => 'Great Vibes',
-            'Roboto Mono' => 'Roboto Mono',           
+            'Roboto Mono' => 'Roboto Mono',
+
+            
 ), ) );
 
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
@@ -256,34 +259,34 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
         'section'    => 'ko_band_fonts_section',
         'settings'   => 'ko_band_heading_font_selector',
         'choices' => array(
-            'Open Sans' => 'Open Sans',
-            'Josefin Slab' => 'Josefin Slab',
+            'Open+Sans' => 'Open Sans',
+            'Josefin+Slab' => 'Josefin Slab',
             'Arvo' => 'Arvo',
             'Lato' => 'Lato',
             'Vollkorn' => 'Vollkorn',
-            'Abril Fatface' => 'Abril Fatface',
+            'Abril+Fatface' => 'Abril Fatface',
             'Ubuntu' => 'Ubuntu',
-            'PT Sans' => 'PT Sans',
-            'Old Standard TT' => 'Old Standard TT',
-            'Droid Sans' => 'Droid Sans',
+            'PT+Sans' => 'PT Sans',
+            'Old+Standard TT' => 'Old Standard TT',
+            'Droid+Sans' => 'Droid Sans',
             'Anivers' => 'Anivers',
-            'Source Sans Pro' => 'Source Sans Pro',
+            'Source+Sans+Pro' => 'Source Sans Pro',
             'Fertigo' => 'Fertigo',
             'Allerta' => 'Allerta',
             'Montserrat' => 'Montserrat',
             'Raleway' => 'Raleway',
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
-            'Roboto Condensed' => 'Roboto Condensed',
+            'Roboto+Condensed' => 'Roboto Condensed',
             'Inconsolata' => 'Inconsolata',
             'Libre Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
-            'Yatra One' => 'Yatra One',
-            'Shadows Into Light' => 'Shadows Into Light',
-            'Dancing Script' => 'Dancing Script',
-            'IBM+Plex Mono' => 'IBM Plex Mono',
-            'Gloria Hallelujah' => 'Gloria Hallelujah',
+            'Yatra+One' => 'Yatra One',
+            'Shadows+Into+Light' => 'Shadows Into Light',
+            'Dancing+Script' => 'Dancing Script',
+            'IBM+Plex+Mono' => 'IBM Plex Mono',
+            'Gloria+Hallelujah' => 'Gloria Hallelujah',
             'Amatic SC' => 'Amatic+SC',
             'Acme' => 'Acme',
             'Signika' => 'Signika',
@@ -292,24 +295,24 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Rajdhani' => 'Rajdhani',
             'Great Vibes' => 'Great Vibes',
             'Roboto Mono' => 'Roboto Mono',
+           
 ), ) ); 
 
-/*Fonts Section end here*/
+
 /**************************************************************************************************************/
 
-/*Slide section type start here */
 $main_slider =   get_theme_mod( 'ko_band_home_page_slider_type');
 
+/*Slide section type start here */
 $wp_customize->add_section( 'ko_band_slider_section' , array(
     'title'       => esc_html__( ' Slider', 'koband' ),
     'priority'    => 30,
     'description' => $main_slider,
 ) );
-
 /*Slider box to choose is image or video*/
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'         => 'postMessage'
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable slide types:', 'koband' ),
@@ -319,6 +322,7 @@ $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'choices' => array(
                 'Image' => esc_html__( 'Image', 'koband' ),
                 'Video' => esc_html__( 'Video', 'koband' ),
+               
 )  )  );
 
 /*** Slider title color ***/
@@ -386,7 +390,6 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'section'    => 'ko_band_slider_section',
         'settings'   => 'ko_band_slider_text_holder_background_color',
 ) ) );
-
 /*Slider box  background show/hide*/
 $wp_customize->add_setting( 'ko_band_home_page_box_background', array(
         'default'    => 0,
@@ -397,8 +400,8 @@ $wp_customize->add_control( 'ko_band_home_page_box_background', array(
     'settings' => 'ko_band_home_page_box_background',
     'section' => 'ko_band_slider_section',
     'type'     => 'checkbox',
-)  );
-
+   
+ )  );
 /*Slider Video Link**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_videolink', array(
         'default'    => 0,
@@ -412,7 +415,8 @@ $wp_customize->add_control( 'ko_band_home_page_slider_videolink', array(
   'description' => esc_html__('*Only Youtube video are allowed! ', 'koband' ),
    'input_attrs' => array(
             'placeholder' => esc_html__( 'https://www.youtube.com', 'koband' ),
-) ));
+        )
+ ));
 
 /*Video Title**/
 $wp_customize->add_setting( 'ko_band_home_page_slider_title', array(
@@ -461,10 +465,12 @@ $wp_customize->add_control( 'ko_band_home_page_slider_buttonlink', array(
   'section'  => 'ko_band_slider_section',  
 ));
 
-/*Slide section type end here */
-/*****************************************************************************************************************/
 
+
+/*Slide section type end here */
+/**********************************************************************************************************************/
 /***** Main Menu Section start here********/
+
 /*** Main Menu font color ***/
 $wp_customize->add_setting( 'ko_band_main_menu_font_color', array(
         'default'    => 0,
@@ -501,7 +507,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
 ) ) );
 
 /***** Main Menu Section end here********/
-/***********************************************************************************************************************/
+/************************************************************************************************************************/
 
 /*Home page Modules start here*/
 /*First Module*/
@@ -525,6 +531,7 @@ $wp_customize->add_control( 'ko_band_first_render_modules',
             'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
 )  )  );
 
+
 /*Second module**/
 $wp_customize->add_setting( 'ko_band_second_render_modules', array(
         'default'    => 0,
@@ -544,6 +551,7 @@ $wp_customize->add_control( 'ko_band_second_render_modules',
             'The Band' => esc_html__( 'The Band',       'koband' ),
             'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
 )  )  );
+
 
 /**Third module**/
 $wp_customize->add_setting( 'ko_band_third_render_modules', array(
@@ -605,6 +613,7 @@ $wp_customize->add_control( 'ko_band_fifth_render_modules',
             'Tour/Events' => esc_html__( 'Tour/Events', 'koband' ),
 )  )  );
 
+
 /*Home page Modules end here*/
 /***************************************************************************************************************************/
 
@@ -614,6 +623,8 @@ $wp_customize->add_section( 'ko_band_social_media_section' , array(
     'priority'    => 28,
     'description' => '<hr>',
 ) );
+
+
 
 $wp_customize->add_setting( 'ko_band_facebook_social_media', array(
         'default'    => 0,
@@ -809,6 +820,7 @@ $wp_customize->add_control( 'ko_band_contact_phone', array(
     'description' => ' Write phone number with prefix ex. +389...'
 ) );
 
+
 /*** Contact section end here  ***/
 /****************************************************************************************************************/
 
@@ -829,6 +841,7 @@ $wp_customize->add_control( 'ko_band_footer_copyright', array(
     'settings' => 'ko_band_footer_copyright',
     'section' => 'ko_band_footer_section',
 ) );
+
 
 /*Search checkbox*/
 $wp_customize->add_setting( 'ko_band_footer_search', array(
@@ -854,10 +867,13 @@ $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_ba
         'settings'   => 'ko_band_footer_section_background_color',
 ) ) );
 
+
+
 /*** Footer section end here  ***/
 /****************************************************************************************************************/
 
 /***** Footer Menu Section start here********/
+
 /*** Footer Menu font color ***/
 $wp_customize->add_setting( 'ko_band_footer_menu_font_color', array(
         'default'    => 0,
@@ -882,11 +898,9 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_foo
         'type' => 'number',
 ) ) );
 
+
 /***** Single Menu Section end here********/
 /************************************************************************************************************************/
-
-/********** koband Main theme settings end *******************/
-
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
