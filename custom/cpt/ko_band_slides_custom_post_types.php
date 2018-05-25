@@ -28,9 +28,9 @@ $args = array(
 function ko_band_register_slides() {
 
   $label = array(
-    'name' => esc_html__('Slides', 'koband'),
-    'singular_name' => esc_html__('Slides', 'koband'),
-    'add_new' => esc_html__('Add Slide', 'koband'),
+    'name' => esc_html__('Slider', 'koband'),
+    'singular_name' => esc_html__('Slider', 'koband'),
+    'add_new' => esc_html__('Add Slides', 'koband'),
     'all_items' => esc_html__('All Slides', 'koband'),
     'add_new_item' => esc_html__('Add Slides', 'koband'),
     'edit_item' => esc_html__('Edit Slides', 'koband'),
