@@ -32,13 +32,9 @@ if ( !defined( 'KOLABOR_BAND_THEME_VERSION' ) ) {
 require 'custom/koband/ko_band_functions.php';
 require 'custom/koband/ko_band_ajax.php';
 require 'custom/koband/ko_band_options.php';
-require 'custom/cpt/ko_band_albums_custom_post_type.php';
-require 'custom/cpt/ko_band_media_custom_post_type.php';
-require 'custom/cpt/ko_band_singles_custom_post_types.php';
-require 'custom/cpt/ko_band_slides_custom_post_types.php';
-require 'custom/cpt/ko_band_the_band_custom_post_type.php';
-require 'custom/cpt/ko_band_tour_custom_post_type.php';
 
+/*TMG plugin require*/
+require 'custom/tmg/ko_band_tmg.php';
 
 add_action('init','ko_band_enqueue_dynamic_css');
 function ko_band_enqueue_dynamic_css() {
