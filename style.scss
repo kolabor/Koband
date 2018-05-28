@@ -16,7 +16,17 @@ weffcb
 a {
   text-decoration: none !important;
 }
-
+.next_post{
+  padding: 20px;
+  float: right;
+}
+.previous_post{
+  padding: 20px;
+  float: left;
+}
+.media_next_prev{
+  max-width: 700px;
+}
 .flex{
      display: flex;
     display: -webkit-flex; 
@@ -172,11 +182,6 @@ header {
   margin-top: 10px;
   padding-bottom: 7px;
 }
-/*.retina-main-logo {
-  position: relative;
-  width: 21%;
-  float: left;
-}*/
 
 /* ----------------------------------------------- */
 /* Main menu */
