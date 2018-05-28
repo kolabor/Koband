@@ -416,7 +416,7 @@ header {
 .box:hover {
   -webkit-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
-  z-index: 9999;
+  z-index: 1044;
 }
 
 .box:hover::after {
@@ -844,7 +844,7 @@ text-decoration: none;
   padding: 5px 15px;
   border-bottom: 1px solid #cacaca;
 }
-// Show hide discography icons
+/* Show hide discography icons */
 .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
   font-size: 40px;
   margin-top: 10px;
