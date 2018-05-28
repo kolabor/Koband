@@ -330,8 +330,7 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
         'transport'         => 'postMessage',   
-         
-      'sanitize_callback' => 'ko_band_sanitize_choices'
+      // 'sanitize_callback' => 'ko_band_sanitize_choices'
         
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
@@ -996,7 +995,7 @@ function ko_band_sanitize_radio( $input, $setting ){
 
 
  //select sanitization function
-function ko_band_sanitize_choices( $input, $setting ){
+function ko_band_sanitize_select( $input, $setting ){
  
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
     $input = sanitize_key($input);

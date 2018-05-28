@@ -16,7 +16,17 @@ weffcb
 a {
   text-decoration: none !important;
 }
-
+.next_post{
+  padding: 20px;
+  float: right;
+}
+.previous_post{
+  padding: 20px;
+  float: left;
+}
+.media_next_prev{
+  max-width: 700px;
+}
 .flex{
      display: flex;
     display: -webkit-flex; 
@@ -172,11 +182,6 @@ header {
   margin-top: 10px;
   padding-bottom: 7px;
 }
-/*.retina-main-logo {
-  position: relative;
-  width: 21%;
-  float: left;
-}*/
 
 /* ----------------------------------------------- */
 /* Main menu */
@@ -550,25 +555,6 @@ header {
 .info svg {
   margin-top: 45%;
 }
-/*.videos-list a.play {
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #fff !important;
-
-  background-color: transparent;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  font-weight: normal;
-  margin: -30px 0 0 0;
-  padding: 39% 39%;
-}*/
-
 .hovereffect:hover a.info {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -839,7 +825,7 @@ text-decoration: none;
   padding: 5px 15px;
   border-bottom: 1px solid #cacaca;
 }
-// Show hide discography icons
+/* Show hide discography icons */
 .btn.btn-sm.show-album-song, .btn.btn-sm.hide-album-song, .btn.btn-sm.show-single-song, .btn.btn-sm.hide-single-song {
   font-size: 40px;
   margin-top: 10px;
@@ -1137,6 +1123,12 @@ font-weight: 400;
 .comment-body {
   padding-top: 10px;
   border-bottom: 1px solid #e7e7e7;
+}
+.commentlist .bypostauthor {
+  border-top: 10px solid #e18728;
+}
+.commentlist li ul.children li.bypostauthor {
+  border-top: 10px solid #e18728;
 }
 .comment-list {
   display: block;
@@ -1514,14 +1506,37 @@ input {
 .sad_smile_span {
   font-size: 250px;
 }
-.wp-caption,
-.wp-caption-text,
-.screen-reader-text,
-.gallery-caption,
-.bypostauthor,
-.alignright,
-.alignleft,
-.aligncenter{color: #ffffff;}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
 /*
 ============================================
            Media query

@@ -31,7 +31,14 @@ get_header('noscroll'); ?>
 							</div>
 						</div>
 	<?php endwhile;endif; ?>
-				
+	<div class="row">
+		<div class="col-sm">
+                <div class="previous_post"><?php next_post_link('%link', 'Next News'); ?></div>
+		</div>
+		<div class="col-sm">		
+				<div class="next_post"><?php previous_post_link('%link', 'Previous News'); ?></div>
+		</div>
+	</div>			
 				<!--comment section starts here-->
 				<?php 	
 					//Get only the approved comments 

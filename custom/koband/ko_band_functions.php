@@ -143,4 +143,23 @@ function ko_band_footer_widgets($id){
 }
 add_action('widgets_init', 'ko_band_footer_widgets');
 
+function koband_add_editor_styles() {
+    add_editor_style( 'admin/editor-style.css' );
+}
+add_action( 'admin_init', 'koband_add_editor_styles' );
+
+ 	$koband_post_pagination = array(
+		'before'           => '<p>' . __( 'Pages:', 'koband' ),
+		'after'            => '</p>',
+		'link_before'      => '',
+		'link_after'       => '',
+		'next_or_number'   => 'number',
+		'separator'        => ' ',
+		'nextpagelink'     => __( 'Next page', 'koband'),
+		'previouspagelink' => __( 'Previous page', 'koband' ),
+		'pagelink'         => '%',
+		'echo'             => 1
+	);
+ 
+    wp_link_pages( $koband_post_pagination );
 
