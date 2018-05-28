@@ -330,7 +330,7 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
         'transport'         => 'postMessage',
-        'sanitize_callback' => 'ko_band_sanitize_select'
+        //'sanitize_callback' => 'ko_band_sanitize_select'
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable slide types:', 'koband' ),
