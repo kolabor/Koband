@@ -411,7 +411,7 @@ header {
 .box:hover {
   -webkit-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
-  z-index: 9999;
+  z-index: 1044;
 }
 
 .box:hover::after {
