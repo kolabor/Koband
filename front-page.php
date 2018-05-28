@@ -27,7 +27,7 @@ elseif ($silder_type == 'Image' && $count_slides > 0) {
   get_template_part( 'custom/templates/slides', 'template' );
 }
 else { ?>
-  <img src="<?php echo esc_url(get_template_directory_uri()); ?>//img/noslider.jpeg" height="auto" width="100%" />
+  <img src="<?php echo get_template_directory_uri(); ?>//img/noslider.jpeg" height="auto" width="100%" />
 <?php }
 
 

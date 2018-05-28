@@ -19,22 +19,6 @@
  *
  */
 
-// Load custom css script and custom javascript for admin dashboard
-function ko_band_custom_wp_admin_resources() {
-
-    wp_register_style( 'koband_wp_admin_css', get_template_directory_uri() . '/admin/ko_band_admin.css', false, '1.0.0' );
-    wp_enqueue_style( 'koband_wp_admin_css' );
-
-    wp_register_script( 'koband_wp_admin_js', get_template_directory_uri() . '/admin/ko_band_admin_min.js', false, '1.0.0' );
-    wp_enqueue_script( 'koband_wp_admin_js' );
-
-   wp_register_style( 'bootstrap_grid', get_template_directory_uri() . '/admin/bootstrap-grid.min.css', false, '1.0.0' );
-    wp_enqueue_style( 'bootstrap_grid' );
-
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/admin/bootstrap.min.css', false, '1.0.0' );
-    wp_enqueue_style( 'bootstrap' );
-}
-add_action( 'admin_enqueue_scripts', 'ko_band_custom_wp_admin_resources' );
 
 // Load script for customizer live preview
 function ko_band_customize_preview_js() {
@@ -93,28 +77,6 @@ function ko_band_set_excerpt_length( $excerpt ){
 
 add_filter('the_excerpt', 'ko_band_set_excerpt_length', 999);
 
-
-// Changing the set image text
-function ko_band_featured_image_metabox_title() {
-
-	remove_meta_box( 'postimagediv', 'album', 'side' );
-	add_meta_box( 'postimagediv', esc_html__( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'album', 'side' );
-
-	remove_meta_box( 'postimagediv', 'media', 'side' );
-	add_meta_box( 'postimagediv', esc_html__( 'Set gallery cover', 'koband' ), 'post_thumbnail_meta_box', 'media', 'side' );
-
-	remove_meta_box( 'postimagediv', 'singles', 'side' );
-	add_meta_box( 'postimagediv', esc_html__( 'Set cover image', 'koband' ), 'post_thumbnail_meta_box', 'singles', 'side' );
-
-	remove_meta_box( 'postimagediv', 'slides', 'side' );
-	add_meta_box( 'postimagediv', esc_html__( 'Set slide images', 'koband' ), 'post_thumbnail_meta_box', 'slides', 'side' );
-
-	remove_meta_box( 'postimagediv', 'the band', 'side' );
-	add_meta_box( 'postimagediv', esc_html__( 'Band Member image', 'koband' ), 'post_thumbnail_meta_box', 'the band', 'side' );
-
-}
-add_action('do_meta_boxes', 'ko_band_featured_image_metabox_title' );
-
 // Theme Support
 
 function ko_band_theme_support () {
@@ -129,8 +91,10 @@ function ko_band_theme_support () {
 	
 	add_theme_support('html5', array('search-form'));
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( "title-tag" );
-	add_theme_support( "get_post_format" );
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'get_post_format' );
+	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-background' );
 
 	// Add theme support Post Format Support
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
@@ -179,57 +143,4 @@ function ko_band_footer_widgets($id){
 }
 add_action('widgets_init', 'ko_band_footer_widgets');
 
-// Register taxonomy for Discography
-// Taxonomy for Albums
-add_action('init', 'ko_band_define_album_type_taxonomy');
-
-function ko_band_define_album_type_taxonomy(){
-	register_taxonomy(
-		'album_year',
-		'album',
-		array(
-			'hierarchical' => true,
-			'label'		   => 'Album Year',
-			'query_var'	   => true,
-			'rewrite'	   => true
-		)
-	);
-}
-
-// Taxonomy for Singles
-add_action('init', 'ko_band_define_single_type_taxonomy');
-
-function ko_band_define_single_type_taxonomy(){
-	register_taxonomy(
-		'single_year',
-		'singles',
-		array(
-			'hierarchical' => true,
-			'label'		   => 'Single Year',
-			'query_var'	   => true,
-			'rewrite'	   => true
-		)
-	);
-}
-
-
-// Search for posts and CPT
-add_filter( 'pre_get_posts', 'ko_band_cpt_search' );
-/**
- * This function modifies the main WordPress query to include an array of 
- * post types instead of the default 'post' post type.
- *
- * @param object $query  The original query.
- * @return object $query The amended query.
- */
-function ko_band_cpt_search( $query ) {
-	
-    if ( $query->is_search ) {
-	$query->set( 'post_type', array( 'post', 'media', 'album', 'tour', 'singles', 'theband' ) );
-    $query->query_vars['posts_per_page'] = -1;
-    }
-    
-    return $query;
-    
-}
 

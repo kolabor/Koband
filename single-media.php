@@ -139,20 +139,10 @@ if (have_posts() ) :
 							        break;
 							     case "option2":
 							       
-							       $videoLink = $galleryItem['link'];
-							       $vimeoCode = substr($videoLink, strrpos($videoLink, "/") +1);
-							        
-							       if (strpos($videoLink, 'ondemand') !== false) 
-							       {
-
-                        $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
-
-							       }
-							       else 
-							       {
-							        $vimeoImage = unserialize(file_get_contents('https://vimeo.com/api/v2/video/' . $vimeoCode . '.php'));
-						          $vimeoImage =  $vimeoImage[0]['thumbnail_large'];     	
-							       }?>
+							         $videoLink = $galleryItem['link'];
+							         $vimeoCode = substr($videoLink, strrpos($videoLink, "/") +1);
+                       $vimeoImage  = esc_url(get_template_directory_uri())."/img/vimeo.jpg";
+                      ?>
 							       <img src="<?php echo esc_url($vimeoImage)?>" 
                                          alt="Vimeo video image" 
                                          class="video_image nr-<?php echo esc_attr($gallery_item) ?>"

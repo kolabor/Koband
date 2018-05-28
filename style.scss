@@ -13,14 +13,6 @@ Text Domain: koband
 /* =Reset ff
 weffcb
 -------------------------------------------------------------- */
-.wp-caption,
-.wp-caption-text,
-.screen-reader-text,
-.gallery-caption,
-.bypostauthor,
-.alignright,
-.alignleft,
-.aligncenter{width:0.1px}
 a {
   text-decoration: none !important;
 }
@@ -72,8 +64,6 @@ a {
   padding-left: 0 !important;
   padding-bottom: 30px !important;
 }
-
-
 a:hover {text-decoration: none!important;}
 
 h1 {
@@ -274,7 +264,7 @@ header {
   height: auto;
   width: 40%;
   left: 15%!important;
-  top: 34%!important;
+  top: 30%!important;
   position: absolute;
   z-index: 10;
   padding: 30px;
@@ -586,14 +576,6 @@ header {
   margin: 20%;
   color: #fff;
 }
-/*.videos-list:hover a.play {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}*/
-
 
 .hovereffect a.info:hover {
   -webkit-box-shadow: 0 0 5px #fff;
@@ -1312,18 +1294,6 @@ input {
   border-style: none;
   line-height: 3;
 }
-.video_image{position: relative;}
-.video_image::after {
-    content: url(img/play-button.png);
-    opacity: 1;
-    position: absolute;
-  top: 0;
-  left: 0;
-  
-  background: url() 0 0 no-repeat / cover;
-  height: 100%;
-  width: 100%;
-}
 
 .gal {
 
@@ -1516,15 +1486,21 @@ input {
 .sad_smile_span {
   font-size: 250px;
 }
+.wp-caption,
+.wp-caption-text,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter{color: #ffffff;}
 /*
 ============================================
            Media query
 ============================================
  */
 
-@media screen and (max-width: 1440px){
- .sl-content {top: 32%!important; width: 55%;}
-}
+
 @media screen and (max-width: 1366px) {
   .sl-content    {top: 28% !important; width: 50%;}
   .sl-content h5 {font-size: 80px !important;}
