@@ -48,7 +48,7 @@ get_header(); ?>
 									while ( $theband_posts->have_posts() ) : $theband_posts->the_post();
 									$post_id = get_the_ID();
 									$theband_role = get_post_meta( $post_id, 'ko_band_the_band_bio', false ); ?>
-									<div class="col-sm-4 band_member">
+									<div class="col-sm-4 band_member box">
 										<div class="title_and_role">
 											<button type="button" id="myBtn" class="band_member_name name_member_padding main_font_color main_font" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php the_title(); ?></button> <br>
 											<button type="button" id="myBtn" class="band_member_role main_font_color main_font font_size" data-toggle="modal" data-target="#myModal<?php echo esc_attr($id);?>"><?php if(isset($theband_role[0]))  { echo esc_attr($theband_role[0]); } ?></button>
