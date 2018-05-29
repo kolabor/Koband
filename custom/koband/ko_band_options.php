@@ -213,8 +213,8 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_the
 /*** Main Font Selector ***/
 $wp_customize->add_setting( 'ko_band_general_font_selector', array(
         'default'    => 0,
-        'transport'  => 'postMessage',
-        'sanitize_callback' => 'ko_band_sanitize_select'
+        'transport'  => 'postMessage'
+        //'sanitize_callback' => 'ko_band_sanitize_select'
     ));
 $wp_customize->add_control( 'ko_band_general_font_selector', array(
 
@@ -266,8 +266,7 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
 $wp_customize->add_setting( 'ko_band_heading_font_selector', array(
         'default'    => 0,
-        'transport'  => 'postMessage',
-        'sanitize_callback' => 'ko_band_sanitize_select'
+        'transport'  => 'postMessage'
     ));
 $wp_customize->add_control( 'ko_band_heading_font_selector', array(
 
@@ -993,7 +992,7 @@ function ko_band_sanitize_radio( $input, $setting ){
 }
 
  //select sanitization function
-function ko_band_sanitize_select( $input, $setting ){
+/*function ko_band_sanitize_select( $input, $setting ){
  
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
     $input = sanitize_key($input);
@@ -1002,9 +1001,9 @@ function ko_band_sanitize_select( $input, $setting ){
     $choices = $setting->manager->get_control( $setting->id )->choices;
                      
     //return input if valid or return default option
-    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );             
      
-}
+}*/
 
 function ko_band_sanitize_number( $int ) {
     return absint( $int );
