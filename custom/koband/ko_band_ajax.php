@@ -29,20 +29,20 @@ function koband_load_more(){
 
 	if ( $query->have_posts() ) {?>
 		<?php while ( $query->have_posts() ) : $query->the_post();?>
-			<div class="col-md-4">
-				<div class="card mb-4 box-shadow">
-					<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo esc_html(wp_trim_words( get_the_title(), 4 )); ?></a></h2></div>
-					<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
-					<div class="card-body">
-						<div id="card-text" class="main_font_color main_font"><?php the_excerpt(); ?></div>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="btn-group">
-									<span  class="btn btn-sm btn-outline-secondary read_more main_font"><a href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
-								</div>
-							</div>
-					</div>
-				</div>
-			</div>	
+								<div class="col-md-4 box">
+									<div class="card mb-4 box-shadow">
+										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
+										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>
+										<div class="card-body">
+											<div id="card-text" class="main_font_color main_font font_size"><?php the_excerpt(); ?></div>
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="btn-group">
+														<span  class="btn btn-sm btn-outline-secondary read_more main_font"><a href="<?php the_permalink();?>"><?php echo esc_html__('READ MORE →', 'koband');?></a></span>
+													</div>
+												</div>
+										</div>
+									</div>
+								</div>	
 		<?php endwhile; ?>
 	<?php }
 
