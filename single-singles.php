@@ -63,5 +63,15 @@ get_header('noscroll'); ?>
 		</div><!--container-->
 	</div><!--row-->
 	<?php endwhile; endif; ?>
+	<div class="container media_next_prev">
+		<div class="row">
+		    <div class="col-sm">
+		                <div class="previous_post"><?php next_post_link('%link', 'Next Single'); ?></div>
+		    </div>
+		    <div class="col-sm">    
+		        <div class="next_post"><?php previous_post_link('%link', 'Previous Single'); ?></div>
+		    </div>
+	  	</div>
+	</div>
 </div><!--container-->
 <?php get_footer(); ?>

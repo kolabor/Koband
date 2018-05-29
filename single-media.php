@@ -191,6 +191,16 @@ if (have_posts() ) :
     </div><!-- row ends here -->
    </div><!-- Container class ends here -->
 <?php endwhile; endif;?>
+<div class="container media_next_prev">
+  <div class="row">
+    <div class="col-sm">
+                <div class="previous_post"><?php next_post_link('%link', 'Next Gallery'); ?></div>
+    </div>
+    <div class="col-sm">    
+        <div class="next_post"><?php previous_post_link('%link', 'Previous Gallery'); ?></div>
+    </div>
+  </div>
+</div> 
 <!--comment section starts here-->
 	<div class="container">
 		<div class="row">
