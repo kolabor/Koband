@@ -998,7 +998,7 @@ function ko_band_sanitize_radio( $input, $setting ){
 
 
  //select sanitization function
-/*function ko_band_sanitize_select( $input, $setting ){
+function ko_band_sanitize_select( $input, $setting ){
  
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
     $input = sanitize_key($input);
@@ -1009,17 +1009,14 @@ function ko_band_sanitize_radio( $input, $setting ){
     //return input if valid or return default option
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );             
      
-<<<<<<< HEAD
-}*/
-=======
 }
+
 function ko_band_sanitize_layout( $value ) {
     if ( ! in_array( $value, array( 'Image', 'Video' ) ) )
         $value = 'Image';
  
     return $value;
 }
->>>>>>> 15dbe8c3cae8782d20cf52e646256fa73b68397c
 
 function ko_band_sanitize_number( $int ) {
     return absint( $int );
