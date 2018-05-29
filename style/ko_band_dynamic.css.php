@@ -229,6 +229,12 @@ body > div > .border_color {
   <?php } 
   ?>
 }
+.previous_post a:hover{
+  color: <?php echo esc_html($koband_second_theme_color); ?> ;
+} 
+.next_post a:hover{
+  color: <?php echo esc_html($koband_second_theme_color); ?> ;
+}
 .submit {
   background-color: <?php echo esc_html($koband_first_theme_color); ?> ;
   color: <?php echo esc_html($koband_second_theme_color); ?> ;

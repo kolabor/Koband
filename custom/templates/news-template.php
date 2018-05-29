@@ -33,7 +33,7 @@
 					if ( $news_posts->have_posts() ) : ?>
 						<!-- start loop --> 										
 							<?php while ( $news_posts->have_posts() ) : $news_posts->the_post(); ?>
-								<div class="col-md-4">
+								<div class="col-md-4 box">
 									<div class="card mb-4 box-shadow">
 										<div class="news-title main_font_color"><h2 class="heading_font"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 4 ); ?></a></h2></div>
 										<a class="card-img-top" href="<?php the_permalink();?>"><?php the_post_thumbnail('news_thumb'); ?></a>

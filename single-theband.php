@@ -38,6 +38,21 @@ get_header('noscroll'); ?>
 		</div><!--container-->
 	</div><!--theband_holder-->
 	<?php endif;?>
+	<div class="container media_next_prev">
+        <div class="row">
+        	<?php the_posts_pagination( array(
+			    'mid_size' => 2,
+			    'prev_text' => __( 'Back', 'koband' ),
+			    'next_text' => __( 'Onward', 'koband' ),
+			) ); ?>
+            <div class="col-sm">
+                        <div class="previous_post"><?php next_post_link('%link'); ?></div>
+            </div>
+            <div class="col-sm">    
+                <div class="next_post"><?php previous_post_link('%link'); ?></div>
+            </div>
+        </div>
+    </div>
 </div><!--container theband_single_page-->
 
 <?php get_footer(); ?>

@@ -213,8 +213,9 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_the
 /*** Main Font Selector ***/
 $wp_customize->add_setting( 'ko_band_general_font_selector', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
-        //'sanitize_callback' => 'ko_band_sanitize_select'
+        'transport'  => 'postMessage', 
+        'sanitize_callback' => 'ko_band_sanitize_select'
+
     ));
 $wp_customize->add_control( 'ko_band_general_font_selector', array(
 
@@ -223,34 +224,34 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
         'section'    => 'ko_band_fonts_section',
         'settings'   => 'ko_band_general_font_selector',
         'choices' => array(
-            'Open+Sans' => 'Open Sans',
-            'Josefin+Slab' => 'Josefin Slab',
+            'Open Sans' => 'Open Sans',
+            'Josefin Slab' => 'Josefin Slab',
             'Arvo' => 'Arvo',
             'Lato' => 'Lato',
             'Vollkorn' => 'Vollkorn',
-            'Abril+Fatface' => 'Abril Fatface',
+            'Abril Fatface' => 'Abril Fatface',
             'Ubuntu' => 'Ubuntu',
-            'PT+Sans' => 'PT Sans',
-            'Old+Standard TT' => 'Old Standard TT',
-            'Droid+Sans' => 'Droid Sans',
+            'PT Sans' => 'PT Sans',
+            'Old Standard TT' => 'Old Standard TT',
+            'Droid Sans' => 'Droid Sans',
             'Anivers' => 'Anivers',
-            'Source+Sans+Pro' => 'Source Sans Pro',
+            'Source Sans Pro' => 'Source Sans Pro',
             'Fertigo' => 'Fertigo',
             'Allerta' => 'Allerta',
             'Montserrat' => 'Montserrat',
             'Raleway' => 'Raleway',
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
-            'Roboto+Condensed' => 'Roboto Condensed',
+            'Roboto Condensed' => 'Roboto Condensed',
             'Inconsolata' => 'Inconsolata',
-            'Libre+Franklin' => 'Libre Franklin',
+            'Libre Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
-            'Yatra+One' => 'Yatra One',
-            'Shadows+Into+Light' => 'Shadows Into Light',
-            'Dancing+Script' => 'Dancing Script',
-            'IBM+Plex+Mono' => 'IBM Plex Mono',
-            'Gloria+Hallelujah' => 'Gloria Hallelujah',
+            'Yatra One' => 'Yatra One',
+            'Shadows Into Light' => 'Shadows Into Light',
+            'Dancing Script' => 'Dancing Script',
+            'IBM Plex Mono' => 'IBM Plex Mono',
+            'Gloria Hallelujah' => 'Gloria Hallelujah',
             'Amatic SC' => 'Amatic SC',
             'Acme' => 'Acme',
             'Signika' => 'Signika',
@@ -266,7 +267,8 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
 $wp_customize->add_setting( 'ko_band_heading_font_selector', array(
         'default'    => 0,
-        'transport'  => 'postMessage'
+        'transport'  => 'postMessage',
+        'sanitize_callback' => 'ko_band_sanitize_select'
     ));
 $wp_customize->add_control( 'ko_band_heading_font_selector', array(
 
@@ -275,34 +277,34 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
         'section'    => 'ko_band_fonts_section',
         'settings'   => 'ko_band_heading_font_selector',
         'choices' => array(
-            'Open+Sans' => 'Open Sans',
-            'Josefin+Slab' => 'Josefin Slab',
+            'Open Sans' => 'Open Sans',
+            'Josefin Slab' => 'Josefin Slab',
             'Arvo' => 'Arvo',
             'Lato' => 'Lato',
             'Vollkorn' => 'Vollkorn',
-            'Abril+Fatface' => 'Abril Fatface',
+            'Abril Fatface' => 'Abril Fatface',
             'Ubuntu' => 'Ubuntu',
-            'PT+Sans' => 'PT Sans',
-            'Old+Standard TT' => 'Old Standard TT',
-            'Droid+Sans' => 'Droid Sans',
+            'PT Sans' => 'PT Sans',
+            'Old Standard TT' => 'Old Standard TT',
+            'Droid Sans' => 'Droid Sans',
             'Anivers' => 'Anivers',
-            'Source+Sans+Pro' => 'Source Sans Pro',
+            'Source Sans+Pro' => 'Source Sans Pro',
             'Fertigo' => 'Fertigo',
             'Allerta' => 'Allerta',
             'Montserrat' => 'Montserrat',
             'Raleway' => 'Raleway',
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
-            'Roboto+Condensed' => 'Roboto Condensed',
+            'Roboto Condensed' => 'Roboto Condensed',
             'Inconsolata' => 'Inconsolata',
             'Libre Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
-            'Yatra+One' => 'Yatra One',
-            'Shadows+Into+Light' => 'Shadows Into Light',
-            'Dancing+Script' => 'Dancing Script',
-            'IBM+Plex+Mono' => 'IBM Plex Mono',
-            'Gloria+Hallelujah' => 'Gloria Hallelujah',
+            'Yatra One' => 'Yatra One',
+            'Shadows Into Light' => 'Shadows Into Light',
+            'Dancing Script' => 'Dancing Script',
+            'IBM Plex Mono' => 'IBM Plex Mono',
+            'Gloria Hallelujah' => 'Gloria Hallelujah',
             'Amatic SC' => 'Amatic+SC',
             'Acme' => 'Acme',
             'Signika' => 'Signika',
@@ -328,8 +330,10 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
 /*Slider box to choose is image or video*/
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
-        'transport'         => 'postMessage',
-        'sanitize_callback' => 'ko_band_sanitize_select'
+        'transport'         => 'postMessage',   
+        'sanitize_callback' => 'ko_band_sanitize_layout'
+     
+        
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
     'label' => esc_html__( 'Enable slide types:', 'koband' ),
@@ -958,6 +962,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_foo
 
 /***** Single Menu Section end here********/
 /************************************************************************************************************************/
+
 }
 add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
@@ -991,6 +996,7 @@ function ko_band_sanitize_radio( $input, $setting ){
  
 }
 
+
  //select sanitization function
 /*function ko_band_sanitize_select( $input, $setting ){
  
@@ -1003,7 +1009,17 @@ function ko_band_sanitize_radio( $input, $setting ){
     //return input if valid or return default option
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );             
      
+<<<<<<< HEAD
 }*/
+=======
+}
+function ko_band_sanitize_layout( $value ) {
+    if ( ! in_array( $value, array( 'Image', 'Video' ) ) )
+        $value = 'Image';
+ 
+    return $value;
+}
+>>>>>>> 15dbe8c3cae8782d20cf52e646256fa73b68397c
 
 function ko_band_sanitize_number( $int ) {
     return absint( $int );
@@ -1025,5 +1041,4 @@ function ko_band_sanitize_file_url( $url ) {
     }
     return $output;
 }
-
 ?>
