@@ -255,6 +255,9 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
             'Rajdhani' => 'Rajdhani',
             'Great Vibes' => 'Great Vibes',
             'Roboto Mono' => 'Roboto Mono',
+            'Inconsolata' => 'Inconsolata',
+
+            
 ), ) );
 
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
@@ -301,6 +304,7 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Rajdhani' => 'Rajdhani',
             'Great Vibes' => 'Great Vibes',
             'Roboto Mono' => 'Roboto Mono',
+            'Inconsolata' => 'Inconsolata',
            
 ), ) ); 
 
@@ -1018,6 +1022,7 @@ function ko_band_sanitize_select($input, $setting){
             'Rajdhani' => 'Rajdhani',
             'Great Vibes' => 'Great Vibes',
             'Roboto Mono' => 'Roboto Mono',
+            'Inconsolata' => 'Inconsolata',
    );
 
 return ( array_key_exists( $input,  $valid ) ? $input : $setting->default ); 
