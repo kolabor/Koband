@@ -796,7 +796,7 @@ $wp_customize->add_control( 'ko_band_theband_biography', array(
 $wp_customize->add_setting( 'ko_band_theband_sectin_background_image', array(
         'default'    => 0,
         'transport'  => 'postMessage',
-        'sanitize_callback' => 'esc_url_raw'
+        'sanitize_callback' => 'ko_band_sanitize_image'
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_theband_sectin_background_image', array(
     'label' => esc_html__( 'The band sectin background image:', 'koband' ),
@@ -976,24 +976,20 @@ function ko_band_sanitize_text( $str ) {
 function ko_band_sanitize_textarea( $text ) {
     return esc_textarea( $text );
 } 
+
  //checkbox sanitization function
-function ko_band_sanitize_checkbox( $input ){
- 
-     //returns true if checkbox is checked
-    return ( isset( $input ) ? true : false );
+function ko_band_sanitize_checkbox( $checked ) {
+    // Boolean check.
+    return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
+
   //radio box sanitization function
 function ko_band_sanitize_radio( $input, $setting ){
      
-    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-    $input = sanitize_key($input);
-
-    //get the list of possible radio box options 
-    $choices = $setting->manager->get_control( $setting->id )->choices;
-                     
-    //return input if valid or return default option
-    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+    if ( ! in_array( $value, array( 'Blank', 'News', 'Discography', 'Media', 'The Band', 'Tour/Events') ) )
+        $value = 'Blank';
  
+    return $value;
 }
 
 
@@ -1029,6 +1025,26 @@ function ko_band_sanitize_email( $email ) {
         return '';
     }
 } 
+
+function ko_band_sanitize_image( $image, $setting ) {
+    /*
+     * Array of valid image file types.
+     * The array includes image mime types that are included in wp_get_mime_types()
+     */
+    $mimes = array(
+        'jpg|jpeg|jpe' => 'image/jpeg',
+        'gif'          => 'image/gif',
+        'png'          => 'image/png',
+        'bmp'          => 'image/bmp',
+        'tif|tiff'     => 'image/tiff',
+        'ico'          => 'image/x-icon'
+    );
+    // Return an array with file extension and mime_type.
+    $file = wp_check_filetype( $image, $mimes );
+    // If $image has a valid mime_type, return it; otherwise, return the default.
+    return ( $file['ext'] ? $image : $setting->default );
+}
+
 
 function ko_band_sanitize_file_url( $url ) {
     $output = '';
