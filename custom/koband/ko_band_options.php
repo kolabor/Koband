@@ -970,7 +970,7 @@ add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
  //text and color sanitization function
 function ko_band_sanitize_text( $str ) {
-    return sanitize_text_field( $str )
+    return sanitize_text_field( $str );
 } 
 
  //textarea sanitization function
