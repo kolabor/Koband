@@ -968,11 +968,12 @@ add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
 
 
-
+ //text and color sanitization function
 function ko_band_sanitize_text( $str ) {
     return sanitize_text_field( $str )
 } 
 
+ //textarea sanitization function
 function ko_band_sanitize_textarea( $text ) {
     return esc_textarea( $text );
 } 
@@ -994,19 +995,47 @@ function ko_band_sanitize_radio( $input, $setting ){
 
 
  //select sanitization function
-function ko_band_sanitize_select( $input, $setting ){
- 
-    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-    $input = sanitize_key($input);
+function ko_band_sanitize_select($input, $setting){
+    
+   
+    $valid = array(
+            'Open Sans' => 'Open Sans',
+            'Josefin Slab' => 'Josefin Slab',
+            'Arvo' => 'Arvo',
+            'Lato' => 'Lato',
+            'Vollkorn' => 'Vollkorn',
+            'Ubuntu' => 'Ubuntu',
+            'Old Standard TT' => 'Old Standard TT',
+            'Droid Sans' => 'Droid Sans',
+            'Source Sans Pro' => 'Source Sans Pro',
+            'Fertigo' => 'Fertigo',
+            'Montserrat' => 'Montserrat',
+            'Raleway' => 'Raleway',
+            'Prociono' => 'Prociono',
+            'Roboto' => 'Roboto',
+            'Roboto Condensed' => 'Roboto Condensed',
+            'Libre Franklin' => 'Libre Franklin',
+            'Lobster' => 'Lobster',
+            'Pacifico' => 'Pacifico',
+            'Yatra One' => 'Yatra One',
+            'Shadows Into Light' => 'Shadows Into Light',
+            'Dancing Script' => 'Dancing Script',
+            'IBM Plex Mono' => 'IBM Plex Mono',
+            'Gloria Hallelujah' => 'Gloria Hallelujah',
+            'Amatic SC' => 'Amatic SC',
+            'Acme' => 'Acme',
+            'Signika' => 'Signika',
+            'Comfortaa' => 'Comfortaa',
+            'Rokkitt' => 'Rokkitt',
+            'Rajdhani' => 'Rajdhani',
+            'Great Vibes' => 'Great Vibes',
+            'Roboto Mono' => 'Roboto Mono',
+   );
 
-    //get the list of possible select options 
-    $choices = $setting->manager->get_control( $setting->id )->choices;
-                     
-    //return input if valid or return default option
-    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );             
-     
+return ( array_key_exists( $input,  $valid ) ? $input : $setting->default ); 
 }
 
+ //select slider sanitization function
 function ko_band_sanitize_layout( $value ) {
     if ( ! in_array( $value, array( 'Image', 'Video' ) ) )
         $value = 'Image';
@@ -1014,10 +1043,12 @@ function ko_band_sanitize_layout( $value ) {
     return $value;
 }
 
+ //number sanitization function
 function ko_band_sanitize_number( $int ) {
     return absint( $int );
 } 
 
+ //email sanitization function
 function ko_band_sanitize_email( $email ) {
     if(is_email( $email )){
         return $email;
@@ -1026,6 +1057,7 @@ function ko_band_sanitize_email( $email ) {
     }
 } 
 
+ //images sanitization function
 function ko_band_sanitize_image( $image, $setting ) {
     /*
      * Array of valid image file types.
@@ -1045,7 +1077,7 @@ function ko_band_sanitize_image( $image, $setting ) {
     return ( $file['ext'] ? $image : $setting->default );
 }
 
-
+ //file url sanitization function
 function ko_band_sanitize_file_url( $url ) {
     $output = '';
     $filetype = wp_check_filetype( $url );
