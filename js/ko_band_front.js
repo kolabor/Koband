@@ -500,6 +500,6 @@ $.videoSlide = function(videoCode, videoLink, videoType)
         }  
 
 }
-/*Video slide function ends here*/
+/*Video slide function ends here*/s
 
 }); // Ready function ends here //
