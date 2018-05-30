@@ -93,8 +93,8 @@ function ko_band_theme_support () {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'get_post_format' );
-	add_theme_support( 'custom-header' );
-	add_theme_support( 'custom-background' );
+	//add_theme_support( 'custom-header' );
+	//add_theme_support( 'custom-background' );
 
 	// Add theme support Post Format Support
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
