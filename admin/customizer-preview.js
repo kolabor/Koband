@@ -20,14 +20,15 @@
 		} );
 	} ); 
 
-    // Update theme main font color
+    // Update theme main font color ko_band_first_theme_color
 	api( 'ko_band_main_font_color', function( value ) {
+
 		value.bind( function( newThemeMainFontColor ) {
-		
-			$('.main_font_color').css( 'color', newThemeMainFontColor, 'important');
-			$('.comment-list p').css( 'color', newThemeMainFontColor, 'important');
-			$('.read_more a').css( 'color', newThemeMainFontColor, 'important');
-			$('.copyright').css( 'color', newThemeMainFontColor, 'important');
+		  
+			$('.main_font_color').attr('style','color:'+newThemeMainFontColor+' !important');
+			$('.comment-list p').attr('style','color:'+newThemeMainFontColor+' !important');
+            $('.read_more a').attr('style','color:'+newThemeMainFontColor+' !important');
+            $('.copyright').attr('style','color:'+newThemeMainFontColor+' !important');
 		} );
 	} );
 
@@ -83,11 +84,15 @@
 	// Update theme general font selector
 	api( 'ko_band_general_font_selector', function( value ) {
 		value.bind( function( newThemeGeneralFont ) {
-		
-			$('.main_font').css('font-family', newThemeGeneralFont, 'important');
-			$('.comment-list p').css('font-family', newThemeGeneralFont, 'important');
-			$('.footer-menu .menu li a').css('font-family', newThemeGeneralFont, 'important');
-			$('.main-nav .menu li a').css( 'font-family', newThemeGeneralFont, 'important'); 
+            
+            var  newFont = newThemeGeneralFont; 
+		    var replace =" ";       
+            newFont = newFont.split('+').join(replace);
+  
+			$('.main_font').css('font-family', newFont, 'important');
+			$('.comment-list p').css('font-family', newFont, 'important');
+			$('.footer-menu .menu li a').css('font-family', newFont, 'important');
+			$('.main-nav .menu li a').css( 'font-family', newFont, 'important'); 
 										
 		} );
 	} );
@@ -96,8 +101,15 @@
 	// Update theme heading font selector
 	api( 'ko_band_heading_font_selector', function( value ) {
 		value.bind( function( newThemeHeadingFont ) {
-		
-			$('.heading_font').css( 'font-family', newThemeHeadingFont, 'important'); 
+		    
+		    var  newFont = newThemeHeadingFont; 
+		    var replace =" ";       
+            newFont = newFont.split('+').join(replace);
+            console.log(newFont);
+
+			$('.heading_font').attr('style','font-family: '+newFont+' !important');
+
+
 		} );
 	} );
 

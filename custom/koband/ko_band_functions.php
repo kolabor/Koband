@@ -22,7 +22,7 @@
 
 // Load script for customizer live preview
 function ko_band_customize_preview_js() {
-	wp_enqueue_script( 'ko-band-customize-preview', get_template_directory_uri() . '/admin/customizer-preview-min.js', array( 'customize-preview' ), '20141216', true );
+	wp_enqueue_script( 'ko-band-customize-preview', get_template_directory_uri() . '/admin/customizer-preview.js', array( 'customize-preview' ), '20141216', true );
 }
 add_action( 'customize_preview_init', 'ko_band_customize_preview_js' );
 
@@ -93,8 +93,8 @@ function ko_band_theme_support () {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'get_post_format' );
-	add_theme_support( 'custom-header' );
-	add_theme_support( 'custom-background' );
+	//add_theme_support( 'custom-header' );
+	//add_theme_support( 'custom-background' );
 
 	// Add theme support Post Format Support
 	add_theme_support('post-formats', array('aside', 'gallery', 'link'));

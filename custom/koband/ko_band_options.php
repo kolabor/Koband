@@ -212,9 +212,11 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_the
 
 /*** Main Font Selector ***/
 $wp_customize->add_setting( 'ko_band_general_font_selector', array(
-        'default'    => 0,
         'transport'  => 'postMessage',
-       // 'sanitize_callback' => 'ko_band_sanitize_select'
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'ko_band_sanitize_select',
+        'default'    => 'Lato'
+
     ));
 $wp_customize->add_control( 'ko_band_general_font_selector', array(
 
@@ -228,21 +230,16 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
             'Arvo' => 'Arvo',
             'Lato' => 'Lato',
             'Vollkorn' => 'Vollkorn',
-            'Abril Fatface' => 'Abril Fatface',
             'Ubuntu' => 'Ubuntu',
-            'PT Sans' => 'PT Sans',
             'Old Standard TT' => 'Old Standard TT',
             'Droid Sans' => 'Droid Sans',
-            'Anivers' => 'Anivers',
             'Source Sans Pro' => 'Source Sans Pro',
             'Fertigo' => 'Fertigo',
-            'Allerta' => 'Allerta',
             'Montserrat' => 'Montserrat',
             'Raleway' => 'Raleway',
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
             'Roboto Condensed' => 'Roboto Condensed',
-            'Inconsolata' => 'Inconsolata',
             'Libre Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
@@ -259,15 +256,14 @@ $wp_customize->add_control( 'ko_band_general_font_selector', array(
             'Rajdhani' => 'Rajdhani',
             'Great Vibes' => 'Great Vibes',
             'Roboto Mono' => 'Roboto Mono',
-
-            
 ), ) );
 
 /*** H1, H2, H3, H4, H5, h6, H7........ Font Selector ***/
 $wp_customize->add_setting( 'ko_band_heading_font_selector', array(
-        'default'    => 0,
         'transport'  => 'postMessage',
-       // 'sanitize_callback' => 'ko_band_sanitize_select'
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'ko_band_sanitize_select',
+        'default'    => 'Lato'
     ));
 $wp_customize->add_control( 'ko_band_heading_font_selector', array(
 
@@ -281,21 +277,16 @@ $wp_customize->add_control( 'ko_band_heading_font_selector', array(
             'Arvo' => 'Arvo',
             'Lato' => 'Lato',
             'Vollkorn' => 'Vollkorn',
-            'Abril Fatface' => 'Abril Fatface',
             'Ubuntu' => 'Ubuntu',
-            'PT Sans' => 'PT Sans',
             'Old Standard TT' => 'Old Standard TT',
             'Droid Sans' => 'Droid Sans',
-            'Anivers' => 'Anivers',
             'Source Sans+Pro' => 'Source Sans Pro',
             'Fertigo' => 'Fertigo',
-            'Allerta' => 'Allerta',
             'Montserrat' => 'Montserrat',
             'Raleway' => 'Raleway',
             'Prociono' => 'Prociono',
             'Roboto' => 'Roboto',
             'Roboto Condensed' => 'Roboto Condensed',
-            'Inconsolata' => 'Inconsolata',
             'Libre Franklin' => 'Libre Franklin',
             'Lobster' => 'Lobster',
             'Pacifico' => 'Pacifico',
@@ -330,7 +321,8 @@ $wp_customize->add_section( 'ko_band_slider_section' , array(
 $wp_customize->add_setting( 'ko_band_home_page_slider_type', array(
         'default'    => 0,
         'transport'         => 'postMessage',   
-      // 'sanitize_callback' => 'ko_band_sanitize_choices'
+        'sanitize_callback' => 'ko_band_sanitize_layout'
+     
         
     ));
 $wp_customize->add_control( 'ko_band_home_page_slider_type', array(
@@ -794,7 +786,7 @@ $wp_customize->add_control( 'ko_band_theband_biography', array(
 $wp_customize->add_setting( 'ko_band_theband_sectin_background_image', array(
         'default'    => 0,
         'transport'  => 'postMessage',
-        'sanitize_callback' => 'esc_url_raw'
+        'sanitize_callback' => 'ko_band_sanitize_image'
     ));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ko_band_theband_sectin_background_image', array(
     'label' => esc_html__( 'The band sectin background image:', 'koband' ),
@@ -914,15 +906,18 @@ $wp_customize->add_control( 'ko_band_footer_search', array(
 
 /*** Footer section Background color **/
 $wp_customize->add_setting( 'ko_band_footer_section_background_color', array(
-        'default'    => 0,
+       'default'    => 0,
        'transport'  => 'postMessage',
        'sanitize_callback' => 'ko_band_sanitize_text'
     ));
+
 $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'ko_band_footer_section_background_color', array(
         'label'      => esc_html__( 'Footer section background color', 'koband' ),
         'section'    => 'ko_band_footer_section',
         'settings'   => 'ko_band_footer_section_background_color',
 ) ) );
+
+
 
 
 
@@ -960,52 +955,68 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ko_band_foo
 
 /***** Single Menu Section end here********/
 /************************************************************************************************************************/
-}
 
+}
+add_action( 'customize_register', 'ko_band_theme_customize_register' );
 
 
 
 
 function ko_band_sanitize_text( $str ) {
     return sanitize_text_field( $str );
-} 
+}
 
 function ko_band_sanitize_textarea( $text ) {
     return esc_textarea( $text );
 } 
- //checkbox sanitization function
-function ko_band_sanitize_checkbox( $input ){
- 
-     //returns true if checkbox is checked
-    return ( isset( $input ) ? true : false );
-}
-  //radio box sanitization function
-function ko_band_sanitize_radio( $input, $setting ){
-     
-    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-    $input = sanitize_key($input);
-
-    //get the list of possible radio box options 
-    $choices = $setting->manager->get_control( $setting->id )->choices;
-                     
-    //return input if valid or return default option
-    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
- 
-}
-
 
  //select sanitization function
-function ko_band_sanitize_select( $input, $setting ){
- 
-    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-    $input = sanitize_key($input);
+function ko_band_sanitize_select($input, $setting){
+    
+   
+    $valid = array(
+            'Open Sans' => 'Open Sans',
+            'Josefin Slab' => 'Josefin Slab',
+            'Arvo' => 'Arvo',
+            'Lato' => 'Lato',
+            'Vollkorn' => 'Vollkorn',
+            'Ubuntu' => 'Ubuntu',
+            'Old Standard TT' => 'Old Standard TT',
+            'Droid Sans' => 'Droid Sans',
+            'Source Sans Pro' => 'Source Sans Pro',
+            'Fertigo' => 'Fertigo',
+            'Montserrat' => 'Montserrat',
+            'Raleway' => 'Raleway',
+            'Prociono' => 'Prociono',
+            'Roboto' => 'Roboto',
+            'Roboto Condensed' => 'Roboto Condensed',
+            'Libre Franklin' => 'Libre Franklin',
+            'Lobster' => 'Lobster',
+            'Pacifico' => 'Pacifico',
+            'Yatra One' => 'Yatra One',
+            'Shadows Into Light' => 'Shadows Into Light',
+            'Dancing Script' => 'Dancing Script',
+            'IBM Plex Mono' => 'IBM Plex Mono',
+            'Gloria Hallelujah' => 'Gloria Hallelujah',
+            'Amatic SC' => 'Amatic SC',
+            'Acme' => 'Acme',
+            'Signika' => 'Signika',
+            'Comfortaa' => 'Comfortaa',
+            'Rokkitt' => 'Rokkitt',
+            'Rajdhani' => 'Rajdhani',
+            'Great Vibes' => 'Great Vibes',
+            'Roboto Mono' => 'Roboto Mono',
+   );
 
-    //get the list of possible select options 
-    $choices = $setting->manager->get_control( $setting->id )->choices;
-                     
-    //return input if valid or return default option
-    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+   return ( array_key_exists( $input,  $valid ) ? $input : $setting->default ); 
      
+}
+
+function ko_band_sanitize_layout( $value ) {
+    if ( ! in_array( $value, array( 'Image', 'Video' ) ) )
+        $value = 'Image';
+ 
+    return $value;
 }
 
 function ko_band_sanitize_number( $int ) {
@@ -1028,5 +1039,40 @@ function ko_band_sanitize_file_url( $url ) {
     }
     return $output;
 }
-add_action( 'customize_register', 'ko_band_theme_customize_register' );
+
+
+//checkbox sanitization function
+function ko_band_sanitize_checkbox( $checked ) {
+    // Boolean check.
+    return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
+  //radio box sanitization function
+function ko_band_sanitize_radio( $input, $setting ){
+     
+    if ( ! in_array( $value, array( 'Blank', 'News', 'Discography', 'Media', 'The Band', 'Tour/Events') ) )
+        $value = 'Blank';
+ 
+    return $value;
+}
+function ko_band_sanitize_image( $image, $setting ) {
+    /*
+     * Array of valid image file types.
+     * The array includes image mime types that are included in wp_get_mime_types()
+     */
+    $mimes = array(
+        'jpg|jpeg|jpe' => 'image/jpeg',
+        'gif'          => 'image/gif',
+        'png'          => 'image/png',
+        'bmp'          => 'image/bmp',
+        'tif|tiff'     => 'image/tiff',
+        'ico'          => 'image/x-icon'
+    );
+    // Return an array with file extension and mime_type.
+    $file = wp_check_filetype( $image, $mimes );
+    // If $image has a valid mime_type, return it; otherwise, return the default.
+    return ( $file['ext'] ? $image : $setting->default );
+}
+
+
 ?>
