@@ -13,19 +13,19 @@ jQuery(document).ready(function( $ ){
 */
 
 // show list of album songs
-$(".album-songs-show-hide").hide();														// hide the content on page load
-$(".hide-album-song").hide();															// hide up button on page load
+$(".album-songs-show-hide").hide();														                      // hide the content on page load
+$(".hide-album-song").hide();															                          // hide up button on page load
 $(".show-album-song").click(function(){
 	$(this).closest("div.container").find(".album-songs-show-hide").slideDown(1000); 	// show container elemnts 
 	$(this).closest("div.album-up-down-buttons").find(".show-album-song").hide(); 		// button down hide
-	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").show();		// button up show
+	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").show();		  // button up show
   
 });
 
 // hide list of album songs
 $(".hide-album-song").click(function(){
 	$(this).closest("div.container").find(".album-songs-show-hide").slideUp(1000); 		// hide container elemnts 
-	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").hide();		// button up hide
+	$(this).closest("div.album-up-down-buttons").find(".hide-album-song").hide();		  // button up hide
 	$(this).closest("div.album-up-down-buttons").find(".show-album-song").show(); 		// button down show
 });
 
@@ -40,9 +40,9 @@ $(".show-single-song").click(function(){
 
 // hide list of single stores
 $(".hide-single-song").click(function(){
-	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(500); 	    // hide container elemnts 
-	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").hide();		// button up hide
-	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	// button down show
+	$(this).closest("div.container").find(".single-songs-show-hide").slideUp(500); 	   // hide container elemnts 
+	$(this).closest("div.single-up-down-buttons").find(".hide-single-song").hide();		 // button up hide
+	$(this).closest("div.single-up-down-buttons").find(".show-single-song").show(); 	 // button down show
 });
 
 
@@ -500,6 +500,6 @@ $.videoSlide = function(videoCode, videoLink, videoType)
         }  
 
 }
-/*Video slide function ends here*/
+/*Video slide function ends here*/s
 
 }); // Ready function ends here //
