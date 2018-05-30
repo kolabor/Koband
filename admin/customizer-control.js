@@ -4,9 +4,28 @@
     var customize = this;
       
          customize.control('ko_band_home_page_slider_type', function( control ) {       
-             
+         
              var slider_type = control.settings.default._value;
+         //alert(slider_type);   
            
+              if (slider_type == "Image") 
+                {
+                  $("#customize-control-ko_band_home_page_slider_videolink").hide();
+                  $("#customize-control-ko_band_home_page_slider_title").hide()
+                  $("#customize-control-ko_band_home_page_slider_text").hide()
+                  $("#customize-control-ko_band_home_page_slider_buttontitle").hide()
+                  $("#customize-control-ko_band_home_page_slider_buttonlink").hide()
+                };
+               if (slider_type == "Video") {
+                  $("#customize-control-ko_band_home_page_slider_videolink").show();
+                  $("#customize-control-ko_band_home_page_slider_title").show()
+                  $("#customize-control-ko_band_home_page_slider_text").show()
+                  $("#customize-control-ko_band_home_page_slider_buttontitle").show()
+                  $("#customize-control-ko_band_home_page_slider_buttonlink").show()
+                };
+
+
+           /*
               control.setting.bind(function (value)
                {
                 switch (value) {
@@ -26,7 +45,7 @@
                      customize.control('ko_band_home_page_slider_buttonlink').activate();
                      break;
                    }
-               });
+               });*/
                
        });
       
