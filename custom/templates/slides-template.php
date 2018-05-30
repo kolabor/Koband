@@ -57,12 +57,7 @@
 					    <?php	$url = wp_get_attachment_url( get_post_thumbnail_id() );?>
 					    	<img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
 					            
-
-		   
-        			</div><!--carousel-item-->
-			<?php endwhile; ?>
- 					</div><!--carousel-item active-->
- 					<div class="sl-content">
+								<div class="sl-content">
 
 								    <h5 class="slider_title_text_color heading_font"><?php if(isset($slider_title[0])) 	{ echo esc_attr($slider_title[0]); } ?></h5>
 								    <p class="slider_subtitle_text_color main_font"><?php if(isset($slider_trim_chars)) 	{ echo esc_attr($slider_trim_chars); } ?></p>
@@ -71,6 +66,11 @@
 								    		{ echo esc_attr($slider_button_title[0]); } ?></a>
 
 								</div>
+		   
+        			</div><!--carousel-item-->
+			<?php endwhile; ?>
+ 					</div><!--carousel-item active-->
+ 					
 
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 	   			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
