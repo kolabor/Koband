@@ -28,7 +28,7 @@ add_action( 'customize_preview_init', 'ko_band_customize_preview_js' );
 
 // Load Script Customizer Controll
 function ko_band_customize_control_js() {
-    wp_enqueue_script( 'tuts_customizer_control', get_template_directory_uri() . '/admin/customizer-control.js', array( 'customize-controls', 'jquery' ), null, true );
+    wp_enqueue_script( 'tuts_customizer_control', get_template_directory_uri() . '/admin/customizer-control-min.js', array( 'customize-controls', 'jquery' ), null, true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'ko_band_customize_control_js' );
 
