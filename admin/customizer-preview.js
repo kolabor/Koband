@@ -85,10 +85,15 @@
 	api( 'ko_band_general_font_selector', function( value ) {
 		value.bind( function( newThemeGeneralFont ) {
             
-            var  newFont = newThemeGeneralFont; 
+            var font = newThemeGeneralFont; 
 		    var replace =" ";       
-            newFont = newFont.split('+').join(replace);
-  
+            var newFont = font.split('+').join(replace);
+            var replacePlus ="+";
+            var fontToLink = font.split(' ').join(replacePlus);
+            
+            $("head").append("<link href='https://fonts.googleapis.com/css?family=" + fontToLink + "' rel='stylesheet' type='text/css'>");
+
+
 			$('.main_font').css('font-family', newFont, 'important');
 			$('.comment-list p').css('font-family', newFont, 'important');
 			$('.footer-menu .menu li a').css('font-family', newFont, 'important');
@@ -102,14 +107,15 @@
 	api( 'ko_band_heading_font_selector', function( value ) {
 		value.bind( function( newThemeHeadingFont ) {
 		    
-		    var  newFont = newThemeHeadingFont; 
-		    var replace =" ";       
-            newFont = newFont.split('+').join(replace);
-            console.log(newFont);
+		    var font = newThemeHeadingFont; 
+		    var replaceSpace =" ";       
+            var newFont = font.split('+').join(replaceSpace);
 
-			$('.heading_font').attr('style','font-family: '+newFont+' !important');
-
-
+            var replacePlus ="+";
+            var fontToLink = font.split(' ').join(replacePlus);
+            $("head").append("<link href='https://fonts.googleapis.com/css?family=" + fontToLink + "' rel='stylesheet' type='text/css'>");
+			$('.heading_font').attr('style','font-family: '+newFont+' !important'); 
+            
 		} );
 	} );
 

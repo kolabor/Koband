@@ -104,7 +104,6 @@
  
 ?>
 
-/*importing google fonts*/
 @import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_general_font); ?>');
 @import url('https://fonts.googleapis.com/css?family=<?php echo ($koband_headding_font); ?>');
 
