@@ -1,5 +1,5 @@
 # Theme name: Koband - Indie & Rock Wordpress theme 
-
+***
 ## Koband demos: [http://koband.kolabor.net](http://koband.kolabor.net "Koband demo's")
 
 Main Theme features - content on preview image
