@@ -1,14 +1,15 @@
 # Theme name: Koband - Indie & Rock Wordpress theme 
-### Developed & designed by: [www.kolabor.net](http://www.kolabor.net/en "Kolabor official")
+
+##### Developed & designed by: [www.kolabor.net](http://www.kolabor.net/en "Kolabor official")
+##### Koband demos: [http://koband.kolabor.net](http://koband.kolabor.net "Koband demo's")
 ***
-### Koband demos: [http://koband.kolabor.net](http://koband.kolabor.net "Koband demo's")
 
 ### KOBNAD Theme Installation
 
 1. Download Koband zip theme from [http://koband.kolabor.net/ko-band-modules.zip](http://koband.kolabor.net/ko-band-modules.zip) Or simply clone this gitHub repo to your theme directory. 
 2. Install theme by uploading ko-band-modules.zip file through your WordPress dashboard (Appearance -> Themes). 
 
-### Necessary plugins
+### KOBNAD Necessary plugins
 1. Koband Modules - used for creating Koband theme modules
 2. Customizer Export/Import - used for importing demo customizer content for colors, font styles, font size ... 
 3. Contact form 7  - used for demo contact forms.
