@@ -10,11 +10,11 @@
 2. Install theme by uploading ko-band-modules.zip file through your WordPress dashboard (Appearance -> Themes). 
 
 ### KOBNAD Necessary plugins
-1. Koband Modules - used for creating Koband theme modules
-2. Customizer Export/Import - used for importing demo customizer content for colors, font styles, font size ... 
-3. Contact form 7  - used for demo contact forms.
+1. **Koband Modules** - used for creating Koband theme modules
+2. **Customizer Export/Import** - used for importing demo customizer content for colors, font styles, font size ... 
+3. **Contact form 7**  - used for demo contact forms.
 
-All three plugins need to be installed through TGM plugin. Once you installed Koband theme TGM will ask you to install above mentioned plugins. _**n order theme to work as needed Koband Modules plugin must be installed**_. 
+All three plugins need to be installed through TGM plugin. Once you installed Koband theme TGM will ask you to install above mentioned plugins. _**In order theme to work as needed Koband Modules plugin must be installed**_. 
 
 ### KOBNAD Demo versions 
 
