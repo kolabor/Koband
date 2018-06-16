@@ -1,9 +1,38 @@
 # Theme name: Koband - Indie & Rock Wordpress theme 
 ### Developed & designed by: [www.kolabor.net](http://www.kolabor.net/en "Kolabor official")
 ***
-## Koband demos: [http://koband.kolabor.net](http://koband.kolabor.net "Koband demo's")
+### Koband demos: [http://koband.kolabor.net](http://koband.kolabor.net "Koband demo's")
 
-Main Theme features - content on preview image
+### KOBNAD Theme Installation
+
+1. Download Koband zip theme from [http://koband.kolabor.net/ko-band-modules.zip](http://koband.kolabor.net/ko-band-modules.zip) Or simply clone this gitHub repo to your theme directory. 
+2. Install theme by uploading ko-band-modules.zip file through your WordPress dashboard (Appearance -> Themes). 
+
+### Necessary plugins
+1. Koband Modules - used for creating Koband theme modules
+2. Customizer Export/Import - used for importing demo customizer content for colors, font styles, font size ... 
+3. Contact form 7  - used for demo contact forms.
+
+All three plugins need to be installed through TGM plugin. Once you installed Koband theme TGM will ask you to install above mentioned plugins. _**n order theme to work as needed Koband Modules plugin must be installed**_. 
+
+### KOBNAD Demo versions 
+
+Koband has 4 demo versions you can simply download these demos from links bellow:
+1. Demo: [Dark with image slider](http://koband.kolabor.net/demos/dark with image slider.zip)
+2. Demo: [Dark with video slider] (http://koband.kolabor.net/demos/dark with video slider.zip)
+3. Demo: [Light with image slider] (http://koband.kolabor.net/demos/light with image slider.zip)
+4. Demo: [Light with video slider] (http://koband.kolabor.net/demos/light with video slider.zip)
+
+Each demo zip files has two files one ends with **.xml** and the other one ends with **.dat**
+
+**.xml** - You can import this file with WordPress default [https://codex.wordpress.org/Importing_Content](https://codex.wordpress.org/Importing_Content). Through this file you will be importing all demo custom post types of the theme. 
+
+ **.dat** - For this file you will need to install Customizer Export/Import which comes with the theme itself. TMG is used so you can easely install this plugin. [Plugin link](https://wordpress.org/plugins/customizer-export-import/).
+ 
+ For any Additional support please contact us at: contact@kolabor.net 
+ 
+
+## Main Theme features - content on preview image
 --------------------------------------------------------------
 1. FULLY RESPONSIVE 
 2. INTEGRATED SLIDER (Video or image slider) 
@@ -19,7 +48,7 @@ Main Theme features - content on preview image
 
 
 -----------------------------------------------------------------------
-SLIDER  Features - Content for Slider preview image 
+## SLIDER  Features - Content for Slider preview image 
 ----------------------------------------------------------------------
 1. CHOOSE BETWEEN VIDEO OR IMAGE SLIDER 
 2. SLIDER TITLE 
@@ -29,7 +58,7 @@ SLIDER  Features - Content for Slider preview image
 6. FULLY RESPONSIVE 
 
 -------------------------------------------------------------------------------
-Discogrpahy  Features - Content for discography preview image
+## Discogrpahy  Features - Content for discography preview image
 -------------------------------------------------------------------------------
 1. ALBUMS MODULE 
    -  Add new album 
@@ -47,13 +76,13 @@ Discogrpahy  Features - Content for discography preview image
  - Add store name and store link for buying given song
 
 -----------------------------------------------------------------------------
-Media/Gallery  Features - Content for  Media preview image
+## Media/Gallery  Features - Content for  Media preview image
 ----------------------------------------------------------------------------
 - ADD MULTIPLE IMAGES 
 - ADD MULTIPLE VIDEOS (included: youtube, video, dailymotion)
 
 ---------------------------------------------------------------------------------------
-Band members  Features - Content for Band members  preview image 
+## Band members  Features - Content for Band members  preview image 
 ---------------------------------------------------------------------------------------
 - ADD BAND MEMBER 
 - BAND MEMBER IMAGE 
@@ -62,7 +91,7 @@ Band members  Features - Content for Band members  preview image
 - BAND MEMBER BIOGRAPHY
 
 -------------------------------------------------------------------------------------
-Tour/Events  Features - Content for Band members  preview image 
+## Tour/Events  Features - Content for Band members  preview image 
 -------------------------------------------------------------------------------------
 - ADD TOUR/EVENT 
 - NAME, DATE, COUNTRY, ADDRESS, VENUE, CITY, ZIP CODE, TICKETS AVAILABILITY
