@@ -18,11 +18,14 @@ All three plugins need to be installed through TGM plugin. Once you installed Ko
 
 ### KOBNAD Demo versions 
 
-Koband has 4 demo versions you can simply download these demos from links bellow:
+##### Koband demos: [http://koband.kolabor.net](http://koband.kolabor.net "Koband demo's")
+
+Koband has 4 demo versions you can simply download these zip demos from links bellow:
+
 1. Demo: [Dark with image slider](http://koband.kolabor.net/demos/dark_with_image_slider.zip)
-2. Demo: [Dark with video slider] (http://koband.kolabor.net/demos/dark_with_video_slider.zip)
-3. Demo: [Light with image slider] (http://koband.kolabor.net/demos/light_with_image_slider.zip)
-4. Demo: [Light with video slider] (http://koband.kolabor.net/demos/light_with_video_slider.zip)
+2. Demo: [Dark with video slider](http://koband.kolabor.net/demos/dark_with_video_slider.zip)
+3. Demo: [Light with image slider](http://koband.kolabor.net/demos/light_with_image_slider.zip)
+4. Demo: [Light with video slider](http://koband.kolabor.net/demos/light_with_video_slider.zip)
 
 Each demo zip files has two files one ends with **.xml** and the other one ends with **.dat**
 
